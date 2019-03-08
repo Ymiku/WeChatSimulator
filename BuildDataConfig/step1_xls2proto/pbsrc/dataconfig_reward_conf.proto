@@ -1,0 +1,42 @@
+/**
+* @file:   dataconfig_reward_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message REWARD_CONF{
+    /** ID，唯一不连续 */
+    required int32 id = 1 [default = 0];
+    /** 奖励类型，用于各种逻辑判断 */
+    required RewardType Type = 2 [default = RT_GIFT];
+    /** 礼包icon */
+    optional string Icon = 3 [default = ""];
+    /** 展示用名称 */
+    optional string DisplayName = 4 [default = ""];
+    /** 管理随机产出需求，也可以100%固定产出，100%：10000； 10%：1000 */
+    optional int32 DropChance = 5 [default = 0];
+    /** 管理随机产出需求，随机轮数 */
+    optional int32 DropRound = 6 [default = 0];
+    /** 掉落项 */
+
+    message InternalType_RewardItem{
+        /** 物品类型 */
+        optional GoodsType Type = 1 [default = GT_NONE];
+        /** 奖励物品时，物品的ID */
+        optional uint32 Id = 2 [default = 0];
+        /** 奖励物品时，物品的数量 */
+        optional uint32 Count = 3 [default = 0];
+        /** 管理随机产出需求，随机权重 */
+        optional int32 DropWeight = 4 [default = 0];
+    }
+
+    repeated InternalType_RewardItem RewardItem = 7;
+}
+
+message REWARD_CONF_ARRAY {
+    repeated REWARD_CONF items = 1;
+}

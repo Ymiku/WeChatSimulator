@@ -1,0 +1,40 @@
+/**
+* @file:   dataconfig_mailinfo_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message MAILINFO_CONF{
+    /**  */
+    optional uint32 id = 1 [default = 0];
+    /** 标题 */
+    optional string title = 2 [default = ""];
+    /** 内容 */
+    optional string contents = 3 [default = ""];
+    /** 是否上架 */
+    optional int32 enable = 4 [default = 0];
+    /** 描述 */
+    optional string desc = 5 [default = ""];
+    /** 邮件类型 */
+    optional MailType type = 6 [default = MT_TYPE_SYSTEM];
+    /** 客户端跳转 */
+    optional int32 client_sys_jump = 7 [default = 0];
+    /** 跳转到web */
+    optional int32 client_web_jump = 8 [default = 0];
+    /** 过期天数 */
+    optional int32 expire_start = 9 [default = 0];
+    /** 开始时间 */
+    optional uint64 /*DateTime*/ time_start = 10 [default = 0];
+    /** 结束时间 */
+    optional uint64 /*DateTime*/ time_end = 11 [default = 0];
+    /** 礼包id */
+    optional int32 reward_goods = 12 [default = 0];
+}
+
+message MAILINFO_CONF_ARRAY {
+    repeated MAILINFO_CONF items = 1;
+}

@@ -1,0 +1,20 @@
+/**
+* @file:   dataconfig_robot_name_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message ROBOT_NAME_CONF{
+    /** ID */
+    optional uint32 id = 1 [default = 0];
+    /** 文本 */
+    optional string text = 2 [default = ""];
+}
+
+message ROBOT_NAME_CONF_ARRAY {
+    repeated ROBOT_NAME_CONF items = 1;
+}

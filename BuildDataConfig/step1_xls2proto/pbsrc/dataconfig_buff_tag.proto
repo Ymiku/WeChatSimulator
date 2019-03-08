@@ -1,0 +1,20 @@
+/**
+* @file:   dataconfig_buff_tag.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message BUFF_TAG{
+    /** buff类型 */
+    optional string tag = 1 [default = ""];
+    /** 状态（有此状态，则含有tag的buff添加不上） */
+    repeated string status = 2;
+}
+
+message BUFF_TAG_ARRAY {
+    repeated BUFF_TAG items = 1;
+}

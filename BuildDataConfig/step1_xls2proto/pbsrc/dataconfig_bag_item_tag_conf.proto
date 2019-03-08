@@ -1,0 +1,20 @@
+/**
+* @file:   dataconfig_bag_item_tag_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message BAG_ITEM_TAG_CONF{
+    /** 物品标签 */
+    optional BagItemTag type = 1 [default = BI_NONE];
+    /** 显示文本 */
+    optional string tid = 2 [default = ""];
+}
+
+message BAG_ITEM_TAG_CONF_ARRAY {
+    repeated BAG_ITEM_TAG_CONF items = 1;
+}

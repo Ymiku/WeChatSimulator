@@ -1,0 +1,40 @@
+/**
+* @file:   dataconfig_user_guide_trigger_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message USER_GUIDE_TRIGGER_CONF{
+    /** 编号 */
+    required uint32 id = 1 [default = 0];
+    /** 类型 */
+    optional UserGuideTriggerType type = 2 [default = NONE];
+    /** 支线action的step（主线不需要填写，支线是指进入草丛的提示等） */
+    optional uint32 step = 3 [default = 0];
+    /** 类型或者进出草 */
+    optional string arenaType = 4 [default = ""];
+    /**  */
+    repeated string subType = 5;
+    /** 参数 */
+    optional ProtoFScalar /*ProtoFScalar*/ paramValue = 6;
+    /** 数量、次数 */
+    repeated uint32 killNum = 7;
+    /** 目标位置，KILL型不填 */
+    repeated ProtoFScalar /*ProtoFScalar*/ pos = 8;
+    /** 距离，KILL型不填 */
+    optional ProtoFScalar /*ProtoFScalar*/ distance = 9;
+    /** 是否需要关闭自动购买 */
+    optional bool closeAutoBuy = 10 [default = false];
+    /** trigger触发次数 */
+    optional uint32 repeatNum = 11 [default = 0];
+    /** 部分Event会由击杀结束 */
+    optional bool finishByKill = 12 [default = false];
+}
+
+message USER_GUIDE_TRIGGER_CONF_ARRAY {
+    repeated USER_GUIDE_TRIGGER_CONF items = 1;
+}

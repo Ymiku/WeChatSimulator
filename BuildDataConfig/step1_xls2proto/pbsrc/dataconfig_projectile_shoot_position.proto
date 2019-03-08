@@ -1,0 +1,32 @@
+/**
+* @file:   dataconfig_projectile_shoot_position.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message PROJECTILE_SHOOT_POSITION{
+    /** ID */
+    optional uint32 id = 1 [default = 0];
+    /** ArenaObject ID */
+    optional uint32 arenaobject_id = 2 [default = 0];
+    /** 动画名称 */
+    optional string animationclip_name = 3 [default = ""];
+    /** 关联的挂载点 */
+    repeated uint32 visual_point = 4;
+    /** 发射时间 */
+    repeated ProtoFScalar /*ProtoFScalar*/ shoot_time = 5;
+    /** X */
+    repeated ProtoFScalar /*ProtoFScalar*/ shoot_pos_x = 6;
+    /** Y */
+    repeated ProtoFScalar /*ProtoFScalar*/ shoot_pos_y = 7;
+    /** Z */
+    repeated ProtoFScalar /*ProtoFScalar*/ shoot_pos_z = 8;
+}
+
+message PROJECTILE_SHOOT_POSITION_ARRAY {
+    repeated PROJECTILE_SHOOT_POSITION items = 1;
+}

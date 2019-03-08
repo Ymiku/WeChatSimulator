@@ -1,0 +1,22 @@
+/**
+* @file:   dataconfig_buff_priority.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message BUFF_PRIORITY{
+    /** buff类型 */
+    optional string buff = 1 [default = ""];
+    /** 优先级 */
+    optional int32 priority = 2 [default = 0];
+    /** 文本 */
+    optional string text = 3 [default = ""];
+}
+
+message BUFF_PRIORITY_ARRAY {
+    repeated BUFF_PRIORITY items = 1;
+}

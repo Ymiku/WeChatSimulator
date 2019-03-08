@@ -1,0 +1,30 @@
+/**
+* @file:   dataconfig_stats_addition_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message STATS_ADDITION_CONF{
+    /** 加成id */
+    optional int32 id = 1 [default = 0];
+    /** 加成列表 */
+
+    message InternalType_stat_list{
+        /** 属性1名称 */
+        optional string stat_name = 1 [default = ""];
+        /** 属性类型 */
+        optional uint32 stat_type = 2 [default = 0];
+        /** 属性值 */
+        optional ProtoFScalar /*ProtoFScalar*/ stat_value = 3;
+    }
+
+    repeated InternalType_stat_list stat_list = 2;
+}
+
+message STATS_ADDITION_CONF_ARRAY {
+    repeated STATS_ADDITION_CONF items = 1;
+}

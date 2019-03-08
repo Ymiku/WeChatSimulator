@@ -1,0 +1,20 @@
+/**
+* @file:   dataconfig_item_rarity_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message ITEM_RARITY_CONF{
+    /** 稀有度 */
+    optional ItemRarity type = 1 [default = IR_COMMON];
+    /** 显示文本 */
+    optional string tid = 2 [default = ""];
+}
+
+message ITEM_RARITY_CONF_ARRAY {
+    repeated ITEM_RARITY_CONF items = 1;
+}

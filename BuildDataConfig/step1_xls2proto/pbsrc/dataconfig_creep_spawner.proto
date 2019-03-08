@@ -1,0 +1,44 @@
+/**
+* @file:   dataconfig_creep_spawner.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message CREEP_SPAWNER{
+    /** ID */
+    optional uint32 id = 1 [default = 0];
+    /** 对象类型 */
+    optional string type = 2 [default = ""];
+    /** 名字 */
+    optional string name = 3 [default = ""];
+    /** 升级的时间间隔(S) */
+    optional ProtoFScalar /*ProtoFScalar*/ level_up_interval = 4;
+    /** 升级的开始时间 */
+    optional ProtoFScalar /*ProtoFScalar*/ level_up_beginTime = 5;
+    /** 升级的结束时间 */
+    optional ProtoFScalar /*ProtoFScalar*/ level_up_endTime = 6;
+    /** 优先级 */
+    optional uint32 privilege = 7 [default = 0];
+    /** 敌方水晶没销毁产生个数 */
+    repeated uint32 no_destroy = 8;
+    /** 对方水晶销毁(产生个数) */
+    repeated uint32 one_destroy = 9;
+    /** 对方三座水晶全销毁(产生个数) */
+    repeated uint32 three_destroy = 10;
+    /** 开始时间 */
+    repeated ProtoFScalar /*ProtoFScalar*/ begin_Time = 11;
+    /** 结束时间 */
+    repeated ProtoFScalar /*ProtoFScalar*/ end_Time = 12;
+    /** 产生小兵间隔 */
+    repeated ProtoFScalar /*ProtoFScalar*/ interval_Creep = 13;
+    /** 产生一波间隔 */
+    repeated ProtoFScalar /*ProtoFScalar*/ interval_wave = 14;
+}
+
+message CREEP_SPAWNER_ARRAY {
+    repeated CREEP_SPAWNER items = 1;
+}

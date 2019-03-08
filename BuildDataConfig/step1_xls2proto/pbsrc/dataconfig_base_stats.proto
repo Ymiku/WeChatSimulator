@@ -1,0 +1,99 @@
+/**
+* @file:   dataconfig_base_stats.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message BASE_STATS{
+    /** ID:规则见批注 */
+    optional uint32 id = 1 [default = 0];
+    /** 对象名
+(必填，否则无法创建新英雄) */
+    optional string name = 2 [default = ""];
+    /** 血量 */
+    optional ProtoFScalar /*ProtoFScalar*/ max_health = 3;
+    /** 血量成长 */
+    optional ProtoFScalar /*ProtoFScalar*/ max_health_add = 4;
+    /** 每秒回血 */
+    optional ProtoFScalar /*ProtoFScalar*/ health_regen = 5;
+    /** 每秒回血成长 */
+    optional ProtoFScalar /*ProtoFScalar*/ health_regen_add = 6;
+    /** 蓝 */
+    optional ProtoFScalar /*ProtoFScalar*/ max_mana = 7;
+    /** 蓝成长 */
+    optional ProtoFScalar /*ProtoFScalar*/ max_mana_add = 8;
+    /** 每秒回蓝 */
+    optional ProtoFScalar /*ProtoFScalar*/ mana_regen = 9;
+    /** 每秒回蓝成长 */
+    optional ProtoFScalar /*ProtoFScalar*/ mana_regen_add = 10;
+    /** 资源增长比例 */
+    optional ProtoFScalar /*ProtoFScalar*/ resource_regen_percent = 11;
+    /** 攻击力 */
+    optional ProtoFScalar /*ProtoFScalar*/ attack_damage = 12;
+    /** 攻击力成长 */
+    optional ProtoFScalar /*ProtoFScalar*/ attack_damage_add = 13;
+    /** 法术强度 */
+    optional ProtoFScalar /*ProtoFScalar*/ ability_power = 14;
+    /** 法术强度成长 */
+    optional ProtoFScalar /*ProtoFScalar*/ ability_power_add = 15;
+    /** 攻击速度 */
+    optional ProtoFScalar /*ProtoFScalar*/ attack_speed_base = 16;
+    /** 攻击速度 */
+    optional ProtoFScalar /*ProtoFScalar*/ attack_speed = 17;
+    /** 攻击速度成长 */
+    optional ProtoFScalar /*ProtoFScalar*/ attack_speed_add = 18;
+    /** 护甲 */
+    optional ProtoFScalar /*ProtoFScalar*/ armor = 19;
+    /** 护甲成长 */
+    optional ProtoFScalar /*ProtoFScalar*/ armor_add = 20;
+    /** 魔抗 */
+    optional ProtoFScalar /*ProtoFScalar*/ magic_resist = 21;
+    /** 魔抗成长 */
+    optional ProtoFScalar /*ProtoFScalar*/ magic_resist_add = 22;
+    /** 移动速度 */
+    optional ProtoFScalar /*ProtoFScalar*/ move_speed = 23;
+    /** 暴击伤害 */
+    optional ProtoFScalar /*ProtoFScalar*/ critical_damage = 24;
+    /** 暴击伤害成长 */
+    optional ProtoFScalar /*ProtoFScalar*/ critical_damage_add = 25;
+    /** 杀死以后对击杀者的血量回复buffID */
+    optional ProtoFScalar /*ProtoFScalar*/ health_regen_attacker_buff_id = 26;
+    /** 死亡产生基础经验 */
+    optional ProtoFScalar /*ProtoFScalar*/ exp_on_death = 27;
+    /** 给击杀者的奖励（最后一击） */
+    optional ProtoFScalar /*ProtoFScalar*/ gold_award_attacker = 28;
+    /** 给击杀者的奖励（最后一击）成长 */
+    optional ProtoFScalar /*ProtoFScalar*/ gold_award_attacker_add = 29;
+    /** 给一定范围内敌方英雄的奖励 */
+    optional ProtoFScalar /*ProtoFScalar*/ gold_award_range = 30;
+    /** 给一定范围内敌方英雄的奖励成长 */
+    optional ProtoFScalar /*ProtoFScalar*/ gold_award_range_add = 31;
+    /** 给敌方全队的奖励（给每个人的奖励） */
+    optional ProtoFScalar /*ProtoFScalar*/ gold_award_team = 32;
+    /** 复活时间间隔 */
+    optional ProtoFScalar /*ProtoFScalar*/ reborn_time_interval = 33;
+    /** 迷雾视野外圈范围半径 */
+    optional ProtoFScalar /*ProtoFScalar*/ visible_range = 34;
+    /** 搜索半径 */
+    optional ProtoFScalar /*ProtoFScalar*/ target_select_range = 35;
+    /** 英雄搜索半径增加量 */
+    optional ProtoFScalar /*ProtoFScalar*/ hero_search_range_addition = 36;
+    /** 英雄寻路半径 */
+    optional ProtoFScalar /*ProtoFScalar*/ hero_find_path_range = 37;
+    /** 普通攻击溅射范围 */
+    optional ProtoFScalar /*ProtoFScalar*/ aoe_range = 38;
+    /** 普通攻击溅射扇形角度 */
+    optional ProtoFScalar /*ProtoFScalar*/ aoe_angle = 39;
+    /** 攻击半径 */
+    optional ProtoFScalar /*ProtoFScalar*/ attack_distance = 40;
+    /** 转身速率（实际转身速度=转身速度*转身速率，此值默认为1） */
+    optional ProtoFScalar /*ProtoFScalar*/ turn_speed_rate = 41;
+}
+
+message BASE_STATS_ARRAY {
+    repeated BASE_STATS items = 1;
+}

@@ -1,0 +1,26 @@
+/**
+* @file:   dataconfig_rune_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message RUNE_CONF{
+    /** ID，唯一，可不连续 */
+    required int32 id = 1 [default = 0];
+    /** 铭文等级 */
+    optional int32 level = 2 [default = 0];
+    /** 属性加成id */
+    optional int32 stat_addition_id = 3 [default = 0];
+    /** 铭文类型 */
+    optional RuneType rune_type = 4 [default = RTYPE_DEFENSE];
+    /** 铭文标签 */
+    repeated RuneTag rune_tag = 5;
+}
+
+message RUNE_CONF_ARRAY {
+    repeated RUNE_CONF items = 1;
+}

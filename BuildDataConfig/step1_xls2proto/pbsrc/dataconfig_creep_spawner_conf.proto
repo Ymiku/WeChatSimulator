@@ -1,0 +1,32 @@
+/**
+* @file:   dataconfig_creep_spawner_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message CREEP_SPAWNER_CONF{
+    /** 兵营id */
+    optional uint32 id = 1 [default = 0];
+    /** 小兵生成规则ID，同时决定了每波兵中小兵的出生顺序 */
+    repeated uint32 rule_id = 2;
+    /** 升级的时间间隔(S) */
+    optional ProtoFScalar /*ProtoFScalar*/ level_up_interval = 3;
+    /** 升级的开始时间 */
+    optional ProtoFScalar /*ProtoFScalar*/ level_up_beginTime = 4;
+    /** 升级的结束时间 */
+    optional ProtoFScalar /*ProtoFScalar*/ level_up_endTime = 5;
+    /** 切换配置的时间间隔(S) */
+    optional ProtoFScalar /*ProtoFScalar*/ setting_change_interval = 6;
+    /** 产生小兵间隔 */
+    repeated ProtoFScalar /*ProtoFScalar*/ interval_creep = 7;
+    /** 产生一波间隔 */
+    repeated ProtoFScalar /*ProtoFScalar*/ interval_wave = 8;
+}
+
+message CREEP_SPAWNER_CONF_ARRAY {
+    repeated CREEP_SPAWNER_CONF items = 1;
+}

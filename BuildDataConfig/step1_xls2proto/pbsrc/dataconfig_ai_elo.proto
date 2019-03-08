@@ -1,0 +1,30 @@
+/**
+* @file:   dataconfig_ai_elo.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message AI_ELO{
+    /** ID */
+    optional uint32 id = 1 [default = 0];
+    /** elo区间 */
+    repeated int32 elo_range = 2;
+    /** 敌方AI难度(1代表入门，2代表简单，3代表一般） */
+    repeated AiLevel ai_level_1 = 3;
+    /** 友方AI难度(1代表入门，2代表简单，3代表一般，不需要）1玩家带4电脑，字段中表示4个电脑的难度 */
+    repeated AiLevel ai_level_2 = 4;
+    /** 友方AI难度(1代表入门，2代表简单，3代表一般，不需要）2玩家带3电脑，字段中表示3个电脑的难度 */
+    repeated AiLevel ai_level_3 = 5;
+    /** 友方AI难度(1代表入门，2代表简单，3代表一般，不需要）3玩家带2电脑，字段中表示2个电脑的难度 */
+    repeated AiLevel ai_level_4 = 6;
+    /** 友方AI难度(1代表入门，2代表简单，3代表一般，不需要）4玩家带1电脑，字段中表示1个电脑的难度 */
+    repeated AiLevel ai_level_5 = 7;
+}
+
+message AI_ELO_ARRAY {
+    repeated AI_ELO items = 1;
+}

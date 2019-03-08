@@ -1,0 +1,24 @@
+/**
+* @file:   dataconfig_stat_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message STAT_CONF{
+    /** 状态名称 */
+    optional string name = 1 [default = ""];
+    /** 状态最小值 */
+    optional ProtoFScalar /*ProtoFScalar*/ min_value = 2;
+    /** 状态最大值 */
+    optional ProtoFScalar /*ProtoFScalar*/ max_value = 3;
+    /** 显示名称 */
+    optional string display_name = 4 [default = ""];
+}
+
+message STAT_CONF_ARRAY {
+    repeated STAT_CONF items = 1;
+}

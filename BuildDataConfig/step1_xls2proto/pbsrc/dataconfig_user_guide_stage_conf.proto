@@ -1,0 +1,28 @@
+/**
+* @file:   dataconfig_user_guide_stage_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message USER_GUIDE_STAGE_CONF{
+    /** id */
+    required uint32 id = 1 [default = 0];
+    /** 对应于USER_GUIDE_CONF中的stage */
+    optional uint32 stageID = 2 [default = 0];
+    /** 进入游戏前的阶段 */
+    optional bool beforeEnterGame = 3 [default = false];
+    /** 完成后跳转到下一阶段（如果不连续就不填） */
+    optional uint32 gotoStage = 4 [default = 0];
+    /** 模块名称 */
+    optional string moduleName = 5 [default = ""];
+    /** 战场ID */
+    optional uint32 arenaMode = 6 [default = 0];
+}
+
+message USER_GUIDE_STAGE_CONF_ARRAY {
+    repeated USER_GUIDE_STAGE_CONF items = 1;
+}

@@ -1,0 +1,20 @@
+/**
+* @file:   dataconfig_level_up_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message LEVEL_UP_CONF{
+    /** 等级 */
+    optional int32 id = 1 [default = 0];
+    /** 下一等级经验 */
+    optional uint32 exp = 2 [default = 0];
+}
+
+message LEVEL_UP_CONF_ARRAY {
+    repeated LEVEL_UP_CONF items = 1;
+}

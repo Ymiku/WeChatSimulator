@@ -1,0 +1,14 @@
+E:\Toys\XmlChanger\XmlChanger\bin\Release\XmlChanger.exe.config
+E:\Toys\XmlChanger\XmlChanger\bin\Release\XmlChanger.exe
+E:\Toys\XmlChanger\XmlChanger\bin\Release\XmlChanger.pdb
+E:\Toys\XmlChanger\XmlChanger\bin\Release\ICSharpCode.SharpZipLib.dll
+E:\Toys\XmlChanger\XmlChanger\bin\Release\NPOI.dll
+E:\Toys\XmlChanger\XmlChanger\bin\Release\NPOI.OOXML.dll
+E:\Toys\XmlChanger\XmlChanger\bin\Release\NPOI.OpenXml4Net.dll
+E:\Toys\XmlChanger\XmlChanger\bin\Release\NPOI.OpenXmlFormats.dll
+E:\Toys\XmlChanger\XmlChanger\bin\Release\NPOI.xml
+E:\Toys\XmlChanger\XmlChanger\bin\Release\NPOI.OOXML.xml
+E:\Toys\XmlChanger\XmlChanger\bin\Release\NPOI.OpenXml4Net.xml
+E:\Toys\XmlChanger\XmlChanger\obj\Release\XmlChanger.csprojResolveAssemblyReference.cache
+E:\Toys\XmlChanger\XmlChanger\obj\Release\XmlChanger.exe
+E:\Toys\XmlChanger\XmlChanger\obj\Release\XmlChanger.pdb

@@ -1,0 +1,55 @@
+/**
+* @file:   dataconfig_combo_ability.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message COMBO_ABILITY{
+    /** 组合技能 ID */
+    required uint32 id = 1 [default = 0];
+    /** 组合技能名称 */
+    optional string name = 2 [default = ""];
+    /** 技能键位
+        (0:无键位1:Q,2:W,3:E,4:R,5:D,6:F
+        7:天生被动,15:召唤师技能,16:天赋技能
+    */
+    optional int32 slot_key = 3 [default = 0];
+    /** 技能定位
+（1:物理,2:法术,3:真实,4:控制) */
+    repeated int32 position = 4;
+    /** 显示在技能icon上的文本（默认与name字段对其） */
+    optional string slotLabel = 5 [default = ""];
+    /** 技能标签
+        1、伤害
+        2、防御（护盾、恢复、临时生命）
+        3、位移（加速、闪现、冲锋等）
+        4、控制（减速、晕眩、禁锢、击飞、击退）
+    */
+    repeated int32 ability_tags = 6;
+    /**  键位Icon资源 */
+    repeated string icon_res = 7;
+    /** 子技能列表
+(自动替换的多段主动技能按此配置顺序替换) */
+    repeated uint32 atomic_ability = 8;
+    /** 最大等级 */
+    optional int32 max_level = 9 [default = 0];
+    /** 解锁技能的英雄等级 */
+    repeated int32 unlock_levels = 10;
+    /** 解锁天赋技能的经验值 */
+    repeated int32 unlock_exp = 11;
+    /** 如果是多段技能
+        是否需要自动替换
+        （默认0：手动替换
+        1：自动替换）
+        由技能开发填写
+    */
+    optional int32 auto_replace_multi_ability = 12 [default = 0];
+}
+
+message COMBO_ABILITY_ARRAY {
+    repeated COMBO_ABILITY items = 1;
+}

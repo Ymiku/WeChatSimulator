@@ -1,0 +1,32 @@
+/**
+* @file:   dataconfig_creep_spawn_rule_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message CREEP_SPAWN_RULE_CONF{
+    /** 兵营id */
+    optional uint32 id = 1 [default = 0];
+    /** 小兵ID */
+    optional uint32 creep_id = 2 [default = 0];
+    /** 小兵类型 */
+    optional string type = 3 [default = ""];
+    /** 敌方水晶没销毁每波产生个数 */
+    repeated int32 creep_num_zero = 4;
+    /** 对方水晶销毁(每波产生个数) */
+    repeated int32 creep_num_one = 5;
+    /** 对方三座水晶全销毁(每波产生个数) */
+    repeated int32 creep_num_three = 6;
+    /** 开始时间 */
+    optional ProtoFScalar /*ProtoFScalar*/ begin_Time = 7;
+    /** 几波生成一次 */
+    repeated int32 wave_gap = 8;
+}
+
+message CREEP_SPAWN_RULE_CONF_ARRAY {
+    repeated CREEP_SPAWN_RULE_CONF items = 1;
+}

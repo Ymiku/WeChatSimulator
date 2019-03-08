@@ -1,0 +1,22 @@
+/**
+* @file:   dataconfig_arena_mode_maptype_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message ARENA_MODE_MAPTYPE_CONF{
+    /** 地图类型 */
+    optional string id = 1 [default = ""];
+    /** 名称 */
+    optional string name = 2 [default = ""];
+    /** 图标 */
+    optional string icon = 3 [default = ""];
+}
+
+message ARENA_MODE_MAPTYPE_CONF_ARRAY {
+    repeated ARENA_MODE_MAPTYPE_CONF items = 1;
+}

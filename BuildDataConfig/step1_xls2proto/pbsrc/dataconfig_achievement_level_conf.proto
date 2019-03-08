@@ -1,0 +1,22 @@
+/**
+* @file:   dataconfig_achievement_level_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message ACHIEVEMENT_LEVEL_CONF{
+    /** 成就等级id */
+    optional uint32 id = 1 [default = 0];
+    /** 升级所需的成就点数 */
+    optional int32 AchievementPoint = 2 [default = 0];
+    /** 升级所对应的任务id */
+    optional int32 TaskId = 3 [default = 0];
+}
+
+message ACHIEVEMENT_LEVEL_CONF_ARRAY {
+    repeated ACHIEVEMENT_LEVEL_CONF items = 1;
+}

@@ -1,0 +1,63 @@
+/**
+* @file:   dataconfig_projectile_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message PROJECTILE_CONF{
+    /** ID:规则见批注 */
+    optional uint32 id = 1 [default = 0];
+    /** 名字
+（不能为空） */
+    optional string name = 2 [default = ""];
+    /** pm路径 */
+    optional string play_maker_path = 3 [default = ""];
+    /** 皮肤ID */
+    optional uint32 defaultSkinID = 4 [default = 0];
+    /** 初始速度 */
+    optional int32 speed = 5 [default = 0];
+    /** 加速度 */
+    optional ProtoFScalar /*ProtoFScalar*/ accelerate_speed = 6;
+    /** 最大运动速度 */
+    optional int32 max_speed = 7 [default = 0];
+    /** 生命周期（单位为秒） */
+    optional ProtoFScalar /*ProtoFScalar*/ life_time = 8;
+    /** 最大攻击范围 */
+    optional int32 max_range = 9 [default = 0];
+    /** 碰撞半径 */
+    optional ProtoFScalar /*ProtoFScalar*/ collider_radius = 10;
+    /** 最大击中次数 */
+    optional int32 max_hit_time = 11 [default = 0];
+    /** 固定飞行高度 */
+    optional int32 fixed_fly_height = 12 [default = 0];
+    /** 有效目标的Tag
+        （不填就是默认小兵，英雄和塔，
+        填了的话就只对填了的有效)
+    */
+    repeated string valid_tags = 13;
+    /** 投掷物身上挂的特效ID */
+    repeated int32 effectPlayerIds = 14;
+    /** 消失效果 */
+    optional string finish_effect = 15 [default = ""];
+    /** 小地图Item项 */
+    optional string MinimapProxyPath = 16 [default = ""];
+    /** 小地图上的Icon路径 */
+    optional string minimap_icon = 17 [default = ""];
+    /** 迷雾视野外圈范围半径(0表示没有视野) */
+    optional ProtoFScalar /*ProtoFScalar*/ visible_range = 18;
+    /** 忽略障碍物，默认为不忽略0，忽略为1 */
+    optional int32 ignore_occlusion = 19 [default = 0];
+    /** 忽略己方，默认为不忽略0，忽略为1 */
+    optional int32 ignore_teammate = 20 [default = 0];
+    /** 造成伤害后暴露视野的时间
+大于0为有效时间否则不暴露 */
+    optional ProtoFScalar /*ProtoFScalar*/ expose_revealer_duration = 21;
+}
+
+message PROJECTILE_CONF_ARRAY {
+    repeated PROJECTILE_CONF items = 1;
+}

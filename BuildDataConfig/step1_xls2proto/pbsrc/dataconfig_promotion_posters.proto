@@ -1,0 +1,26 @@
+/**
+* @file:   dataconfig_promotion_posters.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message PROMOTION_POSTERS{
+    /**  */
+    optional uint32 id = 1 [default = 0];
+    /** 轮播宣传图 */
+    optional string icon = 2 [default = ""];
+    /** 是否上架 */
+    optional bool Enable = 3 [default = false];
+    /** 跳转至哪个窗口 */
+    optional string GoToWindow = 4 [default = ""];
+    /** 跳转数据 */
+    optional string GoToData = 5 [default = ""];
+}
+
+message PROMOTION_POSTERS_ARRAY {
+    repeated PROMOTION_POSTERS items = 1;
+}

@@ -1,0 +1,26 @@
+/**
+* @file:   dataconfig_global_config.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message GLOBAL_CONFIG{
+    /** 序号 */
+    required uint32 id = 1 [default = 0];
+    /** 名字 */
+    optional string key = 2 [default = ""];
+    /** 数字 */
+    optional int32 num = 3 [default = 0];
+    /** 数组 */
+    repeated int32 numList = 4;
+    /** 字符串 */
+    optional string str = 5 [default = ""];
+}
+
+message GLOBAL_CONFIG_ARRAY {
+    repeated GLOBAL_CONFIG items = 1;
+}

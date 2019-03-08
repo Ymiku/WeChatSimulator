@@ -1,0 +1,20 @@
+/**
+* @file:   dataconfig_attack_sound_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message ATTACK_SOUND_CONF{
+    /** 音效ID */
+    optional uint32 key = 1 [default = 0];
+    /** 攻击音效 */
+    optional string sound = 2 [default = ""];
+}
+
+message ATTACK_SOUND_CONF_ARRAY {
+    repeated ATTACK_SOUND_CONF items = 1;
+}

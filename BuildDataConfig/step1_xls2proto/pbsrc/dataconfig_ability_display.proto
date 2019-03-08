@@ -1,0 +1,39 @@
+/**
+* @file:   dataconfig_ability_display.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message ABILITY_DISPLAY{
+    /** 组合技能 ID */
+    required uint32 id = 1 [default = 0];
+    /** 组合技能名称 */
+    optional string name = 2 [default = ""];
+    /** 技能描述 */
+    optional string description = 3 [default = ""];
+    /** 技能定位
+（1:物理,2:法术,3:真实,4:控制) */
+    repeated int32 position = 4;
+    /** 冷却时间 */
+    repeated string cd = 5;
+    /** 耗蓝 */
+    repeated string manaCost = 6;
+    /** 结构体声明 */
+
+    message InternalType_stats{
+        /** 属性名称 */
+        optional string statName = 1 [default = ""];
+        /** 变化值 */
+        repeated string stat_per_level = 2;
+    }
+
+    repeated InternalType_stats stats = 7;
+}
+
+message ABILITY_DISPLAY_ARRAY {
+    repeated ABILITY_DISPLAY items = 1;
+}

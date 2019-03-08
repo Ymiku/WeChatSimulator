@@ -1,0 +1,78 @@
+/**
+* @file:   dataconfig_ability_input.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message ABILITY_INPUT{
+    /** 子技能 ID */
+    required uint32 id = 1 [default = 0];
+    /** 技能所需参数类型 
+ */
+    optional int32 input_type = 2 [default = 0];
+    /** 在没有目标的情况下是否要释放技能，针对只能施法下的位置型技能(1为是,0为否) */
+    optional int32 not_target_is_cast = 3 [default = 0];
+    /** input逻辑表现
+ */
+    optional int32 input_logic = 4 [default = 0];
+    /** 辅助器表现资源 */
+    optional string assistant = 5 [default = ""];
+    /** 技能释放的合法半径
+ */
+    repeated ProtoFScalar /*ProtoFScalar*/ cast_distances = 6;
+    /** 只搜索前方单位 */
+    optional int32 only_search_forward = 7 [default = 0];
+    /** 指示器角度 */
+    optional ProtoFScalar /*ProtoFScalar*/ angle = 8;
+    /** 指示器宽度 */
+    optional ProtoFScalar /*ProtoFScalar*/ width = 9;
+    /** 额外方向宽度（用于组合型指示器） */
+    optional ProtoFScalar /*ProtoFScalar*/ direction_width = 10;
+    /** 技能目标选择的搜索半径 */
+    optional ProtoFScalar /*ProtoFScalar*/ search_distance = 11;
+    /** 有效目标的Tag
+        （不填就是默认小兵，英雄和塔，
+        填了的话就只对填了的有效)
+        TagType
+    */
+    repeated string valid_tags = 12;
+    /** 忽略中立物（野怪）; 忽略敌方; 忽略队友; 忽略不可见对象 */
+    repeated bool ignores = 13;
+    /** 是否忽略施法者(1忽略 0不忽略 ) */
+    optional int32 ignore_owner = 14 [default = 0];
+    /** 选中标识(当一个目标被选中时的特效)
+ */
+    optional int32 pick_effet_id = 15 [default = 0];
+    /** 自动搜索目标普通特效 */
+    optional int32 auto_select_normal_effect = 16 [default = 0];
+    /** 自动选择目标可击杀特效 */
+    optional int32 auto_select_kill_effect = 17 [default = 0];
+    /** 技能选择方式
+        （0默认配置；
+        1特殊技能（通过其他方式直接设置输入目标给技能））
+    */
+    optional int32 select_type = 18 [default = 0];
+    /** health;distance(默认0;1) */
+    repeated ProtoFScalar /*ProtoFScalar*/ weights = 19;
+    /** 选中目标可以被该技能击杀
+ */
+    optional int32 kill_effet_id = 20 [default = 0];
+    /** 选中目标无法被该技能击杀
+ */
+    optional int32 can_not_kill_effet_id = 21 [default = 0];
+    /** 技能所需参数类型(临时保留)
+ */
+    optional int32 input_type_old = 22 [default = 0];
+    /** AI技能分类 */
+    repeated int32 AiSkill_type = 23;
+    /** AI技能合理释放距离 */
+    repeated ProtoFScalar /*ProtoFScalar*/ AiRange = 24;
+}
+
+message ABILITY_INPUT_ARRAY {
+    repeated ABILITY_INPUT items = 1;
+}

@@ -1,0 +1,7 @@
+/Users/qqfarm/Documents/workspace/tencent/naruto_next_proj/trunk/TheNextMOBA/BuildDataConfig/NextConfigTools/NextConfigTools/obj/x86/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/qqfarm/Documents/workspace/tencent/naruto_next_proj/trunk/TheNextMOBA/BuildDataConfig/NextConfigTools/NextConfigTools/bin/Release/NextConfigTools.exe.mdb
+/Users/qqfarm/Documents/workspace/tencent/naruto_next_proj/trunk/TheNextMOBA/BuildDataConfig/NextConfigTools/NextConfigTools/bin/Release/NextConfigTools.exe
+/Users/qqfarm/Documents/workspace/tencent/naruto_next_proj/trunk/TheNextMOBA/BuildDataConfig/NextConfigTools/NextConfigTools/obj/x86/Release/NextConfigTools.exe
+/Users/qqfarm/Documents/workspace/tencent/naruto_next_proj/trunk/TheNextMOBA/BuildDataConfig/NextConfigTools/NextConfigTools/obj/x86/Release/NextConfigTools.exe.mdb
+/Users/qqfarm/Documents/workspace/tencent/naruto_next_proj/trunk/TheNextMOBA/BuildDataConfig/NextConfigTools/Release/NextConfigTools.exe.mdb
+/Users/qqfarm/Documents/workspace/tencent/naruto_next_proj/trunk/TheNextMOBA/BuildDataConfig/NextConfigTools/Release/NextConfigTools.exe

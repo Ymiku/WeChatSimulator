@@ -1,0 +1,22 @@
+/**
+* @file:   dataconfig_localization_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message LOCALIZATION_CONF{
+    /** id */
+    optional string id = 1 [default = ""];
+    /** 简体中文 */
+    optional string CN = 2 [default = ""];
+    /** 英语 */
+    optional string US = 3 [default = ""];
+}
+
+message LOCALIZATION_CONF_ARRAY {
+    repeated LOCALIZATION_CONF items = 1;
+}

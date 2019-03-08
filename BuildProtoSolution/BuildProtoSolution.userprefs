@@ -1,0 +1,10 @@
+﻿<Properties StartupItem="ProtobufProtocol/ProtobufProtocol.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../NarutoMOBA/Assets/Scripts/Utility/Utility.cs" line="98" offsetX="839" offsetY="1455" expression="effectObj.transform.position" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+</Properties>

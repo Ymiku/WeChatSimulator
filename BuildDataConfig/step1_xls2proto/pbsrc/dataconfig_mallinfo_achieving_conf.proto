@@ -1,0 +1,20 @@
+/**
+* @file:   dataconfig_mallinfo_achieving_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message MALLINFO_ACHIEVING_CONF{
+    /**  */
+    optional MallAchievingType name = 1 [default = MA_NORMAL_SALE];
+    /** 显示名称 */
+    optional string DisplayName = 2 [default = ""];
+}
+
+message MALLINFO_ACHIEVING_CONF_ARRAY {
+    repeated MALLINFO_ACHIEVING_CONF items = 1;
+}

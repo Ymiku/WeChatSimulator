@@ -1,0 +1,5 @@
+package dataconfig;
+
+message ProtoFScalar {
+    optional int32 rawValue = 1 [default = 0];
+}

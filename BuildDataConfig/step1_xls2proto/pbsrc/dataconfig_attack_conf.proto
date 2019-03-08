@@ -1,0 +1,87 @@
+/**
+* @file:   dataconfig_attack_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message ATTACK_CONF{
+    /** 普通攻击ID */
+    optional uint32 id = 1 [default = 0];
+    /** 普通攻击名称，只是用来更好的查看 */
+    optional string name = 2 [default = ""];
+    /** 普通攻击类型，1为近攻，2为远攻，3为范围攻击 */
+    optional uint32 type = 3 [default = 0];
+    /** 伤害类型
+        (物理伤害physical;
+        魔法伤害magic;
+        真实伤害true;
+        纯粹伤害pure)
+    */
+    optional string damage_type = 4 [default = ""];
+    /** 动作名字 */
+    repeated string attack_anim_name = 5;
+    /** 暴击动作名字 */
+    repeated string crit_anim_name = 6;
+    /** 爆击特效ID
+（用于远攻抛射物） */
+    repeated int32 crit_effect_id = 7;
+    /** 攻击特效id */
+    repeated uint32 cast_effect_id = 8;
+    /** 近攻就是真实伤害时间，远攻就是抛射物发射时间 */
+    optional ProtoFScalar /*ProtoFScalar*/ cast_time = 9;
+    /** 伤害次数（默认伤害1次） */
+    optional uint32 damage_num = 10 [default = 0];
+    /** 每次伤害百分比（默认为100%） */
+    repeated ProtoFScalar /*ProtoFScalar*/ damage_percent = 11;
+    /** 攻击时间（普攻在攻击状态的时间，默认为一帧，所填值以秒为单位） */
+    optional ProtoFScalar /*ProtoFScalar*/ attack_time = 12;
+    /** 抛射物ID */
+    optional uint32 projectile_id = 13 [default = 0];
+    /** 抛射物曲线id */
+    optional uint32 curve_id = 14 [default = 0];
+    /** 方向类型 */
+    optional uint32 direction_type = 15 [default = 0];
+    /** 伤害特效id */
+    repeated uint32 hit_effect_id = 16;
+    /** 攻击范围（AOE普攻，不同于溅射） */
+    optional ProtoFScalar /*ProtoFScalar*/ aoe_range = 17;
+    /** 暴击伤害特效ID */
+    repeated uint32 crit_hit_effect_id = 18;
+    /** 转身速度 */
+    optional ProtoFScalar /*ProtoFScalar*/ turn_speed = 19;
+    /** 瞬转 */
+    optional uint32 turn_immediate = 20 [default = 0];
+    /** 技能选择方式（0默认配置1特殊技能） */
+    optional int32 select_type = 21 [default = 0];
+    /** health;distance(默认0;1) */
+    repeated ProtoFScalar /*ProtoFScalar*/ weights = 22;
+    /** 最小攻速（默认为全局最小值，见Stat表 */
+    optional ProtoFScalar /*ProtoFScalar*/ min_attack_speed = 23;
+    /** 最大攻速（默认为全局最大值，见Stat表） */
+    optional ProtoFScalar /*ProtoFScalar*/ max_attack_speed = 24;
+    /** 资源消耗（默认为不消耗） */
+    optional ProtoFScalar /*ProtoFScalar*/ cost_resource = 25;
+    /** 有效目标的Tag
+        （不填就是所有类型，填了的话就只对填了的有效)
+        TagType
+    */
+    repeated string valid_tags = 26;
+    /** 忽略中立物（野怪）; 忽略敌方; 忽略队友; 忽略不可见对象 */
+    repeated bool ignores = 27;
+    /** 是否忽略施法者(1忽略 0不忽略 ) */
+    optional bool ignore_owner = 28 [default = false];
+    /** 后摇动画强制播放时间 */
+    optional ProtoFScalar /*ProtoFScalar*/ after_attack_ani_force_playtime = 29;
+    /** 是否长期显示指示器(1是,0否) */
+    optional bool is_assistant_long_term = 30 [default = false];
+    /** 不转身朝向攻击目标 */
+    optional bool dont_turn_body = 31 [default = false];
+}
+
+message ATTACK_CONF_ARRAY {
+    repeated ATTACK_CONF items = 1;
+}

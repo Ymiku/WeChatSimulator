@@ -1,0 +1,56 @@
+/**
+* @file:   dataconfig_monster_spawner_conf.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package dataconfig;
+import "ProtoFScalar.proto";
+import "xls_enum.proto";
+
+message MONSTER_SPAWNER_CONF{
+    /** 野怪据点ID */
+    optional uint32 id = 1 [default = 0];
+    /** 野怪据点名字 */
+    optional string name = 2 [default = ""];
+    /** 野怪据点野怪ID列表 */
+    repeated uint32 monsters = 3;
+    /** 野怪据点出生时间（分帧，加了点偏移） */
+    optional ProtoFScalar /*ProtoFScalar*/ spawn_time = 4;
+    /** 野怪据点刷新时间 */
+    optional ProtoFScalar /*ProtoFScalar*/ refresh_interval = 5;
+    /** 据点野怪成长时间间隔 */
+    optional ProtoFScalar /*ProtoFScalar*/ level_up_interval = 6;
+    /** 据点野怪成长的起始时间 */
+    optional ProtoFScalar /*ProtoFScalar*/ level_up_beginTime = 7;
+    /** 据点野怪成长结束时间 */
+    optional ProtoFScalar /*ProtoFScalar*/ level_up_endTime = 8;
+    /** 野怪活动范围 */
+    optional ProtoFScalar /*ProtoFScalar*/ activity_range = 9;
+    /** 野怪死后灵魂（眼）ID */
+    optional uint32 ward_id = 10 [default = 0];
+    /** 灵魂存活时间 */
+    optional ProtoFScalar /*ProtoFScalar*/ ward_life = 11;
+    /** 眼的视野范围 */
+    optional ProtoFScalar /*ProtoFScalar*/ ward_view_range = 12;
+    /** 出生特效ID */
+    optional uint32 born_effect_id = 13 [default = 0];
+    /** 形态特效ID */
+    optional uint32 skin_effect_id = 14 [default = 0];
+    /** 主角放风筝次数 */
+    optional int32 kite_time = 15 [default = 0];
+    /** 免疫状态 */
+    repeated string immunity_state = 16;
+    /** 强制回家回血buff(含大龙) */
+    optional uint32 force_back_buff = 17 [default = 0];
+    /** 死亡时掉落的buff */
+    repeated uint32 drop_buff_id = 18;
+    /** 掉落buff作用域 */
+    optional uint32 drop_buff_field = 19 [default = 0];
+    /** 出生延时 */
+    optional ProtoFScalar /*ProtoFScalar*/ spawn_delay = 20;
+}
+
+message MONSTER_SPAWNER_CONF_ARRAY {
+    repeated MONSTER_SPAWNER_CONF items = 1;
+}
