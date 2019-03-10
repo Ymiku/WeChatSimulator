@@ -2,3 +2,8 @@
 /Temp/*
 /.vs/*
 /UnityPackageManager/*
+PaymentAppSimulator.csproj
+PaymentAppSimulator.Editor.csproj
+PaymentAppSimulator.Editor.Plugins.csproj
+PaymentAppSimulator.Plugins.csproj
+PaymentAppSimulator.sln
