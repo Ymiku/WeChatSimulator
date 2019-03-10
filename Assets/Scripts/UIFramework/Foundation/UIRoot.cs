@@ -12,7 +12,7 @@ namespace UIFrameWork
             UIManager.Create();
             Localization.Create();
 			UIManager.Instance.StartUILine (UIManager.UILine.MainMenu);
-			UIManager.Instance.Push (new LogInContext());
+			UIManager.Instance.Push (new LoadingContext());
         }
 		void Update()
 		{
@@ -20,7 +20,7 @@ namespace UIFrameWork
 			if(Input.GetKeyDown(KeyCode.Escape))
 			{
 				if (!UIManager.Instance.isQuit) {
-					AudioManager.Instance.PlayUISound (4);
+					//AudioManager.Instance.PlayUISound (4);
 					//UIManager.Instance.Push (new QuitContext ());
 				}
 			}

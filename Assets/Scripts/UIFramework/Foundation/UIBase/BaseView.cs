@@ -43,8 +43,6 @@ namespace UIFrameWork
 		}
 		public virtual void PopCallBack()
 		{
-			if (!GameManager.Instance.CanOperate ())
-				return;
 			if (_isPause)
 				return;
 			PlaySound (9);
@@ -52,8 +50,6 @@ namespace UIFrameWork
 		}
 		public virtual void PopAndTransCallBack()
 		{
-			if (!GameManager.Instance.CanOperate ())
-				return;
 			if (_isPause)
 				return;
 			PlaySound (9);
@@ -70,7 +66,7 @@ namespace UIFrameWork
         }
 		public void PlaySound(int i)
 		{
-			AudioManager.Instance.PlayUISound (i);
+			//AudioManager.Instance.PlayUISound (i);
 		}
 	}
 }

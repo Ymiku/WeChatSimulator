@@ -36,33 +36,8 @@ namespace UIFrameWork{
 			//shieldImage.fillAmount = Mathf.Lerp (shieldImage.fillAmount,_playerPawn.hp/_playerPawn.maxShield,Time.deltaTime);
 		}
 
-		public void Interact ()
-		{
-			InputManager.Instance.isInteract = true;
-		}
-
-		public void PowerUp ()
-		{
-			
-			if (InputManager.Instance.isPowerUp) {
-				speedUp.fillAmount = 1f;
-			} else {
-				speedUp.fillAmount = 0f;
-			}
-		}
-			
-		public void AttackEnter ()
-		{
-			InputManager.Instance.isAttack = true;
-		}
-		public void AttackExit ()
-		{
-			InputManager.Instance.isAttack = false;
-		}
-		public void Skill (int i)
-		{
-			InputManager.Instance.isSkill[i] = true;
-		}
+		
+		
 	}
 	public class GamePlayContext :BaseContext
 	{

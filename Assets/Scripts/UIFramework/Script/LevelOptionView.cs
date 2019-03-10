@@ -43,8 +43,6 @@ namespace UIFrameWork
 
 		public void ResetCallBack()
 		{
-			if (!GameManager.Instance.CanOperate ())
-				return;
 			PlaySound (4);;
 			UIManager.Instance.StartBlackTrans ();
 			UIManager.Instance.StartUILine (UIManager.UILine.LevelMenu);

@@ -238,6 +238,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="PaymentAppSimulator.Plugins.csproj">
+      <Project>{DF34206A-3647-80C7-2FF7-625F4557C5ED}</Project>
+      <Name>PaymentAppSimulator.Plugins</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Scripts\DontDestoryOnLoad.cs" />
     <Compile Include="Assets\Scripts\PoolManager\IPoolable.cs" />
     <Compile Include="Assets\Scripts\PoolManager\LCGameObject.cs" />
@@ -277,6 +283,34 @@
   <ItemGroup>
     <None Include="Assets\Scripts\UIFramework\Resources\Localization\Chinese.json.txt" />
     <None Include="Assets\Scripts\UIFramework\Resources\Localization\English.json.txt" />
+    <None Include="Assets\Standard Assets\Effects\AmbientOcclusion\Resources\AmbientOcclusion.cginc" />
+    <None Include="Assets\Standard Assets\Effects\AmbientOcclusion\Resources\AmbientOcclusion.shader" />
+    <None Include="Assets\Standard Assets\Effects\AmbientOcclusion\Resources\Common.cginc" />
+    <None Include="Assets\Standard Assets\Effects\AmbientOcclusion\Resources\Composition.cginc" />
+    <None Include="Assets\Standard Assets\Effects\AmbientOcclusion\Resources\SeparableBlur.cginc" />
+    <None Include="Assets\Standard Assets\Effects\AntiAliasing\FXAA\Resources\FXAA.shader" />
+    <None Include="Assets\Standard Assets\Effects\AntiAliasing\FXAA\Resources\FXAA3.cginc" />
+    <None Include="Assets\Standard Assets\Effects\AntiAliasing\SMAA\Resources\SMAA.cginc" />
+    <None Include="Assets\Standard Assets\Effects\AntiAliasing\SMAA\Resources\SMAA.shader" />
+    <None Include="Assets\Standard Assets\Effects\Bloom\Resources\Bloom.cginc" />
+    <None Include="Assets\Standard Assets\Effects\Bloom\Resources\Bloom.shader" />
+    <None Include="Assets\Standard Assets\Effects\DepthOfField\Resources\BokehSplatting.shader" />
+    <None Include="Assets\Standard Assets\Effects\DepthOfField\Resources\DepthOfField.shader" />
+    <None Include="Assets\Standard Assets\Effects\DepthOfField\Resources\MedianFilter.shader" />
+    <None Include="Assets\Standard Assets\Effects\LensAberrations\Resources\LensAberrations.shader" />
+    <None Include="Assets\Standard Assets\Effects\MotionBlur\Resources\Common.cginc" />
+    <None Include="Assets\Standard Assets\Effects\MotionBlur\Resources\FrameBlending.shader" />
+    <None Include="Assets\Standard Assets\Effects\MotionBlur\Resources\Prefilter.cginc" />
+    <None Include="Assets\Standard Assets\Effects\MotionBlur\Resources\Reconstruction.cginc" />
+    <None Include="Assets\Standard Assets\Effects\MotionBlur\Resources\Reconstruction.shader" />
+    <None Include="Assets\Standard Assets\Effects\ScreenSpaceReflection\Resources\ScreenSpaceRaytrace.cginc" />
+    <None Include="Assets\Standard Assets\Effects\ScreenSpaceReflection\Resources\ScreenSpaceReflection.shader" />
+    <None Include="Assets\Standard Assets\Effects\TemporalAntiAliasing\Resources\TemporalAntiAliasing.cginc" />
+    <None Include="Assets\Standard Assets\Effects\TemporalAntiAliasing\Resources\TemporalAntiAliasing.shader" />
+    <None Include="Assets\Standard Assets\Effects\TonemappingColorGrading\Resources\HistogramCompute.compute" />
+    <None Include="Assets\Standard Assets\Effects\TonemappingColorGrading\Resources\HistogramRender.shader" />
+    <None Include="Assets\Standard Assets\Effects\TonemappingColorGrading\Resources\TonemappingColorGrading.cginc" />
+    <None Include="Assets\Standard Assets\Effects\TonemappingColorGrading\Resources\TonemappingColorGrading.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using UnityStandardAssets.ImageEffects;
+using UnityStandardAssets.CinematicEffects;
 
 namespace UIFrameWork
 {
@@ -30,7 +30,7 @@ namespace UIFrameWork
         private UIManager()
         {
             _canvas = GameObject.Find("Canvas").transform;
-			_blackEffect = CameraController.Instance.GetComponent<BlackEffect> ();
+			_blackEffect = Camera.main.GetComponent<BlackEffect> ();
             foreach (Transform item in _canvas)
             {
 				if(!item.CompareTag("InitUI"))
@@ -159,7 +159,7 @@ namespace UIFrameWork
 						_blackEffect.count -= 1000f;
 					}
 				}
-			} else if(_blackEffect.count<1f&&GameManager.Instance.CanOperate()){
+			} else if(_blackEffect.count<1f){
 				_blackEffect.count += 4f * Time.deltaTime;
 			}
 		}

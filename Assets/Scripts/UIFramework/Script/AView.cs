@@ -42,8 +42,6 @@ namespace UIFrameWork
 		}
 		public void BackCallBack()
 		{
-			if (!GameManager.Instance.CanOperate ())
-				return;
 			UIManager.Instance.Pop ();
 		}
 
