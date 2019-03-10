@@ -10,9 +10,7 @@ namespace UIFrameWork
 		protected bool _isPause = false;
 		void Awake()
 		{
-			#if UNITY_EDITOR
 			Init();
-			#endif
 		}
 		public virtual void Init()
 		{
@@ -48,21 +46,14 @@ namespace UIFrameWork
 			PlaySound (9);
 			UIManager.Instance.Pop ();
 		}
-		public virtual void PopAndTransCallBack()
-		{
-			if (_isPause)
-				return;
-			PlaySound (9);
-			UIManager.Instance.StartBlackTrans ();
-			UIManager.Instance.Pop ();
-		}
 		void Update()
 		{
 			Excute ();
 		}
-        public void DestroySelf()
+        public void DestroySelf(bool force = false)
         {
-            Destroy(gameObject);
+            if(force||!enabled)
+                Destroy(gameObject);
         }
 		public void PlaySound(int i)
 		{

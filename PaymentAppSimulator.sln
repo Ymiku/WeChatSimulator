@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentAppSimulator.Plugins", "PaymentAppSimulator.Plugins.csproj", "{DF34206A-3647-80C7-2FF7-625F4557C5ED}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentAppSimulator", "PaymentAppSimulator.csproj", "{6D888A7D-DB12-3F5E-BBB5-622E627ABA0F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentAppSimulator.Editor.Plugins", "PaymentAppSimulator.Editor.Plugins.csproj", "{8261D59C-E42F-2D92-F004-A7760E6F9B4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentAppSimulator.Plugins", "PaymentAppSimulator.Plugins.csproj", "{DF34206A-3647-80C7-2FF7-625F4557C5ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentAppSimulator.Editor", "PaymentAppSimulator.Editor.csproj", "{E2281A61-92B1-62B5-01F7-9F5B966E5541}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF34206A-3647-80C7-2FF7-625F4557C5ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF34206A-3647-80C7-2FF7-625F4557C5ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF34206A-3647-80C7-2FF7-625F4557C5ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF34206A-3647-80C7-2FF7-625F4557C5ED}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6D888A7D-DB12-3F5E-BBB5-622E627ABA0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6D888A7D-DB12-3F5E-BBB5-622E627ABA0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D888A7D-DB12-3F5E-BBB5-622E627ABA0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -21,10 +27,10 @@ Global
 		{8261D59C-E42F-2D92-F004-A7760E6F9B4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8261D59C-E42F-2D92-F004-A7760E6F9B4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8261D59C-E42F-2D92-F004-A7760E6F9B4B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF34206A-3647-80C7-2FF7-625F4557C5ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF34206A-3647-80C7-2FF7-625F4557C5ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF34206A-3647-80C7-2FF7-625F4557C5ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF34206A-3647-80C7-2FF7-625F4557C5ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2281A61-92B1-62B5-01F7-9F5B966E5541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2281A61-92B1-62B5-01F7-9F5B966E5541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2281A61-92B1-62B5-01F7-9F5B966E5541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2281A61-92B1-62B5-01F7-9F5B966E5541}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

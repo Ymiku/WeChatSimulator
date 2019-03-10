@@ -253,7 +253,6 @@
     <Compile Include="Assets\Scripts\PoolManager\LCType.cs" />
     <Compile Include="Assets\Scripts\PoolManager\PoolManager.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
-    <Compile Include="Assets\Scripts\UIFramework\Foundation\BlackEffect.cs" />
     <Compile Include="Assets\Scripts\UIFramework\Foundation\Extensions\DictionaryExtension.cs" />
     <Compile Include="Assets\Scripts\UIFramework\Foundation\Extensions\TransformExtension.cs" />
     <Compile Include="Assets\Scripts\UIFramework\Foundation\Localization\Localization.cs" />
@@ -270,13 +269,7 @@
     <Compile Include="Assets\Scripts\UIFramework\Foundation\UIEffect\GradientColor.cs" />
     <Compile Include="Assets\Scripts\UIFramework\Foundation\UIManager.cs" />
     <Compile Include="Assets\Scripts\UIFramework\Foundation\UIRoot.cs" />
-    <Compile Include="Assets\Scripts\UIFramework\Script\AView.cs" />
-    <Compile Include="Assets\Scripts\UIFramework\Script\GamePlayView.cs" />
-    <Compile Include="Assets\Scripts\UIFramework\Script\HighScoreItem.cs" />
-    <Compile Include="Assets\Scripts\UIFramework\Script\HighScoreView.cs" />
-    <Compile Include="Assets\Scripts\UIFramework\Script\LevelOptionView.cs" />
-    <Compile Include="Assets\Scripts\UIFramework\Script\LoadingView.cs" />
-    <Compile Include="Assets\Scripts\UIFramework\Script\NoticeView.cs" />
+    <Compile Include="Assets\Scripts\UIFramework\Scripts\TempletView.cs" />
     <Compile Include="Assets\Scripts\UIFramework\SimpleJSON\SimpleJSON.cs" />
     <Compile Include="Assets\Scripts\UnitySingleton.cs" />
   </ItemGroup>

@@ -12,17 +12,17 @@ namespace UIFrameWork
             UIManager.Create();
             Localization.Create();
 			UIManager.Instance.StartUILine (UIManager.UILine.MainMenu);
-			UIManager.Instance.Push (new LoadingContext());
+			//UIManager.Instance.Push (new LoadingContext());
         }
 		void Update()
 		{
-			UIManager.Instance.Update ();
 			if(Input.GetKeyDown(KeyCode.Escape))
 			{
 				if (!UIManager.Instance.isQuit) {
-					//AudioManager.Instance.PlayUISound (4);
-					//UIManager.Instance.Push (new QuitContext ());
-				}
+                    UIManager.Instance.isQuit = true;
+                    //AudioManager.Instance.PlayUISound (4);
+                    //UIManager.Instance.Push (new QuitContext ());
+                }
 			}
 		}
 	}

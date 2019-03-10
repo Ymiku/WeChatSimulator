@@ -37,11 +37,13 @@ namespace UIFrameWork
                 BaseContext curContext = _contextStack.Peek();
                 BaseView curView = UIManager.Instance.GetSingleUI(curContext.ViewType).GetComponent<BaseView>();
                 curView.OnPause(curContext);
+                Pool(curContext.ViewType);
             }
             _contextStack.Push(nextContext);
             BaseView nextView = UIManager.Instance.GetSingleUI(nextContext.ViewType).GetComponent<BaseView>();
 			nextView.transform.SetAsLastSibling ();
             nextView.OnEnter(nextContext);
+            Pool(nextContext.ViewType);
         }
 
         public void Pop()
@@ -54,6 +56,7 @@ namespace UIFrameWork
 
                 BaseView curView = UIManager.Instance.GetSingleUI(curContext.ViewType).GetComponent<BaseView>();
                 curView.OnExit(curContext);
+                Pool(curContext.ViewType);
             }
 
             if (_contextStack.Count != 0)
@@ -61,14 +64,17 @@ namespace UIFrameWork
                 BaseContext lastContext = _contextStack.Peek();
                 BaseView curView = UIManager.Instance.GetSingleUI(lastContext.ViewType).GetComponent<BaseView>();
                 curView.OnResume(lastContext);
+                Pool(lastContext.ViewType);
             }
         }
-		public void PopLoading()
-		{
-			if (_contextStack.Count != 0)
-			if (_contextStack.Peek () is LoadingContext)
-				Pop ();
-		}
+        void Pool(UIType type)
+        {
+            if (UIManager.Instance._UIPool.Contains(type))
+            {
+                UIManager.Instance._UIPool.Remove(type);
+            }
+            UIManager.Instance._UIPool.Add(type);
+        }
         public BaseContext PeekOrNull()
         {
             if (_contextStack.Count != 0)

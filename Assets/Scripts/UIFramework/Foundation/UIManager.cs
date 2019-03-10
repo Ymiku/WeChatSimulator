@@ -17,25 +17,20 @@ namespace UIFrameWork
 		public Dictionary<UILine,UIContext> _UILineDic = new Dictionary<UILine, UIContext>();
 
         public Dictionary<UIType, GameObject> _UIDict = new Dictionary<UIType,GameObject>();
+        public List<UIType> _UIPool = new List<UIType>();
+        int maxPoolSize = 8;
+        float poolDeltaTime = 4.0f;
 
         private Transform _canvas;
 
 		public bool isQuit = false;
 
 		public delegate void UIFunc();
-		public Queue<UIFunc> funcQueue = new Queue<UIFunc>();
-		private BlackEffect _blackEffect;
 		public bool isBlackTrans = false;
 
         private UIManager()
         {
             _canvas = GameObject.Find("Canvas").transform;
-			_blackEffect = Camera.main.GetComponent<BlackEffect> ();
-            foreach (Transform item in _canvas)
-            {
-				if(!item.CompareTag("InitUI"))
-                GameObject.Destroy(item.gameObject);
-            }
         }
 		public Transform GetCanvas()
 		{
@@ -44,46 +39,14 @@ namespace UIFrameWork
 
 		public void Push(BaseContext nextContext)
 		{
-			if (isBlackTrans) {
-				funcQueue.Enqueue (delegate() {
-					Push (nextContext);
-				});
-				return;
-			}
 			activeContext.Push (nextContext);
 		}
 		public void Pop()
 		{
-			if (isBlackTrans) {
-				funcQueue.Enqueue (delegate() {
-					Pop ();
-				});
-				return;
-			}
 			activeContext.Pop();
-		}
-		public void Loading()
-		{
-			Push (new LoadingContext());
-		}
-		public void PopLoading()
-		{
-			if (isBlackTrans) {
-				funcQueue.Enqueue (delegate() {
-					PopLoading();
-				});
-				return;
-			}
-			activeContext.PopLoading();
 		}
 		public void StartUILine(UILine line)
 		{
-			if (isBlackTrans) {
-				funcQueue.Enqueue (delegate() {
-					StartUILine (line);
-				});
-				return;
-			}
 			if (activeContext != null) {
 				activeContext.LineExit ();
 			}
@@ -95,12 +58,6 @@ namespace UIFrameWork
 		}
 		public void StartAndResetUILine(UILine line)
 		{
-			if (isBlackTrans) {
-				funcQueue.Enqueue (delegate() {
-					StartAndResetUILine (line);
-				});
-				return;
-			}
 			if (activeContext != null) {
 				activeContext.LineExit ();
 			}
@@ -136,32 +93,21 @@ namespace UIFrameWork
                 return;
             }
 
-            GameObject.Destroy(_UIDict[uiType]);
+            _UIDict[uiType].GetComponent<BaseView>().DestroySelf();
             _UIDict.Remove(uiType);
         }
-		public void StartBlackTrans()
-		{
-			isBlackTrans = true;
-		}
-		public void Update()
-		{
-			if (isBlackTrans) {
-				_blackEffect.count -= 4f * Time.deltaTime;
-				if (_blackEffect.count <= 0f) {
-					if (_blackEffect.count <= -1000f) {
-						_blackEffect.count = 0f;
-						isBlackTrans = false;
-						foreach (var item in funcQueue) {
-							item ();
-						}
-						funcQueue.Clear ();
-					} else {
-						_blackEffect.count -= 1000f;
-					}
-				}
-			} else if(_blackEffect.count<1f){
-				_blackEffect.count += 4f * Time.deltaTime;
-			}
-		}
+        void Execute()
+        {
+            TryPool();
+        }
+        void TryPool()
+        {
+            if (_UIPool.Count <= maxPoolSize||maxPoolSize == 0)
+                return;
+            while (_UIPool.Count > maxPoolSize)
+            {
+                GetSingleUI(_UIPool[0]).GetComponent<BaseView>().DestroySelf();
+            }
+        }
 	}
 }
