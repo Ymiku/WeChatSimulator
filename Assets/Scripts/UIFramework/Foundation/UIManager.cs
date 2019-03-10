@@ -104,9 +104,13 @@ namespace UIFrameWork
         {
             if (_UIPool.Count <= maxPoolSize||maxPoolSize == 0)
                 return;
-            while (_UIPool.Count > maxPoolSize)
+            for (int i = 0; i < _UIPool.Count; i++)
             {
-                GetSingleUI(_UIPool[0]).GetComponent<BaseView>().DestroySelf();
+                if (GetSingleUI(_UIPool[i]).GetComponent<BaseView>().DestroySelf())
+                    _UIPool.RemoveAt(i);
+                i--;
+                if (_UIPool.Count <= maxPoolSize)
+                    break;
             }
         }
 	}

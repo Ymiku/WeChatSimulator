@@ -50,10 +50,14 @@ namespace UIFrameWork
 		{
 			Excute ();
 		}
-        public void DestroySelf(bool force = false)
+        public bool DestroySelf(bool force = false)
         {
-            if(force||!enabled)
+            if (force || !enabled)
+            {
                 Destroy(gameObject);
+                return true;
+            }
+            return false;
         }
 		public void PlaySound(int i)
 		{
