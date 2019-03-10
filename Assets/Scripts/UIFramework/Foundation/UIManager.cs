@@ -96,12 +96,16 @@ namespace UIFrameWork
             _UIDict[uiType].GetComponent<BaseView>().DestroySelf();
             _UIDict.Remove(uiType);
         }
+        float _poolTimeCount = 0.0f;
         void Execute()
         {
-            TryPool();
+            _poolTimeCount += Time.deltaTime;
+            if(_poolTimeCount>=poolDeltaTime)
+                TryPool();
         }
         void TryPool()
         {
+            _poolTimeCount = 0.0f;
             if (_UIPool.Count <= maxPoolSize||maxPoolSize == 0)
                 return;
             for (int i = 0; i < _UIPool.Count; i++)
