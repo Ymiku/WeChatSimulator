@@ -98,5 +98,6 @@ public class UICreatWindow : EditorWindow
         GameObject go = Resources.Load<GameObject>("View/Templet") as GameObject;
         go.name = _uiName + "View";
         PrefabUtility.CreatePrefab("Assets/Scripts/UIFramework/Resources/View/"+_uiName+"View.prefab", go);
+        go.name = "Templet";
     }
 }

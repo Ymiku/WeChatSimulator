@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 222796579903589786}
   - component: {fileID: 225381372217108308}
   m_Layer: 5
-  m_Name: EEEView
+  m_Name: Templet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
