@@ -1,9 +1,6 @@
 ﻿
-namespace graduation
+public enum TestEvent
 {
-    public enum TestEvent
-    {
-        Test1 = 0,
-        Test2 = 1
-    }
+    Test1 = 0,
+    Test2 = 1
 }
