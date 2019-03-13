@@ -60,6 +60,10 @@ namespace UIFrameWork
             UIManager.Instance.StartAndResetUILine(UIManager.UILine.Main);
             UIManager.Instance.Push(new MeContext());
         }
+        public void OnEnterChatView()
+        {
+            UIManager.Instance.Push(new ChatContext());
+        }
     }
 	public class FriendsContext : BaseContext
 	{

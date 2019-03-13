@@ -18,6 +18,7 @@ namespace UIFrameWork
 		{
 			if(Input.GetKeyDown(KeyCode.Escape))
 			{
+                UIManager.Instance.Pop();
 				if (!UIManager.Instance.isQuit) {
                     UIManager.Instance.isQuit = true;
                     //AudioManager.Instance.PlayUISound (4);
