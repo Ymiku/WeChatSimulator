@@ -1,11 +1,10 @@
-﻿/*UI类模板
 using UnityEngine;
 using System.Collections;
 namespace UIFrameWork
 {
-	public class TempletView : ParentView
+	public class ChatView : AlphaView
 	{
-		private TempletContext _context;
+		private ChatContext _context;
 
 		public override void Init ()
 		{
@@ -14,7 +13,7 @@ namespace UIFrameWork
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter(context);
-			_context = context as TempletContext;
+			_context = context as ChatContext;
 		}
 
 		public override void OnExit(BaseContext context)
@@ -34,13 +33,13 @@ namespace UIFrameWork
 		public override void Excute ()
 		{
 			base.Excute ();
+
 		}
 	}
-	public class TempletContext : BaseContext
+	public class ChatContext : BaseContext
 	{
-		public TempletContext() : base(UIType.Templet)
+		public ChatContext() : base(UIType.Chat)
 		{
 		}
 	}
 }
-*/
