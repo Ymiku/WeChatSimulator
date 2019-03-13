@@ -10,7 +10,7 @@ namespace UIFrameWork
     {
 		public enum UILine
 		{
-			MainMenu,
+			Main,
 			LevelMenu
 		}
 		public UIContext activeContext;

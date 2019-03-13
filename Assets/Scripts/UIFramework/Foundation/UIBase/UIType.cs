@@ -23,5 +23,10 @@ namespace UIFrameWork
         }
 	
 		//public static readonly UIType LogIn = new UIType("View/LogInView");
+		public static readonly UIType Home = new UIType("View/HomeView");
+		public static readonly UIType Fortune = new UIType("View/FortuneView");
+		public static readonly UIType Koubei = new UIType("View/KoubeiView");
+		public static readonly UIType Friends = new UIType("View/FriendsView");
+		public static readonly UIType Me = new UIType("View/MeView");
     }
 }

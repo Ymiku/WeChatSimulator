@@ -11,8 +11,8 @@ namespace UIFrameWork
         {
             UIManager.Create();
             Localization.Create();
-			UIManager.Instance.StartUILine (UIManager.UILine.MainMenu);
-			//UIManager.Instance.Push (new LoadingContext());
+			UIManager.Instance.StartUILine (UIManager.UILine.Main);
+			UIManager.Instance.Push (new HomeContext());
         }
 		void Update()
 		{
