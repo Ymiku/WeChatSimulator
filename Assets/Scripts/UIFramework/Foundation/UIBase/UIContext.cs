@@ -83,5 +83,9 @@ namespace UIFrameWork
             }
             return null;
         }
+        public int Count
+        {
+            get { return _contextStack.Count; }
+        }
     }
 }

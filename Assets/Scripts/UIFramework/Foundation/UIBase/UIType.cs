@@ -29,5 +29,6 @@ namespace UIFrameWork
 		public static readonly UIType Friends = new UIType("View/FriendsView");
 		public static readonly UIType Me = new UIType("View/MeView");
 		public static readonly UIType Chat = new UIType("View/ChatView");
+		public static readonly UIType Quit = new UIType("View/QuitView");
     }
 }

@@ -18,11 +18,17 @@ namespace UIFrameWork
 		{
 			if(Input.GetKeyDown(KeyCode.Escape))
 			{
-                UIManager.Instance.Pop();
-				if (!UIManager.Instance.isQuit) {
-                    UIManager.Instance.isQuit = true;
+                if (!UIManager.Instance.isQuit&&UIManager.Instance.activeContext.Count>1)
+                {
+                    UIManager.Instance.Pop();
+                }
+                else if(UIManager.Instance.isQuit)
+                {
+                    Application.Quit();
+                }
+				else{
                     //AudioManager.Instance.PlayUISound (4);
-                    //UIManager.Instance.Push (new QuitContext ());
+                    UIManager.Instance.Push (new QuitContext ());
                 }
 			}
 		}
