@@ -1,2 +1,0 @@
-echo %*
-python xlsc.py %*
