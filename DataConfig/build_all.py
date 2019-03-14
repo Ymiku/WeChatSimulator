@@ -3,7 +3,7 @@ import sys
 import shutil
 
 excel_path = "E:\projects\PaymentAppSimulator\DataConfig\Excel"
-cs_path = "E:\projects\PaymentAppSimulator\Assets\Scripts\PB"
+cs_path = "E:\projects\PaymentAppSimulator\Assets\Scripts\StaticDataLoader\PB"
 data_path = "E:\projects\PaymentAppSimulator\Assets\Resources\StaticData"
 
 is_exists = os.path.exists(excel_path)
