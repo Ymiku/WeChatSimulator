@@ -30,7 +30,7 @@ namespace UIFrameWork
 
         private UIManager()
         {
-            _canvas = GameObject.Find("Canvas").transform;
+            _canvas = GameObject.FindObjectOfType<Canvas>().transform;
         }
 		public Transform GetCanvas()
 		{
