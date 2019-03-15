@@ -11,3 +11,5 @@ PaymentAppSimulator.sln
 PaymentAppSimulator.csproj
 PaymentAppSimulator.Plugins.csproj
 .vs/PaymentAppSimulator/v14/.suo
+*.csproj
+*.sln
