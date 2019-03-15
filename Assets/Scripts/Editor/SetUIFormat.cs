@@ -16,6 +16,7 @@ public static class SetUIFormat
             int m = texts[i].fontSize;
             Font f = texts[i].font;
             Color c = texts[i].color;
+            TextAnchor a = texts[i].alignment;
             GameObject go = texts[i].gameObject;
             GameObject.DestroyImmediate(texts[i]);
             TextProxy p = go.AddComponent<TextProxy>();
@@ -23,6 +24,7 @@ public static class SetUIFormat
             p.font = f;
             p.fontSize = m;
             p.color = c;
+            p.alignment = a;
         }
         Image[] images = Selection.activeGameObject.GetComponentsInChildren<Image>();
         for (int i = 0; i < images.Length; i++)
@@ -44,6 +46,8 @@ public static class SetUIFormat
         Graphic[] g = Selection.activeGameObject.GetComponentsInChildren<Graphic>();
         for (int i = 0; i < g.Length; i++)
         {
+            if (g[i].GetComponent<Button>() != null || g[i].transform.parent.GetComponent<Button>() != null)
+                continue;
             g[i].raycastTarget = false;
         }
     }
