@@ -21,7 +21,7 @@ public class GameManager : UnitySingleton<GameManager> {
 	void Update()
 	{
 		_localTime += Time.deltaTime;
-		ChatManager.Instance.OnExcute ();
+		//ChatManager.Instance.OnExcute ();
 	}
 	public static long GetTimeStamp() 
 	{ 
