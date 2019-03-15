@@ -353,10 +353,15 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 223037157271853130, guid: e3f520af673cc9f44946400da4137c20,
+    - target: {fileID: 114014081868157144, guid: e3f520af673cc9f44946400da4137c20,
         type: 2}
-      propertyPath: m_RenderMode
-      value: 1
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114748041735193638, guid: e3f520af673cc9f44946400da4137c20,
+        type: 2}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 223037157271853130, guid: e3f520af673cc9f44946400da4137c20,
         type: 2}
