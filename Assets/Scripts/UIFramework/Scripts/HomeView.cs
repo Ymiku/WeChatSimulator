@@ -72,6 +72,10 @@ namespace UIFrameWork
         {
             UIManager.Instance.Push(new CollectContext());
         }
+        public void OnClickPocket()
+        {
+            UIManager.Instance.Push(new PocketContext());
+        }
     }
 	public class HomeContext : BaseContext
 	{
