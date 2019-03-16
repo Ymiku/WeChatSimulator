@@ -49,15 +49,11 @@ public class ContinuousDemo : MonoBehaviour {
 	{
 		BarcodeScanner.Scan((barCodeType, barCodeValue) => {
 			BarcodeScanner.Stop();
-			if (TextHeader.text.Length > 250)
-			{
-				TextHeader.text = "";
-			}
-			TextHeader.text += "Found: " + barCodeType + " / " + barCodeValue + "\n";
+			
 			RestartTime += Time.realtimeSinceStartup + 1f;
 
 			// Feedback
-			Audio.Play();
+			//Audio.Play();
 
 			#if UNITY_ANDROID || UNITY_IOS
 			Handheld.Vibrate();

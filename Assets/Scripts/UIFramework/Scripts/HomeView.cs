@@ -60,6 +60,10 @@ namespace UIFrameWork
             UIManager.Instance.StartAndResetUILine(UIManager.UILine.Main);
             UIManager.Instance.Push(new MeContext());
         }
+        public void OnClickScan()
+        {
+            UIManager.Instance.Push(new ScanContext());
+        }
     }
 	public class HomeContext : BaseContext
 	{

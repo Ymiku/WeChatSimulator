@@ -30,5 +30,13 @@ namespace UIFrameWork
 		public static readonly UIType Me = new UIType("View/MeView");
 		public static readonly UIType Chat = new UIType("View/ChatView");
 		public static readonly UIType Quit = new UIType("View/QuitView");
+		public static readonly UIType Scan = new UIType("View/ScanView");
+		public static readonly UIType Pay = new UIType("View/PayView");
+		public static readonly UIType Collect = new UIType("View/CollectView");
+		public static readonly UIType Pocket = new UIType("View/PocketView");
+		public static readonly UIType Transfer = new UIType("View/TransferView");
+		public static readonly UIType PhoneTopup = new UIType("View/PhoneTopupView");
+		public static readonly UIType MyPackages = new UIType("View/MyPackagesView");
+		public static readonly UIType Carhailing = new UIType("View/CarhailingView");
     }
 }

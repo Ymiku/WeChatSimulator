@@ -51,4 +51,16 @@ public static class SetUIFormat
             g[i].raycastTarget = false;
         }
     }
+    [MenuItem("Tools/定位到UI素材路径", priority = 0)]
+    static void SetProjectViewToArts()
+    {
+        GameObject go = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Arts/Sprites/ArtsFolders.prefab");
+        Selection.activeGameObject = go;
+    }
+    [MenuItem("Tools/定位到UI Prefab路径", priority = 0)]
+    static void SetProjectViewToUIPrefabs()
+    {
+        GameObject go = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Scripts/UIFramework/Resources/View/Templet.prefab");
+        Selection.activeGameObject = go;
+    }
 }
