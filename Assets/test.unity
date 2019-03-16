@@ -256,7 +256,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &776951911
+--- !u!1001 &1728368122
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -353,26 +353,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114014081868157144, guid: e3f520af673cc9f44946400da4137c20,
-        type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114748041735193638, guid: e3f520af673cc9f44946400da4137c20,
-        type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 223037157271853130, guid: e3f520af673cc9f44946400da4137c20,
         type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 144676284}
-    - target: {fileID: 223037157271853130, guid: e3f520af673cc9f44946400da4137c20,
-        type: 2}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3f520af673cc9f44946400da4137c20, type: 2}
   m_IsPrefabParent: 0

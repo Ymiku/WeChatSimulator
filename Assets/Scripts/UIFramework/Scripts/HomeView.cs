@@ -64,6 +64,14 @@ namespace UIFrameWork
         {
             UIManager.Instance.Push(new ScanContext());
         }
+        public void OnClickPay()
+        {
+            UIManager.Instance.Push(new PayContext());
+        }
+        public void OnClickCollect()
+        {
+            UIManager.Instance.Push(new CollectContext());
+        }
     }
 	public class HomeContext : BaseContext
 	{

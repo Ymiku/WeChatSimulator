@@ -13,6 +13,7 @@ namespace UIFrameWork
 			Main,
 			LevelMenu
 		}
+        public Transform alwaysFrontTrans;
 		public UIContext activeContext;
 		public Dictionary<UILine,UIContext> _UILineDic = new Dictionary<UILine, UIContext>();
 
@@ -40,6 +41,8 @@ namespace UIFrameWork
 		public void Push(BaseContext nextContext)
 		{
 			activeContext.Push (nextContext);
+            if (alwaysFrontTrans != null)
+                alwaysFrontTrans.SetAsLastSibling();
 		}
 		public void Pop()
 		{

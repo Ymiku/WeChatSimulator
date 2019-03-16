@@ -6,11 +6,12 @@ using System.Collections.Generic;
 namespace UIFrameWork
 {
 	public class UIRoot : MonoBehaviour {
-
+        public Transform statusBar;
         public void Start()
         {
             UIManager.Create();
             Localization.Create();
+            UIManager.Instance.alwaysFrontTrans = statusBar;
 			UIManager.Instance.StartUILine (UIManager.UILine.Main);
 			UIManager.Instance.Push (new HomeContext());
         }
