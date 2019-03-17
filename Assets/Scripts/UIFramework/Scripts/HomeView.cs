@@ -76,6 +76,10 @@ namespace UIFrameWork
         {
             UIManager.Instance.Push(new PocketContext());
         }
+        public void OnClickTransfer()
+        {
+            UIManager.Instance.Push(new TransferContext());
+        }
     }
 	public class HomeContext : BaseContext
 	{
