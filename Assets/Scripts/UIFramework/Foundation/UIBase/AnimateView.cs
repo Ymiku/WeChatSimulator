@@ -19,22 +19,26 @@ namespace UIFrameWork
 
         public override void OnEnter(BaseContext context)
         {
-            _animator.SetTrigger("OnEnter");
+            if (_animator != null)
+                _animator.SetTrigger("OnEnter");
         }
 
         public override void OnExit(BaseContext context)
         {
-            _animator.SetTrigger("OnExit");
+            if (_animator != null)
+                _animator.SetTrigger("OnExit");
         }
 
         public override void OnPause(BaseContext context)
         {
-            _animator.SetTrigger("OnPause");
+            if (_animator != null)
+                _animator.SetTrigger("OnPause");
         }
 
         public override void OnResume(BaseContext context)
         {
-            _animator.SetTrigger("OnResume");
+            if (_animator != null)
+                _animator.SetTrigger("OnResume");
         }
 
 	}
