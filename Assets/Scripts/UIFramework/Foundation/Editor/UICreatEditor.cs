@@ -22,11 +22,14 @@ public class UICreatWindow : EditorWindow
     }
     FadeType _fadeType = FadeType.None;
     string _uiName = "";
+    string _notesStr = "";
     private void OnGUI()
     {
         GUILayout.BeginVertical();
         EditorGUILayout.LabelField("UIName(ForExample,MainMenu):");
         _uiName = EditorGUILayout.TextField(_uiName);
+        EditorGUILayout.LabelField("UI注释(非必须):");
+        _notesStr = EditorGUILayout.TextField(_notesStr);
         EditorGUILayout.LabelField("FadeType");
         _fadeType = (FadeType)EditorGUILayout.EnumPopup(_fadeType);
         if (GUILayout.Button("CreatUI"))
@@ -54,7 +57,10 @@ public class UICreatWindow : EditorWindow
         {
             sb.Append(file[i]+"\n");
             if (i == file.Length - 3)
-                sb.Append("		public static readonly UIType "+_uiName+" = new UIType(\"View/"+_uiName+"View\");"+"\n");
+                if (_notesStr == "")
+                    sb.Append("		public static readonly UIType " + _uiName + " = new UIType(\"View/" + _uiName + "View\");" + "\n");
+                else
+                    sb.Append("		public static readonly UIType " + _uiName + " = new UIType(\"View/" + _uiName + "View\");" + " //" + _notesStr + "\n");
         }
         File.Delete(typePath);
         File.AppendAllText(typePath, sb.ToString());
