@@ -8,32 +8,37 @@ namespace UIFrameWork
 	public abstract class BaseView : MonoBehaviour
     {
 		protected bool _isPause = false;
-		void Awake()
+        protected CanvasGroup _canvasGroup;
+        void Awake()
 		{
 			Init();
 		}
 		public virtual void Init()
 		{
-
-		}
+            _canvasGroup = GetComponent<CanvasGroup>();
+        }
         public virtual void OnEnter(BaseContext context)
         {
 			_isPause = false;
+            _canvasGroup.blocksRaycasts = true;
         }
 
         public virtual void OnExit(BaseContext context)
         {
 			_isPause = true;
+            _canvasGroup.blocksRaycasts = false;
         }
 
         public virtual void OnPause(BaseContext context)
         {
 			_isPause = true;
+            _canvasGroup.blocksRaycasts = false;
         }
 
         public virtual void OnResume(BaseContext context)
         {
 			_isPause = false;
+            _canvasGroup.blocksRaycasts = true;
         }
 		public virtual void Excute()
 		{

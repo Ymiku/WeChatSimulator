@@ -10,19 +10,12 @@ namespace UIFrameWork
 		public float alphaSpeed = 20f;
 		private bool _show = false;
 		private bool _isEnter = false;
-		private CanvasGroup _canvasGroup;
-		public override void Init ()
-		{
-			base.Init ();
-			_canvasGroup = GetComponent<CanvasGroup> ();
-		}
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter (context);
 			_canvasGroup.alpha = 0f;
 			_show = true;
 			_isEnter = true;
-			_canvasGroup.blocksRaycasts = true;
 			gameObject.SetActive (true);
 		}
 
@@ -31,13 +24,11 @@ namespace UIFrameWork
 			base.OnExit (context);
 			_show = false;
 			_isEnter = false;
-			_canvasGroup.blocksRaycasts = false;
 		}
 
 		public override void OnPause(BaseContext context)
 		{
 			base.OnPause (context);
-			_canvasGroup.blocksRaycasts = false;
 			if (!alwaysSee) {
 				_show = false;
 			}
@@ -46,7 +37,6 @@ namespace UIFrameWork
 		public override void OnResume(BaseContext context)
 		{
 			base.OnResume (context);
-			_canvasGroup.blocksRaycasts = true;
 			gameObject.SetActive (true);
 			if (!alwaysSee) {
 				_show = true;

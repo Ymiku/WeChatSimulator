@@ -16,17 +16,22 @@ namespace UIFrameWork
     {
         [SerializeField]
         protected Animator _animator;
-
+        bool _isEnd;
         public override void OnEnter(BaseContext context)
         {
             if (_animator != null)
                 _animator.SetTrigger("OnEnter");
-        }
+            else
+                gameObject.SetActive(true);
 
+        }
         public override void OnExit(BaseContext context)
         {
+            _isEnd = true;
             if (_animator != null)
                 _animator.SetTrigger("OnExit");
+            else
+                gameObject.SetActive(false);
         }
 
         public override void OnPause(BaseContext context)
