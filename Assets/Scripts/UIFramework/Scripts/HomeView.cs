@@ -84,6 +84,10 @@ namespace UIFrameWork
         {
             UIManager.Instance.Push(new PhoneTopupContext());
         }
+        public void OnClickMyPackages()
+        {
+            UIManager.Instance.Push(new MyPackagesContext());
+        }
     }
 	public class HomeContext : BaseContext
 	{
