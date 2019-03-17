@@ -80,6 +80,10 @@ namespace UIFrameWork
         {
             UIManager.Instance.Push(new TransferContext());
         }
+        public void OnClickPhoneTopup()
+        {
+            UIManager.Instance.Push(new PhoneTopupContext());
+        }
     }
 	public class HomeContext : BaseContext
 	{
