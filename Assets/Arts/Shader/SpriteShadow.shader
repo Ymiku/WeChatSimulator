@@ -69,7 +69,7 @@ Shader "Sprites/Shadow"
 		fixed4 frag(v2f IN) : SV_Target
 		{
 			fixed4 c = tex2D(_MainTex, IN.texcoord)*IN.color;
-		c.rgb = IN.color - 0.1;
+		c.rgb = IN.color - 0.04;
 			c.rgb *= c.a;
 			return c;
 		}
