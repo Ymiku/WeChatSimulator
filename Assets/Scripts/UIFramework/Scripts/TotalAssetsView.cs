@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 namespace UIFrameWork
 {
-	public class TotalAssetsView : AlphaView
+	public class TotalAssetsView : AnimateView
 	{
 		private TotalAssetsContext _context;
 

@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 namespace UIFrameWork
 {
-	public class SettingsView : AlphaView
+	public class SettingsView : AnimateView
 	{
 		private SettingsContext _context;
 

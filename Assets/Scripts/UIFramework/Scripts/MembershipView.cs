@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 namespace UIFrameWork
 {
-	public class MembershipView : AlphaView
+	public class MembershipView : AnimateView
 	{
 		private MembershipContext _context;
 

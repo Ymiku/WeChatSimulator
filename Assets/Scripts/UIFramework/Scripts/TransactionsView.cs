@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 namespace UIFrameWork
 {
-	public class TransactionsView : AlphaView
+	public class TransactionsView : AnimateView
 	{
 		private TransactionsContext _context;
 

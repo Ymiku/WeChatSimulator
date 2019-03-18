@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 namespace UIFrameWork
 {
-	public class BalanceView : AlphaView
+	public class BalanceView : AnimateView
 	{
 		private BalanceContext _context;
 
