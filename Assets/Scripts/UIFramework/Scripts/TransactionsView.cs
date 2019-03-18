@@ -34,7 +34,7 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
-	}
+    }
 	public class TransactionsContext : BaseContext
 	{
 		public TransactionsContext() : base(UIType.Transactions)

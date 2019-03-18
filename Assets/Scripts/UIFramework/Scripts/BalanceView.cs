@@ -34,7 +34,7 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
-	}
+    }
 	public class BalanceContext : BaseContext
 	{
 		public BalanceContext() : base(UIType.Balance)

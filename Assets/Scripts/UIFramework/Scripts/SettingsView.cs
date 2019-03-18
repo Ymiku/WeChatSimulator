@@ -34,7 +34,7 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
-	}
+    }
 	public class SettingsContext : BaseContext
 	{
 		public SettingsContext() : base(UIType.Settings)
