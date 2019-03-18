@@ -103,6 +103,11 @@ public class UICreatWindow : EditorWindow
     {
         GameObject go = Resources.Load<GameObject>("View/Templet") as GameObject;
         go.name = _uiName + "View";
+        if (_fadeType == FadeType.AnimationFade)
+        {
+            Animator anim = go.AddComponent<Animator>();
+            go.GetComponent<UIFrameWork.AnimateView>().animator = anim;
+        }
         PrefabUtility.CreatePrefab("Assets/Scripts/UIFramework/Resources/View/"+_uiName+"View.prefab", go);
         go.name = "Templet";
     }

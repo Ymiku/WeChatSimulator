@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 222768534810453080}
   - component: {fileID: 225664109152258196}
   - component: {fileID: 114803980872850326}
+  - component: {fileID: 95942710380629158}
   m_Layer: 5
   m_Name: MyPackagesView
   m_TagString: Untagged
@@ -167,6 +168,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &95942710380629158
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1697579723711464}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b754b15e0da08c849806d1a99695481b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114091479290696170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -448,7 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b19ca68f000a34c8777fb8345eab1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 0}
+  animator: {fileID: 95942710380629158}
 --- !u!114 &114894052545566110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -732,7 +750,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1080, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224956681808745050
 RectTransform:
