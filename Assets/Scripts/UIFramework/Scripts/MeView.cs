@@ -35,6 +35,8 @@ namespace UIFrameWork
 			base.Excute ();
 
 		}
+
+        #region 按钮事件部分
         public void OnClickHome()
         {
             UIManager.Instance.StartAndResetUILine(UIManager.UILine.Main);
@@ -60,8 +62,25 @@ namespace UIFrameWork
             UIManager.Instance.StartAndResetUILine(UIManager.UILine.Main);
             UIManager.Instance.Push(new MeContext());
         }
+        public void OnClickSettings()
+        {
+            UIManager.Instance.Push(new SettingsContext());
+        }
+        public void OnClickMembership() {
+            UIManager.Instance.Push(new MembershipContext());
+        }
+        public void OnClickTransactions() {
+            UIManager.Instance.Push(new TransactionsContext());
+        }
+        public void OnClickTotalAssets() {
+            UIManager.Instance.Push(new TotalAssetsContext());
+        }
+        public void OnClickBalance() {
+            UIManager.Instance.Push(new BalanceContext());
+        }
+        #endregion
     }
-	public class MeContext : BaseContext
+    public class MeContext : BaseContext
 	{
 		public MeContext() : base(UIType.Me)
 		{
