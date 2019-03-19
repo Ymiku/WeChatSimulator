@@ -46,5 +46,6 @@ namespace UIFrameWork
 		public static readonly UIType TransDetails = new UIType("View/TransDetailsView"); //转账明细界面
 		public static readonly UIType YuEBao = new UIType("View/YuEBaoView"); //余额宝界面
 		public static readonly UIType AntCredit = new UIType("View/AntCreditView"); //花呗界面
+		public static readonly UIType ZhimaCredit = new UIType("View/ZhimaCreditView"); //芝麻信用界面
     }
 }

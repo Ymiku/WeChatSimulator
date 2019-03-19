@@ -81,6 +81,9 @@ namespace UIFrameWork
         public void OnClickYuEBao() {
             UIManager.Instance.Push(new YuEBaoContext());
         }
+        public void OnClickAntCredit() {
+            UIManager.Instance.Push(new AntCreditContext());
+        }
         #endregion
     }
     public class MeContext : BaseContext

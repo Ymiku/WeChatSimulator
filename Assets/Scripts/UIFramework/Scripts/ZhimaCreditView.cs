@@ -2,9 +2,9 @@ using UnityEngine;
 using System.Collections;
 namespace UIFrameWork
 {
-	public class AntCreditView : AnimateView
+	public class ZhimaCreditView : AnimateView
 	{
-		private AntCreditContext _context;
+		private ZhimaCreditContext _context;
 
 		public override void Init ()
 		{
@@ -13,7 +13,7 @@ namespace UIFrameWork
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter(context);
-			_context = context as AntCreditContext;
+			_context = context as ZhimaCreditContext;
 		}
 
 		public override void OnExit(BaseContext context)
@@ -35,9 +35,9 @@ namespace UIFrameWork
 			base.Excute ();
 		}
 	}
-	public class AntCreditContext : BaseContext
+	public class ZhimaCreditContext : BaseContext
 	{
-		public AntCreditContext() : base(UIType.AntCredit)
+		public ZhimaCreditContext() : base(UIType.ZhimaCredit)
 		{
 		}
 	}
