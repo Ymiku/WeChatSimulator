@@ -78,6 +78,9 @@ namespace UIFrameWork
         public void OnClickBalance() {
             UIManager.Instance.Push(new BalanceContext());
         }
+        public void OnClickYuEBao() {
+            UIManager.Instance.Push(new YuEBaoContext());
+        }
         #endregion
     }
     public class MeContext : BaseContext
