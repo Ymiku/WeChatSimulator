@@ -44,5 +44,6 @@ namespace UIFrameWork
 		public static readonly UIType Balance = new UIType("View/BalanceView");
 		public static readonly UIType TotalAssets = new UIType("View/TotalAssetsView");
 		public static readonly UIType TransDetails = new UIType("View/TransDetailsView"); //转账明细界面
+		public static readonly UIType YuEBao = new UIType("View/YuEBaoView"); //余额宝界面
     }
 }
