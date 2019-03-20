@@ -66,7 +66,7 @@ Shader "Sprites/PureColor"
 
 	fixed4 frag(v2f IN) : SV_Target
 	{
-	fixed4 c = tex2D(_MainTex, IN.texcoord);
+	fixed4 c = tex2D(_MainTex, IN.texcoord)*IN.color;
 	c.rgb = IN.color;
 	c.rgb *= c.a;
 	return c;

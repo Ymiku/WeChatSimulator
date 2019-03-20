@@ -5,7 +5,9 @@ namespace UIFrameWork
 	public class HomeView : EnabledView
 	{
 		private HomeContext _context;
-
+        public RectTransform contextTrans;
+        public CanvasGroup hideCanvas;
+        bool showHide = false;
 		public override void Init ()
 		{
 			base.Init ();
@@ -33,8 +35,39 @@ namespace UIFrameWork
 		public override void Excute ()
 		{
 			base.Excute ();
-
-		}
+            if(Input.touchCount==0&&!Input.GetMouseButton(0)&&contextTrans.anchoredPosition.y>=0.0f&& contextTrans.anchoredPosition.y <= 210.0f)
+            {
+                float y = 0.0f;
+                if (contextTrans.anchoredPosition.y >= 100.0f)
+                {
+                    y = Mathf.Lerp(contextTrans.anchoredPosition.y,210.0f,20.0f*Time.deltaTime);
+                    contextTrans.anchoredPosition = new Vector2(contextTrans.anchoredPosition.x, y);
+                }
+                else
+                {
+                    y = Mathf.Lerp(contextTrans.anchoredPosition.y, 0.0f, 20.0f * Time.deltaTime);
+                    contextTrans.anchoredPosition = new Vector2(contextTrans.anchoredPosition.x, y);
+                }
+            }
+            if(contextTrans.anchoredPosition.y>=20.0f)
+            {
+                hideCanvas.blocksRaycasts = true;
+                showHide = true;
+            }
+            if (contextTrans.anchoredPosition.y <= 5.0f)
+            {
+                hideCanvas.blocksRaycasts = false;
+                showHide = false;
+            }
+            if (showHide)
+            {
+                hideCanvas.alpha = Mathf.Lerp(hideCanvas.alpha,1.0f,8.0f*Time.deltaTime);
+            }
+            else
+            {
+                hideCanvas.alpha = Mathf.Lerp(hideCanvas.alpha, 0.0f, 8.0f * Time.deltaTime);
+            }
+        }
         public void OnClickHome()
         {
             UIManager.Instance.StartAndResetUILine(UIManager.UILine.Main);
