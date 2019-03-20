@@ -34,6 +34,10 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
+
+        public void OnScrollValueChanged(Vector2 deltaPos) {
+            Debug.Log(deltaPos); // rtodo
+        }
 	}
 	public class AntCreditContext : BaseContext
 	{
