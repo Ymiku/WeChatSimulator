@@ -84,6 +84,10 @@ namespace UIFrameWork
         public void OnClickAntCredit() {
             UIManager.Instance.Push(new AntCreditContext());
         }
+        public void OnClickZhimaCredit()
+        {
+            UIManager.Instance.Push(new ZhimaCreditContext());
+        }
         #endregion
     }
     public class MeContext : BaseContext
