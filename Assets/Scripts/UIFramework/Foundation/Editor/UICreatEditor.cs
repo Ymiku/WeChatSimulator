@@ -106,7 +106,6 @@ public class UICreatWindow : EditorWindow
         if (_fadeType == FadeType.AnimationFade)
         {
             Animator anim = go.AddComponent<Animator>();
-            go.GetComponent<UIFrameWork.AnimateView>().animator = anim;
         }
         PrefabUtility.CreatePrefab("Assets/Scripts/UIFramework/Resources/View/"+_uiName+"View.prefab", go);
         go.name = "Templet";
