@@ -47,5 +47,7 @@ namespace UIFrameWork
 		public static readonly UIType YuEBao = new UIType("View/YuEBaoView"); //余额宝界面
 		public static readonly UIType AntCredit = new UIType("View/AntCreditView"); //花呗界面
 		public static readonly UIType ZhimaCredit = new UIType("View/ZhimaCreditView"); //芝麻信用界面
+		public static readonly UIType MyBank = new UIType("View/MyBankView"); //我的银行卡界面
+		public static readonly UIType BankServices = new UIType("View/BankServicesView"); //银行卡服务界面
     }
 }
