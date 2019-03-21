@@ -49,5 +49,6 @@ namespace UIFrameWork
 		public static readonly UIType ZhimaCredit = new UIType("View/ZhimaCreditView"); //芝麻信用界面
 		public static readonly UIType MyBank = new UIType("View/MyBankView"); //我的银行卡界面
 		public static readonly UIType BankServices = new UIType("View/BankServicesView"); //银行卡服务界面
+		public static readonly UIType Search = new UIType("View/SearchView"); //搜索栏
     }
 }
