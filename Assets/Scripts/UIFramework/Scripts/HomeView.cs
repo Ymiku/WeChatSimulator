@@ -7,7 +7,9 @@ namespace UIFrameWork
 		private HomeContext _context;
         public RectTransform contextTrans;
         public CanvasGroup hideCanvas;
+        public CanvasGroup addCanvas;
         bool showHide = false;
+        bool showAdd = false;
 		public override void Init ()
 		{
 			base.Init ();
@@ -21,11 +23,13 @@ namespace UIFrameWork
 		public override void OnExit(BaseContext context)
 		{
 			base.OnExit(context);
+            OnQuitAdd();
 		}
 
 		public override void OnPause(BaseContext context)
 		{
 			base.OnPause(context);
+            OnQuitAdd();
 		}
 
 		public override void OnResume(BaseContext context)
@@ -66,6 +70,14 @@ namespace UIFrameWork
             else
             {
                 hideCanvas.alpha = Mathf.Lerp(hideCanvas.alpha, 0.0f, 8.0f * Time.deltaTime);
+            }
+            if (showAdd)
+            {
+                addCanvas.alpha = Mathf.Lerp(addCanvas.alpha, 1.0f, 8.0f * Time.deltaTime);
+            }
+            else
+            {
+                addCanvas.alpha = Mathf.Lerp(addCanvas.alpha, 0.0f, 8.0f * Time.deltaTime);
             }
         }
         public void OnClickHome()
@@ -120,6 +132,20 @@ namespace UIFrameWork
         public void OnClickMyPackages()
         {
             UIManager.Instance.Push(new MyPackagesContext());
+        }
+        public void OnClickAdd()
+        {
+            showAdd = true;
+            addCanvas.blocksRaycasts = true;
+        }
+        public void OnQuitAdd()
+        {
+            showAdd = false;
+            addCanvas.blocksRaycasts = false;
+        }
+        public void OnClickSearch()
+        {
+            UIManager.Instance.Push(new SearchContext());
         }
     }
 	public class HomeContext : BaseContext
