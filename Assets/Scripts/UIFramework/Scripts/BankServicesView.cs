@@ -34,6 +34,11 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
+
+        public void OnClickMyBank() {
+            UIManager.Instance.Pop();
+            UIManager.Instance.Push(new MyBankContext());
+        }
 	}
 	public class BankServicesContext : BaseContext
 	{

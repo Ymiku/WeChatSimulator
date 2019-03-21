@@ -88,6 +88,9 @@ namespace UIFrameWork
         {
             UIManager.Instance.Push(new ZhimaCreditContext());
         }
+        public void OnClickBank() {
+            UIManager.Instance.Push(new MyBankContext());
+        }
         #endregion
     }
     public class MeContext : BaseContext
