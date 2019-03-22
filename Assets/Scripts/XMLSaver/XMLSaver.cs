@@ -4,28 +4,33 @@ using UnityEngine;
 using System.Xml;
 using System.IO;
 
-public class XMLSaver : MonoBehaviour {
+public class XMLSaver : Singleton<XMLSaver> {
 	// Use this for initialization
-	SaveData s;
-	SaveData b;
-	public void Save (SaveData data) {
+	public static SaveData saveData;
+	public static void Save () {
 		XmlSerializer serializer = new XmlSerializer (typeof(SaveData));
+		#if UNITY_EDITOR
+		FileStream stream = new FileStream (Application.dataPath + "/save.xml", FileMode.Create);
+		#elif
 		FileStream stream = new FileStream (Application.persistentDataPath + "/save.xml", FileMode.Create);
-		serializer.Serialize (stream, data);
+		#endif
+		serializer.Serialize (stream, saveData);
 		stream.Close ();
 	}
 
 
-	public SaveData Load () {
-		SaveData data = null;
+	public static void Load () {
 		if (File.Exists (Application.dataPath + "/save.xml")) {
 			XmlSerializer serializer = new XmlSerializer (typeof(SaveData));
+			#if UNITY_EDITOR
+			FileStream stream = new FileStream (Application.dataPath + "/save.xml", FileMode.Open);
+			#elif
 			FileStream stream = new FileStream (Application.persistentDataPath + "/save.xml", FileMode.Open);
-			data = serializer.Deserialize (stream) as SaveData;
+			#endif
+			saveData = serializer.Deserialize (stream) as SaveData;
 			stream.Close ();
 		} else {
-			Debug.LogError ("Save Something First");
+			saveData = new SaveData ();
 		}
-		return data;
 	}
 }
