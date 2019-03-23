@@ -3,12 +3,12 @@ guid: 2d62c8a45bd6bb049848de371ddef718
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 16
+  fontSize: 32
   forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: auiconfont
+  fontName: SimHei
   fontNames:
   - auiconfont
   fallbackFontReferences: []
