@@ -35,6 +35,8 @@ namespace UIFrameWork
 			base.Excute ();
 
 		}
+
+        #region 点击事件部分
         public void OnClickHome()
         {
             UIManager.Instance.StartAndResetUILine(UIManager.UILine.Main);
@@ -60,8 +62,15 @@ namespace UIFrameWork
             UIManager.Instance.StartAndResetUILine(UIManager.UILine.Main);
             UIManager.Instance.Push(new MeContext());
         }
+        public void OnClickYuEBao() {
+            UIManager.Instance.Push(new YuEBaoContext());
+        }
+        public void OnClickTotalAssets() {
+            UIManager.Instance.Push(new TotalAssetsContext());
+        }
+        #endregion
     }
-	public class FortuneContext : BaseContext
+    public class FortuneContext : BaseContext
 	{
 		public FortuneContext() : base(UIType.Fortune)
 		{
