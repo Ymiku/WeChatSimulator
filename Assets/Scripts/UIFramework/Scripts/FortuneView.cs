@@ -68,6 +68,9 @@ namespace UIFrameWork
         public void OnClickTotalAssets() {
             UIManager.Instance.Push(new TotalAssetsContext());
         }
+        public void OnClickFixedTerm() {
+            UIManager.Instance.Push(new FixedTermContext());
+        }
         #endregion
     }
     public class FortuneContext : BaseContext

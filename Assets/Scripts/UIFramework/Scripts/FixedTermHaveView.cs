@@ -2,9 +2,9 @@ using UnityEngine;
 using System.Collections;
 namespace UIFrameWork
 {
-	public class FixedTermView : AnimateView
+	public class FixedTermHaveView : AnimateView
 	{
-		private FixedTermContext _context;
+		private FixedTermHaveContext _context;
 
 		public override void Init ()
 		{
@@ -13,7 +13,7 @@ namespace UIFrameWork
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter(context);
-			_context = context as FixedTermContext;
+			_context = context as FixedTermHaveContext;
 		}
 
 		public override void OnExit(BaseContext context)
@@ -35,14 +35,15 @@ namespace UIFrameWork
 			base.Excute ();
 		}
 
-        public void OnClickHaveBtn() {
+        public void OnClickMarketBtn()
+        {
             UIManager.Instance.Pop();
-            UIManager.Instance.Push(new FixedTermHaveContext());
+            UIManager.Instance.Push(new FixedTermContext());
         }
-	}
-	public class FixedTermContext : BaseContext
+    }
+	public class FixedTermHaveContext : BaseContext
 	{
-		public FixedTermContext() : base(UIType.FixedTerm)
+		public FixedTermHaveContext() : base(UIType.FixedTermHave)
 		{
 		}
 	}
