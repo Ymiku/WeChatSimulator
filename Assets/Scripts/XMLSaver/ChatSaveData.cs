@@ -9,7 +9,7 @@ public partial class SaveData
 {
 	public List<int> instanceID = new List<int> ();
 	public List<ChatInstanceData> instanceData = new List<ChatInstanceData> ();
-
+    //对话控制变量
 	public List<string> varName = new List<string> ();
 	public List<int> varValue = new List<int> ();
 	public int GetValue(string valueName)
