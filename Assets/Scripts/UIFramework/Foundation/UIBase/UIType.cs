@@ -50,5 +50,6 @@ namespace UIFrameWork
 		public static readonly UIType MyBank = new UIType("View/MyBankView"); //我的银行卡界面
 		public static readonly UIType BankServices = new UIType("View/BankServicesView"); //银行卡服务界面
 		public static readonly UIType Search = new UIType("View/SearchView"); //搜索栏
+		public static readonly UIType FixedTerm = new UIType("View/FixedTermView"); //定期界面
     }
 }
