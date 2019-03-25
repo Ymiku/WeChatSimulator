@@ -140,7 +140,7 @@ namespace NodeEditorFramework
 		/// Specifies if this node handles recursive node loops on the canvas.
 		/// A loop requires atleast a single node to handle recursion to be permitted.
 		/// </summary>
-		public virtual bool AllowRecursion { get { return true; } }
+		public virtual bool AllowRecursion { get { return false; } }
 
 		/// <summary>
 		/// Specifies if calculation should continue with the nodes connected to the outputs after the Calculation function returns success
