@@ -2,25 +2,40 @@
 using UnityEngine;
 
 public partial class SaveData {
-    private Dictionary<int, AccountSaveData> accountDict = new Dictionary<int, AccountSaveData>();
+    private List<AccountSaveData> accountList = new List<AccountSaveData>();
 
-    public void AddAccount(AccountSaveData data) {
+    public void AddAccount(AccountSaveData data)
+    {
         int accountId = data.accountId;
-        AccountSaveData tempData;
-        accountDict.TryGetValue(accountId, out tempData);
-        if (tempData == null)
-            accountDict.Add(accountId, data);
+        int existAccountIndex = -1;
+        for (int i = 0; i < accountList.Count; i++)
+        {
+            if (accountList[i].accountId == accountId)
+                existAccountIndex = i;
+        }
+        if (existAccountIndex >= 0)
+        {
+            accountList[existAccountIndex] = null;
+            accountList[existAccountIndex] = data;
+        }
         else
-            accountDict[accountId] = data;
+        {
+            accountList.Add(data);
+        }
     }
 
     public AccountSaveData GetAccountById(int id) {
-        foreach (KeyValuePair<int, AccountSaveData> var in accountDict) {
-            if (var.Key == id)
-                return var.Value;
+        foreach (var data in accountList) {
+            if (data.accountId == id)
+                return data;
         }
-        Debug.LogError(string.Format("account dictionary not exist account {0}", id));
+        Debug.LogError(string.Format("account list not exist account {0}", id));
         return null;
+    }
+
+    public AccountSaveData GetAccountByName(string name) {
+        int id = 0; // Todo 通过name获取id
+        return GetAccountById(id);
     }
 }
 
@@ -111,8 +126,9 @@ public class AccountSaveData
 
     public override string ToString()
     {
-        return string.Format("account id {0}, account number {1}, account name {2}, account password {3}",
-            accountId, accountNumber, accountNickname, accountPassword);
+        return string.Format("account id {0}, account number {1}, account real name {2}, account password {3}," +
+            " account payword {4}, account nicename {5}, account headsprite {6}",
+            accountId, accountNumber, accountRealname, accountPassword, accountPayword, accountNickname, accountHeadSprite);
     }
 
     /// <summary>
