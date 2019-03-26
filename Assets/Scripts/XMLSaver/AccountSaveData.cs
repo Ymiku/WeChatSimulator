@@ -4,7 +4,10 @@ using UnityEngine;
 public partial class SaveData {
     private List<AccountSaveData> accountList = new List<AccountSaveData>();
 
-    public void AddAccount(AccountSaveData data)
+    /// <summary>
+    /// 添加一个账户信息
+    /// </summary>
+    public void AddAccountData(AccountSaveData data)
     {
         int accountId = data.accountId;
         int existAccountIndex = -1;
@@ -24,7 +27,10 @@ public partial class SaveData {
         }
     }
 
-    public AccountSaveData GetAccountById(int id) {
+    /// <summary>
+    /// 通过唯一id获取账户信息
+    /// </summary>
+    public AccountSaveData GetAccountDataById(int id) {
         foreach (var data in accountList) {
             if (data.accountId == id)
                 return data;
@@ -33,9 +39,12 @@ public partial class SaveData {
         return null;
     }
 
-    public AccountSaveData GetAccountByName(string name) {
+    /// <summary>
+    /// 通过唯一名字获取账户信息
+    /// </summary>
+    public AccountSaveData GetAccountDataByName(string name) {
         int id = 0; // Todo 通过name获取id
-        return GetAccountById(id);
+        return GetAccountDataById(id);
     }
 }
 
