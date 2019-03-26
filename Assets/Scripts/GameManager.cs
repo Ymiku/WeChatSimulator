@@ -18,6 +18,19 @@ public class GameManager : UnitySingleton<GameManager>
     void Awake()
     {
         OnEnterGame();
+
+        FrostRX.Instance.StartRX().ExecuteAfterTime(() => {
+            Debug.Log(1f);
+        }, 1f).ExecuteAfterTime(() => {
+            Debug.Log(2f);
+        }, 1f).ExecuteAfterTime(() => {
+            Debug.Log(3f);
+        }, 1f).ExecuteWhen(() => {
+            Debug.Log(4f);
+        }, () => {
+            return true;
+        }).GoToBegin();
+
     }
     void OnEnterGame()
     {
@@ -34,6 +47,7 @@ public class GameManager : UnitySingleton<GameManager>
     {
         _localTime += Time.deltaTime;
         ChatManager.Instance.OnExcute();
+        FrostRX.Instance.Execute();
     }
     public static long GetTimeStamp()
     {
