@@ -52,5 +52,8 @@ namespace UIFrameWork
 		public static readonly UIType Search = new UIType("View/SearchView"); //搜索栏
 		public static readonly UIType FixedTerm = new UIType("View/FixedTermView"); //定期界面
 		public static readonly UIType FixedTermHave = new UIType("View/FixedTermHaveView"); //定期持有界面
+		public static readonly UIType Login = new UIType("View/LoginView"); //点击头像登录
+		public static readonly UIType RegistByPhoneNumber = new UIType("View/RegistByPhoneNumberView"); //注册
+		public static readonly UIType LoginByPhoneNumber = new UIType("View/LoginByPhoneNumberView"); //用手机号登录
     }
 }
