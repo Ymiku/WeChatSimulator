@@ -19,7 +19,7 @@ public class GameManager : UnitySingleton<GameManager>
     {
         OnEnterGame();
 
-        FrostRX.Instance.StartRX().ExecuteAfterTime(() => {
+        FrostRX.Instance.EndRxById(FrostRX.Instance.StartRX().ExecuteAfterTime(() => {
             Debug.Log(1f);
         }, 1f).ExecuteAfterTime(() => {
             Debug.Log(2f);
@@ -29,7 +29,7 @@ public class GameManager : UnitySingleton<GameManager>
             Debug.Log(4f);
         }, () => {
             return true;
-        }).GoToBegin();
+        }).GoToBegin().GetId());
 
     }
     void OnEnterGame()
