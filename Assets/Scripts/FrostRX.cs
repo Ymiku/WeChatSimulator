@@ -237,11 +237,6 @@ public class FrostRX : Singleton<FrostRX>
     private Dictionary<int, IRXModel> _rxDic = new Dictionary<int, IRXModel>();
     public List<IRXModel> funcList = new List<IRXModel>();
     int rxId = 0;
-    void Start()
-    {
-        //Test
-
-    }
     public IRXModel StartRX()
     {
         IRXModel model;
@@ -294,5 +289,6 @@ public class FrostRX : Singleton<FrostRX>
     public void Clear()
     {
         funcList.Clear();
+        _rxDic.Clear();
     }
 }
