@@ -55,5 +55,7 @@ namespace UIFrameWork
 		public static readonly UIType Login = new UIType("View/LoginView"); //点击头像登录
 		public static readonly UIType RegistByPhoneNumber = new UIType("View/RegistByPhoneNumberView"); //注册
 		public static readonly UIType LoginByPhoneNumber = new UIType("View/LoginByPhoneNumberView"); //用手机号登录
+		public static readonly UIType AddBankCard = new UIType("View/AddBankCardView"); //添加银行卡界面
+		public static readonly UIType AddBankCardInfo = new UIType("View/AddBankCardInfoView"); //添加银行卡第二步界面
     }
 }
