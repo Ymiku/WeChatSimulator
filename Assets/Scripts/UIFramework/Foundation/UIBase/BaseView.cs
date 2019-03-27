@@ -8,6 +8,10 @@ namespace UIFrameWork
 	public abstract class BaseView : MonoBehaviour
     {
 		protected bool _isPause = false;
+		public void ShowNotice(string notice)
+		{
+			UIManager.Instance.ShowNotice (notice);
+		}
         protected CanvasGroup _canvasGroup;
         void Awake()
 		{

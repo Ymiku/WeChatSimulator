@@ -5,6 +5,7 @@ public interface IRXModel
 {
     void Execute();
     void SetRxId(int rxId);
+	IRXModel Wait(float t);
     IRXModel ExecuteAfterTime(FrostRX.RXFunc f, float t);
     IRXModel ExecuteUntil(FrostRX.RXFunc f, FrostRX.CondFunc con);
     IRXModel ExecuteWhen(FrostRX.RXFunc f, FrostRX.CondFunc con);
@@ -49,6 +50,12 @@ public class RXModelBase:IRXModel
         model.SetRxId(rxId);
         return model;
     }
+	public IRXModel Wait(float time)
+	{
+		model = new RXWaitModel(time);
+		model.SetRxId(rxId);
+		return model;
+	}
     public IRXModel ExecuteAfterTime(FrostRX.RXFunc f, float t)
     {
         model = new RXTimeModel(f, t);
@@ -232,7 +239,24 @@ public class RXContinuousModel : RXModelBase
         }
     }
 }
-
+public class RXWaitModel : RXModelBase
+{
+	float waitTime;
+	public float time;
+	public RXWaitModel(float t)
+	{
+		waitTime = time = t;
+	}
+	public sealed override void Execute()
+	{
+		time -= Time.deltaTime;
+		if (time <= 0f)
+		{
+			TryNext();
+			time = waitTime;
+		}
+	}
+}
 public class FrostRX : Singleton<FrostRX>
 {
     public delegate void RXFunc();
