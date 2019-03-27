@@ -101,7 +101,6 @@ public class RXGoToBegin : RXModelBase
 {
     public sealed override void Execute()
     {
-        FrostRX.Instance.funcList.Remove(this);
         FrostRX.Instance.RestartRxById(rxId);
         if (model != null)
         {
@@ -190,6 +189,8 @@ public class RXStayModel : RXModelBase
             {
                 func();
                 TryNext();
+				time = _time;
+				_isStay = false;
             }
         }
         else if (_isStay)
@@ -213,11 +214,12 @@ public class RXExecuteModel : RXModelBase
 }
 public class RXContinuousModel : RXModelBase
 {
+	float waitTime;
     public float time;
     public RXContinuousModel(FrostRX.RXFunc f, float t)
     {
         func = f;
-        time = t;
+        waitTime = time = t;
     }
     public sealed override void Execute()
     {
@@ -226,6 +228,7 @@ public class RXContinuousModel : RXModelBase
         if (time <= 0f)
         {
             TryNext();
+			time = waitTime;
         }
     }
 }
@@ -261,6 +264,14 @@ public class FrostRX : Singleton<FrostRX>
     }
     public void RestartRxById(int rxId)
     {
+		for (int i = 0; i < funcList.Count; i++)
+		{
+			if (funcList[i].GetId() == rxId)
+			{
+				funcList.RemoveAt(i);
+				i--;
+			}
+		}
         if (_rxDic.ContainsKey(rxId))
             funcList.Add(_rxDic[rxId]);
     }
