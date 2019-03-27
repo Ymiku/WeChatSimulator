@@ -5,15 +5,13 @@ using System.Text;
 
 public partial class SaveData
 {
-    private List<BankCardSaveData> bankCardList;
+    private List<BankCardSaveData> bankCardList = new List<BankCardSaveData>();
 
     /// <summary>
     /// 添加一个银行卡数据
     /// </summary>
-    public void AddBankCardData(BankCardSaveData data)
+    public BankCardSaveData AddBankCardData(int accountId, int cardId)
     {
-        int accountId = data.accountId;
-        int cardId = data.cardId;
         int existAccountIndex = -1;
         for (int i = 0; i < bankCardList.Count; i++)
         {
@@ -21,20 +19,18 @@ public partial class SaveData
                 existAccountIndex = i;
         }
         if (existAccountIndex >= 0)
-        {
-            bankCardList[existAccountIndex] = null;
-            bankCardList[existAccountIndex] = data;
-        }
-        else
-        {
-            bankCardList.Add(data);
-        }
+            return bankCardList[existAccountIndex];
+        BankCardSaveData data = new BankCardSaveData();
+        data.accountId = accountId;
+        data.cardId = cardId;
+        bankCardList.Add(data);
+        return data;
     }
 
     /// <summary>
-    /// 通过唯一id获取银行卡数据
+    /// 通过账户id获取银行卡数据
     /// </summary>
-    public List<BankCardSaveData> GetBankCardDataListById(int accountId) {
+    public List<BankCardSaveData> GetBankCardDataList(int accountId) {
         List<BankCardSaveData> result = new List<BankCardSaveData>();
         foreach (var data in bankCardList)
         {
@@ -47,61 +43,51 @@ public partial class SaveData
     /// <summary>
     /// 通过唯一名字获取银行卡数据
     /// </summary>
-    public List<BankCardSaveData> GetBankCardSaveDataListByName(string name)
+    public List<BankCardSaveData> GetBankCardDataList(string name)
     {
         int id = 0;  // todo 名字转id
-        return GetBankCardDataListById(id);
+        return GetBankCardDataList(id);
+    }
+
+    /// <summary>
+    /// 通过id获取一张卡的数据
+    /// </summary>
+    public BankCardSaveData GetBankCardData(int accountId, int cardId) {
+        foreach (var data in bankCardList)
+        {
+            if (data.accountId == accountId && data.cardId == cardId)
+                return data;
+        }
+        BankCardSaveData _data = new BankCardSaveData();
+        _data.accountId = accountId;
+        _data.cardId = cardId;
+        bankCardList.Add(_data);
+        return _data;
+    }
+
+    /// <summary>
+    /// 通过名字获取一张卡的数据
+    /// </summary>
+    public BankCardSaveData GetBankCardData(string name, int cardId)
+    {
+        int accountId = 0; // todo 名字转id
+        return GetBankCardData(accountId, cardId);
     }
 }
 
-
+/// <summary>
+/// 银行卡数据类
+/// </summary>
 [System.Serializable]
 public class BankCardSaveData
 {
-    /// <summary>
-    /// 唯一id
-    /// </summary>
-    public int accountId {
-        get { return accountId; }
-        private set { accountId = value; }
-    }
+    public int accountId;       // 账户id
+    public int cardId;          // 银行卡号
+    public float money;         // 银行卡余额
+}
 
-    /// <summary>
-    /// 银行卡账户
-    /// </summary>
-    public int cardId {
-        get { return cardId; }
-        private set { cardId = value; }
-    }
-
-    /// <summary>
-    /// 银行卡余额
-    /// </summary>
-    public float money {
-        get { return money; }
-        private set { money = value; }
-    }
-
-    public BankCardSaveData(int accountId, int bankId, float money = 0f) {
-        this.accountId = accountId;
-        this.cardId = bankId;
-        this.money = money;
-    }
-
-    /// <summary>
-    /// 存钱
-    /// </summary>
-    public float AddMoney(float value) {
-        money += value;
-        return money;
-    }
-
-    /// <summary>
-    /// 减钱
-    /// </summary>
-    public float ReduceMoney(float value)
-    {
-        money = Math.Max(0, money - value);
-        return money;
-    }
+public static class BankCardDefine
+{
+    public const int cardIdMinLength = 16;  // 卡号最低长度
+    public const int cardIdMaxLength = 19;  // 卡号最高长度
 }
