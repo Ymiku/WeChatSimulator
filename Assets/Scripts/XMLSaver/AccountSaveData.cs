@@ -29,7 +29,7 @@ public partial class SaveData {
         }
         if (existAccountIndex >= 0)
         {
-            accountList[existAccountIndex] = data;
+			data = accountList[existAccountIndex];
         }
         else
         {
