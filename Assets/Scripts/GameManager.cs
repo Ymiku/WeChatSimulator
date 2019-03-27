@@ -39,6 +39,10 @@ public class GameManager : UnitySingleton<GameManager>
         _timeStamp = GetTimeStamp();
         _localTime = 0.0f;
     }
+	void OnDestory()
+	{
+		OnExitGame ();
+	}
     void OnExitGame()
     {
         XMLSaver.Save();

@@ -7,9 +7,20 @@ public partial class SaveData {
     /// <summary>
     /// 添加一个账户信息
     /// </summary>
-    public void AddAccountData(AccountSaveData data)
+	public AccountSaveData AddAccountData(int accountId)
     {
-        int accountId = data.accountId;
+		AccountSaveData data = new AccountSaveData();
+
+		if(false)
+		{
+			//npc读表，tbd
+			return data;
+		}
+
+		//data.accountId = accountId;
+		//data.accountNickname = "";
+		//data.accountHeadSprite = AccountDefine.DefaultHeadSprite;
+
         int existAccountIndex = -1;
         for (int i = 0; i < accountList.Count; i++)
         {
@@ -18,13 +29,13 @@ public partial class SaveData {
         }
         if (existAccountIndex >= 0)
         {
-            accountList[existAccountIndex] = null;
             accountList[existAccountIndex] = data;
         }
         else
         {
             accountList.Add(data);
         }
+		return data;
     }
 
     /// <summary>
@@ -119,19 +130,6 @@ public class AccountSaveData
         private set { accountHeadSprite = value; }
     }
     #endregion
-
-    public AccountSaveData(int accountId, int accountNumber, string accountRealname,
-        string accountPassword, int accountPayword,
-        string accountNickname = "", string accountHeadSprite = AccountDefine.DefaultHeadSprite)
-    {
-        this.accountId = accountId;
-        this.accountNumber = accountNumber;
-        this.accountRealname = accountRealname;
-        this.accountPassword = accountPassword;
-        this.accountPayword = accountPayword;
-        this.accountNickname = accountNickname;
-        this.accountHeadSprite = accountHeadSprite;
-    }
 
     public override string ToString()
     {
