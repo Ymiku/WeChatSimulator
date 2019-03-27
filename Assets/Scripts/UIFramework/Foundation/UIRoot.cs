@@ -13,9 +13,16 @@ namespace UIFrameWork
             Localization.Create();
             UIManager.Instance.alwaysFrontTrans = statusBar;
 			UIManager.Instance.AddNoticeListener (GetComponentInChildren<NoticePanel>().AddNotice);
-			UIManager.Instance.StartUILine (UIManager.UILine.Main);
-			UIManager.Instance.Push (new HomeContext());
-			UIManager.Instance.ShowNotice ("功能尚未开启");
+            if (XMLSaver.saveData.accountList.Count == 100)
+            {
+                UIManager.Instance.StartUILine(UIManager.UILine.AccountLogin);
+                UIManager.Instance.Push(new RegistByPhoneNumberContext());
+            }
+            else
+            {
+                UIManager.Instance.StartUILine(UIManager.UILine.Main);
+                UIManager.Instance.Push(new HomeContext());
+            }
         }
 		void Update()
 		{

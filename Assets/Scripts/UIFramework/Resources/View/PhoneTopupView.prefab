@@ -977,7 +977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6a12cb3b46c7234c913bdd144f932c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!114 &114783770235732662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1699,7 +1699,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -219.09998}
-  m_SizeDelta: {x: 1080, y: 4}
+  m_SizeDelta: {x: 1080, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224449986648154948
 RectTransform:

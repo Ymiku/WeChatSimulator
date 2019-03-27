@@ -1,11 +1,12 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 namespace UIFrameWork
 {
 	public class RegistByPhoneNumberView : AlphaView
 	{
 		private RegistByPhoneNumberContext _context;
-
+        public Text phoneNumber;
 		public override void Init ()
 		{
 			base.Init ();
@@ -34,7 +35,21 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
-	}
+        public void OnClickRegist()
+        {
+            if (phoneNumber.text.Length != 11)
+            {
+                ShowNotice("输入格式错误！");
+                return;
+            }
+            AccountSaveData data = XMLSaver.saveData.AddAccountData(0);
+            UIManager.Instance.Push(new LoginContext());
+        }
+        public void OnClickAgreement()
+        {
+            UIManager.Instance.Push(new RegistAgreementContext());
+        }
+    }
 	public class RegistByPhoneNumberContext : BaseContext
 	{
 		public RegistByPhoneNumberContext() : base(UIType.RegistByPhoneNumber)

@@ -2,7 +2,7 @@
 using UnityEngine;
 
 public partial class SaveData {
-    private List<AccountSaveData> accountList = new List<AccountSaveData>();
+    public List<AccountSaveData> accountList = new List<AccountSaveData>();
 
     /// <summary>
     /// 添加一个账户信息
