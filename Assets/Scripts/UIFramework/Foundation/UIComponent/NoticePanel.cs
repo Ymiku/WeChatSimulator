@@ -10,10 +10,6 @@ public class NoticePanel : MonoBehaviour {
 	void Awake()
 	{
 		StartNotice ();
-		AddNotice ("1");
-		AddNotice ("2");
-		AddNotice ("3");
-		AddNotice ("4");
 	}
 	void StartNotice()
 	{

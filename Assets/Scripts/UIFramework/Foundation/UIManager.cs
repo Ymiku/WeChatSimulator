@@ -8,6 +8,8 @@ namespace UIFrameWork
 {
     public class UIManager:Singleton<UIManager>
     {
+		public delegate void NoticeFunc(string notice);
+		event NoticeFunc noticeFunc;
 		public enum UILine
 		{
 			Main,
@@ -120,5 +122,14 @@ namespace UIFrameWork
                     break;
             }
         }
+		public void AddNoticeListener(NoticeFunc f)
+		{
+			noticeFunc += f;
+		}
+		public void ShowNotice(string notice)
+		{
+			if (noticeFunc != null)
+				noticeFunc (notice);
+		}
 	}
 }

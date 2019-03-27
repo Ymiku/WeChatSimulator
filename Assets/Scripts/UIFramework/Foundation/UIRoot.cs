@@ -12,8 +12,10 @@ namespace UIFrameWork
             UIManager.Create();
             Localization.Create();
             UIManager.Instance.alwaysFrontTrans = statusBar;
+			UIManager.Instance.AddNoticeListener (GetComponentInChildren<NoticePanel>().AddNotice);
 			UIManager.Instance.StartUILine (UIManager.UILine.Main);
 			UIManager.Instance.Push (new HomeContext());
+			UIManager.Instance.ShowNotice ("功能尚未开启");
         }
 		void Update()
 		{
