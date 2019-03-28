@@ -23,7 +23,7 @@ namespace UnityEngine.UI
         [FormerlySerializedAs("f_text")]
         protected Text f_TextComponent;
         string content;
-        string line = "|";
+        string line = ".";
         protected void FOnValueChange(string s)
         {
             content = Utils.FormatStringForInputField(s,FInputType.PhoneNumber);
