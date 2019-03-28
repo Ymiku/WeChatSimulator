@@ -73,6 +73,10 @@ public class AccountSaveData
     public string accountPassword;      // 账户登陆密码
     public int accountPayword;          // 账户支付密码
     public string accountHeadSprite;    // 头像
+    public Sprite GetHeadSprite()
+    {
+        return Resources.Load<Sprite>(accountHeadSprite);
+    }
 }
 
 public static class AccountDefine {
