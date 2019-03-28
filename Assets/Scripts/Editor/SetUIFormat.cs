@@ -32,9 +32,11 @@ public static class SetUIFormat
             Sprite s = images[i].sprite;
             Color c = images[i].color;
             Material m = images[i].material;
+			Image.Type t = images [i].type;
             GameObject go = images[i].gameObject;
             GameObject.DestroyImmediate(images[i]);
             ImageProxy p = go.AddComponent<ImageProxy>();
+			p.type = t;
             p.sprite = s;
             p.material = m;
             p.color = c;
