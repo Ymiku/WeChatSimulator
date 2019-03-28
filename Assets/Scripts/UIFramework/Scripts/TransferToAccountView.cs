@@ -8,14 +8,14 @@ namespace UIFrameWork
     public class TransferToAccountView : AnimateView
     {
         private TransferToAccountContext _context;
-        private Text _accountText;
+        private Text _phoneNumText;
 
         private List<string> _allNumberList = StaticDataAccount.GetAllPhoneNumbers();
 
         public override void Init()
         {
             base.Init();
-            _accountText = FindInChild<Text>("");  //todo
+            _phoneNumText = FindInChild<Text>("");  //todo
         }
         public override void OnEnter(BaseContext context)
         {
@@ -44,19 +44,21 @@ namespace UIFrameWork
 
         public void OnClickNext()
         {
-            string account = _accountText.text;
+            string phoneNum = _phoneNumText.text;
             foreach (var item in _allNumberList)
             {
-                if (item == account)
+                if (item == phoneNum)
                 {
-                    if (Utils.CheckIsSelfNumber(account))
+                    if (Utils.CheckIsSelfNumber(phoneNum))
                     {
                         ShowNotice(ContentHelper.Read(ContentHelper.CanNotTransToSelf));
                         return;
                     }
                     else
                     {
-                        // rtodo 打开下一步界面
+                        int accountId = StaticDataAccount.GetAccountIdByNumber(phoneNum);
+                        InputTransferAmountContext context = new InputTransferAmountContext(accountId);
+                        UIManager.Instance.Push(context);
                         return;
                     }
                 }

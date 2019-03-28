@@ -46,7 +46,7 @@ public static class Utils
 
     public static bool CheckIsSelfNumber(string number)
     {
-        // todo 检查是否为自己的电话号码
-        return false;
+        AccountSaveData data = XMLSaver.saveData.GetAccountData(GameManager.Instance.curUserId);
+        return data.phoneNumber == number;
     }
 }
