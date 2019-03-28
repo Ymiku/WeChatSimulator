@@ -20,6 +20,7 @@ namespace UIFrameWork
             }
             else
             {
+				GameManager.Instance.SetUser (XMLSaver.saveData.lastUser);
                 UIManager.Instance.StartUILine(UIManager.UILine.Main);
                 UIManager.Instance.Push(new HomeContext());
             }

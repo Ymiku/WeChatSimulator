@@ -23,6 +23,7 @@ public class GameManager : UnitySingleton<GameManager>
 	public void SetUser(int userId)
 	{
 		curUserId = userId;
+		XMLSaver.saveData.lastUser = userId;
 	}
     void OnEnterGame()
     {
