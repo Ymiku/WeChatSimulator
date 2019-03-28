@@ -5,7 +5,7 @@ using System.Text;
 
 public partial class SaveData
 {
-    private List<AssetsSaveData> assetsDataList = new List<AssetsSaveData>();
+    public List<AssetsSaveData> assetsDataList = new List<AssetsSaveData>();
 
     public AssetsSaveData AddAssetsData(int accountId)
     {

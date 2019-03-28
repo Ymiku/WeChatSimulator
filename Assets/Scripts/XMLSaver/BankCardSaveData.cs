@@ -5,7 +5,7 @@ using System.Text;
 
 public partial class SaveData
 {
-    private List<BankCardSaveData> bankCardList = new List<BankCardSaveData>();
+    public List<BankCardSaveData> bankCardList = new List<BankCardSaveData>();
 
     /// <summary>
     /// 添加一个银行卡数据
