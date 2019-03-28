@@ -34,6 +34,12 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
+		public void OnClickLogin()
+		{
+			GameManager.Instance.SetUser (_context.userId);
+			UIManager.Instance.StartUILine(UIManager.UILine.Main);
+			UIManager.Instance.Push(new HomeContext());
+		}
 	}
 	public class LoginContext : BaseContext
 	{

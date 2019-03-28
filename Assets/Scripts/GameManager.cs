@@ -19,19 +19,6 @@ public class GameManager : UnitySingleton<GameManager>
     void Awake()
     {
         OnEnterGame();
-
-        FrostRX.Instance.EndRxById(FrostRX.Instance.StartRX().ExecuteAfterTime(() => {
-            Debug.Log(1f);
-        }, 1f).ExecuteAfterTime(() => {
-            Debug.Log(2f);
-        }, 1f).ExecuteAfterTime(() => {
-            Debug.Log(3f);
-        }, 1f).ExecuteWhen(() => {
-            Debug.Log(4f);
-        }, () => {
-            return true;
-        }).GoToBegin().GetId());
-
     }
 	public void SetUser(int userId)
 	{
@@ -44,7 +31,7 @@ public class GameManager : UnitySingleton<GameManager>
         _timeStamp = GetTimeStamp();
         _localTime = 0.0f;
     }
-	void OnDestory()
+	void OnDestroy()
 	{
 		OnExitGame ();
 	}
