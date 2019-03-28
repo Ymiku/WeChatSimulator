@@ -11,7 +11,7 @@ public class XMLSaver : Singleton<XMLSaver> {
 		XmlSerializer serializer = new XmlSerializer (typeof(SaveData));
 		#if UNITY_EDITOR
 		FileStream stream = new FileStream (Application.dataPath + "/save.xml", FileMode.Create);
-		#elif
+		#else
 		FileStream stream = new FileStream (Application.persistentDataPath + "/save.xml", FileMode.Create);
 		#endif
 		serializer.Serialize (stream, saveData);
@@ -24,7 +24,7 @@ public class XMLSaver : Singleton<XMLSaver> {
 			XmlSerializer serializer = new XmlSerializer (typeof(SaveData));
 			#if UNITY_EDITOR
 			FileStream stream = new FileStream (Application.dataPath + "/save.xml", FileMode.Open);
-			#elif
+			#else
 			FileStream stream = new FileStream (Application.persistentDataPath + "/save.xml", FileMode.Open);
 			#endif
 			saveData = serializer.Deserialize (stream) as SaveData;
