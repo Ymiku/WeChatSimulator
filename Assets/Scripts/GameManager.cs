@@ -28,6 +28,7 @@ public class GameManager : UnitySingleton<GameManager>
     void OnEnterGame()
     {
         //load
+        StaticDataLoader.Load();
         XMLSaver.Load();
         _timeStamp = GetTimeStamp();
         _localTime = 0.0f;

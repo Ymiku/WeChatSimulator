@@ -33,4 +33,10 @@ public static class StaticDataLoader
     {
         return Application.dataPath + "/Resources/StaticData/static_data_" + fileName + ".data";
     }
+
+    public static void Load()
+    {
+        StaticDataTest.Init();
+        StaticDataContent.Init();
+    }
 }
