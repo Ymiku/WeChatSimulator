@@ -42,6 +42,7 @@ namespace UIFrameWork
                 ShowNotice("输入格式错误！");
                 return;
             }
+			GameManager.Instance.ClearData ();
             AccountSaveData data = XMLSaver.saveData.AddAccountData(0);
 			UIManager.Instance.Push(new LoginContext(){userId = 0});
         }

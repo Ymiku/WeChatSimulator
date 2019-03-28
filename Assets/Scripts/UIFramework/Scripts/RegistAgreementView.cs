@@ -14,7 +14,6 @@ namespace UIFrameWork
 		{
 			base.OnEnter(context);
 			_context = context as RegistAgreementContext;
-			GameManager.Instance.ClearData ();
 		}
 
 		public override void OnExit(BaseContext context)
