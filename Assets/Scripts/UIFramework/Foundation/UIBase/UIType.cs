@@ -58,5 +58,6 @@ namespace UIFrameWork
 		public static readonly UIType AddBankCard = new UIType("View/AddBankCardView"); //添加银行卡界面
 		public static readonly UIType AddBankCardInfo = new UIType("View/AddBankCardInfoView"); //添加银行卡第二步界面
 		public static readonly UIType RegistAgreement = new UIType("View/RegistAgreementView"); //注册协议
+		public static readonly UIType TransferToAccount = new UIType("View/TransferToAccountView"); //转到支付宝账户
     }
 }

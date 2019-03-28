@@ -38,5 +38,6 @@ public static class StaticDataLoader
     {
         StaticDataTest.Init();
         StaticDataContent.Init();
+        StaticDataAccount.Init();
     }
 }

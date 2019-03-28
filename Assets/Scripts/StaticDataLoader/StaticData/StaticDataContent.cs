@@ -3,16 +3,16 @@ using UnityEngine;
 
 public static class StaticDataContent
 {
-    public static CONTENT_ARRAY Infos;
+    public static CONTENT_ARRAY Info;
 
     public static void Init()
     {
-        Infos = StaticDataLoader.ReadOneDataConfig<CONTENT_ARRAY>("content");
+        Info = StaticDataLoader.ReadOneDataConfig<CONTENT_ARRAY>("content");
     }
 
-    public static CONTENT GetDataById(int id)
+    public static CONTENT GetDataById(uint id)
     {
-        foreach (var item in Infos.items) {
+        foreach (var item in Info.items) {
             if (item.id == id)
                 return item;
         }
@@ -20,9 +20,9 @@ public static class StaticDataContent
         return null;
     }
 
-    public static string GetContent(int id)
+    public static string GetContent(uint id)
     {
-        foreach (var item in Infos.items)
+        foreach (var item in Info.items)
         {
             if (item.id == id)
                 return item.content;

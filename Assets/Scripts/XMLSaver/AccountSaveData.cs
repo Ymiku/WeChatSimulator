@@ -67,7 +67,7 @@ public partial class SaveData {
 public class AccountSaveData
 {
     public int accountId;               // 账户唯一id
-    public int accountNumber;           // 账户电话号码
+    public string phoneNumber;          // 账户电话号码
     public string accountRealname;      // 账户实名
     public string accountNickname;      // 账户名(昵称)
     public string accountPassword;      // 账户登陆密码
