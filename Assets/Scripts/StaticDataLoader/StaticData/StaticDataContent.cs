@@ -10,7 +10,7 @@ public static class StaticDataContent
         Info = StaticDataLoader.ReadOneDataConfig<CONTENT_ARRAY>("content");
     }
 
-    public static CONTENT GetDataById(uint id)
+    public static CONTENT GetDataById(int id)
     {
         foreach (var item in Info.items) {
             if (item.id == id)
@@ -20,7 +20,7 @@ public static class StaticDataContent
         return null;
     }
 
-    public static string GetContent(uint id)
+    public static string GetContent(int id)
     {
         foreach (var item in Info.items)
         {
