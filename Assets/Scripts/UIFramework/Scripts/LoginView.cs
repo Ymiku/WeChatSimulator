@@ -4,6 +4,8 @@ namespace UIFrameWork
 {
 	public class LoginView : AlphaView
 	{
+        public SpriteRenderer headSprite;
+        public TextProxy phoneNumber;
 		private LoginContext _context;
 
 		public override void Init ()
