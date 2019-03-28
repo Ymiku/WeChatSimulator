@@ -15,9 +15,9 @@ namespace static_data
   {
     public ACCOUNT() {}
     
-    private uint _id;
+    private int _id;
     [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"id", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
-    public uint id
+    public int id
     {
       get { return _id; }
       set { _id = value; }

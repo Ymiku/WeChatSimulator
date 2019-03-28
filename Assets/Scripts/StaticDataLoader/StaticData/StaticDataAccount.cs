@@ -18,4 +18,14 @@ public static class StaticDataAccount
         }
         return result;
     }
+
+    public static int GetAccountIdByNumber(string number)
+    {
+        foreach (var item in Info.items)
+        {
+            if (item.phone_number == number)
+                return item.id;
+        }
+        return 0;
+    }
 }
