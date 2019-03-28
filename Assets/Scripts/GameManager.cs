@@ -6,6 +6,7 @@ public class GameManager : UnitySingleton<GameManager>
 {
     long _timeStamp;
     float _localTime;
+	public int curUserId;
     public string curAccountName = "bull";
     public long time
     {
@@ -32,6 +33,10 @@ public class GameManager : UnitySingleton<GameManager>
         }).GoToBegin().GetId());
 
     }
+	public void SetUser(int userId)
+	{
+		curUserId = userId;
+	}
     void OnEnterGame()
     {
         //load
@@ -58,5 +63,8 @@ public class GameManager : UnitySingleton<GameManager>
         TimeSpan ts = DateTime.UtcNow - new DateTime(2018, 1, 1, 0, 0, 0, 0);
         return Convert.ToInt64(ts.TotalSeconds);
     }
-
+	public void ClearData()
+	{
+		XMLSaver.saveData = new SaveData ();
+	}
 }

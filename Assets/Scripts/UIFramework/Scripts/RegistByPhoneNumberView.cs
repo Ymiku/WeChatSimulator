@@ -43,11 +43,11 @@ namespace UIFrameWork
                 return;
             }
             AccountSaveData data = XMLSaver.saveData.AddAccountData(0);
-            UIManager.Instance.Push(new LoginContext());
+			UIManager.Instance.Push(new LoginContext(){userId = 0});
         }
         public void OnClickAgreement()
         {
-            UIManager.Instance.Push(new RegistAgreementContext());
+			UIManager.Instance.Push(new RegistAgreementContext());
         }
     }
 	public class RegistByPhoneNumberContext : BaseContext

@@ -37,8 +37,10 @@ namespace UIFrameWork
 	}
 	public class LoginContext : BaseContext
 	{
+		public int userId;
 		public LoginContext() : base(UIType.Login)
 		{
+			
 		}
 	}
 }
