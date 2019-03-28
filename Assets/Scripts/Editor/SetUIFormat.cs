@@ -9,6 +9,10 @@ public static class SetUIFormat
     [MenuItem("GameObject/将Image和Text转为Proxy", priority = 0)]
     static void SetUI()
     {
+		Button[] buttons = GameObject.FindObjectsOfType<Button> ();
+		for (int i = 0; i < buttons.Length; i++) {
+			buttons [i].navigation = new Navigation ();
+		}
         Text[] texts = Selection.activeGameObject.GetComponentsInChildren<Text>();
         for (int i = 0; i < texts.Length; i++)
         {
