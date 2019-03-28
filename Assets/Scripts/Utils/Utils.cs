@@ -49,4 +49,20 @@ public static class Utils
         AccountSaveData data = XMLSaver.saveData.GetAccountData(GameManager.Instance.curUserId);
         return data.phoneNumber == number;
     }
+    public static string FormatStringForInputField(string s,UnityEngine.UI.FInputField.FInputType type)
+    {
+        string output = s;
+        switch (type)
+        {
+            case UnityEngine.UI.FInputField.FInputType.PhoneNumber:
+                if (s.Length >=8)
+                    output = output.Insert(7, " ");
+                if(s.Length>=4)
+                    output = output.Insert(3, " ");
+                break;
+            case UnityEngine.UI.FInputField.FInputType.CardNumber:
+                break;
+        }
+        return output;
+    }
 }
