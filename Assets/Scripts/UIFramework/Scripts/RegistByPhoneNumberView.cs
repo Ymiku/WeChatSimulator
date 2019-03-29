@@ -37,13 +37,15 @@ namespace UIFrameWork
 		}
         public void OnClickRegist()
         {
-            if (phoneNumber.text.Length != 11)
+			string num = phoneNumber.text.Replace (" ","");
+            if (num.Length != 11)
             {
                 ShowNotice("输入格式错误！");
                 return;
             }
 			GameManager.Instance.ClearData ();
             AccountSaveData data = XMLSaver.saveData.AddAccountData(0);
+			data.phoneNumber = num;
 			UIManager.Instance.Push(new LoginContext(){userId = 0});
         }
         public void OnClickAgreement()
