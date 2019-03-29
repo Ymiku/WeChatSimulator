@@ -59,19 +59,41 @@ namespace UIFrameWork
             base.Excute();
         }
 
+        private void OnEnable() {
+            EventFactory.numberKeypadEM.AddListener(NumberKeypadEvent.Clear, DisableOkBtn);
+        }
+
+        private void OnDisable()
+        {
+            EventFactory.numberKeypadEM.AddListener(NumberKeypadEvent.Clear, DisableOkBtn);
+        }
+
         public void OnClickNumber(int number)
         {
-            EventFactory.numberKeypadEM.TriggerEvent(NumberKeypadEvent.InputNumber, new EventArgs(number));
+            if (_okBtn.interactable == false)
+            {
+                _okBtn.interactable = true;
+            }
+            EventFactory.numberKeypadEM.TriggerEvent(NumberKeypadEvent.Input, new EventArgs(number.ToString()));
         }
 
         public void OnClickPoint()
         {
-            EventFactory.numberKeypadEM.TriggerEvent(NumberKeypadEvent.InputPoint);
+            if (_okBtn.interactable == false)
+            {
+                _okBtn.interactable = true;
+            }
+            EventFactory.numberKeypadEM.TriggerEvent(NumberKeypadEvent.Input, new EventArgs("."));
         }
 
         public void OnClickDelete()
         {
-            EventFactory.numberKeypadEM.TriggerEvent(NumberKeypadEvent.InputDelete);
+            EventFactory.numberKeypadEM.TriggerEvent(NumberKeypadEvent.Delete);
+        }
+
+        private void DisableOkBtn()
+        {
+            _okBtn.interactable = false;
         }
     }
 	public class NumberKeypadContext : BaseContext

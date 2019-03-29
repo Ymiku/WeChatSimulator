@@ -55,6 +55,16 @@ namespace UIFrameWork
             base.Excute();
         }
 
+        private void OnEnable()
+        {
+            
+        }
+
+        private void OnDisable()
+        {
+            
+        }
+
         private void OnInputValueChanged(string value)
         {
             _nextBtn.interactable = !string.IsNullOrEmpty(value);

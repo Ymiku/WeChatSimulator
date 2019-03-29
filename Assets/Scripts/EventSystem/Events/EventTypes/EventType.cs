@@ -1,7 +1,7 @@
 ﻿
 public enum NumberKeypadEvent
 {
-    InputNumber,
-    InputPoint,
-    InputDelete,
+    Input,
+    Delete,
+    Clear,
 }
