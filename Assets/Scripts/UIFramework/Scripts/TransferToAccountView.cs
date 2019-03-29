@@ -14,11 +14,12 @@ namespace UIFrameWork
         private Button _clearBtn;
         private Button _friendBtn;
 
-        private List<string> _allNumberList = StaticDataAccount.GetAllPhoneNumbers();
+        private List<string> _allNumberList = new List<string>();
 
         public override void Init()
         {
             base.Init();
+            _allNumberList = StaticDataAccount.GetAllPhoneNumbers();
             _phoneNumText = FindInChild<Text>("");  //todo
             _inputField = FindInChild<FInputField>("");
             _nextBtn = FindInChild<Button>("");

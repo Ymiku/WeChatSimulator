@@ -61,6 +61,5 @@ namespace UIFrameWork
 		public static readonly UIType TransferToAccount = new UIType("View/TransferToAccountView"); //转到支付宝账户
 		public static readonly UIType InputTransferAmount = new UIType("View/InputTransferAmountView"); //输入转账金额界面
 		public static readonly UIType ConfirmPayment = new UIType("View/ConfirmPaymentView"); //确认付款
-        public static readonly UIType NumberKeypad = new UIType("View/NumberKeypadView"); //数字小键盘
     }
 }

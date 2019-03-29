@@ -51,18 +51,6 @@ namespace UIFrameWork
 			base.Excute ();
 		}
 
-        private void OnEnable()
-        {
-            EventFactory.numberKeypadEM.AddListener(NumberKeypadEvent.Input, RefreshAmountValue);
-            EventFactory.numberKeypadEM.AddListener(NumberKeypadEvent.Clear, DeleteAmountValue);
-        }
-
-        private void OnDisable()
-        {
-            EventFactory.numberKeypadEM.RemoveListener(NumberKeypadEvent.Input, RefreshAmountValue);
-            EventFactory.numberKeypadEM.RemoveListener(NumberKeypadEvent.Clear, DeleteAmountValue);
-        }
-
         private void OnInputValueChanged(string value)
         {
             _okBtn.interactable = !string.IsNullOrEmpty(value);
