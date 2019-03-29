@@ -151,10 +151,9 @@ MonoBehaviour:
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
   m_Text: 
   m_CaretBlinkRate: 0.85
-  m_CaretWidth: 1
+  m_CaretWidth: 2
   m_ReadOnly: 0
-  f_InputType: 1
-  f_TextComponent: {fileID: 0}
+  f_InputType: 2
 --- !u!114 &114416155781455970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -256,8 +255,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11, y: 176}
-  m_SizeDelta: {x: 494.64, y: 92.744}
+  m_AnchoredPosition: {x: 138.2, y: 176}
+  m_SizeDelta: {x: 749.1, y: 92.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224369548212768254
 RectTransform:
