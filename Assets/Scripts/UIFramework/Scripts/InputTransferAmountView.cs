@@ -8,6 +8,9 @@ namespace UIFrameWork
 	{
 		private InputTransferAmountContext _context;
         private Text _amountText;
+        private FInputField _inputField;
+        private Button _okBtn;
+        private Button _clearBtn;
 
         private int _accountId;
 
@@ -15,6 +18,12 @@ namespace UIFrameWork
 		{
 			base.Init ();
             _amountText = FindInChild<Text>("");  // rtodo
+            _inputField = FindInChild<FInputField>("");
+            _okBtn = FindInChild<Button>("");
+            _clearBtn = FindInChild<Button>("");
+
+            _okBtn.onClick.AddListener(OnClickOk);
+            _inputField.onValueChanged.AddListener(OnInputValueChanged);
 		}
 		public override void OnEnter(BaseContext context)
 		{
@@ -42,14 +51,24 @@ namespace UIFrameWork
 			base.Excute ();
 		}
 
+        private void OnInputValueChanged(string value)
+        {
+            _okBtn.interactable = !string.IsNullOrEmpty(value);
+        }
+
         public void OnClickOk()
         {
             float amount = 0;
             float.TryParse(_amountText.text, out amount);
             if (amount > 0)
-            {
                 UIManager.Instance.Push(new ConfirmPaymentContext(_accountId, amount));
-            }
+            else
+                ShowNotice(ContentHelper.Read(ContentHelper.IllegalInput));
+        }
+
+        public void OnClickClear()
+        {
+            _inputField.text = "";
         }
 	}
 	public class InputTransferAmountContext : BaseContext

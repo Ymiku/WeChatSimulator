@@ -9,6 +9,10 @@ namespace UIFrameWork
     {
         private TransferToAccountContext _context;
         private Text _phoneNumText;
+        private FInputField _inputField;
+        private Button _nextBtn;
+        private Button _clearBtn;
+        private Button _friendBtn;
 
         private List<string> _allNumberList = StaticDataAccount.GetAllPhoneNumbers();
 
@@ -16,6 +20,15 @@ namespace UIFrameWork
         {
             base.Init();
             _phoneNumText = FindInChild<Text>("");  //todo
+            _inputField = FindInChild<FInputField>("");
+            _nextBtn = FindInChild<Button>("");
+            _clearBtn = FindInChild<Button>("");
+            _friendBtn = FindInChild<Button>("");
+
+            _nextBtn.onClick.AddListener(OnClickNext);
+            _clearBtn.onClick.AddListener(OnClickClear);
+            _friendBtn.onClick.AddListener(OnClickFriend);
+            _inputField.onValueChanged.AddListener(OnInputValueChanged);
         }
         public override void OnEnter(BaseContext context)
         {
@@ -40,6 +53,11 @@ namespace UIFrameWork
         public override void Excute()
         {
             base.Excute();
+        }
+
+        private void OnInputValueChanged(string value)
+        {
+            _nextBtn.interactable = !string.IsNullOrEmpty(value);
         }
 
         public void OnClickNext()
@@ -73,7 +91,7 @@ namespace UIFrameWork
 
         public void OnClickClear()
         {
-
+            _inputField.text = "";
         }
 
     }
