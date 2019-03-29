@@ -4,20 +4,14 @@
 public class EventFactory
 {
     /// <summary>
-    /// 测试event
+    /// 数字小键盘事件
     /// </summary>
-    private static EventManager<TestEvent> _testEvent;
-    public static EventManager<TestEvent> testEvent
-    {
-        get
-        {
-            if (_testEvent == null)
-            {
-                _testEvent = new EventManager<TestEvent>();
-            }
-            return _testEvent;
+    private static EventManager<NumberKeypadEvent> _numberKeypadEM;
+    public static EventManager<NumberKeypadEvent> numberKeypadEM {
+        get {
+            if (_numberKeypadEM == null)
+                _numberKeypadEM = new EventManager<NumberKeypadEvent>();
+            return _numberKeypadEM;
         }
     }
-
-
 }

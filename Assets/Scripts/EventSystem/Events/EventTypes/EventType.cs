@@ -1,6 +1,7 @@
 ﻿
-public enum TestEvent
+public enum NumberKeypadEvent
 {
-    Test1 = 0,
-    Test2 = 1
+    InputNumber,
+    InputPoint,
+    InputDelete,
 }
