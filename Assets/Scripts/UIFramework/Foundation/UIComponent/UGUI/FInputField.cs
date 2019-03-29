@@ -19,18 +19,10 @@ namespace UnityEngine.UI
         [SerializeField]
         [FormerlySerializedAs("fInputType")]
         protected FInputType f_InputType;
-        [SerializeField]
-        [FormerlySerializedAs("f_text")]
-        protected Text f_TextComponent;
-        string content;
-        string line = ".";
         protected void FOnValueChange(string s)
         {
 			s = s.Replace (" ","");
-			text = Utils.FormatStringForInputField(s,FInputType.PhoneNumber);
-			//if (text [caretPosition - 1].Equals (" "))
-			//	caretPosition = selectionFocusPosition = caretPositionInternal = caretSelectPositionInternal = caretPosition + 1;
-			//UpdateLabel ();
+			text = Utils.FormatStringForInputField(s,f_InputType);
         }
         protected override void OnEnable()
         {
@@ -43,11 +35,12 @@ namespace UnityEngine.UI
             base.OnDisable();
             onValueChanged.RemoveListener(FOnValueChange);
         }
-		void Update()
+		protected override void LateUpdate ()
 		{
+			base.LateUpdate ();
 			if (caretPosition - 1 < 0)
 				return;
-			
+			Debug.Log (text);
 			if (text [caretPosition - 1].Equals(' ')) {
 				caretPosition ++;
 			}
