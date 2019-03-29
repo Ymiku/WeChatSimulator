@@ -61,7 +61,7 @@ namespace UIFrameWork
         }
         public bool DestroySelf(bool force = false)
         {
-            if (force || !enabled)
+            if (force || !gameObject.activeSelf)
             {
                 Destroy(gameObject);
                 return true;

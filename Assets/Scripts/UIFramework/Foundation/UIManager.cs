@@ -21,7 +21,7 @@ namespace UIFrameWork
 
         public Dictionary<UIType, GameObject> _UIDict = new Dictionary<UIType,GameObject>();
         public List<UIType> _UIPool = new List<UIType>();
-        int maxPoolSize = 8;
+        int maxPoolSize = 6;
         float poolDeltaTime = 4.0f;
 
         private Transform _canvas;
@@ -102,7 +102,7 @@ namespace UIFrameWork
             _UIDict.Remove(uiType);
         }
         float _poolTimeCount = 0.0f;
-        void Execute()
+        public void Execute()
         {
             _poolTimeCount += Time.deltaTime;
             if(_poolTimeCount>=poolDeltaTime)
@@ -113,13 +113,15 @@ namespace UIFrameWork
             _poolTimeCount = 0.0f;
             if (_UIPool.Count <= maxPoolSize||maxPoolSize == 0)
                 return;
+			int thisPoolCount = 0;
             for (int i = 0; i < _UIPool.Count; i++)
             {
-                if (GetSingleUI(_UIPool[i]).GetComponent<BaseView>().DestroySelf())
-                    _UIPool.RemoveAt(i);
-                i--;
-                if (_UIPool.Count <= maxPoolSize)
-                    break;
+				thisPoolCount++;
+				if (GetSingleUI (_UIPool [i]).GetComponent<BaseView> ().DestroySelf ()) {
+					_UIPool.RemoveAt (i);
+				}
+				if (thisPoolCount >= 2)
+					break;
             }
         }
 		public void AddNoticeListener(NoticeFunc f)

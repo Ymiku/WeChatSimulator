@@ -27,6 +27,7 @@ namespace UIFrameWork
         }
 		void Update()
 		{
+			UIManager.Instance.Execute ();
 			if(Input.GetKeyDown(KeyCode.Escape))
 			{
                 if (!UIManager.Instance.isQuit&&UIManager.Instance.activeContext.Count>1)
