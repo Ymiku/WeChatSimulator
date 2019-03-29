@@ -91,8 +91,8 @@ public static class Utils
 }
 public enum FInputType
 {
-	None,
-	PhoneNumber,
-	CardNumber,
-	Name
+	None = 1,
+	PhoneNumber = 2,
+	CardNumber = 4,
+	Name = 8
 }

@@ -5,7 +5,7 @@ using System.Text;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
-
+using System.Text.RegularExpressions;
 namespace UnityEngine.UI
 {
     public class FInputField:InputField
@@ -15,6 +15,8 @@ namespace UnityEngine.UI
         protected FInputType f_InputType;
         protected void FOnValueChange(string s)
         {
+			if ((f_InputType & (FInputType.PhoneNumber | FInputType.CardNumber)) != 0)
+				s = Regex.Match (s,"(\\d|\\s)*").Value;
 			s = s.Replace (" ","");
 			text = Utils.FormatStringForInputField(s,f_InputType);
         }
@@ -32,9 +34,8 @@ namespace UnityEngine.UI
 		protected override void LateUpdate ()
 		{
 			base.LateUpdate ();
-			if (caretPosition - 1 < 0)
+			if (caretPosition - 1 < 0||text.Length<caretPosition)
 				return;
-			Debug.Log (text);
 			if (text [caretPosition - 1].Equals(' ')) {
 				caretPosition ++;
 			}
