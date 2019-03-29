@@ -49,20 +49,50 @@ public static class Utils
         AccountSaveData data = XMLSaver.saveData.GetAccountData(GameManager.Instance.curUserId);
         return data.phoneNumber == number;
     }
-    public static string FormatStringForInputField(string s,UnityEngine.UI.FInputField.FInputType type)
+    public static string FormatStringForInputField(string s,FInputType type)
     {
-        string output = s;
+		string output = s.Replace(" ","");
         switch (type)
         {
-            case UnityEngine.UI.FInputField.FInputType.PhoneNumber:
+            case FInputType.PhoneNumber:
                 if (s.Length >=8)
                     output = output.Insert(7, " ");
                 if(s.Length>=4)
                     output = output.Insert(3, " ");
                 break;
-            case UnityEngine.UI.FInputField.FInputType.CardNumber:
+            case FInputType.CardNumber:
+				if (s.Length >=13)
+					output = output.Insert(12, " ");
+				if(s.Length>=9)
+					output = output.Insert(8, " ");
+				if(s.Length>=5)
+					output = output.Insert(4, " ");
                 break;
         }
         return output;
     }
+	public static string FormatStringForSecrecy(string s,FInputType type)
+	{
+		string output = s;
+		switch (type)
+		{
+		case FInputType.PhoneNumber:
+			output = output.Substring (0,3)+"******"+output.Substring(9);
+			break;
+		case FInputType.CardNumber:
+			output = "**** **** **** "+output.Substring(12);
+			break;
+		case FInputType.Name:
+			output = "*" + output.Substring (1);
+			break;
+		}
+		return output;
+	}
+}
+public enum FInputType
+{
+	None,
+	PhoneNumber,
+	CardNumber,
+	Name
 }

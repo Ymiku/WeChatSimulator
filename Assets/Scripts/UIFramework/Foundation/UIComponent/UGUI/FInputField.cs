@@ -10,12 +10,6 @@ namespace UnityEngine.UI
 {
     public class FInputField:InputField
     {
-        public enum FInputType
-        {
-            None,
-            PhoneNumber,
-            CardNumber
-        }
         [SerializeField]
         [FormerlySerializedAs("fInputType")]
         protected FInputType f_InputType;
