@@ -50,11 +50,13 @@ namespace UIFrameWork
 		{
 			activeContext.Pop();
 		}
+        public UILine curUILine = UILine.Main;
 		public void StartUILine(UILine line)
 		{
 			if (activeContext != null) {
 				activeContext.LineExit ();
 			}
+            curUILine = line;
 			if (!_UILineDic.ContainsKey (line)) {
 				_UILineDic.Add (line,new UIContext());
 			}
@@ -66,7 +68,8 @@ namespace UIFrameWork
 			if (activeContext != null) {
 				activeContext.LineExit ();
 			}
-			_UILineDic.AddOrReplace (line,new UIContext());
+            curUILine = line;
+            _UILineDic.AddOrReplace (line,new UIContext());
 			activeContext = _UILineDic[line];
 		}
 

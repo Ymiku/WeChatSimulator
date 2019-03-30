@@ -12,6 +12,6 @@ public class BackComponent : MonoBehaviour {
 	
 	void OnClick()
 	{
-		UIManager.Instance.Pop ();
+        GetComponentInParent<BaseView>().PopCallBack();
 	}
 }

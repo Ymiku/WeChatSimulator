@@ -16,8 +16,9 @@ public class GameManager : UnitySingleton<GameManager>
     {
         get { return (int)_localTime; }
     }
-    void Awake()
+    public override void Awake()
     {
+        base.Awake();
         OnEnterGame();
     }
 	public void SetUser(int userId)

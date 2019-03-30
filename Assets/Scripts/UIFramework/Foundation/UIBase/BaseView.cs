@@ -53,8 +53,14 @@ namespace UIFrameWork
         {
             if (_isPause)
                 return;
-            PlaySound(9);
-            UIManager.Instance.Pop();
+            if (UIManager.Instance.activeContext.Count > 1)
+            {
+                UIManager.Instance.Pop();
+            }
+            else if (UIManager.Instance.curUILine == UIManager.UILine.AccountLogin)
+            {
+                UIManager.Instance.StartUILine(UIManager.UILine.Main);
+            };
         }
         void Update()
         {

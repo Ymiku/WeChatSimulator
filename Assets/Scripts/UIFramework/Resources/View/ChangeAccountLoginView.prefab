@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 222588832758193870}
   - component: {fileID: 225823305899988782}
   - component: {fileID: 114456171938708688}
+  - component: {fileID: 114863350893091142}
   m_Layer: 5
   m_Name: ChangeAccountLoginView
   m_TagString: Untagged
@@ -1021,6 +1022,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114863350893091142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1074687016789862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2631c3a50caff498289b23bb1f8968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeWhenPause: 0
+  alphaSpeed: 20
 --- !u!114 &114972533870503706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1337,7 +1351,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -102, y: -0.000048876}
+  m_AnchoredPosition: {x: -102, y: -0.000045776367}
   m_SizeDelta: {x: -581.9, y: -53.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224462339415299608
@@ -1355,7 +1369,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -102, y: -0.000048876}
+  m_AnchoredPosition: {x: -102, y: -0.000045776367}
   m_SizeDelta: {x: -581.9, y: -53.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224494074211535270
