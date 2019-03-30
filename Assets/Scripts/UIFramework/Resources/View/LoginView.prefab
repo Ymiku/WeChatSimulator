@@ -417,7 +417,7 @@ MonoBehaviour:
   activeWhenPause: 0
   alphaSpeed: 20
   headSprite: {fileID: 0}
-  phoneNumber: {fileID: 0}
+  phoneNumber: {fileID: 114064225013235724}
 --- !u!114 &114210986002265644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -885,12 +885,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1457192863210284}
-        m_MethodName: 
+      - m_Target: {fileID: 114185852430793706}
+        m_MethodName: OnClickChangeAccountLogin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1018,7 +1018,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 114368927560163056}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1070,7 +1070,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 114231854268550144}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:

@@ -49,6 +49,10 @@ namespace UIFrameWork
 		}
 		public void OnClickChangeAccountLogin()
 		{
+			if (XMLSaver.saveData.canLoginUserIds.Count <= 1) {
+				UIManager.Instance.Push (new LoginByPhoneNumberContext ());
+				return;
+			}
 			UIManager.Instance.Push(new ChangeAccountLoginContext());
 		}
 	}
