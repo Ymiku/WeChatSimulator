@@ -21,23 +21,11 @@ namespace UnityEngine.UI
                     s = Regex.Match(s, "(\\d|\\s)*").Value;
                 else if (f_InputType == FInputType.Money)  // todo 优化  正则表达式匹配金额
                 {
-                    if (s.Contains("."))
-                    {
-                        string[] strs = s.Split('.');
-                        string str2 = Regex.Match(strs[1], "(\\d|\\s)*").Value;
-                        if (str2.Length > 2)
-                        {
-                            s = strs[0] + "." + str2.Substring(0, 2);
-                        }
-                        else
-                        {
-                            s = strs[0] + "." + str2;
-                        }
-                    }
-                    else
-                    {
-                        s = Regex.Match(s, "^-?\\d+$|^(-?\\d+)(\\.\\d+)?$").Value;
-                    }
+					if (s.Contains (".")) {
+						s = Regex.Match (s, "\\d*\\.\\d{0,2}").Value;
+					} else {
+						s = Regex.Match(s, "(\\d)*").Value;
+					}
                 }
             }
 			s = s.Replace (" ","");
