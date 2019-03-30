@@ -6,7 +6,6 @@ namespace UIFrameWork
 {
 	public abstract class AlphaView : BaseView 
 	{
-		public bool alwaysSee = true;
 		public float alphaSpeed = 20f;
 		private bool _show = false;
 		private bool _isEnter = false;
@@ -29,7 +28,7 @@ namespace UIFrameWork
 		public override void OnPause(BaseContext context)
 		{
 			base.OnPause (context);
-			if (!alwaysSee) {
+			if (!activeWhenPause) {
 				_show = false;
 			}
 		}
@@ -38,7 +37,7 @@ namespace UIFrameWork
 		{
 			base.OnResume (context);
 			gameObject.SetActive (true);
-			if (!alwaysSee) {
+			if (!activeWhenPause) {
 				_show = true;
 			}
 		}

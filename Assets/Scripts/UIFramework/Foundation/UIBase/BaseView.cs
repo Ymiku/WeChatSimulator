@@ -7,6 +7,7 @@ namespace UIFrameWork
 {
     public abstract class BaseView : MonoBehaviour
     {
+		public bool activeWhenPause = false;
         protected bool _isPause = false;
         public void ShowNotice(string notice)
         {
