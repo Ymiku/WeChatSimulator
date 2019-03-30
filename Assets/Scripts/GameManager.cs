@@ -24,6 +24,8 @@ public class GameManager : UnitySingleton<GameManager>
 	{
 		curUserId = userId;
 		XMLSaver.saveData.lastUser = userId;
+		if (!XMLSaver.saveData.canLoginUserIds.Contains (userId))
+			XMLSaver.saveData.canLoginUserIds.Add (userId);
 	}
     void OnEnterGame()
     {

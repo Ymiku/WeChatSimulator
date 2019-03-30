@@ -62,5 +62,6 @@ namespace UIFrameWork
 		public static readonly UIType InputTransferAmount = new UIType("View/InputTransferAmountView"); //输入转账金额界面
 		public static readonly UIType ConfirmPayment = new UIType("View/ConfirmPaymentView"); //确认付款
 		public static readonly UIType SelectPayWay = new UIType("View/SelectPayWayView"); //选择付款方式
+		public static readonly UIType ChangeAccountLogin = new UIType("View/ChangeAccountLoginView"); //切换账号
     }
 }
