@@ -22,6 +22,7 @@ namespace UIFrameWork
 		{
 			base.OnEnter(context);
 			_context = context as LoginContext;
+			UpdateView ();
 		}
 
 		public override void OnExit(BaseContext context)
@@ -37,6 +38,7 @@ namespace UIFrameWork
 		public override void OnResume(BaseContext context)
 		{
 			base.OnResume(context);
+			UpdateView ();
 		}
 		public override void Excute ()
 		{

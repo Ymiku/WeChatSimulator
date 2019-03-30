@@ -416,7 +416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeWhenPause: 0
   alphaSpeed: 20
-  headSprite: {fileID: 0}
+  headSprite: {fileID: 114241193230377522}
   phoneNumber: {fileID: 114064225013235724}
 --- !u!114 &114210986002265644
 MonoBehaviour:

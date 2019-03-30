@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 222039808311057262}
   - component: {fileID: 114064633830705478}
   - component: {fileID: 114919768617777630}
+  - component: {fileID: 114735570362337692}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -98,7 +99,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b7cc3c20f7aba7344bddca71b27a5e5e, type: 3}
+    m_Font: {fileID: 12800000, guid: 2d62c8a45bd6bb049848de371ddef718, type: 3}
     m_FontSize: 53
     m_FontStyle: 0
     m_BestFit: 0
@@ -110,7 +111,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5145\u503C\u4E2D\u5FC3"
+  m_Text: "\u8D26\u53F7\u5207\u6362"
 --- !u!114 &114064633830705478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -149,18 +150,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114919768617777630}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: PopCallBack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114375397219914874
@@ -190,6 +180,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114735570362337692
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1278272166989010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94fad4aa526fcb24fa1ec8489a34ac6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114919768617777630
 MonoBehaviour:
   m_ObjectHideFlags: 1
