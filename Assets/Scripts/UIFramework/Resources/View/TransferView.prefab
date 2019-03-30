@@ -489,7 +489,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114893450064604716}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114435845107764374}
+        m_MethodName: OnClickTransferToCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114143824678572568
@@ -762,7 +773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e01eb2e82a0fa48931ceeefd8bdcc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alwaysSee: 1
+  activeWhenPause: 0
   alphaSpeed: 20
 --- !u!114 &114502005725435850
 MonoBehaviour:
@@ -830,7 +841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -856,7 +867,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114151586431050934}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114435845107764374}
+        m_MethodName: OnClickTransferToAccount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114608912493561728

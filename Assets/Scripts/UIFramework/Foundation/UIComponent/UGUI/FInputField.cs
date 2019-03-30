@@ -15,8 +15,31 @@ namespace UnityEngine.UI
         protected FInputType f_InputType;
         protected void FOnValueChange(string s)
         {
-			if ((f_InputType & (FInputType.PhoneNumber | FInputType.CardNumber)) != 0)
-				s = Regex.Match (s,"(\\d|\\s)*").Value;
+            if ((f_InputType & (FInputType.PhoneNumber | FInputType.CardNumber | FInputType.Money)) != 0)
+            {
+                if (f_InputType == FInputType.CardNumber || f_InputType == FInputType.PhoneNumber)
+                    s = Regex.Match(s, "(\\d|\\s)*").Value;
+                else if (f_InputType == FInputType.Money)  // todo 优化  正则表达式匹配金额
+                {
+                    if (s.Contains("."))
+                    {
+                        string[] strs = s.Split('.');
+                        string str2 = Regex.Match(strs[1], "(\\d|\\s)*").Value;
+                        if (str2.Length > 2)
+                        {
+                            s = strs[0] + "." + str2.Substring(0, 2);
+                        }
+                        else
+                        {
+                            s = strs[0] + "." + str2;
+                        }
+                    }
+                    else
+                    {
+                        s = Regex.Match(s, "^-?\\d+$|^(-?\\d+)(\\.\\d+)?$").Value;
+                    }
+                }
+            }
 			s = s.Replace (" ","");
 			text = Utils.FormatStringForInputField(s,f_InputType);
         }

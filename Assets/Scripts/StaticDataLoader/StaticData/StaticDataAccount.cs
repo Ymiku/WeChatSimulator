@@ -14,18 +14,29 @@ public static class StaticDataAccount
     {
         List<string> result = new List<string>();
         foreach (var item in Info.items) {
-            result.Add(item.phone_number);
+            result.Add(item.phone_number.Substring(0,11));
         }
         return result;
     }
 
-    public static int GetAccountIdByNumber(string number)
+    public static ACCOUNT GetAccountById(int id)
     {
         foreach (var item in Info.items)
         {
-            if (item.phone_number == number)
-                return item.id;
+            if (item.id == id)
+                return item;
         }
-        return 0;
+        return null;
     }
+
+    public static ACCOUNT GetAccountByPhoneNumber(string phoneNumber)
+    {
+        foreach (var item in Info.items)
+        {
+            if (item.phone_number.Substring(0, 11) == phoneNumber)
+                return item;
+        }
+        return null;
+    }
+
 }

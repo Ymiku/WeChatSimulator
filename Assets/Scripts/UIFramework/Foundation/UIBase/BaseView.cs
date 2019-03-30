@@ -16,7 +16,7 @@ namespace UIFrameWork
         protected CanvasGroup _canvasGroup;
         void Awake()
         {
-            Init();
+            //Init();
         }
         public virtual void Init()
         {

@@ -36,6 +36,13 @@ namespace static_data
       get { return _phone_number; }
       set { _phone_number = value; }
     }
+    private string _name;
+    [global::ProtoBuf.ProtoMember(4, IsRequired = true, Name=@"name", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public string name
+    {
+      get { return _name; }
+      set { _name = value; }
+    }
     private global::ProtoBuf.IExtension extensionObject;
     global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }

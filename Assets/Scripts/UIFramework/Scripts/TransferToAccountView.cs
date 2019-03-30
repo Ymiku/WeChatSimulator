@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using static_data;
 
 namespace UIFrameWork
 {
@@ -20,16 +21,17 @@ namespace UIFrameWork
         {
             base.Init();
             _allNumberList = StaticDataAccount.GetAllPhoneNumbers();
-            _phoneNumText = FindInChild<Text>("");  //todo
-            _inputField = FindInChild<FInputField>("");
-            _nextBtn = FindInChild<Button>("");
-            _clearBtn = FindInChild<Button>("");
-            _friendBtn = FindInChild<Button>("");
+            _phoneNumText = FindInChild<Text>("Top/InputField/Text");
+            _inputField = FindInChild<FInputField>("Top/InputField");
+            _nextBtn = FindInChild<Button>("Next");
+            _clearBtn = FindInChild<Button>("Top/Clear");
+            _friendBtn = FindInChild<Button>("Top/Img");
 
             _nextBtn.onClick.AddListener(OnClickNext);
             _clearBtn.onClick.AddListener(OnClickClear);
             _friendBtn.onClick.AddListener(OnClickFriend);
             _inputField.onValueChanged.AddListener(OnInputValueChanged);
+            _clearBtn.gameObject.SetActive(false);
         }
         public override void OnEnter(BaseContext context)
         {
@@ -45,6 +47,8 @@ namespace UIFrameWork
         public override void OnPause(BaseContext context)
         {
             base.OnPause(context);
+            _inputField.text = "";
+            _clearBtn.gameObject.SetActive(false);
         }
 
         public override void OnResume(BaseContext context)
@@ -69,11 +73,12 @@ namespace UIFrameWork
         private void OnInputValueChanged(string value)
         {
             _nextBtn.interactable = !string.IsNullOrEmpty(value);
+            _clearBtn.gameObject.SetActive(!string.IsNullOrEmpty(value));
         }
 
         public void OnClickNext()
         {
-            string phoneNum = _phoneNumText.text;
+            string phoneNum = _phoneNumText.text.Replace(" ", "");
             foreach (var item in _allNumberList)
             {
                 if (item == phoneNum)
@@ -85,8 +90,8 @@ namespace UIFrameWork
                     }
                     else
                     {
-                        int accountId = StaticDataAccount.GetAccountIdByNumber(phoneNum);
-                        InputTransferAmountContext context = new InputTransferAmountContext(accountId);
+                        ACCOUNT account = StaticDataAccount.GetAccountByPhoneNumber(phoneNum);
+                        InputTransferAmountContext context = new InputTransferAmountContext(account);
                         UIManager.Instance.Push(context);
                         return;
                     }

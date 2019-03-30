@@ -131,5 +131,6 @@ public enum FInputType
 	None = 1,
 	PhoneNumber = 2,
 	CardNumber = 4,
-	Name = 8
+	Name = 8,
+    Money = 16,
 }
