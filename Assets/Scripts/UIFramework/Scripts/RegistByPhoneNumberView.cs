@@ -46,7 +46,8 @@ namespace UIFrameWork
 			GameManager.Instance.ClearData ();
             AccountSaveData data = XMLSaver.saveData.AddAccountData(0);
 			data.phoneNumber = num;
-			UIManager.Instance.Push(new LoginContext(){userId = 0});
+			GameManager.Instance.SetUser (0);
+			UIManager.Instance.Push(new LoginContext());
         }
         public void OnClickAgreement()
         {

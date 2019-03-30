@@ -4,13 +4,19 @@ namespace UIFrameWork
 {
 	public class LoginView : AlphaView
 	{
-        public SpriteRenderer headSprite;
+        public ImageProxy headSprite;
         public TextProxy phoneNumber;
 		private LoginContext _context;
 
 		public override void Init ()
 		{
 			base.Init ();
+		}
+		void UpdateView()
+		{
+			AccountSaveData data = XMLSaver.saveData.GetAccountData (GameManager.Instance.curUserId);
+			phoneNumber.text = Utils.FormatStringForSecrecy (data.phoneNumber,FInputType.PhoneNumber);
+			headSprite.sprite = data.GetHeadSprite();
 		}
 		public override void OnEnter(BaseContext context)
 		{
@@ -38,14 +44,16 @@ namespace UIFrameWork
 		}
 		public void OnClickLogin()
 		{
-			GameManager.Instance.SetUser (_context.userId);
 			UIManager.Instance.StartUILine(UIManager.UILine.Main);
 			UIManager.Instance.Push(new HomeContext());
+		}
+		public void OnClickChangeAccountLogin()
+		{
+			UIManager.Instance.Push(new ChangeAccountLoginContext());
 		}
 	}
 	public class LoginContext : BaseContext
 	{
-		public int userId;
 		public LoginContext() : base(UIType.Login)
 		{
 			
