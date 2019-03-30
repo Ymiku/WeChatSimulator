@@ -16,7 +16,7 @@ public partial class SaveData {
 			//npc读表，tbd
 			return data;
 		}
-
+        data.accountRealname = StaticDataContent.GetContent(5);
 		//data.accountId = accountId;
 		//data.accountNickname = "";
 		//data.accountHeadSprite = AccountDefine.DefaultHeadSprite;
@@ -75,7 +75,9 @@ public class AccountSaveData
     public string accountHeadSprite;    // 头像
     public Sprite GetHeadSprite()
     {
-        return Resources.Load<Sprite>(accountHeadSprite);
+        if(accountHeadSprite != null)
+            return Resources.Load<Sprite>(accountHeadSprite);
+        return Resources.Load<Sprite>("Sprites/social_head_default");
     }
 }
 
