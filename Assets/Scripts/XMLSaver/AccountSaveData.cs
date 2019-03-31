@@ -31,9 +31,9 @@ public partial class SaveData {
                 data.password = staticData.password;
                 data.realname = staticData.name;
                 data.phoneNumber = staticData.phone_number;
-                data.nickname = StaticDataContent.GetContent(5);
             }
-            data.accountId = staticData.id;
+            data.accountId = accountId;
+            data.nickname = StaticDataContent.GetContent(5);
             accountList.Add(data);
         }
 		return data;

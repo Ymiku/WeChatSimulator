@@ -1394,13 +1394,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114214704792537660}
   m_TextComponent: {fileID: 114963362083510986}
   m_Placeholder: {fileID: 114863600343073410}
-  m_ContentType: 3
+  m_ContentType: 0
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 2
+  m_KeyboardType: 0
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 2
+  m_CharacterValidation: 0
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
@@ -1419,7 +1419,7 @@ MonoBehaviour:
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 2
   m_ReadOnly: 0
-  f_InputType: 2
+  f_InputType: 1
 --- !u!114 &114933521618060462
 MonoBehaviour:
   m_ObjectHideFlags: 1

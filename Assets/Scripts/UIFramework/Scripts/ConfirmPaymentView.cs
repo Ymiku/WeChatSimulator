@@ -19,6 +19,7 @@ namespace UIFrameWork
         private Button _useItemBtn;
         private double _amount;
         private bool _canPayFlag;
+        private string _paywayStr;
 
         public override void Init()
         {
@@ -82,7 +83,8 @@ namespace UIFrameWork
                 if (result == ResultType.Success)
                 {
                     data.balance += _amount;
-                    // todo 打开转账成功界面
+                    AccountSaveData accountData = XMLSaver.saveData.GetAccountData(_context.accountId);
+                    UIManager.Instance.Push(new TransferSuccContext(_amount, _paywayStr, accountData, _context.remarksStr));
                 }
                 else
                 {
@@ -108,17 +110,18 @@ namespace UIFrameWork
             switch (XMLSaver.saveData.curPayway)
             {
                 case PaywayType.Banlance:
-                    _useItemText.text = ContentHelper.Read(ContentHelper.BalanceText);
+                    _paywayStr = ContentHelper.Read(ContentHelper.BalanceText);
                     break;
                 case PaywayType.YuEBao:
-                    _useItemText.text = ContentHelper.Read(ContentHelper.YuEBaoText);
+                    _paywayStr = ContentHelper.Read(ContentHelper.YuEBaoText);
                     break;
                 case PaywayType.BankCard:
                     string cardStr = XMLSaver.saveData.curUseBankCard.cardId.Substring(
                         XMLSaver.saveData.curUseBankCard.cardId.Length - 4, 4);
-                    _useItemText.text = XMLSaver.saveData.curUseBankCard.bankName + "(" + cardStr + ")";
+                    _paywayStr = XMLSaver.saveData.curUseBankCard.bankName + "(" + cardStr + ")";
                     break;
             }
+            _useItemText.text = _paywayStr;
         }
     }
     public class ConfirmPaymentContext : BaseContext
@@ -127,14 +130,16 @@ namespace UIFrameWork
         {
         }
 
-        public ConfirmPaymentContext(int accountId, double amount) : base(UIType.ConfirmPayment)
+        public ConfirmPaymentContext(int accountId, double amount, string remarksStr = "") : base(UIType.ConfirmPayment)
         {
             this.accountId = accountId;
             this.amount = amount;
+            this.remarksStr = remarksStr;
         }
 
         public int accountId;
         public double amount;
+        public string remarksStr;  // 转账备注
     }
 
     public class PaymentHelper

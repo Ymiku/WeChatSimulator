@@ -11,7 +11,8 @@ namespace UIFrameWork
         private Text _amountText;
         private Text _nameText;
         private Text _accountText;
-        private FInputField _inputField;
+        private FInputField _amountInputField;
+        private FInputField _remarksInputField;
         private Button _okBtn;
         private Button _clearBtn;
 
@@ -24,12 +25,13 @@ namespace UIFrameWork
             _amountText = FindInChild<Text>("Middle/AmountInput/Text");
             _nameText = FindInChild<Text>("Middle/Name");
             _accountText = FindInChild<Text>("Middle/Account");
-            _inputField = FindInChild<FInputField>("Middle/AmountInput");
+            _amountInputField = FindInChild<FInputField>("Middle/AmountInput");
+            _remarksInputField = FindInChild<FInputField>("Middle/RemarksInput");
             _okBtn = FindInChild<Button>("Middle/OkBtn");
             _clearBtn = FindInChild<Button>("Middle/AmountInput/Clear");
             _clearBtn.onClick.AddListener(OnClickClear);
             _okBtn.onClick.AddListener(OnClickOk);
-            _inputField.onValueChanged.AddListener(OnInputValueChanged);
+            _amountInputField.onValueChanged.AddListener(OnInputValueChanged);
             _clearBtn.gameObject.SetActive(false);
             _okBtn.interactable = false;
 		}
@@ -38,10 +40,10 @@ namespace UIFrameWork
             base.OnEnter(context);
             _context = context as InputTransferAmountContext;
             _account = _context.account;
-            if (string.IsNullOrEmpty(_account.nickname))
-                _nameText.text = _account.nickname + "(" + Utils.FormatStringForSecrecy(_account.realname, FInputType.Name) + ")";
-            else
+            if (string.IsNullOrEmpty(_account.nickname) || _account.nickname == ContentHelper.Read(5))
                 _nameText.text = _account.realname + "(" + Utils.FormatStringForSecrecy(_account.realname, FInputType.Name) + ")";
+            else
+                _nameText.text = _account.nickname + "(" + Utils.FormatStringForSecrecy(_account.realname, FInputType.Name) + ")";
 
             _accountText.text = Utils.FormatStringForSecrecy(_account.phoneNumber, FInputType.PhoneNumber);
         }
@@ -49,7 +51,7 @@ namespace UIFrameWork
 		public override void OnExit(BaseContext context)
 		{
 			base.OnExit(context);
-            _inputField.text = "";
+            _amountInputField.text = "";
             _clearBtn.gameObject.SetActive(false);
             _okBtn.interactable = false;
         }
@@ -79,14 +81,14 @@ namespace UIFrameWork
             double amount = 0;
             double.TryParse(_amountText.text, out amount);
             if (amount > 0)
-                UIManager.Instance.Push(new ConfirmPaymentContext(_account.accountId, amount));
+                UIManager.Instance.Push(new ConfirmPaymentContext(_account.accountId, amount, _remarksInputField.text));
             else
                 ShowNotice(ContentHelper.Read(ContentHelper.IllegalInput));
         }
 
         public void OnClickClear()
         {
-            _inputField.text = "";
+            _amountInputField.text = "";
         }
 	}
 	public class InputTransferAmountContext : BaseContext
