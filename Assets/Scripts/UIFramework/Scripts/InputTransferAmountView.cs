@@ -72,8 +72,8 @@ namespace UIFrameWork
 
         public void OnClickOk()
         {
-            float amount = 0;
-            float.TryParse(_amountText.text, out amount);
+            double amount = 0;
+            double.TryParse(_amountText.text, out amount);
             if (amount > 0)
                 UIManager.Instance.Push(new ConfirmPaymentContext(_account.accountId, amount));
             else

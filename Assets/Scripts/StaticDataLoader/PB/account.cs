@@ -50,9 +50,9 @@ namespace static_data
       get { return _password; }
       set { _password = value; }
     }
-    private float _money;
-    [global::ProtoBuf.ProtoMember(6, IsRequired = true, Name=@"money", DataFormat = global::ProtoBuf.DataFormat.FixedSize)]
-    public float money
+    private double _money;
+    [global::ProtoBuf.ProtoMember(6, IsRequired = true, Name=@"money", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public double money
     {
       get { return _money; }
       set { _money = value; }

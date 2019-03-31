@@ -84,7 +84,7 @@ public class BankCardSaveData
     public int accountId;       // 账户id
     public string cardId;       // 银行卡号
     public string bankName;     // 银行名字
-    public float money;         // 银行卡余额
+    public double money;         // 银行卡余额
 }
 
 public static class BankCardDefine

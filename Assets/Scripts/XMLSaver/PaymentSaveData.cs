@@ -3,7 +3,7 @@ public partial class SaveData
 {
     public PaywayType curPayway = PaywayType.None;
 
-    public PaywayType SetCurPaywayByMoney(float money)
+    public PaywayType SetCurPaywayByMoney(double money)
     {
         AssetsSaveData data = GetAssetsData(GameManager.Instance.curUserId);
         switch (curPayway)

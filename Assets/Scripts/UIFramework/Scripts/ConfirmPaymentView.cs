@@ -16,7 +16,7 @@ namespace UIFrameWork
         private Text _useItemText;
         private Button _okBtn;
         private Button _useItemBtn;
-        private float _amount;
+        private double _amount;
         private bool _canPayFlag;
 
         public override void Init()
@@ -95,7 +95,7 @@ namespace UIFrameWork
 
         private void Refresh()
         {
-            _amountText.text = _context.amount.ToString();
+            _amountText.text = "гд" + _context.amount.ToString();
             _canPayFlag = XMLSaver.saveData.curPayway != PaywayType.None;
             _useItem.SetActive(_canPayFlag);
             _okTextObj.SetActive(_canPayFlag);
@@ -123,14 +123,14 @@ namespace UIFrameWork
         {
         }
 
-        public ConfirmPaymentContext(int accountId, float amount) : base(UIType.ConfirmPayment)
+        public ConfirmPaymentContext(int accountId, double amount) : base(UIType.ConfirmPayment)
         {
             this.accountId = accountId;
             this.amount = amount;
         }
 
         public int accountId;
-        public float amount;
+        public double amount;
     }
 
     public class PaymentHelper

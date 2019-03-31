@@ -131,7 +131,7 @@ public static class Utils
 		}
 		return CnChar;
 	}
-    public static ResultType TryPay(float money, PaywayType way, string cardId = "")
+    public static ResultType TryPay(double money, PaywayType way, string cardId = "")
     {
         ResultType result = ResultType.Failed;
         AssetsSaveData data = XMLSaver.saveData.GetAssetsData(GameManager.Instance.curUserId);
@@ -175,14 +175,6 @@ public static class Utils
                 break;
         }
         return result;
-    }
-    public static void UseYuEBaoPay(float money)
-    {
-
-    }
-    public static void UseBankCardPay(float money)
-    {
-
     }
 }
 public enum FInputType

@@ -53,8 +53,8 @@ public partial class SaveData
 public class AssetsSaveData
 {
     public int accountId;       //账户id
-    public float balance;       //余额
-    public float yuEBao;        //余额宝
+    public double balance;       //余额
+    public double yuEBao;        //余额宝
     public float antPayValue;   //蚂蚁花呗可用
     public float antPayLimit;   //蚂蚁花呗额度
 }
