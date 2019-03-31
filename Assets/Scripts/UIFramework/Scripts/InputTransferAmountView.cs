@@ -15,7 +15,7 @@ namespace UIFrameWork
         private Button _okBtn;
         private Button _clearBtn;
 
-        private ACCOUNT _account;
+        private AccountSaveData _account;
 
 		public override void Init ()
 		{
@@ -38,8 +38,8 @@ namespace UIFrameWork
 			base.OnEnter(context);
 			_context = context as InputTransferAmountContext;
             _account = _context.account;
-            _nameText.text = _account.name + "(" + _account.name + ")";
-            _accountText.text = Utils.FormatStringForSecrecy(_account.phone_number.Substring(0, 11), FInputType.PhoneNumber);
+            _nameText.text = _account.realname + "(" + _account.realname + ")";
+            _accountText.text = Utils.FormatStringForSecrecy(_account.phoneNumber, FInputType.PhoneNumber);
 		}
 
 		public override void OnExit(BaseContext context)
@@ -75,7 +75,7 @@ namespace UIFrameWork
             float amount = 0;
             float.TryParse(_amountText.text, out amount);
             if (amount > 0)
-                UIManager.Instance.Push(new ConfirmPaymentContext(_account.id, amount));
+                UIManager.Instance.Push(new ConfirmPaymentContext(_account.accountId, amount));
             else
                 ShowNotice(ContentHelper.Read(ContentHelper.IllegalInput));
         }
@@ -91,11 +91,11 @@ namespace UIFrameWork
 		{
 		}
 
-        public InputTransferAmountContext(ACCOUNT account) : base(UIType.InputTransferAmount)
+        public InputTransferAmountContext(AccountSaveData account) : base(UIType.InputTransferAmount)
         {
             this.account = account;
         }
 
-        public ACCOUNT account;
+        public AccountSaveData account;
 	}
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using static_data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,10 +16,14 @@ public partial class SaveData
             if (assetsDataList[i].accountId == accountId)
                 existIndex = i;
         }
-        if (existIndex >= 0) {
+        if (existIndex >= 0)
+        {
             return assetsDataList[existIndex];
         }
         AssetsSaveData data = new AssetsSaveData();
+        ACCOUNT staticData = StaticDataAccount.GetAccountById(accountId);
+        if (staticData != null)
+            data.balance = staticData.money;
         data.accountId = accountId;
         assetsDataList.Add(data);
         return data;

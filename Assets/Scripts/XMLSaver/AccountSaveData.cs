@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using static_data;
+using System.Collections.Generic;
 using UnityEngine;
 
 public partial class SaveData {
@@ -10,16 +11,6 @@ public partial class SaveData {
 	public AccountSaveData AddAccountData(int accountId)
     {
 		AccountSaveData data = new AccountSaveData();
-
-		if(false)
-		{
-			//npc读表，tbd
-			return data;
-		}
-        data.accountRealname = StaticDataContent.GetContent(5);
-		//data.accountId = accountId;
-		//data.accountNickname = "";
-		//data.accountHeadSprite = AccountDefine.DefaultHeadSprite;
 
         int existAccountIndex = -1;
         for (int i = 0; i < accountList.Count; i++)
@@ -33,6 +24,15 @@ public partial class SaveData {
         }
         else
         {
+            ACCOUNT staticData = StaticDataAccount.GetAccountById(accountId);
+            if (staticData != null)
+            {
+                data.accountId = staticData.id;
+                data.password = staticData.password;
+                data.realname = staticData.name;
+                data.phoneNumber = staticData.phone_number;
+                data.nickname = StaticDataContent.GetContent(5);
+            }
             accountList.Add(data);
         }
 		return data;
@@ -58,6 +58,19 @@ public partial class SaveData {
         int id = 0; // Todo 通过name获取id
         return GetAccountData(id);
     }
+
+    /// <summary>
+    /// 通过电话号码获取账户信息
+    /// </summary>
+    public AccountSaveData GetAccountDataByPhoneNumber(string phoneNumber) {
+        foreach (var data in accountList)
+        {
+            if (data.phoneNumber == phoneNumber)
+                return data;
+        }
+        AccountSaveData _data = new AccountSaveData();
+        return _data;
+    }
 }
 
 /// <summary>
@@ -68,15 +81,15 @@ public class AccountSaveData
 {
     public int accountId;               // 账户唯一id
     public string phoneNumber;          // 账户电话号码
-    public string accountRealname;      // 账户实名
-    public string accountNickname;      // 账户名(昵称)
-    public string accountPassword;      // 账户登陆密码
-    public int accountPayword;          // 账户支付密码
-    public string accountHeadSprite;    // 头像
+    public string realname;             // 账户实名
+    public string nickname;             // 账户名(昵称)
+    public string password;             // 账户登陆密码
+    public int payword;                 // 账户支付密码
+    public string headSprite;           // 头像
     public Sprite GetHeadSprite()
     {
-        if(accountHeadSprite != null)
-            return Resources.Load<Sprite>(accountHeadSprite);
+        if(headSprite != null)
+            return Resources.Load<Sprite>(headSprite);
         return Resources.Load<Sprite>("Sprites/social_head_default");
     }
 }
