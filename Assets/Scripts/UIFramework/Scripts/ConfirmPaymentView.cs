@@ -12,6 +12,7 @@ namespace UIFrameWork
         private GameObject _canNotPayObj;
         private GameObject _okTextObj;
         private GameObject _selectTextObj;
+        private GameObject _signObj;
         private Text _amountText;
         private Text _useItemText;
         private Button _okBtn;
@@ -26,6 +27,7 @@ namespace UIFrameWork
             _canNotPayObj = FindChild("Content/CantUse");
             _okTextObj = FindChild("Content/OkBtn/Text");
             _selectTextObj = FindChild("Content/OkBtn/Text1");
+            _signObj = FindChild("Content/sign");
             _amountText = FindInChild<Text>("Content/Value");
             _useItemText = FindInChild<Text>("Content/UseItem/wayText");
             _okBtn = FindInChild<Button>("Content/OkBtn");
@@ -95,7 +97,9 @@ namespace UIFrameWork
 
         private void Refresh()
         {
-            _amountText.text = "гд" + _context.amount.ToString();
+            _amountText.text = _context.amount.ToString();
+            _signObj.transform.localPosition = new Vector3(-_amountText.preferredWidth / 2,
+                _signObj.transform.localPosition.y, _signObj.transform.localPosition.z);
             _canPayFlag = XMLSaver.saveData.curPayway != PaywayType.None;
             _useItem.SetActive(_canPayFlag);
             _okTextObj.SetActive(_canPayFlag);
