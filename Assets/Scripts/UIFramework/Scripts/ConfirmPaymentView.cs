@@ -5,10 +5,18 @@ namespace UIFrameWork
 	public class ConfirmPaymentView : AnimateView
 	{
 		private ConfirmPaymentContext _context;
+        private GameObject _useItem;
+        private GameObject _canNotUseObj;
+        private GameObject _okTextObj;
+        private GameObject _selectTextObj;
 
 		public override void Init ()
 		{
 			base.Init ();
+            _useItem = FindChild("Content/UseItem");
+            _canNotUseObj = FindChild("Content/CantUse");
+            _okTextObj = FindChild("Content/OkBtn/Text");
+            _selectTextObj = FindChild("Content/OkBtn/Text1");
 		}
 		public override void OnEnter(BaseContext context)
 		{
