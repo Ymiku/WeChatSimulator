@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using NodeEditorFramework;
 using NodeEditorFramework.Standard;
 
-public class PoolableScrollView : MonoBehaviour {
+public class PoolableFScrollView : MonoBehaviour {
 	public NodeItemProxy[] prefabs;
 	Stack<NodeItemProxy>[] _pools;
 	#if UNITY_EDITOR
