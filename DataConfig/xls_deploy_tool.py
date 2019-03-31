@@ -612,6 +612,9 @@ class DataParser:
         """将pb类型转换为python类型"""
 
         field_value = self._sheet.cell_value(row, col)
+        ctype = self._sheet.cell_type(row, col)
+        if ctype == 2 :
+            field_value = int(field_value)
         LOG_INFO("%d|%d|%s", row, col, field_value)
 
         try:

@@ -43,6 +43,20 @@ namespace static_data
       get { return _name; }
       set { _name = value; }
     }
+    private string _password;
+    [global::ProtoBuf.ProtoMember(5, IsRequired = true, Name=@"password", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public string password
+    {
+      get { return _password; }
+      set { _password = value; }
+    }
+    private float _money;
+    [global::ProtoBuf.ProtoMember(6, IsRequired = true, Name=@"money", DataFormat = global::ProtoBuf.DataFormat.FixedSize)]
+    public float money
+    {
+      get { return _money; }
+      set { _money = value; }
+    }
     private global::ProtoBuf.IExtension extensionObject;
     global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
