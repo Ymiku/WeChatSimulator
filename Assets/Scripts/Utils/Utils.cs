@@ -23,7 +23,6 @@ public static class Utils
             return null;
         }
     }
-
     public static T FindInChild<T>(GameObject parent, string path) where T : Component
     {
         if (parent != null)
@@ -43,7 +42,14 @@ public static class Utils
             return null;
         }
     }
-
+    public static bool CheckPhoneNumberExist(string phoneNumber) {
+        foreach (var data in XMLSaver.saveData.accountList) {
+            if (data.phoneNumber == phoneNumber) {
+                return true;
+            }
+        }
+        return false;
+    }
     public static bool CheckIsSelfNumber(string number)
     {
         AccountSaveData data = XMLSaver.saveData.GetAccountData(GameManager.Instance.curUserId);

@@ -15,12 +15,9 @@ namespace UIFrameWork
         private Button _clearBtn;
         private Button _friendBtn;
 
-        private List<string> _allNumberList = new List<string>();
-
         public override void Init()
         {
             base.Init();
-            _allNumberList = StaticDataAccount.GetAllPhoneNumbers();
             _phoneNumText = FindInChild<Text>("Top/InputField/Text");
             _inputField = FindInChild<FInputField>("Top/InputField");
             _nextBtn = FindInChild<Button>("Next");
@@ -79,25 +76,22 @@ namespace UIFrameWork
         public void OnClickNext()
         {
             string phoneNum = _phoneNumText.text.Replace(" ", "");
-            foreach (var item in _allNumberList)
+            if (Utils.CheckPhoneNumberExist(phoneNum))
             {
-                if (item == phoneNum)
+                if (Utils.CheckIsSelfNumber(phoneNum))
                 {
-                    if (Utils.CheckIsSelfNumber(phoneNum))
-                    {
-                        ShowNotice(ContentHelper.Read(ContentHelper.CanNotTransToSelf));
-                        return;
-                    }
-                    else
-                    {
-                        ACCOUNT account = StaticDataAccount.GetAccountByPhoneNumber(phoneNum);
-                        InputTransferAmountContext context = new InputTransferAmountContext(account);
-                        UIManager.Instance.Push(context);
-                        return;
-                    }
+                    ShowNotice(ContentHelper.Read(ContentHelper.CanNotTransToSelf));
+                }
+                else {
+                    AccountSaveData data = XMLSaver.saveData.GetAccountDataByPhoneNumber(phoneNum);
+                    InputTransferAmountContext context = new InputTransferAmountContext(data);
+                    UIManager.Instance.Push(context);
                 }
             }
-            ShowNotice(ContentHelper.Read(ContentHelper.TransAccountNotExist));
+            else
+            {
+                ShowNotice(ContentHelper.Read(ContentHelper.TransAccountNotExist));
+            }
         }
 
         public void OnClickFriend()

@@ -8,15 +8,7 @@ public static class StaticDataAccount
     public static void Init()
     {
         Info = StaticDataLoader.ReadOneDataConfig<ACCOUNT_ARRAY>("account");
-    }
-
-    public static List<string> GetAllPhoneNumbers()
-    {
-        List<string> result = new List<string>();
-        foreach (var item in Info.items) {
-            result.Add(item.phone_number);
-        }
-        return result;
+        TransToSaveData();
     }
 
     public static ACCOUNT GetAccountById(int id)
@@ -29,14 +21,12 @@ public static class StaticDataAccount
         return null;
     }
 
-    public static ACCOUNT GetAccountByPhoneNumber(string phoneNumber)
+    public static void TransToSaveData()
     {
         foreach (var item in Info.items)
         {
-            if (item.phone_number == phoneNumber)
-                return item;
+            XMLSaver.saveData.AddAccountData(item.id);
+            XMLSaver.saveData.AddAssetsData(item.id);
         }
-        return null;
     }
-
 }
