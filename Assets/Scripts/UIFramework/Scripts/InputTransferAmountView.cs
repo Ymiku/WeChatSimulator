@@ -27,20 +27,24 @@ namespace UIFrameWork
             _inputField = FindInChild<FInputField>("Middle/AmountInput");
             _okBtn = FindInChild<Button>("Middle/OkBtn");
             _clearBtn = FindInChild<Button>("Middle/AmountInput/Clear");
-
+            _clearBtn.onClick.AddListener(OnClickClear);
             _okBtn.onClick.AddListener(OnClickOk);
             _inputField.onValueChanged.AddListener(OnInputValueChanged);
             _clearBtn.gameObject.SetActive(false);
             _okBtn.interactable = false;
 		}
-		public override void OnEnter(BaseContext context)
-		{
-			base.OnEnter(context);
-			_context = context as InputTransferAmountContext;
+        public override void OnEnter(BaseContext context)
+        {
+            base.OnEnter(context);
+            _context = context as InputTransferAmountContext;
             _account = _context.account;
-            _nameText.text = _account.realname + "(" + _account.realname + ")";
+            if (string.IsNullOrEmpty(_account.nickname))
+                _nameText.text = _account.nickname + "(" + Utils.FormatStringForSecrecy(_account.realname, FInputType.Name) + ")";
+            else
+                _nameText.text = _account.realname + "(" + Utils.FormatStringForSecrecy(_account.realname, FInputType.Name) + ")";
+
             _accountText.text = Utils.FormatStringForSecrecy(_account.phoneNumber, FInputType.PhoneNumber);
-		}
+        }
 
 		public override void OnExit(BaseContext context)
 		{
