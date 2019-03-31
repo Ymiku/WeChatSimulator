@@ -131,6 +131,59 @@ public static class Utils
 		}
 		return CnChar;
 	}
+    public static ResultType TryPay(float money, PaywayType way, string cardId = "")
+    {
+        ResultType result = ResultType.Failed;
+        AssetsSaveData data = XMLSaver.saveData.GetAssetsData(GameManager.Instance.curUserId);
+        switch (way)
+        {
+            case PaywayType.Banlance:
+                if (data.balance >= money)
+                {
+                    data.balance -= money;
+                    result = ResultType.Success;
+                }
+                break;
+            case PaywayType.YuEBao:
+                if (data.yuEBao >= money)
+                {
+                    data.yuEBao -= money;
+                    result = ResultType.Success;
+                }
+                break;
+            case PaywayType.BankCard:
+                if (string.IsNullOrEmpty(cardId))
+                {
+                    if (XMLSaver.saveData.curUseBankCard.money >= money)
+                    {
+                        XMLSaver.saveData.curUseBankCard.money -= money;
+                        result = ResultType.Success;
+                    }
+                }
+                else
+                {
+                    BankCardSaveData cardData = XMLSaver.saveData.GetBankCardData(GameManager.Instance.curUserId, cardId);
+                    if (cardData != null && cardData.money >= money)
+                    {
+                        cardData.money -= money;
+                        result = ResultType.Success;
+                    }
+                }
+                break;
+            default:
+                Debug.LogError(string.Format("try use pay way {0}, but not handle this way"));
+                break;
+        }
+        return result;
+    }
+    public static void UseYuEBaoPay(float money)
+    {
+
+    }
+    public static void UseBankCardPay(float money)
+    {
+
+    }
 }
 public enum FInputType
 {
@@ -139,4 +192,9 @@ public enum FInputType
 	CardNumber = 4,
 	Name = 8,
     Money = 16,
+}
+
+public enum ResultType {
+    Success,
+    Failed,
 }

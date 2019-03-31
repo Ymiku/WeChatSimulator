@@ -4,7 +4,7 @@ using UnityEngine;
 
 public partial class SaveData {
     public List<AccountSaveData> accountList = new List<AccountSaveData>();
-
+    
     /// <summary>
     /// 添加一个账户信息
     /// </summary>
@@ -27,12 +27,12 @@ public partial class SaveData {
             ACCOUNT staticData = StaticDataAccount.GetAccountById(accountId);
             if (staticData != null)
             {
-                data.accountId = staticData.id;
                 data.password = staticData.password;
                 data.realname = staticData.name;
                 data.phoneNumber = staticData.phone_number;
                 data.nickname = StaticDataContent.GetContent(5);
             }
+            data.accountId = staticData.id;
             accountList.Add(data);
         }
 		return data;
@@ -46,9 +46,7 @@ public partial class SaveData {
             if (data.accountId == id)
                 return data;
         }
-        AccountSaveData _data = new AccountSaveData();
-        _data.accountId = id;
-        return _data;
+        return null;
     }
 
     /// <summary>
@@ -68,8 +66,7 @@ public partial class SaveData {
             if (data.phoneNumber == phoneNumber)
                 return data;
         }
-        AccountSaveData _data = new AccountSaveData();
-        return _data;
+        return null;
     }
 }
 

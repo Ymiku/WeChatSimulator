@@ -13,7 +13,7 @@ namespace UIFrameWork
             Localization.Create();
             UIManager.Instance.alwaysFrontTrans = statusBar;
 			UIManager.Instance.AddNoticeListener (GetComponentInChildren<NoticePanel>().AddNotice);
-            if (XMLSaver.saveData.accountList.Count == 0)
+            if (XMLSaver.saveData.canLoginUserIds.Count == 0)
             {
                 UIManager.Instance.StartUILine(UIManager.UILine.AccountLogin);
                 UIManager.Instance.Push(new RegistByPhoneNumberContext());

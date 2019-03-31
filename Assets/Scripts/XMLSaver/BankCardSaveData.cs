@@ -6,11 +6,12 @@ using System.Text;
 public partial class SaveData
 {
     public List<BankCardSaveData> bankCardList = new List<BankCardSaveData>();
+    public BankCardSaveData curUseBankCard;  //当前使用的银行卡
 
     /// <summary>
     /// 添加一个银行卡数据
     /// </summary>
-    public BankCardSaveData AddBankCardData(int accountId, int cardId)
+    public BankCardSaveData AddBankCardData(int accountId, string cardId)
     {
         int existAccountIndex = -1;
         for (int i = 0; i < bankCardList.Count; i++)
@@ -24,6 +25,9 @@ public partial class SaveData
         data.accountId = accountId;
         data.cardId = cardId;
         bankCardList.Add(data);
+        if (bankCardList.Count == 1) {
+            curUseBankCard = data;
+        }
         return data;
     }
 
@@ -52,23 +56,19 @@ public partial class SaveData
     /// <summary>
     /// 通过id获取一张卡的数据
     /// </summary>
-    public BankCardSaveData GetBankCardData(int accountId, int cardId) {
+    public BankCardSaveData GetBankCardData(int accountId, string cardId) {
         foreach (var data in bankCardList)
         {
             if (data.accountId == accountId && data.cardId == cardId)
                 return data;
         }
-        BankCardSaveData _data = new BankCardSaveData();
-        _data.accountId = accountId;
-        _data.cardId = cardId;
-        bankCardList.Add(_data);
-        return _data;
+        return null;
     }
 
     /// <summary>
     /// 通过名字获取一张卡的数据
     /// </summary>
-    public BankCardSaveData GetBankCardData(string name, int cardId)
+    public BankCardSaveData GetBankCardData(string name, string cardId)
     {
         int accountId = 0; // todo 名字转id
         return GetBankCardData(accountId, cardId);
@@ -82,7 +82,8 @@ public partial class SaveData
 public class BankCardSaveData
 {
     public int accountId;       // 账户id
-    public int cardId;          // 银行卡号
+    public string cardId;       // 银行卡号
+    public string bankName;     // 银行名字
     public float money;         // 银行卡余额
 }
 

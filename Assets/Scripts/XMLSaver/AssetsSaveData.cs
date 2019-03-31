@@ -37,7 +37,6 @@ public partial class SaveData
         }
         AssetsSaveData _data = new AssetsSaveData();
         _data.accountId = accountId;
-        assetsDataList.Add(_data);
         return _data;
     }
 
