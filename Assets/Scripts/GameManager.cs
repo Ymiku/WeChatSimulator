@@ -7,7 +7,6 @@ public class GameManager : UnitySingleton<GameManager>
     long _timeStamp;
     float _localTime;
 	public int curUserId;
-    public string curAccountName = "bull";
     public long time
     {
         get { return _timeStamp + (long)_localTime; }
@@ -27,6 +26,8 @@ public class GameManager : UnitySingleton<GameManager>
 		XMLSaver.saveData.lastUser = userId;
 		if (!XMLSaver.saveData.canLoginUserIds.Contains (userId))
 			XMLSaver.saveData.canLoginUserIds.Add (userId);
+        ChatManager.Instance.OnExit();
+        ChatManager.Instance.OnEnter(XMLSaver.saveData.GetAccountData(userId).enname);
 	}
     void OnEnterGame()
     {
@@ -47,6 +48,7 @@ public class GameManager : UnitySingleton<GameManager>
     void Update()
     {
         _localTime += Time.deltaTime;
+        StoryManager.Instance.Execute();
         ChatManager.Instance.OnExcute();
         FrostRX.Instance.Execute();
     }

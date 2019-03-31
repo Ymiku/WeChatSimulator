@@ -10,13 +10,14 @@ public partial class SaveData
 	public List<int> instanceID = new List<int> ();
 	public List<ChatInstanceData> instanceData = new List<ChatInstanceData> ();
     //对话控制变量
-	public List<string> varName = new List<string> ();
-	public List<int> varValue = new List<int> ();
+	public List<string> varName = new List<string>{"main"};
+	public List<int> varValue = new List<int>{0};
 	public int GetValue(string valueName)
 	{
 		int i = varName.IndexOf (valueName);
 		if (i != -1)
 			return varValue [i];
+        SetValue(valueName,0);
 		return 0;
 	}
 	public void SetValue(string valueName,int value)
