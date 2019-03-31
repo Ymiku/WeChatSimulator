@@ -14,7 +14,7 @@ public static class StaticDataAccount
     {
         List<string> result = new List<string>();
         foreach (var item in Info.items) {
-            result.Add(item.phone_number.Substring(0,11));
+            result.Add(item.phone_number);
         }
         return result;
     }
@@ -33,7 +33,7 @@ public static class StaticDataAccount
     {
         foreach (var item in Info.items)
         {
-            if (item.phone_number.Substring(0, 11) == phoneNumber)
+            if (item.phone_number == phoneNumber)
                 return item;
         }
         return null;
