@@ -27,6 +27,7 @@ public partial class SaveData {
             ACCOUNT staticData = StaticDataAccount.GetAccountById(accountId);
             if (staticData != null)
             {
+                data.enname = staticData.en_name;
                 data.password = staticData.password;
                 data.realname = staticData.name;
                 data.phoneNumber = staticData.phone_number;
@@ -53,8 +54,12 @@ public partial class SaveData {
     /// 通过唯一名字获取账户信息
     /// </summary>
     public AccountSaveData GetAccountData(string name) {
-        int id = 0; // Todo 通过name获取id
-        return GetAccountData(id);
+        for (int i = 0; i < accountList.Count; i++)
+        {
+            if (accountList[i].enname == name)
+                return accountList[i];
+        }
+        return null;
     }
 
     /// <summary>
@@ -77,6 +82,7 @@ public partial class SaveData {
 public class AccountSaveData
 {
     public int accountId;               // 账户唯一id
+    public string enname;
     public string phoneNumber;          // 账户电话号码
     public string realname;             // 账户实名
     public string nickname;             // 账户名(昵称)
