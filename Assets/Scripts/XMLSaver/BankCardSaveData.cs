@@ -84,7 +84,7 @@ public partial class SaveData
             if (curUseCardList[i].accountId == accountId)
                 return curUseCardList[i];
         }
-        return null;
+        return new BankCardSaveData();
     }
 }
 

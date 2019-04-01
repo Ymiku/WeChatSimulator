@@ -29,8 +29,8 @@ public class PoolableScrollView : MonoBehaviour
     List<ItemBase> _activeItems = new List<ItemBase>();
     RectTransform viewPortTrans;
     RectTransform contextTrans;
-    List<object> _datas;
-    // Use this for initialization
+    List<object> _datas = new List<object>();
+
     private void Test()
     {
         List<object> os = new List<object>();
@@ -47,7 +47,7 @@ public class PoolableScrollView : MonoBehaviour
         os.Add(new object());
         Init(os);   
     }
-    void Init(List<object> datas)
+    public void Init(List<object> datas)
     {
         _datas = datas;
         prefab.gameObject.SetActive(false);

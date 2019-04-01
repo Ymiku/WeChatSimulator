@@ -66,7 +66,7 @@ namespace UIFrameWork
         }
 
         public void OnClickUseItem() {
-            UIManager.Instance.Push(new SelectPayWayContext());
+            UIManager.Instance.Push(new SelectPayWayContext(_context.amount));
         }
 
         public void OnClickOk()
@@ -93,7 +93,7 @@ namespace UIFrameWork
             }
             else
             {
-                UIManager.Instance.Push(new SelectPayWayContext());
+                UIManager.Instance.Push(new SelectPayWayContext(_context.amount));
             }
         }
 
@@ -107,20 +107,7 @@ namespace UIFrameWork
             _okTextObj.SetActive(_canPayFlag);
             _canNotPayObj.SetActive(!_canPayFlag);
             _selectTextObj.SetActive(!_canPayFlag);
-            switch (Player.Instance.curPayway)
-            {
-                case PaywayType.Banlance:
-                    _paywayStr = ContentHelper.Read(ContentHelper.BalanceText);
-                    break;
-                case PaywayType.YuEBao:
-                    _paywayStr = ContentHelper.Read(ContentHelper.YuEBaoText);
-                    break;
-                case PaywayType.BankCard:
-                    BankCardSaveData data = XMLSaver.saveData.GetCurUseCard(GameManager.Instance.curUserId);
-                    string cardStr = data.cardId.Substring(data.cardId.Length - 4, 4);
-                    _paywayStr = data.bankName + "(" + cardStr + ")";
-                    break;
-            }
+            _paywayStr = Utils.FormatPaywayStr(Player.Instance.curPayway, Player.Instance.curUseBankCard.cardId);
             _useItemText.text = _paywayStr;
         }
     }
