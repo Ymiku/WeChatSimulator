@@ -43,4 +43,12 @@ public class ItemBase : MonoBehaviour
     {
 
     }
+    public GameObject FindChild(string path)
+    {
+        return Utils.FindChild(gameObject, path);
+    }
+    public T FindInChild<T>(string path) where T : Component
+    {
+        return Utils.FindInChild<T>(gameObject, path);
+    }
 }

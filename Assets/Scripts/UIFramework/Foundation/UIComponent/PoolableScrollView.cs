@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using NodeEditorFramework;
 using NodeEditorFramework.Standard;
 
+[RequireComponent(typeof(ScrollRect))]
 public class PoolableScrollView : MonoBehaviour
 {
     RectTransform _cachedRectTransform;
