@@ -35,7 +35,7 @@ public class Player : Singleton<Player>
 
     public void OnExit()
     {
-        id = 0;
+        id = -1;
     }
 
     /// <summary>
