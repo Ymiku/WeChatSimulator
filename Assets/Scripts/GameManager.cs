@@ -28,6 +28,8 @@ public class GameManager : UnitySingleton<GameManager>
 			XMLSaver.saveData.canLoginUserIds.Add (userId);
         ChatManager.Instance.OnExit();
         ChatManager.Instance.OnEnter(XMLSaver.saveData.GetAccountData(userId).enname);
+        Player.Instance.OnExit();
+        Player.Instance.OnEnter();
 	}
     void OnEnterGame()
     {

@@ -154,9 +154,10 @@ public static class Utils
             case PaywayType.BankCard:
                 if (string.IsNullOrEmpty(cardId))
                 {
-                    if (XMLSaver.saveData.curUseBankCard.money >= money)
+                    BankCardSaveData cardData = XMLSaver.saveData.GetCurUseCard(GameManager.Instance.curUserId);
+                    if (cardData.money >= money)
                     {
-                        XMLSaver.saveData.curUseBankCard.money -= money;
+                        cardData.money -= money;
                         result = ResultType.Success;
                     }
                 }

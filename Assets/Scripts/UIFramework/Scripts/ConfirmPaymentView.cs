@@ -41,7 +41,7 @@ namespace UIFrameWork
             base.OnEnter(context);
             _context = context as ConfirmPaymentContext;
             _amount = _context.amount;
-            XMLSaver.saveData.SetCurPaywayByMoney(_amount);
+            Player.Instance.SetCurPaywayByMoney(_amount);
             Refresh();
         }
 
@@ -79,7 +79,7 @@ namespace UIFrameWork
                     ShowNotice(ContentHelper.Read(ContentHelper.TransAccountNotExist));
                     return;
                 }
-                ResultType result = Utils.TryPay(_amount, XMLSaver.saveData.curPayway);
+                ResultType result = Utils.TryPay(_amount, Player.Instance.curPayway);
                 if (result == ResultType.Success)
                 {
                     data.balance += _amount;
@@ -102,12 +102,12 @@ namespace UIFrameWork
             _amountText.text = _context.amount.ToString();
             _signObj.transform.localPosition = new Vector3(-_amountText.preferredWidth / 2,
                 _signObj.transform.localPosition.y, _signObj.transform.localPosition.z);
-            _canPayFlag = XMLSaver.saveData.curPayway != PaywayType.None;
+            _canPayFlag = Player.Instance.curPayway != PaywayType.None;
             _useItem.SetActive(_canPayFlag);
             _okTextObj.SetActive(_canPayFlag);
             _canNotPayObj.SetActive(!_canPayFlag);
             _selectTextObj.SetActive(!_canPayFlag);
-            switch (XMLSaver.saveData.curPayway)
+            switch (Player.Instance.curPayway)
             {
                 case PaywayType.Banlance:
                     _paywayStr = ContentHelper.Read(ContentHelper.BalanceText);
@@ -116,9 +116,9 @@ namespace UIFrameWork
                     _paywayStr = ContentHelper.Read(ContentHelper.YuEBaoText);
                     break;
                 case PaywayType.BankCard:
-                    string cardStr = XMLSaver.saveData.curUseBankCard.cardId.Substring(
-                        XMLSaver.saveData.curUseBankCard.cardId.Length - 4, 4);
-                    _paywayStr = XMLSaver.saveData.curUseBankCard.bankName + "(" + cardStr + ")";
+                    BankCardSaveData data = XMLSaver.saveData.GetCurUseCard(GameManager.Instance.curUserId);
+                    string cardStr = data.cardId.Substring(data.cardId.Length - 4, 4);
+                    _paywayStr = data.bankName + "(" + cardStr + ")";
                     break;
             }
             _useItemText.text = _paywayStr;

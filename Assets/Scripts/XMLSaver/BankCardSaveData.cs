@@ -6,7 +6,7 @@ using System.Text;
 public partial class SaveData
 {
     public List<BankCardSaveData> bankCardList = new List<BankCardSaveData>();
-    public BankCardSaveData curUseBankCard;  //当前使用的银行卡
+    public List<BankCardSaveData> curUseCardList = new List<BankCardSaveData>();
 
     /// <summary>
     /// 添加一个银行卡数据
@@ -25,8 +25,9 @@ public partial class SaveData
         data.accountId = accountId;
         data.cardId = cardId;
         bankCardList.Add(data);
-        if (bankCardList.Count == 1) {
-            curUseBankCard = data;
+        if (GetBankCardDataList(accountId).Count == 1)
+        {
+            curUseCardList.Add(data);
         }
         return data;
     }
@@ -36,10 +37,10 @@ public partial class SaveData
     /// </summary>
     public List<BankCardSaveData> GetBankCardDataList(int accountId) {
         List<BankCardSaveData> result = new List<BankCardSaveData>();
-        foreach (var data in bankCardList)
+        for (int i = 0; i < bankCardList.Count; i++)
         {
-            if (data.accountId == accountId)
-                result.Add(data);
+            if (bankCardList[i].accountId == accountId)
+                result.Add(bankCardList[i]);
         }
         return result;
     }
@@ -57,10 +58,10 @@ public partial class SaveData
     /// 通过id获取一张卡的数据
     /// </summary>
     public BankCardSaveData GetBankCardData(int accountId, string cardId) {
-        foreach (var data in bankCardList)
+        for (int i = 0; i < bankCardList.Count; i++)
         {
-            if (data.accountId == accountId && data.cardId == cardId)
-                return data;
+            if (bankCardList[i].accountId == accountId && bankCardList[i].cardId == cardId)
+                return bankCardList[i];
         }
         return null;
     }
@@ -73,6 +74,18 @@ public partial class SaveData
         int accountId = 0; // todo 名字转id
         return GetBankCardData(accountId, cardId);
     }
+
+    /// <summary>
+    /// 获取默认使用的银行卡
+    /// </summary>
+    public BankCardSaveData GetCurUseCard(int accountId) {
+        for (int i = 0; i < curUseCardList.Count; i++)
+        {
+            if (curUseCardList[i].accountId == accountId)
+                return curUseCardList[i];
+        }
+        return null;
+    }
 }
 
 /// <summary>
@@ -84,7 +97,7 @@ public class BankCardSaveData
     public int accountId;       // 账户id
     public string cardId;       // 银行卡号
     public string bankName;     // 银行名字
-    public double money;         // 银行卡余额
+    public double money;        // 银行卡余额
 }
 
 public static class BankCardDefine
