@@ -10,6 +10,7 @@ namespace UIFrameWork
         private Text _totalText;
         private Text _balanceText;
         private Text _yuEBaoText;
+        private Text _nameText;
 
 		public override void Init ()
 		{
@@ -17,12 +18,13 @@ namespace UIFrameWork
             _totalText = FindInChild<Text>("Panel/Middle/TotalText/Value");
             _balanceText = FindInChild<Text>("Panel/Middle/BalanceText/Value");
             _yuEBaoText = FindInChild<Text>("Panel/Middle/YuEBaoText/Value");
+            _nameText = FindInChild<Text>("Panel/Top/NameText");
 		}
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter(context);
 			_context = context as TotalAssetsContext;
-            _balanceText.text = Player.Instance.assetsData.balance.ToString();
+            Refresh();
 		}
 
 		public override void OnExit(BaseContext context)
@@ -43,6 +45,14 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
+
+        private void Refresh()
+        {
+            _nameText.text = Player.Instance.accountData.realname;
+            _balanceText.text = Player.Instance.assetsData.balance.ToString();
+            _yuEBaoText.text = Player.Instance.assetsData.yuEBao.ToString();
+            _totalText.text = (Player.Instance.assetsData.balance + Player.Instance.assetsData.yuEBao).ToString();
+        }
 	}
 	public class TotalAssetsContext : BaseContext
 	{

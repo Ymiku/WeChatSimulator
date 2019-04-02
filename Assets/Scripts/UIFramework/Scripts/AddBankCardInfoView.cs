@@ -40,5 +40,12 @@ namespace UIFrameWork
 		public AddBankCardInfoContext() : base(UIType.AddBankCardInfo)
 		{
 		}
-	}
+
+        public AddBankCardInfoContext(string cardId) : base(UIType.AddBankCard)
+        {
+            this.cardId = cardId;
+        }
+
+        public string cardId;
+    }
 }
