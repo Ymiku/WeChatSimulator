@@ -1,14 +1,19 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+
 namespace UIFrameWork
 {
 	public class AddBankCardInfoView : AnimateView
 	{
 		private AddBankCardInfoContext _context;
+        private Button _agreeBtn;
 
 		public override void Init ()
 		{
 			base.Init ();
+            _agreeBtn = FindInChild<Button>("AgreeBtn");
+            _agreeBtn.onClick.AddListener(OnClickAgree);
 		}
 		public override void OnEnter(BaseContext context)
 		{
@@ -34,6 +39,11 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
+
+        private void OnClickAgree()
+        {
+
+        }
 	}
 	public class AddBankCardInfoContext : BaseContext
 	{

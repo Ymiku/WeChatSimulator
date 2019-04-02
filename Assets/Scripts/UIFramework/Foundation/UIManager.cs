@@ -21,7 +21,7 @@ namespace UIFrameWork
 
         public Dictionary<UIType, GameObject> _UIDict = new Dictionary<UIType,GameObject>();
         public List<UIType> _UIPool = new List<UIType>();
-        int maxPoolSize = 6;
+        int maxPoolSize = 10;
         float poolDeltaTime = 4.0f;
 
         private Transform _canvas;
