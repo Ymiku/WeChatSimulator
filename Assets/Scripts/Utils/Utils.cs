@@ -67,6 +67,8 @@ public static class Utils
                     output = output.Insert(3, " ");
                 break;
             case FInputType.CardNumber:
+                if (s.Length >= 17)
+                    output = output.Insert(16, " ");
                 if (s.Length >= 13)
                     output = output.Insert(12, " ");
                 if (s.Length >= 9)
@@ -195,7 +197,7 @@ public static class Utils
                 else
                     data = XMLSaver.saveData.GetBankCardData(GameManager.Instance.curUserId, cardId);                
                 string cardStr = data.cardId.Substring(data.cardId.Length - 4, 4);
-                result = data.bankName + "(" + cardStr + ")";
+                result = data.cardName + "(" + cardStr + ")";
                 break;
         }
         return result;

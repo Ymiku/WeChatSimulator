@@ -24,6 +24,7 @@ public partial class SaveData
         BankCardSaveData data = new BankCardSaveData();
         data.accountId = accountId;
         data.cardId = cardId;
+        data.cardName = StaticDataBankCard.GetCardNameById(cardId);
         bankCardList.Add(data);
         if (GetBankCardDataList(accountId).Count == 1)
         {
@@ -96,7 +97,7 @@ public class BankCardSaveData
 {
     public int accountId;       // 账户id
     public string cardId;       // 银行卡号
-    public string bankName;     // 银行名字
+    public string cardName;     // 银行名字
     public double money;        // 银行卡余额
 }
 
