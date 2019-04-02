@@ -82,9 +82,9 @@ public class SelectPaywayItem : ItemBase
         if (_data.payway == PaywayType.BankCard)
             _payWayText.text = Utils.FormatPaywayStr(_data.payway, _data.cardId);
         else if (_data.payway == PaywayType.Banlance)
-            _payWayText.text = Utils.FormatPaywayStr(_data.payway) + "(剩余:" + Player.Instance.assetsData.balance + ")";
+            _payWayText.text = Utils.FormatPaywayStr(_data.payway) + "(" + ContentHelper.Read(ContentHelper.RemainText) + ":" + +Player.Instance.assetsData.balance + ")";
         else if (_data.payway == PaywayType.YuEBao)
-            _payWayText.text = Utils.FormatPaywayStr(_data.payway) + "(剩余:" + Player.Instance.assetsData.yuEBao + ")";
+            _payWayText.text = Utils.FormatPaywayStr(_data.payway) + "(:" + ContentHelper.Read(ContentHelper.RemainText) + ":" + Player.Instance.assetsData.yuEBao + ")";
         if (!_data.isEnough)
             _notEnoughText.text = _payWayText.text;
     }

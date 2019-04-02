@@ -12,4 +12,5 @@ public class ContentHelper{
     public const int AssetsNotEnough = 6;  //余额不足
     public const int BalanceText = 7;  //账户余额
     public const int YuEBaoText = 8;  //余额宝
+    public const int RemainText = 9;  //剩余
 }
