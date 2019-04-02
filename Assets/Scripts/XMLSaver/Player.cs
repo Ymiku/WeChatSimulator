@@ -7,35 +7,22 @@ public class Player : Singleton<Player>
 {
     private int id;
     #region 当前player的存档数据
-    public AccountSaveData accountData
-    {
-        get { return XMLSaver.saveData.GetAccountData(id); }
-    }
-    public AssetsSaveData assetsData
-    {
-        get { return XMLSaver.saveData.GetAssetsData(id); }
-    }
-    public List<BankCardSaveData> bankCardsData
-    {
-        get { return XMLSaver.saveData.GetBankCardDataList(id); }
-    }
-    public BankCardSaveData curUseBankCard
-    {
-        get { return XMLSaver.saveData.GetCurUseCard(id); }
-        set { BankCardSaveData data = XMLSaver.saveData.GetCurUseCard(id); data = value; }
-    }
+    public AccountSaveData accountData;
+    public AssetsSaveData assetsData;
+    public List<BankCardSaveData> bankCardsData;
+    public BankCardSaveData curUseBankCard;
     #endregion
 
     public PaywayType curPayway = PaywayType.None;
 
-    public void OnEnter()
+    public void Set(int id)
     {
-        id = GameManager.Instance.curUserId;
-    }
-
-    public void OnExit()
-    {
-        id = -1;
+        this.id = id;
+        curPayway = PaywayType.None;
+        accountData = XMLSaver.saveData.GetAccountData(id);
+        assetsData = XMLSaver.saveData.GetAssetsData(id);
+        bankCardsData = XMLSaver.saveData.GetBankCardDataList(id); 
+        curUseBankCard = XMLSaver.saveData.GetCurUseCard(id);
     }
 
     /// <summary>
@@ -76,8 +63,14 @@ public class Player : Singleton<Player>
     /// <summary>
     /// 获取银行卡
     /// </summary>
-    public BankCardSaveData GetBankCardData(string cardId) {
-        return XMLSaver.saveData.GetBankCardData(id, cardId);
+    public BankCardSaveData GetBankCardData(string cardId)
+    {
+        for (int i = 0; i < bankCardsData.Count; i++)
+        {
+            if (bankCardsData[i].cardId == cardId)
+                return bankCardsData[i];
+        }
+        return null;
     }
 
     /// <summary>

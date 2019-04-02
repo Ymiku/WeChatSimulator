@@ -34,6 +34,6 @@ public static class StaticDataBankCard
             if (!string.IsNullOrEmpty(CardMarkToNameDict[checkStr]))
                 return CardMarkToNameDict[checkStr];
         }
-        return "";
+        return ContentHelper.Read(ContentHelper.DefaultCardName);
     }
 }

@@ -43,9 +43,10 @@ public partial class SaveData {
     /// 通过唯一id获取账户信息
     /// </summary>
     public AccountSaveData GetAccountData(int id) {
-        foreach (var data in accountList) {
-            if (data.accountId == id)
-                return data;
+        for (int i = 0; i < accountList.Count; i++)
+        {
+            if (accountList[i].accountId == id)
+                return accountList[i];
         }
         return null;
     }

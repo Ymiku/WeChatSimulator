@@ -103,6 +103,5 @@ public class BankCardSaveData
 
 public static class BankCardDefine
 {
-    public const int cardIdMinLength = 16;  // 卡号最低长度
-    public const int cardIdMaxLength = 19;  // 卡号最高长度
+    public const int cardIdLength = 16;             // 银行卡卡号长度         
 }
