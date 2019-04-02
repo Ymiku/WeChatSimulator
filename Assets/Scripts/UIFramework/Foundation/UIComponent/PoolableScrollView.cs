@@ -31,22 +31,6 @@ public class PoolableScrollView : MonoBehaviour
     RectTransform contextTrans;
     List<object> _datas = new List<object>();
 
-    private void Test()
-    {
-        List<object> os = new List<object>();
-        os.Add(new object());
-        os.Add(new object());
-        os.Add(new object());
-        os.Add(new object());
-        os.Add(new object());
-        os.Add(new object());
-        os.Add(new object());
-        os.Add(new object());
-        os.Add(new object());
-        os.Add(new object());
-        os.Add(new object());
-        Init(os);   
-    }
     public void Init(List<object> datas)
     {
         _datas = datas;

@@ -14,8 +14,9 @@ public class SelectPaywayItem : ItemBase
     private Image _icon;
     private Text _payWayText;
     private Text _notEnoughText;
+    private bool _initFlag = false;
 
-    void Awake()
+    private void Init()
     {
         _notEnoughRoot = FindChild("NotEnoughRoot");
         _addCardRoot = FindChild("AddCardRoot");
@@ -26,16 +27,23 @@ public class SelectPaywayItem : ItemBase
         _payWayText = FindInChild<Text>("CanUseRoot/text");
         _notEnoughText = FindInChild<Text>("NotEnoughRoot/titleText");
         _selectBtn.onClick.AddListener(OnClick);
+        _initFlag = true;
     }
 
     public override void SetData(object o)
     {
         _data = o as SelectPaywayItemData;
+        if (_data == null)
+            return;
+        if (!_initFlag)
+            Init();
         Refresh();
     }
 
     public void OnClick()
     {
+        if (_data == null)
+            return;
         if (_data.isEnough)
         {
             Player.Instance.curPayway = _data.payway;
