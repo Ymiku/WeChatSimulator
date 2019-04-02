@@ -27,19 +27,18 @@ public class PoolableScrollView : MonoBehaviour
 #endif
     [HideInInspector]
     List<ItemBase> _activeItems = new List<ItemBase>();
-    RectTransform viewPortTrans;
-    RectTransform contextTrans;
+    RectTransform _contextTrans;
     List<object> _datas = new List<object>();
 
     public void Init(List<object> datas)
     {
         _datas = datas;
         prefab.gameObject.SetActive(false);
-        contextTrans = GetComponent<ScrollRect>().content;
+        _contextTrans = GetComponent<ScrollRect>().content;
         _activeItems.Clear();
         _pools.Clear();
-        contextTrans.anchoredPosition = Vector2.zero;
-        contextTrans.sizeDelta = new Vector2(contextTrans.sizeDelta.x, prefab.height*datas.Count);
+        _contextTrans.anchoredPosition = Vector2.zero;
+        _contextTrans.sizeDelta = new Vector2(_contextTrans.sizeDelta.x, prefab.height * datas.Count);
     }
     void TryOpen()
     {
@@ -66,9 +65,10 @@ public class PoolableScrollView : MonoBehaviour
             TryOpen();
             return false;
         }
-        if (_activeItems[0].pos.y + contextTrans.anchoredPosition.y < 0 && TryAddUp())
+        if (_activeItems[0].pos.y + _contextTrans.anchoredPosition.y < 0 && TryAddUp())
             return true;
-        if (_activeItems[_activeItems.Count - 1].pos.y - _activeItems[_activeItems.Count - 1].height + contextTrans.anchoredPosition.y > -cachedRectTransform.sizeDelta.y && TryAddDown())
+        if (_activeItems[_activeItems.Count - 1].pos.y - _activeItems[_activeItems.Count - 1].height + _contextTrans.anchoredPosition.y >
+            -cachedRectTransform.sizeDelta.y && TryAddDown())
             return true;
         if (_activeItems.Count <= 1)
             return false;
@@ -127,7 +127,7 @@ public class PoolableScrollView : MonoBehaviour
         else
         {
             RectTransform t = GameObject.Instantiate(prefab.cachedRectTransform);
-            t.SetParent(contextTrans);
+            t.SetParent(_contextTrans);
             t.localScale = Vector3.one;
             t.anchoredPosition3D = Vector3.zero;
             return t.GetComponent<ItemBase>();
@@ -143,9 +143,9 @@ public class PoolableScrollView : MonoBehaviour
     {
         float buffer = 100.0f;
         if (_activeItems.IndexOf(node) == 0)
-            if (node.pos.y - node.height + contextTrans.anchoredPosition.y > 0 + buffer)
+            if (node.pos.y - node.height + _contextTrans.anchoredPosition.y > 0 + buffer)
                 return true;
-        if (node.pos.y + contextTrans.anchoredPosition.y < -cachedRectTransform.sizeDelta.y - buffer)
+        if (node.pos.y + _contextTrans.anchoredPosition.y < -cachedRectTransform.sizeDelta.y - buffer)
             return true;
         return false;
     }
