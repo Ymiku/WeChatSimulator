@@ -3,7 +3,7 @@ using ProtoBuf;
 using UnityEngine;
 
 public static class StaticDataLoader
- {
+{
     public static T ReadOneDataConfig<T>(string dataName)
     {
         FileStream fileStream;

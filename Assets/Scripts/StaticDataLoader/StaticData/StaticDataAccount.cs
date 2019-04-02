@@ -14,20 +14,20 @@ public static class StaticDataAccount
 
     public static ACCOUNT GetAccountById(int id)
     {
-        foreach (var item in Info.items)
+        for (int i = 0; i < Info.items.Count; i++)
         {
-            if (item.id == id)
-                return item;
+            if (Info.items[i].id == id)
+                return Info.items[i];
         }
         return null;
     }
 
     public static void TransToSaveData()
     {
-        foreach (var item in Info.items)
+        for (int i = 0; i < Info.items.Count; i++)
         {
-            XMLSaver.saveData.AddAccountData(item.id);
-            XMLSaver.saveData.AddAssetsData(item.id);
+            XMLSaver.saveData.AddAccountData(Info.items[i].id);
+            XMLSaver.saveData.AddAssetsData(Info.items[i].id);
         }
     }
 }

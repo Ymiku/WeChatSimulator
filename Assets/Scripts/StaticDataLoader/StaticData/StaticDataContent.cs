@@ -12,9 +12,10 @@ public static class StaticDataContent
 
     public static CONTENT GetDataById(int id)
     {
-        foreach (var item in Info.items) {
-            if (item.id == id)
-                return item;
+        for (int i = 0; i < Info.items.Count; i++)
+        {
+            if (Info.items[i].id == id)
+                return Info.items[i];
         }
         Debug.LogError(string.Format("content data not exist id {0}", id));
         return null;
@@ -22,10 +23,10 @@ public static class StaticDataContent
 
     public static string GetContent(int id)
     {
-        foreach (var item in Info.items)
+        for (int i = 0; i < Info.items.Count; i++)
         {
-            if (item.id == id)
-                return item.content;
+            if (Info.items[i].id == id)
+                return Info.items[i].content;
         }
         Debug.LogError(string.Format("content data not exist id {0}", id));
         return "";
