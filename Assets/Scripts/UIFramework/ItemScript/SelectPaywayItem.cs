@@ -46,10 +46,10 @@ public class SelectPaywayItem : ItemBase
             return;
         if (_data.isEnough)
         {
-            Player.Instance.curPayway = _data.payway;
+            AssetsManager.Instance.curPayway = _data.payway;
             if (_data.payway == PaywayType.BankCard)
             {
-                Player.Instance.SetCurUseCard(_data.cardId);
+                AssetsManager.Instance.SetCurUseCard(_data.cardId);
             }
             UIManager.Instance.Pop();
         }
@@ -66,11 +66,11 @@ public class SelectPaywayItem : ItemBase
         bool selectFlag = false;
         if (!_data.isAddCard && _data.isEnough)
         {
-            if (_data.payway == Player.Instance.curPayway)
+            if (_data.payway == AssetsManager.Instance.curPayway)
             {
                 selectFlag = true;
                 if (_data.payway == PaywayType.BankCard)
-                    selectFlag = _data.cardId == Player.Instance.curUseBankCard.cardId;
+                    selectFlag = _data.cardId == AssetsManager.Instance.curUseBankCard.cardId;
             }
         }
         _selectedObj.SetActive(selectFlag);
@@ -82,9 +82,9 @@ public class SelectPaywayItem : ItemBase
         if (_data.payway == PaywayType.BankCard)
             _payWayText.text = Utils.FormatPaywayStr(_data.payway, _data.cardId);
         else if (_data.payway == PaywayType.Banlance)
-            _payWayText.text = Utils.FormatPaywayStr(_data.payway) + "(" + ContentHelper.Read(ContentHelper.RemainText) + ":" + +Player.Instance.assetsData.balance + ")";
+            _payWayText.text = Utils.FormatPaywayStr(_data.payway) + "(" + ContentHelper.Read(ContentHelper.RemainText) + ":" + +AssetsManager.Instance.assetsData.balance + ")";
         else if (_data.payway == PaywayType.YuEBao)
-            _payWayText.text = Utils.FormatPaywayStr(_data.payway) + "(:" + ContentHelper.Read(ContentHelper.RemainText) + ":" + Player.Instance.assetsData.yuEBao + ")";
+            _payWayText.text = Utils.FormatPaywayStr(_data.payway) + "(:" + ContentHelper.Read(ContentHelper.RemainText) + ":" + AssetsManager.Instance.assetsData.yuEBao + ")";
         if (!_data.isEnough)
             _notEnoughText.text = _payWayText.text;
     }

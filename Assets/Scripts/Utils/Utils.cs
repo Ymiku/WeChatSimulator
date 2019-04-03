@@ -182,7 +182,7 @@ public static class Utils
     public static string FormatPaywayStr(PaywayType payway, string cardId = "")
     {
         string result = "";
-        switch (Player.Instance.curPayway)
+        switch (AssetsManager.Instance.curPayway)
         {
             case PaywayType.Banlance:
                 result = ContentHelper.Read(ContentHelper.BalanceText);
@@ -193,7 +193,7 @@ public static class Utils
             case PaywayType.BankCard:
                 BankCardSaveData data;
                 if (string.IsNullOrEmpty(cardId))
-                    data = Player.Instance.curUseBankCard;
+                    data = AssetsManager.Instance.curUseBankCard;
                 else
                     data = XMLSaver.saveData.GetBankCardData(GameManager.Instance.curUserId, cardId);                
                 string cardStr = data.cardId.Substring(data.cardId.Length - 4, 4);

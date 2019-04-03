@@ -44,7 +44,7 @@ namespace UIFrameWork
         private void Refresh()
         {
             List<SelectPaywayItemData> dataList = new List<SelectPaywayItemData>();
-            List<BankCardSaveData> cardList = Player.Instance.bankCardsData;
+            List<BankCardSaveData> cardList = AssetsManager.Instance.bankCardsData;
             for (int i = 0; i < cardList.Count; i++)
             {
                 SelectPaywayItemData data = new SelectPaywayItemData();
@@ -53,12 +53,12 @@ namespace UIFrameWork
                 data.cardId = cardList[i].cardId;
                 data.payway = PaywayType.BankCard;
             }
-            bool balanceEnough = Player.Instance.assetsData.balance >= _context.amount;
+            bool balanceEnough = AssetsManager.Instance.assetsData.balance >= _context.amount;
             SelectPaywayItemData balanceData = new SelectPaywayItemData();
             balanceData.isAddCard = false;
             balanceData.isEnough = balanceEnough;
             balanceData.payway = PaywayType.Banlance;
-            bool yuEBaoEnough = Player.Instance.assetsData.yuEBao >= _context.amount;
+            bool yuEBaoEnough = AssetsManager.Instance.assetsData.yuEBao >= _context.amount;
             SelectPaywayItemData yuEBaoData = new SelectPaywayItemData();
             yuEBaoData.isAddCard = false;
             yuEBaoData.isEnough = yuEBaoEnough;

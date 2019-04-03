@@ -82,7 +82,7 @@ namespace UIFrameWork
         private void Refresh()
         {
             _cardInput.text = "";
-            _nameText.text = Player.Instance.accountData.realname;
+            _nameText.text = GameManager.Instance.accountData.realname;
         }
 
         private bool CheckCardLegal(string cardId)
@@ -105,8 +105,8 @@ namespace UIFrameWork
 
         private bool CheckCardHasBind(string cardId)
         {
-            for (int i = 0; i < Player.Instance.bankCardsData.Count; i++) {
-                if (Player.Instance.bankCardsData[i].cardId == cardId)
+            for (int i = 0; i < AssetsManager.Instance.bankCardsData.Count; i++) {
+                if (AssetsManager.Instance.bankCardsData[i].cardId == cardId)
                     return true;
             }
             return false;

@@ -15,6 +15,7 @@ public class GameManager : UnitySingleton<GameManager>
     {
         get { return (int)_localTime; }
     }
+    public AccountSaveData accountData;
     public override void Awake()
     {
         base.Awake();
@@ -24,11 +25,12 @@ public class GameManager : UnitySingleton<GameManager>
 	{
 		curUserId = userId;
 		XMLSaver.saveData.lastUser = userId;
-		if (!XMLSaver.saveData.canLoginUserIds.Contains (userId))
+        accountData = XMLSaver.saveData.GetAccountData(userId);
+        if (!XMLSaver.saveData.canLoginUserIds.Contains (userId))
 			XMLSaver.saveData.canLoginUserIds.Add (userId);
         ChatManager.Instance.OnExit();
         ChatManager.Instance.OnEnter(XMLSaver.saveData.GetAccountData(userId).enname);
-        Player.Instance.Set(userId);
+        AssetsManager.Instance.Set(userId);
 	}
     void OnEnterGame()
     {

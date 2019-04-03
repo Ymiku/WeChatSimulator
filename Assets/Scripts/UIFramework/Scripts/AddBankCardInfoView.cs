@@ -50,7 +50,7 @@ namespace UIFrameWork
         private void OnClickAgree()
         {
             XMLSaver.saveData.AddBankCardData(GameManager.Instance.curUserId, _context.cardId);
-            Player.Instance.UpdateCardsList();
+            AssetsManager.Instance.UpdateCardsList();
             ShowNotice("°ó¿¨³É¹¦");
             UIManager.Instance.StartAndResetUILine(UIManager.UILine.Main);
             UIManager.Instance.Push(new MeContext());
@@ -59,7 +59,7 @@ namespace UIFrameWork
 
         private void Refresh()
         {
-            _phoneNumText.text = Utils.FormatStringForSecrecy(Player.Instance.accountData.phoneNumber, FInputType.PhoneNumber);
+            _phoneNumText.text = Utils.FormatStringForSecrecy(GameManager.Instance.accountData.phoneNumber, FInputType.PhoneNumber);
             _bankText.text = StaticDataBankCard.GetCardNameById(_context.cardId).Replace(
                 ContentHelper.Read(ContentHelper.SavingCardText), "");
             _cardTextObj.transform.localPosition = new Vector3(_bankText.transform.localPosition.x + _bankText.preferredWidth,

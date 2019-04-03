@@ -48,10 +48,10 @@ namespace UIFrameWork
 
         private void Refresh()
         {
-            _nameText.text = Player.Instance.accountData.realname;
-            _balanceText.text = Player.Instance.assetsData.balance.ToString();
-            _yuEBaoText.text = Player.Instance.assetsData.yuEBao.ToString();
-            _totalText.text = (Player.Instance.assetsData.balance + Player.Instance.assetsData.yuEBao).ToString();
+            _nameText.text = GameManager.Instance.accountData.realname;
+            _balanceText.text = AssetsManager.Instance.assetsData.balance.ToString();
+            _yuEBaoText.text = AssetsManager.Instance.assetsData.yuEBao.ToString();
+            _totalText.text = (AssetsManager.Instance.assetsData.balance + AssetsManager.Instance.assetsData.yuEBao).ToString();
         }
 	}
 	public class TotalAssetsContext : BaseContext

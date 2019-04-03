@@ -3,11 +3,10 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 
-public class Player : Singleton<Player>
+public class AssetsManager : Singleton<AssetsManager>
 {
     private int id;
     #region 当前player的存档数据
-    public AccountSaveData accountData;
     public AssetsSaveData assetsData;
     public List<BankCardSaveData> bankCardsData;
     public BankCardSaveData curUseBankCard;
@@ -19,7 +18,6 @@ public class Player : Singleton<Player>
     {
         this.id = id;
         curPayway = PaywayType.None;
-        accountData = XMLSaver.saveData.GetAccountData(id);
         assetsData = XMLSaver.saveData.GetAssetsData(id);
         bankCardsData = XMLSaver.saveData.GetBankCardDataList(id); 
         curUseBankCard = XMLSaver.saveData.GetCurUseCard(id);

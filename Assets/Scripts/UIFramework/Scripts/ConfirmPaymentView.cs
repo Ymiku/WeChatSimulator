@@ -41,7 +41,7 @@ namespace UIFrameWork
             base.OnEnter(context);
             _context = context as ConfirmPaymentContext;
             _amount = _context.amount;
-            Player.Instance.SetCurPaywayByMoney(_amount);
+            AssetsManager.Instance.SetCurPaywayByMoney(_amount);
             Refresh();
         }
 
@@ -79,7 +79,7 @@ namespace UIFrameWork
                     ShowNotice(ContentHelper.Read(ContentHelper.TransAccountNotExist));
                     return;
                 }
-                ResultType result = Utils.TryPay(_amount, Player.Instance.curPayway);
+                ResultType result = Utils.TryPay(_amount, AssetsManager.Instance.curPayway);
                 if (result == ResultType.Success)
                 {
                     data.balance += _amount;
@@ -102,12 +102,12 @@ namespace UIFrameWork
             _amountText.text = _context.amount.ToString();
             _signObj.transform.localPosition = new Vector3(-_amountText.preferredWidth / 2,
                 _signObj.transform.localPosition.y, _signObj.transform.localPosition.z);
-            _canPayFlag = Player.Instance.curPayway != PaywayType.None;
+            _canPayFlag = AssetsManager.Instance.curPayway != PaywayType.None;
             _useItem.SetActive(_canPayFlag);
             _okTextObj.SetActive(_canPayFlag);
             _canNotPayObj.SetActive(!_canPayFlag);
             _selectTextObj.SetActive(!_canPayFlag);
-            _paywayStr = Utils.FormatPaywayStr(Player.Instance.curPayway, Player.Instance.curUseBankCard.cardId);
+            _paywayStr = Utils.FormatPaywayStr(AssetsManager.Instance.curPayway, AssetsManager.Instance.curUseBankCard.cardId);
             _useItemText.text = _paywayStr;
         }
     }
