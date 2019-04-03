@@ -9,11 +9,6 @@ public class ChatManager : Singleton<ChatManager> {
 	//name name selectionID
 	public string curName = "Tom";
 	public ChatInstance curInstance;
-	public Dictionary<string,int> name2Id = new Dictionary<string, int> {
-		{ "Tom",0 },
-		{ "Jerry",1 },
-	};
-	public Dictionary<int,string> id2Name = new Dictionary<int,string>();
 	Dictionary<int,ChatInstance> pairId2Instance = new Dictionary<int, ChatInstance>();
 	List<ChatInstance> orderedInstance = new List<ChatInstance>();
 	//
@@ -97,10 +92,6 @@ public class ChatManager : Singleton<ChatManager> {
 	//
 	public void OnEnter(string name)
 	{
-		id2Name.Clear ();
-		foreach (var item in name2Id.Keys) {
-			id2Name.Add (name2Id[item],item);
-		}
 		pairId2Instance.Clear ();
 		List<string> friends = XMLSaver.saveData.GetFriendsLst (name);
 		for (int i = 0; i < friends.Count; i++) {
@@ -128,8 +119,8 @@ public class ChatManager : Singleton<ChatManager> {
 	}
 	int GetPairID(string name,string name2)
 	{
-		int id = name2Id [name];
-		int id2 = name2Id [name2];
+		int id = XMLSaver.saveData.GetAccountData(name).accountId;
+		int id2 = XMLSaver.saveData.GetAccountData(name2).accountId;
 		if (id < id2) {
 			return (id << 8) + id2;
 		}

@@ -30,7 +30,7 @@ public partial class SaveData
 	}
 	public List<string> GetFriendsLst(string name)
 	{
-		int playerId = ChatManager.Instance.name2Id[name];
+		int playerId = GetAccountData (name).accountId;
 		List<string> result = new List<string> ();
 		for (int i = 0; i < instanceID.Count; i++) {
 			int m = (instanceID [i] >> 8);
@@ -38,9 +38,9 @@ public partial class SaveData
 			if(m!=playerId&&n!=playerId)
 				continue;
 			if(m==playerId)
-				result.Add(ChatManager.Instance.id2Name[n]);
+				result.Add(GetAccountData(n).enname);
 			else
-				result.Add(ChatManager.Instance.id2Name[m]);
+				result.Add(GetAccountData(m).enname);
 		}
 		return result;
 	}
