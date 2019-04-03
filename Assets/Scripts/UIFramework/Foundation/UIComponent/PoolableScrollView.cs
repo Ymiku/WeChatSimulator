@@ -29,11 +29,13 @@ public class PoolableScrollView : MonoBehaviour
     List<ItemBase> _activeItems = new List<ItemBase>();
     RectTransform _contextTrans;
     List<object> _datas = new List<object>();
+	public RectTransform UpPanel;
 	float constHeight = 0.0f;
-	public void Init(List<object> datas,float constHeight = 0.0f)
+	public void Init(List<object> datas)
     {
         _datas = datas;
-		this.constHeight = constHeight;
+		if(UpPanel!=null)
+			constHeight = UpPanel.sizeDelta.y;
         prefab.gameObject.SetActive(false);
         _contextTrans = GetComponent<ScrollRect>().content;
         _activeItems.Clear();

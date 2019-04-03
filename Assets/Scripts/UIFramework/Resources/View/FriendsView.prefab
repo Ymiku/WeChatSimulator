@@ -1251,6 +1251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 114128792099933232}
   _activeItems: []
+  UpPanel: {fileID: 224085605967080880}
 --- !u!114 &114464975594880054
 MonoBehaviour:
   m_ObjectHideFlags: 1
