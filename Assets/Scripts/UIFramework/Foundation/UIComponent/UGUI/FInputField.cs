@@ -23,8 +23,8 @@ namespace UnityEngine.UI
                         s = Regex.Match(s, "(\\d|\\s)*").Value;
                         break;
                     case FInputType.CardNumber:
-                        if (s.Length > BankCardDefine.cardIdLength + 3)
-                            s = s.Substring(0, BankCardDefine.cardIdLength + 3);
+                        if (s.Length > BankCardDefine.cardIdMaxLength + 4)
+                            s = s.Substring(0, BankCardDefine.cardIdMaxLength + 4);
                         else
                             s = Regex.Match(s, "(\\d|\\s)*").Value;
                         break;

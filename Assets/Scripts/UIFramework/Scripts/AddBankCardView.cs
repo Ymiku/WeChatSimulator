@@ -25,7 +25,7 @@ namespace UIFrameWork
             _clearBtn.onClick.AddListener(OnClickClear);
             _cardInput.onValueChanged.AddListener(OnValueChanged);
             _clearBtn.gameObject.SetActive(false);
-            _clearBtn.interactable = false;
+            _nextBtn.interactable = false;
 		}
 		public override void OnEnter(BaseContext context)
 		{
@@ -64,13 +64,9 @@ namespace UIFrameWork
         public void OnClickNextBtn()
         {
             string cardId = _cardInput.text.Replace(" ", "");
-            if (cardId.Length == BankCardDefine.cardIdLength)
-            {
-                if (CheckCardLegal(cardId))
-                    UIManager.Instance.Push(new AddBankCardInfoContext(cardId));
-                else
-                    ShowNotice(ContentHelper.Read(ContentHelper.BankCardIllegal));
-            }
+
+            if (CheckCardLegal(cardId))
+                UIManager.Instance.Push(new AddBankCardInfoContext(cardId));
             else
                 ShowNotice(ContentHelper.Read(ContentHelper.BankCardIllegal));
         }
@@ -90,7 +86,7 @@ namespace UIFrameWork
         {
             if (string.IsNullOrEmpty(cardId))
                 return false;
-            else if (cardId.Length != BankCardDefine.cardIdLength)
+            else if (cardId.Length > BankCardDefine.cardIdMaxLength || cardId.Length < BankCardDefine.cardIdMinLength)
                 return false;
             int sum = 0;
             int len = cardId.Length;

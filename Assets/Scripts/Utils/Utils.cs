@@ -67,6 +67,8 @@ public static class Utils
                     output = output.Insert(3, " ");
                 break;
             case FInputType.CardNumber:
+                if (s.Length >= 17)
+                    output = output.Insert(16, " ");
                 if (s.Length >= 13)
                     output = output.Insert(12, " ");
                 if (s.Length >= 9)
