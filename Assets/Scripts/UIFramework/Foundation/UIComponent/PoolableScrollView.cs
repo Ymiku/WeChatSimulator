@@ -29,16 +29,17 @@ public class PoolableScrollView : MonoBehaviour
     List<ItemBase> _activeItems = new List<ItemBase>();
     RectTransform _contextTrans;
     List<object> _datas = new List<object>();
-
-    public void Init(List<object> datas)
+	float constHeight = 0.0f;
+	public void Init(List<object> datas,float constHeight = 0.0f)
     {
         _datas = datas;
+		this.constHeight = constHeight;
         prefab.gameObject.SetActive(false);
         _contextTrans = GetComponent<ScrollRect>().content;
         _activeItems.Clear();
         _pools.Clear();
         _contextTrans.anchoredPosition = Vector2.zero;
-        _contextTrans.sizeDelta = new Vector2(_contextTrans.sizeDelta.x, prefab.height * datas.Count);
+        _contextTrans.sizeDelta = new Vector2(_contextTrans.sizeDelta.x, prefab.height * datas.Count+constHeight);
     }
     void TryOpen()
     {
@@ -93,7 +94,7 @@ public class PoolableScrollView : MonoBehaviour
         ItemBase item = GetItem();
         item.id = downId + 1;
         item.SetData(_datas[downId+1]);
-        item.cachedRectTransform.anchoredPosition = new Vector2(0.0f, -(downId+1)*prefab.height);
+        item.cachedRectTransform.anchoredPosition = new Vector2(0.0f, -(downId+1)*prefab.height-constHeight);
         _activeItems.Add(item);
         item.gameObject.SetActive(true);
         return true;
@@ -106,7 +107,7 @@ public class PoolableScrollView : MonoBehaviour
         ItemBase item = GetItem();
         item.id = upId - 1;
         item.SetData(_datas[upId-1]);
-        item.cachedRectTransform.anchoredPosition = new Vector2(0.0f, -(upId - 1) * prefab.height);
+		item.cachedRectTransform.anchoredPosition = new Vector2(0.0f, -(upId - 1) * prefab.height-constHeight);
         _activeItems.Insert(0, item);
         item.gameObject.SetActive(true);
         return true;

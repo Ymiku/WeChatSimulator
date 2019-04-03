@@ -6,7 +6,6 @@ Shader "Sprites/Shadow"
 	{
 		[PerRendererData] _MainTex("Sprite Texture", 2D) = "white" {}
 		_Color("Tint", Color) = (1,1,1,1)
-		_Scale("Scale",Range(1.001,1.02)) = 1.01
 		_Offset("Offset", Vector) = (0,-8,0,0)
 		[MaterialToggle] PixelSnap("Pixel snap", Float) = 0
 	}
@@ -49,12 +48,11 @@ Shader "Sprites/Shadow"
 		};
 
 		fixed4 _Color;
-		float _Scale;
 		float4 _Offset;
 		v2f vert(appdata_t IN)
 		{
 			v2f OUT;
-			OUT.vertex = UnityObjectToClipPos(IN.vertex*_Scale+_Offset);
+			OUT.vertex = UnityObjectToClipPos(IN.vertex+_Offset);
 			OUT.texcoord = IN.texcoord;
 			OUT.color = IN.color * _Color;
 #ifdef PIXELSNAP_ON
