@@ -91,6 +91,7 @@ namespace UIFrameWork
                 return false;
             else if (cardId.Length > BankCardDefine.cardIdMaxLength || cardId.Length < BankCardDefine.cardIdMinLength)
                 return false;
+            //模10算法 检查合法性
             int sum = 0;
             int len = cardId.Length;
             for (int i = 0; i < len; i++)

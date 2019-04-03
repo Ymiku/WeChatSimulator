@@ -52,6 +52,8 @@ namespace UIFrameWork
             XMLSaver.saveData.AddBankCardData(GameManager.Instance.curUserId, _context.cardId);
             Player.Instance.UpdateCardsList();
             ShowNotice("绑卡成功");
+            UIManager.Instance.StartAndResetUILine(UIManager.UILine.Main);
+            UIManager.Instance.Push(new MeContext());
             // todo 绑卡成功
         }
 
