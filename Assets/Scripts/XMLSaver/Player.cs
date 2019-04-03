@@ -90,6 +90,14 @@ public class Player : Singleton<Player>
         else
             return null;
     }
+
+    /// <summary>
+    /// 刷新银行卡列表
+    /// </summary>
+    public void UpdateCardsList()
+    {
+        bankCardsData = XMLSaver.saveData.GetBankCardDataList(id);
+    }
 }
 
 public enum PaywayType

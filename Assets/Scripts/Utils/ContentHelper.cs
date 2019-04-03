@@ -15,4 +15,5 @@ public class ContentHelper{
     public const int RemainText = 9;  //剩余
     public const int DefaultCardName = 10;  //兴东银行储蓄卡
     public const int BankCardIllegal = 11;  //该卡暂时不能开通快捷支付，请使用其他卡
+    public const int SavingCardText = 12;  //储蓄卡
 }
