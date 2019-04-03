@@ -66,7 +66,10 @@ namespace UIFrameWork
             string cardId = _cardInput.text.Replace(" ", "");
 
             if (CheckCardLegal(cardId))
-                UIManager.Instance.Push(new AddBankCardInfoContext(cardId));
+                if (CheckCardHasBind(cardId))
+                    ShowNotice(ContentHelper.Read(ContentHelper.CardAlreadyBind));
+                else
+                    UIManager.Instance.Push(new AddBankCardInfoContext(cardId));
             else
                 ShowNotice(ContentHelper.Read(ContentHelper.BankCardIllegal));
         }
@@ -97,6 +100,15 @@ namespace UIFrameWork
                 sum += add;
             }
             return sum % 10 == 0;
+        }
+
+        private bool CheckCardHasBind(string cardId)
+        {
+            for (int i = 0; i < Player.Instance.bankCardsData.Count; i++) {
+                if (Player.Instance.bankCardsData[i].cardId == cardId)
+                    return true;
+            }
+            return false;
         }
 	}
 	public class AddBankCardContext : BaseContext
