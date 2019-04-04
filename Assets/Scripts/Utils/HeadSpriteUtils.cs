@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using System.IO;
 using System.Collections.Generic;
 
-public class HeadSpriteMgr : UnitySingleton<HeadSpriteMgr>
+public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
 {
     public delegate void loadCompleteCallback(Image desImage);
     private Texture2D _uploadTexture = null;
@@ -61,9 +61,13 @@ public class HeadSpriteMgr : UnitySingleton<HeadSpriteMgr>
     {
         WWW wwwTexture = new WWW("file://" + url);
         yield return wwwTexture;
-        if (wwwTexture.isDone)
+        if (wwwTexture.isDone && wwwTexture.texture != null)
         {
             Sprite sprite = Sprite.Create(wwwTexture.texture, new Rect(0, 0, _uploadTexture.width, _uploadTexture.height), Vector2.zero);
+            if (sprite == null)
+            {
+                sprite = _defaultSprite;
+            }
             if (_headSpriteDict.ContainsKey(userId))
                 _headSpriteDict[userId] = sprite;
             else
