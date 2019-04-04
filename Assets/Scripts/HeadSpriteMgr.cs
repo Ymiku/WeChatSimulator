@@ -23,7 +23,7 @@ public class HeadSpriteMgr : UnitySingleton<HeadSpriteMgr>
         _defaultSprite = Resources.Load<Sprite>(AccountDefine.DefaultHeadSprite);
     }
 
-    public void SetHeadSprite(Image desImage, int userId)
+    public void SetHead(Image desImage, int userId)
     {
         if (_headSpriteDict.ContainsKey(userId))
         {
@@ -52,9 +52,9 @@ public class HeadSpriteMgr : UnitySingleton<HeadSpriteMgr>
         }
     }
 
-    public void SetHeadSprite(Image desImage)
+    public void SetHead(Image desImage)
     {
-        SetHeadSprite(desImage, GameManager.Instance.curUserId);
+        SetHead(desImage, GameManager.Instance.curUserId);
     }
 
     private IEnumerator GetTexture(int userId, Image image, string url)

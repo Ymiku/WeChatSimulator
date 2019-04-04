@@ -16,8 +16,8 @@ namespace UIFrameWork
 		{
 			AccountSaveData data = XMLSaver.saveData.GetAccountData (GameManager.Instance.curUserId);
 			phoneNumber.text = Utils.FormatStringForSecrecy (data.phoneNumber,FInputType.PhoneNumber);
-            HeadSpriteMgr.Instance.SetHeadSprite(headSprite);
-		}
+            HeadSpriteMgr.Instance.SetHead(headSprite);
+        }
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter(context);
