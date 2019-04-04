@@ -122,7 +122,7 @@ namespace UIFrameWork
             {
                 _lengthObj[i].SetActive(false);
             }
-            FrostRX.Instance.RestartRxById(_rxId);
+            FrostRX.Instance.EndRxById(_rxId);
         }
     }
     public class InputAndCheckPaywordContext : BaseContext
