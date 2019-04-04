@@ -83,7 +83,7 @@ public class HeadSpriteMgr : UnitySingleton<HeadSpriteMgr>
         ofn.fileTitle = new string(new char[64]);
         ofn.maxFileTitle = ofn.fileTitle.Length;
         ofn.initialDir = UnityEngine.Application.dataPath;//默认路径  
-        ofn.title = "上传头像";
+        ofn.title = ContentHelper.Read(ContentHelper.SelectHeadText);
         ofn.defExt = "JPG";//显示文件的类型  
                            //注意 以下项目不一定要全选 但是0x00000008项不要缺少  
         ofn.flags = 0x00080000 | 0x00001000 | 0x00000800 | 0x00000200 | 0x00000008;//OFN_EXPLORER|OFN_FILEMUSTEXIST|OFN_PATHMUSTEXIST| OFN_ALLOWMULTISELECT|OFN_NOCHANGEDIR  
