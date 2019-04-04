@@ -34,7 +34,7 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
         if (data.isCustomHead)
         {
             desImage.sprite = _defaultSprite;
-            StartCoroutine(GetTexture(userId, desImage, Application.persistentDataPath + "/" + data.headSprite));
+            StartCoroutine(GetTexture(userId, desImage, Application.persistentDataPath + "/" + data.headSprite + ".png"));
         }
         else
         {
