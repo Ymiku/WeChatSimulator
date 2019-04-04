@@ -11,7 +11,7 @@ public class ChangeAccountItem : MonoBehaviour {
 	{
         AccountSaveData data = XMLSaver.saveData.GetAccountData(userId);
         text.text = Utils.FormatStringForSecrecy(data.phoneNumber,FInputType.PhoneNumber);
-        image.sprite = data.GetHeadSprite();
+        HeadSpriteMgr.Instance.SetHeadSprite(image);
         userID = userId;
         check.enabled = (userId == GameManager.Instance.curUserId);
 	}

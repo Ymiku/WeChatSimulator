@@ -6,36 +6,70 @@ using UnityEngine.UI;
 using System.IO;
 using System.Collections.Generic;
 
-public class UserHeadMgr : UnitySingleton<UserHeadMgr>
+public class HeadSpriteMgr : UnitySingleton<HeadSpriteMgr>
 {
+    public delegate void loadCompleteCallback(Image desImage);
     private Texture2D _uploadTexture = null;
+    private Sprite _uploadSprite = null;
     private bool _loading = false;
     private Shader _outputShader;
-
-    public delegate void loadCompleteCallback(Image desImage);
-    public Dictionary<int, Sprite> headSpriteDict = new Dictionary<int, Sprite>();
-    private Sprite mySprite;
+    private Dictionary<int, Sprite> _headSpriteDict = new Dictionary<int, Sprite>();
+    private Sprite _defaultSprite;
 
     public override void SingletonInit()
     {
         base.SingletonInit();
         _outputShader = Shader.Find("UI/Default");
-        headSpriteDict.Clear();
+        _defaultSprite = Resources.Load<Sprite>(AccountDefine.DefaultHeadSprite);
     }
 
     public void SetHeadSprite(Image desImage, int userId)
     {
-        for (int i = 0; i < headSpriteDict.Count; i++)
+        if (_headSpriteDict.ContainsKey(userId))
         {
-
+            desImage.sprite = _headSpriteDict[userId];
+            return;
         }
         AccountSaveData data = XMLSaver.saveData.GetAccountData(userId);
-
+        if (data.isCustomHead)
+        {
+            desImage.sprite = _defaultSprite;
+            StartCoroutine(GetTexture(userId, desImage, Application.persistentDataPath + "/" + data.headSprite));
+        }
+        else
+        {
+            if (string.IsNullOrEmpty(data.headSprite))
+            {
+                desImage.sprite = _defaultSprite;
+                _headSpriteDict.Add(userId, _defaultSprite);
+            }
+            else
+            {
+                Sprite sprite = Resources.Load<Sprite>(data.headSprite);
+                desImage.sprite = sprite;
+                _headSpriteDict.Add(userId, sprite);
+            }
+        }
     }
 
     public void SetHeadSprite(Image desImage)
     {
+        SetHeadSprite(desImage, GameManager.Instance.curUserId);
+    }
 
+    private IEnumerator GetTexture(int userId, Image image, string url)
+    {
+        WWW wwwTexture = new WWW("file://" + url);
+        yield return wwwTexture;
+        if (wwwTexture.isDone)
+        {
+            Sprite sprite = Sprite.Create(wwwTexture.texture, new Rect(0, 0, _uploadTexture.width, _uploadTexture.height), Vector2.zero);
+            if (_headSpriteDict.ContainsKey(userId))
+                _headSpriteDict[userId] = sprite;
+            else
+                _headSpriteDict.Add(userId, sprite);
+            image.sprite = sprite;
+        }
     }
 
     #region 选择图片上传
@@ -55,18 +89,19 @@ public class UserHeadMgr : UnitySingleton<UserHeadMgr>
         ofn.flags = 0x00080000 | 0x00001000 | 0x00000800 | 0x00000200 | 0x00000008;//OFN_EXPLORER|OFN_FILEMUSTEXIST|OFN_PATHMUSTEXIST| OFN_ALLOWMULTISELECT|OFN_NOCHANGEDIR  
         if (WindowDll.GetOpenFileName(ofn))
         {
-            StartCoroutine(GetTexture(ofn.file, image, true));
+            _uploadTexture = null;
+            _uploadSprite = null;
+            StartCoroutine(GetUploadTexture(ofn.file, image));
         }
     }
 
-    private IEnumerator GetTexture(string url, Image image, bool isUpload = false)
+    private IEnumerator GetUploadTexture(string url, Image image)
     {
         _loading = true;
         WWW wwwTexture = new WWW("file://" + url);
         yield return wwwTexture;
         if (wwwTexture.isDone)
         {
-            if (isUpload)
             {
                 _uploadTexture = wwwTexture.texture;
                 if (_uploadTexture.width != _uploadTexture.height)
@@ -89,11 +124,8 @@ public class UserHeadMgr : UnitySingleton<UserHeadMgr>
                     desTexture.Apply();
                     _uploadTexture = desTexture;
                 }
-                image.sprite = Sprite.Create(_uploadTexture, new Rect(0, 0, _uploadTexture.width, _uploadTexture.height), Vector2.zero);
-            }
-            else
-            {
-                image.sprite = Sprite.Create(wwwTexture.texture, new Rect(0, 0, _uploadTexture.width, _uploadTexture.height), Vector2.zero);
+                _uploadSprite = Sprite.Create(_uploadTexture, new Rect(0, 0, _uploadTexture.width, _uploadTexture.height), Vector2.zero);
+                image.sprite = _uploadSprite;
             }
             _loading = false;
         }
@@ -103,9 +135,15 @@ public class UserHeadMgr : UnitySingleton<UserHeadMgr>
     #region 保存到本地
     public void SaveTexture()
     {
-        if (!_loading && _uploadTexture != null)
+        if (!_loading && _uploadTexture != null && _uploadSprite != null)
         {
-            SaveRenderTextureToPNG(_uploadTexture, _outputShader, Application.persistentDataPath, GameManager.Instance.curEnName + "_head");
+            string pngName = GameManager.Instance.curEnName + "_head";
+            if (SaveRenderTextureToPNG(_uploadTexture, _outputShader, Application.persistentDataPath, pngName))
+            {
+                GameManager.Instance.accountData.headSprite = pngName;
+                GameManager.Instance.accountData.isCustomHead = true;
+                _headSpriteDict[GameManager.Instance.curUserId] = _uploadSprite;
+            }
         }
     }
 

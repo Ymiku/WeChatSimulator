@@ -15,7 +15,7 @@ public class UnitySingleton<T> : MonoBehaviour
 				{
 					GameObject obj = new GameObject();
 					obj.hideFlags=HideFlags.HideAndDontSave;
-					_Instance = (T)obj.GetComponent(typeof(T));
+					_Instance = (T)obj.AddComponent(typeof(T));
 				}
 				if(_Instance!=null)
 				(_Instance as UnitySingleton<T>).SingletonInit ();
