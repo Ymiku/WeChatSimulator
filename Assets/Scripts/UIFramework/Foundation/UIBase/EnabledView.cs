@@ -12,6 +12,7 @@ namespace UIFrameWork
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter (context);
+			FrostRX.Instance.EndRxById (rxId);
 			gameObject.SetActive (true);
 		}
 
