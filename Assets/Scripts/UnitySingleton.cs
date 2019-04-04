@@ -18,7 +18,7 @@ public class UnitySingleton<T> : MonoBehaviour
 					_Instance = (T)obj.AddComponent(typeof(T));
 				}
 				if(_Instance!=null)
-				(_Instance as UnitySingleton<T>).SingletonInit ();
+				    (_Instance as UnitySingleton<T>).SingletonInit ();
 			}
 			return _Instance;
 		}
@@ -26,14 +26,14 @@ public class UnitySingleton<T> : MonoBehaviour
 	public virtual void SingletonInit()
 	{
 	}
-	// Use this for initialization
-	public virtual void Awake()
-	{
-		DontDestroyOnLoad(this.gameObject);
-		if(_Instance==null)
-		{
-			_Instance=this as T;
-		}
-
-	}
+    // Use this for initialization
+    public virtual void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+        if (_Instance == null)
+        {
+            _Instance = this as T;
+            (_Instance as UnitySingleton<T>).SingletonInit();
+        }
+    }
 }
