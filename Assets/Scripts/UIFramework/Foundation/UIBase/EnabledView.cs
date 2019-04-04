@@ -12,7 +12,7 @@ namespace UIFrameWork
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter (context);
-			FrostRX.Instance.EndRxById (rxId);
+			FrostRX.End(rxId);
 			rxId = -1;
 			gameObject.SetActive (true);
 		}
@@ -20,7 +20,7 @@ namespace UIFrameWork
 		public override void OnExit(BaseContext context)
 		{
 			base.OnExit (context);
-			FrostRX.Instance.EndRxById (rxId);
+			FrostRX.End(rxId);
 			rxId = FrostRX.Start (this).ExecuteAfterTime(()=>{gameObject.SetActive (false);rxId=-1;},disappearTime).GetId();
 		}
 		public override void OnResume (BaseContext context)
@@ -41,5 +41,10 @@ namespace UIFrameWork
 				}, disappearTime).GetId ();
 			}
 		}
-	}
+        private void OnDestroy()
+        {
+            FrostRX.End(rxId);
+            rxId = -1;
+        }
+    }
 }

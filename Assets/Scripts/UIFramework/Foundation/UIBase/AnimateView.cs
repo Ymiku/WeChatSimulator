@@ -110,5 +110,10 @@ namespace UIFrameWork
 				}
 			}
 		}
-	}
+        private void OnDestroy()
+        {
+            FrostRX.End(rxId);
+            rxId = -1;
+        }
+    }
 }
