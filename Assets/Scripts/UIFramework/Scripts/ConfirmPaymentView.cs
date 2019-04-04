@@ -79,17 +79,21 @@ namespace UIFrameWork
                     ShowNotice(ContentHelper.Read(ContentHelper.TransAccountNotExist));
                     return;
                 }
-                ResultType result = Utils.TryPay(_amount, AssetsManager.Instance.curPayway);
-                if (result == ResultType.Success)
+                UIManager.Instance.Push(new InputAndCheckPaywordContext(() =>
                 {
-                    data.balance += _amount;
-                    AccountSaveData accountData = XMLSaver.saveData.GetAccountData(_context.accountId);
-                    UIManager.Instance.Push(new TransferSuccContext(_amount, _paywayStr, accountData, _context.remarksStr));
-                }
-                else
-                {
-                    ShowNotice(ContentHelper.Read(ContentHelper.AssetsNotEnough));
-                }
+                    ResultType result = Utils.TryPay(_amount, AssetsManager.Instance.curPayway);
+                    if (result == ResultType.Success)
+                    {
+                        data.balance += _amount;
+                        AccountSaveData accountData = XMLSaver.saveData.GetAccountData(_context.accountId);
+                        UIManager.Instance.Push(new TransferSuccContext(_amount, _paywayStr, accountData, _context.remarksStr));
+                    }
+                    else
+                    {
+                        ShowNotice(ContentHelper.Read(ContentHelper.AssetsNotEnough));
+                        UIManager.Instance.Push(new SelectPayWayContext(_amount));
+                    }
+                }));
             }
             else
             {

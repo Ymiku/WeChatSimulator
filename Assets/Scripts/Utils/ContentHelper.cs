@@ -17,4 +17,5 @@ public class ContentHelper{
     public const int BankCardIllegal = 11;  //该卡暂时不能开通快捷支付，请使用其他卡
     public const int SavingCardText = 12;  //储蓄卡
     public const int CardAlreadyBind = 13;  //已添加该卡，不能重复添加
+    public const int PaywordError = 14; //支付密码不正确
 }

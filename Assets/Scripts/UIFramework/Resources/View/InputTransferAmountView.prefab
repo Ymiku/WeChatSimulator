@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeWhenPause: 0
-  animator: {fileID: 0}
+  fadeType: 0
 --- !u!114 &114570626607812276
 MonoBehaviour:
   m_ObjectHideFlags: 1
