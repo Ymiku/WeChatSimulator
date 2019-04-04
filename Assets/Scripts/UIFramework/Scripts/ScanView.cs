@@ -34,10 +34,11 @@ namespace UIFrameWork
                 // Set Orientation & Texture
                 Image.transform.localEulerAngles = BarcodeScanner.Camera.GetEulerAngles();
                 Image.transform.localScale = BarcodeScanner.Camera.GetScale();
+				RectTransform rect = Image.GetComponent<RectTransform>();
+				rect.sizeDelta = new Vector2(rect.sizeDelta.x,rect.sizeDelta.x*BarcodeScanner.Camera.Texture.texelSize.y/BarcodeScanner.Camera.Texture.texelSize.x);
                 Image.texture = BarcodeScanner.Camera.Texture;
 
                 // Keep Image Aspect Ratio
-                var rect = Image.GetComponent<RectTransform>();
                 var newHeight = rect.sizeDelta.x * BarcodeScanner.Camera.Height / BarcodeScanner.Camera.Width;
                 rect.sizeDelta = new Vector2(rect.sizeDelta.x, newHeight);
 
