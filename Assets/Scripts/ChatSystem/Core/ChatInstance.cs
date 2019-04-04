@@ -14,7 +14,7 @@ public class ChatInstance{
 	string otherUserName;
 	public string lastSentence = "";
 	public ChatInstanceData saveData;
-
+	public int redNum = 0;
 	public void OnInit(string name,string otherName,int pairId)
 	{
 		userName = name;
@@ -33,6 +33,7 @@ public class ChatInstance{
 	public void OnEnter()
 	{
 		_activeNodes.Clear ();
+		redNum = 0;
 		//set panel
 	}
 	public void OnExecute()
@@ -56,6 +57,7 @@ public class ChatInstance{
 		curSection = ChatManager.Instance.LoadSectionByID (curPairID,curRunningNode.sectionId);
 		saveData.curNodeId = curRunningNode.nodeId;
 		saveData.curSectionId = curSection.sectionID;
+		redNum++;
 		ChatManager.Instance.Refresh ();
 	}
 	public void OnExit()

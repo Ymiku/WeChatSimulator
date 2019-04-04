@@ -7,7 +7,10 @@ public class ChatManager : Singleton<ChatManager> {
 	public delegate void RefreshEventHandler(List<ChatInstance> chatLst);
 	public event RefreshEventHandler OnRefresh;
 	//name name selectionID
-	public string curName = "Tom";
+	public string curName{
+		get{return GameManager.Instance.curEnName; }
+	}
+	public int curUserId;
 	public ChatInstance curInstance;
 	Dictionary<int,ChatInstance> pairId2Instance = new Dictionary<int, ChatInstance>();
 	List<ChatInstance> orderedInstance = new List<ChatInstance>();
@@ -92,6 +95,7 @@ public class ChatManager : Singleton<ChatManager> {
 	//
 	public void OnEnter(string name)
 	{
+		curUserId = GameManager.Instance.curUserId;
 		pairId2Instance.Clear ();
 		List<string> friends = XMLSaver.saveData.GetFriendsLst (name);
 		for (int i = 0; i < friends.Count; i++) {
@@ -167,5 +171,21 @@ public class ChatManager : Singleton<ChatManager> {
 				poolList.RemoveAt (0);
 			}
 		}
+	}
+
+	public void SendFriendRequest(int from,int to)
+	{
+		XMLSaver.saveData.friendRequests.Add ((from<<8)+to);
+	}
+	public List<int> GetFriendRequests(int id)
+	{
+		List<int> requests = XMLSaver.saveData.friendRequests;
+		List<int> outLst = new List<int> ();
+		for (int i = 0; i < requests.Count; i++) {
+			if ((requests [i] & 255) == curUserId||((requests [i]>>8) & 255) == curUserId) {
+				outLst.Add (requests[i]);
+			}
+		}
+		return outLst;
 	}
 }

@@ -7,6 +7,7 @@ using NodeEditorFramework.Standard;
 
 public partial class SaveData
 {
+	public List<int> friendRequests = new List<int> ();
 	public List<int> instanceID = new List<int> ();
 	public List<ChatInstanceData> instanceData = new List<ChatInstanceData> ();
     //对话控制变量

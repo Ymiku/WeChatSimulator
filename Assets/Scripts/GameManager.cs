@@ -7,6 +7,7 @@ public class GameManager : UnitySingleton<GameManager>
     long _timeStamp;
     float _localTime;
 	public int curUserId;
+	public string curEnName;
     public long time
     {
         get { return _timeStamp + (long)_localTime; }
@@ -24,6 +25,7 @@ public class GameManager : UnitySingleton<GameManager>
 	public void SetUser(int userId)
 	{
 		curUserId = userId;
+		curEnName = XMLSaver.saveData.GetAccountData (userId).enname;
 		XMLSaver.saveData.lastUser = userId;
         accountData = XMLSaver.saveData.GetAccountData(userId);
         if (!XMLSaver.saveData.canLoginUserIds.Contains (userId))
