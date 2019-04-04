@@ -13,6 +13,7 @@ namespace UIFrameWork
 		{
 			base.OnEnter (context);
 			FrostRX.Instance.EndRxById (rxId);
+			rxId = -1;
 			gameObject.SetActive (true);
 		}
 
@@ -26,6 +27,7 @@ namespace UIFrameWork
 		{
 			base.OnResume (context);
 			FrostRX.Instance.EndRxById (rxId);
+			rxId = -1;
 			if(!activeWhenPause)
 				gameObject.SetActive (true);
 		}
