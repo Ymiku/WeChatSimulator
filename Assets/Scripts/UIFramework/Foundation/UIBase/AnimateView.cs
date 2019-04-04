@@ -12,7 +12,7 @@ namespace UIFrameWork
 			Vertical
 		}
 		public AnimateFadeType fadeType = AnimateFadeType.Vertical;
-		public float _fadeTime = 4.0f;
+		float _fadeTime = 8.0f;
 		int rxId = -1;
 		float offsetY{
 			get{return rootRect.offsetMax.y; }
