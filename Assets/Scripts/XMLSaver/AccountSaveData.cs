@@ -92,16 +92,16 @@ public class AccountSaveData
     public string headSprite;           // 头像
     public Sprite GetHeadSprite()
     {
-        if(headSprite != null)
+        if(!string.IsNullOrEmpty(headSprite))
             return Resources.Load<Sprite>(headSprite);
-        return Resources.Load<Sprite>("Sprites/social_head_default");
+        return Resources.Load<Sprite>(AccountDefine.DefaultHeadSprite);
     }
 }
 
 public static class AccountDefine {
-    public const int PasswordMaxLength = 12;                        //登陆密码长度最长
-    public const int PasswordMinLength = 5;                         //登陆密码长度最短
-    public const int PaywordLength = 6;                             //支付密码长度
-    public const int NicknameMaxLength = 5;                         //昵称长度最长
-    public const string DefaultHeadSprite = "push_chat_default";    //默认头像
+    public const int PasswordMaxLength = 12;                                  //登陆密码长度最长
+    public const int PasswordMinLength = 5;                                   //登陆密码长度最短
+    public const int PaywordLength = 6;                                       //支付密码长度
+    public const int NicknameMaxLength = 5;                                   //昵称长度最长
+    public const string DefaultHeadSprite = "Sprites/social_head_default";    //默认头像
 }

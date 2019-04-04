@@ -136,7 +136,7 @@ public static class Utils
     public static ResultType TryPay(double money, PaywayType way, string cardId = "")
     {
         ResultType result = ResultType.Failed;
-        AssetsSaveData data = XMLSaver.saveData.GetAssetsData(GameManager.Instance.curUserId);
+        AssetsSaveData data = AssetsManager.Instance.assetsData;
         switch (way)
         {
             case PaywayType.Banlance:
