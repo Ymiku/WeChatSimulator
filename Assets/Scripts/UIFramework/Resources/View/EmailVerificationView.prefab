@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 225829553055376148}
   - component: {fileID: 114236210019677728}
   m_Layer: 5
-  m_Name: EmailVerificationViewView
+  m_Name: EmailVerificationView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
