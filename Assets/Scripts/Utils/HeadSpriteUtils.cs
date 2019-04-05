@@ -15,6 +15,8 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
     private Shader _outputShader;
     private Dictionary<int, Sprite> _headSpriteDict = new Dictionary<int, Sprite>();
     private Sprite _defaultSprite;
+    private string _customIdent = "Textures/";
+    private string _systemIdent = "Sprites/";
 
     public override void SingletonInit()
     {
@@ -31,25 +33,23 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
             return;
         }
         AccountSaveData data = XMLSaver.saveData.GetAccountData(userId);
-        if (data.isCustomHead)
+        if (string.IsNullOrEmpty(data.headSprite))
         {
             desImage.sprite = _defaultSprite;
-            StartCoroutine(GetTexture(userId, desImage, Application.persistentDataPath + "/" + data.headSprite + ".png"));
+            _headSpriteDict.Add(userId, _defaultSprite);
+            return;
         }
-        else
+        if (data.headSprite.IndexOf(_systemIdent) == 0)
         {
-            if (string.IsNullOrEmpty(data.headSprite))
-            {
-                desImage.sprite = _defaultSprite;
-                _headSpriteDict.Add(userId, _defaultSprite);
-            }
-            else
-            {
-                Sprite sprite = Resources.Load<Sprite>(data.headSprite);
-                desImage.sprite = sprite;
-                _headSpriteDict.Add(userId, sprite);
-            }
+            Sprite sprite = Resources.Load<Sprite>(data.headSprite);
+            if (sprite == null)
+                sprite = _defaultSprite;
+            desImage.sprite = sprite;
+            _headSpriteDict.Add(userId, sprite);
+            return;
         }
+        desImage.sprite = _defaultSprite;
+        StartCoroutine(GetTexture(userId, desImage, Application.persistentDataPath + "/" + data.headSprite + ".png"));
     }
 
     public void SetHead(Image desImage)
@@ -142,10 +142,9 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
         if (!_loading && _uploadTexture != null && _uploadSprite != null)
         {
             string pngName = GameManager.Instance.curEnName + "_head";
-            if (SaveRenderTextureToPNG(_uploadTexture, _outputShader, Application.persistentDataPath, pngName))
+            if (SaveRenderTextureToPNG(_uploadTexture, _outputShader, Application.persistentDataPath + "/" + _customIdent, pngName))
             {
-                GameManager.Instance.accountData.headSprite = pngName;
-                GameManager.Instance.accountData.isCustomHead = true;
+                GameManager.Instance.accountData.headSprite = _customIdent + pngName;
                 _headSpriteDict[GameManager.Instance.curUserId] = _uploadSprite;
             }
         }
@@ -171,7 +170,7 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
         byte[] bytes = png.EncodeToPNG();
         if (!Directory.Exists(contents))
             Directory.CreateDirectory(contents);
-        FileStream file = File.Open(contents + "/" + pngName + ".png", FileMode.Create);
+        FileStream file = File.Open(contents + pngName + ".png", FileMode.Create);
         BinaryWriter writer = new BinaryWriter(file);
         writer.Write(bytes);
         file.Close();

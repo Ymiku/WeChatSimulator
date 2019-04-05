@@ -89,7 +89,6 @@ public class AccountSaveData
     public string nickname;             // 账户名(昵称)
     public string password;             // 账户登陆密码
     public int payword;                 // 账户支付密码
-    public bool isCustomHead;           // 是否自定义头像
     public string headSprite;           // 头像
 }
 
