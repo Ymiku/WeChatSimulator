@@ -2,9 +2,9 @@ using UnityEngine;
 using System.Collections;
 namespace UIFrameWork
 {
-	public class SecuritySettingViewView : AnimateView
+	public class SetLoginPasswordView : AnimateView
 	{
-		private SecuritySettingViewContext _context;
+		private SetLoginPasswordContext _context;
 
 		public override void Init ()
 		{
@@ -13,7 +13,7 @@ namespace UIFrameWork
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter(context);
-			_context = context as SecuritySettingViewContext;
+			_context = context as SetLoginPasswordContext;
 		}
 
 		public override void OnExit(BaseContext context)
@@ -35,9 +35,9 @@ namespace UIFrameWork
 			base.Excute ();
 		}
 	}
-	public class SecuritySettingViewContext : BaseContext
+	public class SetLoginPasswordContext : BaseContext
 	{
-		public SecuritySettingViewContext() : base(UIType.SecuritySettingView)
+		public SetLoginPasswordContext() : base(UIType.SetLoginPassword)
 		{
 		}
 	}

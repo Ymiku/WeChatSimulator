@@ -65,10 +65,10 @@ namespace UIFrameWork
 		public static readonly UIType ChangeAccountLogin = new UIType("View/ChangeAccountLoginView"); //切换账号
 		public static readonly UIType TransferSucc = new UIType("View/TransferSuccView"); //转账成功
 		public static readonly UIType InputAndCheckPayword = new UIType("View/InputAndCheckPaywordView"); //输入支付密码
-		public static readonly UIType RecoverPasswordView = new UIType("View/RecoverPasswordViewView"); //找回密码
-		public static readonly UIType EmailVerificationView = new UIType("View/EmailVerificationViewView"); //Email验证
-		public static readonly UIType PasswordView = new UIType("View/PasswordViewView"); //设置密码
-		public static readonly UIType SetLoginPasswordView = new UIType("View/SetLoginPasswordViewView"); //设置登录密码
-		public static readonly UIType SecuritySettingView = new UIType("View/SecuritySettingViewView"); //安全设置
+		public static readonly UIType RecoverPassword = new UIType("View/RecoverPasswordView"); //找回密码
+		public static readonly UIType EmailVerification = new UIType("View/EmailVerificationView"); //Email验证
+		public static readonly UIType Password = new UIType("View/PasswordView"); //设置密码
+		public static readonly UIType SetLoginPassword = new UIType("View/SetLoginPasswordView"); //设置登录密码
+		public static readonly UIType SecuritySetting = new UIType("View/SecuritySettingView"); //安全设置
     }
 }

@@ -2,9 +2,9 @@ using UnityEngine;
 using System.Collections;
 namespace UIFrameWork
 {
-	public class EmailVerificationViewView : AlphaView
+	public class RecoverPasswordView : AlphaView
 	{
-		private EmailVerificationViewContext _context;
+		private RecoverPasswordContext _context;
 
 		public override void Init ()
 		{
@@ -13,7 +13,7 @@ namespace UIFrameWork
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter(context);
-			_context = context as EmailVerificationViewContext;
+			_context = context as RecoverPasswordContext;
 		}
 
 		public override void OnExit(BaseContext context)
@@ -35,9 +35,9 @@ namespace UIFrameWork
 			base.Excute ();
 		}
 	}
-	public class EmailVerificationViewContext : BaseContext
+	public class RecoverPasswordContext : BaseContext
 	{
-		public EmailVerificationViewContext() : base(UIType.EmailVerificationView)
+		public RecoverPasswordContext() : base(UIType.RecoverPassword)
 		{
 		}
 	}

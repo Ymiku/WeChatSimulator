@@ -2,9 +2,9 @@ using UnityEngine;
 using System.Collections;
 namespace UIFrameWork
 {
-	public class RecoverPasswordViewView : AlphaView
+	public class SecuritySettingView: AnimateView
 	{
-		private RecoverPasswordViewContext _context;
+		private SecuritySettingContext _context;
 
 		public override void Init ()
 		{
@@ -13,7 +13,7 @@ namespace UIFrameWork
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter(context);
-			_context = context as RecoverPasswordViewContext;
+			_context = context as SecuritySettingContext;
 		}
 
 		public override void OnExit(BaseContext context)
@@ -35,9 +35,9 @@ namespace UIFrameWork
 			base.Excute ();
 		}
 	}
-	public class RecoverPasswordViewContext : BaseContext
+	public class SecuritySettingContext : BaseContext
 	{
-		public RecoverPasswordViewContext() : base(UIType.RecoverPasswordView)
+		public SecuritySettingContext() : base(UIType.SecuritySetting)
 		{
 		}
 	}
