@@ -13,6 +13,10 @@ namespace UnityEngine.UI
         [SerializeField]
         [FormerlySerializedAs("fInputType")]
         protected FInputType f_InputType;
+        public string GetText()
+        {
+            return text.Replace(" ","");
+        }
         protected void FOnValueChange(string s)
         {
             if ((f_InputType & (FInputType.PhoneNumber | FInputType.CardNumber | FInputType.Money)) != 0)
