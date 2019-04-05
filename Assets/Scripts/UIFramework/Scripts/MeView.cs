@@ -1,9 +1,13 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 namespace UIFrameWork
 {
 	public class MeView : EnabledView
 	{
+        public ImageProxy headSprite;
+        public TextProxy userName;
+        public TextProxy phoneNumber;
 		private MeContext _context;
 
 		public override void Init ()
@@ -14,6 +18,9 @@ namespace UIFrameWork
 		{
 			base.OnEnter(context);
 			_context = context as MeContext;
+            HeadSpriteUtils.Instance.SetHead(headSprite);
+            userName.text = GameManager.Instance.accountData.realname;
+            phoneNumber.text = Utils.FormatStringForSecrecy(GameManager.Instance.accountData.phoneNumber,FInputType.PhoneNumber);
 		}
 
 		public override void OnExit(BaseContext context)
