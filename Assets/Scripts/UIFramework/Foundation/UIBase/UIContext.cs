@@ -8,7 +8,7 @@ namespace UIFrameWork
     public class UIContext
     {
         private Stack<BaseContext> _contextStack = new Stack<BaseContext>();
-
+        BaseContext _curContext;
 		public void LineStart()
 		{
 			if (_contextStack.Count == 0)
@@ -17,7 +17,8 @@ namespace UIFrameWork
 			foreach (BaseContext item in _contextStack) {
 				temp = UIManager.Instance.GetSingleUI (item.ViewType).GetComponent<BaseView> ();
 				temp.OnEnter (item);
-				temp.OnPause (item);
+                temp.OnPause(item);
+                temp.ForceDisable();
 			}
 
 			BaseContext lastContext = _contextStack.Peek();
@@ -26,20 +27,27 @@ namespace UIFrameWork
 		}
 		public void LineExit()
 		{
+            BaseView view = null;
 			foreach (BaseContext item in _contextStack) {
-				UIManager.Instance.GetSingleUI(item.ViewType).GetComponent<BaseView>().OnExit(item);
-			}
+                view = UIManager.Instance.GetSingleUI(item.ViewType).GetComponent<BaseView>();
+                view.OnExit(item);
+                if (item != _curContext)
+                    view.ForceDisable();
+            }
 		}
-        public void Push(BaseContext nextContext)
+        public void Push(BaseContext nextContext,bool needs2Show = true)
         {
             if (_contextStack.Count != 0)
             {
                 BaseContext curContext = _contextStack.Peek();
                 BaseView curView = UIManager.Instance.GetSingleUI(curContext.ViewType).GetComponent<BaseView>();
                 curView.OnPause(curContext);
-                Pool(curContext.ViewType);
+                if (!needs2Show && !curView.activeWhenPause)
+                    curView.ForceDisable();
+                //Pool(curContext.ViewType);
             }
             _contextStack.Push(nextContext);
+            _curContext = nextContext;
             BaseView nextView = UIManager.Instance.GetSingleUI(nextContext.ViewType).GetComponent<BaseView>();
 			nextView.transform.SetAsLastSibling ();
             nextView.OnEnter(nextContext);
@@ -56,12 +64,13 @@ namespace UIFrameWork
 
                 BaseView curView = UIManager.Instance.GetSingleUI(curContext.ViewType).GetComponent<BaseView>();
                 curView.OnExit(curContext);
-                Pool(curContext.ViewType);
+                //Pool(curContext.ViewType);
             }
 
             if (_contextStack.Count != 0)
             {
                 BaseContext lastContext = _contextStack.Peek();
+                _curContext = lastContext;
                 BaseView curView = UIManager.Instance.GetSingleUI(lastContext.ViewType).GetComponent<BaseView>();
                 curView.OnResume(lastContext);
                 Pool(lastContext.ViewType);
@@ -69,11 +78,12 @@ namespace UIFrameWork
         }
         void Pool(UIType type)
         {
-            if (UIManager.Instance._UIPool.Contains(type))
+            List<UIType> UIPool = UIManager.Instance._UIPool;
+            if (UIPool.Contains(type))
             {
-                UIManager.Instance._UIPool.Remove(type);
+                UIPool.Remove(type);
             }
-            UIManager.Instance._UIPool.Add(type);
+            UIPool.Add(type);
         }
         public BaseContext PeekOrNull()
         {

@@ -75,6 +75,9 @@ namespace UIFrameWork
             }
             return false;
         }
+        public virtual void ForceDisable()
+        {
+        }
         public void PlaySound(int i)
         {
             //AudioManager.Instance.PlayUISound (i);

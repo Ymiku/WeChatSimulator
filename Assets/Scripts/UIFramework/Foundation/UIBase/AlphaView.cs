@@ -53,8 +53,15 @@ namespace UIFrameWork
 					gameObject.SetActive (false);
 				}
 			}
-				
-			
 		}
-	}
+        public sealed override void ForceDisable()
+        {
+            base.ForceDisable();
+            if (activeWhenPause)
+                return;
+            _show = false;
+            _canvasGroup.alpha = 0.0f;
+            gameObject.SetActive(false);
+        }
+    }
 }

@@ -262,7 +262,6 @@ GameObject:
   - component: {fileID: 224681787488445992}
   - component: {fileID: 222341696685249776}
   - component: {fileID: 114282558848171584}
-  - component: {fileID: 114750374422858534}
   - component: {fileID: 114215863908269494}
   m_Layer: 5
   m_Name: Item (3)
@@ -1029,8 +1028,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114750374422858534}
-        m_MethodName: OnClick
+      - m_Target: {fileID: 114863350893091142}
+        m_MethodName: OnClickNewAccount
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1636,20 +1635,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114750374422858534
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1389399200364022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cddf48d781ed73b41827f4a1636f7ffd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 114972533870503706}
-  image: {fileID: 0}
-  check: {fileID: 0}
 --- !u!114 &114791754872530374
 MonoBehaviour:
   m_ObjectHideFlags: 1

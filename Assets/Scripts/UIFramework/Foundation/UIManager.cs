@@ -39,7 +39,6 @@ namespace UIFrameWork
 		{
 			return _canvas;
 		}
-
 		public void Push(BaseContext nextContext)
 		{
 			activeContext.Push (nextContext);

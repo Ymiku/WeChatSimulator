@@ -51,6 +51,10 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
+        public void OnClickNewAccount()
+        {
+            UIManager.Instance.Push(new LoginByPhoneNumberContext());
+        }
 	}
 	public class ChangeAccountLoginContext : BaseContext
 	{

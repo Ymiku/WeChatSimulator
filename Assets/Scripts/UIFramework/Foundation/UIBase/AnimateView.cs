@@ -40,12 +40,12 @@ namespace UIFrameWork
 			FrostRX.Instance.EndRxById (rxId);
 			switch (fadeType) {
 			case AnimateFadeType.Horizon:
-				rxId = FrostRX.Start(this).Execute(()=>{_canvasGroup.blocksRaycasts=true;_canvasGroup.alpha=0.0f;gameObject.SetActive(true);offsetX=1080.0f;}).
+				rxId = FrostRX.Start(this).Execute(()=>{_canvasGroup.alpha=0.0f;gameObject.SetActive(true);offsetX=1080.0f;}).
 					ExecuteUntil(()=>{offsetX = Mathf.Lerp(offsetX,-0.1f,_fadeTime*Time.deltaTime);_canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha,1.01f,_fadeTime*Time.deltaTime);if(offsetX<=0.0f)offsetX=0.0f;},
 						()=>{return offsetX==0.0f&&_canvasGroup.alpha>=1.0f;}).Execute(()=>{rxId=-1;}).GetId();
 				break;
 			case AnimateFadeType.Vertical:
-				rxId = FrostRX.Start(this).Execute(()=>{_canvasGroup.blocksRaycasts=true;_canvasGroup.alpha=0.0f;gameObject.SetActive(true);offsetY=-1920.0f;}).
+				rxId = FrostRX.Start(this).Execute(()=>{_canvasGroup.alpha=0.0f;gameObject.SetActive(true);offsetY=-1920.0f;}).
 					ExecuteUntil(()=>{offsetY = Mathf.Lerp(offsetY,0.1f,_fadeTime*Time.deltaTime);_canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha,1.01f,_fadeTime*Time.deltaTime);if(offsetY>=0.0f)offsetY=0.0f;},
 						()=>{return offsetY==0.0f&&_canvasGroup.alpha>=1.0f;}).Execute(()=>{rxId=-1;}).GetId();
 				break;
@@ -59,12 +59,12 @@ namespace UIFrameWork
 			FrostRX.Instance.EndRxById (rxId);
 			switch (fadeType) {
 			case AnimateFadeType.Horizon:
-				rxId = FrostRX.Start(this).Execute(()=>{_canvasGroup.blocksRaycasts=false;}).
+				rxId = FrostRX.Start(this).
 					ExecuteUntil(()=>{offsetX = Mathf.Lerp(offsetX,1080.1f,_fadeTime*Time.deltaTime);_canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha,-0.01f,_fadeTime*Time.deltaTime);if(offsetX>=1080.0f)offsetX=1080.0f;},
 						()=>{return offsetX==1080.0f&&_canvasGroup.alpha<=0.0f;}).Execute(()=>{rxId=-1;gameObject.SetActive(false);}).GetId();
 				break;
 			case AnimateFadeType.Vertical:
-				rxId = FrostRX.Start(this).Execute(()=>{_canvasGroup.blocksRaycasts=false;}).
+				rxId = FrostRX.Start(this).
 					ExecuteUntil(()=>{offsetY = Mathf.Lerp(offsetY,-1920.1f,_fadeTime*Time.deltaTime);_canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha,-0.01f,_fadeTime*Time.deltaTime);if(offsetY<=-1920.0f)offsetY=-1920.0f;},
 						()=>{return offsetY==-1920.0f&&_canvasGroup.alpha<=0.0f;}).Execute(()=>{rxId=-1;gameObject.SetActive(false);}).GetId();
 				break;
@@ -78,12 +78,12 @@ namespace UIFrameWork
 				FrostRX.End (rxId);
 				switch (fadeType) {
 				case AnimateFadeType.Horizon:
-					rxId = FrostRX.Start(this).Execute(()=>{_canvasGroup.blocksRaycasts=false;}).
+					rxId = FrostRX.Start(this).
 						ExecuteUntil(()=>{offsetX = Mathf.Lerp(offsetX,-1080.1f,_fadeTime*Time.deltaTime);_canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha,-0.01f,_fadeTime*Time.deltaTime);if(offsetX<=-1080.0f)offsetX=-1080.0f;},
 							()=>{return offsetX==-1080.0f&&_canvasGroup.alpha<=0.0f;}).Execute(()=>{rxId=-1;gameObject.SetActive(false);}).GetId();
 					break;
 				case AnimateFadeType.Vertical:
-					rxId = FrostRX.Start(this).Execute(()=>{_canvasGroup.blocksRaycasts=false;}).
+					rxId = FrostRX.Start(this).
 						ExecuteUntil(()=>{offsetY = Mathf.Lerp(offsetY,-1920.1f,_fadeTime*Time.deltaTime);_canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha,-0.01f,_fadeTime*Time.deltaTime);if(offsetY<=-1920.0f)offsetY=-1920.0f;},
 							()=>{return offsetY==-1920.0f&&_canvasGroup.alpha<=0.0f;}).Execute(()=>{rxId=-1;gameObject.SetActive(false);}).GetId();
 					break;
@@ -98,12 +98,12 @@ namespace UIFrameWork
 				FrostRX.End(rxId);
 				switch (fadeType) {
 				case AnimateFadeType.Horizon:
-					rxId = FrostRX.Start(this).Execute(()=>{_canvasGroup.blocksRaycasts=true;gameObject.SetActive(true);}).
+					rxId = FrostRX.Start(this).Execute(()=>{gameObject.SetActive(true);}).
 						ExecuteUntil(()=>{offsetX = Mathf.Lerp(offsetX,0.1f,_fadeTime*Time.deltaTime);_canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha,1.01f,_fadeTime*Time.deltaTime);if(offsetX>=0.0f)offsetX=0.0f;},
 							()=>{return offsetX==0.0f&&_canvasGroup.alpha>=1.0f;}).Execute(()=>{rxId=-1;}).GetId();
 					break;
 				case AnimateFadeType.Vertical:
-					rxId = FrostRX.Start(this).Execute(()=>{_canvasGroup.blocksRaycasts=true;gameObject.SetActive(true);}).
+					rxId = FrostRX.Start(this).Execute(()=>{gameObject.SetActive(true);}).
 						ExecuteUntil(()=>{offsetY = Mathf.Lerp(offsetY,0.1f,_fadeTime*Time.deltaTime);_canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha,1.01f,_fadeTime*Time.deltaTime);if(offsetY>=0.0f)offsetY=0.0f;},
 							()=>{return offsetY==0.0f&&_canvasGroup.alpha>=1.0f;}).Execute(()=>{rxId=-1;}).GetId();
 					break;
@@ -114,6 +114,18 @@ namespace UIFrameWork
         {
             FrostRX.End(rxId);
             rxId = -1;
+        }
+        public sealed override void ForceDisable()
+        {
+            base.ForceDisable();
+            if (activeWhenPause)
+                return;
+            FrostRX.End(rxId);
+            rxId = -1;
+            offsetX = 0;
+            offsetY = 0;
+            _canvasGroup.alpha = 0;
+            gameObject.SetActive(false);
         }
     }
 }

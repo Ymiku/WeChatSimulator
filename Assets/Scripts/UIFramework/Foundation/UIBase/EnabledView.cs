@@ -41,6 +41,16 @@ namespace UIFrameWork
 				}, disappearTime).GetId ();
 			}
 		}
+        public sealed override void ForceDisable()
+        {
+            base.ForceDisable();
+            if (activeWhenPause)
+                return;
+            FrostRX.End(rxId);
+            rxId = -1;
+            gameObject.SetActive(false);
+
+        }
         private void OnDestroy()
         {
             FrostRX.End(rxId);
