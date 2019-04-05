@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 222063546882708018}
   - component: {fileID: 225765345102513588}
   - component: {fileID: 114882418342407412}
-  - component: {fileID: 95839877159996446}
   - component: {fileID: 114132445227483262}
   m_Layer: 5
   m_Name: SearchView
@@ -118,23 +117,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &95839877159996446
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1113686031454428}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b754b15e0da08c849806d1a99695481b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114132445227483262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,7 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358d5905b995aa04c8ab0447d99c9b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 95839877159996446}
+  activeWhenPause: 0
+  fadeType: 1
 --- !u!114 &114186517338729730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -467,7 +450,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -39, y: -61}
+  m_AnchoredPosition: {x: -39, y: -146.81006}
   m_SizeDelta: {x: 784.65, y: 83.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224508757463887626
@@ -486,7 +469,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 46.1, y: -63.9}
+  m_AnchoredPosition: {x: 46.100006, y: -149.70996}
   m_SizeDelta: {x: 31.75, y: 50.61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224543827437616632

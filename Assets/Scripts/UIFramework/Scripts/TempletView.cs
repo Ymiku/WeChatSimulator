@@ -1,6 +1,7 @@
 ﻿/*UI类模板
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 namespace UIFrameWork
 {
 	public class TempletView : ParentView
