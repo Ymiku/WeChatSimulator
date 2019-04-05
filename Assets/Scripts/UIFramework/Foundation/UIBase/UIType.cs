@@ -69,5 +69,6 @@ namespace UIFrameWork
 		public static readonly UIType EmailVerificationView = new UIType("View/EmailVerificationViewView"); //Email验证
 		public static readonly UIType PasswordView = new UIType("View/PasswordViewView"); //设置密码
 		public static readonly UIType SetLoginPasswordView = new UIType("View/SetLoginPasswordViewView"); //设置登录密码
+		public static readonly UIType SecuritySettingView = new UIType("View/SecuritySettingViewView"); //安全设置
     }
 }
