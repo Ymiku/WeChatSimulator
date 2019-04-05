@@ -6,6 +6,15 @@ using UnityEngine.UI;
 public static class SetUIFormat
 {
 
+    [MenuItem("GameObject/设置button", priority = 0)]
+    static void SetB()
+    {
+        Button[] buttons = GameObject.FindObjectsOfType<Button>();
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].navigation = new Navigation();
+        }
+    }
     [MenuItem("GameObject/将Image和Text转为Proxy", priority = 0)]
     static void SetUI()
     {

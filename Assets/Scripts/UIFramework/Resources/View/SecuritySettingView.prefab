@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 114324808646207030}
   - component: {fileID: 114573184732952608}
   m_Layer: 5
-  m_Name: PaySetting
+  m_Name: Password
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 114884138529154084}
   - component: {fileID: 114493624330658616}
   m_Layer: 5
-  m_Name: SecuritySetting
+  m_Name: Phone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -310,31 +310,14 @@ GameObject:
   - component: {fileID: 222310543624534916}
   - component: {fileID: 225105582058449750}
   - component: {fileID: 114902062036318330}
-  - component: {fileID: 95277592760354484}
+  - component: {fileID: 114111747582238312}
   m_Layer: 5
-  m_Name: SecuritySettingViewView
+  m_Name: SecuritySettingView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &95277592760354484
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1930055173161886}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114069889784495154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -362,6 +345,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114111747582238312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1930055173161886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c66f2e9371ea44bb956de6247665f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeWhenPause: 0
+  fadeType: 0
 --- !u!114 &114130171944247122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -488,7 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -724,7 +720,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114111747582238312}
         m_MethodName: PopCallBack
         m_Mode: 1
         m_Arguments:
@@ -842,7 +838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -868,7 +864,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114493624330658616}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1930055173161886}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114902062036318330
@@ -1188,7 +1195,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.29995403, y: -301.40073}
+  m_AnchoredPosition: {x: -0.29995403, y: -303.4007}
   m_SizeDelta: {x: 1080, y: 143.5}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &224467863648510828
@@ -1279,7 +1286,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -0.29995403, y: -235.51521}
-  m_SizeDelta: {x: 1080, y: 63.1}
+  m_SizeDelta: {x: 1080, y: 67.886}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &224701150207436626
 RectTransform:

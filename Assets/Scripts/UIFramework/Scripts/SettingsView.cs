@@ -44,6 +44,10 @@ namespace UIFrameWork
             UIManager.Instance.StartAndResetUILine(UIManager.UILine.AccountLogin);
             UIManager.Instance.Push(new LoginContext());
         }
+        public void OnClickSecuritySetting()
+        {
+            UIManager.Instance.Push(new SecuritySettingContext());
+        }
     }
 	public class SettingsContext : BaseContext
 	{
