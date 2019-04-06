@@ -101,15 +101,19 @@ public static class Utils
     /// </summary>
     /// <returns>The spell code.</returns>
     /// <param name="CnChar">Cn char.</param>
-    public static string GetSpellCode(string CnChar)
+    public static string GetSpellCode(string name)
     {
+        string CnChar = name.Substring(0,1);
         long iCnChar;
+        string outChar = null;
         byte[] arrCN = System.Text.Encoding.Default.GetBytes(CnChar);
 
         //如果是字母，则直接返回
         if (arrCN.Length == 1)
         {
-            CnChar = CnChar.ToUpper();
+            outChar = CnChar.ToUpper();
+            if (outChar[0] < 65 || outChar[0] > 90)
+                outChar = "#";
         }
         else
         {
@@ -126,12 +130,14 @@ public static class Utils
             {
                 if (areacode[i] <= iCnChar && iCnChar < areacode[i + 1])
                 {
-                    CnChar = letter.Substring(i, 1);
+                    outChar = letter.Substring(i, 1);
                     break;
                 }
             }
+            if (outChar == null)
+                outChar = "#";
         }
-        return CnChar;
+        return outChar;
     }
     public static ResultType TryPay(double money, PaywayType way, string cardId = "")
     {
