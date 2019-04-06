@@ -23,17 +23,15 @@ public class PoolableScrollView : MonoBehaviour
     public ItemBase prefab;
 	float prefabHeight;
     Stack<ItemBase> _pools = new Stack<ItemBase>();
-#if UNITY_EDITOR
-    [SerializeField]
-#else
-    [HideInInspector]
-#endif
-    List<ItemBase> _activeItems = new List<ItemBase>();
+    public List<ItemBase> _activeItems = new List<ItemBase>();
     RectTransform _contextTrans;
     List<object> _datas = new List<object>();
 	public RectTransform UpPanel;
 	float constHeight = 0.0f;
-
+    public void Init<T>(List<T> datas)
+    {
+        Init(datas.ConvertAll<object>(Data => Data as object));
+    }
 	public void Init(List<object> datas)
     {
 		if (prefab.gameObject.activeSelf) {
