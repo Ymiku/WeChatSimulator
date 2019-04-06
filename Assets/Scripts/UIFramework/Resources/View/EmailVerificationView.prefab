@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 222108458367785370}
   - component: {fileID: 225829553055376148}
   - component: {fileID: 114236210019677728}
+  - component: {fileID: 114035643800789648}
   m_Layer: 5
   m_Name: EmailVerificationView
   m_TagString: Untagged
@@ -112,6 +113,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114035643800789648
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1993331234584988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4508c132605e3854fa7c989c87bdcc8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeWhenPause: 0
+  alphaSpeed: 20
 --- !u!114 &114236210019677728
 MonoBehaviour:
   m_ObjectHideFlags: 1
