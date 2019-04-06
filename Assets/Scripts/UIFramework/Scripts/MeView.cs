@@ -98,6 +98,10 @@ namespace UIFrameWork
         public void OnClickBank() {
             UIManager.Instance.Push(new MyBankContext());
         }
+        public void OnClickPersonInfo()
+        {
+            UIManager.Instance.Push(new PersonalInfoContext());
+        }
         #endregion
     }
     public class MeContext : BaseContext
