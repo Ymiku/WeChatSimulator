@@ -18,9 +18,7 @@ namespace UIFrameWork
 		{
 			base.OnEnter(context);
 			_context = context as MeContext;
-            HeadSpriteUtils.Instance.SetHead(headSprite);
-            userName.text = GameManager.Instance.accountData.realname;
-            phoneNumber.text = Utils.FormatStringForSecrecy(GameManager.Instance.accountData.phoneNumber,FInputType.PhoneNumber);
+            Refresh();
 		}
 
 		public override void OnExit(BaseContext context)
@@ -36,12 +34,20 @@ namespace UIFrameWork
 		public override void OnResume(BaseContext context)
 		{
 			base.OnResume(context);
+            Refresh();
 		}
 		public override void Excute ()
 		{
 			base.Excute ();
 
 		}
+
+        private void Refresh()
+        {
+            HeadSpriteUtils.Instance.SetHead(headSprite);
+            userName.text = GameManager.Instance.accountData.realname;
+            phoneNumber.text = Utils.FormatStringForSecrecy(GameManager.Instance.accountData.phoneNumber, FInputType.PhoneNumber);
+        }
 
         #region 按钮事件部分
         public void OnClickHome()
@@ -97,6 +103,10 @@ namespace UIFrameWork
         }
         public void OnClickBank() {
             UIManager.Instance.Push(new MyBankContext());
+        }
+        public void OnClickPersonInfo()
+        {
+            UIManager.Instance.Push(new PersonalInfoContext());
         }
         #endregion
     }

@@ -63,7 +63,7 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
         yield return wwwTexture;
         if (wwwTexture.isDone && wwwTexture.texture != null)
         {
-            Sprite sprite = Sprite.Create(wwwTexture.texture, new Rect(0, 0, _uploadTexture.width, _uploadTexture.height), Vector2.zero);
+            Sprite sprite = Sprite.Create(wwwTexture.texture, new Rect(0, 0, wwwTexture.texture.width, wwwTexture.texture.height), Vector2.zero);
             if (sprite == null)
             {
                 sprite = _defaultSprite;
