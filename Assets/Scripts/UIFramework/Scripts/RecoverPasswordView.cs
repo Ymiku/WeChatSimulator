@@ -34,7 +34,12 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
-	}
+        public void OnClickEmailVerification()
+        {
+            UIManager.Instance.Push(new EmailVerificationContext());
+        }
+
+    }
 	public class RecoverPasswordContext : BaseContext
 	{
 		public RecoverPasswordContext() : base(UIType.RecoverPassword)

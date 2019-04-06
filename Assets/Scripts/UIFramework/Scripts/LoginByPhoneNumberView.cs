@@ -76,6 +76,10 @@ namespace UIFrameWork
         {
             loginButton.interactable = (phone.text.Length != 0 && password.text.Length != 0);
         }
+        public void OnClickRecoverPassword()
+        {
+            UIManager.Instance.Push(new RecoverPasswordContext());
+        }
 	}
 	public class LoginByPhoneNumberContext : BaseContext
 	{
