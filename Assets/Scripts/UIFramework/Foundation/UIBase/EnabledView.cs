@@ -12,22 +12,20 @@ namespace UIFrameWork
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter (context);
-			FrostRX.End(rxId);
-			rxId = -1;
+			FrostRX.End(ref rxId);
 			gameObject.SetActive (true);
 		}
 
 		public override void OnExit(BaseContext context)
 		{
 			base.OnExit (context);
-			FrostRX.End(rxId);
+			FrostRX.End(ref rxId);
 			rxId = FrostRX.Start (this).ExecuteAfterTime(()=>{gameObject.SetActive (false);rxId=-1;},disappearTime).GetId();
 		}
 		public override void OnResume (BaseContext context)
 		{
 			base.OnResume (context);
-			FrostRX.Instance.EndRxById (rxId);
-			rxId = -1;
+			FrostRX.Instance.EndRxById (ref rxId);
 			if(!activeWhenPause)
 				gameObject.SetActive (true);
 		}
@@ -35,7 +33,7 @@ namespace UIFrameWork
 		{
 			base.OnPause (context);
 			if (!activeWhenPause) {
-				FrostRX.Instance.EndRxById (rxId);
+				FrostRX.Instance.EndRxById (ref rxId);
 				rxId = FrostRX.Start (this).ExecuteAfterTime (() => {
 					gameObject.SetActive (false);rxId = -1;
 				}, disappearTime).GetId ();
@@ -46,15 +44,13 @@ namespace UIFrameWork
             base.ForceDisable();
             if (activeWhenPause)
                 return;
-            FrostRX.End(rxId);
-            rxId = -1;
+            FrostRX.End(ref rxId);
             gameObject.SetActive(false);
 
         }
         private void OnDestroy()
         {
-            FrostRX.End(rxId);
-            rxId = -1;
+            FrostRX.End(ref rxId);
         }
     }
 }

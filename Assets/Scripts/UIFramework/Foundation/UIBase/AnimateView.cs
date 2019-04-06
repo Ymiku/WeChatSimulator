@@ -37,7 +37,7 @@ namespace UIFrameWork
 			base.OnEnter (context);
 			gameObject.SetActive(true);
 			_isPause = false;
-			FrostRX.Instance.EndRxById (rxId);
+			FrostRX.Instance.EndRxById (ref rxId);
 			switch (fadeType) {
 			case AnimateFadeType.Horizon:
 				rxId = FrostRX.Start(this).Execute(()=>{_canvasGroup.alpha=0.0f;gameObject.SetActive(true);offsetX=1080.0f;}).
@@ -56,7 +56,7 @@ namespace UIFrameWork
 			base.OnExit (context);
 			_isPause = true;
 
-			FrostRX.Instance.EndRxById (rxId);
+			FrostRX.Instance.EndRxById (ref rxId);
 			switch (fadeType) {
 			case AnimateFadeType.Horizon:
 				rxId = FrostRX.Start(this).
@@ -75,7 +75,7 @@ namespace UIFrameWork
 		{
 			base.OnPause (context);
 			if (!activeWhenPause) {
-				FrostRX.End (rxId);
+				FrostRX.End (ref rxId);
 				switch (fadeType) {
 				case AnimateFadeType.Horizon:
 					rxId = FrostRX.Start(this).
@@ -95,7 +95,7 @@ namespace UIFrameWork
 		{
 			base.OnResume (context);
 			if (!activeWhenPause) {
-				FrostRX.End(rxId);
+				FrostRX.End(ref rxId);
 				switch (fadeType) {
 				case AnimateFadeType.Horizon:
 					rxId = FrostRX.Start(this).Execute(()=>{gameObject.SetActive(true);}).
@@ -112,16 +112,14 @@ namespace UIFrameWork
 		}
         private void OnDestroy()
         {
-            FrostRX.End(rxId);
-            rxId = -1;
+            FrostRX.End(ref rxId);
         }
         public sealed override void ForceDisable()
         {
             base.ForceDisable();
             if (activeWhenPause)
                 return;
-            FrostRX.End(rxId);
-            rxId = -1;
+            FrostRX.End(ref rxId);
             offsetX = 0;
             offsetY = 0;
             _canvasGroup.alpha = 0;
