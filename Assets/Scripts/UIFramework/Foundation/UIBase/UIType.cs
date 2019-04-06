@@ -70,5 +70,7 @@ namespace UIFrameWork
 		public static readonly UIType Password = new UIType("View/PasswordView"); //设置密码
 		public static readonly UIType SetLoginPassword = new UIType("View/SetLoginPasswordView"); //设置登录密码
 		public static readonly UIType SecuritySetting = new UIType("View/SecuritySettingView"); //安全设置
+		public static readonly UIType Contacts = new UIType("View/ContactsView"); //好友列表
+		public static readonly UIType NewFriends = new UIType("View/NewFriendsView"); //好友申请列表
     }
 }
