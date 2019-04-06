@@ -1290,7 +1290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   head: {fileID: 114111498110493210}
-  name: {fileID: 114401032322221978}
+  userName: {fileID: 0}
   message: {fileID: 114565374641485380}
   redPoint: {fileID: 1768170534617544}
   redCount: {fileID: 114411757364295828}
@@ -2878,6 +2878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeWhenPause: 0
+  scrollView: {fileID: 114412645189638582}
 --- !u!114 &114957378642631308
 MonoBehaviour:
   m_ObjectHideFlags: 1
