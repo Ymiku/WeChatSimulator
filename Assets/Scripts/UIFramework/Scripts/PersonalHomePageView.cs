@@ -74,7 +74,7 @@ namespace UIFrameWork
             HeadSpriteUtils.Instance.SetHead(_head);
             AccountSaveData data = GameManager.Instance.accountData;
             if (string.IsNullOrEmpty(data.nickname))
-                _nickName.text = "Œ¥…Ë÷√Í«≥∆";
+                _nickName.text = ContentHelper.Read(ContentHelper.NotSetNickName);
             else
                 _nickName.text = data.nickname;
             _accountText.text = data.phoneNumber;
