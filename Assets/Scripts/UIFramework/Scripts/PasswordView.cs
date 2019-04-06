@@ -38,6 +38,10 @@ namespace UIFrameWork
         {
             UIManager.Instance.Push(new SetLoginPasswordContext());
         }
+        public void OnClickChangePayword()
+        {
+            UIManager.Instance.Push(new ChangePaywordContext());
+        }
 	}
 	public class PasswordContext : BaseContext
 	{

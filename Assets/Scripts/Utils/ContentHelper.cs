@@ -20,4 +20,5 @@ public class ContentHelper{
     public const int PaywordError = 14; //支付密码不正确
     public const int SelectHeadText = 15; //选择头像
     public const int NotSetNickName = 16; //未设置昵称
+    public const int PaywordMustNew = 17; //新密码不能与以前密码相同
 }
