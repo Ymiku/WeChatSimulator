@@ -75,5 +75,7 @@ namespace UIFrameWork
         public static readonly UIType PersonalInfo = new UIType("View/PersonalInfoView"); //个人信息
         public static readonly UIType PersonalHomePage = new UIType("View/PersonalHomePageView"); //个人主页
         public static readonly UIType SetHead = new UIType("View/SetHeadView"); //设置个人头像
+		public static readonly UIType ChangePayword = new UIType("View/ChangePaywordView"); //修改支付密码
+		public static readonly UIType ConfirmPayword = new UIType("View/ConfirmPaywordView"); //修改支付密码
     }
 }
