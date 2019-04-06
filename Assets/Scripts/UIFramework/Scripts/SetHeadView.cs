@@ -20,6 +20,7 @@ namespace UIFrameWork
         {
             base.OnEnter(context);
             _context = context as SetHeadContext;
+            Refresh();
         }
 
         public override void OnExit(BaseContext context)
