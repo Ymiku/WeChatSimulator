@@ -14,6 +14,7 @@ public class ChatManager : Singleton<ChatManager> {
 	public ChatInstance curInstance;
 	Dictionary<int,ChatInstance> pairId2Instance = new Dictionary<int, ChatInstance>();
 	List<ChatInstance> orderedInstance = new List<ChatInstance>();
+    public Dictionary<char, List<string>> init2NameDic;
 	//
 	public void AddFriend(string name)
 	{
@@ -98,12 +99,45 @@ public class ChatManager : Singleton<ChatManager> {
 		curUserId = GameManager.Instance.curUserId;
 		pairId2Instance.Clear ();
 		List<string> friends = XMLSaver.saveData.GetFriendsLst (name);
+        if (init2NameDic == null)
+        {
+            init2NameDic = new Dictionary<char, List<string>>();
+            for (int i = 0; i < 26; i++)
+            {
+                init2NameDic.Add((char)(i + 65), new List<string>());
+            }
+            init2NameDic.Add('#',new List<string>());
+        }
+        else
+        {
+            foreach (var item in init2NameDic.Values)
+            {
+                item.Clear();
+            }
+        }
 		for (int i = 0; i < friends.Count; i++) {
 			string otherName = friends[i];
 			int id = GetPairID (curName,friends[i]);
 			ChatInstance instance = new ChatInstance ();
 			instance.OnInit (name,otherName,id);
 			pairId2Instance.Add (id,instance);
+
+            AccountSaveData data = XMLSaver.saveData.GetAccountData(otherName);
+            char c;
+            if (!string.IsNullOrEmpty(data.nickname))
+            {
+               c = Utils.GetSpellCode(data.nickname)[0];
+            }
+            else if (!string.IsNullOrEmpty(data.realname))
+            {
+                c = Utils.GetSpellCode(data.realname)[0];
+            }
+            else
+            {
+                c = '#';
+            }
+            init2NameDic[c].Add(otherName);
+            //char c = Utils.GetSpellCode(data);
 		}
 		Refresh ();
 	}
