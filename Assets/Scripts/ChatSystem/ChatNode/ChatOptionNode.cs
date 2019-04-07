@@ -1,7 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 using NodeEditorFramework.Utilities;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using System;
 using NodeEditorFramework;
 [Node(false, "Chat/Option Node")]
@@ -19,8 +21,8 @@ public class ChatOptionNode : Node
 	[ValueConnectionKnob("Input", Direction.In, "System.String")]
 	public ValueConnectionKnob inputKnob;
 	private ValueConnectionKnobAttribute dynaCreationAttribute = new ValueConnectionKnobAttribute("Output", Direction.Out, "System.String");
-
-	public override void NodeGUI()
+#if UNITY_EDITOR
+    public override void NodeGUI()
 	{
 		if (dynamicConnectionPorts.Count != labels.Count)
 		{ // Make sure labels and ports are synchronised
@@ -59,7 +61,8 @@ public class ChatOptionNode : Node
 			GUILayout.EndHorizontal();
 		}
 	}
-	public override Node GetFront ()
+#endif
+    public override Node GetFront ()
 	{
         if (inputKnob.connections.Count == 1)
             return inputKnob.connections[0].body;
