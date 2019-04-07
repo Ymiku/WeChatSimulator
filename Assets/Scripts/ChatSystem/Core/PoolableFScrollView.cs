@@ -26,14 +26,28 @@ public class PoolableFScrollView : MonoBehaviour {
 		for (int i = 0; i < _pools.Length; i++) {
 			_pools [i] = new Stack<NodeItemProxy> ();
 		}
-		contextTrans.anchoredPosition = Vector2.zero;
-		contextTrans.sizeDelta = new Vector2(contextTrans.sizeDelta.x,ChatManager.Instance.curInstance.saveData.totalRectHeight);
+        /*
 		if (false&&contextTrans.sizeDelta.y < viewPortTrans.sizeDelta.y) {
 			contextTrans.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical, viewPortTrans.sizeDelta.y);
 			borrowHeight = viewPortTrans.sizeDelta.y-contextTrans.sizeDelta.y;
 		}
+        */
 	}
-
+    bool needUpdate = false;
+    public void OnEnter()
+    {
+        needUpdate = true;
+        contextTrans.anchoredPosition = Vector2.zero;
+        contextTrans.sizeDelta = new Vector2(contextTrans.sizeDelta.x, ChatManager.Instance.curInstance.saveData.totalRectHeight);
+    }
+    public void OnExit()
+    {
+        needUpdate = false;
+        for (int i = 0; i < _activeItems.Count; i++)
+        {
+            Pool(_activeItems[i]);
+        }
+    }
     void TryOpen()
     {
         Node runningNode = ChatManager.Instance.curInstance.curRunningNode;
@@ -68,6 +82,8 @@ public class PoolableFScrollView : MonoBehaviour {
 		}
 	}
 	void Update () {
+        if (!needUpdate)
+            return;
 		int i = 0;
 		while (CheckBorder()&&i<100) {
 			i++;

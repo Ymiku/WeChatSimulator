@@ -10,19 +10,22 @@ namespace UIFrameWork
 		public override void Init ()
 		{
 			base.Init ();
-		}
+            scrollView.Init();
+        }
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter(context);
 			_context = context as ChatContext;
             ChatManager.Instance.EnterChat(_context.friendName);
-            scrollView.Init();
+            scrollView.OnEnter();
 		}
 
 		public override void OnExit(BaseContext context)
 		{
 			base.OnExit(context);
-		}
+            ChatManager.Instance.ExitChat();
+            scrollView.OnExit();
+        }
 
 		public override void OnPause(BaseContext context)
 		{

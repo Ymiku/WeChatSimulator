@@ -62,10 +62,16 @@ public class ChatManager : Singleton<ChatManager> {
 		if (name2 == "")
 			name2 = curName;
 		if(curInstance!=null)
-		curInstance.OnExit ();
+		    curInstance.OnExit ();
 		curInstance = pairId2Instance [GetPairID(name1,name2)];
 		curInstance.OnEnter ();
 	}
+    public void ExitChat()
+    {
+        if (curInstance != null)
+            curInstance.OnExit();
+    }
+
 	public ChatOptionNode TryGetOptionNode()//get every tick
 	{
 		if (curInstance.curRunningNode is ChatOptionNode) {
