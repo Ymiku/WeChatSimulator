@@ -46,6 +46,7 @@ public class PoolableFScrollView : MonoBehaviour {
         for (int i = 0; i < _activeItems.Count; i++)
         {
             Pool(_activeItems[i]);
+            i--;
         }
     }
     void TryOpen()
@@ -135,6 +136,7 @@ public class PoolableFScrollView : MonoBehaviour {
 	}
 	bool TryAddDown()
 	{
+        
 		Node linkedNode = _activeItems [_activeItems.Count - 1].linkedNode;
 		Node down = linkedNode.GetNext();
 		while (down!=null && down is SetParamNode) {
@@ -145,7 +147,7 @@ public class PoolableFScrollView : MonoBehaviour {
 
 		if (ChatManager.Instance.curInstance.curRunningNode == down)
 			return false;
-		NodeItemProxy item = GetItem (down.name==ChatManager.Instance.curName?1:0);
+        NodeItemProxy item = GetItem (down.name==ChatManager.Instance.curName?1:0);
 		float itemHeight = item.SetData (down);
 		float itemY = _activeItems [_activeItems.Count - 1].cachedRectTransform.anchoredPosition.y - _activeItems [_activeItems.Count - 1].height;
 		if (!down.hasCalHeight) {
@@ -165,7 +167,7 @@ public class PoolableFScrollView : MonoBehaviour {
 		}
 		if (up == null)
 			return false;
-		NodeItemProxy item = GetItem (up.name==ChatManager.Instance.curName?1:0);
+        NodeItemProxy item = GetItem (up.name==ChatManager.Instance.curName?1:0);
 		float itemHeight = item.SetData (up);
 		float itemY = _activeItems [0].cachedRectTransform.anchoredPosition.y + itemHeight;
 		item.cachedRectTransform.anchoredPosition = new Vector2 (0.0f,itemY);

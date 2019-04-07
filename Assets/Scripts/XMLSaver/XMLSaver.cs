@@ -28,6 +28,8 @@ public class XMLSaver : Singleton<XMLSaver> {
 			FileStream stream = new FileStream (Application.persistentDataPath + "/save.xml", FileMode.Open);
 			#endif
 			saveData = serializer.Deserialize (stream) as SaveData;
+            if (saveData == null)
+                saveData = new SaveData();
 			stream.Close ();
 		} else {
 			saveData = new SaveData ();
