@@ -59,11 +59,12 @@ namespace UIFrameWork
 
         private void RefreshTop()
         {
-            _closeEyesObj.SetActive(_eyesState);
+            _closeEyesObj.SetActive(!_eyesState);
             string moneyStr = "";
             if (_eyesState)
             {
                 moneyStr = AssetsManager.Instance.assetsData.yuEBao.ToString();
+                _accText.text = "58.88";  //todo
             }
             else
             {
@@ -72,7 +73,7 @@ namespace UIFrameWork
             }
             _totalText.text = string.Format(ContentHelper.Read(ContentHelper.TotalAssetsText), moneyStr);
             _yesterdayText.text = ContentHelper.Read(ContentHelper.GuestDontWorry);
-            _eyesBtn.transform.localPosition = new Vector3(20 + _totalText.preferredWidth / 2,
+            _eyesBtn.transform.localPosition = new Vector3(50 + _totalText.preferredWidth / 2,
                 _eyesBtn.transform.localPosition.y, _eyesBtn.transform.localPosition.z);
         }
 
