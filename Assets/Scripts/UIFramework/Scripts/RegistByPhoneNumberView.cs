@@ -48,7 +48,7 @@ namespace UIFrameWork
             AccountSaveData data = XMLSaver.saveData.AddAccountData(0);
             AssetsSaveData assetsData = XMLSaver.saveData.AddAssetsData(0);
 			data.phoneNumber = num;
-            data.enname = "Tom";
+            data.enname = "i";
             assetsData.balance = 100000; // todo 金钱
 			GameManager.Instance.SetUser (0);
 			UIManager.Instance.Push(new LoginContext());
