@@ -21,4 +21,9 @@ public class ContentHelper{
     public const int SelectHeadText = 15; //选择头像
     public const int NotSetNickName = 16; //未设置昵称
     public const int PaywordMustNew = 17; //新密码不能与以前密码相同
+    public const int ChangePaywordSucc = 18; //修改支付密码成功
+    public const int DifferPayword = 19; //两次输入密码不一致
+    public const int PaywordCantLikeOrSerial = 20; //支付密码不能是重复、连续的数字
+    public const int SetPaywordText = 21; //设置支付密码
+    public const int ChangePaywordText = 22; //修改支付密码
 }

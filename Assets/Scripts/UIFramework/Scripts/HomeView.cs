@@ -147,10 +147,6 @@ namespace UIFrameWork
         {
             UIManager.Instance.Push(new SearchContext());
         }
-        public void OnClickContacts()
-        {
-            UIManager.Instance.Push(new ContactsContext());
-        }
     }
 	public class HomeContext : BaseContext
 	{

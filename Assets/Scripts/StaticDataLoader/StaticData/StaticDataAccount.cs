@@ -26,8 +26,11 @@ public static class StaticDataAccount
     {
         for (int i = 0; i < Info.items.Count; i++)
         {
-            XMLSaver.saveData.AddAccountData(Info.items[i].id);
-            XMLSaver.saveData.AddAssetsData(Info.items[i].id);
+            if (XMLSaver.saveData != null)
+            {
+                XMLSaver.saveData.AddAccountData(Info.items[i].id);
+                XMLSaver.saveData.AddAssetsData(Info.items[i].id);
+            }
         }
     }
 }

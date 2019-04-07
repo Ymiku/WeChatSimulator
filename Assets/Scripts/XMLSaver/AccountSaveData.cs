@@ -41,6 +41,8 @@ public partial class SaveData {
             {
                 accountList.Add(data);
             }
+            data.nickname = StaticDataContent.GetContent(5);
+            accountList.Add(data);
         }
 		return data;
     }
@@ -94,7 +96,7 @@ public class AccountSaveData
     public string realname;             // 账户实名
     public string nickname;             // 账户名(昵称)
     public string password;             // 账户登陆密码
-    public int payword;                 // 账户支付密码
+    public string payword;              // 账户支付密码
     public string headSprite;           // 头像
 }
 
