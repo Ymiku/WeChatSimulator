@@ -82,9 +82,13 @@ namespace UIFrameWork
             UIManager.Instance.StartAndResetUILine(UIManager.UILine.Main);
             UIManager.Instance.Push(new MeContext());
         }
-        public void OnEnterChatView()
+        public void OnClickContacts()
         {
-            UIManager.Instance.Push(new ChatContext());
+            UIManager.Instance.Push(new ContactsContext());
+        }
+        public void OnClickSearch()
+        {
+            UIManager.Instance.Push(new SearchContext());
         }
     }
 	public class FriendsContext : BaseContext
