@@ -55,6 +55,7 @@ public class AssetsSaveData
     public int accountId;       //账户id
     public double balance;      //余额
     public double yuEBao;       //余额宝
+    public float yeEBaoProfit;  //余额宝总收益
     public float antPayValue;   //蚂蚁花呗可用
     public float antPayLimit;   //蚂蚁花呗额度
 }
