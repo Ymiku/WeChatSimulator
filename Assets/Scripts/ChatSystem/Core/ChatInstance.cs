@@ -65,8 +65,15 @@ public class ChatInstance{
 		}
         if (finishCount != 0)
         {
-            curSection = ChatManager.Instance.LoadSectionByID(curPairID, curRunningNode.sectionId);
-            saveData.curNodeId = curRunningNode.nodeId;
+            if (curRunningNode != null)
+            {
+                curSection = ChatManager.Instance.LoadSectionByID(curPairID, curRunningNode.sectionId);
+                saveData.curNodeId = curRunningNode.nodeId;
+            }
+            else
+            {
+                saveData.curNodeId = -1;
+            }
             saveData.curSectionId = curSection.sectionID;
             redNum+=finishCount;
             ChatManager.Instance.RefreshChatLst();
