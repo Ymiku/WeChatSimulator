@@ -1,5 +1,5 @@
 ﻿
-public class ContentHelper{
+public class ContentHelper {
 
     public static string Read(int id) {
         return StaticDataContent.GetContent(id);
@@ -26,4 +26,6 @@ public class ContentHelper{
     public const int PaywordCantLikeOrSerial = 20; //支付密码不能是重复、连续的数字
     public const int SetPaywordText = 21; //设置支付密码
     public const int ChangePaywordText = 22; //修改支付密码
+    public const int TotalAssetsText = 23; //总金额{0}元
+    public const int GuestDontWorry = 24; //客官别急
 }
