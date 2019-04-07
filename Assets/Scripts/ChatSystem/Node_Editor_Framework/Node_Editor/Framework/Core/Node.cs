@@ -2,7 +2,9 @@ using UnityEngine;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine.Serialization;
 namespace NodeEditorFramework
 {
@@ -326,13 +328,14 @@ namespace NodeEditorFramework
 		}
 #endif
 
-		/// <summary>
-		/// Draws the node frame and calls NodeGUI. Can be overridden to customize drawing.
-		/// </summary>
-		protected internal virtual void DrawNode () 
+        /// <summary>
+        /// Draws the node frame and calls NodeGUI. Can be overridden to customize drawing.
+        /// </summary>
+        protected internal virtual void DrawNode () 
 		{
-			// Create a rect that is adjusted to the editor zoom and pixel perfect
-			Rect nodeRect = rect;
+#if UNITY_EDITOR
+            // Create a rect that is adjusted to the editor zoom and pixel perfect
+            Rect nodeRect = rect;
 			Vector2 pos = NodeEditor.curEditorState.zoomPanAdjust + NodeEditor.curEditorState.panOffset;
 			nodeRect.position = new Vector2((int)(nodeRect.x+pos.x), (int)(nodeRect.y+pos.y));
 			contentOffset = new Vector2 (0, 20);
@@ -392,12 +395,13 @@ namespace NodeEditorFramework
 
 			// Automatically node if desired
 			AutoLayoutNode ();
-		}
+#endif
+        }
 
-		/// <summary>
-		/// Resizes the node to either the MinSize or to fit size of the GUILayout in NodeGUI
-		/// </summary>
-		protected internal virtual void AutoLayoutNode()
+        /// <summary>
+        /// Resizes the node to either the MinSize or to fit size of the GUILayout in NodeGUI
+        /// </summary>
+        protected internal virtual void AutoLayoutNode()
 		{
 			if (!AutoLayout || Event.current.type != EventType.Repaint)
 				return;
@@ -416,11 +420,10 @@ namespace NodeEditorFramework
 			autoSize = size;
 			NodeEditor.RepaintClients ();
 		}
-
-		/// <summary>
-		/// Draws the connectionKnobs of this node
-		/// </summary>
-		protected internal virtual void DrawKnobs () 
+        /// <summary>
+        /// Draws the connectionKnobs of this node
+        /// </summary>
+        protected internal virtual void DrawKnobs () 
 		{
 			for (int i = 0; i < connectionKnobs.Count; i++) 
 				connectionKnobs[i].DrawKnob ();

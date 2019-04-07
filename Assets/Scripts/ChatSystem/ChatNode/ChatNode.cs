@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using System.Collections.Generic;
 using System.Linq;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 /// <summary>
 /// basic dialog node class, all other dialog nodes are derived from this
 /// </summary>
@@ -34,7 +36,8 @@ public class ChatNode : Node
 	public string DialogLine;
 	[FormerlySerializedAs("TapType")]
 	public TapType tapType;
-	public override void NodeGUI () 
+#if UNITY_EDITOR
+    public override void NodeGUI () 
 	{
 		GUILayout.Label ("打字类型");
 		tapType = (TapType)EditorGUILayout.EnumPopup (tapType);
@@ -63,8 +66,8 @@ public class ChatNode : Node
 			GUILayout.Label ("-> " + flowTarget.name);
 		*/
 	}
-		
-	public class ChatConnection : ConnectionKnobStyle
+#endif
+    public class ChatConnection : ConnectionKnobStyle
 	{
 		public override string Identifier { get { return "ChatBase"; } }
 		public override Color Color { get { return Color.red; } }

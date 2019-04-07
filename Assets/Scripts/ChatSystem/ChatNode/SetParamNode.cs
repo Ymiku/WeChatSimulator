@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using System.Collections.Generic;
 using System.Linq;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 /// <summary>
 /// basic dialog node class, all other dialog nodes are derived from this
 /// </summary>
@@ -29,7 +31,8 @@ public class SetParamNode : Node
 	public ValueConnectionKnob inputKnob;
 	[ValueConnectionKnob("Output", Direction.Out, "System.String")]
 	public ValueConnectionKnob outputKnob;
-	protected internal override void DrawNode ()
+#if UNITY_EDITOR
+    protected internal override void DrawNode ()
 	{
 		// Create a rect that is adjusted to the editor zoom and pixel perfect
 		Rect nodeRect = rect;
@@ -81,10 +84,10 @@ public class SetParamNode : Node
 		// Automatically node if desired
 		AutoLayoutNode ();
 	}
+#endif
 
-		
-		
-	public override Node GetFront ()
+
+    public override Node GetFront ()
 	{
         if (inputKnob.connections.Count == 1)
             return inputKnob.connections[0].body;

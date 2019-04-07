@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using System.Collections.Generic;
 using System.Linq;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 /// <summary>
 /// basic dialog node class, all other dialog nodes are derived from this
 /// </summary>
@@ -24,7 +26,8 @@ public class ChatImageNode : Node
 	private Vector2 scroll;
 	[FormerlySerializedAs("SayingCharacterPotrait")]
 	public Sprite CharacterPotrait;
-	public override void NodeGUI () 
+#if UNITY_EDITOR
+    public override void NodeGUI () 
 	{
 		// Display Float connections
 		GUILayout.BeginHorizontal ();
@@ -50,7 +53,8 @@ public class ChatImageNode : Node
 			GUILayout.Label ("-> " + flowTarget.name);
 		*/
 	}
-	public override Node GetFront ()
+#endif
+    public override Node GetFront ()
 	{
         if (inputKnob.connections.Count == 1)
             return inputKnob.connections[0].body;
