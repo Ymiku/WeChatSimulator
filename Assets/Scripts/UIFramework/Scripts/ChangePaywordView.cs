@@ -8,6 +8,7 @@ namespace UIFrameWork
 	{
 		private ChangePaywordContext _context;
         private TextProxy _accountText;
+        private TextProxy _titleText;
         private Button _deleteBtn;
         private Button _backBtn;
         private StringBuilder _stringBuilder = new StringBuilder();
@@ -19,6 +20,7 @@ namespace UIFrameWork
 		{
 			base.Init ();
             _accountText = FindInChild<TextProxy>("num");
+            _titleText = FindInChild<TextProxy>("BackBtn/SettingText");
             int i = 0;
             for (; i < 6; i++)
             {
@@ -159,6 +161,10 @@ namespace UIFrameWork
         private void Refresh()
         {
             _accountText.text = Utils.FormatStringForSecrecy(GameManager.Instance.accountData.phoneNumber, FInputType.PhoneNumber);
+            if (string.IsNullOrEmpty(GameManager.Instance.accountData.payword))
+                _titleText.text = ContentHelper.Read(ContentHelper.SetPaywordText);
+            else
+                _titleText.text = ContentHelper.Read(ContentHelper.ChangePaywordText);
         }
     }
 	public class ChangePaywordContext : BaseContext
