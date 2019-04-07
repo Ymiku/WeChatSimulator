@@ -34,7 +34,15 @@ public partial class SaveData {
             }
             data.accountId = accountId;
             data.nickname = StaticDataContent.GetContent(5);
-            accountList.Add(data);
+            if (accountId == 0)
+            {
+                accountList.Insert(0,data);
+            }
+            else
+            {
+                Debug.Log(data.accountId);
+                accountList.Add(data);
+            }
         }
 		return data;
     }

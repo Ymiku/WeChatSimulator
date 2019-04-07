@@ -6,7 +6,7 @@ public class GameManager : UnitySingleton<GameManager>
 {
     long _timeStamp;
     float _localTime;
-	public int curUserId;
+	public int curUserId = -1;
 	public string curEnName;
     public long time
     {
@@ -38,6 +38,11 @@ public class GameManager : UnitySingleton<GameManager>
     {
         //load
         XMLSaver.Load();
+        XMLSaver.Save();
+        XMLSaver.Load();
+        XMLSaver.Save();
+        XMLSaver.Load();
+        XMLSaver.Save();
         StaticDataLoader.Load();
 		gameObject.AddComponent<HeadSpriteUtils> ();
         _timeStamp = GetTimeStamp();

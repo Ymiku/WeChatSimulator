@@ -123,7 +123,7 @@ namespace UIFrameWork
             {
                 _lengthObj[i].SetActive(false);
             }
-            FrostRX.Instance.EndRxById(_rxId);
+            FrostRX.Instance.EndRxById(ref _rxId);
         }
 
         private void Refresh()
