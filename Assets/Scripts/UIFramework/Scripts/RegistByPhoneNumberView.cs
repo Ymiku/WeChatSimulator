@@ -43,12 +43,14 @@ namespace UIFrameWork
                 ShowNotice("输入格式错误！");
                 return;
             }
-			GameManager.Instance.ClearData ();
+            if (XMLSaver.saveData.accountList[0].accountId == 0)
+                XMLSaver.saveData.accountList.RemoveAt(0);
             AccountSaveData data = XMLSaver.saveData.AddAccountData(0);
             AssetsSaveData assetsData = XMLSaver.saveData.AddAssetsData(0);
 			data.phoneNumber = num;
             data.enname = "Tom";
             assetsData.balance = 100000; // todo 金钱
+            data.payword = 123456;  // todo 设置支付密码
 			GameManager.Instance.SetUser (0);
 			UIManager.Instance.Push(new LoginContext());
         }

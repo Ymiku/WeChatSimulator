@@ -73,12 +73,6 @@ namespace UIFrameWork
         {
             if (_canPayFlag)
             {
-                AccountSaveData accountData = GameManager.Instance.accountData;
-                if (string.IsNullOrEmpty(accountData.payword))
-                {
-                    UIManager.Instance.Push(new ChangePaywordContext());
-                    return;
-                }
                 AssetsSaveData data = XMLSaver.saveData.GetAssetsData(_context.accountId);
                 if (data == null)
                 {
@@ -91,7 +85,7 @@ namespace UIFrameWork
                     if (result == ResultType.Success)
                     {
                         data.balance += _amount;
-                        accountData = XMLSaver.saveData.GetAccountData(_context.accountId);
+                        AccountSaveData accountData = XMLSaver.saveData.GetAccountData(_context.accountId);
                         UIManager.Instance.Push(new TransferSuccContext(_amount, _paywayStr, accountData, _context.remarksStr));
                     }
                     else

@@ -8,19 +8,17 @@ namespace UIFrameWork
 	{
 		private ChangePaywordContext _context;
         private TextProxy _accountText;
-        private TextProxy _titleText;
         private Button _deleteBtn;
         private Button _backBtn;
         private StringBuilder _stringBuilder = new StringBuilder();
         private GameObject[] _lengthObj = new GameObject[6];
         private Button[] _numberBtn = new Button[10];
-        private char[] _tempChar = new char[6];
+        private int _rxId;
 
         public override void Init ()
 		{
 			base.Init ();
             _accountText = FindInChild<TextProxy>("num");
-            _titleText = FindInChild<TextProxy>("BackBtn/SettingText");
             int i = 0;
             for (; i < 6; i++)
             {
@@ -80,55 +78,26 @@ namespace UIFrameWork
                 }
                 _stringBuilder.Append(i);
                 _lengthObj[_stringBuilder.Length - 1].SetActive(true);
-                StartCoroutine(AfterTime());
+
+                _rxId = FrostRX.Instance.StartRX().ExecuteAfterTime(() =>
+                {
+                    if (GameManager.Instance.accountData.payword.ToString() != _stringBuilder.ToString())
+                    {
+                        Clear();
+                        UIManager.Instance.Push(new ConfirmPaywordContext(int.Parse(_stringBuilder.ToString())));
+                        UIManager.Instance.Pop();
+                    }
+                    else
+                    {
+                        Clear();
+                        ShowNotice(ContentHelper.Read(ContentHelper.PaywordMustNew));
+                    }
+                }, 0.15f).GetId();
             }
             else if (_stringBuilder.Length < 5)
             {
                 _stringBuilder.Append(i);
                 _lengthObj[_stringBuilder.Length - 1].SetActive(true);
-            }
-        }
-
-        private IEnumerator AfterTime() {
-            yield return new WaitForSeconds(0.15f);
-            AccountSaveData data = GameManager.Instance.accountData;
-            bool sameFlag = false;
-            if (!string.IsNullOrEmpty(data.payword))
-                sameFlag = data.payword == _stringBuilder.ToString();
-            if (sameFlag)
-            {
-                ShowNotice(ContentHelper.Read(ContentHelper.PaywordMustNew));
-                Clear();
-            }
-            else
-            {
-                string payword = _stringBuilder.ToString();
-                _tempChar = payword.ToCharArray();
-                int dValue = _tempChar[1] - _tempChar[0];
-                bool serialFlag = dValue == 1 || dValue == -1;
-                bool likeFlag = false;
-                for (int i = 0; i < 6; i++)
-                {
-                    if (i < 3)
-                    {
-                        if (_tempChar[i + 3] == _tempChar[i + 2] && _tempChar[i + 2] == _tempChar[i + 1] &&
-                            _tempChar[i + 1] == _tempChar[i])
-                            likeFlag = true;
-                    }
-                    if (i == 5)
-                        break;
-                    if (_tempChar[i + 1] - _tempChar[i] == dValue)
-                        continue;
-                    serialFlag = false;
-                }
-                if (likeFlag || serialFlag)
-                    ShowNotice(ContentHelper.Read(ContentHelper.PaywordCantLikeOrSerial));
-                else
-                {
-                    UIManager.Instance.Pop();
-                    UIManager.Instance.Push(new ConfirmPaywordContext(payword));
-                }
-                Clear();                
             }
         }
 
@@ -154,17 +123,12 @@ namespace UIFrameWork
             {
                 _lengthObj[i].SetActive(false);
             }
-            _tempChar = new char[6];
-            StopCoroutine(AfterTime());
+            FrostRX.Instance.EndRxById(ref _rxId);
         }
 
         private void Refresh()
         {
             _accountText.text = Utils.FormatStringForSecrecy(GameManager.Instance.accountData.phoneNumber, FInputType.PhoneNumber);
-            if (string.IsNullOrEmpty(GameManager.Instance.accountData.payword))
-                _titleText.text = ContentHelper.Read(ContentHelper.SetPaywordText);
-            else
-                _titleText.text = ContentHelper.Read(ContentHelper.ChangePaywordText);
         }
     }
 	public class ChangePaywordContext : BaseContext

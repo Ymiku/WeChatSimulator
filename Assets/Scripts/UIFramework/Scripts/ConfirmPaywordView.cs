@@ -14,7 +14,7 @@ namespace UIFrameWork
         private StringBuilder _stringBuilder = new StringBuilder();
         private GameObject[] _lengthObj = new GameObject[6];
         private Button[] _numberBtn = new Button[10];
-        private string _newPayword;
+        private int _newPayword;
 
         public override void Init ()
 		{
@@ -44,9 +44,8 @@ namespace UIFrameWork
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter(context);
+			_context = context as ConfirmPaywordContext;
             Clear();
-            _context = context as ConfirmPaywordContext;
-            _newPayword = _context.payword;
 		}
 
 		public override void OnExit(BaseContext context)
@@ -108,7 +107,7 @@ namespace UIFrameWork
             _backBtn.interactable = true;
             _deleteBtn.interactable = true;
             _nextBtn.interactable = false;
-            _newPayword = "";
+            _newPayword = 0;
             for (int index = 0; index < 10; index++)
             {
                 _numberBtn[index].interactable = true;
@@ -122,15 +121,15 @@ namespace UIFrameWork
 
         private void OnClickNext()
         {
-            if (_stringBuilder.ToString() == _newPayword)
+            if (int.Parse(_stringBuilder.ToString()) == _newPayword)
             {
                 GameManager.Instance.accountData.payword = _newPayword;
-                ShowNotice(ContentHelper.Read(ContentHelper.ChangePaywordSucc));
+                ShowNotice("修改支付密码成功");
                 UIManager.Instance.Pop();
             }
             else
             {
-                ShowNotice(ContentHelper.Read(ContentHelper.DifferPayword));
+                ShowNotice("两次输入密码不一致");
                 Clear();
             }
         }
@@ -141,11 +140,11 @@ namespace UIFrameWork
 		{
 		}
 
-        public ConfirmPaywordContext(string payword) : base(UIType.ConfirmPayword)
+        public ConfirmPaywordContext(int payword) : base(UIType.ConfirmPayword)
         {
             this.payword = payword;
         }
 
-        public string payword;
+        public int payword;
 	}
 }

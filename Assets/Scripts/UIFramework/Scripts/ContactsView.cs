@@ -77,14 +77,14 @@ namespace UIFrameWork
                 item.SetData(((char)(65 + i)).ToString());
                 item.cachedRectTransform.anchoredPosition = new Vector2(0.0f,y);
                 item.gameObject.SetActive(true);
-                y += item.height;
+                y -= item.height;
                 for (int m = 0; m < friends.Count; m++)
                 {
                     ContactsItem itemc = GetContacts();
                     itemc.SetData(XMLSaver.saveData.GetAccountData(friends[m]));
                     itemc.cachedRectTransform.anchoredPosition = new Vector2(0.0f, y);
                     itemc.gameObject.SetActive(true);
-                    y += itemc.height;
+                    y -= itemc.height;
                 }
             }
            
