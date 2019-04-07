@@ -41,7 +41,7 @@ public partial class SaveData {
             {
                 accountList.Add(data);
             }
-            data.nickname = StaticDataContent.GetContent(5);
+            //data.nickname = StaticDataContent.GetContent(5);
             accountList.Add(data);
         }
 		return data;
