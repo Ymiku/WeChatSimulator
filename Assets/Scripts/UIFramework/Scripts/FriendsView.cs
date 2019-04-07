@@ -14,17 +14,17 @@ namespace UIFrameWork
 		}
         private void OnEnable()
         {
-            ChatManager.Instance.OnRefresh += OnRefreshLst;
+            ChatManager.Instance.OnRefreshChatLst += OnRefreshLst;
         }
         private void OnDisable()
         {
-            ChatManager.Instance.OnRefresh -= OnRefreshLst;
+            ChatManager.Instance.OnRefreshChatLst -= OnRefreshLst;
         }
         public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter(context);
 			_context = context as FriendsContext;
-            ChatManager.Instance.Refresh();
+            ChatManager.Instance.RefreshChatLst();
 		}
 
 		public override void OnExit(BaseContext context)
@@ -40,7 +40,7 @@ namespace UIFrameWork
 		public override void OnResume(BaseContext context)
 		{
 			base.OnResume(context);
-            ChatManager.Instance.Refresh();
+            ChatManager.Instance.RefreshChatLst();
         }
 		public override void Excute ()
 		{

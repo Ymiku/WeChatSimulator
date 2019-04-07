@@ -33,9 +33,19 @@ public class PoolableFScrollView : MonoBehaviour {
 			borrowHeight = viewPortTrans.sizeDelta.y-contextTrans.sizeDelta.y;
 		}
 	}
-	void TryOpen()
-	{
-		Node front = ChatManager.Instance.curInstance.curRunningNode.GetFront ();
+
+    void TryOpen()
+    {
+        Node runningNode = ChatManager.Instance.curInstance.curRunningNode;
+        Node front = null;
+        if (runningNode != null)
+        {
+            front = runningNode.GetFront();
+        }
+        else
+        {
+            front = ChatManager.Instance.curInstance.curSection.GetLast();
+        }
 		if (front == null)
 			return;
 		NodeItemProxy item = GetItem (front.name==ChatManager.Instance.curName?1:0);

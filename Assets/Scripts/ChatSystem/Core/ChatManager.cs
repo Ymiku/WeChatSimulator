@@ -5,7 +5,7 @@ using NodeEditorFramework;
 using NodeEditorFramework.Standard;
 public class ChatManager : Singleton<ChatManager> {
 	public delegate void RefreshEventHandler(List<ChatInstance> chatLst);
-	public event RefreshEventHandler OnRefresh;
+	public event RefreshEventHandler OnRefreshChatLst;
 	//name name selectionID
 	public string curName{
 		get{return GameManager.Instance.curEnName; }
@@ -73,7 +73,7 @@ public class ChatManager : Singleton<ChatManager> {
 		}
 		return null;
 	}
-	public void Refresh()//when new node enter
+	public void RefreshChatLst()//when new node enter
 	{
 		orderedInstance.Clear ();
 		foreach (var item in pairId2Instance.Values) {
@@ -90,8 +90,8 @@ public class ChatManager : Singleton<ChatManager> {
 			}
 			orderedInstance.Add (item);
 		}
-		if(OnRefresh!=null)
-			OnRefresh (orderedInstance);
+		if(OnRefreshChatLst!=null)
+			OnRefreshChatLst (orderedInstance);
 	}
 	//
 	public void OnEnter(string name)
@@ -139,7 +139,7 @@ public class ChatManager : Singleton<ChatManager> {
             init2NameDic[c].Add(friendName);
             //char c = Utils.GetSpellCode(data);
 		}
-		Refresh ();
+		RefreshChatLst ();
 	}
 	//
 	public void OnExcute()
