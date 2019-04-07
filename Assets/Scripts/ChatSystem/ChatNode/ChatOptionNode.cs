@@ -84,7 +84,7 @@ namespace NodeEditorFramework.Standard
 		}
 		public override bool Execute()
 		{
-			if (ChatManager.Instance.curInstance==null||ChatManager.Instance.curInstance.curRunningNode != this)
+			if (ChatManager.Instance.curInstance.curRunningNode != this)
 				return false;
 			switch (cond) {
 			case Cond.Instance:
