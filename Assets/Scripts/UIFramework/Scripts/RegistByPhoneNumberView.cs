@@ -43,7 +43,8 @@ namespace UIFrameWork
                 ShowNotice("输入格式错误！");
                 return;
             }
-			GameManager.Instance.ClearData ();
+            if (XMLSaver.saveData.accountList[0].accountId == 0)
+                XMLSaver.saveData.accountList.RemoveAt(0);
             AccountSaveData data = XMLSaver.saveData.AddAccountData(0);
             AssetsSaveData assetsData = XMLSaver.saveData.AddAssetsData(0);
 			data.phoneNumber = num;
