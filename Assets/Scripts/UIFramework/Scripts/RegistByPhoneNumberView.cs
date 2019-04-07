@@ -49,7 +49,7 @@ namespace UIFrameWork
 			data.phoneNumber = num;
             data.enname = "Tom";
             assetsData.balance = 100000; // todo 金钱
-            data.payword = 123456;  // todo 设置支付密码
+            data.payword = "123456";  // todo 设置支付密码
 			GameManager.Instance.SetUser (0);
 			UIManager.Instance.Push(new LoginContext());
         }

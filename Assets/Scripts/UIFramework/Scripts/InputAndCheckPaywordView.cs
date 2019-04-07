@@ -13,7 +13,7 @@ namespace UIFrameWork
         private StringBuilder _stringBuilder = new StringBuilder();
         private GameObject[] _lengthObj = new GameObject[6];
         private Button[] _numberBtn = new Button[10];
-        private int _rxId;
+        private int _rxId = -1;
 
         public override void Init()
         {
@@ -80,7 +80,7 @@ namespace UIFrameWork
                 _lengthObj[_stringBuilder.Length - 1].SetActive(true);
                 _rxId = FrostRX.Instance.StartRX().ExecuteAfterTime(() =>
                 {
-                    if (GameManager.Instance.accountData.payword.ToString() == _stringBuilder.ToString())
+                    if (GameManager.Instance.accountData.payword == _stringBuilder.ToString())
                     {
                         Clear();
                         UIManager.Instance.Pop();
@@ -122,7 +122,7 @@ namespace UIFrameWork
             {
                 _lengthObj[i].SetActive(false);
             }
-            FrostRX.Instance.EndRxById(_rxId);
+            FrostRX.End(ref _rxId);
         }
     }
     public class InputAndCheckPaywordContext : BaseContext

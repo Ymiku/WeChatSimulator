@@ -13,7 +13,7 @@ namespace UIFrameWork
         private StringBuilder _stringBuilder = new StringBuilder();
         private GameObject[] _lengthObj = new GameObject[6];
         private Button[] _numberBtn = new Button[10];
-        private int _rxId;
+        private char[] _tempChar = new char[6];
 
         public override void Init ()
 		{
@@ -78,26 +78,55 @@ namespace UIFrameWork
                 }
                 _stringBuilder.Append(i);
                 _lengthObj[_stringBuilder.Length - 1].SetActive(true);
-
-                _rxId = FrostRX.Instance.StartRX().ExecuteAfterTime(() =>
-                {
-                    if (GameManager.Instance.accountData.payword.ToString() != _stringBuilder.ToString())
-                    {
-                        Clear();
-                        UIManager.Instance.Push(new ConfirmPaywordContext(int.Parse(_stringBuilder.ToString())));
-                        UIManager.Instance.Pop();
-                    }
-                    else
-                    {
-                        Clear();
-                        ShowNotice(ContentHelper.Read(ContentHelper.PaywordMustNew));
-                    }
-                }, 0.15f).GetId();
+                StartCoroutine(AfterTime());
             }
             else if (_stringBuilder.Length < 5)
             {
                 _stringBuilder.Append(i);
                 _lengthObj[_stringBuilder.Length - 1].SetActive(true);
+            }
+        }
+
+        private IEnumerator AfterTime() {
+            yield return new WaitForSeconds(0.15f);
+            AccountSaveData data = GameManager.Instance.accountData;
+            bool sameFlag = false;
+            if (!string.IsNullOrEmpty(data.payword))
+                sameFlag = data.payword == _stringBuilder.ToString();
+            if (sameFlag)
+            {
+                ShowNotice(ContentHelper.Read(ContentHelper.PaywordMustNew));
+                Clear();
+            }
+            else
+            {
+                string payword = _stringBuilder.ToString();
+                _tempChar = payword.ToCharArray();
+                int dValue = _tempChar[1] - _tempChar[0];
+                bool serialFlag = dValue == 1 || dValue == -1;
+                bool likeFlag = false;
+                for (int i = 0; i < 6; i++)
+                {
+                    if (i < 3)
+                    {
+                        if (_tempChar[i + 3] == _tempChar[i + 2] && _tempChar[i + 2] == _tempChar[i + 1] &&
+                            _tempChar[i + 1] == _tempChar[i])
+                            likeFlag = true;
+                    }
+                    if (i == 5)
+                        break;
+                    if (_tempChar[i + 1] - _tempChar[i] == dValue)
+                        continue;
+                    serialFlag = false;
+                }
+                if (likeFlag || serialFlag)
+                    ShowNotice(ContentHelper.Read(ContentHelper.PaywordCantLikeOrSerial));
+                else
+                {
+                    UIManager.Instance.Pop();
+                    UIManager.Instance.Push(new ConfirmPaywordContext(payword));
+                }
+                Clear();                
             }
         }
 
@@ -123,7 +152,8 @@ namespace UIFrameWork
             {
                 _lengthObj[i].SetActive(false);
             }
-            FrostRX.Instance.EndRxById(_rxId);
+            _tempChar = new char[6];
+            StopCoroutine(AfterTime());
         }
 
         private void Refresh()
