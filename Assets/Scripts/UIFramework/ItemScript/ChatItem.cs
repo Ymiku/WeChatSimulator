@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UIFrameWork;
 public class ChatItem : ItemBase {
 	public ImageProxy head;
 	public TextProxy userName;
@@ -26,5 +26,10 @@ public class ChatItem : ItemBase {
     public void OnRefresh()
     {
         message.text = instance.lastSentence;
+    }
+    public void OnClick()
+    {
+        ChatManager.Instance.EnterChat(instance.friendName);
+        UIManager.Instance.Push(new ChatContext() { friendName = instance.friendName});
     }
 }

@@ -4,6 +4,7 @@ namespace UIFrameWork
 {
 	public class ChatView : AlphaView
 	{
+        public PoolableFScrollView scrollView;
 		private ChatContext _context;
 
 		public override void Init ()
@@ -14,6 +15,8 @@ namespace UIFrameWork
 		{
 			base.OnEnter(context);
 			_context = context as ChatContext;
+            ChatManager.Instance.EnterChat(_context.friendName);
+            scrollView.Init();
 		}
 
 		public override void OnExit(BaseContext context)
@@ -38,6 +41,7 @@ namespace UIFrameWork
 	}
 	public class ChatContext : BaseContext
 	{
+        public string friendName;
 		public ChatContext() : base(UIType.Chat)
 		{
 		}

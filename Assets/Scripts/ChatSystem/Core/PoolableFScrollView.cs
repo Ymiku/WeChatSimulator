@@ -15,18 +15,7 @@ public class PoolableFScrollView : MonoBehaviour {
 	RectTransform viewPortTrans;
 	RectTransform contextTrans;
 	// Use this for initialization
-	void Start()
-	{
-		ChatManager.Instance.OnRefresh += RefreshFriendsList;
-		ChatManager.Instance.AddFriend ("Jerry");
-		ChatManager.Instance.EnterChat ("Jerry");
-		Init ();
-	}
-	public void RefreshFriendsList(List<ChatInstance> chatLst)
-	{
-		
-	}
-	void Init () {
+	public void Init () {
 		for (int i = 0; i < prefabs.Length; i++) {
 			prefabs [i].gameObject.SetActive (false);
 		}
