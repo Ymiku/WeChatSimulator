@@ -91,7 +91,7 @@ namespace UIFrameWork
                         Clear();
                         ShowNotice(ContentHelper.Read(ContentHelper.PaywordError));
                     }
-                }, 1.0f).GetId();
+                }, 0.5f).GetId();
             }
             else if (_stringBuilder.Length < 5)
             {
