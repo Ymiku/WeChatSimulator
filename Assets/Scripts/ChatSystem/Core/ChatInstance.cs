@@ -10,15 +10,16 @@ public class ChatInstance{
 	public long lastChatTimeStamp;
 	float totalRectHeight = 0.0f;
 	List<Node> _activeNodes = new List<Node> ();
-	string userName;
-	string otherUserName;
+	string selfName;
+	public string friendName;
 	public string lastSentence = "";
 	public ChatInstanceData saveData;
 	public int redNum = 0;
-	public void OnInit(string name,string otherName,int pairId)
+	public void OnInit(string friendName)
 	{
-		userName = name;
-		otherUserName = otherName;
+        selfName = ChatManager.Instance.curName;
+        int pairId = ChatManager.Instance.GetPairID(selfName,friendName);
+		this.friendName = friendName;
 		curPairID = pairId;
 		saveData = XMLSaver.saveData.GetInstanceData (curPairID);
 		lastChatTimeStamp = saveData.lastChatTimeStamp;
@@ -42,23 +43,27 @@ public class ChatInstance{
 			return;
 		}
 		bool hasFinished = true;
+        int finishCount = 0;
 		while (hasFinished&&curRunningNode!=null) {
 			hasFinished = false;
 			hasFinished = curRunningNode.Execute();
 			if (hasFinished) {
+                finishCount++;
 				lastSentence = GetLastSentence (curRunningNode);
 				curRunningNode = curRunningNode.GetNext ();
 				if (curRunningNode == null) {
 					saveData.curNodeId = -1;
-					return;
 				}
 			}
 		}
-		curSection = ChatManager.Instance.LoadSectionByID (curPairID,curRunningNode.sectionId);
-		saveData.curNodeId = curRunningNode.nodeId;
-		saveData.curSectionId = curSection.sectionID;
-		redNum++;
-		ChatManager.Instance.Refresh ();
+        if (finishCount != 0)
+        {
+            curSection = ChatManager.Instance.LoadSectionByID(curPairID, curRunningNode.sectionId);
+            saveData.curNodeId = curRunningNode.nodeId;
+            saveData.curSectionId = curSection.sectionID;
+            redNum+=finishCount;
+            ChatManager.Instance.Refresh();
+        }
 	}
 	public void OnExit()
 	{

@@ -1290,7 +1290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   head: {fileID: 114111498110493210}
-  userName: {fileID: 0}
+  userName: {fileID: 114401032322221978}
   message: {fileID: 114565374641485380}
   redPoint: {fileID: 1768170534617544}
   redCount: {fileID: 114411757364295828}

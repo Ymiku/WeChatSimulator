@@ -116,13 +116,13 @@ public class ChatManager : Singleton<ChatManager> {
             }
         }
 		for (int i = 0; i < friends.Count; i++) {
-			string otherName = friends[i];
+			string friendName = friends[i];
 			int id = GetPairID (curName,friends[i]);
 			ChatInstance instance = new ChatInstance ();
-			instance.OnInit (name,otherName,id);
+			instance.OnInit (friendName);
 			pairId2Instance.Add (id,instance);
 
-            AccountSaveData data = XMLSaver.saveData.GetAccountData(otherName);
+            AccountSaveData data = XMLSaver.saveData.GetAccountData(friendName);
             char c;
             if (!string.IsNullOrEmpty(data.nickname))
             {
@@ -136,7 +136,7 @@ public class ChatManager : Singleton<ChatManager> {
             {
                 c = '#';
             }
-            init2NameDic[c].Add(otherName);
+            init2NameDic[c].Add(friendName);
             //char c = Utils.GetSpellCode(data);
 		}
 		Refresh ();
@@ -155,7 +155,7 @@ public class ChatManager : Singleton<ChatManager> {
 		}
 		pairId2Instance.Clear ();
 	}
-	int GetPairID(string name,string name2)
+	public int GetPairID(string name,string name2)
 	{
 		int id = XMLSaver.saveData.GetAccountData(name).accountId;
 		int id2 = XMLSaver.saveData.GetAccountData(name2).accountId;

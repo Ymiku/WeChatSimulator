@@ -56,7 +56,7 @@ public class PoolableScrollView : MonoBehaviour
         ItemBase item = GetItem();
 		item.id = 0;
         item.SetData(_datas[0]);
-        item.cachedRectTransform.anchoredPosition = new Vector2(0.0f, 0.0f);
+        item.cachedRectTransform.anchoredPosition = new Vector2(0.0f, 0.0f - constHeight);
         _activeItems.Add(item);
         item.gameObject.SetActive(true);
     }
