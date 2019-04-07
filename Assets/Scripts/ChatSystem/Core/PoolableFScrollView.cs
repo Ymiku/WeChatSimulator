@@ -18,6 +18,7 @@ public class PoolableFScrollView : MonoBehaviour {
 	public void Init () {
 		for (int i = 0; i < prefabs.Length; i++) {
 			prefabs [i].gameObject.SetActive (false);
+            prefabs[i].prefabId = i;
 		}
 		viewPortTrans = GetComponent<FScrollRect> ().viewport;
 		contextTrans = GetComponent<FScrollRect> ().content;

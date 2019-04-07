@@ -51,22 +51,24 @@ public class NodeItemProxy : MonoBehaviour {
 			text.enabled = true;
 			image.enabled = false;
 			text.text = (node as ChatNode).DialogLine;
-			text.rectTransform.sizeDelta = new Vector2 (text.preferredWidth,text.preferredHeight);
-			backGround.sizeDelta = new Vector2 (Mathf.Max(80.0f,text.preferredWidth+20.0f),Mathf.Max(avatar.rectTransform.sizeDelta.y,text.preferredHeight+20.0f));
-		}
+			//text.rectTransform.sizeDelta = new Vector2 (text.preferredWidth, Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight + 20.0f));
+			backGround.sizeDelta = new Vector2 (Mathf.Max(80.0f,text.preferredWidth+40.0f),Mathf.Max(avatar.rectTransform.sizeDelta.y,text.preferredHeight+40.0f));
+            text.rectTransform.sizeDelta = new Vector2(backGround.sizeDelta.x-20.0f,backGround.sizeDelta.y);
+        }
 		if (node is ChatImageNode) {
 			image.sprite = (node as ChatImageNode).CharacterPotrait;
 			text.enabled = false;
 			image.enabled = true;
-			backGround.sizeDelta = new Vector2 (Mathf.Max(80.0f, image.rectTransform.sizeDelta.x+20.0f), Mathf.Max(avatar.rectTransform.sizeDelta.y, image.rectTransform.sizeDelta.y+20.0f));
+			backGround.sizeDelta = new Vector2 (Mathf.Max(80.0f, image.rectTransform.sizeDelta.x+40.0f), Mathf.Max(avatar.rectTransform.sizeDelta.y, image.rectTransform.sizeDelta.y+20.0f));
 		}
 		if (node is ChatOptionNode) {
 			text.enabled = true;
 			image.enabled = false;
 			text.text = (node as ChatOptionNode).labels[ChatManager.Instance.curInstance.saveData.GetOption(node)];
-			text.rectTransform.sizeDelta = new Vector2 (text.preferredWidth,text.preferredHeight);
-			backGround.sizeDelta = new Vector2 (Mathf.Max(80.0f, text.preferredWidth+20.0f), Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight+20.0f));
-		}
+			//text.rectTransform.sizeDelta = new Vector2 (text.preferredWidth, Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight + 20.0f));
+			backGround.sizeDelta = new Vector2 (Mathf.Max(80.0f, text.preferredWidth+40.0f), Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight+40.0f));
+            text.rectTransform.sizeDelta = new Vector2(backGround.sizeDelta.x - 20.0f, backGround.sizeDelta.y);
+        }
 		cachedRectTransform.sizeDelta = backGround.sizeDelta + new Vector2 (0.0f,padding*2.0f);
 		gameObject.SetActive (true);
 		return cachedRectTransform.sizeDelta.y;
