@@ -52,8 +52,29 @@ public class ChatImageNode : Node
 	}
 	public override Node GetFront ()
 	{
-		return inputKnob.connections [0].body;
-	}
+        if (inputKnob.connections.Count == 1)
+            return inputKnob.connections[0].body;
+        List<Node> normal = new List<Node>();
+        List<Node> option = new List<Node>();
+        for (int i = 0; i < inputKnob.connections.Count; i++)
+        {
+            if (inputKnob.connections[i].body is ChatOptionNode)
+                option.Add(inputKnob.connections[i].body);
+            else
+                normal.Add(inputKnob.connections[i].body);
+        }
+        for (int i = 0; i < normal.Count; i++)
+        {
+            if (normal[i].hasCalHeight)
+                return normal[i];
+        }
+        for (int i = 0; i < option.Count; i++)
+        {
+            if (option[i].hasCalHeight)
+                return option[i];
+        }
+        return inputKnob.connections[0].body;
+    }
 	public override Node GetNext ()
 	{
 		if (outputKnob.connections.Count == 0)
