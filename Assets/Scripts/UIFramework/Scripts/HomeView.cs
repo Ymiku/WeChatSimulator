@@ -151,6 +151,18 @@ namespace UIFrameWork
         {
             UIManager.Instance.Push(new ContactsContext());
         }
+        public void OnClickYuEBao()
+        {
+            UIManager.Instance.Push(new YuEBaoContext());
+        }
+        public void OnClickZhiMaCredit()
+        {
+            UIManager.Instance.Push(new ZhimaCreditContext());
+        }
+        public void OnClickAntCredit()
+        {
+            UIManager.Instance.Push(new AntCreditContext());
+        }
     }
 	public class HomeContext : BaseContext
 	{

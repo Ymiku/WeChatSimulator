@@ -93,6 +93,9 @@ public static class Utils
             case FInputType.Name:
                 output = "*" + output.Substring(1);
                 break;
+            case FInputType.Money:
+                output = "****";
+                break;
         }
         return output;
     }
