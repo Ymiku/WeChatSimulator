@@ -60,9 +60,17 @@ namespace UIFrameWork
             }
             Dictionary<char,List<string>> nameDic = ChatManager.Instance.init2NameDic;
             float y = -158.0f;
-            for (int i = 0; i < 26; i++)
+            for (int i = 0; i < 27; i++)
             {
-                List<string> friends = nameDic[(char)(65 + i)];
+                List<string> friends;
+                if (i == 26)
+                {
+                    friends = nameDic['#'];
+                }
+                else
+                {
+                    friends = nameDic[(char)(65 + i)];
+                }
                 if (friends.Count == 0)
                     continue;
                 SpellItem item = GetSpell();

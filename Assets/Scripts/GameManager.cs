@@ -20,6 +20,7 @@ public class GameManager : UnitySingleton<GameManager>
     public override void Awake()
     {
         base.Awake();
+        curUserId = -1;
         OnEnterGame();
     }
 	public void SetUser(int userId)

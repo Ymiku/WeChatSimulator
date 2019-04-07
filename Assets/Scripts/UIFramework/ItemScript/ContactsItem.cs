@@ -13,5 +13,32 @@ public class ContactsItem : ItemBase
     {
         base.SetData(o);
         data = o as AccountSaveData;
+        HeadSpriteUtils.Instance.SetHead(head,data.accountId);
+        if (string.IsNullOrEmpty(data.nickname) || string.IsNullOrEmpty(data.realname))
+        {
+            if (string.IsNullOrEmpty(data.nickname) && string.IsNullOrEmpty(data.realname))
+            {
+                singleName.text = ContentHelper.Read(ContentHelper.NotSetNickName);
+            }
+            else if (string.IsNullOrEmpty(data.nickname))
+            {
+                singleName.text = data.realname;
+            }
+            else
+            {
+                singleName.text = data.nickname;
+            }
+            realName.gameObject.SetActive(false);
+            nickName.gameObject.SetActive(false);
+            singleName.gameObject.SetActive(true);
+        }
+        else
+        {
+            realName.text = data.realname;
+            nickName.text = data.nickname;
+            realName.gameObject.SetActive(true);
+            nickName.gameObject.SetActive(true);
+            singleName.gameObject.SetActive(false);
+        }
     }
 }

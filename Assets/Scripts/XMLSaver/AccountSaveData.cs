@@ -33,14 +33,12 @@ public partial class SaveData {
                 data.phoneNumber = staticData.phone_number;
             }
             data.accountId = accountId;
-            data.nickname = StaticDataContent.GetContent(5);
             if (accountId == 0)
             {
                 accountList.Insert(0,data);
             }
             else
             {
-                Debug.Log(data.accountId);
                 accountList.Add(data);
             }
         }
