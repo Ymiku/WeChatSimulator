@@ -11,11 +11,6 @@ public class LogWindow : MonoBehaviour {
 	void Awake() {
 		sb.Length = 0;
 		Application.logMessageReceived += LogCallback;
-		Debug.Log ("sadsd");
-		Debug.Log ("sadsd");
-		Debug.Log ("sadsd");
-		GameObject a = null;
-		Debug.Log (a.transform);
 	}
 	public void LogCallback (string condition, string stackTrace, LogType type)
 	{
