@@ -72,6 +72,7 @@ namespace UIFrameWork
                 BaseContext lastContext = _contextStack.Peek();
                 _curContext = lastContext;
                 BaseView curView = UIManager.Instance.GetSingleUI(lastContext.ViewType).GetComponent<BaseView>();
+				curView.transform.SetAsLastSibling ();
                 curView.OnResume(lastContext);
                 Pool(lastContext.ViewType);
             }
