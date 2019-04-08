@@ -30,6 +30,7 @@ public partial class SaveData {
                 data.enname = staticData.en_name;
                 data.password = staticData.password;
                 data.realname = staticData.real_name;
+                data.nickname = staticData.nick_name;
                 data.phoneNumber = staticData.phone_number;
 				string headPath = "HeadSprites/"+data.enname;
 				if(Resources.Load<Sprite>(headPath)!=null)
