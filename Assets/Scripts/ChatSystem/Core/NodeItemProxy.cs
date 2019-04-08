@@ -46,6 +46,11 @@ public class NodeItemProxy : MonoBehaviour {
 	{
 		linkedNode = node;
 		avatar.rectTransform.anchoredPosition = new Vector2 (0.0f,-padding);
+		if (prefabId == 0) {
+			HeadSpriteUtils.Instance.SetHead (avatar, ChatManager.Instance.curInstance.friendName);
+		} else {
+			HeadSpriteUtils.Instance.SetHead (avatar, ChatManager.Instance.curName);
+		}
 		root.anchoredPosition = new Vector2 (root.anchoredPosition.x, -padding);
 		if (node is ChatNode) {
 			text.enabled = true;

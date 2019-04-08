@@ -51,7 +51,32 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
         desImage.sprite = _defaultSprite;
         StartCoroutine(GetTexture(userId, desImage, Application.persistentDataPath + "/" + data.headSprite + ".png"));
     }
-
+	public void SetHead(Image desImage, string userName)
+	{
+		AccountSaveData data = XMLSaver.saveData.GetAccountData(userName);
+		if (_headSpriteDict.ContainsKey(data.accountId))
+		{
+			desImage.sprite = _headSpriteDict[data.accountId];
+			return;
+		}
+		if (string.IsNullOrEmpty(data.headSprite))
+		{
+			desImage.sprite = _defaultSprite;
+			_headSpriteDict.Add(data.accountId, _defaultSprite);
+			return;
+		}
+		if (data.headSprite.IndexOf(_systemIdent) == 0)
+		{
+			Sprite sprite = Resources.Load<Sprite>(data.headSprite);
+			if (sprite == null)
+				sprite = _defaultSprite;
+			desImage.sprite = sprite;
+			_headSpriteDict.Add(data.accountId, sprite);
+			return;
+		}
+		desImage.sprite = _defaultSprite;
+		StartCoroutine(GetTexture(data.accountId, desImage, Application.persistentDataPath + "/" + data.headSprite + ".png"));
+	}
     public void SetHead(Image desImage)
     {
         SetHead(desImage, GameManager.Instance.curUserId);
