@@ -36,22 +36,29 @@ namespace static_data
       get { return _phone_number; }
       set { _phone_number = value; }
     }
-    private string _name;
-    [global::ProtoBuf.ProtoMember(4, IsRequired = true, Name=@"name", DataFormat = global::ProtoBuf.DataFormat.Default)]
-    public string name
+    private string _real_name;
+    [global::ProtoBuf.ProtoMember(4, IsRequired = true, Name=@"real_name", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public string real_name
     {
-      get { return _name; }
-      set { _name = value; }
+      get { return _real_name; }
+      set { _real_name = value; }
+    }
+    private string _nick_name;
+    [global::ProtoBuf.ProtoMember(5, IsRequired = true, Name=@"nick_name", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public string nick_name
+    {
+      get { return _nick_name; }
+      set { _nick_name = value; }
     }
     private string _password;
-    [global::ProtoBuf.ProtoMember(5, IsRequired = true, Name=@"password", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    [global::ProtoBuf.ProtoMember(6, IsRequired = true, Name=@"password", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public string password
     {
       get { return _password; }
       set { _password = value; }
     }
     private double _money;
-    [global::ProtoBuf.ProtoMember(6, IsRequired = true, Name=@"money", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    [global::ProtoBuf.ProtoMember(7, IsRequired = true, Name=@"money", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public double money
     {
       get { return _money; }
