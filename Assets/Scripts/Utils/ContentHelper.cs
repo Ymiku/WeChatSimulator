@@ -28,4 +28,5 @@ public class ContentHelper {
     public const int ChangePaywordText = 22; //修改支付密码
     public const int TotalAssetsText = 23; //总金额{0}元
     public const int GuestDontWorry = 24; //客官别急
+    public const int AddCardSucc = 25; //添加银行卡成功
 }

@@ -191,7 +191,7 @@ public static class Utils
     public static string FormatPaywayStr(PaywayType payway, string cardId = "")
     {
         string result = "";
-        switch (AssetsManager.Instance.curPayway)
+        switch (payway)
         {
             case PaywayType.Banlance:
                 result = ContentHelper.Read(ContentHelper.BalanceText);

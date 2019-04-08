@@ -39,9 +39,17 @@ public class ItemBase : MonoBehaviour
     }
 
     public int id;
+    private bool _initFlag;
     public virtual void SetData(object o)
     {
-
+        if (!_initFlag)
+        {
+            Init();
+            _initFlag = true;
+        }
+    }
+    public virtual void Init()
+    {
     }
     public GameObject FindChild(string path)
     {

@@ -14,10 +14,10 @@ public class SelectPaywayItem : ItemBase
     private Image _icon;
     private Text _payWayText;
     private Text _notEnoughText;
-    private bool _initFlag = false;
 
-    private void Init()
+    public override void Init()
     {
+        base.Init();
         _notEnoughRoot = FindChild("NotEnoughRoot");
         _addCardRoot = FindChild("AddCardRoot");
         _canUseRoot = FindChild("CanUseRoot");
@@ -27,16 +27,14 @@ public class SelectPaywayItem : ItemBase
         _payWayText = FindInChild<Text>("CanUseRoot/text");
         _notEnoughText = FindInChild<Text>("NotEnoughRoot/titleText");
         _selectBtn.onClick.AddListener(OnClick);
-        _initFlag = true;
     }
 
     public override void SetData(object o)
     {
+        base.SetData(o);
         _data = o as SelectPaywayItemData;
         if (_data == null)
             return;
-        if (!_initFlag)
-            Init();
         Refresh();
     }
 

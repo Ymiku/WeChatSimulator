@@ -46,15 +46,18 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
+        public override void PopCallBack()
+        {
+            base.PopCallBack();
+            UIManager.Instance.Push(new AddBankCardContext());
+        }
 
         private void OnClickAgree()
         {
             XMLSaver.saveData.AddBankCardData(GameManager.Instance.curUserId, _context.cardId);
             AssetsManager.Instance.UpdateCardsList();
-            ShowNotice("绑卡成功");
-            UIManager.Instance.StartAndResetUILine(UIManager.UILine.Main);
-            UIManager.Instance.Push(new MeContext());
-            // todo 绑卡成功
+            ShowNotice(ContentHelper.Read(ContentHelper.AddCardSucc));
+            UIManager.Instance.Pop();
         }
 
         private void Refresh()

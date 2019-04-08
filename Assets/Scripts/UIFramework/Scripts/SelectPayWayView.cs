@@ -52,6 +52,7 @@ namespace UIFrameWork
                 data.isEnough = true;
                 data.cardId = cardList[i].cardId;
                 data.payway = PaywayType.BankCard;
+                dataList.Add(data);
             }
             bool balanceEnough = AssetsManager.Instance.assetsData.balance >= _context.amount;
             SelectPaywayItemData balanceData = new SelectPaywayItemData();
@@ -74,7 +75,7 @@ namespace UIFrameWork
                 dataList.Add(balanceData);
             if (!yuEBaoEnough)
                 dataList.Add(yuEBaoData);
-            _scrollView.SetDatas(dataList.ConvertAll<object>(SelectPaywayItemData => SelectPaywayItemData as object));
+            _scrollView.SetDatas(dataList);
         }
 	}
 	public class SelectPayWayContext : BaseContext
