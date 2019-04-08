@@ -47,17 +47,11 @@ namespace UIFrameWork
 			base.Excute ();
 
 		}
-		bool hasInit = false;
         public void OnRefreshLst(List<ChatInstance> chatLst)
         {
             if (!gameObject.activeSelf)
                 return;
-			if (hasInit) {
-				scrollView.Refresh (chatLst);
-			} else {
-				scrollView.Init (chatLst);
-				hasInit = true;
-			}
+			scrollView.SetDatas (chatLst);
         }
         public void OnClickHome()
         {

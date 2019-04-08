@@ -28,6 +28,23 @@ public class PoolableScrollView : MonoBehaviour
     List<object> _datas = new List<object>();
 	public RectTransform UpPanel;
 	float constHeight = 0.0f;
+	bool hasInit = false;
+	public void SetDatas<T>(List<T> datas)
+	{
+		if (hasInit) {
+			Refresh (datas.ConvertAll<object> (Data => Data as object));
+		} else {
+			Init(datas.ConvertAll<object>(Data => Data as object));
+			hasInit = true;
+		}
+	}
+	public void Reset()
+	{
+		while (_activeItems.Count!=0) {
+			Pool (_activeItems[0]);
+		}
+		_contextTrans.anchoredPosition = Vector2.zero;
+	}
     public void Init<T>(List<T> datas)
     {
         Init(datas.ConvertAll<object>(Data => Data as object));
