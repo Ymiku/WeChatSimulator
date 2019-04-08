@@ -10,6 +10,8 @@ public class StoryManager : Singleton<StoryManager> {
         if (main == 0) {
 			if (XMLSaver.saveData.accountList.Count != 0 && GameManager.Instance.curUserId == 0) {
                 ChatManager.Instance.AddFriend(XMLSaver.saveData.GetAccountData(1).enname);
+				ChatManager.Instance.AddFriend(XMLSaver.saveData.GetAccountData(2).enname);
+				ChatManager.Instance.AddFriend(XMLSaver.saveData.GetAccountData(3).enname);
                 XMLSaver.saveData.SetValue("main", main + 1);
                 main++;
 			}

@@ -32,6 +32,10 @@ public class PoolableScrollView : MonoBehaviour
     {
         Init(datas.ConvertAll<object>(Data => Data as object));
     }
+	public void Refresh<T>(List<T> datas)
+	{
+		Refresh(datas.ConvertAll<object>(Data => Data as object));
+	}
 	public void Init(List<object> datas)
     {
 		if (prefab.gameObject.activeSelf) {
@@ -49,6 +53,15 @@ public class PoolableScrollView : MonoBehaviour
         _contextTrans.anchoredPosition = Vector2.zero;
         _contextTrans.sizeDelta = new Vector2(_contextTrans.sizeDelta.x, prefabHeight * datas.Count+constHeight);
     }
+	public void Refresh(List<object> datas)
+	{
+		_datas = datas;
+		_contextTrans.sizeDelta = new Vector2(_contextTrans.sizeDelta.x, prefabHeight * datas.Count+constHeight);
+		for (int i = 0; i < _activeItems.Count; i++)
+		{
+			_activeItems [i].SetData (_datas[_activeItems[i].id]);
+		}
+	}
     void TryOpen()
     {
         if (_datas.Count == 0)
