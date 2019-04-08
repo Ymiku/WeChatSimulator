@@ -137,7 +137,7 @@ namespace NodeEditorFramework.IO
 		public NodeData(Node n)
 		{
 			node = n;
-			name = n.name;
+			name = n.enname;
 			typeID = node.GetID;
 			nodeID = node.GetHashCode();
 			nodePos = node.rect.position;

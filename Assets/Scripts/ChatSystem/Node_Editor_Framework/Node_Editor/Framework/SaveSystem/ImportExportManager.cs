@@ -201,7 +201,7 @@ namespace NodeEditorFramework.IO
 			{ // Read all nodes
 				Node node = Node.Create (nodeData.typeID, nodeData.nodePos, null, true, false);
 				if (!string.IsNullOrEmpty(nodeData.name))
-					node.name = nodeData.name;
+					node.enname = nodeData.name;
 				if (node == null)
 					continue;
 

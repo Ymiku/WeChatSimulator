@@ -52,7 +52,7 @@ namespace NodeEditorFramework
 			int originalCount = _connections.Count;
 			_connections = _connections.Where(o => o != null).ToList();
 			if (originalCount != _connections.Count)
-				Debug.LogWarning("Removed " + (originalCount - _connections.Count) + " broken (null) connections from node " + body.name + "! Automatically fixed!");
+				Debug.LogWarning("Removed " + (originalCount - _connections.Count) + " broken (null) connections from node " + body.enname + "! Automatically fixed!");
 		}
 
 		public virtual IEnumerable<string> AdditionalDynamicKnobData()

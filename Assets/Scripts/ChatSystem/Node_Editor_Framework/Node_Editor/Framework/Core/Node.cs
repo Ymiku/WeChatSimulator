@@ -29,7 +29,7 @@ namespace NodeEditorFramework
 		public int nodeId;
 		public int sectionId;
 		[FormerlySerializedAs("Name")]
-		public string name;
+		public string enname;
 		[FormerlySerializedAs("Comd")]
 		public Cond cond;
 		[FormerlySerializedAs("ConaName")]
@@ -265,7 +265,7 @@ namespace NodeEditorFramework
 				return null;
 
 			// Init node state
-			node.name = node.Title;
+			node.enname = node.Title;
 			node.autoSize = node.DefaultSize;
 			node.position = pos;
 			ConnectionPortManager.UpdateConnectionPorts (node);
@@ -300,7 +300,7 @@ namespace NodeEditorFramework
 		public void Delete (bool silent = false) 
 		{
 			if (!NodeEditor.curNodeCanvas.nodes.Contains (this))
-				throw new UnityException ("The Node " + name + " does not exist on the Canvas " + NodeEditor.curNodeCanvas.name + "!");
+				throw new UnityException ("The Node " + enname + " does not exist on the Canvas " + NodeEditor.curNodeCanvas.name + "!");
 			if (!silent)
 				NodeEditorCallbacks.IssueOnDeleteNode (this);
 			NodeEditor.curNodeCanvas.nodes.Remove (this);
@@ -363,7 +363,7 @@ namespace NodeEditorFramework
 			}
 			GUILayout.BeginHorizontal ();
 			GUILayout.Label ("姓名");
-			name = EditorGUILayout.TextField (name);
+			enname = EditorGUILayout.TextField (enname);
 			GUILayout.EndHorizontal ();
 			GUILayout.BeginHorizontal ();
 			GUILayout.BeginVertical ();

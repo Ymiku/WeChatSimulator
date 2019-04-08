@@ -36,7 +36,7 @@ namespace NodeEditorFramework.Standard
 				inputNodes = RTCalc.getInputNodes ();
 			foreach (Node inputNode in inputNodes) 
 			{
-				string outValueLog = "(IN) " + inputNode.name + ": ";
+				string outValueLog = "(IN) " + inputNode.enname + ": ";
 				foreach (ValueConnectionKnob knob in inputNode.outputKnobs.OfType<ValueConnectionKnob> ())
 					outValueLog += knob.styleID + " " + knob.name + " = " + (knob.IsValueNull? "NULL" : knob.GetValue ().ToString ()) + "; ";
 				GUILayout.Label (outValueLog);

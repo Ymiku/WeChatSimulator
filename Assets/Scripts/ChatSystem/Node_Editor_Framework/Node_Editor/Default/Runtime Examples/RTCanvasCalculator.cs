@@ -43,7 +43,7 @@ namespace NodeEditorFramework.Standard
 			List<Node> outputNodes = getOutputNodes ();
 			foreach (Node outputNode in outputNodes) 
 			{ // Display value of all output nodes
-				string outValueLog = "(OUT) " + outputNode.name + ": ";
+				string outValueLog = "(OUT) " + outputNode.enname + ": ";
 				// Use knob values - either output knobs, or input knobs if there are now output knobs
 				List<ConnectionKnob> sourceValueKnobs = outputNode.outputKnobs.Count == 0? outputNode.inputKnobs : outputNode.outputKnobs;
 				foreach (ValueConnectionKnob knob in sourceValueKnobs.OfType<ValueConnectionKnob> ())

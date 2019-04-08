@@ -60,7 +60,7 @@ namespace NodeEditorFramework.Standard
 			{
 				Debug.LogError("Did not complete calculation! " + workList.Count + " nodes block calculation from advancing!");
 				foreach (Node node in workList)
-					Debug.LogError("" + node.name + " blocks calculation!");
+					Debug.LogError("" + node.enname + " blocks calculation!");
 			}
 		}
 

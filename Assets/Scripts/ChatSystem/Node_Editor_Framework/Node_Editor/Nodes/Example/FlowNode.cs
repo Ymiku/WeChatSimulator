@@ -36,10 +36,10 @@ namespace NodeEditorFramework.Standard
 			List<Node> flowTargets = flowOut.connections.Select ((ConnectionKnob input) => input.body).ToList ();
 
 			// Display adjacent flow elements
-			GUILayout.Label ("Flow Source: " + (flowSource != null? flowSource.name : "null"));
+			GUILayout.Label ("Flow Source: " + (flowSource != null? flowSource.enname : "null"));
 			GUILayout.Label ("Flow Targets:");
 			foreach (Node flowTarget in flowTargets)
-				GUILayout.Label ("-> " + flowTarget.name);
+				GUILayout.Label ("-> " + flowTarget.enname);
 		}
 		
 		public override bool Calculate () 
