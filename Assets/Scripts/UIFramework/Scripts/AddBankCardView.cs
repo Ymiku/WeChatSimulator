@@ -69,7 +69,10 @@ namespace UIFrameWork
                 if (CheckCardHasBind(cardId))
                     ShowNotice(ContentHelper.Read(ContentHelper.CardAlreadyBind));
                 else
+                {
+                    UIManager.Instance.Pop();
                     UIManager.Instance.Push(new AddBankCardInfoContext(cardId));
+                }
             else
                 ShowNotice(ContentHelper.Read(ContentHelper.BankCardIllegal));
         }

@@ -28,10 +28,10 @@ public static class StaticDataBankCard
         if (!string.IsNullOrEmpty(cardId))
         {
             string checkStr = cardId.Substring(0, 6);
-            if (!string.IsNullOrEmpty(CardMarkToNameDict[checkStr]))
+            if (CardMarkToNameDict.ContainsKey(checkStr))
                 return CardMarkToNameDict[checkStr];
             checkStr = cardId.Substring(0, 5);
-            if (!string.IsNullOrEmpty(CardMarkToNameDict[checkStr]))
+            if (CardMarkToNameDict.ContainsKey(checkStr))
                 return CardMarkToNameDict[checkStr];
         }
         return ContentHelper.Read(ContentHelper.DefaultCardName);

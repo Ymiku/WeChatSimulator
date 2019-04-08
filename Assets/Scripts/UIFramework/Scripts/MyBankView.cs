@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
 namespace UIFrameWork
 {
     public class MyBankView : AnimateView
@@ -7,13 +9,14 @@ namespace UIFrameWork
         private MyBankContext _context;
         private GameObject _addCardRoot;
         private GameObject _cardScrollRoot;
+        private PoolableScrollView _scrollView;
 
         public override void Init()
         {
             base.Init();
             _addCardRoot = FindChild("AddCardRoot");
             _cardScrollRoot = FindChild("CardScrollView");
-
+            _scrollView = FindInChild<PoolableScrollView>("CardScrollView");
         }
         public override void OnEnter(BaseContext context)
         {
@@ -59,9 +62,7 @@ namespace UIFrameWork
             _addCardRoot.SetActive(noCardFlag);
             _cardScrollRoot.SetActive(!noCardFlag);
             if (!noCardFlag)
-            {
-                
-            }
+                _scrollView.SetDatas(AssetsManager.Instance.bankCardsData);
         }
     }
     public class MyBankContext : BaseContext
