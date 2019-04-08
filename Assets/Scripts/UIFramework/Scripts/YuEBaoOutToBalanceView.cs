@@ -3,9 +3,9 @@ using System.Collections;
 using UnityEngine.UI;
 namespace UIFrameWork
 {
-	public class YuEBaoTurnOutView : AnimateView
+	public class YuEBaoOutToBalanceView : EnabledView
 	{
-		private YuEBaoTurnOutContext _context;
+		private YuEBaoOutToBalanceContext _context;
 
 		public override void Init ()
 		{
@@ -14,7 +14,7 @@ namespace UIFrameWork
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter(context);
-			_context = context as YuEBaoTurnOutContext;
+			_context = context as YuEBaoOutToBalanceContext;
 		}
 
 		public override void OnExit(BaseContext context)
@@ -36,9 +36,9 @@ namespace UIFrameWork
 			base.Excute ();
 		}
 	}
-	public class YuEBaoTurnOutContext : BaseContext
+	public class YuEBaoOutToBalanceContext : BaseContext
 	{
-		public YuEBaoTurnOutContext() : base(UIType.YuEBaoTurnOut)
+		public YuEBaoOutToBalanceContext() : base(UIType.YuEBaoOutToBalance)
 		{
 		}
 	}
