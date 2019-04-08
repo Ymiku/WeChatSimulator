@@ -29,8 +29,11 @@ public partial class SaveData {
             {
                 data.enname = staticData.en_name;
                 data.password = staticData.password;
-                data.realname = staticData.name;
+                data.realname = staticData.real_name;
                 data.phoneNumber = staticData.phone_number;
+				string headPath = "HeadSprites/"+data.enname;
+				if(Resources.Load<Sprite>(headPath)!=null)
+					data.headSprite = headPath;
             }
             data.accountId = accountId;
             if (accountId == 0)
@@ -105,5 +108,5 @@ public static class AccountDefine {
     public const int PasswordMinLength = 5;                                   //登陆密码长度最短
     public const int PaywordLength = 6;                                       //支付密码长度
     public const int NicknameMaxLength = 5;                                   //昵称长度最长
-    public const string DefaultHeadSprite = "Sprites/social_head_default";    //默认头像
+    public const string DefaultHeadSprite = "HeadSprites/social_head_default";    //默认头像
 }
