@@ -14,11 +14,16 @@ public class LogWindow : MonoBehaviour {
 		Debug.Log ("sadsd");
 		Debug.Log ("sadsd");
 		Debug.Log ("sadsd");
-		Debug.Log ("sadsd");
+		GameObject a = null;
+		Debug.Log (a.transform);
 	}
 	public void LogCallback (string condition, string stackTrace, LogType type)
 	{
-		sb.Append(condition+"\n");
+		if (type == LogType.Log) {
+			sb.Append (condition + stackTrace + "\n");
+		} else {
+			sb.Append ("<color=red>"+condition + stackTrace+"</color>" + "\n");
+		}
 		log.text = sb.ToString ();
 	}
 	public void OnClick()
