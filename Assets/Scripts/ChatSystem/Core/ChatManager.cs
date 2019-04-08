@@ -65,6 +65,7 @@ public class ChatManager : Singleton<ChatManager> {
 	}
 	public void EnterChat(string name1,string name2 = "")
 	{
+        Debug.Log(name1);
 		if (name2 == "")
 			name2 = curName;
 		if(curInstance!=null)
