@@ -102,8 +102,8 @@ public class ChatOptionNode : Node
 		return labels[data.GetOption(this)];
 	}
 	public int option{
-		get{ return ChatManager.Instance.curInstance.saveData.GetOption (this);}
-		set{ ChatManager.Instance.curInstance.saveData.AddOption (this, value);}
+		get{ return ChatManager.Instance.curExecuteInstance.saveData.GetOption (this);}
+		set{ ChatManager.Instance.curExecuteInstance.saveData.AddOption (this, value);}
 	}
 	public override bool Execute()
 	{

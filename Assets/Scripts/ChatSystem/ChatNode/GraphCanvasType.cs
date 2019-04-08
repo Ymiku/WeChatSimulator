@@ -52,7 +52,7 @@ namespace NodeEditorFramework.Standard
 		public Node GetLast()
 		{
             int temp = nodes.Count-1;
-			for (int i = 0; i < nodes.Count; i++) {
+			for (int i = temp; i >= 0; i--) {
                 if (!(nodes[i] is ChatOptionNode) && nodes[i].GetNext() == null)
                 {
                     temp = i;

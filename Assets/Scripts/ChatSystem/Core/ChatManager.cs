@@ -12,7 +12,8 @@ public class ChatManager : Singleton<ChatManager> {
 	}
 	public int curUserId;
 	public ChatInstance curInstance;
-	Dictionary<int,ChatInstance> pairId2Instance = new Dictionary<int, ChatInstance>();
+    public ChatInstance curExecuteInstance;
+    Dictionary<int,ChatInstance> pairId2Instance = new Dictionary<int, ChatInstance>();
 	List<ChatInstance> orderedInstance = new List<ChatInstance>();
     public Dictionary<char, List<string>> init2NameDic;
 	//
@@ -39,23 +40,28 @@ public class ChatManager : Singleton<ChatManager> {
 	}
 	public Node GetLastRunningNode()
 	{
+        curExecuteInstance = curInstance;
 		return curInstance.GetLastRunningNode ();
 	}
 	public Node GetFront()
 	{
-		return curInstance.GetFront ();
+        curExecuteInstance = curInstance;
+        return curInstance.GetFront ();
 	}
 	public Node GetNext()
 	{
-		return curInstance.GetNext ();
+        curExecuteInstance = curInstance;
+        return curInstance.GetNext ();
 	}
 	public void PoolUp()
 	{
-		curInstance.PoolUp ();
+        curExecuteInstance = curInstance;
+        curInstance.PoolUp ();
 	}
 	public void PoolDown()
 	{
-		curInstance.PoolDown ();
+        curExecuteInstance = curInstance;
+        curInstance.PoolDown ();
 	}
 	public void EnterChat(string name1,string name2 = "")
 	{

@@ -20,9 +20,9 @@ namespace NodeEditorFramework
 
 		//use at runtime
 		public bool hasCalHeight{
-			get{ return ChatManager.Instance.curInstance.saveData.HasCalHeight (this); }
+			get{ return ChatManager.Instance.curExecuteInstance.saveData.HasCalHeight (this); }
 			set{ if (value)
-					ChatManager.Instance.curInstance.saveData.SetHasCalHeight (this);
+					ChatManager.Instance.curExecuteInstance.saveData.SetHasCalHeight (this);
 			}
 		}
 		[NonSerialized]

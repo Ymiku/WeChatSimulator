@@ -17,6 +17,7 @@ public class ChatInstance{
 	public int redNum = 0;
 	public void OnInit(string friendName)
 	{
+        ChatManager.Instance.curExecuteInstance = this;
         selfName = ChatManager.Instance.curName;
         int pairId = ChatManager.Instance.GetPairID(selfName,friendName);
 		this.friendName = friendName;
@@ -46,6 +47,7 @@ public class ChatInstance{
 	}
 	public void OnExecute()
 	{
+        ChatManager.Instance.curExecuteInstance = this;
 		if (curRunningNode == null) {
 			return;
 		}
