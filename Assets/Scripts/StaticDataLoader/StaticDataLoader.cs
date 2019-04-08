@@ -31,7 +31,7 @@ public static class StaticDataLoader
 
     private static string GetDataConfigPath(string fileName)
     {
-        return Application.dataPath + "/Resources/StaticData/static_data_" + fileName + ".data";
+        return Application.streamingAssetsPath + "/StaticData/static_data_" + fileName + ".data";
     }
 
     public static void Load()

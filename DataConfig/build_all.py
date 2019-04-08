@@ -2,9 +2,9 @@
 import sys
 import shutil
 
-excel_path = "E:\projects\PaymentAppSimulator\DataConfig\Excel"
-cs_path = "E:\projects\PaymentAppSimulator\Assets\Scripts\StaticDataLoader\PB"
-data_path = "E:\projects\PaymentAppSimulator\Assets\Resources\StaticData"
+excel_path = "D:\Projects\Github\PaymentAppSimulator\DataConfig\Excel"
+cs_path = "D:\Projects\Github\PaymentAppSimulator\Assets\Scripts\StaticDataLoader\PB"
+data_path = "D:\Projects\Github\PaymentAppSimulator\Assets\StreamingAssets\StaticData"
 
 is_exists = os.path.exists(excel_path)
 if not is_exists:
