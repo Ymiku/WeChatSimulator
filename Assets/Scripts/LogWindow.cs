@@ -9,23 +9,46 @@ public class LogWindow : MonoBehaviour {
 	public GameObject logWin;
 	public Text log;
 	public Text button;
+	public class FLog
+	{
+		public string fcondition; 
+		public string fstackTrace; 
+		public LogType ftype;
+	}
+	List<FLog> logs = new List<FLog>();
 	void Awake() {
 		sb.Length = 0;
 		Application.logMessageReceived += LogCallback;
 	}
 	public void LogCallback (string condition, string stackTrace, LogType type)
 	{
-		if (type == LogType.Log) {
-			sb.Append (condition + stackTrace + "\n");
-		} else {
-			button.text = "<color=red>ERROR</color>";
-			sb.Append ("<color=red>"+condition + stackTrace+"</color>" + "\n");
-		}
-		log.text = sb.ToString ();
+		logs.Add (new FLog(){fcondition = condition,fstackTrace=stackTrace,ftype = type});
+
 	}
 	public void OnClick()
 	{
 		logWin.SetActive (!logWin.activeSelf);
 		button.text = "LOG";
+	}
+	void Update()
+	{
+		if (logs.Count == 0)
+			return;
+		for (int i = 0; i < logs.Count; i++) {
+			if (logs[i].ftype == LogType.Log) {
+				sb.Append (logs[i].fcondition + logs[i].fstackTrace + "\n");
+			} else {
+				button.text = "<color=red>ERROR</color>";
+				sb.Append ("<color=red>"+logs[i].fcondition + logs[i].fstackTrace+"</color>" + "\n");
+			}
+
+		}
+		log.text = sb.ToString ();
+		logs.Clear();
+	}
+	public void Clear()
+	{
+		sb.Length = 0;
+		log.text = sb.ToString ();
 	}
 }
