@@ -51,11 +51,16 @@ namespace NodeEditorFramework.Standard
 		}
 		public Node GetLast()
 		{
+            int temp = nodes.Count-1;
 			for (int i = 0; i < nodes.Count; i++) {
-				if (!(nodes[i] is ChatOptionNode)&&nodes [i].GetNext () == null)
-					return nodes [i];
+                if (!(nodes[i] is ChatOptionNode) && nodes[i].GetNext() == null)
+                {
+                    temp = i;
+                    if (nodes[i].hasCalHeight)
+                        return nodes[i];
+                }
 			}
-			return null;
+			return nodes[temp];
 		}
 	}
 }
