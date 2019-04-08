@@ -16,7 +16,7 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
     private Dictionary<int, Sprite> _headSpriteDict = new Dictionary<int, Sprite>();
     private Sprite _defaultSprite;
     private string _customIdent = "Textures/";
-    private string _systemIdent = "Sprites/";
+    private string _systemIdent = "HeadSprites/";
 
     public override void SingletonInit()
     {
