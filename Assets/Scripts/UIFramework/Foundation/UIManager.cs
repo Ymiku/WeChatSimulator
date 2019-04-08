@@ -48,6 +48,8 @@ namespace UIFrameWork
 		public void Pop()
 		{
 			activeContext.Pop();
+			if (alwaysFrontTrans != null)
+				alwaysFrontTrans.SetAsLastSibling();
 		}
         public UILine curUILine = UILine.Main;
 		public void StartUILine(UILine line)
