@@ -74,7 +74,7 @@ namespace UIFrameWork
                 dataList.Add(balanceData);
             if (!yuEBaoEnough)
                 dataList.Add(yuEBaoData);
-            _scrollView.Init(dataList.ConvertAll<object>(SelectPaywayItemData => SelectPaywayItemData as object));
+            _scrollView.SetDatas(dataList.ConvertAll<object>(SelectPaywayItemData => SelectPaywayItemData as object));
         }
 	}
 	public class SelectPayWayContext : BaseContext
