@@ -78,6 +78,7 @@ namespace UIFrameWork
 		public static readonly UIType ChangePayword = new UIType("View/ChangePaywordView"); //修改支付密码
 		public static readonly UIType ConfirmPayword = new UIType("View/ConfirmPaywordView"); //修改支付密码
 		public static readonly UIType YuEBaoIn = new UIType("View/YuEBaoInView"); //转入余额宝
-		public static readonly UIType YuEBaoTurnOut = new UIType("View/YuEBaoTurnOutView"); //余额宝转出
+		public static readonly UIType YuEBaoOutToBalance = new UIType("View/YuEBaoOutToBalanceView"); //余额宝转出到余额
+		public static readonly UIType YuEBaoOutToCard = new UIType("View/YuEBaoOutToCardView"); //余额宝转出到银行卡
     }
 }

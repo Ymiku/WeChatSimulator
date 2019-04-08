@@ -90,7 +90,7 @@ namespace UIFrameWork
 
         public void ClickTurnOut()
         {
-            UIManager.Instance.Push(new YuEBaoTurnOutContext());
+            UIManager.Instance.Push(new YuEBaoOutToBalanceContext());
         }
 	}
 	public class YuEBaoContext : BaseContext
