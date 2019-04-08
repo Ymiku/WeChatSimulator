@@ -41,7 +41,8 @@ public class ChatInstance{
 	}
 	public void OnEnter()
 	{
-		_activeNodes.Clear ();
+        ChatManager.Instance.curExecuteInstance = this;
+        _activeNodes.Clear ();
 		redNum = 0;
 		//set panel
 	}
