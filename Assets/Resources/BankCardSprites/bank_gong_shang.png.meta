@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0b7f0b1efa33a60408f4568b26d921eb
+guid: 6e0a6c41c65ad7b4c8a746194ceb26b4
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -80,7 +80,7 @@ TextureImporter:
     sprites: []
     outline: []
     physicsShape: []
-  spritePackingTag: AliPay
+  spritePackingTag: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 
