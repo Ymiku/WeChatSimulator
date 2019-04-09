@@ -28,7 +28,7 @@ public class BankCardItem : ItemBase
     {
         base.SetData(o);
         _data = o as BankCardSaveData;
-        _cardName.text = _data.cardName.Replace(ContentHelper.Read(ContentHelper.SavingCardText), "");
+        _cardName.text = _data.bankName.Replace(ContentHelper.Read(ContentHelper.SavingCardText), "");
         _lastNumber.text = _data.cardId.Substring(_data.cardId.Length - 4, 4);
     }
 

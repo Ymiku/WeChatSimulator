@@ -78,11 +78,23 @@ public class SelectPaywayItem : ItemBase
         _icon.gameObject.SetActive(!_data.isAddCard);
 
         if (_data.payway == PaywayType.BankCard)
+        {
+            BankCardSaveData data = AssetsManager.Instance.GetBankCardData(_data.cardId);
             _payWayText.text = Utils.FormatPaywayStr(_data.payway, _data.cardId);
+            _icon.sprite = AssetsManager.Instance.GetBankSprite(data.bankName);
+        }
         else if (_data.payway == PaywayType.Banlance)
-            _payWayText.text = Utils.FormatPaywayStr(_data.payway) + "(" + ContentHelper.Read(ContentHelper.RemainText) + ":" + +AssetsManager.Instance.assetsData.balance + ")";
+        {
+            _payWayText.text = Utils.FormatPaywayStr(_data.payway) + "(" + ContentHelper.Read(ContentHelper.RemainText) +
+                ":" + +AssetsManager.Instance.assetsData.balance + ")";
+            _icon.sprite = Utils.GetBalanceSprite();
+        }
         else if (_data.payway == PaywayType.YuEBao)
-            _payWayText.text = Utils.FormatPaywayStr(_data.payway) + "(:" + ContentHelper.Read(ContentHelper.RemainText) + ":" + AssetsManager.Instance.assetsData.yuEBao + ")";
+        {
+            _payWayText.text = Utils.FormatPaywayStr(_data.payway) + "(:" + ContentHelper.Read(ContentHelper.RemainText) + 
+                ":" + AssetsManager.Instance.assetsData.yuEBao + ")";
+            _icon.sprite = Utils.GetYuEBaoSprite();
+        }
         if (!_data.isEnough)
             _notEnoughText.text = _payWayText.text;
     }

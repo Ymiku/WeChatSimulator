@@ -206,10 +206,26 @@ public static class Utils
                 else
                     data = XMLSaver.saveData.GetBankCardData(GameManager.Instance.curUserId, cardId);                
                 string cardStr = data.cardId.Substring(data.cardId.Length - 4, 4);
-                result = data.cardName + "(" + cardStr + ")";
+                result = data.bankName + "(" + cardStr + ")";
                 break;
         }
         return result;
+    }
+    private static Sprite _balanceSprite;
+    public static Sprite GetBalanceSprite()
+    {
+        if (_balanceSprite != null)
+            return _balanceSprite;
+        _balanceSprite = Resources.Load<Sprite>("CommonSprites/yu_e");
+        return _balanceSprite;
+    }
+    private static Sprite _yuEBaoSprite;
+    public static Sprite GetYuEBaoSprite()
+    {
+        if (_yuEBaoSprite != null)
+            return _yuEBaoSprite;
+        _yuEBaoSprite = Resources.Load<Sprite>("CommonSprites/yu_e_bao");
+        return _yuEBaoSprite;
     }
 }
 public enum FInputType

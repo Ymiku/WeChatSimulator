@@ -42,11 +42,14 @@ public static class StaticDataBankCard
 
     public static string GetBankSpriteByBankName(string bankName)
     {
-        if (!string.IsNullOrEmpty(bankName))
+        if (string.IsNullOrEmpty(bankName))
             return GameDefine.DefaultBankSprite;
-        else if (BankSpriteDict.ContainsKey(bankName))
-            return BankSpriteDict[bankName];
         else
-            return GameDefine.DefaultBankSprite;
+        {
+            if (BankSpriteDict.ContainsKey(bankName))
+                return BankSpriteDict[bankName];
+            else
+                return GameDefine.DefaultBankSprite;
+        }
     }
 }

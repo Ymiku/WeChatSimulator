@@ -18,7 +18,7 @@ public class AssetsManager : Singleton<AssetsManager>
         this._id = id;
         curPayway = PaywayType.None;
         assetsData = XMLSaver.saveData.GetAssetsData(id);
-        bankCardsData = XMLSaver.saveData.GetBankCardDataList(id); 
+        bankCardsData = XMLSaver.saveData.GetBankCardDataList(id);
         curUseBankCard = XMLSaver.saveData.GetCurUseCard(id);
         _defaultCardIcon = Resources.Load<Sprite>(GameDefine.DefaultBankSprite);
     }
@@ -100,7 +100,7 @@ public class AssetsManager : Singleton<AssetsManager>
     /// <summary>
     /// 获取银行卡icon
     /// </summary>
-   public Sprite GetBankSprite(string bankName)
+    public Sprite GetBankSprite(string bankName)
     {
         if (string.IsNullOrEmpty(bankName))
             return _defaultCardIcon;
@@ -108,7 +108,7 @@ public class AssetsManager : Singleton<AssetsManager>
             return _bankIconDict[bankName];
         else
         {
-            Sprite sprite = Resources.Load<Sprite>(StaticDataBankCard.GetBankSpriteByBankName(bankName));
+            Sprite sprite = Resources.Load<Sprite>("BankCardSprites/" + StaticDataBankCard.GetBankSpriteByBankName(bankName));
             _bankIconDict.Add(bankName, sprite);
             return sprite;
         }
