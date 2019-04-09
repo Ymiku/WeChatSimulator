@@ -85,7 +85,7 @@ public class ChatImageNode : Node
 			return null;
 		return outputKnob.connections [0].body;
 	}
-	public override string GetLastSentence (ChatInstanceData data = null)
+	public override string GetLastSentence ()
 	{
 		return "[图片]";
 	}

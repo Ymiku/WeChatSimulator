@@ -96,7 +96,7 @@ public class ChatInstance{
 			return "";
 		if (node is SetParamNode)
 			return GetLastSentence (node.GetFront());
-		return node.GetLastSentence(saveData);
+		return node.GetLastSentence();
 	}
 	public Node GetFront()
 	{

@@ -97,9 +97,9 @@ public class ChatOptionNode : Node
 	{
 		return option;
 	}
-	public override string GetLastSentence (ChatInstanceData data = null)
+	public override string GetLastSentence ()
 	{
-		return labels[data.GetOption(this)];
+		return labels[ChatManager.Instance.curExecuteInstance.saveData.GetOption(this)];
 	}
 	public int option{
 		get{ return ChatManager.Instance.curExecuteInstance.saveData.GetOption (this);}
