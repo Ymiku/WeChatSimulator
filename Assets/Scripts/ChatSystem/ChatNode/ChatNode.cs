@@ -74,7 +74,7 @@ public class ChatNode : Node
 	}
 	public override Node GetFront ()
 	{
-        if(inputKnob.connections.Count==1)
+		if(inputKnob.connections.Count==1||IsInEditor())
 		    return inputKnob.connections [0].body;
         List<Node> normal = new List<Node>();
         List<Node> option = new List<Node>();
@@ -95,7 +95,7 @@ public class ChatNode : Node
             if (option[i].hasCalHeight)
                 return option[i];
         }
-        return inputKnob.connections[0].body;
+        return null;
     }
 	public override Node GetNext ()
 	{

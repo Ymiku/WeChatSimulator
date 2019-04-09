@@ -45,24 +45,27 @@ namespace NodeEditorFramework.Standard
 		}
 		public Node GetFirst()
 		{
+			if (firstNode != null)
+				return firstNode;
 			for (int i = 0; i < nodes.Count; i++) {
-				if (nodes [i].GetFront () == null)
-					return nodes [i];
+				if (nodes [i].nodePos == Node.NodePos.First) {
+					firstNode = nodes [i];
+					break;
+				}
 			}
 			return firstNode;
 		}
 		public Node GetLast()
 		{
-            int temp = nodes.Count-1;
-			for (int i = temp; i >= 0; i--) {
-                if (!(nodes[i] is ChatOptionNode) && nodes[i].GetNext() == null)
-                {
-                    temp = i;
-                    if (nodes[i].hasCalHeight)
-                        return nodes[i];
-                }
+			if (lastNode != null)
+				return lastNode;
+			for (int i = 0; i < nodes.Count; i++) {
+				if (nodes [i].nodePos == Node.NodePos.Last) {
+					lastNode = nodes [i];
+					break;
+				}
 			}
-			return nodes[temp];
+			return lastNode;
 		}
 	}
 }

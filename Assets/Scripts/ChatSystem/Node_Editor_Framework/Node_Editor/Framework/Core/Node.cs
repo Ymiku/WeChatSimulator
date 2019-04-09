@@ -17,7 +17,12 @@ namespace NodeEditorFramework
 			WaitMinutes,
 			ControlByVar,
 		}
-
+		public enum NodePos
+		{
+			Mid,
+			First,
+			Last,
+		}
 		//use at runtime
 		public bool hasCalHeight{
 			get{ return ChatManager.Instance.curExecuteInstance.saveData.HasCalHeight (this); }
@@ -36,6 +41,7 @@ namespace NodeEditorFramework
 		public string condName;
 		[FormerlySerializedAs("CondParam")]
 		public int condParam;
+		public NodePos nodePos = NodePos.Mid;
 		[NonSerialized]
 		protected int startTime = -1;
 		public virtual string GetLastSentence(){return "";}
@@ -358,9 +364,33 @@ namespace NodeEditorFramework
 			GUILayout.BeginArea (bodyRect);
 			// Call NodeGUI
 			GUI.changed = false;
+			bool hasFront = (GetFront() != null);
+			bool hasNext = (GetNext() != null);
+			if((!hasFront)&&hasNext)
+			{
+				bool isFirst = GUILayout.Toggle(nodePos==NodePos.First,"Is First");
+				if(isFirst)
+					nodePos = NodePos.First;
+				else
+					nodePos = NodePos.Mid;
+			}
+			else if(hasFront&&!hasNext)
+			{
+				bool isLast = GUILayout.Toggle(nodePos==NodePos.Last,"Is Last");
+				if(isLast)
+					nodePos = NodePos.Last;
+				else
+					nodePos = NodePos.Mid;
+			}
+			else
+			{
+				nodePos = NodePos.Mid;
+			}
+
 			if (GUILayout.Button ("Clear All Connect")) {
 				DeleteAllPorts ();
 			}
+
 			GUILayout.BeginHorizontal ();
 			GUILayout.Label ("姓名");
 			enname = EditorGUILayout.TextField (enname);
@@ -694,6 +724,10 @@ namespace NodeEditorFramework
 		}
 		public virtual Node GetNext (){
 			return null;
+		}
+		protected bool IsInEditor()
+		{
+			return XMLSaver.saveData == null;
 		}
 		#endregion
 	}
