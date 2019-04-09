@@ -26,15 +26,19 @@ public class ChatInstance{
 		lastChatTimeStamp = saveData.lastChatTimeStamp;
 		curSection = ChatManager.Instance.LoadSectionByID(curPairID,saveData.curSectionId);
         Node front = null;
-        if (saveData.curNodeId != -1)
+        if (saveData.curNodeId >= 0)
         {
             curRunningNode = curSection.nodes[saveData.curNodeId];
             front = curRunningNode.GetFront();
         }
-        else
+		else if(saveData.curNodeId == ChatManager.finished)
         {
             front = curSection.GetLast();
         }
+		else if(saveData.curNodeId == ChatManager.need2Init)
+		{
+			front = curSection.GetFirst ();
+		}
 		if (front != null)
 			lastSentence = GetLastSentence (front);
 		totalRectHeight = saveData.totalRectHeight;

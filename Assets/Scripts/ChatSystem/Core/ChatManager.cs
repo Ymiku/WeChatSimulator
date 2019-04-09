@@ -4,6 +4,8 @@ using UnityEngine;
 using NodeEditorFramework;
 using NodeEditorFramework.Standard;
 public class ChatManager : Singleton<ChatManager> {
+	public const int finished = -1;
+	public const int need2Init = -2;
 	public delegate void RefreshEventHandler(List<ChatInstance> chatLst);
 	public event RefreshEventHandler OnRefreshChatLst;
 	//name name selectionID

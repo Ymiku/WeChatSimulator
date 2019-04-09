@@ -102,8 +102,8 @@ namespace NodeEditorFramework
 		/// </summary>
 		public void TraverseAll ()
 		{
-			if (Traversal != null)
-				Traversal.TraverseAll ();
+			//if (Traversal != null)
+			//	Traversal.TraverseAll ();
 		}
 
 		/// <summary>
@@ -111,8 +111,8 @@ namespace NodeEditorFramework
 		/// </summary>
 		public void OnNodeChange (Node node)
 		{
-			if (Traversal != null && node != null)
-				Traversal.OnChange (node);
+			//if (Traversal != null && node != null)
+			//	Traversal.OnChange (node);
 		}
 
 		/// <summary>

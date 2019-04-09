@@ -14,7 +14,7 @@
 		/// </summary>
 		public override void TraverseAll () 
 		{
-			RootGraphNode rootNode = Canvas.rootNode;
+			Node rootNode = Canvas.firstNode;
 			rootNode.Calculate ();
 			//Debug.Log ("RootNode is " + rootNode);
 		}

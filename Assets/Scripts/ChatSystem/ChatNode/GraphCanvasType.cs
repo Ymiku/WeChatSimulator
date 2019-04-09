@@ -10,28 +10,30 @@ namespace NodeEditorFramework.Standard
 		public override string canvasName { get { return "Graph"; } }
 
 		private string rootNodeID { get { return "rootGraphNode"; } }
-		public RootGraphNode rootNode;
+		public Node firstNode;
+		public Node lastNode;
 
 		protected override void OnCreate () 
 		{
-			Traversal = new GraphTraversal (this);
-			rootNode = Node.Create (rootNodeID, Vector2.zero) as RootGraphNode;
+			//Traversal = new GraphTraversal (this);
+			firstNode = Node.Create (rootNodeID, Vector2.zero) as RootGraphNode;
+			//rootNode = Node.Create (rootNodeID, Vector2.zero) as RootGraphNode;
 		}
 
 		private void OnEnable () 
 		{
-			if (Traversal == null)
-				Traversal = new GraphTraversal (this);
+			//if (Traversal == null)
+			//	Traversal = new GraphTraversal (this);
 			// Register to other callbacks
 			//NodeEditorCallbacks.OnDeleteNode += CheckDeleteNode;
 		}
 
 		protected override void ValidateSelf ()
 		{
-			if (Traversal == null)
-				Traversal = new GraphTraversal (this);
-			if (rootNode == null && (rootNode = nodes.Find ((Node n) => n.GetID == rootNodeID) as RootGraphNode) == null)
-				rootNode = Node.Create (rootNodeID, Vector2.zero) as RootGraphNode;
+			//if (Traversal == null)
+			//	Traversal = new GraphTraversal (this);
+			//if (rootNode == null && (rootNode = nodes.Find ((Node n) => n.GetID == rootNodeID) as RootGraphNode) == null)
+			//	rootNode = Node.Create (rootNodeID, Vector2.zero) as RootGraphNode;
 		}
 
 		public override bool CanAddNode (string nodeID)
@@ -47,7 +49,7 @@ namespace NodeEditorFramework.Standard
 				if (nodes [i].GetFront () == null)
 					return nodes [i];
 			}
-			return rootNode;
+			return firstNode;
 		}
 		public Node GetLast()
 		{
