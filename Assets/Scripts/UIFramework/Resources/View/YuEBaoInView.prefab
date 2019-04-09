@@ -525,7 +525,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114582433648309658}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114430394112901344}
+        m_MethodName: OnClickPayway
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114085192923546122
@@ -811,7 +822,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114430394112901344}
+        m_MethodName: OnValueChanged
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.InputField+OnChangeEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
@@ -821,7 +843,7 @@ MonoBehaviour:
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 2
   m_ReadOnly: 0
-  f_InputType: 2
+  f_InputType: 4
 --- !u!114 &114430394112901344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -835,6 +857,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeWhenPause: 0
   fadeType: 0
+  _bankName: {fileID: 114549630792780460}
+  _bankLastNum: {fileID: 114320552725968602}
+  _tips: {fileID: 114636690530685878}
+  _timeText: {fileID: 114355925341320238}
+  _icon: {fileID: 114518286461872526}
+  _confirmBtn: {fileID: 114056343268496214}
+  _moneyInput: {fileID: 114415061086295134}
 --- !u!114 &114454036009290106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -941,7 +970,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114658997716168704}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114430394112901344}
+        m_MethodName: OnClickExplain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114549630792780460
@@ -1639,7 +1679,7 @@ RectTransform:
   - {fileID: 224378190903134014}
   - {fileID: 224692963206543958}
   m_Father: {fileID: 224849954055747740}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1941,7 +1981,7 @@ RectTransform:
   m_Children:
   - {fileID: 224905222953786184}
   m_Father: {fileID: 224849954055747740}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2054,8 +2094,8 @@ RectTransform:
   - {fileID: 224293781878572740}
   - {fileID: 224628110890714254}
   - {fileID: 224277401566942610}
-  - {fileID: 224032049586928770}
   - {fileID: 224498627856734668}
+  - {fileID: 224032049586928770}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

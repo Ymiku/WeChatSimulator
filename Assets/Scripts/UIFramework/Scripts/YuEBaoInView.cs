@@ -6,8 +6,15 @@ namespace UIFrameWork
 	public class YuEBaoInView : AnimateView
 	{
 		private YuEBaoInContext _context;
+        public TextProxy _bankName;
+        public TextProxy _bankLastNum;
+        public TextProxy _tips;
+        public TextProxy _timeText;
+        public Image _icon;
+        public Button _confirmBtn;
+        public FInputField _moneyInput;
 
-		public override void Init ()
+        public override void Init ()
 		{
 			base.Init ();
 		}
@@ -35,6 +42,26 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
+
+        public void OnClickPayway()
+        {
+
+        }
+
+        public void OnClickExplain()
+        {
+
+        }
+
+        public void OnValueChanged(string str)
+        {
+
+        }
+
+        private void Refresh()
+        {
+
+        }
 	}
 	public class YuEBaoInContext : BaseContext
 	{
