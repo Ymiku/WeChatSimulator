@@ -51,6 +51,7 @@ public class GameManager : UnitySingleton<GameManager>
     void OnExitGame()
     {
         XMLSaver.Save();
+		XMLSaver.saveData = null;
     }
     void Update()
     {
