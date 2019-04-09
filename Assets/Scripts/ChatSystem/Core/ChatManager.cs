@@ -45,26 +45,6 @@ public class ChatManager : Singleton<ChatManager> {
         curExecuteInstance = curInstance;
 		return curInstance.GetLastRunningNode ();
 	}
-	public Node GetFront()
-	{
-        curExecuteInstance = curInstance;
-        return curInstance.GetFront ();
-	}
-	public Node GetNext()
-	{
-        curExecuteInstance = curInstance;
-        return curInstance.GetNext ();
-	}
-	public void PoolUp()
-	{
-        curExecuteInstance = curInstance;
-        curInstance.PoolUp ();
-	}
-	public void PoolDown()
-	{
-        curExecuteInstance = curInstance;
-        curInstance.PoolDown ();
-	}
 	public void EnterChat(string name1,string name2 = "")
 	{
         Debug.Log(name1);
@@ -189,6 +169,8 @@ public class ChatManager : Singleton<ChatManager> {
 		int index = poolList.IndexOf (aid);
 		if (index == -1) {
 			GraphCanvasType c = Resources.Load<GraphCanvasType> ("Sections/" + pairId.ToString () + "/" + id.ToString ());
+            if (c == null)
+                return null;
 			c.sectionID = id;
 			for (int i = 0; i < c.nodes.Count; i++) {
 				c.nodes [i].nodeId = i;

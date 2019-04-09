@@ -64,7 +64,7 @@ public class ChatInstance{
 			if (hasFinished) {
                 finishCount++;
 				lastSentence = GetLastSentence (curRunningNode);
-				curRunningNode = curRunningNode.GetNext ();
+                curRunningNode = GetNext(curRunningNode);
 				if (curRunningNode == null) {
 					saveData.curNodeId = -1;
 				}
@@ -102,32 +102,7 @@ public class ChatInstance{
 			return GetLastSentence (node.GetFront());
 		return node.GetLastSentence();
 	}
-	public Node GetFront()
-	{
-		Node node = null;
-		node = _activeNodes [0].GetFront ();
-
-		_activeNodes.Insert (0,node);
-		return node;
-	}
-	public Node GetNext()
-	{
-		Node node = null;
-		node = _activeNodes [_activeNodes.Count - 1].GetNext ();
-		_activeNodes.Add (node);
-		return node;
-	}
-	public void PoolUp()
-	{
-		if (_activeNodes.Count != 0)
-			_activeNodes.RemoveAt (0);
-	}
-	public void PoolDown()
-	{
-		if (_activeNodes.Count != 0)
-			_activeNodes.RemoveAt (_activeNodes.Count-1);
-	}
-	Node GetFront(Node curNode)
+	public Node GetFront(Node curNode)
 	{
 		Node node = null;
 		node = curNode.GetFront ();
@@ -138,7 +113,7 @@ public class ChatInstance{
 		GraphCanvasType canvas = ChatManager.Instance.LoadSectionByID (curPairID,curNode.sectionId-1);
 		return canvas.GetLast ();
 	}
-	Node GetNext(Node curNode)
+	public Node GetNext(Node curNode)
 	{
 		Node node = null;
 		node = curNode.GetNext ();
@@ -150,6 +125,14 @@ public class ChatInstance{
 		return canvas.GetFirst ();
 
 	}
+    public void ActiveNode(Node node)
+    {
+        _activeNodes.Add(node);
+    }
+    public void DeactiveNode(Node node)
+    {
+        _activeNodes.Remove(node);
+    }
 	public bool CheckIfUsing(int selectionId)
 	{
 		if (curSection.sectionID == selectionId)

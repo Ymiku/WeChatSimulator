@@ -89,7 +89,9 @@ public class SetParamNode : Node
 
     public override Node GetFront ()
 	{
-		if (inputKnob.connections.Count == 1||IsInEditor())
+        if (inputKnob.connections.Count == 0)
+            return null;
+        if (inputKnob.connections.Count == 1||IsInEditor())
             return inputKnob.connections[0].body;
         List<Node> normal = new List<Node>();
         List<Node> option = new List<Node>();
