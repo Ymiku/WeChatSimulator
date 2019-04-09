@@ -39,7 +39,6 @@ public class PoolableFScrollView : MonoBehaviour {
     {
         needUpdate = true;
         contextTrans.anchoredPosition = Vector2.zero;
-        Debug.Log("ScrollEnter "+ ChatManager.Instance.curInstance.friendName);
         contextTrans.sizeDelta = new Vector2(contextTrans.sizeDelta.x, ChatManager.Instance.curInstance.saveData.totalRectHeight);
     }
     public void OnExit()
@@ -62,7 +61,6 @@ public class PoolableFScrollView : MonoBehaviour {
             while (front.GetFront()!=null&&!front.GetFront().hasCalHeight)
             {
                 front = front.GetFront();
-                Debug.Log(ChatManager.Instance.curExecuteInstance.friendName);
             }
         }
         else
