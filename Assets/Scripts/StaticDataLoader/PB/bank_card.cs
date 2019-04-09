@@ -29,6 +29,13 @@ namespace static_data
       get { return _card_name; }
       set { _card_name = value; }
     }
+    private string _card_icon;
+    [global::ProtoBuf.ProtoMember(3, IsRequired = true, Name=@"card_icon", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public string card_icon
+    {
+      get { return _card_icon; }
+      set { _card_icon = value; }
+    }
     private global::ProtoBuf.IExtension extensionObject;
     global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }

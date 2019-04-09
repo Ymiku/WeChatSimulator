@@ -6,6 +6,7 @@ public static class StaticDataBankCard
 {
     public static BANK_CARD_ARRAY Info;
     public static Dictionary<string, string> CardMarkToNameDict = new Dictionary<string, string>();
+    public static Dictionary<string, string> BankSpriteDict = new Dictionary<string, string>();
 
     public static void Init()
     {
@@ -20,6 +21,8 @@ public static class StaticDataBankCard
         {
             if (!CardMarkToNameDict.ContainsKey(Info.items[i].card_mark.ToString()))
                 CardMarkToNameDict.Add(Info.items[i].card_mark.ToString(), Info.items[i].card_name);
+            if (!BankSpriteDict.ContainsKey(Info.items[i].card_name))
+                BankSpriteDict.Add(Info.items[i].card_name, Info.items[i].card_icon);
         }
     }
 
@@ -35,5 +38,15 @@ public static class StaticDataBankCard
                 return CardMarkToNameDict[checkStr];
         }
         return ContentHelper.Read(ContentHelper.DefaultCardName);
+    }
+
+    public static string GetBankSpriteByBankName(string bankName)
+    {
+        if (!string.IsNullOrEmpty(bankName))
+            return GameDefine.DefaultBankSprite;
+        else if (BankSpriteDict.ContainsKey(bankName))
+            return BankSpriteDict[bankName];
+        else
+            return GameDefine.DefaultBankSprite;
     }
 }

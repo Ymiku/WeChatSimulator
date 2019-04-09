@@ -5,22 +5,22 @@ using System.Collections.Generic;
 
 public class AssetsManager : Singleton<AssetsManager>
 {
-    private int id;
-    #region 当前player的存档数据
+    private int _id;
+    private Sprite _defaultCardIcon;
+    private Dictionary<string, Sprite> _bankIconDict = new Dictionary<string, Sprite>();
     public AssetsSaveData assetsData;
     public List<BankCardSaveData> bankCardsData;
     public BankCardSaveData curUseBankCard;
-    #endregion
-
     public PaywayType curPayway = PaywayType.None;
 
     public void Set(int id)
     {
-        this.id = id;
+        this._id = id;
         curPayway = PaywayType.None;
         assetsData = XMLSaver.saveData.GetAssetsData(id);
         bankCardsData = XMLSaver.saveData.GetBankCardDataList(id); 
         curUseBankCard = XMLSaver.saveData.GetCurUseCard(id);
+        _defaultCardIcon = Resources.Load<Sprite>(GameDefine.DefaultBankSprite);
     }
 
     /// <summary>
@@ -94,7 +94,24 @@ public class AssetsManager : Singleton<AssetsManager>
     /// </summary>
     public void UpdateCardsList()
     {
-        bankCardsData = XMLSaver.saveData.GetBankCardDataList(id);
+        bankCardsData = XMLSaver.saveData.GetBankCardDataList(_id);
+    }
+
+    /// <summary>
+    /// 获取银行卡icon
+    /// </summary>
+   public Sprite GetBankSprite(string bankName)
+    {
+        if (string.IsNullOrEmpty(bankName))
+            return _defaultCardIcon;
+        if (_bankIconDict.ContainsKey(bankName))
+            return _bankIconDict[bankName];
+        else
+        {
+            Sprite sprite = Resources.Load<Sprite>(StaticDataBankCard.GetBankSpriteByBankName(bankName));
+            _bankIconDict.Add(bankName, sprite);
+            return sprite;
+        }
     }
 }
 

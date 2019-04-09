@@ -183,7 +183,7 @@ public static class Utils
                 }
                 break;
             default:
-                Debug.LogError(string.Format("try use pay way {0}, but not handle this way"));
+                Debug.LogError(string.Format("try use pay way {0}, but not handle this way", way));
                 break;
         }
         return result;

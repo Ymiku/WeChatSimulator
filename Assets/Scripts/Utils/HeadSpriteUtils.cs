@@ -22,7 +22,7 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
     {
         base.SingletonInit();
         _outputShader = Shader.Find("UI/Default");
-        _defaultSprite = Resources.Load<Sprite>(AccountDefine.DefaultHeadSprite);
+        _defaultSprite = Resources.Load<Sprite>(GameDefine.DefaultHeadSprite);
     }
 
     public void SetHead(Image desImage, int userId)
