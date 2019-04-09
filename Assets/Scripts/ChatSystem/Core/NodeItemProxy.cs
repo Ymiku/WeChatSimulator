@@ -44,6 +44,7 @@ public class NodeItemProxy : MonoBehaviour {
 	public Node linkedNode;
 	public float SetData(Node node)
 	{
+		text.rectTransform.sizeDelta = new Vector2 (660.0f,800.0f);
 		linkedNode = node;
 		avatar.rectTransform.anchoredPosition = new Vector2 (0.0f,-padding);
 		if (prefabId == 0) {
