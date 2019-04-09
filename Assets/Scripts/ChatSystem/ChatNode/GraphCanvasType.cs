@@ -53,6 +53,10 @@ namespace NodeEditorFramework.Standard
 					break;
 				}
 			}
+			if (firstNode == null) {
+				firstNode = nodes [0];
+				Debug.LogError ("Did not set first node!");
+			}
 			return firstNode;
 		}
 		public Node GetLast()
@@ -64,6 +68,10 @@ namespace NodeEditorFramework.Standard
 					lastNode = nodes [i];
 					break;
 				}
+			}
+			if (lastNode == null) {
+				lastNode = nodes [nodes.Count-1];
+				Debug.LogError ("Did not set last node!");
 			}
 			return lastNode;
 		}
