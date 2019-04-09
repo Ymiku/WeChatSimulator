@@ -1,7 +1,9 @@
 ﻿
-public class ContentHelper {
+public class ContentHelper
+{
 
-    public static string Read(int id) {
+    public static string Read(int id)
+    {
         return StaticDataContent.GetContent(id);
     }
 
@@ -29,4 +31,6 @@ public class ContentHelper {
     public const int TotalAssetsText = 23; //总金额{0}元
     public const int GuestDontWorry = 24; //客官别急
     public const int AddCardSucc = 25; //添加银行卡成功
+    public const int BalanceMaxTransfer = 26; //最多可转入{0}元
+    public const int BankCardMaxTransfer = 27; //该卡本次最多可转入{0}元
 }
