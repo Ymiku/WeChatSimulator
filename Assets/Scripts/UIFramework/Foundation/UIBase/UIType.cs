@@ -80,5 +80,8 @@ namespace UIFrameWork
 		public static readonly UIType YuEBaoIn = new UIType("View/YuEBaoInView"); //转入余额宝
 		public static readonly UIType YuEBaoOutToBalance = new UIType("View/YuEBaoOutToBalanceView"); //余额宝转出到余额
 		public static readonly UIType YuEBaoOutToCard = new UIType("View/YuEBaoOutToCardView"); //余额宝转出到银行卡
+		public static readonly UIType YuEBaoInSucc = new UIType("View/YuEBaoInSuccView"); //余额宝转入成功
+		public static readonly UIType YuEBaoOutToBalanceSucc = new UIType("View/YuEBaoOutToBalanceSuccView"); //余额宝转到余额成功
+		public static readonly UIType YuEBaoOutToCardSucc = new UIType("View/YuEBaoOutToCardSuccView"); //余额宝转到银行卡成功
     }
 }
