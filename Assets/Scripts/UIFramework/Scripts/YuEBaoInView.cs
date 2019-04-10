@@ -49,12 +49,14 @@ namespace UIFrameWork
 
         public void OnClickPayway()
         {
-
+            double amount = 0;
+            double.TryParse(_moneyInput.text, out amount);
+            UIManager.Instance.Push(new SelectPayWayContext(amount, SpendType.ToYuEBao));
         }
 
         public void OnClickExplain()
         {
-
+            
         }
 
         public void OnClickConfirm()

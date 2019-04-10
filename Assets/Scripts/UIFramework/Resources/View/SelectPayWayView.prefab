@@ -607,7 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeWhenPause: 0
-  animator: {fileID: 0}
+  fadeType: 1
 --- !u!114 &114253252371122650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1395,7 +1395,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -355.22, y: -36.5}
-  m_SizeDelta: {x: 415, y: 93.6}
+  m_SizeDelta: {x: 758.17, y: 93.6}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!224 &224100964989084980
 RectTransform:

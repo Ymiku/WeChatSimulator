@@ -122,3 +122,9 @@ public enum PaywayType
     YuEBao,
     BankCard,
 }
+
+public enum SpendType
+{
+    Transfer,
+    ToYuEBao,
+}

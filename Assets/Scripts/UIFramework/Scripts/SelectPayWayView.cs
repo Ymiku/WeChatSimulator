@@ -52,6 +52,7 @@ namespace UIFrameWork
                 data.isEnough = true;
                 data.cardId = cardList[i].cardId;
                 data.payway = PaywayType.BankCard;
+                data.spendType = _context.spendType;
                 dataList.Add(data);
             }
             bool balanceEnough = AssetsManager.Instance.assetsData.balance >= _context.amount;
@@ -59,11 +60,13 @@ namespace UIFrameWork
             balanceData.isAddCard = false;
             balanceData.isEnough = balanceEnough;
             balanceData.payway = PaywayType.Banlance;
-            bool yuEBaoEnough = AssetsManager.Instance.assetsData.yuEBao >= _context.amount;
+            balanceData.spendType = _context.spendType;
+            bool yuEBaoEnough = AssetsManager.Instance.assetsData.yuEBao >= _context.amount && _context.spendType != SpendType.ToYuEBao;
             SelectPaywayItemData yuEBaoData = new SelectPaywayItemData();
             yuEBaoData.isAddCard = false;
             yuEBaoData.isEnough = yuEBaoEnough;
             yuEBaoData.payway = PaywayType.YuEBao;
+            yuEBaoData.spendType = _context.spendType;
             SelectPaywayItemData addCardData = new SelectPaywayItemData();
             addCardData.isAddCard = true;
             if (balanceEnough)
@@ -84,11 +87,13 @@ namespace UIFrameWork
 		{
 		}
 
-        public SelectPayWayContext(double amount) : base(UIType.SelectPayWay)
+        public SelectPayWayContext(double amount, SpendType spendType) : base(UIType.SelectPayWay)
         {
             this.amount = amount;
+            this.spendType = spendType;
         }
 
         public double amount;
+        public SpendType spendType;
 	}
 }

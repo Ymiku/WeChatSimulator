@@ -65,8 +65,9 @@ namespace UIFrameWork
             base.Excute();
         }
 
-        public void OnClickUseItem() {
-            UIManager.Instance.Push(new SelectPayWayContext(_context.amount));
+        public void OnClickUseItem()
+        {
+            UIManager.Instance.Push(new SelectPayWayContext(_context.amount, SpendType.Transfer));
         }
 
         public void OnClickOk()
@@ -97,13 +98,13 @@ namespace UIFrameWork
                     else
                     {
                         ShowNotice(ContentHelper.Read(ContentHelper.AssetsNotEnough));
-                        UIManager.Instance.Push(new SelectPayWayContext(_amount));
+                        UIManager.Instance.Push(new SelectPayWayContext(_amount, SpendType.Transfer));
                     }
                 }));
             }
             else
             {
-                UIManager.Instance.Push(new SelectPayWayContext(_context.amount));
+                UIManager.Instance.Push(new SelectPayWayContext(_context.amount, SpendType.Transfer));
             }
         }
 

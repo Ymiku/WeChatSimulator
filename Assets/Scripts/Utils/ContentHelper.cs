@@ -33,4 +33,6 @@ public class ContentHelper
     public const int AddCardSucc = 25; //添加银行卡成功
     public const int BalanceMaxTransfer = 26; //最多可转入{0}元
     public const int BankCardMaxTransfer = 27; //该卡本次最多可转入{0}元
+    public const int MoneyNotEnough = 28; //金额不足
+    public const int PaywayNotSupport = 29; //该付款方式不支持当前交易
 }

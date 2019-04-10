@@ -13,6 +13,7 @@ public class SelectPaywayItem : ItemBase
     private Button _selectBtn;
     private Image _icon;
     private Text _payWayText;
+    private Text _notEnoughTitleText;
     private Text _notEnoughText;
 
     public override void Init()
@@ -25,7 +26,8 @@ public class SelectPaywayItem : ItemBase
         _selectBtn = GetComponent<Button>();
         _icon = FindInChild<Image>("Icon");
         _payWayText = FindInChild<Text>("CanUseRoot/text");
-        _notEnoughText = FindInChild<Text>("NotEnoughRoot/titleText");
+        _notEnoughTitleText = FindInChild<Text>("NotEnoughRoot/titleText");
+        _notEnoughText = FindInChild<Text>("NotEnoughRoot/text");
         _selectBtn.onClick.AddListener(OnClick);
     }
 
@@ -91,12 +93,17 @@ public class SelectPaywayItem : ItemBase
         }
         else if (_data.payway == PaywayType.YuEBao)
         {
-            _payWayText.text = Utils.FormatPaywayStr(_data.payway) + "(:" + ContentHelper.Read(ContentHelper.RemainText) + 
+            _payWayText.text = Utils.FormatPaywayStr(_data.payway) + "(" + ContentHelper.Read(ContentHelper.RemainText) + 
                 ":" + AssetsManager.Instance.assetsData.yuEBao + ")";
             _icon.sprite = Utils.GetYuEBaoSprite();
         }
         if (!_data.isEnough)
-            _notEnoughText.text = _payWayText.text;
+        {
+            _notEnoughTitleText.text = _payWayText.text;
+            _notEnoughText.text = ContentHelper.Read(ContentHelper.MoneyNotEnough);
+            if (_data.payway == PaywayType.YuEBao)
+                _notEnoughText.text = ContentHelper.Read(ContentHelper.PaywayNotSupport);
+        }
     }
 }
 
@@ -104,6 +111,7 @@ public class SelectPaywayItemData: object
 {
     public bool isAddCard;
     public PaywayType payway;
+    public SpendType spendType;
     public bool isEnough;
     public string cardId;
 
