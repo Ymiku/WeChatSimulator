@@ -43,6 +43,13 @@ namespace UIFrameWork
         {
             base.OnEnter(context);
             _context = context as InputAndCheckPaywordContext;
+            if (string.IsNullOrEmpty(GameManager.Instance.accountData.payword))
+            {
+                ShowNotice(ContentHelper.Read(ContentHelper.PleaseSetPayword));
+                UIManager.Instance.Pop();
+                UIManager.Instance.Push(new ChangePaywordContext());
+                return;
+            }
             Clear();
         }
 

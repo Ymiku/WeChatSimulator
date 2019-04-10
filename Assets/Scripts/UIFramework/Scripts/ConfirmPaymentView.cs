@@ -75,11 +75,6 @@ namespace UIFrameWork
             if (_canPayFlag)
             {
                 AccountSaveData accountData = GameManager.Instance.accountData;
-                if (string.IsNullOrEmpty(accountData.payword))
-                {
-                    UIManager.Instance.Push(new ChangePaywordContext());
-                    return;
-                }
                 AssetsSaveData data = XMLSaver.saveData.GetAssetsData(_context.accountId);
                 if (data == null)
                 {

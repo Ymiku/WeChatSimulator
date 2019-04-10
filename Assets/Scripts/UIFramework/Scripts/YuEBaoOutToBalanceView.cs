@@ -79,14 +79,22 @@ namespace UIFrameWork
             }
             else
             {
-                data.yuEBao -= amount;
-                data.balance += amount;
-                UIManager.Instance.Pop();
+                UIManager.Instance.Push(new InputAndCheckPaywordContext(() =>
+                {
+                    data.yuEBao -= amount;
+                    data.balance += amount;
+                    UIManager.Instance.Pop();
+                }));
             }
         }
 
         public void OnClickToCard()
         {
+            if(AssetsManager.Instance.bankCardsData.Count == 0)
+            {
+                UIManager.Instance.Push(new AddBankCardContext());
+                return;
+            }
             UIManager.Instance.Pop();
             UIManager.Instance.Push(new YuEBaoOutToCardContext());
         }

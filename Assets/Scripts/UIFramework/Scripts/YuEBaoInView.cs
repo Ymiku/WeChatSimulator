@@ -84,7 +84,7 @@ namespace UIFrameWork
                 BankCardSaveData bankData = AssetsManager.Instance.curUseBankCard;
                 if(GameDefine.BankCardMaxTransfer < amount)
                 {
-                    ShowNotice("超过单笔最大限额");
+                    ShowNotice(ContentHelper.Read(ContentHelper.ExceedOnceMaxMoney));
                 }
                 else if (bankData.money < amount)
                 {
@@ -93,9 +93,12 @@ namespace UIFrameWork
                 }
                 else
                 {
-                    bankData.money -= amount;
-                    assetsData.yuEBao += amount;
-                    UIManager.Instance.Pop();
+                    UIManager.Instance.Push(new InputAndCheckPaywordContext(() =>
+                    {
+                        bankData.money -= amount;
+                        assetsData.yuEBao += amount;
+                        UIManager.Instance.Pop();
+                    }));
                 }
             }
         }

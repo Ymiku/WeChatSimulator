@@ -11,6 +11,7 @@ namespace UIFrameWork
         private Button _deleteBtn;
         private Button _backBtn;
         private Button _nextBtn;
+        private Text _titleText;
         private StringBuilder _stringBuilder = new StringBuilder();
         private GameObject[] _lengthObj = new GameObject[6];
         private Button[] _numberBtn = new Button[10];
@@ -35,6 +36,7 @@ namespace UIFrameWork
                 int number = i;
                 btn.onClick.AddListener(() => { OnClickNumber(number); });
             }
+            _titleText = FindInChild<Text>("BackBtn/SettingText");
             _backBtn = FindInChild<Button>("BackBtn");
             _deleteBtn = FindInChild<Button>("keypad/Delete");
             _nextBtn = FindInChild<Button>("Next");
@@ -47,7 +49,11 @@ namespace UIFrameWork
             Clear();
             _context = context as ConfirmPaywordContext;
             _newPayword = _context.payword;
-		}
+            if (string.IsNullOrEmpty(GameManager.Instance.accountData.payword))
+                _titleText.text = ContentHelper.Read(ContentHelper.SetPaywordText);
+            else
+                _titleText.text = ContentHelper.Read(ContentHelper.ChangePaywordText);
+        }
 
 		public override void OnExit(BaseContext context)
 		{

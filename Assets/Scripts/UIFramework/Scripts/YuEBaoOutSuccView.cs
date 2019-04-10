@@ -3,9 +3,10 @@ using System.Collections;
 using UnityEngine.UI;
 namespace UIFrameWork
 {
-	public class YuEBaoOutToCardSuccView : AnimateView
+	public class YuEBaoOutSuccView : AnimateView
 	{
-		private YuEBaoOutToCardSuccContext _context;
+		private YuEBaoOutSuccContext _context;
+        private TextProxy _detailText;
 
 		public override void Init ()
 		{
@@ -14,8 +15,9 @@ namespace UIFrameWork
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter(context);
-			_context = context as YuEBaoOutToCardSuccContext;
-		}
+			_context = context as YuEBaoOutSuccContext;
+            _detailText.text = _context.detailStr;
+        }
 
 		public override void OnExit(BaseContext context)
 		{
@@ -36,10 +38,17 @@ namespace UIFrameWork
 			base.Excute ();
 		}
 	}
-	public class YuEBaoOutToCardSuccContext : BaseContext
+	public class YuEBaoOutSuccContext : BaseContext
 	{
-		public YuEBaoOutToCardSuccContext() : base(UIType.YuEBaoOutToCardSucc)
+		public YuEBaoOutSuccContext() : base(UIType.YuEBaoOutSucc)
 		{
 		}
+
+        public YuEBaoOutSuccContext(string detailStr) : base(UIType.YuEBaoOutSucc)
+        {
+            this.detailStr = detailStr;
+        }
+
+        public string detailStr;
 	}
 }
