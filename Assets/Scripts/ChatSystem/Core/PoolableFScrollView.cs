@@ -83,6 +83,14 @@ public class PoolableFScrollView : MonoBehaviour {
 		}
 		_activeItems.Add (item);
 	}
+	bool CanShow(Node readNode,Node curNode)
+	{
+		if (curNode == null)
+			return true;
+		if (curNode.sectionId >= readNode.sectionId && curNode.nodeId > readNode.nodeId)
+			return true;
+		return false;
+	}
 	float borrowHeight = 0.0f;
 	// Update is called once per frame
 	void AddActiveNodeY(float h)
