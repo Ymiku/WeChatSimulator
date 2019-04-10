@@ -6,6 +6,7 @@ using NodeEditorFramework.Standard;
 public class ChatInstance{
 	int curPairID = 0;
 	public Node curRunningNode = null;
+	public Node curReadNode = null;
 	public GraphCanvasType curSection;
 	public long lastChatTimeStamp;
 	float totalRectHeight = 0.0f;
@@ -64,9 +65,14 @@ public class ChatInstance{
 			if (hasFinished) {
                 finishCount++;
 				lastSentence = GetLastSentence (curRunningNode);
+				Node temp = curRunningNode;
                 curRunningNode = GetNext(curRunningNode);
 				if (curRunningNode == null) {
 					saveData.curNodeId = -1;
+				}
+				else
+				{
+					curRunningNode.TrySetReverseOption (temp);
 				}
 			}
 		}
@@ -137,8 +143,10 @@ public class ChatInstance{
 	{
 		if (curSection.sectionID == selectionId)
 			return true;
-		if (selectionId < _activeNodes [0].sectionId || selectionId > _activeNodes [_activeNodes.Count - 1].sectionId)
-			return false;
-		return true;
+		for (int i = 0; i < _activeNodes.Count; i++) {
+			if (selectionId == _activeNodes [i].sectionId)
+				return true;
+		}
+		return false;
 	}
 }
