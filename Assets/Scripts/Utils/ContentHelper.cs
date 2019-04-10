@@ -36,4 +36,5 @@ public class ContentHelper
     public const int MoneyNotEnough = 28; //金额不足
     public const int PaywayNotSupport = 29; //该付款方式不支持当前交易
     public const int MaxCanToBanlance = 30; //本次最多可转出{0}元
+    public const int MaxCanToCard = 31; //可转出到卡{0}元
 }
