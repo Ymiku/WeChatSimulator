@@ -155,10 +155,7 @@ public class PoolableFScrollView : MonoBehaviour {
 	bool TryAddDown()
 	{
 		Node linkedNode = _activeItems [_activeItems.Count - 1].linkedNode;
-        Node down = ChatManager.Instance.curExecuteInstance.GetNext(linkedNode);
-		while (down!=null && down is SetParamNode) {
-			down = ChatManager.Instance.curExecuteInstance.GetNext(down);
-        }
+		Node down = ChatManager.Instance.curExecuteInstance.GetNext(linkedNode,true);
 		if (down == null)
 			return false;
 
@@ -169,7 +166,6 @@ public class PoolableFScrollView : MonoBehaviour {
 		float itemY = _activeItems [_activeItems.Count - 1].cachedRectTransform.anchoredPosition.y - _activeItems [_activeItems.Count - 1].height;
 		if (!down.hasCalHeight) {
 			down.hasCalHeight = true;
-            Debug.Log("ScrollAddD " + ChatManager.Instance.curInstance.friendName);
             ChatManager.Instance.curInstance.saveData.totalRectHeight += itemHeight;
 			contextTrans.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical, contextTrans.sizeDelta.y + itemHeight);
 		}
@@ -180,10 +176,7 @@ public class PoolableFScrollView : MonoBehaviour {
 	}
 	bool TryAddUp ()
 	{
-        Node up = ChatManager.Instance.curExecuteInstance.GetFront(_activeItems[0].linkedNode);
-		while (up!=null && up is SetParamNode) {
-            up = ChatManager.Instance.curExecuteInstance.GetFront(up);
-        }
+		Node up = ChatManager.Instance.curExecuteInstance.GetFront(_activeItems[0].linkedNode,true);
 		if (up == null)
 			return false;
         NodeItemProxy item = GetItem (up.enname==ChatManager.Instance.curName?1:0);
@@ -194,7 +187,6 @@ public class PoolableFScrollView : MonoBehaviour {
         ChatManager.Instance.curExecuteInstance.ActiveNode(up);
         if (!up.hasCalHeight) {
 			up.hasCalHeight = true;
-            Debug.Log("ScrollAddU " + ChatManager.Instance.curInstance.friendName);
             ChatManager.Instance.curInstance.saveData.totalRectHeight += itemHeight;
 			contextTrans.anchoredPosition +=  new Vector2(0.0f, itemHeight);
 			for (int i = 0; i < _activeItems.Count; i++) {
