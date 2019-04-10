@@ -729,6 +729,10 @@ namespace NodeEditorFramework
 		public virtual Node GetNext (){
 			return null;
 		}
+		public virtual void TrySetReverseOption(Node front)
+		{
+			
+		}
 		protected bool IsInEditor()
 		{
 			return XMLSaver.saveData == null;
