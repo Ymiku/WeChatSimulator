@@ -84,7 +84,6 @@ public class ChatInstanceData
 	public List<int> reverseNodeIds = new List<int>();
 	public List<int> reverseNodeOptions = new List<int>();
 
-	public List<int> nodeIdsForHeight = new List<int>();
 	//section<<8+id
 	public void AddOption(Node node,int option)
 	{
@@ -126,13 +125,5 @@ public class ChatInstanceData
 		}
 		return reverseNodeOptions [index];
 	}
-	public bool HasCalHeight(Node node)
-	{
-		return nodeIdsForHeight.IndexOf (node.nodeId+(node.sectionId<<8)) != -1;
-	}
-	public void SetHasCalHeight(Node node)
-	{
-		if (nodeIdsForHeight.IndexOf (node.nodeId + (node.sectionId << 8)) == -1)
-			nodeIdsForHeight.Add (node.nodeId + (node.sectionId << 8));
-	}
+
 }

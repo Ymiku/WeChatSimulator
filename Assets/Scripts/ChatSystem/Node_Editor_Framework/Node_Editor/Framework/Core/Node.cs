@@ -24,12 +24,6 @@ namespace NodeEditorFramework
 			Last,
 		}
 		//use at runtime
-		public bool hasCalHeight{
-			get{ return ChatManager.Instance.curExecuteInstance.saveData.HasCalHeight (this); }
-			set{ if (value)
-					ChatManager.Instance.curExecuteInstance.saveData.SetHasCalHeight (this);
-			}
-		}
 		public int reverseOption{
 			get{ return ChatManager.Instance.curExecuteInstance.saveData.GetReverseOption (this);}
 			set{ ChatManager.Instance.curExecuteInstance.saveData.AddReverseOption (this, value);}
@@ -728,7 +722,7 @@ namespace NodeEditorFramework
 			}
 		}
 		public virtual Node GetFront (bool showableOnly = false){
-			if (inputKnob.connections.Count == 0)
+			if (inputKnob==null||inputKnob.connections.Count == 0)
 				return null;
 			Node result = null;
 			if (inputKnob.connections.Count == 1||IsInEditor())
@@ -740,7 +734,7 @@ namespace NodeEditorFramework
 			return result;
 		}
 		public virtual Node GetNext (bool showableOnly = false){
-			if (outputKnob.connections.Count == 0)
+			if (outputKnob==null||outputKnob.connections.Count == 0)
 				return null;
 			Node result = outputKnob.connections [0].body;
 			if (showableOnly&&result is SetParamNode)

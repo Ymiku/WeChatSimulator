@@ -132,6 +132,8 @@ public class ChatInstance{
 		if (node != null)
 			return node;
 		GraphCanvasType canvas = ChatManager.Instance.LoadSectionByID (curPairID,curNode.sectionId+1);
+		if (canvas == null)
+			return null;
 		if (showableOnly && canvas.GetFirst () is SetParamNode)
 			return GetNext (canvas.GetFirst (),showableOnly);
 		return canvas.GetFirst ();
@@ -154,5 +156,17 @@ public class ChatInstance{
 				return true;
 		}
 		return false;
+	}
+	public Node ReadNext()
+	{
+		nextReadNode = GetNext (nextReadNode,true);
+		if (nextReadNode == null) {
+			saveData.readSectionId = saveData.curSectionId;
+			saveData.readNodeId = -1;
+			return null;
+		}
+		saveData.readSectionId = nextReadNode.sectionId;
+		saveData.readNodeId = nextReadNode.nodeId;
+		return nextReadNode;
 	}
 }
