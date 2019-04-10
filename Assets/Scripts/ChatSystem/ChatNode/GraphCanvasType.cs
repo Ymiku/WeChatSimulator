@@ -75,5 +75,22 @@ namespace NodeEditorFramework.Standard
 			}
 			return lastNode;
 		}
+        public void GenerateOrder(Node node)
+        {
+            if (node is ChatOptionNode)
+            {
+                ChatOptionNode optionNode = node as ChatOptionNode;
+                for (int i = 0; i < optionNode.dynamicConnectionPorts.Count; i++)
+                {
+                    optionNode.dynamicConnectionPorts[i].connections[0].body.orderId = node.orderId + 1;
+                    GenerateOrder(optionNode.dynamicConnectionPorts[i].connections[0].body);
+                    return;
+                }
+            }
+            if (node.outputKnob == null|| node.outputKnob.connections.Count==0)
+                return;
+            node.outputKnob.connections[0].body.orderId = node.orderId + 1;
+            GenerateOrder(node.outputKnob.connections[0].body);
+        }
 	}
 }

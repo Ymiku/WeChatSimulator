@@ -34,7 +34,9 @@ namespace NodeEditorFramework
 		public ValueConnectionKnob outputKnob;
 		[NonSerialized]
 		public int nodeId;
-		public int sectionId;
+        [NonSerialized]
+        public int orderId;
+        public int sectionId;
 		[FormerlySerializedAs("Name")]
 		public string enname;
 		[FormerlySerializedAs("Comd")]

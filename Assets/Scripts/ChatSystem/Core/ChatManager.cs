@@ -175,6 +175,8 @@ public class ChatManager : Singleton<ChatManager> {
 				c.nodes [i].nodeId = i;
 				c.nodes [i].sectionId = id;
 			}
+            if(c.GetFirst()!=null)
+                c.GenerateOrder(c.GetFirst());
 			poolList.Add (aid);
 			selectionPool.Add (aid,c);
 			return c;
