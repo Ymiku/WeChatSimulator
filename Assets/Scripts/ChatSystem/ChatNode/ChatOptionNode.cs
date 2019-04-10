@@ -97,13 +97,9 @@ public class ChatOptionNode : Node
 			return dynamicConnectionPorts[0].connections[0].body;
 		return dynamicConnectionPorts[option].connections[0].body;
 	}
-	int GetOptionID()
-	{
-		return option;
-	}
 	public override string GetLastSentence ()
 	{
-		return labels[ChatManager.Instance.curExecuteInstance.saveData.GetOption(this)];
+		return labels[option];
 	}
 	public int option{
 		get{ return ChatManager.Instance.curExecuteInstance.saveData.GetOption (this);}

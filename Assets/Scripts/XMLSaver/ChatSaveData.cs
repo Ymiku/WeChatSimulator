@@ -78,8 +78,11 @@ public class ChatInstanceData
 	public int readNodeId = 0;
 	public long lastChatTimeStamp;
 	public float totalRectHeight = 0.0f;
+
 	public List<int> nodeIds = new List<int>();
 	public List<int> nodeOptions = new List<int>();
+	public List<int> reverseNodeIds = new List<int>();
+	public List<int> reverseNodeOptions = new List<int>();
 
 	public List<int> nodeIdsForHeight = new List<int>();
 	//section<<8+id
@@ -102,6 +105,26 @@ public class ChatInstanceData
 			return -2;
 		}
 		return nodeOptions [index];
+	}
+	public void AddReverseOption(Node node,int option)
+	{
+		int index = reverseNodeIds.IndexOf (node.nodeId + (node.sectionId << 8));
+		if (index == -1) {
+			reverseNodeIds.Add (node.nodeId + (node.sectionId << 8));
+			reverseNodeOptions.Add (option);
+		} else {
+			reverseNodeOptions [index] = option;
+		}
+	}
+	public int GetReverseOption(Node node)
+	{
+		int index = reverseNodeIds.IndexOf (node.nodeId + (node.sectionId << 8));
+		if (index == -1) {
+			reverseNodeIds.Add (node.nodeId + (node.sectionId << 8));
+			reverseNodeOptions.Add (-2);
+			return -2;
+		}
+		return reverseNodeOptions [index];
 	}
 	public bool HasCalHeight(Node node)
 	{

@@ -71,7 +71,7 @@ public class NodeItemProxy : MonoBehaviour {
         {
             text.enabled = true;
             image.enabled = false;
-            text.text = (node as ChatOptionNode).labels[ChatManager.Instance.curInstance.saveData.GetOption(node)];
+			text.text = (node as ChatOptionNode).labels[(node as ChatOptionNode).option];
             //text.rectTransform.sizeDelta = new Vector2 (text.preferredWidth, Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight + 20.0f));
             backGround.sizeDelta = new Vector2(Mathf.Max(80.0f, text.preferredWidth + 40.0f), Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight + 40.0f));
             text.rectTransform.sizeDelta = new Vector2(backGround.sizeDelta.x - 20.0f, backGround.sizeDelta.y);

@@ -30,6 +30,10 @@ namespace NodeEditorFramework
 					ChatManager.Instance.curExecuteInstance.saveData.SetHasCalHeight (this);
 			}
 		}
+		public int reverseOption{
+			get{ return ChatManager.Instance.curExecuteInstance.saveData.GetReverseOption (this);}
+			set{ ChatManager.Instance.curExecuteInstance.saveData.AddReverseOption (this, value);}
+		}
 		[NonSerialized]
 		public int nodeId;
 		public int sectionId;
