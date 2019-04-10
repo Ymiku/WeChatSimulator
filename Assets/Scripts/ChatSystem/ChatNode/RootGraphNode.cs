@@ -22,13 +22,6 @@ namespace NodeEditorFramework.Standard
 			foreach (ConnectionKnob knob in connectionKnobs) 
 				knob.DisplayLayout ();
 		}
-		public override Node GetFront ()
-		{
-			return null;
-		}
-		public override Node GetNext ()
-		{
-			return outputKnob.connections [0].body;
-		}
+
 	}
 }

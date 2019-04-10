@@ -6,7 +6,7 @@ using NodeEditorFramework.Standard;
 public class ChatInstance{
 	int curPairID = 0;
 	public Node curRunningNode = null;
-	public Node curReadNode = null;
+	public Node nextReadNode = null;
 	public GraphCanvasType curSection;
 	public long lastChatTimeStamp;
 	float totalRectHeight = 0.0f;
@@ -36,12 +36,14 @@ public class ChatInstance{
         {
             front = curSection.GetLast();
         }
-		else if(saveData.curNodeId == ChatManager.need2Init)
-		{
-			front = curSection.GetFirst ();
+		if (saveData.readNodeId >= 0) {
+			nextReadNode = ChatManager.Instance.LoadSectionByID (curPairID, saveData.readSectionId).nodes [saveData.readNodeId];
+		} else {
+			nextReadNode = ChatManager.Instance.LoadSectionByID (curPairID, saveData.curSectionId).GetLast ();
 		}
-		if (front != null)
+		if (front != null) {
 			lastSentence = GetLastSentence (front);
+		}
 		totalRectHeight = saveData.totalRectHeight;
 	}
 	public void OnEnter()
@@ -63,6 +65,7 @@ public class ChatInstance{
 			hasFinished = false;
 			hasFinished = curRunningNode.Execute();
 			if (hasFinished) {
+				DeactiveNode (curRunningNode);
                 finishCount++;
 				lastSentence = GetLastSentence (curRunningNode);
 				Node temp = curRunningNode;
@@ -73,6 +76,7 @@ public class ChatInstance{
 				else
 				{
 					curRunningNode.TrySetReverseOption (temp);
+					ActiveNode (curRunningNode);
 				}
 			}
 		}
@@ -108,26 +112,28 @@ public class ChatInstance{
 			return GetLastSentence (node.GetFront());
 		return node.GetLastSentence();
 	}
-	public Node GetFront(Node curNode)
+	public Node GetFront(Node curNode,bool showableOnly = false)
 	{
 		Node node = null;
-		node = curNode.GetFront ();
+		node = curNode.GetFront (showableOnly);
 		if (node != null)
 			return node;
 		if (curNode.sectionId == 0)
 			return null;
 		GraphCanvasType canvas = ChatManager.Instance.LoadSectionByID (curPairID,curNode.sectionId-1);
+		if (showableOnly && canvas.GetLast () is SetParamNode)
+			return GetFront (canvas.GetLast (),showableOnly);
 		return canvas.GetLast ();
 	}
-	public Node GetNext(Node curNode)
+	public Node GetNext(Node curNode,bool showableOnly = false)
 	{
 		Node node = null;
-		node = curNode.GetNext ();
+		node = curNode.GetNext (showableOnly);
 		if (node != null)
 			return node;
 		GraphCanvasType canvas = ChatManager.Instance.LoadSectionByID (curPairID,curNode.sectionId+1);
-		if (canvas == null)
-			return null;
+		if (showableOnly && canvas.GetFirst () is SetParamNode)
+			return GetNext (canvas.GetFirst (),showableOnly);
 		return canvas.GetFirst ();
 
 	}

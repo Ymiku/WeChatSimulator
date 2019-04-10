@@ -24,8 +24,6 @@ public class ChatManager : Singleton<ChatManager> {
 		//pairId2Instance.Add (GetPairID(curName,name),new ChatInstance());
 		XMLSaver.saveData.instanceID.Add (GetPairID(curName,name));
 		ChatInstanceData data = new ChatInstanceData ();
-		data.curNodeId = 0;
-		data.curSectionId = 0;
 		data.lastChatTimeStamp = GameManager.Instance.time;
 		XMLSaver.saveData.instanceData.Add (data);
 		OnExit ();

@@ -34,6 +34,10 @@ namespace NodeEditorFramework
 			get{ return ChatManager.Instance.curExecuteInstance.saveData.GetReverseOption (this);}
 			set{ ChatManager.Instance.curExecuteInstance.saveData.AddReverseOption (this, value);}
 		}
+		[ValueConnectionKnob("Input", Direction.In, "System.String")]
+		public ValueConnectionKnob inputKnob;
+		[ValueConnectionKnob("Output", Direction.Out, "System.String")]
+		public ValueConnectionKnob outputKnob;
 		[NonSerialized]
 		public int nodeId;
 		public int sectionId;
@@ -723,11 +727,25 @@ namespace NodeEditorFramework
 				connectionPorts[i].ClearConnections (true);
 			}
 		}
-		public virtual Node GetFront (){
-			return null;
+		public virtual Node GetFront (bool showableOnly = false){
+			if (inputKnob.connections.Count == 0)
+				return null;
+			Node result = null;
+			if (inputKnob.connections.Count == 1||IsInEditor())
+				result = inputKnob.connections[0].body;
+			else
+				result = inputKnob.connections[reverseOption].body;
+			if (showableOnly&&result is SetParamNode)
+				return result.GetFront (showableOnly);
+			return result;
 		}
-		public virtual Node GetNext (){
-			return null;
+		public virtual Node GetNext (bool showableOnly = false){
+			if (outputKnob.connections.Count == 0)
+				return null;
+			Node result = outputKnob.connections [0].body;
+			if (showableOnly&&result is SetParamNode)
+				return result.GetFront (showableOnly);
+			return result;
 		}
 		public virtual void TrySetReverseOption(Node front)
 		{

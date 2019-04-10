@@ -73,11 +73,11 @@ public partial class SaveData
 public class ChatInstanceData
 {
 	public int curSectionId;
-	public int curNodeId = ChatManager.need2Init;
+	public int curNodeId;
 	public int readSectionId;
-	public int readNodeId = 0;
+	public int readNodeId;
 	public long lastChatTimeStamp;
-	public float totalRectHeight = 0.0f;
+	public float totalRectHeight;
 
 	public List<int> nodeIds = new List<int>();
 	public List<int> nodeOptions = new List<int>();

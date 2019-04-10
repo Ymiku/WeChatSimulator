@@ -27,10 +27,6 @@ public class SetParamNode : Node
 	public override string Title { get { return "变量设置"; } }
 	public override Vector2 DefaultSize { get { return new Vector2 (200, 100); } }
 
-	[ValueConnectionKnob("Input", Direction.In, "System.String")]
-	public ValueConnectionKnob inputKnob;
-	[ValueConnectionKnob("Output", Direction.Out, "System.String")]
-	public ValueConnectionKnob outputKnob;
 #if UNITY_EDITOR
     protected internal override void DrawNode ()
 	{
@@ -98,20 +94,6 @@ public class SetParamNode : Node
 			}
 		}
 
-	}
-    public override Node GetFront ()
-	{
-        if (inputKnob.connections.Count == 0)
-            return null;
-        if (inputKnob.connections.Count == 1||IsInEditor())
-            return inputKnob.connections[0].body;
-		return inputKnob.connections[reverseOption].body;
-    }
-	public override Node GetNext ()
-	{
-		if (outputKnob.connections.Count == 0)
-			return null;
-		return outputKnob.connections [0].body;
 	}
 	public override bool Execute ()
 	{

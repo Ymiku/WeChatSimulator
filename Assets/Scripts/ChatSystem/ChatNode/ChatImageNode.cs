@@ -19,10 +19,6 @@ public class ChatImageNode : Node
 	public override string Title { get { return "图片对话框"; } }
 	public override Vector2 DefaultSize { get { return new Vector2 (200, 180); } }
 
-	[ValueConnectionKnob("Input", Direction.In, "System.String")]
-	public ValueConnectionKnob inputKnob;
-	[ValueConnectionKnob("Output", Direction.Out, "System.String")]
-	public ValueConnectionKnob outputKnob;
 	private Vector2 scroll;
 	[FormerlySerializedAs("SayingCharacterPotrait")]
 	public Sprite CharacterPotrait;
@@ -67,7 +63,7 @@ public class ChatImageNode : Node
 		}
 
 	}
-    public override Node GetFront ()
+	public override Node GetFront (bool showableOnly = false)
 	{
         if (inputKnob.connections.Count == 0)
             return null;
@@ -75,7 +71,7 @@ public class ChatImageNode : Node
             return inputKnob.connections[0].body;
 		return inputKnob.connections[reverseOption].body;
     }
-	public override Node GetNext ()
+	public override Node GetNext (bool showableOnly = false)
 	{
 		if (outputKnob.connections.Count == 0)
 			return null;

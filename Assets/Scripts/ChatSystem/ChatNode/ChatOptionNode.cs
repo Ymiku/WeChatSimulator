@@ -18,8 +18,6 @@ public class ChatOptionNode : Node
 	public override bool AutoLayout { get { return true; } } // IMPORTANT -> Automatically resize to fit list
 
 	public List<string> labels = new List<string>();
-	[ValueConnectionKnob("Input", Direction.In, "System.String")]
-	public ValueConnectionKnob inputKnob;
 	private ValueConnectionKnobAttribute dynaCreationAttribute = new ValueConnectionKnobAttribute("Output", Direction.Out, "System.String");
 #if UNITY_EDITOR
     public override void NodeGUI()
@@ -36,6 +34,7 @@ public class ChatOptionNode : Node
 		// Display text field and add button
 		GUILayout.BeginHorizontal();
 		inputKnob.DisplayLayout ();
+		outputKnob.DisplayLayout ();
 		if (cond == Cond.ControlByVar) {
 			GUILayout.Label ("提示");
 			tip = EditorGUILayout.TextField (tip);
@@ -75,21 +74,16 @@ public class ChatOptionNode : Node
 		}
 
 	}
-    public override Node GetFront ()
+	public override Node GetNext (bool showableOnly = false)
 	{
-        if (inputKnob.connections.Count == 0)
-            return null;
-        if (inputKnob.connections.Count == 1||IsInEditor())
-            return inputKnob.connections[0].body;
-		return inputKnob.connections[reverseOption].body;
-    }
-	public override Node GetNext ()
-	{
-		if (dynamicConnectionPorts.Count == 0)
+		if (dynamicConnectionPorts.Count == 0||dynamicConnectionPorts[0].connections.Count==0)
 			return null;
 		if(IsInEditor())
 			return dynamicConnectionPorts[0].connections[0].body;
-		return dynamicConnectionPorts[option].connections[0].body;
+		Node result = dynamicConnectionPorts[option].connections[0].body;
+		if (showableOnly && result is SetParamNode)
+			return result.GetNext ();
+		return result;
 	}
 	public override string GetLastSentence ()
 	{
