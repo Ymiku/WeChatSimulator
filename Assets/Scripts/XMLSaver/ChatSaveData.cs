@@ -73,7 +73,7 @@ public partial class SaveData
 public class ChatInstanceData
 {
 	public int curSectionId;
-	public int curNodeId;
+	public int curNodeId = ChatManager.need2Init;
 	public int readSectionId;
 	public int readNodeId;
 	public long lastChatTimeStamp;
@@ -100,8 +100,8 @@ public class ChatInstanceData
 		int index = nodeIds.IndexOf (node.nodeId + (node.sectionId << 8));
 		if (index == -1) {
 			nodeIds.Add (node.nodeId + (node.sectionId << 8));
-			nodeOptions.Add (-2);
-			return -2;
+			nodeOptions.Add (ChatManager.need2Init);
+			return ChatManager.need2Init;
 		}
 		return nodeOptions [index];
 	}

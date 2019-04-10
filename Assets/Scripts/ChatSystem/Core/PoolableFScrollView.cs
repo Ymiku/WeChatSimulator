@@ -81,10 +81,17 @@ public class PoolableFScrollView : MonoBehaviour {
 	}
 	bool CanShow(Node readNode,Node curNode)
 	{
+		return false;
 		if (curNode == null)
 			return true;
-		if (curNode.sectionId >= readNode.sectionId && curNode.nodeId > readNode.nodeId)
+		if (curNode.sectionId > readNode.sectionId)
 			return true;
+		Node next = readNode.GetNext ();
+		while (next!=null) {
+			if (next == curNode)
+				return true;
+			next = readNode.GetNext ();
+		}
 		return false;
 	}
 	float borrowHeight = 0.0f;

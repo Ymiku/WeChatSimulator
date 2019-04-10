@@ -36,6 +36,12 @@ public class ChatInstance{
         {
             front = curSection.GetLast();
         }
+		else if(saveData.curNodeId == ChatManager.need2Init)
+		{
+			nextReadNode = curRunningNode = curSection.GetFirst ();
+			saveData.curNodeId = curRunningNode.nodeId;
+			saveData.readNodeId = nextReadNode.nodeId;
+		}
 		if (saveData.readNodeId >= 0) {
 			nextReadNode = ChatManager.Instance.LoadSectionByID (curPairID, saveData.readSectionId).nodes [saveData.readNodeId];
 		} else {

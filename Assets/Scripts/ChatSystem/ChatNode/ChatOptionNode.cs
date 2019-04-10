@@ -80,6 +80,8 @@ public class ChatOptionNode : Node
 			return null;
 		if(IsInEditor())
 			return dynamicConnectionPorts[0].connections[0].body;
+		if (option < 0)
+			return null;
 		Node result = dynamicConnectionPorts[option].connections[0].body;
 		if (showableOnly && result is SetParamNode)
 			return result.GetNext ();
