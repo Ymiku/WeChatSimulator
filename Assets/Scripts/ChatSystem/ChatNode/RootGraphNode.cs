@@ -12,15 +12,13 @@ namespace NodeEditorFramework.Standard
 		public override string Title { get { return "发送好友请求"; } }
 		public override Vector2 DefaultSize { get { return new Vector2 (150, 110); } }
 
-		[ValueConnectionKnob("Output", Direction.Out, "System.String")]
-		public ValueConnectionKnob outputKnob;
-
 		public override void NodeGUI () 
 		{
 			//name = RTEditorGUI.TextField (name);
-
-			foreach (ConnectionKnob knob in connectionKnobs) 
-				knob.DisplayLayout ();
+			GUILayout.BeginHorizontal ();
+			inputKnob.DisplayLayout ();
+			outputKnob.DisplayLayout ();
+			GUILayout.EndHorizontal ();
 		}
 
 	}

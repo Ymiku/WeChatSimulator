@@ -140,6 +140,7 @@ public class ChatManager : Singleton<ChatManager> {
 		foreach (var item in pairId2Instance.Values) {
 			item.OnExecute ();
 		}
+		CleanPool (8);
 	}
 	public void OnExit()
 	{
