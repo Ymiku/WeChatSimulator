@@ -6,8 +6,10 @@ namespace UIFrameWork
 	public class YuEBaoOutToCardView : EnabledView
 	{
 		private YuEBaoOutToCardContext _context;
+        private ToCardTimeType _toCardTimeType;
         public TextProxy _cardText;
         public TextProxy _nomalText;
+        public Text _maxMoneyText;
         public ImageProxy _cardIcon;
         public Button _confirmBtn;
         public GameObject _allObj;
@@ -19,26 +21,32 @@ namespace UIFrameWork
 		public override void Init ()
 		{
 			base.Init ();
+            _clearObj.SetActive(false);
+            _toCardTimeType = ToCardTimeType.Fast;
 		}
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter(context);
 			_context = context as YuEBaoOutToCardContext;
+            Refresh();
 		}
 
 		public override void OnExit(BaseContext context)
 		{
 			base.OnExit(context);
-		}
+            Clear();
+        }
 
 		public override void OnPause(BaseContext context)
 		{
 			base.OnPause(context);
+            Clear();
 		}
 
 		public override void OnResume(BaseContext context)
 		{
 			base.OnResume(context);
+            Refresh();
 		}
 		public override void Excute ()
 		{
@@ -53,37 +61,83 @@ namespace UIFrameWork
 
         public void OnClickAll()
         {
-
+            _moneyInput.text = AssetsManager.Instance.assetsData.yuEBao.ToString();
         }
 
         public void OnClickFast()
         {
-
+            if (_toCardTimeType == ToCardTimeType.Normal)
+            {
+                _toCardTimeType = ToCardTimeType.Fast;
+                _fastWaySelectedObj.SetActive(false);
+                _normalWaySelectedobj.SetActive(true);
+            }
         }
 
         public void OnClickNormal()
         {
-
+            if (_toCardTimeType == ToCardTimeType.Fast)
+            {
+                _toCardTimeType = ToCardTimeType.Normal;
+                _fastWaySelectedObj.SetActive(true);
+                _normalWaySelectedobj.SetActive(false);
+            }
         }
 
         public void OnClickConfirm()
         {
-
+            // todo µ½ÕËÊ±¼ä
+            AssetsSaveData data = AssetsManager.Instance.assetsData;
+            BankCardSaveData bankCard = AssetsManager.Instance.curUseBankCard;
+            double amount = 0;
+            double.TryParse(_moneyInput.text, out amount);
+            if (amount > data.yuEBao)
+            {
+                ShowNotice(ContentHelper.Read(ContentHelper.AssetsNotEnough));
+            }
+            else
+            {
+                data.yuEBao -= amount;
+                bankCard.money += amount;
+                UIManager.Instance.Pop();
+            }
         }
 
         public void OnClickClear()
         {
-
+            _moneyInput.text = "";
         }
 
         public void OnClickCard()
         {
-
+            UIManager.Instance.Push(new SelectPayWayContext(0, SpendType.ToSelfBankCard));
         }
 
         public void OnValueChanged(string str)
         {
+            bool canUse = !string.IsNullOrEmpty(_moneyInput.text);
+            if (canUse)
+                canUse = double.Parse(_moneyInput.text) > 0;
+            _allObj.SetActive(string.IsNullOrEmpty(_moneyInput.text));
+            _clearObj.SetActive(!string.IsNullOrEmpty(_moneyInput.text));
+            _confirmBtn.interactable = canUse;
+        }
 
+        private void Refresh()
+        {
+            BankCardSaveData data = AssetsManager.Instance.curUseBankCard;
+            _cardIcon.sprite = AssetsManager.Instance.GetBankSprite(data.bankName);
+            _cardText.text = Utils.FormatPaywayStr(PaywayType.BankCard, data.cardId);
+            _maxMoneyText.text = string.Format(ContentHelper.Read(ContentHelper.MaxCanToCard), AssetsManager.Instance.assetsData.yuEBao);
+            _fastWaySelectedObj.SetActive(_toCardTimeType == ToCardTimeType.Fast);
+            _normalWaySelectedobj.SetActive(_toCardTimeType == ToCardTimeType.Normal);
+        }
+
+        private void Clear()
+        {
+            _moneyInput.text = "";
+            _clearObj.SetActive(false);
+            _confirmBtn.interactable = false;
         }
 	}
 	public class YuEBaoOutToCardContext : BaseContext
@@ -92,4 +146,9 @@ namespace UIFrameWork
 		{
 		}
 	}
+    public enum ToCardTimeType
+    {
+        Fast,
+        Normal,
+    }
 }

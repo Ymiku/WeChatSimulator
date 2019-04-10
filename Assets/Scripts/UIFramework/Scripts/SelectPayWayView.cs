@@ -61,7 +61,7 @@ namespace UIFrameWork
             balanceData.isEnough = balanceEnough;
             balanceData.payway = PaywayType.Banlance;
             balanceData.spendType = _context.spendType;
-            bool yuEBaoEnough = AssetsManager.Instance.assetsData.yuEBao >= _context.amount && _context.spendType != SpendType.ToYuEBao;
+            bool yuEBaoEnough = AssetsManager.Instance.assetsData.yuEBao >= _context.amount && _context.spendType != SpendType.ToSelfYuEBao;
             SelectPaywayItemData yuEBaoData = new SelectPaywayItemData();
             yuEBaoData.isAddCard = false;
             yuEBaoData.isEnough = yuEBaoEnough;
@@ -69,15 +69,20 @@ namespace UIFrameWork
             yuEBaoData.spendType = _context.spendType;
             SelectPaywayItemData addCardData = new SelectPaywayItemData();
             addCardData.isAddCard = true;
-            if (balanceEnough)
-                dataList.Add(balanceData);
-            if (yuEBaoEnough)
-                dataList.Add(yuEBaoData);
-            dataList.Add(addCardData);
-            if (!balanceEnough)
-                dataList.Add(balanceData);
-            if (!yuEBaoEnough)
-                dataList.Add(yuEBaoData);
+            if (_context.spendType != SpendType.ToSelfBankCard)
+            {
+                if (balanceEnough)
+                    dataList.Add(balanceData);
+                if (yuEBaoEnough)
+                    dataList.Add(yuEBaoData);
+                dataList.Add(addCardData);
+                if (!balanceEnough)
+                    dataList.Add(balanceData);
+                if (!yuEBaoEnough)
+                    dataList.Add(yuEBaoData);
+            }
+            else
+                dataList.Add(addCardData);
             _scrollView.SetDatas(dataList);
         }
 	}

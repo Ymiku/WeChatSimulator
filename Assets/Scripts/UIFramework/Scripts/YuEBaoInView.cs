@@ -51,7 +51,7 @@ namespace UIFrameWork
         {
             double amount = 0;
             double.TryParse(_moneyInput.text, out amount);
-            UIManager.Instance.Push(new SelectPayWayContext(amount, SpendType.ToYuEBao));
+            UIManager.Instance.Push(new SelectPayWayContext(amount, SpendType.ToSelfYuEBao));
         }
 
         public void OnClickExplain()

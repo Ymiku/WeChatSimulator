@@ -125,6 +125,7 @@ public enum PaywayType
 
 public enum SpendType
 {
-    Transfer,
-    ToYuEBao,
+    Transfer,           //转账
+    ToSelfYuEBao,       //转到自己余额宝
+    ToSelfBankCard,     //转到自己银行卡     
 }

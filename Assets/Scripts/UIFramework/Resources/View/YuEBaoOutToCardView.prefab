@@ -804,7 +804,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 114302459451372462}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1473,10 +1473,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81118a27a3ede654f9d301d851a50645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeWhenPause: 0
-  fadeType: 0
+  activeWhenPause: 1
   _cardText: {fileID: 114608745467157272}
   _nomalText: {fileID: 114905895276517244}
+  _maxMoneyText: {fileID: 114808580466629036}
   _cardIcon: {fileID: 114006600936457574}
   _confirmBtn: {fileID: 114557974746116114}
   _allObj: {fileID: 1248669643079778}
