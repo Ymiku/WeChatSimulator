@@ -24,8 +24,8 @@ MonoBehaviour:
   - {fileID: 114031873095839854}
   groups: []
   sectionID: 0
-  firstNode: {fileID: 0}
-  lastNode: {fileID: 0}
+  firstNode: {fileID: 114652441689938252}
+  lastNode: {fileID: 114031873095839854}
 --- !u!114 &114012276384519970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -93,6 +93,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d6a368c39a5c140ad85d065dc499cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputKnob: {fileID: 114772382304028274}
+  outputKnob: {fileID: 114371873086251048}
   sectionId: 0
   enname: 
   cond: 1
@@ -102,8 +104,6 @@ MonoBehaviour:
   position: {x: 1271.5, y: -138.1}
   dynamicConnectionPorts: []
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
-  inputKnob: {fileID: 114772382304028274}
-  outputKnob: {fileID: 114371873086251048}
   DialogLine: "\u6211\u5FD8\u4E86\u4F60\u5927\u540D\u53EB\u4EC0\u4E48\n\u7136\u540E\u5C31\u6CA1\u5BC4"
   tapType: 1
 --- !u!114 &114172783541585976
@@ -137,6 +137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b10f04280dcb14a40bbcd4ae5599e365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputKnob: {fileID: 114952294914393276}
+  outputKnob: {fileID: 0}
   sectionId: 0
   enname: i
   cond: 0
@@ -150,7 +152,6 @@ MonoBehaviour:
   tip: 
   labels:
   - "\u5BC4\u7684\u4EC0\u4E48\u5440"
-  inputKnob: {fileID: 114952294914393276}
 --- !u!114 &114371873086251048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,6 +222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d6a368c39a5c140ad85d065dc499cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputKnob: {fileID: 114172783541585976}
+  outputKnob: {fileID: 114578140497750288}
   sectionId: 0
   enname: 
   cond: 1
@@ -230,8 +233,6 @@ MonoBehaviour:
   position: {x: 860.10004, y: -304.3}
   dynamicConnectionPorts: []
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
-  inputKnob: {fileID: 114172783541585976}
-  outputKnob: {fileID: 114578140497750288}
   DialogLine: "\u5403\u7684"
   tapType: 0
 --- !u!114 &114652441689938252
@@ -245,6 +246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4620fa9db0beb41b2d5e2bff1656c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputKnob: {fileID: 0}
+  outputKnob: {fileID: 114963638031068108}
   sectionId: 0
   enname: 
   cond: 0
@@ -254,7 +257,6 @@ MonoBehaviour:
   position: {x: -101, y: -71}
   dynamicConnectionPorts: []
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
-  outputKnob: {fileID: 114963638031068108}
 --- !u!114 &114753618050476674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -266,6 +268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d6a368c39a5c140ad85d065dc499cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputKnob: {fileID: 114024723951193208}
+  outputKnob: {fileID: 114407686596719092}
   sectionId: 0
   enname: 
   cond: 0
@@ -275,8 +279,6 @@ MonoBehaviour:
   position: {x: 114.5, y: -148.5}
   dynamicConnectionPorts: []
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
-  inputKnob: {fileID: 114024723951193208}
-  outputKnob: {fileID: 114407686596719092}
   DialogLine: "\u6211\u4ECA\u5929\u53BB\u7ED9\u5BC4\u5FEB\u9012\u4E86\u3002"
   tapType: 0
 --- !u!114 &114772382304028274

@@ -77,20 +77,34 @@ namespace NodeEditorFramework.Standard
 		}
         public void GenerateOrder(Node node)
         {
+            int id = node.orderId + 8;
+            Node child = null;
             if (node is ChatOptionNode)
             {
                 ChatOptionNode optionNode = node as ChatOptionNode;
                 for (int i = 0; i < optionNode.dynamicConnectionPorts.Count; i++)
                 {
-                    optionNode.dynamicConnectionPorts[i].connections[0].body.orderId = node.orderId + 1;
-                    GenerateOrder(optionNode.dynamicConnectionPorts[i].connections[0].body);
-                    return;
+                    if (optionNode.dynamicConnectionPorts[i].connections.Count == 0)
+                        continue;
+                    child = optionNode.dynamicConnectionPorts[i].connections[0].body;
+                    if (child.orderId > id)
+                    {
+                        continue;
+                    }
+                    child.orderId += id;
+                    GenerateOrder(child);
                 }
+                return;
             }
             if (node.outputKnob == null|| node.outputKnob.connections.Count==0)
                 return;
-            node.outputKnob.connections[0].body.orderId = node.orderId + 1;
-            GenerateOrder(node.outputKnob.connections[0].body);
+            child = node.outputKnob.connections[0].body;
+            if (child.orderId > id)
+            {
+                return;
+            }
+            child.orderId += id;
+            GenerateOrder(child);
         }
 	}
 }

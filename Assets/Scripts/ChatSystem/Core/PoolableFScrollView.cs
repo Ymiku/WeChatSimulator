@@ -162,7 +162,7 @@ public class PoolableFScrollView : MonoBehaviour {
         NodeItemProxy item = GetItem (down.enname==ChatManager.Instance.curName?1:0);
 		float itemHeight = item.SetData (down);
 		float itemY = _activeItems [_activeItems.Count - 1].cachedRectTransform.anchoredPosition.y - _activeItems [_activeItems.Count - 1].height;
-		if (ChatManager.Instance.curExecuteInstance.curSection == down) {
+		if (ChatManager.Instance.curExecuteInstance.nextReadNode == down) {
 			ChatManager.Instance.curExecuteInstance.ReadNext ();
             ChatManager.Instance.curInstance.saveData.totalRectHeight += itemHeight;
 			contextTrans.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical, contextTrans.sizeDelta.y + itemHeight);
@@ -183,7 +183,7 @@ public class PoolableFScrollView : MonoBehaviour {
 		item.cachedRectTransform.anchoredPosition = new Vector2 (0.0f,itemY);
 		_activeItems.Insert (0,item);
         ChatManager.Instance.curExecuteInstance.ActiveNode(up);
-		if (ChatManager.Instance.curExecuteInstance.curSection == up) {
+		if (ChatManager.Instance.curExecuteInstance.nextReadNode == up) {
 			ChatManager.Instance.curExecuteInstance.ReadNext ();
             ChatManager.Instance.curInstance.saveData.totalRectHeight += itemHeight;
 			contextTrans.anchoredPosition +=  new Vector2(0.0f, itemHeight);
