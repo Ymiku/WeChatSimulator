@@ -10,34 +10,37 @@ namespace UIFrameWork
         public FInputField _moneyInput;
         public GameObject _allObj;
         public GameObject _clearObj;
+        public Text _maxMoneyText;
 
 		public override void Init ()
 		{
 			base.Init ();
+            _clearObj.SetActive(false);
 		}
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter(context);
 			_context = context as YuEBaoOutToBalanceContext;
-            _moneyInput.text = "";
+            Refresh();
         }
 
         public override void OnExit(BaseContext context)
 		{
 			base.OnExit(context);
+            Clear();
 		}
 
 		public override void OnPause(BaseContext context)
 		{
 			base.OnPause(context);
+            Clear();
 		}
 
 		public override void OnResume(BaseContext context)
 		{
 			base.OnResume(context);
-            _moneyInput.text = "";
-            _clearObj.SetActive(false);
-            _confirmBtn.interactable = false;
+            Refresh();
+            
         }
 		public override void Excute ()
 		{
@@ -46,16 +49,17 @@ namespace UIFrameWork
 
         public void OnValueChanged(string str)
         {
-            _allObj.SetActive(string.IsNullOrEmpty(str));
-            _clearObj.SetActive(!string.IsNullOrEmpty(str));
-            _confirmBtn.interactable = !string.IsNullOrEmpty(str);
-            if (!string.IsNullOrEmpty(str) && double.Parse(str) > AssetsManager.Instance.assetsData.balance)
-                _moneyInput.text = AssetsManager.Instance.assetsData.balance.ToString();
+            bool canUse = !string.IsNullOrEmpty(_moneyInput.text);
+            if (canUse)
+                canUse = double.Parse(_moneyInput.text) > 0;
+            _allObj.SetActive(string.IsNullOrEmpty(_moneyInput.text));
+            _clearObj.SetActive(!string.IsNullOrEmpty(_moneyInput.text));
+            _confirmBtn.interactable = canUse;
         }
 
         public void OnClickAll()
         {
-            _moneyInput.text = AssetsManager.Instance.assetsData.balance.ToString();
+            _moneyInput.text = AssetsManager.Instance.assetsData.yuEBao.ToString();
         }
 
         public void OnClickClear()
@@ -66,13 +70,39 @@ namespace UIFrameWork
 
         public void OnClickConfirm()
         {
-
+            AssetsSaveData data = AssetsManager.Instance.assetsData;
+            double amount = 0;
+            double.TryParse(_moneyInput.text, out amount);
+            if (amount > data.yuEBao)
+            {
+                ShowNotice(ContentHelper.Read(ContentHelper.AssetsNotEnough));
+            }
+            else
+            {
+                data.yuEBao -= amount;
+                data.balance += amount;
+                UIManager.Instance.Pop();
+            }
         }
 
         public void OnClickToCard()
         {
             UIManager.Instance.Pop();
             UIManager.Instance.Push(new YuEBaoOutToCardContext());
+        }
+
+        private void Refresh()
+        {
+            _moneyInput.text = "";
+            _maxMoneyText.text = string.Format(ContentHelper.Read(ContentHelper.MaxCanToBanlance),
+                AssetsManager.Instance.assetsData.yuEBao);
+        }
+
+        private void Clear()
+        {
+            _moneyInput.text = "";
+            _clearObj.SetActive(false);
+            _confirmBtn.interactable = false;
         }
 	}
 	public class YuEBaoOutToBalanceContext : BaseContext

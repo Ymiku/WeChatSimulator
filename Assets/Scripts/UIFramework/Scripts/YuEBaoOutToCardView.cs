@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 namespace UIFrameWork
 {
-	public class YuEBaoOutToCardView : AnimateView
+	public class YuEBaoOutToCardView : EnabledView
 	{
 		private YuEBaoOutToCardContext _context;
         public TextProxy _cardText;
