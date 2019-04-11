@@ -13,7 +13,7 @@ namespace UIFrameWork
         private StringBuilder _stringBuilder = new StringBuilder();
         private GameObject[] _lengthObj = new GameObject[6];
         private Button[] _numberBtn = new Button[10];
-        private int _rxId = -1;
+        private RXIndex _rxId = new RXIndex();
 
         public override void Init()
         {
@@ -85,7 +85,7 @@ namespace UIFrameWork
                 }
                 _stringBuilder.Append(i);
                 _lengthObj[_stringBuilder.Length - 1].SetActive(true);
-                _rxId = FrostRX.Instance.StartRX().ExecuteAfterTime(() =>
+                FrostRX.Instance.StartRX().ExecuteAfterTime(() =>
                 {
                     if (GameManager.Instance.accountData.payword == _stringBuilder.ToString())
                     {
@@ -98,7 +98,7 @@ namespace UIFrameWork
                         Clear();
                         ShowNotice(ContentHelper.Read(ContentHelper.PaywordError));
                     }
-                }, 0.5f).GetId();
+                }, 0.5f).GetId(_rxId);
             }
             else if (_stringBuilder.Length < 5)
             {
@@ -129,7 +129,7 @@ namespace UIFrameWork
             {
                 _lengthObj[i].SetActive(false);
             }
-            FrostRX.End(ref _rxId);
+            FrostRX.End(_rxId);
         }
     }
     public class InputAndCheckPaywordContext : BaseContext

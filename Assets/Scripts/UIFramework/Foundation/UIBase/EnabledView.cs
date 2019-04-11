@@ -8,24 +8,24 @@ namespace UIFrameWork
 	public abstract class EnabledView : BaseView 
 	{
 		float disappearTime = 4.0f;
-		int rxId = -1;
+		RXIndex rxId = new RXIndex();
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter (context);
-			FrostRX.End(ref rxId);
+			FrostRX.End(rxId);
 			gameObject.SetActive (true);
 		}
 
 		public override void OnExit(BaseContext context)
 		{
 			base.OnExit (context);
-			FrostRX.End(ref rxId);
-			rxId = FrostRX.Start (this).ExecuteAfterTime(()=>{gameObject.SetActive (false);rxId=-1;},disappearTime).GetId();
+			FrostRX.End(rxId);
+			FrostRX.Start (this).ExecuteAfterTime(()=>{ gameObject.SetActive(false); },disappearTime).GetId(rxId);
 		}
 		public override void OnResume (BaseContext context)
 		{
 			base.OnResume (context);
-			FrostRX.Instance.EndRxById (ref rxId);
+			FrostRX.End(rxId);
 			if(!activeWhenPause)
 				gameObject.SetActive (true);
 		}
@@ -33,10 +33,10 @@ namespace UIFrameWork
 		{
 			base.OnPause (context);
 			if (!activeWhenPause) {
-				FrostRX.Instance.EndRxById (ref rxId);
-				rxId = FrostRX.Start (this).ExecuteAfterTime (() => {
-					gameObject.SetActive (false);rxId = -1;
-				}, disappearTime).GetId ();
+				FrostRX.End (rxId);
+				FrostRX.Start (this).ExecuteAfterTime (() => {
+					gameObject.SetActive (false);
+				}, disappearTime).GetId (rxId);
 			}
 		}
         public sealed override void ForceDisable()
@@ -44,13 +44,13 @@ namespace UIFrameWork
             base.ForceDisable();
             if (activeWhenPause)
                 return;
-            FrostRX.End(ref rxId);
+            FrostRX.End(rxId);
             gameObject.SetActive(false);
 
         }
         private void OnDestroy()
         {
-            FrostRX.End(ref rxId);
+            FrostRX.End(rxId);
         }
     }
 }

@@ -13,7 +13,7 @@ public interface IRXModel
     IRXModel Execute(FrostRX.RXFunc f);
     IRXModel ExecuteContinuous(FrostRX.RXFunc f, float t);
     IRXModel GoToBegin();
-    int GetId();
+    void GetId(RXIndex id);
 }
 public class RXModelBase:IRXModel
 {
@@ -28,9 +28,10 @@ public class RXModelBase:IRXModel
     {
         this.rxId = rxId;
     }
-    public int GetId()
+    public void GetId(RXIndex id)
     {
-        return rxId;
+        id.value = rxId;
+        FrostRX.Instance.AddIndex(id);
     }
     protected void TryNext()
     {
@@ -40,7 +41,8 @@ public class RXModelBase:IRXModel
         }
         else
         {
-            FrostRX.Instance.EndRxById(ref rxId);
+            RXIndex.TEMP.value = rxId;
+            FrostRX.Instance.EndRxById(RXIndex.TEMP);
         }
         FrostRX.Instance.activeModelList.Remove(this);
     }
@@ -263,6 +265,7 @@ public class FrostRX : Singleton<FrostRX>
     public delegate void RXFunc();
     public delegate bool CondFunc();
     private Dictionary<int, IRXModel> _rxDic = new Dictionary<int, IRXModel>();
+    private Dictionary<int, RXIndex> _indexDic = new Dictionary<int, RXIndex>();
     public List<IRXModel> activeModelList = new List<IRXModel>();
     int rxId = 0;
     public static IRXModel Start()
@@ -273,9 +276,9 @@ public class FrostRX : Singleton<FrostRX>
     {
         return Instance.StartRX(o);
     }
-	public static void End(ref int id)
+	public static void End(RXIndex id)
 	{
-		Instance.EndRxById(ref id);
+		Instance.EndRxById(id);
 	}
     public IRXModel StartRX()
     {
@@ -292,27 +295,29 @@ public class FrostRX : Singleton<FrostRX>
         root.debugObj = o;
         return root;
     }
-    public void EndRxById(ref int rxId)
+    public void EndRxById(RXIndex rxId)
     {
-		if (rxId == -1)
+		if (rxId.value == -1)
 			return;
-        if (_rxDic.ContainsKey(rxId))
-            _rxDic.Remove(rxId);
+        if (_rxDic.ContainsKey(rxId.value))
+            _rxDic.Remove(rxId.value);
+        if (_indexDic.ContainsKey(rxId.value))
+            _indexDic.Remove(rxId.value);
         for (int i = 0; i < activeModelList.Count; i++)
         {
-            if (activeModelList[i].GetId() == rxId)
+            if ((activeModelList[i] as RXModelBase).rxId == rxId.value)
             {
                 activeModelList.RemoveAt(i);
                 i--;
             }
         }
-        rxId = -1;
+        rxId.value = -1;
     }
     public void RestartRxById(int rxId)
     {
 		for (int i = 0; i < activeModelList.Count; i++)
 		{
-			if (activeModelList[i].GetId() == rxId)
+			if ((activeModelList[i] as RXModelBase).rxId == rxId)
 			{
 				activeModelList.RemoveAt(i);
 				i--;
@@ -325,9 +330,15 @@ public class FrostRX : Singleton<FrostRX>
     {
         while (_rxDic.ContainsKey(rxId))
         {
+            if (rxId == int.MaxValue)
+                rxId = -1;
             rxId++;
         }
         return rxId++;
+    }
+    public void AddIndex(RXIndex index)
+    {
+        _indexDic.Add(index.value,index);
     }
     public void Execute()
     {
@@ -339,12 +350,13 @@ public class FrostRX : Singleton<FrostRX>
             }
             catch (System.Exception ex)
             {
-                int id = activeModelList[i].GetId();
+                int id = (activeModelList[i] as RXModelBase).rxId;
 #if UNITY_EDITOR
-                Debug.LogError("RX Error:ID="+activeModelList[i].GetId().ToString()+",debugObj="+(_rxDic[id] as RXRoot).debugObj.ToString());
+                Debug.LogError("RX Error:ID="+(activeModelList[i] as RXModelBase).rxId.ToString()+",debugObj="+(_rxDic[id] as RXRoot).debugObj.ToString());
                 throw ex;
 #endif
-                EndRxById(ref id);
+                RXIndex.TEMP.value = id;
+                EndRxById(RXIndex.TEMP);
             }
         }
     }

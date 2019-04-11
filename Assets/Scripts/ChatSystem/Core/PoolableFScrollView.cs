@@ -14,7 +14,7 @@ public class PoolableFScrollView : MonoBehaviour {
 	List<NodeItemProxy> _activeItems = new List<NodeItemProxy>();
 	RectTransform viewPortTrans;
 	RectTransform contextTrans;
-	int rxId = -1;
+    RXIndex rxId = new RXIndex();
 	// Use this for initialization
 	public void Init () {
 		for (int i = 0; i < prefabs.Length; i++) {
@@ -41,8 +41,8 @@ public class PoolableFScrollView : MonoBehaviour {
 	{
 		if (ChatManager.Instance.curExecuteInstance.saveData.totalRectHeight <= viewPortTrans.sizeDelta.y)
 			return;
-		FrostRX.End (ref rxId);
-		rxId = FrostRX.Start (this).ExecuteContinuous (()=>{contextTrans.anchoredPosition = Vector2.Lerp (contextTrans.anchoredPosition,new Vector2(0.0f,contextTrans.sizeDelta.y-viewPortTrans.sizeDelta.y+1.0f),16.0f*Time.deltaTime);},0.4f).Execute(()=>{rxId=-1;}).GetId();
+		FrostRX.End (rxId);
+		FrostRX.Start (this).ExecuteContinuous (()=>{contextTrans.anchoredPosition = Vector2.Lerp (contextTrans.anchoredPosition,new Vector2(0.0f,contextTrans.sizeDelta.y-viewPortTrans.sizeDelta.y+1.0f),16.0f*Time.deltaTime);},0.4f).GetId(rxId);
 	}
     bool needUpdate = false;
     public void OnEnter()
@@ -54,7 +54,7 @@ public class PoolableFScrollView : MonoBehaviour {
     }
     public void OnExit()
     {
-		FrostRX.End (ref rxId);
+		FrostRX.End (rxId);
         needUpdate = false;
         for (int i = 0; i < _activeItems.Count; i++)
         {

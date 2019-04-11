@@ -13,7 +13,7 @@ namespace UIFrameWork
 		}
 		public AnimateFadeType fadeType = AnimateFadeType.Vertical;
 		float _fadeTime = 8.0f;
-		int rxId = -1;
+        RXIndex rxId = new RXIndex();
 		float offsetY{
 			get{return rootRect.offsetMax.y; }
 			set{ 
@@ -37,17 +37,17 @@ namespace UIFrameWork
 			base.OnEnter (context);
 			gameObject.SetActive(true);
 			_isPause = false;
-			FrostRX.Instance.EndRxById (ref rxId);
+			FrostRX.Instance.EndRxById (rxId);
 			switch (fadeType) {
 			case AnimateFadeType.Horizon:
-				rxId = FrostRX.Start(this).Execute(()=>{_canvasGroup.alpha=0.0f;gameObject.SetActive(true);offsetX=1080.0f;}).
+				FrostRX.Start(this).Execute(()=>{_canvasGroup.alpha=0.0f;gameObject.SetActive(true);offsetX=1080.0f;}).
 					ExecuteUntil(()=>{offsetX = Mathf.Lerp(offsetX,-0.1f,_fadeTime*Time.deltaTime);_canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha,1.01f,_fadeTime*Time.deltaTime);if(offsetX<=0.0f)offsetX=0.0f;},
-						()=>{return offsetX==0.0f&&_canvasGroup.alpha>=1.0f;}).Execute(()=>{rxId=-1;}).GetId();
+						()=>{return offsetX==0.0f&&_canvasGroup.alpha>=1.0f;}).GetId(rxId);
 				break;
 			case AnimateFadeType.Vertical:
-				rxId = FrostRX.Start(this).Execute(()=>{_canvasGroup.alpha=0.0f;gameObject.SetActive(true);offsetY=-1920.0f;}).
+				FrostRX.Start(this).Execute(()=>{_canvasGroup.alpha=0.0f;gameObject.SetActive(true);offsetY=-1920.0f;}).
 					ExecuteUntil(()=>{offsetY = Mathf.Lerp(offsetY,0.1f,_fadeTime*Time.deltaTime);_canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha,1.01f,_fadeTime*Time.deltaTime);if(offsetY>=0.0f)offsetY=0.0f;},
-						()=>{return offsetY==0.0f&&_canvasGroup.alpha>=1.0f;}).Execute(()=>{rxId=-1;}).GetId();
+						()=>{return offsetY==0.0f&&_canvasGroup.alpha>=1.0f;}).GetId(rxId);
 				break;
 			}
 		}
@@ -56,17 +56,17 @@ namespace UIFrameWork
 			base.OnExit (context);
 			_isPause = true;
 
-			FrostRX.Instance.EndRxById (ref rxId);
+			FrostRX.End (rxId);
 			switch (fadeType) {
 			case AnimateFadeType.Horizon:
-				rxId = FrostRX.Start(this).
+				FrostRX.Start(this).
 					ExecuteUntil(()=>{offsetX = Mathf.Lerp(offsetX,1080.1f,_fadeTime*Time.deltaTime);_canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha,-0.01f,_fadeTime*Time.deltaTime);if(offsetX>=1080.0f)offsetX=1080.0f;},
-						()=>{return offsetX==1080.0f&&_canvasGroup.alpha<=0.0f;}).Execute(()=>{rxId=-1;gameObject.SetActive(false);}).GetId();
+						()=>{return offsetX==1080.0f&&_canvasGroup.alpha<=0.0f;}).Execute(()=>{gameObject.SetActive(false);}).GetId(rxId);
 				break;
 			case AnimateFadeType.Vertical:
-				rxId = FrostRX.Start(this).
+				FrostRX.Start(this).
 					ExecuteUntil(()=>{offsetY = Mathf.Lerp(offsetY,-1920.1f,_fadeTime*Time.deltaTime);_canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha,-0.01f,_fadeTime*Time.deltaTime);if(offsetY<=-1920.0f)offsetY=-1920.0f;},
-						()=>{return offsetY==-1920.0f&&_canvasGroup.alpha<=0.0f;}).Execute(()=>{rxId=-1;gameObject.SetActive(false);}).GetId();
+						()=>{return offsetY==-1920.0f&&_canvasGroup.alpha<=0.0f;}).Execute(()=>{gameObject.SetActive(false);}).GetId(rxId);
 				break;
 			}
 		}
@@ -75,17 +75,17 @@ namespace UIFrameWork
 		{
 			base.OnPause (context);
 			if (!activeWhenPause) {
-				FrostRX.End (ref rxId);
+				FrostRX.End (rxId);
 				switch (fadeType) {
 				case AnimateFadeType.Horizon:
-					rxId = FrostRX.Start(this).
+					FrostRX.Start(this).
 						ExecuteUntil(()=>{offsetX = Mathf.Lerp(offsetX,-1080.1f,_fadeTime*Time.deltaTime);_canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha,-0.01f,_fadeTime*Time.deltaTime);if(offsetX<=-1080.0f)offsetX=-1080.0f;},
-							()=>{return offsetX==-1080.0f&&_canvasGroup.alpha<=0.0f;}).Execute(()=>{rxId=-1;gameObject.SetActive(false);}).GetId();
+							()=>{return offsetX==-1080.0f&&_canvasGroup.alpha<=0.0f;}).Execute(()=>{gameObject.SetActive(false);}).GetId(rxId);
 					break;
 				case AnimateFadeType.Vertical:
-					rxId = FrostRX.Start(this).
+					FrostRX.Start(this).
 						ExecuteUntil(()=>{offsetY = Mathf.Lerp(offsetY,-1920.1f,_fadeTime*Time.deltaTime);_canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha,-0.01f,_fadeTime*Time.deltaTime);if(offsetY<=-1920.0f)offsetY=-1920.0f;},
-							()=>{return offsetY==-1920.0f&&_canvasGroup.alpha<=0.0f;}).Execute(()=>{rxId=-1;gameObject.SetActive(false);}).GetId();
+							()=>{return offsetY==-1920.0f&&_canvasGroup.alpha<=0.0f;}).Execute(()=>{gameObject.SetActive(false);}).GetId(rxId);
 					break;
 				}
 			}
@@ -95,31 +95,31 @@ namespace UIFrameWork
 		{
 			base.OnResume (context);
 			if (!activeWhenPause) {
-				FrostRX.End(ref rxId);
+				FrostRX.End(rxId);
 				switch (fadeType) {
 				case AnimateFadeType.Horizon:
-					rxId = FrostRX.Start(this).Execute(()=>{gameObject.SetActive(true);}).
+					FrostRX.Start(this).Execute(()=>{gameObject.SetActive(true);}).
 						ExecuteUntil(()=>{offsetX = Mathf.Lerp(offsetX,0.1f,_fadeTime*Time.deltaTime);_canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha,1.01f,_fadeTime*Time.deltaTime);if(offsetX>=0.0f)offsetX=0.0f;},
-							()=>{return offsetX==0.0f&&_canvasGroup.alpha>=1.0f;}).Execute(()=>{rxId=-1;}).GetId();
+							()=>{return offsetX==0.0f&&_canvasGroup.alpha>=1.0f;}).GetId(rxId);
 					break;
 				case AnimateFadeType.Vertical:
-					rxId = FrostRX.Start(this).Execute(()=>{gameObject.SetActive(true);}).
+					FrostRX.Start(this).Execute(()=>{gameObject.SetActive(true);}).
 						ExecuteUntil(()=>{offsetY = Mathf.Lerp(offsetY,0.1f,_fadeTime*Time.deltaTime);_canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha,1.01f,_fadeTime*Time.deltaTime);if(offsetY>=0.0f)offsetY=0.0f;},
-							()=>{return offsetY==0.0f&&_canvasGroup.alpha>=1.0f;}).Execute(()=>{rxId=-1;}).GetId();
+							()=>{return offsetY==0.0f&&_canvasGroup.alpha>=1.0f;}).GetId(rxId);
 					break;
 				}
 			}
 		}
         private void OnDestroy()
         {
-            FrostRX.End(ref rxId);
+            FrostRX.End(rxId);
         }
         public sealed override void ForceDisable()
         {
             base.ForceDisable();
             if (activeWhenPause)
                 return;
-            FrostRX.End(ref rxId);
+            FrostRX.End(rxId);
             offsetX = 0;
             offsetY = 0;
             _canvasGroup.alpha = 0;
