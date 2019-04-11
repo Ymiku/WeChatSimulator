@@ -117,6 +117,7 @@ public class PoolableFScrollView : MonoBehaviour {
 				AddActiveNodeY (a);
 			}
 		}
+		contextTrans.anchoredPosition = Vector2.Lerp (contextTrans.anchoredPosition,contextTrans.anchoredPosition+new Vector2(0.0f,contextTrans.sizeDelta.y-viewPortTrans.sizeDelta.y),Time.deltaTime);
 		/*
 		if (size.y < viewPortTrans.sizeDelta.y) {
 			borrowHeight = viewPortTrans.sizeDelta.y - size.y;
