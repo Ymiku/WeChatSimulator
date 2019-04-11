@@ -42,4 +42,6 @@ public class ContentHelper
     public const int YuEBaoToBalanceSucc = 34; //成功转出{0}元至支付宝账户余额
     public const int YuEBaoToCardSucc = 35; //成功转出{0}元至{1}
     public const int YuEBaoInSucc = 36; //成功转入{0}元
+    public const int CardNotSupport = 37;  //该卡不支持转账
+    public const int NameNotMatchCard = 38; //持卡人与卡号不符
 }

@@ -174,7 +174,7 @@ public static class Utils
                 }
                 else
                 {
-                    BankCardSaveData cardData = XMLSaver.saveData.GetBankCardData(GameManager.Instance.curUserId, cardId);
+                    BankCardSaveData cardData = XMLSaver.saveData.GetBankCardData(cardId);
                     if (cardData != null && cardData.money >= money)
                     {
                         cardData.money -= money;
@@ -204,7 +204,7 @@ public static class Utils
                 if (string.IsNullOrEmpty(cardId))
                     data = AssetsManager.Instance.curUseBankCard;
                 else
-                    data = XMLSaver.saveData.GetBankCardData(GameManager.Instance.curUserId, cardId);                
+                    data = XMLSaver.saveData.GetBankCardData(cardId);                
                 string cardStr = data.cardId.Substring(data.cardId.Length - 4, 4);
                 result = data.bankName + "(" + cardStr + ")";
                 break;

@@ -90,6 +90,8 @@ namespace UIFrameWork
 
         private bool CheckCardLegal(string cardId)
         {
+            if (AssetsManager.Instance.CheckCardExist(cardId))
+                return false;
             if (string.IsNullOrEmpty(cardId))
                 return false;
             else if (cardId.Length > BankCardDefine.cardIdMaxLength || cardId.Length < BankCardDefine.cardIdMinLength)

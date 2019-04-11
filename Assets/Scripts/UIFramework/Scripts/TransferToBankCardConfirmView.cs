@@ -41,5 +41,16 @@ namespace UIFrameWork
 		public TransferToBankCardConfirmContext() : base(UIType.TransferToBankCardConfirm)
 		{
 		}
+
+        public TransferToBankCardConfirmContext(double amount, string name, string cardId) : base(UIType.TransferToBankCardConfirm)
+        {
+            this.amount = amount;
+            this.name = name;
+            this.cardId = cardId;
+        }
+
+        public double amount;
+        public string name;
+        public string cardId;
 	}
 }

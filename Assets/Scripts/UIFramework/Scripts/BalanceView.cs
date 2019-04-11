@@ -5,15 +5,18 @@ namespace UIFrameWork
 	public class BalanceView : AnimateView
 	{
 		private BalanceContext _context;
+        private TextProxy _moneyText;
 
 		public override void Init ()
 		{
 			base.Init ();
+            _moneyText = FindInChild<TextProxy>("Panel/Top/Balance/Values");
 		}
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter(context);
 			_context = context as BalanceContext;
+            _moneyText.text = AssetsManager.Instance.assetsData.balance.ToString();
 		}
 
 		public override void OnExit(BaseContext context)
@@ -29,11 +32,22 @@ namespace UIFrameWork
 		public override void OnResume(BaseContext context)
 		{
 			base.OnResume(context);
-		}
+            _moneyText.text = AssetsManager.Instance.assetsData.balance.ToString();
+        }
 		public override void Excute ()
 		{
 			base.Excute ();
 		}
+
+        public void OnClickRecharge()
+        {
+            UIManager.Instance.Push(new BalanceRechargeContext());
+        }
+
+        public void OnClickCash()
+        {
+            UIManager.Instance.Push(new BalanceCashContext());
+        }
     }
 	public class BalanceContext : BaseContext
 	{

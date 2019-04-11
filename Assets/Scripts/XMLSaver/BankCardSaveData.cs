@@ -24,6 +24,7 @@ public partial class SaveData
         BankCardSaveData data = new BankCardSaveData();
         data.accountId = accountId;
         data.cardId = cardId;
+        data.realName = GetAccountData(accountId).realname;
         data.bankName = StaticDataBankCard.GetCardNameById(cardId);
         bankCardList.Add(data);
         if (GetBankCardDataList(accountId).Count == 1)
@@ -58,10 +59,10 @@ public partial class SaveData
     /// <summary>
     /// 通过id获取一张卡的数据
     /// </summary>
-    public BankCardSaveData GetBankCardData(int accountId, string cardId) {
+    public BankCardSaveData GetBankCardData(string cardId) {
         for (int i = 0; i < bankCardList.Count; i++)
         {
-            if (bankCardList[i].accountId == accountId && bankCardList[i].cardId == cardId)
+            if (bankCardList[i].cardId == cardId)
                 return bankCardList[i];
         }
         return null;
@@ -73,7 +74,7 @@ public partial class SaveData
     public BankCardSaveData GetBankCardData(string name, string cardId)
     {
         int accountId = 0; // todo 名字转id
-        return GetBankCardData(accountId, cardId);
+        return GetBankCardData(cardId);
     }
 
     /// <summary>
@@ -95,10 +96,11 @@ public partial class SaveData
 [System.Serializable]
 public class BankCardSaveData
 {
-    public int accountId;       // 账户id
+    public int accountId;       // 支付宝账户id
     public string cardId;       // 银行卡号
     public string bankName;     // 银行名字
     public double money;        // 银行卡余额
+    public string realName;     // 持卡人
 }
 
 public static class BankCardDefine

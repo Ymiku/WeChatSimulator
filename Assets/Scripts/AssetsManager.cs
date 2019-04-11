@@ -114,6 +114,22 @@ public class AssetsManager : Singleton<AssetsManager>
             return sprite;
         }
     }
+
+    /// <summary>
+    /// 检查银行卡是否存在
+    /// </summary>
+    public bool CheckCardExist(string cardId)
+    {
+        if (!string.IsNullOrEmpty(cardId))
+        {
+            for (int i = 0; i < XMLSaver.saveData.bankCardList.Count; i++)
+            {
+                if (XMLSaver.saveData.bankCardList[i].cardId == cardId)
+                    return true;
+            }
+        }
+        return false;
+    }
 }
 
 public enum PaywayType
