@@ -102,6 +102,9 @@ namespace UIFrameWork
                     data.yuEBao -= amount;
                     bankCard.money += amount;
                     UIManager.Instance.Pop();
+                    string str = string.Format(ContentHelper.Read(ContentHelper.YuEBaoToCardSucc), amount,
+                        Utils.FormatPaywayStr(PaywayType.BankCard, bankCard.cardId));
+                    UIManager.Instance.Push(new YuEBaoOutSuccContext(str));
                 }));
             }
         }

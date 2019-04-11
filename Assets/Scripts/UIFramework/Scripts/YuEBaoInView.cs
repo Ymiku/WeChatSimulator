@@ -74,9 +74,14 @@ namespace UIFrameWork
                 }
                 else
                 {
-                    assetsData.balance -= amount;
-                    assetsData.yuEBao += amount;
-                    UIManager.Instance.Pop();
+                    UIManager.Instance.Push(new InputAndCheckPaywordContext(() =>
+                    {
+                        assetsData.balance -= amount;
+                        assetsData.yuEBao += amount;
+                        UIManager.Instance.Pop();
+                        string payStr = Utils.FormatPaywayStr(PaywayType.Banlance);
+                        UIManager.Instance.Push(new YuEBaoInSuccContext(amount, payStr));
+                    }));
                 }
             }
             else if(_payWay == PaywayType.BankCard)
@@ -98,6 +103,8 @@ namespace UIFrameWork
                         bankData.money -= amount;
                         assetsData.yuEBao += amount;
                         UIManager.Instance.Pop();
+                        string payStr = Utils.FormatPaywayStr(PaywayType.BankCard, bankData.cardId);
+                        UIManager.Instance.Push(new YuEBaoInSuccContext(amount, payStr));
                     }));
                 }
             }
