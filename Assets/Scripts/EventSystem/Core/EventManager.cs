@@ -265,24 +265,28 @@ public sealed class EventManager<TEventType> where TEventType : struct, IFormatt
         if (handlers.ContainsKey(eventKey))
         {
             Delegate del = handlers[eventKey];
-            foreach (var item in del.GetInvocationList())
+            if (del != null)
             {
-                Action action = (Action)item;
-                if (action != null)
+                Delegate[] delArray = del.GetInvocationList();
+                for (int i = 0; i < delArray.Length; i ++)
                 {
-                    try
+                    Action action = (Action)delArray[i];
+                    if (action != null)
                     {
-                        action();
+                        try
+                        {
+                            action();
+                        }
+                        catch (Exception ex)
+                        {
+                            Debug.LogError(ex.StackTrace);
+                        }
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        Debug.LogError(ex.StackTrace);
+                        throw new TriggerEventException(string.Format("send message for event {0} ,but can not get register action",
+                            (TEventType)(object)eventKey));
                     }
-                }
-                else
-                {
-                    throw new TriggerEventException(string.Format("send message for event {0} ,but can not get register action",
-                        (TEventType)(object)eventKey));
                 }
             }
         }
@@ -293,25 +297,29 @@ public sealed class EventManager<TEventType> where TEventType : struct, IFormatt
         int eventKey = enumConverter(type);
         if (handlers.ContainsKey(eventKey))
         {
+
             Delegate del = handlers[eventKey];
-            foreach (var item in del.GetInvocationList())
+            if (del != null)
             {
-                Action<T> action = (Action<T>)item;
-                if (action != null)
+                foreach (var item in del.GetInvocationList())
                 {
-                    try
+                    Action<T> action = (Action<T>)item;
+                    if (action != null)
                     {
-                        action(t);
+                        try
+                        {
+                            action(t);
+                        }
+                        catch (Exception ex)
+                        {
+                            Debug.LogError(ex.StackTrace);
+                        }
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        Debug.LogError(ex.StackTrace);
+                        throw new TriggerEventException(string.Format("send message for event {0} ,but can not get register action",
+                            (TEventType)(object)eventKey));
                     }
-                }
-                else
-                {
-                    throw new TriggerEventException(string.Format("send message for event {0} ,but can not get register action",
-                        (TEventType)(object)eventKey));
                 }
             }
         }
@@ -323,24 +331,27 @@ public sealed class EventManager<TEventType> where TEventType : struct, IFormatt
         if (handlers.ContainsKey(eventKey))
         {
             Delegate del = handlers[eventKey];
-            foreach (var item in del.GetInvocationList())
+            if (del != null)
             {
-                Action<T1, T2> action = (Action<T1, T2>)item;
-                if (action != null)
+                foreach (var item in del.GetInvocationList())
                 {
-                    try
+                    Action<T1, T2> action = (Action<T1, T2>)item;
+                    if (action != null)
                     {
-                        action(t1, t2);
+                        try
+                        {
+                            action(t1, t2);
+                        }
+                        catch (Exception ex)
+                        {
+                            Debug.LogError(ex.StackTrace);
+                        }
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        Debug.LogError(ex.StackTrace);
+                        throw new TriggerEventException(string.Format("send message for event {0} ,but can not get register action",
+                            (TEventType)(object)eventKey));
                     }
-                }
-                else
-                {
-                    throw new TriggerEventException(string.Format("send message for event {0} ,but can not get register action",
-                        (TEventType)(object)eventKey));
                 }
             }
         }
@@ -352,24 +363,27 @@ public sealed class EventManager<TEventType> where TEventType : struct, IFormatt
         if (handlers.ContainsKey(eventKey))
         {
             Delegate del = handlers[eventKey];
-            foreach (var item in del.GetInvocationList())
+            if (del != null)
             {
-                Action<T1, T2, T3> action = (Action<T1, T2, T3>)item;
-                if (action != null)
+                foreach (var item in del.GetInvocationList())
                 {
-                    try
+                    Action<T1, T2, T3> action = (Action<T1, T2, T3>)item;
+                    if (action != null)
                     {
-                        action(t1, t2, t3);
+                        try
+                        {
+                            action(t1, t2, t3);
+                        }
+                        catch (Exception ex)
+                        {
+                            Debug.LogError(ex.StackTrace);
+                        }
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        Debug.LogError(ex.StackTrace);
+                        throw new TriggerEventException(string.Format("send message for event {0} ,but can not get register action",
+                            (TEventType)(object)eventKey));
                     }
-                }
-                else
-                {
-                    throw new TriggerEventException(string.Format("send message for event {0} ,but can not get register action",
-                        (TEventType)(object)eventKey));
                 }
             }
         }
