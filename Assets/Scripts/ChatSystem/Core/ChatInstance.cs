@@ -100,6 +100,7 @@ public class ChatInstance{
             saveData.curSectionId = curSection.sectionID;
             redNum+=finishCount;
             ChatManager.Instance.RefreshChatLst();
+			EventFactory.chatEventCenter.TriggerEvent (ChatEvent.OnCurInstancePopNewMsg);
         }
 	}
 	public void OnExit()

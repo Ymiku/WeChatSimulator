@@ -89,6 +89,7 @@ public class ChatManager : Singleton<ChatManager> {
 	//
 	public void OnEnter(string name)
 	{
+		
 		curUserId = GameManager.Instance.curUserId;
 		pairId2Instance.Clear ();
 		List<string> friends = XMLSaver.saveData.GetFriendsLst (name);

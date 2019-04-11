@@ -14,6 +14,7 @@ public class PoolableFScrollView : MonoBehaviour {
 	List<NodeItemProxy> _activeItems = new List<NodeItemProxy>();
 	RectTransform viewPortTrans;
 	RectTransform contextTrans;
+	int rxId = -1;
 	// Use this for initialization
 	public void Init () {
 		for (int i = 0; i < prefabs.Length; i++) {
@@ -27,6 +28,7 @@ public class PoolableFScrollView : MonoBehaviour {
 		for (int i = 0; i < _pools.Length; i++) {
 			_pools [i] = new Stack<NodeItemProxy> ();
 		}
+
         /*
 		if (false&&contextTrans.sizeDelta.y < viewPortTrans.sizeDelta.y) {
 			contextTrans.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical, viewPortTrans.sizeDelta.y);
@@ -34,21 +36,29 @@ public class PoolableFScrollView : MonoBehaviour {
 		}
         */
 	}
+	void OnPopNewMsg()
+	{
+		FrostRX.End (ref rxId);
+		rxId = FrostRX.Start (this).ExecuteContinuous (()=>{contextTrans.anchoredPosition = Vector2.Lerp (contextTrans.anchoredPosition,new Vector2(0.0f,contextTrans.sizeDelta.y-viewPortTrans.sizeDelta.y-1.0f),4.0f*Time.deltaTime);},1.0f).Execute(()=>{rxId=-1;}).GetId();
+	}
     bool needUpdate = false;
     public void OnEnter()
     {
         needUpdate = true;
         contextTrans.anchoredPosition = Vector2.zero;
         contextTrans.sizeDelta = new Vector2(contextTrans.sizeDelta.x, ChatManager.Instance.curInstance.saveData.totalRectHeight);
+		EventFactory.chatEventCenter.AddListener (ChatEvent.OnCurInstancePopNewMsg,OnPopNewMsg);
     }
     public void OnExit()
     {
+		FrostRX.End (ref rxId);
         needUpdate = false;
         for (int i = 0; i < _activeItems.Count; i++)
         {
             Pool(_activeItems[i]);
             i--;
         }
+		EventFactory.chatEventCenter.RemoveListener (ChatEvent.OnCurInstancePopNewMsg,OnPopNewMsg);
     }
     void TryOpen()
     {
@@ -117,7 +127,7 @@ public class PoolableFScrollView : MonoBehaviour {
 				AddActiveNodeY (a);
 			}
 		}
-		contextTrans.anchoredPosition = Vector2.Lerp (contextTrans.anchoredPosition,contextTrans.anchoredPosition+new Vector2(0.0f,contextTrans.sizeDelta.y-viewPortTrans.sizeDelta.y),Time.deltaTime);
+
 		/*
 		if (size.y < viewPortTrans.sizeDelta.y) {
 			borrowHeight = viewPortTrans.sizeDelta.y - size.y;

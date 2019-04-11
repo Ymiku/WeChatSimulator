@@ -5,3 +5,7 @@ public enum NumberKeypadEvent
     Delete,
     Clear,
 }
+public enum ChatEvent
+{
+	OnCurInstancePopNewMsg,
+}
