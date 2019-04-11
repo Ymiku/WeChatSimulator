@@ -38,8 +38,10 @@ public class PoolableFScrollView : MonoBehaviour {
 	}
 	void OnPopNewMsg()
 	{
+		if (ChatManager.Instance.curExecuteInstance.saveData.totalRectHeight <= viewPortTrans.sizeDelta.y)
+			return;
 		FrostRX.End (ref rxId);
-		rxId = FrostRX.Start (this).ExecuteContinuous (()=>{contextTrans.anchoredPosition = Vector2.Lerp (contextTrans.anchoredPosition,new Vector2(0.0f,contextTrans.sizeDelta.y-viewPortTrans.sizeDelta.y-1.0f),4.0f*Time.deltaTime);},1.0f).Execute(()=>{rxId=-1;}).GetId();
+		rxId = FrostRX.Start (this).ExecuteContinuous (()=>{contextTrans.anchoredPosition = Vector2.Lerp (contextTrans.anchoredPosition,new Vector2(0.0f,contextTrans.sizeDelta.y-viewPortTrans.sizeDelta.y+1.0f),16.0f*Time.deltaTime);},0.4f).Execute(()=>{rxId=-1;}).GetId();
 	}
     bool needUpdate = false;
     public void OnEnter()
