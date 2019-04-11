@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1401663114878704
 GameObject:
   m_ObjectHideFlags: 1
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 222956573602864606}
   - component: {fileID: 114880613261801776}
   m_Layer: 5
-  m_Name: line
+  m_Name: border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -636,7 +636,7 @@ MonoBehaviour:
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 2
   m_ReadOnly: 0
-  f_InputType: 1
+  f_InputType: 4
 --- !u!114 &114074161301878286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1235,7 +1235,7 @@ MonoBehaviour:
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 2
   m_ReadOnly: 0
-  f_InputType: 1
+  f_InputType: 16
 --- !u!114 &114762246161931684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1690,8 +1690,8 @@ RectTransform:
   - {fileID: 224332413358376528}
   - {fileID: 224501716438406236}
   - {fileID: 224059133809480542}
-  - {fileID: 224987834760152382}
   - {fileID: 224694296783618338}
+  - {fileID: 224987834760152382}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2028,7 +2028,7 @@ RectTransform:
   m_Children:
   - {fileID: 224282710975701106}
   m_Father: {fileID: 224030212559878254}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2142,7 +2142,7 @@ RectTransform:
   - {fileID: 224362125329614630}
   - {fileID: 224207732713334632}
   m_Father: {fileID: 224030212559878254}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}

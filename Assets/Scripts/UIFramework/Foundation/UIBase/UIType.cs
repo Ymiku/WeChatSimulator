@@ -83,5 +83,6 @@ namespace UIFrameWork
 		public static readonly UIType YuEBaoInSucc = new UIType("View/YuEBaoInSuccView"); //余额宝转入成功
 		public static readonly UIType YuEBaoOutSucc = new UIType("View/YuEBaoOutSuccView"); //余额宝转出成功
 		public static readonly UIType TransferToBankCard = new UIType("View/TransferToBankCardView"); //转账到银行卡
+		public static readonly UIType TransferToBankCardConfirm = new UIType("View/TransferToBankCardConfirmView"); //确认银行卡转帐信息
     }
 }

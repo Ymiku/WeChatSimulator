@@ -76,7 +76,7 @@ namespace UIFrameWork
 
         public void OnClickNormal()
         {
-            Debug.LogError("click normal");
+           
             if (_toCardTimeType == ToCardTimeType.Fast)
             {
                 _toCardTimeType = ToCardTimeType.Normal;

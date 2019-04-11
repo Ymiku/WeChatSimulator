@@ -24,15 +24,15 @@ namespace UIFrameWork
         public override void Init()
         {
             base.Init();
-            _useItem = FindChild("Content/UseItem");
-            _canNotPayObj = FindChild("Content/CantUse");
+            _useItem = FindChild("Content/Group/UseItem");
+            _canNotPayObj = FindChild("Content/Group/CantUse");
             _okTextObj = FindChild("Content/OkBtn/Text");
             _selectTextObj = FindChild("Content/OkBtn/Text1");
             _signObj = FindChild("Content/sign");
             _amountText = FindInChild<Text>("Content/Value");
-            _useItemText = FindInChild<Text>("Content/UseItem/wayText");
+            _useItemText = FindInChild<Text>("Content/Group/UseItem/wayText");
             _okBtn = FindInChild<Button>("Content/OkBtn");
-            _useItemBtn = FindInChild<Button>("Content/UseItem");
+            _useItemBtn = FindInChild<Button>("Content/Group/UseItem");
             _okBtn.onClick.AddListener(OnClickOk);
             _useItemBtn.onClick.AddListener(OnClickUseItem);
         }
