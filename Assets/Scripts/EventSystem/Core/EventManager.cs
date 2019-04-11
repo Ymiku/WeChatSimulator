@@ -274,7 +274,7 @@ public sealed class EventManager<TEventType> where TEventType : struct, IFormatt
                     {
                         try
                         {
-                            action(t);
+                            action();
                         }
                         catch (Exception ex)
                         {
