@@ -23,6 +23,7 @@ public class PoolableFScrollView : MonoBehaviour {
 		}
 		viewPortTrans = GetComponent<FScrollRect> ().viewport;
 		contextTrans = GetComponent<FScrollRect> ().content;
+
 		_activeItems.Clear ();
 		_pools = new Stack<NodeItemProxy>[prefabs.Length];
 		for (int i = 0; i < _pools.Length; i++) {
@@ -83,6 +84,7 @@ public class PoolableFScrollView : MonoBehaviour {
         ChatManager.Instance.curExecuteInstance.ActiveNode(front);
 		float itemHeight = item.SetData (front);
 		item.cachedRectTransform.anchoredPosition = new Vector2 (0.0f,itemHeight-contextTrans.sizeDelta.y);
+		contextTrans.anchoredPosition = new Vector2 (0.0f, contextTrans.sizeDelta.y - viewPortTrans.sizeDelta.y);
 		if (front==nextReadNode) {
 			instance.ReadNext ();
 			ChatManager.Instance.curInstance.saveData.totalRectHeight += itemHeight;
