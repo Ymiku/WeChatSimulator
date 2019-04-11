@@ -44,4 +44,7 @@ public class ContentHelper
     public const int YuEBaoInSucc = 36; //成功转入{0}元
     public const int CardNotSupport = 37;  //该卡不支持转账
     public const int NameNotMatchCard = 38; //持卡人与卡号不符
+    public const int RMBText = 39; //元
+    public const int RMBSign = 40; //¥
+    public const int TransferToCardDetail = 41; //对方实收{0}元，服务费{1}元
 }

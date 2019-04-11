@@ -227,6 +227,10 @@ public static class Utils
         _yuEBaoSprite = Resources.Load<Sprite>("CommonSprites/yu_e_bao");
         return _yuEBaoSprite;
     }
+    public static double GetBankServiceAmount(double money)
+    {
+        return Math.Round(money * GameDefine.ServicePower > 0.1 ? money * GameDefine.ServicePower : 0.1, 2);
+    }
 }
 public enum FInputType
 {
