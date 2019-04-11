@@ -82,14 +82,14 @@ public class NodeItemProxy : MonoBehaviour {
 			image.enabled = false;
 			text.text = (node as ChatNode).DialogLine;
 			//text.rectTransform.sizeDelta = new Vector2 (text.preferredWidth, Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight + 20.0f));
-			backGround.sizeDelta = new Vector2 (Mathf.Max(80.0f,text.preferredWidth+40.0f),Mathf.Max(avatar.rectTransform.sizeDelta.y,text.preferredHeight+40.0f));
-            text.rectTransform.sizeDelta = new Vector2(backGround.sizeDelta.x-20.0f,backGround.sizeDelta.y);
+			backGround.sizeDelta = new Vector2 (Mathf.Max(80.0f,text.preferredWidth+60.0f),Mathf.Max(avatar.rectTransform.sizeDelta.y,text.preferredHeight+60.0f));
+            text.rectTransform.sizeDelta = new Vector2(backGround.sizeDelta.x-60.0f,backGround.sizeDelta.y);
         }
 		if (node is ChatImageNode) {
 			image.sprite = (node as ChatImageNode).CharacterPotrait;
 			text.enabled = false;
 			image.enabled = true;
-			backGround.sizeDelta = new Vector2 (Mathf.Max(80.0f, image.rectTransform.sizeDelta.x+40.0f), Mathf.Max(avatar.rectTransform.sizeDelta.y, image.rectTransform.sizeDelta.y+20.0f));
+			backGround.sizeDelta = new Vector2 (Mathf.Max(40.0f, image.rectTransform.sizeDelta.x+40.0f), Mathf.Max(avatar.rectTransform.sizeDelta.y, image.rectTransform.sizeDelta.y+20.0f));
 		}
         if (node is ChatOptionNode)
         {
@@ -97,8 +97,8 @@ public class NodeItemProxy : MonoBehaviour {
             image.enabled = false;
 			text.text = (node as ChatOptionNode).labels[(node as ChatOptionNode).option];
             //text.rectTransform.sizeDelta = new Vector2 (text.preferredWidth, Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight + 20.0f));
-            backGround.sizeDelta = new Vector2(Mathf.Max(80.0f, text.preferredWidth + 40.0f), Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight + 40.0f));
-            text.rectTransform.sizeDelta = new Vector2(backGround.sizeDelta.x - 20.0f, backGround.sizeDelta.y);
+            backGround.sizeDelta = new Vector2(Mathf.Max(80.0f, text.preferredWidth + 60.0f), Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight + 60.0f));
+            text.rectTransform.sizeDelta = new Vector2(backGround.sizeDelta.x - 60.0f, backGround.sizeDelta.y);
         }
         if (node is RootGraphNode)
         {

@@ -125,6 +125,10 @@ namespace UIFrameWork
             contactsCount++;
             return item;
         }
+        public void OnClickNewFriends()
+        {
+            UIManager.Instance.Push(new NewFriendsContext());
+        }
 	}
 	public class ContactsContext : BaseContext
 	{
