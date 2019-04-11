@@ -267,15 +267,14 @@ public sealed class EventManager<TEventType> where TEventType : struct, IFormatt
             Delegate del = handlers[eventKey];
             if (del != null)
             {
-                Delegate[] delArray = del.GetInvocationList();
-                for (int i = 0; i < delArray.Length; i ++)
+                foreach (var item in del.GetInvocationList())
                 {
-                    Action action = (Action)delArray[i];
+                    Action action = (Action)item;
                     if (action != null)
                     {
                         try
                         {
-                            action();
+                            action(t);
                         }
                         catch (Exception ex)
                         {
