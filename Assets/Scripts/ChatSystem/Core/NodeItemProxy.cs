@@ -5,7 +5,7 @@ using NodeEditorFramework;
 using NodeEditorFramework.Standard;
 using UnityEngine.UI;
 public class NodeItemProxy : MonoBehaviour {
-	public ContentSizeFitter fitter;
+	public CanvasGroup group;
 	public int padding = 20;
 	public int prefabId;
 	public Image avatar;
@@ -42,6 +42,30 @@ public class NodeItemProxy : MonoBehaviour {
 		}
 	}
 	public Node linkedNode;
+	float count = 1.0f;
+	public void FadeIn()
+	{
+		count = 0.0f;
+		UpdateLayout ();
+	}
+	void Update()
+	{
+		if (count < 1.0f) {
+			count = Mathf.Lerp (count,1.01f,8.0f*Time.deltaTime);
+			if (count >= 1.0f)
+				count = 1.0f;
+			UpdateLayout ();
+		}
+	}
+	void UpdateLayout()
+	{
+		if (prefabId == 0)
+			cachedRectTransform.anchoredPosition = new Vector2 (Mathf.Lerp(-1080.0f, 0.0f,count),cachedRectTransform.anchoredPosition.y);
+		if (prefabId == 1)
+			cachedRectTransform.anchoredPosition = new Vector2 (Mathf.Lerp(1080.0f, 0.0f,count),cachedRectTransform.anchoredPosition.y);
+		group.alpha = count*6.0f-5.0f;
+	}
+
 	public float SetData(Node node)
 	{
 		text.rectTransform.sizeDelta = new Vector2 (660.0f,800.0f);
@@ -87,7 +111,8 @@ public class NodeItemProxy : MonoBehaviour {
             text.rectTransform.sizeDelta = new Vector2(backGround.sizeDelta.x - 20.0f, backGround.sizeDelta.y);
         }
 		cachedRectTransform.sizeDelta = backGround.sizeDelta + new Vector2 (0.0f,padding*2.0f);
-		gameObject.SetActive (true);
+		count = 1.0f;
+		UpdateLayout ();
 		return cachedRectTransform.sizeDelta.y;
 	}
 }
