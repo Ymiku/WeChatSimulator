@@ -61,7 +61,8 @@ namespace UIFrameWork
             balanceData.isEnough = balanceEnough;
             balanceData.payway = PaywayType.Banlance;
             balanceData.spendType = _context.spendType;
-            bool yuEBaoEnough = AssetsManager.Instance.assetsData.yuEBao >= _context.amount && _context.spendType != SpendType.ToSelfYuEBao;
+            bool yuEBaoEnough = AssetsManager.Instance.assetsData.yuEBao >= _context.amount &&
+                _context.spendType != SpendType.ToSelfYuEBao;
             SelectPaywayItemData yuEBaoData = new SelectPaywayItemData();
             yuEBaoData.isAddCard = false;
             yuEBaoData.isEnough = yuEBaoEnough;

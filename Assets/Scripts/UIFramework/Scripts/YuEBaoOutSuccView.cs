@@ -11,6 +11,7 @@ namespace UIFrameWork
 		public override void Init ()
 		{
 			base.Init ();
+            _detailText = FindInChild<TextProxy>("DetailText");
 		}
 		public override void OnEnter(BaseContext context)
 		{

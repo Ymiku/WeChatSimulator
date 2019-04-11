@@ -84,6 +84,8 @@ namespace UIFrameWork
                     data.yuEBao -= amount;
                     data.balance += amount;
                     UIManager.Instance.Pop();
+                    string detailStr = string.Format(ContentHelper.Read(ContentHelper.YuEBaoToBalanceSucc), amount);
+                    UIManager.Instance.Push(new YuEBaoOutSuccContext(detailStr));
                 }));
             }
         }
