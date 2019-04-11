@@ -69,18 +69,19 @@ namespace UIFrameWork
             if (_toCardTimeType == ToCardTimeType.Normal)
             {
                 _toCardTimeType = ToCardTimeType.Fast;
-                _fastWaySelectedObj.SetActive(false);
-                _normalWaySelectedobj.SetActive(true);
+                _fastWaySelectedObj.SetActive(true);
+                _normalWaySelectedobj.SetActive(false);
             }
         }
 
         public void OnClickNormal()
         {
+            Debug.LogError("click normal");
             if (_toCardTimeType == ToCardTimeType.Fast)
             {
                 _toCardTimeType = ToCardTimeType.Normal;
-                _fastWaySelectedObj.SetActive(true);
-                _normalWaySelectedobj.SetActive(false);
+                _fastWaySelectedObj.SetActive(false);
+                _normalWaySelectedobj.SetActive(true);
             }
         }
 

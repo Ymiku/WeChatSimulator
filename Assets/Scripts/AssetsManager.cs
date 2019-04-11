@@ -95,6 +95,7 @@ public class AssetsManager : Singleton<AssetsManager>
     public void UpdateCardsList()
     {
         bankCardsData = XMLSaver.saveData.GetBankCardDataList(_id);
+        curUseBankCard = XMLSaver.saveData.GetCurUseCard(_id);
     }
 
     /// <summary>

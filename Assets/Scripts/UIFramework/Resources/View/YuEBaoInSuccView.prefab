@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 114609729777302322}
   - component: {fileID: 114511961052693682}
   m_Layer: 5
-  m_Name: text
+  m_Name: PaywayText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -873,7 +873,7 @@ MonoBehaviour:
   _detailText: {fileID: 114350678011231386}
   _startTimeText: {fileID: 114801932909639532}
   _receiveTimeText: {fileID: 114819890394397562}
-  _payText: {fileID: 114817326657214610}
+  _payText: {fileID: 114609729777302322}
 --- !u!114 &114592722268955802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1581,7 +1581,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52.2, y: 0}
+  m_AnchoredPosition: {x: -52.200012, y: 0}
   m_SizeDelta: {x: 695.7, y: 94}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!224 &224274794094791958
