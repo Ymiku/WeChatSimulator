@@ -71,6 +71,8 @@ public class PoolableFScrollView : MonoBehaviour {
 		Node front = null;
 		if (CanShow (nextReadNode, runningNode)) {
 			front = nextReadNode;
+		} else if(nextReadNode==null){
+			front = instance.curSection.GetLast();
 		} else {
 			front = instance.GetFront (nextReadNode,true);
 		}
@@ -95,7 +97,7 @@ public class PoolableFScrollView : MonoBehaviour {
 	}
 	bool CanShow(Node readNode,Node curNode)
 	{
-		if (curNode == null)
+		if (curNode == null||readNode==null)
 			return true;
 		if (curNode.sectionId > readNode.sectionId)
 			return true;

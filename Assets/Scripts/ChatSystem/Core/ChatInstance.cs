@@ -45,7 +45,7 @@ public class ChatInstance{
 		if (saveData.readNodeId >= 0) {
 			nextReadNode = ChatManager.Instance.LoadSectionByID (curPairID, saveData.readSectionId).nodes [saveData.readNodeId];
 		} else {
-			nextReadNode = ChatManager.Instance.LoadSectionByID (curPairID, saveData.curSectionId).GetLast ();
+			//nextReadNode = ChatManager.Instance.LoadSectionByID (curPairID, saveData.curSectionId).GetLast ();
 		}
 		if (front != null) {
 			lastSentence = GetLastSentence (front);
