@@ -10,7 +10,7 @@ namespace UIFrameWork
 		public override void Init ()
 		{
 			base.Init ();
-            _moneyText = FindInChild<TextProxy>("Panel/Top/Balance/Values");
+            _moneyText = FindInChild<TextProxy>("Panel/Top/Balance/Value");
 		}
 		public override void OnEnter(BaseContext context)
 		{
