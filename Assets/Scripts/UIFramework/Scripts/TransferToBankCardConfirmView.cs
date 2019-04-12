@@ -13,7 +13,10 @@ namespace UIFrameWork
         public ImageProxy _bankIcon;
         public FInputField _remarksField;
 
-		public override void Init ()
+        private double _serviceAmount;
+        private double _totalMoney;
+
+        public override void Init ()
 		{
 			base.Init ();
 		}
@@ -47,7 +50,7 @@ namespace UIFrameWork
 
         public void OnClickConfirm()
         {
-            UIManager.Instance.Push(new ConfirmPaymentContext());
+            UIManager.Instance.Push(new ConfirmPaymentContext(_context.cardId, _context.amount, _serviceAmount, _remarksField.text));
         }
 
         private void Refresh()
@@ -55,16 +58,16 @@ namespace UIFrameWork
             BankCardSaveData data = XMLSaver.saveData.GetBankCardData(_context.cardId);
             _nameText.text = _context.name;
             _cardText.text = Utils.FormatPaywayStr(PaywayType.BankCard, _context.cardId);
-            double serviceAmount = Utils.GetBankServiceAmount(_context.amount);
-            double totalMoney = _context.amount + serviceAmount;
-            _moneyText.text = totalMoney.ToString() + ContentHelper.Read(ContentHelper.RMBText);
-            _detailText.text = string.Format(ContentHelper.Read(ContentHelper.TransferToCardDetail), _context.amount, serviceAmount);
+            _serviceAmount = Utils.GetBankServiceAmount(_context.amount);
+            _totalMoney = _context.amount + _serviceAmount;
+            _moneyText.text = _totalMoney.ToString() + ContentHelper.Read(ContentHelper.RMBText);
+            _detailText.text = string.Format(ContentHelper.Read(ContentHelper.TransferToCardDetail), _context.amount, _serviceAmount);
             _bankIcon.sprite = AssetsManager.Instance.GetBankSprite(data.bankName);
             _bankIcon.rectTransform.anchoredPosition3D = new Vector3(-_cardText.preferredWidth / 2 - 20,
                 _cardText.transform.localPosition.y, _cardText.transform.localPosition.z);
         }
 	}
-	public class TransferToBankCardConfirmContext : BaseContext  // rtodo
+	public class TransferToBankCardConfirmContext : BaseContext
 	{
 		public TransferToBankCardConfirmContext() : base(UIType.TransferToBankCardConfirm)
 		{

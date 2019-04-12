@@ -39,6 +39,8 @@ namespace UIFrameWork
             _signObj = FindChild("Content/sign");
             _amountText = FindInChild<Text>("Content/Value");
             _useItemText = FindInChild<Text>("Content/Group/UseItem/wayText");
+            _orderText = FindInChild<Text>("Content/Group/OrderAmount/value");
+            _serviceText = FindInChild<Text>("Content/Group/ServiceCharge/value");
             _okBtn = FindInChild<Button>("Content/OkBtn");
             _useItemBtn = FindInChild<Button>("Content/Group/UseItem");
             _okBtn.onClick.AddListener(OnClickOk);
@@ -73,7 +75,10 @@ namespace UIFrameWork
 
         public void OnClickUseItem()
         {
-            UIManager.Instance.Push(new SelectPayWayContext(_context.amount, SpendType.TransferToBalance));
+            if (_context.spendType == SpendType.TransferToBalance)
+                UIManager.Instance.Push(new SelectPayWayContext(_amount, SpendType.TransferToBalance));
+            else if (_context.spendType == SpendType.TransferToBankCard)
+                UIManager.Instance.Push(new SelectPayWayContext(_amount, SpendType.TransferToBankCard));
         }
 
         public void OnClickOk()
@@ -126,7 +131,6 @@ namespace UIFrameWork
         {
             if (_canPayFlag)
             {
-                AccountSaveData accountData = GameManager.Instance.accountData;
                 BankCardSaveData data = XMLSaver.saveData.GetBankCardData(_context.cardId);
                 if (data == null)
                 {
@@ -139,8 +143,8 @@ namespace UIFrameWork
                     if (result == ResultType.Success)
                     {
                         data.money += _amount;
-                        string receiverStr = "(" + Utils.FormatStringForSecrecy(data.realName, FInputType.Name) + ")";
-                        receiverStr = accountData.nickname + receiverStr;
+                        string receiverStr = "(" + Utils.FormatPaywayStr(PaywayType.BankCard, _context.cardId) + ")";
+                        receiverStr = data.realName + receiverStr;
                         UIManager.Instance.Push(new TransferSuccContext(_amount, _paywayStr, receiverStr, _context.remarksStr));
                     }
                     else
@@ -159,16 +163,16 @@ namespace UIFrameWork
         private void Refresh()
         {
             _spendWay = _context.spendType;
-            _amount = _spendWay == SpendType.TransferToBalance ? _context.amount : _context.realAmount + _context.serviceAmount;
+            _amount = _spendWay == SpendType.TransferToBankCard ? _context.realAmount + _context.serviceAmount : _context.amount;
             _payway = AssetsManager.Instance.SetCurPaywayByMoney(_amount);
             _serviceItem.SetActive(_spendWay == SpendType.TransferToBankCard);
             _orderItem.SetActive(_spendWay == SpendType.TransferToBankCard);
-            if (_spendWay == SpendType.TransferToBalance)
+            if (_spendWay == SpendType.TransferToBankCard)
             {
                 _orderText.text = _context.realAmount.ToString();
                 _serviceText.text = _context.serviceAmount.ToString();
             }
-            _amountText.text = _context.amount.ToString();
+            _amountText.text = _amount.ToString();
             _signObj.transform.localPosition = new Vector3(-_amountText.preferredWidth / 2,
                     _signObj.transform.localPosition.y, _signObj.transform.localPosition.z);
             _canPayFlag = AssetsManager.Instance.curPayway != PaywayType.None;
