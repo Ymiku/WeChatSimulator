@@ -45,7 +45,7 @@ namespace UIFrameWork
         private void Refresh()
         {
             HeadSpriteUtils.Instance.SetHead(headSprite);
-            userName.text = GameManager.Instance.accountData.realname;
+            userName.text = GameManager.Instance.accountData.realName;
             phoneNumber.text = Utils.FormatStringForSecrecy(GameManager.Instance.accountData.phoneNumber, FInputType.PhoneNumber);
         }
 

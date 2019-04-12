@@ -57,7 +57,7 @@ namespace UIFrameWork
         {
             HeadSpriteUtils.Instance.SetHead(_headImg);
             _accountText.text = GameManager.Instance.accountData.phoneNumber;
-            _realName.text = GameManager.Instance.accountData.realname;
+            _realName.text = GameManager.Instance.accountData.realName;
         }
     }
 	public class PersonalInfoContext : BaseContext

@@ -24,7 +24,7 @@ public partial class SaveData
         BankCardSaveData data = new BankCardSaveData();
         data.accountId = accountId;
         data.cardId = cardId;
-        data.realName = GetAccountData(accountId).realname;
+        data.realName = GetAccountData(accountId).realName;
         data.bankName = StaticDataBankCard.GetCardNameById(cardId);
         bankCardList.Add(data);
         if (GetBankCardDataList(accountId).Count == 1)

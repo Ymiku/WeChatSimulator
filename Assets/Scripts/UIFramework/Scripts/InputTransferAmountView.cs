@@ -41,9 +41,9 @@ namespace UIFrameWork
             _context = context as InputTransferAmountContext;
             _account = _context.account;
             if (string.IsNullOrEmpty(_account.nickname) || _account.nickname == ContentHelper.Read(5))
-                _nameText.text = _account.realname + "(" + Utils.FormatStringForSecrecy(_account.realname, FInputType.Name) + ")";
+                _nameText.text = _account.realName + "(" + Utils.FormatStringForSecrecy(_account.realName, FInputType.Name) + ")";
             else
-                _nameText.text = _account.nickname + "(" + Utils.FormatStringForSecrecy(_account.realname, FInputType.Name) + ")";
+                _nameText.text = _account.nickname + "(" + Utils.FormatStringForSecrecy(_account.realName, FInputType.Name) + ")";
 
             _accountText.text = Utils.FormatStringForSecrecy(_account.phoneNumber, FInputType.PhoneNumber);
         }

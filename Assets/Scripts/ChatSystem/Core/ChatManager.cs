@@ -122,9 +122,9 @@ public class ChatManager : Singleton<ChatManager> {
             {
                c = Utils.GetSpellCode(data.nickname)[0];
             }
-            else if (!string.IsNullOrEmpty(data.realname))
+            else if (!string.IsNullOrEmpty(data.realName))
             {
-                c = Utils.GetSpellCode(data.realname)[0];
+                c = Utils.GetSpellCode(data.realName)[0];
             }
             else
             {

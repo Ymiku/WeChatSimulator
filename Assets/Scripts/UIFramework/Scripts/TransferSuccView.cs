@@ -34,11 +34,7 @@ namespace UIFrameWork
             _amountText.text = _context.amount.ToString();
             _signObj.transform.localPosition = new Vector3(-_amountText.preferredWidth/2 + 26.5f,
                 _signObj.transform.localPosition.y, _signObj.transform.localPosition.z);
-            string realNameStr = "(" + Utils.FormatStringForSecrecy(_context.receiverAccount.realname, FInputType.Name) + ")";
-            if (string.IsNullOrEmpty(_context.receiverAccount.nickname) || _context.receiverAccount.nickname == ContentHelper.Read(5))
-                _receiverText.text = _context.receiverAccount.realname + realNameStr;
-            else
-                _receiverText.text = _context.receiverAccount.nickname + realNameStr;
+            _receiverText.text = _context.receiverStr;
 		}
 
 		public override void OnExit(BaseContext context)
@@ -77,17 +73,18 @@ namespace UIFrameWork
 		{
 		}
 
-        public TransferSuccContext(double amount, string paywayStr, AccountSaveData receiverAccount, string remarksStr = "") :
-            base(UIType.TransferSucc){
+        public TransferSuccContext(double amount, string paywayStr, string receiverStr, string remarksStr = "") :
+            base(UIType.TransferSucc)
+        {
             this.amount = amount;
             this.paywayStr = paywayStr;
             this.remarksStr = remarksStr;
-            this.receiverAccount = receiverAccount;
+            this.receiverStr = receiverStr;
         }
 
         public double amount;
         public string paywayStr;
         public string remarksStr;  //×ªÕË±¸×¢
-        public AccountSaveData receiverAccount;
+        public string receiverStr;
 	}
 }

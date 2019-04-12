@@ -17,8 +17,8 @@ public class ChatItem : ItemBase {
         HeadSpriteUtils.Instance.SetHead(head,data.accountId);
         if (!string.IsNullOrEmpty(data.nickname))
             userName.text = data.nickname;
-        else if (!string.IsNullOrEmpty(data.realname))
-            userName.text = data.realname;
+        else if (!string.IsNullOrEmpty(data.realName))
+            userName.text = data.realName;
         else
             userName.text = ContentHelper.Read(ContentHelper.NotSetNickName);
         OnRefresh();

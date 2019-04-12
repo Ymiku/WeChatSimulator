@@ -85,7 +85,7 @@ namespace UIFrameWork
         private void Refresh()
         {
             _cardInput.text = "";
-            _nameText.text = GameManager.Instance.accountData.realname;
+            _nameText.text = GameManager.Instance.accountData.realName;
         }
 
         private bool CheckCardLegal(string cardId)

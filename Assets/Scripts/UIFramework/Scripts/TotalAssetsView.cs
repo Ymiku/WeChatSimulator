@@ -48,7 +48,7 @@ namespace UIFrameWork
 
         private void Refresh()
         {
-            _nameText.text = GameManager.Instance.accountData.realname;
+            _nameText.text = GameManager.Instance.accountData.realName;
             _balanceText.text = AssetsManager.Instance.assetsData.balance.ToString();
             _yuEBaoText.text = AssetsManager.Instance.assetsData.yuEBao.ToString();
             _totalText.text = (AssetsManager.Instance.assetsData.balance + AssetsManager.Instance.assetsData.yuEBao).ToString();

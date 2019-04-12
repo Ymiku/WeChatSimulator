@@ -29,7 +29,7 @@ public partial class SaveData {
             {
                 data.enname = staticData.en_name;
                 data.password = staticData.password;
-                data.realname = staticData.real_name;
+                data.realName = staticData.real_name;
                 data.nickname = staticData.nick_name;
                 data.phoneNumber = staticData.phone_number;
 				string headPath = "HeadSprites/"+data.enname;
@@ -95,7 +95,7 @@ public class AccountSaveData
     public int accountId;               // 账户唯一id
     public string enname;
     public string phoneNumber;          // 账户电话号码
-    public string realname;             // 账户实名
+    public string realName;             // 账户实名
     public string nickname;             // 账户名(昵称)
     public string password;             // 账户登陆密码
     public string payword;              // 账户支付密码

@@ -14,15 +14,15 @@ public class ContactsItem : ItemBase
         base.SetData(o);
         data = o as AccountSaveData;
         HeadSpriteUtils.Instance.SetHead(head,data.accountId);
-        if (string.IsNullOrEmpty(data.nickname) || string.IsNullOrEmpty(data.realname))
+        if (string.IsNullOrEmpty(data.nickname) || string.IsNullOrEmpty(data.realName))
         {
-            if (string.IsNullOrEmpty(data.nickname) && string.IsNullOrEmpty(data.realname))
+            if (string.IsNullOrEmpty(data.nickname) && string.IsNullOrEmpty(data.realName))
             {
                 singleName.text = ContentHelper.Read(ContentHelper.NotSetNickName);
             }
             else if (string.IsNullOrEmpty(data.nickname))
             {
-                singleName.text = data.realname;
+                singleName.text = data.realName;
             }
             else
             {
@@ -34,7 +34,7 @@ public class ContactsItem : ItemBase
         }
         else
         {
-            realName.text = data.realname;
+            realName.text = data.realName;
             nickName.text = data.nickname;
             realName.gameObject.SetActive(true);
             nickName.gameObject.SetActive(true);

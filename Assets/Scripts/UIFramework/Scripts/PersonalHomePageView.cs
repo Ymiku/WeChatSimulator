@@ -78,7 +78,7 @@ namespace UIFrameWork
             else
                 _nickName.text = data.nickname;
             _accountText.text = data.phoneNumber;
-            _realNameText.text = data.realname;
+            _realNameText.text = data.realName;
             bool systemHeadFlag = string.IsNullOrEmpty(data.headSprite);
             if (!systemHeadFlag)
                 systemHeadFlag = data.headSprite.IndexOf("Sprites/") == 0;
