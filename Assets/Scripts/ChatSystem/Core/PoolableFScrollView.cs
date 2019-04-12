@@ -29,13 +29,6 @@ public class PoolableFScrollView : MonoBehaviour {
 		for (int i = 0; i < _pools.Length; i++) {
 			_pools [i] = new Stack<NodeItemProxy> ();
 		}
-
-        /*
-		if (false&&contextTrans.sizeDelta.y < viewPortTrans.sizeDelta.y) {
-			contextTrans.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical, viewPortTrans.sizeDelta.y);
-			borrowHeight = viewPortTrans.sizeDelta.y-contextTrans.sizeDelta.y;
-		}
-        */
 	}
 	void OnPopNewMsg()
 	{
@@ -107,14 +100,7 @@ public class PoolableFScrollView : MonoBehaviour {
             return true;
         return false;
 	}
-	float borrowHeight = 0.0f;
 	// Update is called once per frame
-	void AddActiveNodeY(float h)
-	{
-		for (int i = 0; i < _activeItems.Count; i++) {
-			_activeItems [i].cachedRectTransform.anchoredPosition += new Vector2 (0.0f,h);
-		}
-	}
 	void Update () {
         if (!needUpdate)
             return;
@@ -123,28 +109,6 @@ public class PoolableFScrollView : MonoBehaviour {
 		while (CheckBorder()&&i<100) {
 			i++;
 		}
-		if (false&&borrowHeight >111120.0f&&contextTrans.sizeDelta.y > viewPortTrans.sizeDelta.y) {
-			float a = contextTrans.sizeDelta.y - viewPortTrans.sizeDelta.y;
-			if (a > borrowHeight) {
-				contextTrans.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,contextTrans.sizeDelta.y-borrowHeight);
-				borrowHeight = 0.0f;
-				AddActiveNodeY (borrowHeight);
-			} else {
-				contextTrans.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,contextTrans.sizeDelta.y-a);
-				borrowHeight -= a;
-				AddActiveNodeY (a);
-			}
-		}
-
-		/*
-		if (size.y < viewPortTrans.sizeDelta.y) {
-			borrowHeight = viewPortTrans.sizeDelta.y - size.y;
-			size = new Vector2 (size.x, size.y + borrowHeight);
-			contextTrans.anchoredPosition = Vector2.zero;
-		} 
-
-		contextTrans.sizeDelta = size;
-		*/
 	}
 	bool CheckBorder()
 	{
