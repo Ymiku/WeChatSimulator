@@ -114,22 +114,6 @@ public class AssetsManager : Singleton<AssetsManager>
             return sprite;
         }
     }
-
-    /// <summary>
-    /// 检查银行卡是否存在
-    /// </summary>
-    public bool CheckCardExist(string cardId)
-    {
-        if (!string.IsNullOrEmpty(cardId))
-        {
-            for (int i = 0; i < XMLSaver.saveData.bankCardList.Count; i++)
-            {
-                if (XMLSaver.saveData.bankCardList[i].cardId == cardId)
-                    return true;
-            }
-        }
-        return false;
-    }
 }
 
 public enum PaywayType
@@ -142,7 +126,8 @@ public enum PaywayType
 
 public enum SpendType
 {
-    Transfer,           //转账
+    TransferToBalance,  //转账到支付宝账户
+    TransferToBankCard, //转账到银行卡
     ToSelfYuEBao,       //转到自己余额宝
-    ToSelfBankCard,     //转到自己银行卡     
+    ToSelfBankCard,     //转到自己银行卡
 }

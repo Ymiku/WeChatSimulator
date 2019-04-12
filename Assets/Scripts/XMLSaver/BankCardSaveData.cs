@@ -88,6 +88,22 @@ public partial class SaveData
         }
         return new BankCardSaveData();
     }
+
+    /// <summary>
+    /// 检查银行卡是否存在
+    /// </summary>
+    public bool CheckCardExist(string cardId)
+    {
+        if (!string.IsNullOrEmpty(cardId))
+        {
+            for (int i = 0; i < bankCardList.Count; i++)
+            {
+                if (bankCardList[i].cardId == cardId)
+                    return true;
+            }
+        }
+        return false;
+    }
 }
 
 /// <summary>

@@ -21,6 +21,7 @@ namespace UIFrameWork
 		{
 			base.OnEnter(context);
 			_context = context as TransferToBankCardConfirmContext;
+            Refresh();
 		}
 
 		public override void OnExit(BaseContext context)
@@ -46,20 +47,24 @@ namespace UIFrameWork
 
         public void OnClickConfirm()
         {
-
+            UIManager.Instance.Push(new ConfirmPaymentContext());
         }
 
         private void Refresh()
         {
+            BankCardSaveData data = XMLSaver.saveData.GetBankCardData(_context.cardId);
             _nameText.text = _context.name;
             _cardText.text = Utils.FormatPaywayStr(PaywayType.BankCard, _context.cardId);
             double serviceAmount = Utils.GetBankServiceAmount(_context.amount);
             double totalMoney = _context.amount + serviceAmount;
             _moneyText.text = totalMoney.ToString() + ContentHelper.Read(ContentHelper.RMBText);
             _detailText.text = string.Format(ContentHelper.Read(ContentHelper.TransferToCardDetail), _context.amount, serviceAmount);
+            _bankIcon.sprite = AssetsManager.Instance.GetBankSprite(data.bankName);
+            _bankIcon.rectTransform.anchoredPosition3D = new Vector3(-_cardText.preferredWidth / 2 - 20,
+                _cardText.transform.localPosition.y, _cardText.transform.localPosition.z);
         }
 	}
-	public class TransferToBankCardConfirmContext : BaseContext
+	public class TransferToBankCardConfirmContext : BaseContext  // rtodo
 	{
 		public TransferToBankCardConfirmContext() : base(UIType.TransferToBankCardConfirm)
 		{
@@ -76,4 +81,13 @@ namespace UIFrameWork
         public string name;
         public string cardId;
 	}
+
+    public struct ToBalanceData
+    {
+
+    }
+    public struct ToBankCardData
+    {
+
+    }
 }

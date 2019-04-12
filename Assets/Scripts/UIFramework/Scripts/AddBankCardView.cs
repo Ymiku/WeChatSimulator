@@ -90,7 +90,7 @@ namespace UIFrameWork
 
         private bool CheckCardLegal(string cardId)
         {
-            if (AssetsManager.Instance.CheckCardExist(cardId))
+            if (XMLSaver.saveData.CheckCardExist(cardId))
                 return false;
             if (string.IsNullOrEmpty(cardId))
                 return false;

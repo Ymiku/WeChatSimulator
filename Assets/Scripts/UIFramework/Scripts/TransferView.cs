@@ -40,7 +40,7 @@ namespace UIFrameWork
         }
         public void OnClickTransferToCard()
         {
-
+            UIManager.Instance.Push(new TransferToBankCardContext());
         }
     }
 	public class TransferContext : BaseContext

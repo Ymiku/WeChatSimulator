@@ -787,7 +787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -813,7 +813,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114131363431590692}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114916032450361784}
+        m_MethodName: OnClickConfirm
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114623692154446976
@@ -1100,10 +1111,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeWhenPause: 1
   fadeType: 0
-  _nameText: {fileID: 0}
-  _cardText: {fileID: 0}
-  _moneyText: {fileID: 0}
-  _detailText: {fileID: 0}
+  _nameText: {fileID: 114639360547542874}
+  _cardText: {fileID: 114468467593242674}
+  _moneyText: {fileID: 114397438170538976}
+  _detailText: {fileID: 114562888027438706}
+  _bankIcon: {fileID: 114929912673965266}
+  _remarksField: {fileID: 114888361195902364}
 --- !u!114 &114929912673965266
 MonoBehaviour:
   m_ObjectHideFlags: 1

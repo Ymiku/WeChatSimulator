@@ -8,6 +8,8 @@ namespace UIFrameWork
     public class ConfirmPaymentView : AnimateView
     {
         private ConfirmPaymentContext _context;
+        private GameObject _orderItem;
+        private GameObject _serviceItem;
         private GameObject _useItem;
         private GameObject _canNotPayObj;
         private GameObject _okTextObj;
@@ -15,6 +17,8 @@ namespace UIFrameWork
         private GameObject _signObj;
         private Text _amountText;
         private Text _useItemText;
+        private Text _orderText;
+        private Text _serviceText;
         private Button _okBtn;
         private Button _useItemBtn;
         private double _amount;
@@ -25,6 +29,8 @@ namespace UIFrameWork
         {
             base.Init();
             _useItem = FindChild("Content/Group/UseItem");
+            _orderItem = FindChild("Content/Group/OrderAmount");
+            _serviceItem = FindChild("Content/Group/ServiceCharge");
             _canNotPayObj = FindChild("Content/Group/CantUse");
             _okTextObj = FindChild("Content/OkBtn/Text");
             _selectTextObj = FindChild("Content/OkBtn/Text1");
@@ -67,7 +73,7 @@ namespace UIFrameWork
 
         public void OnClickUseItem()
         {
-            UIManager.Instance.Push(new SelectPayWayContext(_context.amount, SpendType.Transfer));
+            UIManager.Instance.Push(new SelectPayWayContext(_context.amount, SpendType.TransferToBalance));
         }
 
         public void OnClickOk()
@@ -93,13 +99,13 @@ namespace UIFrameWork
                     else
                     {
                         ShowNotice(ContentHelper.Read(ContentHelper.AssetsNotEnough));
-                        UIManager.Instance.Push(new SelectPayWayContext(_amount, SpendType.Transfer));
+                        UIManager.Instance.Push(new SelectPayWayContext(_amount, SpendType.TransferToBalance));
                     }
                 }));
             }
             else
             {
-                UIManager.Instance.Push(new SelectPayWayContext(_context.amount, SpendType.Transfer));
+                UIManager.Instance.Push(new SelectPayWayContext(_context.amount, SpendType.TransferToBalance));
             }
         }
 
@@ -123,20 +129,42 @@ namespace UIFrameWork
         {
         }
 
+        /// <summary>
+        /// 转到支付宝
+        /// </summary>
         public ConfirmPaymentContext(int accountId, double amount, string remarksStr = "") : base(UIType.ConfirmPayment)
         {
             this.accountId = accountId;
             this.amount = amount;
             this.remarksStr = remarksStr;
+            spendType = SpendType.TransferToBalance;
         }
 
+        /// <summary>
+        /// 转到银行卡
+        /// </summary>
+        public ConfirmPaymentContext(string cardId, double realAmount, double serviceAmount, string remarksStr = "") : base(UIType.ConfirmPayment)
+        {
+            this.cardId = cardId;
+            this.realAmount = realAmount;
+            this.serviceAmount = serviceAmount;
+            this.remarksStr = remarksStr;
+            spendType = SpendType.TransferToBankCard;
+        }
+
+        //转账类型
+        public SpendType spendType;
+
+        //通用
+        public string remarksStr;
+
+        //转到支付宝账户使用
         public int accountId;
         public double amount;
-        public string remarksStr;  // 转账备注
-    }
 
-    public class PaymentHelper
-    {
-        
+        //转到银行使用
+        public string cardId;
+        public double realAmount;
+        public double serviceAmount;
     }
 }
