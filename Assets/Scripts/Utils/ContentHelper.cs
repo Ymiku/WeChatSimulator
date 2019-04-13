@@ -49,4 +49,9 @@ public class ContentHelper
     public const int TransferToCardDetail = 41; //对方实收{0}元，服务费{1}元
     public const int TransferText = 42; //转账
     public const int RechargeText = 43; //充值
+    public const int PleaseBindBankCard = 44; //当前没绑定银行卡,请先绑定银行卡
+    public const int CardLastNum = 45; //尾号{0}储蓄卡
+    public const int CanUseBalance = 46; //可用余额{0}元
+    public const int CashExceed = 47; //金额已超过可提现余额
+    public const int ServiceText = 48; //服务费{0}元
 }

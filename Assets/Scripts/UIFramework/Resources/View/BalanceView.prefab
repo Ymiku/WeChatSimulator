@@ -1110,7 +1110,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114756263827487884}
-        m_MethodName: OnClickRecharge
+        m_MethodName: OnClickCash
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

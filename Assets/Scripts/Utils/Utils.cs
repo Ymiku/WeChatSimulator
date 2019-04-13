@@ -232,6 +232,8 @@ public static class Utils
     }
     public static double GetBankServiceAmount(double money)
     {
+        if (money <= 0)
+            return 0;
         return Math.Round(money * GameDefine.ServicePower > 0.1 ? money * GameDefine.ServicePower : 0.1, 2);
     }
 }

@@ -35,6 +35,16 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
+
+        private void Refresh()
+        {
+
+        }
+
+        public void OnClickAdd()
+        {
+
+        }
 	}
 	public class BalanceCashSelectCardContext : BaseContext
 	{

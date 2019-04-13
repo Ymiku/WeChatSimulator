@@ -46,6 +46,12 @@ namespace UIFrameWork
 
         public void OnClickCash()
         {
+            if (AssetsManager.Instance.bankCardsData.Count == 0)
+            {
+                ShowNotice(ContentHelper.Read(ContentHelper.PleaseBindBankCard));
+                UIManager.Instance.Push(new AddBankCardContext());
+                return;
+            }
             UIManager.Instance.Push(new BalanceCashContext());
         }
     }
