@@ -81,6 +81,8 @@ namespace UIFrameWork
                 UIManager.Instance.Push(new SelectPayWayContext(_amount, SpendType.TransferToBalance));
             else if (_context.spendType == SpendType.TransferToBankCard)
                 UIManager.Instance.Push(new SelectPayWayContext(_amount, SpendType.TransferToBankCard));
+            else if (_context.spendType == SpendType.ToSelfAssets)
+                UIManager.Instance.Push(new SelectPayWayContext(_amount, SpendType.ToSelfAssets));
         }
 
         public void OnClickOk()
@@ -216,7 +218,7 @@ namespace UIFrameWork
             _okTextObj.SetActive(_canPayFlag);
             _canNotPayObj.SetActive(!_canPayFlag);
             _selectTextObj.SetActive(!_canPayFlag);
-            _paywayStr = Utils.FormatPaywayStr(AssetsManager.Instance.curPayway, AssetsManager.Instance.curUseCardId);
+            _paywayStr = Utils.FormatPaywayStr(_payway, AssetsManager.Instance.curUseCardId);
             _useItemText.text = _paywayStr;
         }
     }
