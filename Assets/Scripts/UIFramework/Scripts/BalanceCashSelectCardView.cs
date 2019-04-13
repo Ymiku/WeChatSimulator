@@ -17,6 +17,7 @@ namespace UIFrameWork
 		{
 			base.OnEnter(context);
 			_context = context as BalanceCashSelectCardContext;
+            Refresh();
 		}
 
 		public override void OnExit(BaseContext context)
@@ -32,6 +33,7 @@ namespace UIFrameWork
 		public override void OnResume(BaseContext context)
 		{
 			base.OnResume(context);
+            Refresh();
 		}
 		public override void Excute ()
 		{

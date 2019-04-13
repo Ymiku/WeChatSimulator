@@ -7,14 +7,14 @@ namespace UIFrameWork
 	{
 		private BalanceCashSuccContext _context;
         private TextProxy _paywayText;
-        private TextProxy _amountText;
+        private Text _amountText;
         private GameObject _signObj;
 
         public override void Init ()
 		{
 			base.Init ();
-            _paywayText = FindInChild<TextProxy>("UseItem/text");
-            _amountText = FindInChild<TextProxy>("Value");
+            _paywayText = FindInChild<TextProxy>("UseItem/wayText");
+            _amountText = FindInChild<Text>("Value");
             _signObj = FindChild("sign");
         }
 		public override void OnEnter(BaseContext context)

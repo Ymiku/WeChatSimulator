@@ -473,24 +473,13 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114483436066411256}
-        m_MethodName: OnValueChanged
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.InputField+SubmitEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114483436066411256}
         m_MethodName: OnValueChanged
         m_Mode: 5
         m_Arguments:
@@ -704,7 +693,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114776223796507180}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114483436066411256}
+        m_MethodName: OnClickAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114299858383320468
@@ -903,7 +903,7 @@ MonoBehaviour:
   _icon: {fileID: 114805738681169326}
   _bankName: {fileID: 114987971776985126}
   _lastCardId: {fileID: 114978498291646808}
-  _canUseBalance: {fileID: 114479004772637114}
+  _tips: {fileID: 114479004772637114}
   _allBtn: {fileID: 114289558382762740}
   _okBtn: {fileID: 114204551712885702}
   _moneyInput: {fileID: 114018022591327252}
