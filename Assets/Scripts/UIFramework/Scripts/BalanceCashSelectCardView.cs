@@ -6,10 +6,12 @@ namespace UIFrameWork
 	public class BalanceCashSelectCardView : AnimateView
 	{
 		private BalanceCashSelectCardContext _context;
+        private PoolableScrollView _scrollView;
 
 		public override void Init ()
 		{
 			base.Init ();
+            _scrollView = FindInChild<PoolableScrollView>("CardScrollView");
 		}
 		public override void OnEnter(BaseContext context)
 		{
@@ -38,12 +40,12 @@ namespace UIFrameWork
 
         private void Refresh()
         {
-
+            _scrollView.SetDatas(AssetsManager.Instance.bankCardsData);
         }
 
         public void OnClickAdd()
         {
-
+            UIManager.Instance.Push(new AddBankCardContext());
         }
 	}
 	public class BalanceCashSelectCardContext : BaseContext

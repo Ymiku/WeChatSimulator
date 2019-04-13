@@ -54,6 +54,8 @@ GameObject:
   - component: {fileID: 224107330656172206}
   - component: {fileID: 222021036465194290}
   - component: {fileID: 114632725102540392}
+  - component: {fileID: 114378177774384892}
+  - component: {fileID: 114148601793320354}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -107,7 +109,7 @@ GameObject:
   - component: {fileID: 222033768968367750}
   - component: {fileID: 114776272090159994}
   m_Layer: 5
-  m_Name: card
+  m_Name: lastNum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,6 +232,7 @@ GameObject:
   - component: {fileID: 225087521301726724}
   - component: {fileID: 114735892212729096}
   - component: {fileID: 95770362463391722}
+  - component: {fileID: 114071537584054072}
   m_Layer: 5
   m_Name: BalanceCashSelectCardView
   m_TagString: Untagged
@@ -334,6 +337,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114071537584054072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1767672577516696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 642c759e58803c842af38a7367e46b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeWhenPause: 0
+  fadeType: 0
 --- !u!114 &114124737253540222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -345,6 +361,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94fad4aa526fcb24fa1ec8489a34ac6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114148601793320354
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1163152127585852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15394cc3824981a44b63920e9690c9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
 --- !u!114 &114148615147313412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -410,7 +438,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114692553745209732}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114071537584054072}
+        m_MethodName: OnClickAdd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114291950823466082
@@ -465,7 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 248b5d07b7541aa4db9507181d605ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 114148601793320354}
   _activeItems: []
   UpPanel: {fileID: 0}
 --- !u!114 &114365625474524038
@@ -495,6 +534,47 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114378177774384892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1163152127585852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114632725102540392}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114390285793585468
 MonoBehaviour:
   m_ObjectHideFlags: 1

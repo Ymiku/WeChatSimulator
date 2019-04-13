@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UIFrameWork;
 using UnityEngine.UI;
 
-public class BankCardItem : ItemBase
+public class SelectBankCardItem : ItemBase
 {
     private ImageProxy _bankIcon;
     private ImageProxy _bg;
@@ -17,7 +18,6 @@ public class BankCardItem : ItemBase
     {
         base.Init();
         _bankIcon = FindInChild<ImageProxy>("icon");
-        _bg = FindInChild<ImageProxy>("bg");
         _cardName = FindInChild<TextProxy>("bankName");
         _lastNumber = FindInChild<TextProxy>("lastNum");
         _btn = GetComponent<Button>();
@@ -29,11 +29,12 @@ public class BankCardItem : ItemBase
         base.SetData(o);
         _data = o as BankCardSaveData;
         _cardName.text = _data.bankName.Replace(ContentHelper.Read(ContentHelper.SavingCardText), "");
-        _lastNumber.text = _data.cardId.Substring(_data.cardId.Length - 4, 4);
+        _lastNumber.text = string.Format(ContentHelper.Read(ContentHelper.CardLastNum), _data.cardId.Substring(_data.cardId.Length - 4, 4));
     }
 
     private void OnClickBtn()
     {
-        // todo 银行卡详情
+        AssetsManager.Instance.SetCurUseCard(_data.cardId);
+        UIManager.Instance.Pop();
     }
 }
