@@ -11,6 +11,7 @@ public class AssetsManager : Singleton<AssetsManager>
     public AssetsSaveData assetsData;
     public List<BankCardSaveData> bankCardsData;
     public BankCardSaveData curUseBankCard;
+    public string curUseCardId = "";
     public PaywayType curPayway = PaywayType.None;
 
     public void Set(int id)
@@ -21,6 +22,9 @@ public class AssetsManager : Singleton<AssetsManager>
         bankCardsData = XMLSaver.saveData.GetBankCardDataList(id);
         curUseBankCard = XMLSaver.saveData.GetCurUseCard(id);
         _defaultCardIcon = Resources.Load<Sprite>(GameDefine.DefaultBankSprite);
+        if (curUseBankCard != null)
+            curUseCardId = curUseBankCard.cardId;
+
     }
 
     /// <summary>
@@ -32,13 +36,13 @@ public class AssetsManager : Singleton<AssetsManager>
         {
             case PaywayType.None:
                 if (assetsData.balance >= money)
-                    curPayway = PaywayType.Banlance;
+                    curPayway = PaywayType.Balance;
                 else if (assetsData.yuEBao >= money)
                     curPayway = PaywayType.YuEBao;
                 else if (curUseBankCard != null)
                     curPayway = PaywayType.BankCard;
                 break;
-            case PaywayType.Banlance:
+            case PaywayType.Balance:
                 if (assetsData.balance < money)
                 {
                     curPayway = assetsData.yuEBao >= money ? PaywayType.YuEBao :
@@ -48,7 +52,7 @@ public class AssetsManager : Singleton<AssetsManager>
             case PaywayType.YuEBao:
                 if (assetsData.yuEBao < money)
                 {
-                    curPayway = assetsData.balance >= money ? PaywayType.Banlance :
+                    curPayway = assetsData.balance >= money ? PaywayType.Balance :
                         curUseBankCard != null ? PaywayType.BankCard : PaywayType.None;
                 }
                 break;
@@ -119,7 +123,7 @@ public class AssetsManager : Singleton<AssetsManager>
 public enum PaywayType
 {
     None,
-    Banlance,
+    Balance,
     YuEBao,
     BankCard,
 }
@@ -130,4 +134,11 @@ public enum SpendType
     TransferToBankCard, //转账到银行卡
     ToSelfYuEBao,       //转到自己余额宝
     ToSelfBankCard,     //转到自己银行卡
+    ToSelfAssets,       //转到自己余额、余额宝
+}
+
+public enum RechargeType
+{
+    Balance,
+    YuEBao,
 }

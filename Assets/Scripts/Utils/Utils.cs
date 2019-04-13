@@ -148,7 +148,7 @@ public static class Utils
         AssetsSaveData data = AssetsManager.Instance.assetsData;
         switch (way)
         {
-            case PaywayType.Banlance:
+            case PaywayType.Balance:
                 if (data.balance >= money)
                 {
                     data.balance -= money;
@@ -193,7 +193,7 @@ public static class Utils
         string result = "";
         switch (payway)
         {
-            case PaywayType.Banlance:
+            case PaywayType.Balance:
                 result = ContentHelper.Read(ContentHelper.BalanceText);
                 break;
             case PaywayType.YuEBao:
@@ -204,9 +204,12 @@ public static class Utils
                 if (string.IsNullOrEmpty(cardId))
                     data = AssetsManager.Instance.curUseBankCard;
                 else
-                    data = XMLSaver.saveData.GetBankCardData(cardId);                
-                string cardStr = data.cardId.Substring(data.cardId.Length - 4, 4);
-                result = data.bankName + "(" + cardStr + ")";
+                    data = XMLSaver.saveData.GetBankCardData(cardId);
+                if(data != null)
+                {
+                    string cardStr = data.cardId.Substring(data.cardId.Length - 4, 4);
+                    result = data.bankName + "(" + cardStr + ")";
+                }
                 break;
         }
         return result;

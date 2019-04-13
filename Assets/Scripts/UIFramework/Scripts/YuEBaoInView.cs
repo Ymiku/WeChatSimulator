@@ -65,7 +65,7 @@ namespace UIFrameWork
                 return;
             double amount = double.Parse(_moneyInput.text);
             AssetsSaveData assetsData = AssetsManager.Instance.assetsData;
-            if (_payWay == PaywayType.Banlance)
+            if (_payWay == PaywayType.Balance)
             {
                 if (assetsData.balance < amount)
                 {
@@ -79,7 +79,7 @@ namespace UIFrameWork
                         assetsData.balance -= amount;
                         assetsData.yuEBao += amount;
                         UIManager.Instance.Pop();
-                        string payStr = Utils.FormatPaywayStr(PaywayType.Banlance);
+                        string payStr = Utils.FormatPaywayStr(PaywayType.Balance);
                         UIManager.Instance.Push(new YuEBaoInSuccContext(amount, payStr));
                     }));
                 }
@@ -121,12 +121,12 @@ namespace UIFrameWork
             AssetsSaveData assetsData = AssetsManager.Instance.assetsData;
             BankCardSaveData bankData = AssetsManager.Instance.curUseBankCard;
             if (_payWay == PaywayType.YuEBao || _payWay == PaywayType.None)
-                _payWay = PaywayType.Banlance;
-            if (_payWay == PaywayType.Banlance && assetsData.balance <= 0 && bankData != null)
+                _payWay = PaywayType.Balance;
+            if (_payWay == PaywayType.Balance && assetsData.balance <= 0 && bankData != null)
                 _payWay = PaywayType.BankCard;
             switch (_payWay)
             {
-                case PaywayType.Banlance:
+                case PaywayType.Balance:
                     _icon.sprite = Utils.GetBalanceSprite();
                     _bankName.text = ContentHelper.Read(ContentHelper.BalanceText);
                     _tips.text = assetsData.balance > 0 ? string.Format(ContentHelper.Read(ContentHelper.BalanceMaxTransfer), assetsData.balance):

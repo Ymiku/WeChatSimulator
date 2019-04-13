@@ -55,14 +55,14 @@ namespace UIFrameWork
                 data.spendType = _context.spendType;
                 dataList.Add(data);
             }
-            bool balanceEnough = AssetsManager.Instance.assetsData.balance >= _context.amount;
+            bool balanceEnough = AssetsManager.Instance.assetsData.balance >= _context.amount && _context.spendType != SpendType.ToSelfAssets;
             SelectPaywayItemData balanceData = new SelectPaywayItemData();
             balanceData.isAddCard = false;
             balanceData.isEnough = balanceEnough;
-            balanceData.payway = PaywayType.Banlance;
+            balanceData.payway = PaywayType.Balance;
             balanceData.spendType = _context.spendType;
             bool yuEBaoEnough = AssetsManager.Instance.assetsData.yuEBao >= _context.amount &&
-                _context.spendType != SpendType.ToSelfYuEBao;
+                _context.spendType != SpendType.ToSelfYuEBao && _context.spendType != SpendType.ToSelfAssets;
             SelectPaywayItemData yuEBaoData = new SelectPaywayItemData();
             yuEBaoData.isAddCard = false;
             yuEBaoData.isEnough = yuEBaoEnough;

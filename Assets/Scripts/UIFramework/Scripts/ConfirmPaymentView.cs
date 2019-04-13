@@ -9,7 +9,7 @@ namespace UIFrameWork
     {
         private ConfirmPaymentContext _context;
         private PaywayType _payway;
-        private SpendType _spendWay;
+        private SpendType _spendType;
         private GameObject _orderItem;
         private GameObject _serviceItem;
         private GameObject _useItem;
@@ -21,6 +21,7 @@ namespace UIFrameWork
         private Text _useItemText;
         private Text _orderText;
         private Text _serviceText;
+        private Text _infoText;
         private Button _okBtn;
         private Button _useItemBtn;
         private double _amount;
@@ -41,6 +42,7 @@ namespace UIFrameWork
             _useItemText = FindInChild<Text>("Content/Group/UseItem/wayText");
             _orderText = FindInChild<Text>("Content/Group/OrderAmount/value");
             _serviceText = FindInChild<Text>("Content/Group/ServiceCharge/value");
+            _infoText = FindInChild<Text>("Content/Group/Info/value");
             _okBtn = FindInChild<Button>("Content/OkBtn");
             _useItemBtn = FindInChild<Button>("Content/Group/UseItem");
             _okBtn.onClick.AddListener(OnClickOk);
@@ -83,10 +85,12 @@ namespace UIFrameWork
 
         public void OnClickOk()
         {
-            if (_spendWay == SpendType.TransferToBalance)
+            if (_spendType == SpendType.TransferToBalance)
                 PayBalance();
-            else if (_spendWay == SpendType.TransferToBankCard)
+            else if (_spendType == SpendType.TransferToBankCard)
                 PayBankCard();
+            else if (_spendType == SpendType.ToSelfAssets)
+                Recharge();
         }
 
         private void PayBalance()
@@ -160,27 +164,59 @@ namespace UIFrameWork
             }
         }
 
+        private void Recharge()
+        {
+            if (_canPayFlag)
+            {
+                UIManager.Instance.Push(new InputAndCheckPaywordContext(() =>
+                {
+                    ResultType result = Utils.TryPay(_amount, _payway, AssetsManager.Instance.curUseBankCard.cardId);
+                    if (result == ResultType.Success)
+                    {
+                        if(_context.rechargeType == RechargeType.Balance)
+                            AssetsManager.Instance.assetsData.balance += _amount;
+                        else
+                            AssetsManager.Instance.assetsData.yuEBao += _amount;
+                        string payStr = Utils.FormatPaywayStr(PaywayType.BankCard, _context.cardId);
+                        UIManager.Instance.Push(new RechargeSuccContext(payStr, _amount));
+                    }
+                    else
+                    {
+                        ShowNotice(ContentHelper.Read(ContentHelper.AssetsNotEnough));
+                        UIManager.Instance.Push(new SelectPayWayContext(_amount, SpendType.TransferToBalance));
+                    }
+                }));
+            }
+            else
+            {
+                UIManager.Instance.Push(new SelectPayWayContext(_amount, SpendType.ToSelfAssets));
+            }
+        }
+
         private void Refresh()
         {
-            _spendWay = _context.spendType;
-            _amount = _spendWay == SpendType.TransferToBankCard ? _context.realAmount + _context.serviceAmount : _context.amount;
-            _payway = AssetsManager.Instance.SetCurPaywayByMoney(_amount);
-            _serviceItem.SetActive(_spendWay == SpendType.TransferToBankCard);
-            _orderItem.SetActive(_spendWay == SpendType.TransferToBankCard);
-            if (_spendWay == SpendType.TransferToBankCard)
+            _spendType = _context.spendType;
+            _amount = _spendType == SpendType.TransferToBankCard ? _context.realAmount + _context.serviceAmount : _context.amount;
+            if(_spendType == SpendType.ToSelfAssets)
+                _payway = AssetsManager.Instance.curUseBankCard != null ? PaywayType.BankCard : PaywayType.None; 
+            else
+                _payway = AssetsManager.Instance.SetCurPaywayByMoney(_amount);
+            _serviceItem.SetActive(_spendType == SpendType.TransferToBankCard);
+            _orderItem.SetActive(_spendType == SpendType.TransferToBankCard);
+            if (_spendType == SpendType.TransferToBankCard)
             {
                 _orderText.text = _context.realAmount.ToString();
                 _serviceText.text = _context.serviceAmount.ToString();
             }
             _amountText.text = _amount.ToString();
-            _signObj.transform.localPosition = new Vector3(-_amountText.preferredWidth / 2,
-                    _signObj.transform.localPosition.y, _signObj.transform.localPosition.z);
-            _canPayFlag = AssetsManager.Instance.curPayway != PaywayType.None;
+            _infoText.text = _spendType == SpendType.ToSelfAssets ? ContentHelper.Read(ContentHelper.RechargeText) : ContentHelper.Read(ContentHelper.TransferText);
+            _signObj.transform.localPosition = new Vector3(-_amountText.preferredWidth / 2, _signObj.transform.localPosition.y, _signObj.transform.localPosition.z);
+            _canPayFlag = _payway != PaywayType.None;
             _useItem.SetActive(_canPayFlag);
             _okTextObj.SetActive(_canPayFlag);
             _canNotPayObj.SetActive(!_canPayFlag);
             _selectTextObj.SetActive(!_canPayFlag);
-            _paywayStr = Utils.FormatPaywayStr(AssetsManager.Instance.curPayway, AssetsManager.Instance.curUseBankCard.cardId);
+            _paywayStr = Utils.FormatPaywayStr(AssetsManager.Instance.curPayway, AssetsManager.Instance.curUseCardId);
             _useItemText.text = _paywayStr;
         }
     }
@@ -213,6 +249,16 @@ namespace UIFrameWork
             spendType = SpendType.TransferToBankCard;
         }
 
+        /// <summary>
+        /// 充值使用
+        /// </summary>
+        public ConfirmPaymentContext(RechargeType rechargeType, double amount) : base(UIType.ConfirmPayment)
+        {
+            this.rechargeType = rechargeType;
+            this.amount = amount;
+            spendType = SpendType.ToSelfAssets;
+        }
+
         //转账类型
         public SpendType spendType;
 
@@ -227,5 +273,8 @@ namespace UIFrameWork
         public string cardId;
         public double realAmount;
         public double serviceAmount;
+
+        //充值使用
+        public RechargeType rechargeType;
     }
 }

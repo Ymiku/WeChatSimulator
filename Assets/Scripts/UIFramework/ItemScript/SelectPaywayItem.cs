@@ -85,7 +85,7 @@ public class SelectPaywayItem : ItemBase
             _payWayText.text = Utils.FormatPaywayStr(_data.payway, _data.cardId);
             _icon.sprite = AssetsManager.Instance.GetBankSprite(data.bankName);
         }
-        else if (_data.payway == PaywayType.Banlance)
+        else if (_data.payway == PaywayType.Balance)
         {
             _payWayText.text = Utils.FormatPaywayStr(_data.payway) + "(" + ContentHelper.Read(ContentHelper.RemainText) +
                 ":" + +AssetsManager.Instance.assetsData.balance + ")";
@@ -101,7 +101,9 @@ public class SelectPaywayItem : ItemBase
         {
             _notEnoughTitleText.text = _payWayText.text;
             _notEnoughText.text = ContentHelper.Read(ContentHelper.MoneyNotEnough);
-            if (_data.payway == PaywayType.YuEBao)
+            if (_data.payway == PaywayType.YuEBao && (_data.spendType == SpendType.ToSelfAssets || _data.spendType == SpendType.ToSelfYuEBao))
+                _notEnoughText.text = ContentHelper.Read(ContentHelper.PaywayNotSupport);
+            else if(_data.payway == PaywayType.Balance && _data.spendType == SpendType.ToSelfAssets)
                 _notEnoughText.text = ContentHelper.Read(ContentHelper.PaywayNotSupport);
         }
     }

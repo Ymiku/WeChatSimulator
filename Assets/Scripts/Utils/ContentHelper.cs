@@ -47,4 +47,6 @@ public class ContentHelper
     public const int RMBText = 39; //元
     public const int RMBSign = 40; //¥
     public const int TransferToCardDetail = 41; //对方实收{0}元，服务费{1}元
+    public const int TransferText = 42; //转账
+    public const int RechargeText = 43; //充值
 }
