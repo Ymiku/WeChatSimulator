@@ -33,15 +33,15 @@ public class TransactionItem : ItemBase
         TimeSpan timeSpan = nowTime - dealTime;
         if (timeSpan.Days == 0)
         {
-            _timeText.text = ContentHelper.Read(ContentHelper.TodayText) + " " + dealTime.ToShortTimeString();
+            _timeText.text = ContentHelper.Read(ContentHelper.TodayText) + " " + dealTime.Hour + ":" + dealTime.Minute;
         }
         else if (timeSpan.Days == 1)
         {
-            _timeText.text = ContentHelper.Read(ContentHelper.YesterdayText) + " " + dealTime.ToShortTimeString();
+            _timeText.text = ContentHelper.Read(ContentHelper.YesterdayText) + " " + dealTime.Hour + ":" + dealTime.Minute;
         }
         else
         {
-            _timeText.text = dealTime.ToString("m") + " " + dealTime.ToShortTimeString();
+            _timeText.text = dealTime.ToString("m") + " " + dealTime.Hour + ":" + dealTime.Minute;
         }
         if (_data.transactionType == TransactionType.Expend)
         {

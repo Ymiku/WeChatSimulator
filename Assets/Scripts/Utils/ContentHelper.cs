@@ -61,4 +61,5 @@ public class ContentHelper
     public const int IncomeText = 53; //收入
     public const int TodayText = 54; //今天
     public const int YesterdayText = 55; //昨天
+    public const int OtherText = 56; //其他
 }

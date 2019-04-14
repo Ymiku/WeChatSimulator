@@ -46,7 +46,7 @@ public partial class SaveData
         return GetAssetsData(id);
     }
 
-    public void AddTranstionData(int id, TransactionSaveData data)
+    public void AddTransactionData(int id, TransactionSaveData data)
     {
         for (int i = 0; i < assetsDataList.Count; i++)
         {

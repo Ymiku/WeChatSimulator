@@ -164,7 +164,7 @@ public class AssetsManager : Singleton<AssetsManager>
     /// </summary>
     public void AddTransactionData(TransactionSaveData data)
     {
-        XMLSaver.saveData.AddTranstionData(_id, data);
+        XMLSaver.saveData.AddTransactionData(_id, data);
     }
 
     /// <summary>

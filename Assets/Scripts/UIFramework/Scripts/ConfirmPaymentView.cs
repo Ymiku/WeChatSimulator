@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System;
 
 namespace UIFrameWork
 {
@@ -95,6 +96,7 @@ namespace UIFrameWork
                 Recharge();
         }
 
+        #region ¸¶¿îÊÂ¼þ
         private void PayBalance()
         {
             if (_canPayFlag)
@@ -118,6 +120,16 @@ namespace UIFrameWork
                             receiverStr = accountData.realName + receiverStr;
                         else
                             receiverStr = accountData.nickname + receiverStr;
+                        TransactionSaveData transactionData = new TransactionSaveData();
+                        transactionData.timeStr = DateTime.Now.ToString();
+                        transactionData.money = _amount;
+                        transactionData.detailStr = ContentHelper.Read(ContentHelper.TransferText) + "-" + accountData.realName;
+                        transactionData.remarkStr = ContentHelper.Read(ContentHelper.OtherText);
+                        transactionData.transactionType = TransactionType.Expend;
+                        AssetsManager.Instance.AddTransactionData(transactionData);
+                        transactionData.detailStr = ContentHelper.Read(ContentHelper.TransferText) + "-" + GameManager.Instance.accountData.realName;
+                        transactionData.transactionType = TransactionType.Income;
+                        XMLSaver.saveData.AddTransactionData(accountData.accountId, transactionData);
                         UIManager.Instance.Push(new TransferSuccContext(_amount, _paywayStr, receiverStr, _context.remarksStr));
                     }
                     else
@@ -196,6 +208,7 @@ namespace UIFrameWork
                 UIManager.Instance.Push(new SelectPayWayContext(_amount, SpendType.ToSelfAssets));
             }
         }
+        #endregion
 
         private void Refresh()
         {
