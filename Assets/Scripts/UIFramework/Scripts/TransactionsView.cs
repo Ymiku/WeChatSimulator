@@ -5,6 +5,7 @@ namespace UIFrameWork
 	public class TransactionsView : AnimateView
 	{
 		private TransactionsContext _context;
+        public PoolableScrollView _scrollView;
 
 		public override void Init ()
 		{

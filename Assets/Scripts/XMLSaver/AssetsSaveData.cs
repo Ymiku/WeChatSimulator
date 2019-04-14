@@ -21,6 +21,7 @@ public partial class SaveData
             return assetsDataList[existIndex];
         }
         AssetsSaveData data = new AssetsSaveData();
+        data.transactionList = new List<TransactionSaveData>();
         ACCOUNT staticData = StaticDataAccount.GetAccountById(accountId);
         if (staticData != null)
             data.balance = staticData.money;
@@ -44,6 +45,21 @@ public partial class SaveData
         int id = 0;  // todo 名字转id
         return GetAssetsData(id);
     }
+
+    public void AddTranstionData(int id, TransactionSaveData data)
+    {
+        for (int i = 0; i < assetsDataList.Count; i++)
+        {
+            if(assetsDataList[i].accountId == id)
+            {
+                if (assetsDataList[i].transactionList.Count == 50)
+                    assetsDataList[i].transactionList[49] = data;
+                else
+                    assetsDataList[i].transactionList.Add(data);
+                break;
+            }
+        }
+    }
 }
 
 /// <summary>
@@ -52,12 +68,23 @@ public partial class SaveData
 [System.Serializable]
 public class AssetsSaveData
 {
-    public int accountId;           //账户id
-    public double balance;          //余额
-    public double yuEBao;           //余额宝
-    public float yuEBaoProfit;      //余额宝总收益
-    public float antPayValue;       //蚂蚁花呗可用
-    public float antPayLimit;       //蚂蚁花呗额度
-    public float yuEBaoYesterday;   //昨日收益
-    public string lastOfflineTime;  //上次离线时间
+    public int accountId;               //账户id
+    public double balance;              //余额
+    public double yuEBao;               //余额宝
+    public float yuEBaoProfit;          //余额宝总收益
+    public float antPayValue;           //蚂蚁花呗可用
+    public float antPayLimit;           //蚂蚁花呗额度
+    public float yuEBaoYesterday;       //昨日收益
+    public string lastOfflineTime;      //上次离线时间
+    public List<TransactionSaveData> transactionList;   //转账记录
+}
+
+[Serializable]
+public class TransactionSaveData
+{
+    public TransactionType transactionType;
+    public string timeStr;
+    public string detailStr;
+    public string remarkStr;
+    public double money;
 }

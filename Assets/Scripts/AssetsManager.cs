@@ -158,6 +158,42 @@ public class AssetsManager : Singleton<AssetsManager>
             }
         }
     }
+
+    /// <summary>
+    /// 增加一条账单记录
+    /// </summary>
+    public void AddTransactionData(TransactionSaveData data)
+    {
+        XMLSaver.saveData.AddTranstionData(_id, data);
+    }
+
+    /// <summary>
+    /// 获取总支出
+    /// </summary>
+    public double GetExpendTotalMoney()
+    {
+        double result = 0;
+        for(int i = 0; i < assetsData.transactionList.Count; i++)
+        {
+            if (assetsData.transactionList[i].transactionType == TransactionType.Expend)
+                result += assetsData.transactionList[i].money;
+        }
+        return result;
+    }
+
+    /// <summary>
+    /// 获取总收入
+    /// </summary>
+    public double GetIncomeTotalMoney()
+    {
+        double result = 0;
+        for (int i = 0; i < assetsData.transactionList.Count; i++)
+        {
+            if (assetsData.transactionList[i].transactionType == TransactionType.Income)
+                result += assetsData.transactionList[i].money;
+        }
+        return result;
+    }
 }
 
 public enum PaywayType
@@ -181,4 +217,11 @@ public enum RechargeType
 {
     Balance,
     YuEBao,
+}
+
+public enum TransactionType
+{
+    NoChange,
+    Expend,
+    Income,
 }
