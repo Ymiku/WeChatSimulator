@@ -56,4 +56,5 @@ public class ContentHelper
     public const int ServiceText = 48; //服务费{0}元
     public const int NoCertification = 49; //尚未进行实名认证
     public const int RealName = 50; //真实姓名
+    public const int Iam = 51; //我是
 }
