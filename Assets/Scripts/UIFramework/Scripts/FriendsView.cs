@@ -7,7 +7,7 @@ namespace UIFrameWork
 	{
         public PoolableScrollView scrollView;
 		private FriendsContext _context;
-
+        public GameObject requestRedPoint;
 		public override void Init ()
 		{
 			base.Init ();
@@ -18,7 +18,7 @@ namespace UIFrameWork
 			_context = context as FriendsContext;
             ChatManager.Instance.OnNewMsgOccur += RefreshMsg;
             ChatManager.Instance.RefreshMsg();
-            
+            requestRedPoint.SetActive(ChatManager.Instance.HasRequestToHandle());
         }
 
 		public override void OnExit(BaseContext context)
@@ -38,7 +38,7 @@ namespace UIFrameWork
 			base.OnResume(context);
             ChatManager.Instance.OnNewMsgOccur += RefreshMsg;
             ChatManager.Instance.RefreshMsg();
-            
+            requestRedPoint.SetActive(ChatManager.Instance.HasRequestToHandle());
         }
 		public override void Excute ()
 		{

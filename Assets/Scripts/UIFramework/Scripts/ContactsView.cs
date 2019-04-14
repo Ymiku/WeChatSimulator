@@ -9,6 +9,7 @@ namespace UIFrameWork
         public SpellItem spellPrefab;
         public ContactsItem contactsPrefab;
         public Transform content;
+        public GameObject requestRedPoint;
 		private ContactsContext _context;
         int spellCount = 0;
         int contactsCount = 0;
@@ -48,6 +49,7 @@ namespace UIFrameWork
 		}
         void Refresh()
         {
+            requestRedPoint.SetActive(ChatManager.Instance.HasRequestToHandle());
             spellCount = 0;
             contactsCount = 0;
             for (int i = 0; i < spellLst.Count; i++)
