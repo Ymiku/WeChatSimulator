@@ -57,4 +57,6 @@ public class ContentHelper
     public const int NoCertification = 49; //尚未进行实名认证
     public const int RealName = 50; //真实姓名
     public const int Iam = 51; //我是
+    public const int ExpendText = 52; //支出
+    public const int IncomeText = 53; //收入
 }
