@@ -54,4 +54,5 @@ public class ContentHelper
     public const int CanUseBalance = 46; //可用余额{0}元
     public const int CashExceed = 47; //金额已超过可提现余额
     public const int ServiceText = 48; //服务费{0}元
+    public const int NoCertification = 49; //尚未进行实名认证
 }
