@@ -33,8 +33,7 @@ public class GameManager : UnitySingleton<GameManager>
         accountData = XMLSaver.saveData.GetAccountData(userId);
         if (!XMLSaver.saveData.canLoginUserIds.Contains (userId))
 			XMLSaver.saveData.canLoginUserIds.Add (userId);
-        ChatManager.Instance.OnExit();
-        ChatManager.Instance.OnEnter(XMLSaver.saveData.GetAccountData(userId).enname);
+        ChatManager.Instance.OnFriendsLstChange();
         AssetsManager.Instance.SaveOfflineTime();
         AssetsManager.Instance.Set(userId);
 	}

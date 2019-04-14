@@ -4,24 +4,27 @@ using UnityEngine;
 using NodeEditorFramework;
 using NodeEditorFramework.Standard;
 public class ChatInstance{
-	int curPairID = 0;
+    public int curUserId
+    {
+        get { return GameManager.Instance.curUserId; }
+    }
+    int curPairID = 0;
 	public Node curRunningNode = null;
 	public Node nextReadNode = null;
 	public GraphCanvasType curSection;
 	public long lastChatTimeStamp;
 	float totalRectHeight = 0.0f;
 	List<Node> _activeNodes = new List<Node> ();
-	string selfName;
+    public int friendId;
 	public string friendName;
 	public string lastSentence = "";
 	public ChatInstanceData saveData;
-	public int redNum = 0;
-	public void OnInit(string friendName)
+	public void OnInit(int friendId)
 	{
         ChatManager.Instance.curExecuteInstance = this;
-        selfName = ChatManager.Instance.curName;
-        int pairId = ChatManager.Instance.GetPairID(selfName,friendName);
-		this.friendName = friendName;
+        int pairId = ChatManager.Instance.GetPairID(curUserId,friendId);
+		this.friendName = XMLSaver.saveData.GetAccountData(friendId).enname;
+        this.friendId = friendId;
 		curPairID = pairId;
 		saveData = XMLSaver.saveData.GetInstanceData (curPairID);
 		lastChatTimeStamp = saveData.lastChatTimeStamp;
@@ -56,7 +59,7 @@ public class ChatInstance{
 	{
         ChatManager.Instance.curExecuteInstance = this;
         _activeNodes.Clear ();
-		redNum = 0;
+		saveData.redCount = 0;
 		//set panel
 	}
 	public void OnExecute()
@@ -99,15 +102,16 @@ public class ChatInstance{
                 saveData.curNodeId = -1;
             }
             saveData.curSectionId = curSection.sectionID;
-            redNum+=finishCount;
-            ChatManager.Instance.RefreshChatLst();
+            if(ChatManager.Instance.curInstance!=this)
+                saveData.redCount+=finishCount;
+            ChatManager.Instance.RefreshMsg();
 			EventFactory.chatEventCenter.TriggerEvent (ChatEvent.OnCurInstancePopNewMsg);
         }
 	}
 	public void OnExit()
 	{
-		_activeNodes.Clear ();
-        redNum = 0;
+        ChatManager.Instance.curExecuteInstance = null;
+        _activeNodes.Clear ();
 	}
 	public Node GetLastRunningNode()
 	{

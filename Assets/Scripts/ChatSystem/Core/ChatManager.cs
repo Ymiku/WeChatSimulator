@@ -7,7 +7,7 @@ public class ChatManager : Singleton<ChatManager> {
 	public const int finished = -1;
 	public const int need2Init = -2;
 	public delegate void RefreshEventHandler(List<ChatInstance> chatLst);
-	public event RefreshEventHandler OnRefreshChatLst;
+	public event RefreshEventHandler OnNewMsgOccur;
 	//name name selectionID
 	public string curName{
 		get{return GameManager.Instance.curEnName; }
@@ -20,17 +20,11 @@ public class ChatManager : Singleton<ChatManager> {
     public ChatInstance curExecuteInstance;
     Dictionary<int,ChatInstance> pairId2Instance = new Dictionary<int, ChatInstance>();
 	List<ChatInstance> orderedInstance = new List<ChatInstance>();
-    public Dictionary<char, List<string>> init2NameDic;
+    public Dictionary<char, List<int>> init2NameDic;
 	//
 	public void AddFriend(string name)
 	{
-		//pairId2Instance.Add (GetPairID(curName,name),new ChatInstance());
-		XMLSaver.saveData.instanceID.Add (GetPairID(curName,name));
-		ChatInstanceData data = new ChatInstanceData ();
-		data.lastChatTimeStamp = GameManager.Instance.time;
-		XMLSaver.saveData.instanceData.Add (data);
-		OnExit ();
-		OnEnter (curName);
+        AddFriend(XMLSaver.saveData.GetAccountData(name).accountId);
 	}
     public void AddFriend(int id)
     {
@@ -38,31 +32,30 @@ public class ChatManager : Singleton<ChatManager> {
         ChatInstanceData data = new ChatInstanceData();
         data.lastChatTimeStamp = GameManager.Instance.time;
         XMLSaver.saveData.instanceData.Add(data);
-        OnExit();
-        OnEnter(curName);
+        OnFriendsLstChange();
     }
     public void DeleteFriend(string name)
+    {
+        DeleteFriend(XMLSaver.saveData.GetAccountData(name).accountId);
+    }
+    public void DeleteFriend(int id)
 	{
-		pairId2Instance.Remove (GetPairID(curName,name));
-		int i = XMLSaver.saveData.instanceID.IndexOf (GetPairID(curName,name));
+		pairId2Instance.Remove (GetPairID(curUserId,id));
+		int i = XMLSaver.saveData.instanceID.IndexOf (GetPairID(curUserId, id));
 		XMLSaver.saveData.instanceID.RemoveAt (i);
 		XMLSaver.saveData.instanceData.RemoveAt (i);
-		OnExit ();
-		OnEnter (curName);
+		OnFriendsLstChange ();
 	}
 	public Node GetLastRunningNode()
 	{
         curExecuteInstance = curInstance;
 		return curInstance.GetLastRunningNode ();
 	}
-	public void EnterChat(string name1,string name2 = "")
+	public void EnterChat(int friendId)
 	{
-        Debug.Log(name1);
-		if (name2 == "")
-			name2 = curName;
 		if(curInstance!=null)
 		    curInstance.OnExit ();
-		curInstance = pairId2Instance [GetPairID(name1,name2)];
+		curInstance = pairId2Instance [GetPairID(curUserId,friendId)];
 		curInstance.OnEnter ();
 	}
     public void ExitChat()
@@ -78,7 +71,7 @@ public class ChatManager : Singleton<ChatManager> {
 		}
 		return null;
 	}
-	public void RefreshChatLst()//when new node enter
+	public void RefreshMsg()//when new node enter
 	{
 		orderedInstance.Clear ();
 		foreach (var item in pairId2Instance.Values) {
@@ -97,22 +90,26 @@ public class ChatManager : Singleton<ChatManager> {
 			}
 			
 		}
-		if(OnRefreshChatLst!=null)
-			OnRefreshChatLst (orderedInstance);
+		if(OnNewMsgOccur!=null)
+			OnNewMsgOccur (orderedInstance);
 	}
 	//
-	public void OnEnter(string name)
+	public void OnFriendsLstChange()
 	{
-		pairId2Instance.Clear ();
-		List<string> friends = XMLSaver.saveData.GetFriendsLst (name);
+        foreach (var item in pairId2Instance.Values)
+        {
+            item.OnExit();
+        }
+        pairId2Instance.Clear();
+		List<int> friends = XMLSaver.saveData.GetFriendsLst (curUserId);
         if (init2NameDic == null)
         {
-            init2NameDic = new Dictionary<char, List<string>>();
+            init2NameDic = new Dictionary<char, List<int>>();
             for (int i = 0; i < 26; i++)
             {
-                init2NameDic.Add((char)(i + 65), new List<string>());
+                init2NameDic.Add((char)(i + 65), new List<int>());
             }
-            init2NameDic.Add('#',new List<string>());
+            init2NameDic.Add('#',new List<int>());
         }
         else
         {
@@ -122,13 +119,13 @@ public class ChatManager : Singleton<ChatManager> {
             }
         }
 		for (int i = 0; i < friends.Count; i++) {
-			string friendName = friends[i];
-			int id = GetPairID (curName,friends[i]);
+			int friendId = friends[i];
+			int id = GetPairID (curUserId,friendId);
 			ChatInstance instance = new ChatInstance ();
-			instance.OnInit (friendName);
+			instance.OnInit (friendId);
 			pairId2Instance.Add (id,instance);
 
-            AccountSaveData data = XMLSaver.saveData.GetAccountData(friendName);
+            AccountSaveData data = XMLSaver.saveData.GetAccountData(friendId);
             char c;
             if (!string.IsNullOrEmpty(data.nickname))
             {
@@ -142,10 +139,10 @@ public class ChatManager : Singleton<ChatManager> {
             {
                 c = '#';
             }
-            init2NameDic[c].Add(friendName);
+            init2NameDic[c].Add(friendId);
             //char c = Utils.GetSpellCode(data);
 		}
-		RefreshChatLst ();
+		RefreshMsg ();
 	}
 	//
 	public void OnExcute()
@@ -154,22 +151,6 @@ public class ChatManager : Singleton<ChatManager> {
 			item.OnExecute ();
 		}
 		CleanPool (8);
-	}
-	public void OnExit()
-	{
-		foreach (var item in pairId2Instance.Values) {
-			item.OnExit ();
-		}
-		pairId2Instance.Clear ();
-	}
-	public int GetPairID(string name,string name2)
-	{
-		int id = XMLSaver.saveData.GetAccountData(name).accountId;
-		int id2 = XMLSaver.saveData.GetAccountData(name2).accountId;
-		if (id < id2) {
-			return (id << 8) + id2;
-		}
-		return (id2 << 8) + id;
 	}
     public int GetPairID(int id,int id2)
     {

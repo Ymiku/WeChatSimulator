@@ -16,15 +16,15 @@ namespace UIFrameWork
 		{
 			base.OnEnter(context);
 			_context = context as ChatContext;
-            ChatManager.Instance.EnterChat(_context.friendName);
+            ChatManager.Instance.EnterChat(_context.friendId);
             scrollView.OnEnter();
 		}
 
 		public override void OnExit(BaseContext context)
 		{
 			base.OnExit(context);
-            ChatManager.Instance.ExitChat();
             scrollView.OnExit();
+            ChatManager.Instance.ExitChat();
         }
 
 		public override void OnPause(BaseContext context)
@@ -44,7 +44,7 @@ namespace UIFrameWork
 	}
 	public class ChatContext : BaseContext
 	{
-        public string friendName;
+        public int friendId;
 		public ChatContext() : base(UIType.Chat)
 		{
 		}

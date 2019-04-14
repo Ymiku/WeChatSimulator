@@ -26,19 +26,19 @@ public class ChatItem : ItemBase {
     public void OnRefresh()
     {
         message.text = instance.lastSentence;
-        if (instance.redNum == 0)
+        if (instance.saveData.redCount == 0)
         {
             redPoint.SetActive(false);
         }
         else
         {
             redPoint.SetActive(true);
-            redCount.text = instance.redNum.ToString();
+            redCount.text = instance.saveData.redCount.ToString();
         }
     }
     public void OnClick()
     {
-        ChatManager.Instance.EnterChat(instance.friendName);
-        UIManager.Instance.Push(new ChatContext() { friendName = instance.friendName});
+        ChatManager.Instance.EnterChat(instance.friendId);
+        UIManager.Instance.Push(new ChatContext() { friendId = instance.friendId});
     }
 }

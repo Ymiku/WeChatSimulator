@@ -32,19 +32,18 @@ public partial class SaveData
 		varName.Add (valueName);
 		varValue.Add (value);
 	}
-	public List<string> GetFriendsLst(string name)
+	public List<int> GetFriendsLst(int selfId)
 	{
-		int playerId = GetAccountData (name).accountId;
-		List<string> result = new List<string> ();
+		List<int> result = new List<int> ();
 		for (int i = 0; i < instanceID.Count; i++) {
 			int m = (instanceID [i] >> 8);
 			int n = (instanceID [i] & 255);
-			if(m!=playerId&&n!=playerId)
+			if(m!=selfId&&n!=selfId)
 				continue;
-			if(m==playerId)
-				result.Add(GetAccountData(n).enname);
+			if(m==selfId)
+				result.Add(n);
 			else
-				result.Add(GetAccountData(m).enname);
+				result.Add(m);
 		}
 		return result;
 	}
@@ -77,6 +76,7 @@ public class ChatInstanceData
 	public int readSectionId;
 	public int readNodeId;
 	public long lastChatTimeStamp;
+    public int redCount;
 	public float totalRectHeight;
 
 	public List<int> nodeIds = new List<int>();

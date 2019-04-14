@@ -58,11 +58,11 @@ namespace UIFrameWork
             {
                 contactsLst[i].gameObject.SetActive(false);
             }
-            Dictionary<char,List<string>> nameDic = ChatManager.Instance.init2NameDic;
+            Dictionary<char,List<int>> nameDic = ChatManager.Instance.init2NameDic;
             float y = -158.0f;
             for (int i = 0; i < 27; i++)
             {
-                List<string> friends;
+                List<int> friends;
                 if (i == 26)
                 {
                     friends = nameDic['#'];

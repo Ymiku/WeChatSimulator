@@ -16,28 +16,28 @@ namespace UIFrameWork
 		{
 			base.OnEnter(context);
 			_context = context as FriendsContext;
-            ChatManager.Instance.OnRefreshChatLst += OnRefreshLst;
-            ChatManager.Instance.RefreshChatLst();
+            ChatManager.Instance.OnNewMsgOccur += RefreshMsg;
+            ChatManager.Instance.RefreshMsg();
             
         }
 
 		public override void OnExit(BaseContext context)
 		{
 			base.OnExit(context);
-            ChatManager.Instance.OnRefreshChatLst -= OnRefreshLst;
+            ChatManager.Instance.OnNewMsgOccur -= RefreshMsg;
         }
 
 		public override void OnPause(BaseContext context)
 		{
 			base.OnPause(context);
-            ChatManager.Instance.OnRefreshChatLst -= OnRefreshLst;
+            ChatManager.Instance.OnNewMsgOccur -= RefreshMsg;
         }
 
 		public override void OnResume(BaseContext context)
 		{
 			base.OnResume(context);
-            ChatManager.Instance.OnRefreshChatLst += OnRefreshLst;
-            ChatManager.Instance.RefreshChatLst();
+            ChatManager.Instance.OnNewMsgOccur += RefreshMsg;
+            ChatManager.Instance.RefreshMsg();
             
         }
 		public override void Excute ()
@@ -45,7 +45,7 @@ namespace UIFrameWork
 			base.Excute ();
 
 		}
-        public void OnRefreshLst(List<ChatInstance> chatLst)
+        public void RefreshMsg(List<ChatInstance> chatLst)
         {
             if (!gameObject.activeSelf)
                 return;
