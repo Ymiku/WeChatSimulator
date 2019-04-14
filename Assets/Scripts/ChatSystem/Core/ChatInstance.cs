@@ -107,6 +107,7 @@ public class ChatInstance{
 	public void OnExit()
 	{
 		_activeNodes.Clear ();
+        redNum = 0;
 	}
 	public Node GetLastRunningNode()
 	{
