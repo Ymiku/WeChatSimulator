@@ -6,7 +6,7 @@ namespace UIFrameWork
 	public class NewFriendsView : AnimateView
 	{
 		private NewFriendsContext _context;
-
+        public PoolableScrollView scroll;
 		public override void Init ()
 		{
 			base.Init ();
@@ -15,6 +15,7 @@ namespace UIFrameWork
 		{
 			base.OnEnter(context);
 			_context = context as NewFriendsContext;
+            scroll.SetDatas<int>(ChatManager.Instance.GetFriendRequests());
 		}
 
 		public override void OnExit(BaseContext context)
@@ -35,6 +36,7 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
+      
 	}
 	public class NewFriendsContext : BaseContext
 	{

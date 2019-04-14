@@ -88,6 +88,7 @@ public class ChatInstance{
 		}
         if (finishCount != 0)
         {
+            lastChatTimeStamp = GameManager.Instance.time;
             if (curRunningNode != null)
             {
                 curSection = ChatManager.Instance.LoadSectionByID(curPairID, curRunningNode.sectionId);
