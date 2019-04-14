@@ -11,6 +11,8 @@ namespace UIFrameWork
         private Text _balanceText;
         private Text _yuEBaoText;
         private Text _nameText;
+        private Text _yesterdayText1;
+        private Text _yesterdayText2;
 
 		public override void Init ()
 		{
@@ -19,6 +21,8 @@ namespace UIFrameWork
             _balanceText = FindInChild<Text>("Panel/Middle/BalanceText/Value");
             _yuEBaoText = FindInChild<Text>("Panel/Middle/YuEBaoText/Value");
             _nameText = FindInChild<Text>("Panel/Top/NameText");
+            _yesterdayText1 = FindInChild<Text>("Panel/Middle/TotalText/Yesterday/Value");
+            _yesterdayText2 = FindInChild<Text>("Panel/Middle/YuEBaoText/AddValue");
 		}
 		public override void OnEnter(BaseContext context)
 		{
@@ -52,6 +56,8 @@ namespace UIFrameWork
             _balanceText.text = AssetsManager.Instance.assetsData.balance.ToString();
             _yuEBaoText.text = AssetsManager.Instance.assetsData.yuEBao.ToString();
             _totalText.text = (AssetsManager.Instance.assetsData.balance + AssetsManager.Instance.assetsData.yuEBao).ToString();
+            _yesterdayText1.text = "+" + AssetsManager.Instance.assetsData.yuEBaoYesterday.ToString();
+            _yesterdayText2.text = "+" + AssetsManager.Instance.assetsData.yuEBaoYesterday.ToString();
         }
 	}
 	public class TotalAssetsContext : BaseContext

@@ -76,7 +76,7 @@ namespace UIFrameWork
             }
             _wanYuanText.text = GameDefine.TenThousandProfit.ToString();
             _totalText.text = string.Format(ContentHelper.Read(ContentHelper.TotalAssetsText), moneyStr);
-            _yesterdayText.text = data.yuEBaoYesterday > 0 ? data.yuEBaoYesterday.ToString() : ContentHelper.Read(ContentHelper.GuestDontWorry);
+            _yesterdayText.text = data.yuEBaoYesterday > 0 ? "+" + data.yuEBaoYesterday.ToString() : ContentHelper.Read(ContentHelper.GuestDontWorry);
             _eyesBtn.transform.localPosition = new Vector3(50 + _totalText.preferredWidth / 2,
                 _eyesBtn.transform.localPosition.y, _eyesBtn.transform.localPosition.z);
         }
