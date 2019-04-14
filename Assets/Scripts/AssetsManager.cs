@@ -24,7 +24,7 @@ public class AssetsManager : Singleton<AssetsManager>
         _defaultCardIcon = Resources.Load<Sprite>(GameDefine.DefaultBankSprite);
         if (curUseBankCard != null)
             curUseCardId = curUseBankCard.cardId;
-
+        RecalculationOfflineProfit();
     }
 
     /// <summary>
@@ -116,6 +116,46 @@ public class AssetsManager : Singleton<AssetsManager>
             Sprite sprite = Resources.Load<Sprite>("BankCardSprites/" + StaticDataBankCard.GetBankSpriteByBankName(bankName));
             _bankIconDict.Add(bankName, sprite);
             return sprite;
+        }
+    }
+
+    /// <summary>
+    /// 保存离线时间
+    /// </summary>
+    public void SaveOfflineTime()
+    {
+        if (assetsData != null)
+            assetsData.lastOfflineTime = DateTime.Now.ToString("yyyy-MM-dd");
+    }
+
+    /// <summary>
+    /// 一天收益
+    /// </summary>
+    public void RecalculationOneDayProfit()
+    {
+        assetsData.yuEBaoYesterday = (float)Math.Round(assetsData.yuEBao * GameDefine.TenThousandProfit / 10000 > 0.01 ? assetsData.yuEBao * GameDefine.TenThousandProfit / 10000 : 0, 2);
+        assetsData.yuEBaoProfit += assetsData.yuEBaoYesterday;
+        assetsData.yuEBao += assetsData.yuEBaoYesterday;
+    }
+
+    /// <summary>
+    /// 离线期间收益
+    /// </summary>
+    private void RecalculationOfflineProfit()
+    {
+        if (string.IsNullOrEmpty(assetsData.lastOfflineTime))
+            return;
+        DateTime now = DateTime.Now;
+        DateTime lastTime = DateTime.Parse(assetsData.lastOfflineTime);
+        TimeSpan timeSpan = lastTime - now;
+        int day = timeSpan.Days;
+        day = day < 3650 ? day : 3650;
+        if(day > 0)
+        {
+            for(int i = 0; i < day; i++)
+            {
+                RecalculationOneDayProfit();
+            }
         }
     }
 }

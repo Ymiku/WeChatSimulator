@@ -6,6 +6,8 @@ public class GameManager : UnitySingleton<GameManager>
 {
     long _timeStamp;
     float _localTime;
+    bool _lastSecond;
+    DateTime _curTime;
 	public int curUserId;
 	public string curEnName;
     public long time
@@ -33,6 +35,7 @@ public class GameManager : UnitySingleton<GameManager>
 			XMLSaver.saveData.canLoginUserIds.Add (userId);
         ChatManager.Instance.OnExit();
         ChatManager.Instance.OnEnter(XMLSaver.saveData.GetAccountData(userId).enname);
+        AssetsManager.Instance.SaveOfflineTime();
         AssetsManager.Instance.Set(userId);
 	}
     void OnEnterGame()
@@ -43,6 +46,8 @@ public class GameManager : UnitySingleton<GameManager>
 		gameObject.AddComponent<HeadSpriteUtils> ();
         _timeStamp = GetTimeStamp();
         _localTime = 0.0f;
+        _lastSecond = false;
+        _curTime = DateTime.Now;
     }
 	void OnDestroy()
 	{
@@ -50,6 +55,7 @@ public class GameManager : UnitySingleton<GameManager>
 	}
     void OnExitGame()
     {
+        AssetsManager.Instance.SaveOfflineTime();
         XMLSaver.Save();
 		XMLSaver.saveData = null;
     }
@@ -59,6 +65,18 @@ public class GameManager : UnitySingleton<GameManager>
         StoryManager.Instance.Execute();
         ChatManager.Instance.OnExcute();
         FrostRX.Instance.Execute();
+        TimeTick();
+    }
+    void TimeTick()
+    {
+        _curTime = DateTime.Now;
+        if(_lastSecond && _curTime.Hour == 0)
+        {
+            AssetsManager.Instance.RecalculationOneDayProfit();
+            _lastSecond = false;
+        }
+        if (_curTime.Hour == 23 && _curTime.Minute == 59 && _curTime.Second == 59)
+            _lastSecond = true;
     }
     public static long GetTimeStamp()
     {

@@ -52,10 +52,12 @@ public partial class SaveData
 [System.Serializable]
 public class AssetsSaveData
 {
-    public int accountId;       //账户id
-    public double balance;      //余额
-    public double yuEBao;       //余额宝
-    public float yuEBaoProfit;  //余额宝总收益
-    public float antPayValue;   //蚂蚁花呗可用
-    public float antPayLimit;   //蚂蚁花呗额度
+    public int accountId;           //账户id
+    public double balance;          //余额
+    public double yuEBao;           //余额宝
+    public float yuEBaoProfit;      //余额宝总收益
+    public float antPayValue;       //蚂蚁花呗可用
+    public float antPayLimit;       //蚂蚁花呗额度
+    public float yuEBaoYesterday;   //昨日收益
+    public string lastOfflineTime;  //上次离线时间
 }

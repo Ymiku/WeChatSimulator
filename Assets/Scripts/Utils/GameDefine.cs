@@ -9,4 +9,5 @@ public class GameDefine
     public const string ForbidTextColor = "<color=#BEBFBE>{0}</color>";             //禁用灰
     public const string NormalTextColor = "<color=#F5F8F8>{0}</color>";             //正常白
     public const float ServicePower = 0.001f;                                       //服务费
+    public const float TenThousandProfit = 0.6532f;                                 //余额宝万份收益
 }
