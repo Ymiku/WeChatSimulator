@@ -84,13 +84,4 @@ namespace UIFrameWork
         public string name;
         public string cardId;
 	}
-
-    public struct ToBalanceData
-    {
-
-    }
-    public struct ToBankCardData
-    {
-
-    }
 }
