@@ -23,6 +23,7 @@ namespace UIFrameWork
 		{
 			base.OnEnter(context);
 			_context = context as TransferToBankCardContext;
+            Refresh();
             RefreshBtnStatus();
         }
 
@@ -81,6 +82,15 @@ namespace UIFrameWork
             RefreshBtnStatus();
         }
 
+        private void Refresh()
+        {
+            if(_context.data != null)
+            {
+                _nameField.text = _context.data.realName;
+                _cardField.text = _context.data.cardId;
+            }
+        }
+
         private void RefreshBtnStatus()
         {
             bool cardForbid = true;
@@ -119,5 +129,12 @@ namespace UIFrameWork
 		public TransferToBankCardContext() : base(UIType.TransferToBankCard)
 		{
 		}
-	}
+
+        public TransferToBankCardContext(BankCardSaveData data) : base(UIType.TransferToBankCard)
+        {
+            this.data = data;
+        }
+
+        public BankCardSaveData data;
+    }
 }

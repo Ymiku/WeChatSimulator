@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UIFrameWork;
 using UnityEngine.UI;
 
 public class BankCardItem : ItemBase
@@ -34,6 +35,6 @@ public class BankCardItem : ItemBase
 
     private void OnClickBtn()
     {
-        // todo 银行卡详情
+        UIManager.Instance.Push(new BankCardDetailContext(_data));
     }
 }
