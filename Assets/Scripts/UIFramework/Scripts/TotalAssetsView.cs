@@ -13,6 +13,7 @@ namespace UIFrameWork
         private Text _nameText;
         private Text _yesterdayText1;
         private Text _yesterdayText2;
+        private Image _headImage;
 
 		public override void Init ()
 		{
@@ -23,6 +24,7 @@ namespace UIFrameWork
             _nameText = FindInChild<Text>("Panel/Top/NameText");
             _yesterdayText1 = FindInChild<Text>("Panel/Middle/TotalText/Yesterday/Value");
             _yesterdayText2 = FindInChild<Text>("Panel/Middle/YuEBaoText/AddValue");
+            _headImage = FindInChild<Image>("Panel/Top/HeadImage");
 		}
 		public override void OnEnter(BaseContext context)
 		{
@@ -58,6 +60,7 @@ namespace UIFrameWork
             _totalText.text = (AssetsManager.Instance.assetsData.balance + AssetsManager.Instance.assetsData.yuEBao).ToString();
             _yesterdayText1.text = "+" + AssetsManager.Instance.assetsData.yuEBaoYesterday.ToString();
             _yesterdayText2.text = "+" + AssetsManager.Instance.assetsData.yuEBaoYesterday.ToString();
+            HeadSpriteUtils.Instance.SetHead(_headImage);
         }
 	}
 	public class TotalAssetsContext : BaseContext
