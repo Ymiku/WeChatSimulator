@@ -59,4 +59,6 @@ public class ContentHelper
     public const int Iam = 51; //我是
     public const int ExpendText = 52; //支出
     public const int IncomeText = 53; //收入
+    public const int TodayText = 54; //今天
+    public const int YesterdayText = 55; //昨天
 }
