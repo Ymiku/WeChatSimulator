@@ -180,6 +180,8 @@ namespace UIFrameWork
                         else
                             AssetsManager.Instance.assetsData.yuEBao += _amount;
                         string payStr = Utils.FormatPaywayStr(PaywayType.BankCard, _context.cardId);
+                        UIManager.Instance.Pop();
+                        UIManager.Instance.Pop();
                         UIManager.Instance.Push(new RechargeSuccContext(payStr, _amount));
                     }
                     else

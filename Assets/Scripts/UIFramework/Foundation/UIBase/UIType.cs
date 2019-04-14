@@ -89,5 +89,6 @@ namespace UIFrameWork
 		public static readonly UIType BalanceCashSelectCard = new UIType("View/BalanceCashSelectCardView"); //提现选择银行卡
 		public static readonly UIType RechargeSucc = new UIType("View/RechargeSuccView"); //充值成功
 		public static readonly UIType BalanceCashSucc = new UIType("View/BalanceCashSuccView"); //提现成功
+		public static readonly UIType BankCardDetail = new UIType("View/BankCardDetailView"); //银行卡详情
     }
 }
