@@ -106,7 +106,6 @@ public class NodeItemProxy : MonoBehaviour {
             image.enabled = false;
             text.text = "我们已经是好友啦，一起来聊天吧！";
             //text.rectTransform.sizeDelta = new Vector2 (text.preferredWidth, Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight + 20.0f));
-            Debug.Log(text.preferredHeight);
             backGround.sizeDelta = new Vector2(Mathf.Max(80.0f, text.preferredWidth + 40.0f), Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight + 40.0f));
             text.rectTransform.sizeDelta = new Vector2(backGround.sizeDelta.x - 20.0f, backGround.sizeDelta.y);
         }

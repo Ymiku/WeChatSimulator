@@ -254,4 +254,14 @@ public class ChatManager : Singleton<ChatManager> {
             AddFriend(request & 255);
         }
     }
+    public bool HasRequestToHandle()
+    {
+        List<int> requests = GetFriendRequests();
+        for (int i = 0; i < requests.Count; i++)
+        {
+            if ((requests[i] >> 16) == 0)
+                return true;
+        }
+        return false;
+    }
 }
