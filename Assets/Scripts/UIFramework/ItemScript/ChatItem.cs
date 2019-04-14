@@ -26,6 +26,15 @@ public class ChatItem : ItemBase {
     public void OnRefresh()
     {
         message.text = instance.lastSentence;
+        if (instance.redNum == 0)
+        {
+            redPoint.SetActive(false);
+        }
+        else
+        {
+            redPoint.SetActive(true);
+            redCount.text = instance.redNum.ToString();
+        }
     }
     public void OnClick()
     {
