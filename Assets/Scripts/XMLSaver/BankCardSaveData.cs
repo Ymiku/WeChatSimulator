@@ -118,9 +118,3 @@ public class BankCardSaveData
     public double money;        // 银行卡余额
     public string realName;     // 持卡人
 }
-
-public static class BankCardDefine
-{
-    public const int cardIdMaxLength = 19;             // 银行卡卡号长度         
-    public const int cardIdMinLength = 16;             // 银行卡卡号长度最低
-}

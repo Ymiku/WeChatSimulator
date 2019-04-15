@@ -94,7 +94,7 @@ namespace UIFrameWork
                 return false;
             if (string.IsNullOrEmpty(cardId))
                 return false;
-            else if (cardId.Length > BankCardDefine.cardIdMaxLength || cardId.Length < BankCardDefine.cardIdMinLength)
+            else if (cardId.Length > GameDefine.cardIdMaxLength || cardId.Length < GameDefine.cardIdMinLength)
                 return false;
             //模10算法 检查合法性
             int sum = 0;
