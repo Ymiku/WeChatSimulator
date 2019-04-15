@@ -43,9 +43,9 @@ namespace static_data
       get { return _pic_array; }
     }
   
-    private int _is_secret;
-    [global::ProtoBuf.ProtoMember(5, IsRequired = true, Name=@"is_secret", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
-    public int is_secret
+    private bool _is_secret;
+    [global::ProtoBuf.ProtoMember(5, IsRequired = true, Name=@"is_secret", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public bool is_secret
     {
       get { return _is_secret; }
       set { _is_secret = value; }

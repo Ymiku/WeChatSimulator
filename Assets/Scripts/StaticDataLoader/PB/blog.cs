@@ -50,9 +50,9 @@ namespace static_data
       get { return _blog_path; }
       set { _blog_path = value; }
     }
-    private int _is_secret;
-    [global::ProtoBuf.ProtoMember(6, IsRequired = true, Name=@"is_secret", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
-    public int is_secret
+    private bool _is_secret;
+    [global::ProtoBuf.ProtoMember(6, IsRequired = true, Name=@"is_secret", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public bool is_secret
     {
       get { return _is_secret; }
       set { _is_secret = value; }

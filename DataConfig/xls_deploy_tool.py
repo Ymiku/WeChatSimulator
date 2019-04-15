@@ -370,6 +370,10 @@ class SheetInterpreter:
             self._output.append(" "*self._indentation + field_rule + " " + field_type \
                     + " " + field_name + " = " + self._GetAndAddFieldIndex()\
                     + " [default = \"\"]" + ";\n")
+        elif field_type == "bool" :
+            self._output.append(" "*self._indentation + field_rule + " " + field_type \
+                    + " " + field_name + " = " + self._GetAndAddFieldIndex()\
+                    + " [default = false]" + ";\n")
         else :
             self._output.append(" "*self._indentation + field_rule + " " + field_type \
                     + " " + field_name + " = " + self._GetAndAddFieldIndex() + ";\n")
@@ -632,6 +636,11 @@ class DataParser:
                         return None
                     else :
                         return float(field_value)
+            elif field_type == "bool" :
+                if len(str(field_value).strip()) <=0 :
+                    return None
+                else :
+                    return bool(field_value)
             elif field_type == "string" :
                 field_value = unicode(field_value)
                 if len(field_value) <= 0 :
