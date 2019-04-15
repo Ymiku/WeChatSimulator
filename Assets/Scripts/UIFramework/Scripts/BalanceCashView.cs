@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
+
 namespace UIFrameWork
 {
 	public class BalanceCashView : AnimateView
@@ -79,6 +81,13 @@ namespace UIFrameWork
                     BankCardSaveData data = AssetsManager.Instance.curUseBankCard;
                     AssetsManager.Instance.assetsData.balance -= (money + serviceMoney);
                     data.money += money;
+                    TransactionSaveData actionData = new TransactionSaveData();
+                    actionData.timeStr = DateTime.Now.ToString();
+                    actionData.moneyType = TransactionMoneyType.NoChange;
+                    actionData.remarkStr = ContentHelper.Read(ContentHelper.OtherText);
+                    actionData.money = money;
+                    actionData.detailStr = ContentHelper.Read(ContentHelper.YuECash);
+                    actionData.bankName = data.bankName;
                     UIManager.Instance.Pop();
                     UIManager.Instance.Push(new BalanceCashSuccContext(Utils.FormatPaywayStr(PaywayType.BankCard,data.cardId), money));
                 }));

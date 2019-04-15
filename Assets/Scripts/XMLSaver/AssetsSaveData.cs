@@ -76,15 +76,18 @@ public class AssetsSaveData
     public float antPayLimit;           //蚂蚁花呗额度
     public float yuEBaoYesterday;       //昨日收益
     public string lastOfflineTime;      //上次离线时间
-    public List<TransactionSaveData> transactionList;   //转账记录
+    public List<TransactionSaveData> transactionList;   //转账记录 todo 排序
 }
 
 [Serializable]
 public class TransactionSaveData
 {
-    public TransactionType transactionType;
+    public TransactionMoneyType moneyType;
+    public TransactionIconType iconType;
     public string timeStr;
     public string detailStr;
     public string remarkStr;
     public double money;
+    public string bankName;
+    public int accountId;
 }

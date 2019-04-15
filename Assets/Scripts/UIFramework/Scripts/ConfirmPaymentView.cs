@@ -89,15 +89,15 @@ namespace UIFrameWork
         public void OnClickOk()
         {
             if (_spendType == SpendType.TransferToBalance)
-                PayBalance();
+                TransToBalance();
             else if (_spendType == SpendType.TransferToBankCard)
-                PayBankCard();
+                TransToBankCard();
             else if (_spendType == SpendType.ToSelfAssets)
-                Recharge();
+                RechargeToSelf();
         }
 
         #region ¸¶¿îÊÂ¼þ
-        private void PayBalance()
+        private void TransToBalance()
         {
             if (_canPayFlag)
             {
@@ -125,14 +125,14 @@ namespace UIFrameWork
                         myActionData.money = _amount;
                         myActionData.detailStr = ContentHelper.Read(ContentHelper.TransferText) + "-" + accountData.realName;
                         myActionData.remarkStr = ContentHelper.Read(ContentHelper.OtherText);
-                        myActionData.transactionType = TransactionType.Expend;
+                        myActionData.moneyType = TransactionMoneyType.Expend;
                         AssetsManager.Instance.AddTransactionData(myActionData);
                         TransactionSaveData otherActionData = new TransactionSaveData();
                         otherActionData.timeStr = myActionData.timeStr;
                         otherActionData.money = myActionData.money;
                         otherActionData.detailStr = ContentHelper.Read(ContentHelper.TransferText) + "+" + GameManager.Instance.accountData.realName;
                         otherActionData.remarkStr = myActionData.remarkStr;
-                        otherActionData.transactionType = TransactionType.Income;
+                        otherActionData.moneyType = TransactionMoneyType.Income;
                         XMLSaver.saveData.AddTransactionData(accountData.accountId, otherActionData);
                         UIManager.Instance.Push(new TransferSuccContext(_amount, _paywayStr, receiverStr, _context.remarksStr));
                     }
@@ -149,7 +149,7 @@ namespace UIFrameWork
             }
         }
 
-        private void PayBankCard()
+        private void TransToBankCard()
         {
             if (_canPayFlag)
             {
@@ -167,6 +167,18 @@ namespace UIFrameWork
                         data.money += _amount;
                         string receiverStr = "(" + Utils.FormatPaywayStr(PaywayType.BankCard, _context.cardId) + ")";
                         receiverStr = data.realName + receiverStr;
+                        TransactionSaveData actionData = new TransactionSaveData();
+                        if (data.realName == GameManager.Instance.accountData.realName)
+                            actionData.moneyType = TransactionMoneyType.NoChange;
+                        else
+                            actionData.moneyType = TransactionMoneyType.Expend;
+                        actionData.timeStr = DateTime.Now.ToString();
+                        actionData.money = _amount;
+                        actionData.remarkStr = ContentHelper.Read(ContentHelper.OtherText);
+                        actionData.detailStr = ContentHelper.Read(ContentHelper.TransToCardText) + data.realName;
+                        actionData.iconType = TransactionIconType.BankCard;
+                        actionData.bankName = data.bankName;
+                        AssetsManager.Instance.AddTransactionData(actionData);
                         UIManager.Instance.Push(new TransferSuccContext(_amount, _paywayStr, receiverStr, _context.remarksStr));
                     }
                     else
@@ -182,7 +194,7 @@ namespace UIFrameWork
             }
         }
 
-        private void Recharge()
+        private void RechargeToSelf()
         {
             if (_canPayFlag)
             {
@@ -196,6 +208,12 @@ namespace UIFrameWork
                         else
                             AssetsManager.Instance.assetsData.yuEBao += _amount;
                         string payStr = Utils.FormatPaywayStr(PaywayType.BankCard, _context.cardId);
+                        TransactionSaveData actionData = new TransactionSaveData();
+                        actionData.timeStr = DateTime.Now.ToString();
+                        actionData.moneyType = TransactionMoneyType.NoChange;
+                        actionData.remarkStr = ContentHelper.Read(ContentHelper.OtherText);
+                        actionData.money = _amount;
+                        actionData.detailStr = ContentHelper.Read(ContentHelper.YuERecharge);
                         UIManager.Instance.Pop();
                         UIManager.Instance.Pop();
                         UIManager.Instance.Push(new RechargeSuccContext(payStr, _amount));

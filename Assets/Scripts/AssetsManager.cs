@@ -136,6 +136,17 @@ public class AssetsManager : Singleton<AssetsManager>
         assetsData.yuEBaoYesterday = (float)Math.Round(assetsData.yuEBao * GameDefine.TenThousandProfit / 10000 > 0.01 ? assetsData.yuEBao * GameDefine.TenThousandProfit / 10000 : 0, 2);
         assetsData.yuEBaoProfit += assetsData.yuEBaoYesterday;
         assetsData.yuEBao += assetsData.yuEBaoYesterday;
+        if(assetsData.yuEBaoYesterday > 0)
+        {
+            TransactionSaveData actionData = new TransactionSaveData();
+            actionData.timeStr = DateTime.Now.ToString();
+            actionData.moneyType = TransactionMoneyType.Income;
+            actionData.iconType = TransactionIconType.YuEBao;
+            actionData.remarkStr = ContentHelper.Read(ContentHelper.Finance);
+            actionData.detailStr = string.Format(ContentHelper.Read(ContentHelper.YuEBaoProfitAdd), DateTime.Now.ToString("MM.dd"));
+            actionData.money = assetsData.yuEBaoYesterday;
+            AddTransactionData(actionData);
+        }
     }
 
     /// <summary>
@@ -175,7 +186,7 @@ public class AssetsManager : Singleton<AssetsManager>
         double result = 0;
         for(int i = 0; i < assetsData.transactionList.Count; i++)
         {
-            if (assetsData.transactionList[i].transactionType == TransactionType.Expend)
+            if (assetsData.transactionList[i].moneyType == TransactionMoneyType.Expend)
                 result += assetsData.transactionList[i].money;
         }
         return result;
@@ -189,7 +200,7 @@ public class AssetsManager : Singleton<AssetsManager>
         double result = 0;
         for (int i = 0; i < assetsData.transactionList.Count; i++)
         {
-            if (assetsData.transactionList[i].transactionType == TransactionType.Income)
+            if (assetsData.transactionList[i].moneyType == TransactionMoneyType.Income)
                 result += assetsData.transactionList[i].money;
         }
         return result;
@@ -219,9 +230,17 @@ public enum RechargeType
     YuEBao,
 }
 
-public enum TransactionType
+public enum TransactionMoneyType
 {
     NoChange,
     Expend,
     Income,
+}
+
+public enum TransactionIconType
+{
+    Default,
+    YuEBao,
+    BankCard,
+    UserHead,
 }

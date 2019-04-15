@@ -26,8 +26,14 @@ public class TransactionItem : ItemBase
     {
         base.SetData(o);
         _data = o as TransactionSaveData;
-        _detailText.text = _data.detailStr;
-        _remarkText.text = _data.remarkStr;
+        RefreshTime();
+        RefreshMoney();
+        RefreshIcon();
+        RefreshOther();
+    }
+
+    private void RefreshTime()
+    {
         DateTime dealTime = DateTime.Parse(_data.timeStr);
         DateTime nowTime = DateTime.Now;
         TimeSpan timeSpan = nowTime - dealTime;
@@ -43,11 +49,14 @@ public class TransactionItem : ItemBase
         {
             _timeText.text = dealTime.ToString("m") + " " + dealTime.Hour + ":" + dealTime.Minute;
         }
-        if (_data.transactionType == TransactionType.Expend)
+    }
+    private void RefreshMoney()
+    {
+        if (_data.moneyType == TransactionMoneyType.Expend)
         {
             _moneyText.text = "<color=#000000>-" + _data.money + "</color>";
         }
-        else if(_data.transactionType == TransactionType.Income)
+        else if (_data.moneyType == TransactionMoneyType.Income)
         {
             _moneyText.text = "<color=#F90000>+" + _data.money + "</color>";
         }
@@ -55,6 +64,27 @@ public class TransactionItem : ItemBase
         {
             _moneyText.text = "<color=#000000>" + _data.money + "</color>";
         }
+    }
+    private void RefreshIcon()
+    {
+        switch (_data.iconType)
+        {
+            case TransactionIconType.BankCard:
+                if (!string.IsNullOrEmpty(_data.bankName))
+                    _icon.sprite = AssetsManager.Instance.GetBankSprite(_data.bankName);
+                break;
+            case TransactionIconType.YuEBao:
+                _icon.sprite = Utils.GetYuEBaoSprite();
+                break;
+            case TransactionIconType.UserHead:
+                HeadSpriteUtils.Instance.SetHead(_icon, _data.accountId);
+                break;
+        }
+    }
+    private void RefreshOther()
+    {
+        _detailText.text = _data.detailStr;
+        _remarkText.text = _data.remarkStr;
     }
 
     private void OnClickBtn()

@@ -62,4 +62,9 @@ public class ContentHelper
     public const int TodayText = 54; //今天
     public const int YesterdayText = 55; //昨天
     public const int OtherText = 56; //其他
+    public const int TransToCardText = 57; //转账到银行卡-
+    public const int YuERecharge = 58; //余额充值
+    public const int YuECash = 59; //余额提现
+    public const int YuEBaoProfitAdd = 60; //余额宝-{0}-收益发放
+    public const int Finance = 61; //理财
 }
