@@ -34,8 +34,10 @@ public class PoolableFScrollView : MonoBehaviour {
 	{
 		if (ChatManager.Instance.curExecuteInstance.saveData.totalRectHeight <= viewPortTrans.sizeDelta.y)
 			return;
+		if (contextTrans.anchoredPosition.y <= contextTrans.sizeDelta.y - viewPortTrans.sizeDelta.y-120.0f)
+			return;
 		FrostRX.End (rxId);
-		FrostRX.Start (this).ExecuteContinuous (()=>{contextTrans.anchoredPosition = Vector2.Lerp (contextTrans.anchoredPosition,new Vector2(0.0f,contextTrans.sizeDelta.y-viewPortTrans.sizeDelta.y+1.0f),16.0f*Time.deltaTime);},0.4f).GetId(rxId);
+		FrostRX.Start (this).ExecuteUntil (()=>{contextTrans.anchoredPosition = Vector2.Lerp (contextTrans.anchoredPosition,new Vector2(0.0f,contextTrans.sizeDelta.y-viewPortTrans.sizeDelta.y+1.0f),16.0f*Time.deltaTime);},()=>{return contextTrans.anchoredPosition.y>=contextTrans.sizeDelta.y-viewPortTrans.sizeDelta.y;}).GetId(rxId);
 	}
     bool needUpdate = false;
     public void OnEnter()
@@ -149,6 +151,8 @@ public class PoolableFScrollView : MonoBehaviour {
 			item.FadeIn ();
 			ChatManager.Instance.curExecuteInstance.ReadNext ();
             ChatManager.Instance.curInstance.saveData.totalRectHeight += itemHeight;
+			if (ChatManager.Instance.curInstance.saveData.totalRectHeight >= viewPortTrans.sizeDelta.y && ChatManager.Instance.curInstance.saveData.totalRectHeight - itemHeight <= viewPortTrans.sizeDelta.y)
+				OnPopNewMsg ();
 			contextTrans.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical, contextTrans.sizeDelta.y + itemHeight);
 		}
 		item.cachedRectTransform.anchoredPosition = new Vector2 (0.0f,itemY);
