@@ -33,7 +33,7 @@ public class PoolableFScrollView : MonoBehaviour {
 			_pools [i] = new Stack<NodeItemProxy> ();
 		}
 	}
-	void OnPopNewMsg()
+	public void OnPopNewMsg()
 	{
 		if (ChatManager.Instance.curExecuteInstance.saveData.totalRectHeight <= viewPortTrans.sizeDelta.y)
 			return;
@@ -44,6 +44,13 @@ public class PoolableFScrollView : MonoBehaviour {
 		FrostRX.End (rxId);
 		FrostRX.Start (this).ExecuteUntil (()=>{contextTrans.anchoredPosition = Vector2.Lerp (contextTrans.anchoredPosition,new Vector2(0.0f,contextTrans.sizeDelta.y-viewPortTrans.sizeDelta.y+1.0f),16.0f*Time.deltaTime);},()=>{return contextTrans.anchoredPosition.y>=contextTrans.sizeDelta.y-viewPortTrans.sizeDelta.y;}).GetId(rxId);
 	}
+    public void OnOptionPanelOpen()
+    {
+        if (ChatManager.Instance.curExecuteInstance.saveData.totalRectHeight <= viewPortTrans.sizeDelta.y)
+            return;
+        FrostRX.End(rxId);
+        FrostRX.Start(this).ExecuteUntil(() => { contextTrans.anchoredPosition = Vector2.Lerp(contextTrans.anchoredPosition, new Vector2(0.0f, contextTrans.sizeDelta.y - viewPortTrans.sizeDelta.y + 1.0f), 16.0f * Time.deltaTime); }, () => { return contextTrans.anchoredPosition.y >= contextTrans.sizeDelta.y - viewPortTrans.sizeDelta.y; }).GetId(rxId);
+    }
     bool needUpdate = false;
     public void OnEnter()
     {

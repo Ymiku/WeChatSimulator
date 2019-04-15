@@ -14,7 +14,7 @@ namespace UnityEngine.UI
     /// <remarks>
     /// ScrollRect will not do any clipping on its own. Combined with a Mask component, it can be turned into a scroll view.
     /// </remarks>
-    public class FScrollRect : UIBehaviour, IInitializePotentialDragHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IScrollHandler, ICanvasElement, ILayoutElement, ILayoutGroup
+    public class FScrollRect : UIBehaviour, IInitializePotentialDragHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IScrollHandler, ICanvasElement, ILayoutElement, ILayoutGroup,IPointerClickHandler
     {
         /// <summary>
         /// A setting for which behavior to use when content moves beyond the confines of its container.
@@ -736,7 +736,13 @@ namespace UnityEngine.UI
         /// }
         /// </code>
         /// </example>
-		Vector2 lastCusor;
+        public event Action OnClickEvent;
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if (OnClickEvent != null)
+                OnClickEvent();
+        }
+        Vector2 lastCusor;
         public virtual void OnDrag(PointerEventData eventData)
         {
             if (eventData.button != PointerEventData.InputButton.Left)
