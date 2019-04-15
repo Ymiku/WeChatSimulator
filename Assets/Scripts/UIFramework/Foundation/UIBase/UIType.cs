@@ -90,5 +90,8 @@ namespace UIFrameWork
 		public static readonly UIType RechargeSucc = new UIType("View/RechargeSuccView"); //充值成功
 		public static readonly UIType BalanceCashSucc = new UIType("View/BalanceCashSuccView"); //提现成功
 		public static readonly UIType BankCardDetail = new UIType("View/BankCardDetailView"); //银行卡详情
+		public static readonly UIType Tweet = new UIType("View/TweetView"); //推特
+		public static readonly UIType Blog = new UIType("View/BlogView"); //博客
+		public static readonly UIType Album = new UIType("View/AlbumView"); //相册
     }
 }
