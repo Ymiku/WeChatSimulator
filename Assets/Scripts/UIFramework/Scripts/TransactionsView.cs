@@ -47,9 +47,9 @@ namespace UIFrameWork
         private void Refresh()
         {
             _expendText.text = ContentHelper.Read(ContentHelper.ExpendText) + " " + ContentHelper.Read(ContentHelper.RMBSign) +
-                " " + AssetsManager.Instance.GetExpendTotalMoney().ToString();
+                " " + AssetsManager.Instance.GetExpendTotalMoney().ToString("0.00");
             _incomeText.text = ContentHelper.Read(ContentHelper.IncomeText) + " " + ContentHelper.Read(ContentHelper.RMBSign) +
-                " " + AssetsManager.Instance.GetIncomeTotalMoney().ToString();
+                " " + AssetsManager.Instance.GetIncomeTotalMoney().ToString("0.00");
             _dataList.Clear();
             for (int i = AssetsManager.Instance.assetsData.transactionList.Count - 1; i >= 0; i--)
                 _dataList.Add(AssetsManager.Instance.assetsData.transactionList[i]);

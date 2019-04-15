@@ -55,11 +55,11 @@ namespace UIFrameWork
         private void Refresh()
         {
             _nameText.text = GameManager.Instance.accountData.realName;
-            _balanceText.text = AssetsManager.Instance.assetsData.balance.ToString();
-            _yuEBaoText.text = AssetsManager.Instance.assetsData.yuEBao.ToString();
-            _totalText.text = (AssetsManager.Instance.assetsData.balance + AssetsManager.Instance.assetsData.yuEBao).ToString();
-            _yesterdayText1.text = "+" + AssetsManager.Instance.assetsData.yuEBaoYesterday.ToString();
-            _yesterdayText2.text = "+" + AssetsManager.Instance.assetsData.yuEBaoYesterday.ToString();
+            _balanceText.text = AssetsManager.Instance.assetsData.balance.ToString("0.00");
+            _yuEBaoText.text = AssetsManager.Instance.assetsData.yuEBao.ToString("0.00");
+            _totalText.text = (AssetsManager.Instance.assetsData.balance + AssetsManager.Instance.assetsData.yuEBao).ToString("0.00");
+            _yesterdayText1.text = "+" + AssetsManager.Instance.assetsData.yuEBaoYesterday.ToString("0.00");
+            _yesterdayText2.text = "+" + AssetsManager.Instance.assetsData.yuEBaoYesterday.ToString("0.00");
             HeadSpriteUtils.Instance.SetHead(_headImage);
         }
 	}

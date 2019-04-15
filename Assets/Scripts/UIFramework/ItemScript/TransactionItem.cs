@@ -52,17 +52,18 @@ public class TransactionItem : ItemBase
     }
     private void RefreshMoney()
     {
+        string money = _data.money.ToString("0.00");
         if (_data.moneyType == TransactionMoneyType.Expend)
         {
-            _moneyText.text = "<color=#000000>-" + _data.money + "</color>";
+            _moneyText.text = "<color=#000000>-" + money + "</color>";
         }
         else if (_data.moneyType == TransactionMoneyType.Income)
         {
-            _moneyText.text = "<color=#F90000>+" + _data.money + "</color>";
+            _moneyText.text = "<color=#F90000>+" + money + "</color>";
         }
         else
         {
-            _moneyText.text = "<color=#000000>" + _data.money + "</color>";
+            _moneyText.text = "<color=#000000>" + money + "</color>";
         }
     }
     private void RefreshIcon()

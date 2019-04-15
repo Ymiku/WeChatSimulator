@@ -22,7 +22,7 @@ namespace UIFrameWork
 			base.OnEnter(context);
 			_context = context as RechargeSuccContext;
             _paywayText.text = _context.paywayStr;
-            _amountText.text = _context.money.ToString();
+            _amountText.text = _context.money.ToString("0.00");
             _signObj.transform.localPosition = new Vector3(-_amountText.preferredWidth / 2 + 26.5f,
                 _signObj.transform.localPosition.y, _signObj.transform.localPosition.z);
         }

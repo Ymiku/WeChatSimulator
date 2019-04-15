@@ -61,7 +61,7 @@ namespace UIFrameWork
 
         public void OnClickAll()
         {
-            _moneyInput.text = AssetsManager.Instance.assetsData.yuEBao.ToString();
+            _moneyInput.text = AssetsManager.Instance.assetsData.yuEBao.ToString("0.00");
         }
 
         public void OnClickFast()
@@ -103,7 +103,7 @@ namespace UIFrameWork
                     data.yuEBao -= amount;
                     bankCard.money += amount;
                     UIManager.Instance.Pop();
-                    string str = string.Format(ContentHelper.Read(ContentHelper.YuEBaoToCardSucc), amount,
+                    string str = string.Format(ContentHelper.Read(ContentHelper.YuEBaoToCardSucc), amount.ToString("0.00"),
                         Utils.FormatPaywayStr(PaywayType.BankCard, bankCard.cardId));
                     UIManager.Instance.Push(new YuEBaoOutSuccContext(str));
                 }));

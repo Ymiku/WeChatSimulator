@@ -58,7 +58,7 @@ namespace UIFrameWork
             double serviceMoney = Utils.GetBankServiceAmount(money);
             if (money == 0)
             {
-                _tips.text = string.Format(ContentHelper.Read(ContentHelper.CanUseBalance), AssetsManager.Instance.assetsData.balance.ToString());
+                _tips.text = string.Format(ContentHelper.Read(ContentHelper.CanUseBalance), AssetsManager.Instance.assetsData.balance.ToString("0.00"));
             }
             else if (money > AssetsManager.Instance.assetsData.balance - serviceMoney)
             {
@@ -111,7 +111,7 @@ namespace UIFrameWork
             _icon.sprite = AssetsManager.Instance.GetBankSprite(data.bankName);
             _bankName.text = data.bankName.Replace(ContentHelper.Read(ContentHelper.SavingCardText),"");
             _lastCardId.text = string.Format(ContentHelper.Read(ContentHelper.CardLastNum), data.cardId.Substring(data.cardId.Length - 4, 4));
-            _tips.text = string.Format(ContentHelper.Read(ContentHelper.CanUseBalance), AssetsManager.Instance.assetsData.balance.ToString());
+            _tips.text = string.Format(ContentHelper.Read(ContentHelper.CanUseBalance), AssetsManager.Instance.assetsData.balance.ToString("0.00"));
             _allBtn.gameObject.SetActive(AssetsManager.Instance.assetsData.balance > 0.2);
         }
 	}

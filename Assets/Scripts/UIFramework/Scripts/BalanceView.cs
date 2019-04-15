@@ -16,7 +16,7 @@ namespace UIFrameWork
 		{
 			base.OnEnter(context);
 			_context = context as BalanceContext;
-            _moneyText.text = AssetsManager.Instance.assetsData.balance.ToString();
+            _moneyText.text = AssetsManager.Instance.assetsData.balance.ToString("0.00");
 		}
 
 		public override void OnExit(BaseContext context)
@@ -32,7 +32,7 @@ namespace UIFrameWork
 		public override void OnResume(BaseContext context)
 		{
 			base.OnResume(context);
-            _moneyText.text = AssetsManager.Instance.assetsData.balance.ToString();
+            _moneyText.text = AssetsManager.Instance.assetsData.balance.ToString("0.00");
         }
 		public override void Excute ()
 		{

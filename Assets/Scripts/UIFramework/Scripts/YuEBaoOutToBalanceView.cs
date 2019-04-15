@@ -59,7 +59,7 @@ namespace UIFrameWork
 
         public void OnClickAll()
         {
-            _moneyInput.text = AssetsManager.Instance.assetsData.yuEBao.ToString();
+            _moneyInput.text = AssetsManager.Instance.assetsData.yuEBao.ToString("0.00");
         }
 
         public void OnClickClear()
@@ -84,7 +84,7 @@ namespace UIFrameWork
                     data.yuEBao -= amount;
                     data.balance += amount;
                     UIManager.Instance.Pop();
-                    string detailStr = string.Format(ContentHelper.Read(ContentHelper.YuEBaoToBalanceSucc), amount);
+                    string detailStr = string.Format(ContentHelper.Read(ContentHelper.YuEBaoToBalanceSucc), amount.ToString("0.00"));
                     UIManager.Instance.Push(new YuEBaoOutSuccContext(detailStr));
                 }));
             }

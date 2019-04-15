@@ -244,10 +244,10 @@ namespace UIFrameWork
             _orderItem.SetActive(_spendType == SpendType.TransferToBankCard);
             if (_spendType == SpendType.TransferToBankCard)
             {
-                _orderText.text = _context.realAmount.ToString();
-                _serviceText.text = _context.serviceAmount.ToString();
+                _orderText.text = _context.realAmount.ToString("0.00");
+                _serviceText.text = _context.serviceAmount.ToString("0.00");
             }
-            _amountText.text = _amount.ToString();
+            _amountText.text = _amount.ToString("0.00");
             _infoText.text = _spendType == SpendType.ToSelfAssets ? ContentHelper.Read(ContentHelper.RechargeText) : ContentHelper.Read(ContentHelper.TransferText);
             _signObj.transform.localPosition = new Vector3(-_amountText.preferredWidth / 2, _signObj.transform.localPosition.y, _signObj.transform.localPosition.z);
             _canPayFlag = _payway != PaywayType.None;

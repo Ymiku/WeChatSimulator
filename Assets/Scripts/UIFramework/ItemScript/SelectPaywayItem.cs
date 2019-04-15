@@ -88,13 +88,13 @@ public class SelectPaywayItem : ItemBase
         else if (_data.payway == PaywayType.Balance)
         {
             _payWayText.text = Utils.FormatPaywayStr(_data.payway) + "(" + ContentHelper.Read(ContentHelper.RemainText) +
-                ":" + +AssetsManager.Instance.assetsData.balance + ")";
+                ":" + AssetsManager.Instance.assetsData.balance.ToString("0.00") + ")";
             _icon.sprite = Utils.GetBalanceSprite();
         }
         else if (_data.payway == PaywayType.YuEBao)
         {
             _payWayText.text = Utils.FormatPaywayStr(_data.payway) + "(" + ContentHelper.Read(ContentHelper.RemainText) + 
-                ":" + AssetsManager.Instance.assetsData.yuEBao + ")";
+                ":" + AssetsManager.Instance.assetsData.yuEBao.ToString("0.00") + ")";
             _icon.sprite = Utils.GetYuEBaoSprite();
         }
         if (!_data.isEnough)
