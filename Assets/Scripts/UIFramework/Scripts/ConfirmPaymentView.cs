@@ -120,16 +120,20 @@ namespace UIFrameWork
                             receiverStr = accountData.realName + receiverStr;
                         else
                             receiverStr = accountData.nickname + receiverStr;
-                        TransactionSaveData transactionData = new TransactionSaveData();
-                        transactionData.timeStr = DateTime.Now.ToString();
-                        transactionData.money = _amount;
-                        transactionData.detailStr = ContentHelper.Read(ContentHelper.TransferText) + "-" + accountData.realName;
-                        transactionData.remarkStr = ContentHelper.Read(ContentHelper.OtherText);
-                        transactionData.transactionType = TransactionType.Expend;
-                        AssetsManager.Instance.AddTransactionData(transactionData);
-                        transactionData.detailStr = ContentHelper.Read(ContentHelper.TransferText) + "-" + GameManager.Instance.accountData.realName;
-                        transactionData.transactionType = TransactionType.Income;
-                        XMLSaver.saveData.AddTransactionData(accountData.accountId, transactionData);
+                        TransactionSaveData myActionData = new TransactionSaveData();
+                        myActionData.timeStr = DateTime.Now.ToString();
+                        myActionData.money = _amount;
+                        myActionData.detailStr = ContentHelper.Read(ContentHelper.TransferText) + "-" + accountData.realName;
+                        myActionData.remarkStr = ContentHelper.Read(ContentHelper.OtherText);
+                        myActionData.transactionType = TransactionType.Expend;
+                        AssetsManager.Instance.AddTransactionData(myActionData);
+                        TransactionSaveData otherActionData = new TransactionSaveData();
+                        otherActionData.timeStr = myActionData.timeStr;
+                        otherActionData.money = myActionData.money;
+                        otherActionData.detailStr = ContentHelper.Read(ContentHelper.TransferText) + "+" + GameManager.Instance.accountData.realName;
+                        otherActionData.remarkStr = myActionData.remarkStr;
+                        otherActionData.transactionType = TransactionType.Income;
+                        XMLSaver.saveData.AddTransactionData(accountData.accountId, otherActionData);
                         UIManager.Instance.Push(new TransferSuccContext(_amount, _paywayStr, receiverStr, _context.remarksStr));
                     }
                     else
