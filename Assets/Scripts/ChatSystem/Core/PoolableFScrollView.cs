@@ -6,6 +6,8 @@ using NodeEditorFramework;
 using NodeEditorFramework.Standard;
 
 public class PoolableFScrollView : MonoBehaviour {
+	public GameObject redPoint;
+	public TextProxy redText;
 	public NodeItemProxy[] prefabs;
 	Stack<NodeItemProxy>[] _pools;
 	#if UNITY_EDITOR
@@ -15,6 +17,7 @@ public class PoolableFScrollView : MonoBehaviour {
 	RectTransform viewPortTrans;
 	RectTransform contextTrans;
     RXIndex rxId = new RXIndex();
+	int redCount = 0;
 	// Use this for initialization
 	public void Init () {
 		for (int i = 0; i < prefabs.Length; i++) {
@@ -34,8 +37,10 @@ public class PoolableFScrollView : MonoBehaviour {
 	{
 		if (ChatManager.Instance.curExecuteInstance.saveData.totalRectHeight <= viewPortTrans.sizeDelta.y)
 			return;
-		if (contextTrans.anchoredPosition.y <= contextTrans.sizeDelta.y - viewPortTrans.sizeDelta.y-120.0f)
+		if (contextTrans.anchoredPosition.y <= contextTrans.sizeDelta.y - viewPortTrans.sizeDelta.y - 120.0f) {
+			redCount++;
 			return;
+		}
 		FrostRX.End (rxId);
 		FrostRX.Start (this).ExecuteUntil (()=>{contextTrans.anchoredPosition = Vector2.Lerp (contextTrans.anchoredPosition,new Vector2(0.0f,contextTrans.sizeDelta.y-viewPortTrans.sizeDelta.y+1.0f),16.0f*Time.deltaTime);},()=>{return contextTrans.anchoredPosition.y>=contextTrans.sizeDelta.y-viewPortTrans.sizeDelta.y;}).GetId(rxId);
 	}
@@ -49,6 +54,7 @@ public class PoolableFScrollView : MonoBehaviour {
     }
     public void OnExit()
     {
+		ChatManager.Instance.curExecuteInstance.saveData.redCount += redCount;
 		FrostRX.End (rxId);
         needUpdate = false;
         for (int i = 0; i < _activeItems.Count; i++)
@@ -106,6 +112,10 @@ public class PoolableFScrollView : MonoBehaviour {
 	void Update () {
         if (!needUpdate)
             return;
+		if(redCount!=0&&contextTrans.anchoredPosition.y >= contextTrans.sizeDelta.y - viewPortTrans.sizeDelta.y - 120.0f)
+		{
+			redCount = 0;
+		}
         ChatManager.Instance.curExecuteInstance = ChatManager.Instance.curInstance;
         int i = 0;
 		while (CheckBorder()&&i<100) {
@@ -153,6 +163,8 @@ public class PoolableFScrollView : MonoBehaviour {
             ChatManager.Instance.curInstance.saveData.totalRectHeight += itemHeight;
 			if (ChatManager.Instance.curInstance.saveData.totalRectHeight >= viewPortTrans.sizeDelta.y && ChatManager.Instance.curInstance.saveData.totalRectHeight - itemHeight <= viewPortTrans.sizeDelta.y)
 				OnPopNewMsg ();
+			if (redCount > 0)
+				redCount--;
 			contextTrans.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical, contextTrans.sizeDelta.y + itemHeight);
 		}
 		item.cachedRectTransform.anchoredPosition = new Vector2 (0.0f,itemY);
