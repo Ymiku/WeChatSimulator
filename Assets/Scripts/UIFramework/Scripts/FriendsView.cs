@@ -84,6 +84,18 @@ namespace UIFrameWork
         {
             UIManager.Instance.Push(new SearchContext());
         }
+		public void OnClickAlbum()
+		{
+			UIManager.Instance.Push (new AlbumContext());
+		}
+		public void OnClickTweet()
+		{
+			UIManager.Instance.Push (new TweetContext());
+		}
+		public void OnClickBlog()
+		{
+			UIManager.Instance.Push (new BlogContext());
+		}
     }
 	public class FriendsContext : BaseContext
 	{
