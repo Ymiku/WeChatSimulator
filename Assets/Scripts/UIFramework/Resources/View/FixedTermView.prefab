@@ -1988,7 +1988,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53548cc78f4ffe4479b9548fa9cceb59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  activeWhenPause: 0
+  fadeType: 0
 --- !u!114 &114575237113515440
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -5,6 +5,8 @@ namespace UIFrameWork
 	public class FortuneView : EnabledView
 	{
 		private FortuneContext _context;
+        public TextProxy _totalText;
+        public TextProxy _yesterdayText;
 
 		public override void Init ()
 		{
@@ -14,6 +16,7 @@ namespace UIFrameWork
 		{
 			base.OnEnter(context);
 			_context = context as FortuneContext;
+            Refresh();
 		}
 
 		public override void OnExit(BaseContext context)
@@ -29,12 +32,19 @@ namespace UIFrameWork
 		public override void OnResume(BaseContext context)
 		{
 			base.OnResume(context);
+            Refresh();
 		}
 		public override void Excute ()
 		{
 			base.Excute ();
 
 		}
+
+        private void Refresh()
+        {
+            _totalText.text = (AssetsManager.Instance.assetsData.balance + AssetsManager.Instance.assetsData.yuEBao).ToString("0.00");
+            _yesterdayText.text = AssetsManager.Instance.assetsData.yuEBaoYesterday.ToString("0.00");
+        }
 
         #region 点击事件部分
         public void OnClickHome()

@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 namespace UIFrameWork
 {
-    public class YuEBaoView : EnabledView
+    public class YuEBaoView : AnimateView
     {
         private YuEBaoContext _context;
         private TextProxy _totalText;
@@ -66,8 +66,8 @@ namespace UIFrameWork
             AssetsSaveData data = AssetsManager.Instance.assetsData;
             if (_eyesState)
             {
-                moneyStr = data.yuEBao.ToString();
-                _accText.text = data.yuEBaoProfit.ToString();
+                moneyStr = data.yuEBao.ToString("0.00");
+                _accText.text = data.yuEBaoProfit.ToString("0.00");
             }
             else
             {
@@ -76,7 +76,7 @@ namespace UIFrameWork
             }
             _wanYuanText.text = GameDefine.TenThousandProfit.ToString();
             _totalText.text = string.Format(ContentHelper.Read(ContentHelper.TotalAssetsText), moneyStr);
-            _yesterdayText.text = data.yuEBaoYesterday > 0 ? "+" + data.yuEBaoYesterday.ToString() : ContentHelper.Read(ContentHelper.GuestDontWorry);
+            _yesterdayText.text = data.yuEBaoYesterday > 0 ? "+" + data.yuEBaoYesterday.ToString("0.00") : ContentHelper.Read(ContentHelper.GuestDontWorry);
             _eyesBtn.transform.localPosition = new Vector3(50 + _totalText.preferredWidth / 2,
                 _eyesBtn.transform.localPosition.y, _eyesBtn.transform.localPosition.z);
         }
