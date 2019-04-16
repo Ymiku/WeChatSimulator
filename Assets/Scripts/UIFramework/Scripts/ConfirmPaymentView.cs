@@ -214,6 +214,7 @@ namespace UIFrameWork
                         actionData.remarkStr = ContentHelper.Read(ContentHelper.OtherText);
                         actionData.money = _amount;
                         actionData.detailStr = ContentHelper.Read(ContentHelper.YuERecharge);
+                        AssetsManager.Instance.AddTransactionData(actionData);
                         UIManager.Instance.Pop();
                         UIManager.Instance.Pop();
                         UIManager.Instance.Push(new RechargeSuccContext(payStr, _amount));
