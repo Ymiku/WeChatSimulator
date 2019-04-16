@@ -96,7 +96,7 @@ namespace UIFrameWork
 
         public void OnClickFriend()
         {
-
+            UIManager.Instance.Push(new ContactsContext());
         }
 
         public void OnClickClear()
