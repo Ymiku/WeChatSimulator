@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 namespace UIFrameWork
 {
-    public class YuEBaoView : EnabledView
+    public class YuEBaoView : AnimateView
     {
         private YuEBaoContext _context;
         private TextProxy _totalText;

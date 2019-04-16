@@ -62,6 +62,36 @@ namespace UIFrameWork
             _yesterdayText2.text = "+" + AssetsManager.Instance.assetsData.yuEBaoYesterday.ToString("0.00");
             HeadSpriteUtils.Instance.SetHead(_headImage);
         }
+
+        public void OnClickBalance()
+        {
+            UIManager.Instance.Push(new BalanceContext());
+        }
+
+        public void OnClickYuEBao()
+        {
+            UIManager.Instance.Push(new YuEBaoContext());
+        }
+
+        public void OnClickFixedTerm()
+        {
+            UIManager.Instance.Push(new FixedTermContext());
+        }
+
+        public void OnClickJiJin()
+        {
+
+        }
+
+        public void OnClickGold()
+        {
+
+        }
+
+        public void OnClickFortune()
+        {
+            UIManager.Instance.Push(new FortuneContext());
+        }
 	}
 	public class TotalAssetsContext : BaseContext
 	{

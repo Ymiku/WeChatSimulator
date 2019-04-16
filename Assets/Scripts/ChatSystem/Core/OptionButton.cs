@@ -5,14 +5,14 @@ using UnityEngine.UI;
 public class OptionButton : MonoBehaviour {
 	public Text text;
 	int index = 0;
+    public OptionPanel panel;
 	public void SetText(string s)
 	{
 		text.text = s;
 	}
 	public void Choose()
 	{
-		ChatManager.Instance.curInstance.saveData.AddOption (ChatManager.Instance.curInstance.curRunningNode,index);
-		ChatManager.Instance.TryGetOptionNode ().option = index;
+        panel.Choose(index);
 	}
 	public void AddListener(int i)
 	{

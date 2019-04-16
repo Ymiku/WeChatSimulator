@@ -40,9 +40,9 @@ namespace UIFrameWork
 		public static readonly UIType Carhailing = new UIType("View/CarhailingView");
 		public static readonly UIType Settings = new UIType("View/SettingsView");
 		public static readonly UIType Membership = new UIType("View/MembershipView");
-		public static readonly UIType Transactions = new UIType("View/TransactionsView");
-		public static readonly UIType Balance = new UIType("View/BalanceView");
-		public static readonly UIType TotalAssets = new UIType("View/TotalAssetsView");
+		public static readonly UIType Transactions = new UIType("View/TransactionsView"); //账单
+		public static readonly UIType Balance = new UIType("View/BalanceView"); //余额
+		public static readonly UIType TotalAssets = new UIType("View/TotalAssetsView"); //总资产
 		public static readonly UIType TransDetails = new UIType("View/TransDetailsView"); //转账明细界面
 		public static readonly UIType YuEBao = new UIType("View/YuEBaoView"); //余额宝界面
 		public static readonly UIType AntCredit = new UIType("View/AntCreditView"); //花呗界面
