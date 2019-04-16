@@ -37,17 +37,17 @@ public class TransactionItem : ItemBase
         DateTime dealTime = DateTime.Parse(_data.timeStr);
         DateTime nowTime = DateTime.Now;
         TimeSpan timeSpan = nowTime - dealTime;
+        string hourTimeStr = " " + dealTime.Hour.ToString("00") + ":" + dealTime.Minute.ToString("00");
         if (timeSpan.Days == 0)
         {
-            _timeText.text = ContentHelper.Read(ContentHelper.TodayText) + " " + dealTime.Hour + ":" + dealTime.Minute;
-        }
+            _timeText.text = ContentHelper.Read(ContentHelper.TodayText) + hourTimeStr;        }
         else if (timeSpan.Days == 1)
         {
-            _timeText.text = ContentHelper.Read(ContentHelper.YesterdayText) + " " + dealTime.Hour + ":" + dealTime.Minute;
+            _timeText.text = ContentHelper.Read(ContentHelper.YesterdayText) + hourTimeStr;
         }
         else
         {
-            _timeText.text = dealTime.ToString("m") + " " + dealTime.Hour + ":" + dealTime.Minute;
+            _timeText.text = dealTime.ToString("m") + hourTimeStr;
         }
     }
     private void RefreshMoney()
