@@ -121,6 +121,7 @@ public class OptionPanel : MonoBehaviour {
     {
         ChatManager.Instance.curInstance.saveData.AddOption(ChatManager.Instance.curInstance.curRunningNode, index);
         ChatManager.Instance.TryGetOptionNode().option = index;
+		scroll.OnOptionPanelOpen ();
         Reset();
     }
     void Reset()
