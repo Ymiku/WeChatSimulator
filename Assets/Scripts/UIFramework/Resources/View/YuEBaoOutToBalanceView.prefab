@@ -987,6 +987,7 @@ MonoBehaviour:
   _allObj: {fileID: 1862219847062014}
   _clearObj: {fileID: 1401929493944434}
   _maxMoneyText: {fileID: 114618387508279950}
+  _confirmText: {fileID: 114779155208621716}
 --- !u!114 &114569697562061884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1324,7 +1325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.74509805, g: 0.7490196, b: 0.74509805, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

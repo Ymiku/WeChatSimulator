@@ -75,4 +75,5 @@ public class ContentHelper
     public const int Thursday = 67; //星期四
     public const int Friday = 68; //星期五
     public const int Saturday = 69; //星期六
+    public const int ConfirmOut = 70; //确认转出
 }

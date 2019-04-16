@@ -11,12 +11,14 @@ namespace UIFrameWork
         public GameObject _allObj;
         public GameObject _clearObj;
         public Text _maxMoneyText;
+        public Text _confirmText;
 
 		public override void Init ()
 		{
 			base.Init ();
             _clearObj.SetActive(false);
-		}
+            _confirmText.text = string.Format(GameDefine.ForbidTextColor, ContentHelper.Read(ContentHelper.ConfirmOut));
+        }
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter(context);
@@ -55,6 +57,10 @@ namespace UIFrameWork
             _allObj.SetActive(string.IsNullOrEmpty(_moneyInput.text));
             _clearObj.SetActive(!string.IsNullOrEmpty(_moneyInput.text));
             _confirmBtn.interactable = canUse;
+            if(canUse)
+                _confirmText.text = string.Format(GameDefine.NormalTextColor, ContentHelper.Read(ContentHelper.ConfirmOut));
+            else
+                _confirmText.text = string.Format(GameDefine.ForbidTextColor, ContentHelper.Read(ContentHelper.ConfirmOut));
         }
 
         public void OnClickAll()
@@ -113,6 +119,7 @@ namespace UIFrameWork
             _moneyInput.text = "";
             _clearObj.SetActive(false);
             _confirmBtn.interactable = false;
+            _confirmText.text = string.Format(GameDefine.ForbidTextColor, ContentHelper.Read(ContentHelper.ConfirmOut));
         }
 	}
 	public class YuEBaoOutToBalanceContext : BaseContext
