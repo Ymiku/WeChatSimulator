@@ -80,4 +80,27 @@ public static class SetUIFormat
         GameObject go = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Scripts/UIFramework/Resources/View/Templet.prefab");
         Selection.activeGameObject = go;
     }
+	[MenuItem("GameObject/UI/TextProxy", false, 2000)]
+	static public void AddText(MenuCommand menuCommand)
+	{
+		GameObject go = new GameObject("TextProxy");
+		TextProxy txt = go.AddComponent<TextProxy>();
+		go.transform.SetParent (Selection.activeGameObject.transform);
+		txt.raycastTarget = false;
+		txt.font = AssetDatabase.LoadAssetAtPath<Font> ("Assets/Arts/tif/default.ttf");
+		go.transform.localPosition = Vector3.zero;
+		go.transform.localScale = Vector3.one;
+		Selection.activeObject = go;
+	}
+	[MenuItem("GameObject/UI/ImageProxy", false, 2000)]
+	static public void AddImage(MenuCommand menuCommand)
+	{
+		GameObject go = new GameObject("ImageProxy");
+		ImageProxy txt = go.AddComponent<ImageProxy>();
+		go.transform.SetParent (Selection.activeGameObject.transform);
+		txt.raycastTarget = false;
+		go.transform.localPosition = Vector3.zero;
+		go.transform.localScale = Vector3.one;
+		Selection.activeObject = go;
+	}
 }
