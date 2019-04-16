@@ -15,6 +15,7 @@ namespace UIFrameWork
         private FInputField _remarksInputField;
         private Button _okBtn;
         private Button _clearBtn;
+        private Image _headImg;
 
         private AccountSaveData _account;
 
@@ -27,6 +28,7 @@ namespace UIFrameWork
             _accountText = FindInChild<Text>("Middle/Account");
             _amountInputField = FindInChild<FInputField>("Middle/AmountInput");
             _remarksInputField = FindInChild<FInputField>("Middle/RemarksInput");
+            _headImg = FindInChild<Image>("Middle/HeadSprite/Mask/Image");
             _okBtn = FindInChild<Button>("Middle/OkBtn");
             _clearBtn = FindInChild<Button>("Middle/AmountInput/Clear");
             _clearBtn.onClick.AddListener(OnClickClear);
@@ -46,6 +48,7 @@ namespace UIFrameWork
                 _nameText.text = _account.nickname + "(" + Utils.FormatStringForSecrecy(_account.realName, FInputType.Name) + ")";
 
             _accountText.text = Utils.FormatStringForSecrecy(_account.phoneNumber, FInputType.PhoneNumber);
+            HeadSpriteUtils.Instance.SetHead(_headImg, _account.accountId);
         }
 
 		public override void OnExit(BaseContext context)

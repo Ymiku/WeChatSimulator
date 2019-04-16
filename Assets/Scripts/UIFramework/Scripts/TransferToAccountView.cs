@@ -34,6 +34,7 @@ namespace UIFrameWork
         {
             base.OnEnter(context);
             _context = context as TransferToAccountContext;
+            Refresh();
         }
 
         public override void OnExit(BaseContext context)
@@ -51,6 +52,7 @@ namespace UIFrameWork
         public override void OnResume(BaseContext context)
         {
             base.OnResume(context);
+            Refresh();
         }
         public override void Excute()
         {
@@ -59,12 +61,12 @@ namespace UIFrameWork
 
         private void OnEnable()
         {
-            
+
         }
 
         private void OnDisable()
         {
-            
+
         }
 
         private void OnInputValueChanged(string value)
@@ -82,7 +84,8 @@ namespace UIFrameWork
                 {
                     ShowNotice(ContentHelper.Read(ContentHelper.CanNotTransToSelf));
                 }
-                else {
+                else
+                {
                     AccountSaveData data = XMLSaver.saveData.GetAccountDataByPhoneNumber(phoneNum);
                     InputTransferAmountContext context = new InputTransferAmountContext(data);
                     UIManager.Instance.Push(context);
@@ -96,7 +99,7 @@ namespace UIFrameWork
 
         public void OnClickFriend()
         {
-            UIManager.Instance.Push(new ContactsContext());
+            UIManager.Instance.Push(new TransferSelectFriendContext());
         }
 
         public void OnClickClear()
@@ -104,11 +107,25 @@ namespace UIFrameWork
             _inputField.text = "";
         }
 
+        private void Refresh()
+        {
+            if (!string.IsNullOrEmpty(_context.phoneNum))
+            {
+                _inputField.text = _context.phoneNum;
+            }
+        }
     }
 	public class TransferToAccountContext : BaseContext
 	{
 		public TransferToAccountContext() : base(UIType.TransferToAccount)
 		{
 		}
-	}
+
+        public TransferToAccountContext(string phoneNum) : base(UIType.TransferToAccount)
+        {
+            this.phoneNum = phoneNum;
+        }
+
+        public string phoneNum;
+    }
 }

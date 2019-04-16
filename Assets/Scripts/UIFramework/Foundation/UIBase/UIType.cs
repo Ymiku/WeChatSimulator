@@ -93,5 +93,6 @@ namespace UIFrameWork
 		public static readonly UIType Tweet = new UIType("View/TweetView"); //推特
 		public static readonly UIType Blog = new UIType("View/BlogView"); //博客
 		public static readonly UIType Album = new UIType("View/AlbumView"); //相册
+		public static readonly UIType TransferSelectFriend = new UIType("View/TransferSelectFriendView"); //选择朋友转账
     }
 }
