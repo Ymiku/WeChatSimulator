@@ -67,4 +67,12 @@ public class ContentHelper
     public const int YuECash = 59; //余额提现
     public const int YuEBaoProfitAdd = 60; //余额宝-{0}-收益发放
     public const int Finance = 61; //理财
+    public const int NextStepText = 62; //下一步
+    public const int Sunday = 63; //星期日
+    public const int Monday = 64; //星期一
+    public const int Tuesday = 65; //星期二
+    public const int Wednesday = 66; //星期三
+    public const int Thursday = 67; //星期四
+    public const int Friday = 68; //星期五
+    public const int Saturday = 69; //星期六
 }

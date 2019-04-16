@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
+
 namespace UIFrameWork
 {
 	public class YuEBaoInSuccView : AnimateView
@@ -21,7 +23,10 @@ namespace UIFrameWork
 			_context = context as YuEBaoInSuccContext;
             _payText.text = _context.payStr;
             _detailText.text = string.Format(ContentHelper.Read(ContentHelper.YuEBaoInSucc), _context.amount);
-		}
+            _startTimeText.text = DateTime.Now.ToString("MM-dd") + " " + GameDefine.Weekdays[(int)DateTime.Now.DayOfWeek];
+            DateTime nextDay = DateTime.Now.AddDays(1);
+            _receiveTimeText.text = nextDay.ToString("MM-dd") + " " + GameDefine.Weekdays[(int)nextDay.DayOfWeek];
+        }
 
 		public override void OnExit(BaseContext context)
 		{

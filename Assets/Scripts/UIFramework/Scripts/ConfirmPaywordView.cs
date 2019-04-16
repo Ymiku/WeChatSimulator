@@ -11,11 +11,13 @@ namespace UIFrameWork
         private Button _deleteBtn;
         private Button _backBtn;
         private Button _nextBtn;
+        private Text _nextText;
         private Text _titleText;
         private StringBuilder _stringBuilder = new StringBuilder();
         private GameObject[] _lengthObj = new GameObject[6];
         private Button[] _numberBtn = new Button[10];
         private string _newPayword;
+        private string _nextStepStr = "";
 
         public override void Init ()
 		{
@@ -36,9 +38,11 @@ namespace UIFrameWork
                 int number = i;
                 btn.onClick.AddListener(() => { OnClickNumber(number); });
             }
+            _nextStepStr = ContentHelper.Read(ContentHelper.NextStepText);
             _titleText = FindInChild<Text>("BackBtn/SettingText");
             _backBtn = FindInChild<Button>("BackBtn");
             _deleteBtn = FindInChild<Button>("keypad/Delete");
+            _nextText = FindInChild<Text>("Next/Text");
             _nextBtn = FindInChild<Button>("Next");
             _deleteBtn.onClick.AddListener(OnClickDelete);
             _nextBtn.onClick.AddListener(OnClickNext);
@@ -92,6 +96,7 @@ namespace UIFrameWork
                 _stringBuilder.Append(i);
                 _lengthObj[_stringBuilder.Length - 1].SetActive(true);
                 _nextBtn.interactable = true;
+                _nextText.text = string.Format(GameDefine.NormalTextColor, _nextStepStr);
             }
             else if (_stringBuilder.Length < 5)
             {
@@ -114,6 +119,7 @@ namespace UIFrameWork
             _backBtn.interactable = true;
             _deleteBtn.interactable = true;
             _nextBtn.interactable = false;
+            _nextText.text = string.Format(GameDefine.ForbidTextColor, _nextStepStr);
             _newPayword = "";
             for (int index = 0; index < 10; index++)
             {

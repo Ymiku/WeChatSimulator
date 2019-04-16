@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
+
 namespace UIFrameWork
 {
 	public class YuEBaoInView : AnimateView
@@ -118,6 +120,7 @@ namespace UIFrameWork
         private void Refresh()
         {
             _payWay = AssetsManager.Instance.curPayway;
+            _timeText.text = DateTime.Now.AddDays(1).ToString("MM-dd");
             AssetsSaveData assetsData = AssetsManager.Instance.assetsData;
             BankCardSaveData bankData = AssetsManager.Instance.curUseBankCard;
             if (_payWay == PaywayType.YuEBao || _payWay == PaywayType.None)

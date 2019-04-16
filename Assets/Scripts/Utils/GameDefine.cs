@@ -12,4 +12,13 @@ public class GameDefine
     public const float TenThousandProfit = 0.6532f;                                 //余额宝万份收益
     public const int cardIdMaxLength = 19;                                          // 银行卡卡号长度         
     public const int cardIdMinLength = 16;                                          // 银行卡卡号长度最低
+
+    public static readonly string[] Weekdays = {
+        ContentHelper.Read(ContentHelper.Sunday),
+        ContentHelper.Read(ContentHelper.Monday),
+        ContentHelper.Read(ContentHelper.Tuesday),
+        ContentHelper.Read(ContentHelper.Wednesday),
+        ContentHelper.Read(ContentHelper.Thursday),
+        ContentHelper.Read(ContentHelper.Friday),
+        ContentHelper.Read(ContentHelper.Saturday)};
 }
