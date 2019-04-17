@@ -5,6 +5,7 @@ namespace UIFrameWork
     public class TransferView : AlphaView
     {
         private TransferContext _context;
+        public PoolableScrollView _scrollView;
 
         public override void Init()
         {
@@ -14,6 +15,7 @@ namespace UIFrameWork
         {
             base.OnEnter(context);
             _context = context as TransferContext;
+            _scrollView.SetDatas(AssetsManager.Instance.GetRecentTransList());
         }
 
         public override void OnExit(BaseContext context)

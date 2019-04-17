@@ -181,7 +181,7 @@ namespace UIFrameWork
                         actionData.remarkStr = ContentHelper.Read(ContentHelper.OtherText);
                         actionData.detailStr = ContentHelper.Read(ContentHelper.TransToCardText) + data.realName;
                         actionData.iconType = TransactionIconType.BankCard;
-                        actionData.bankName = data.bankName;
+                        actionData.cardId = data.cardId;
                         AssetsManager.Instance.AddTransactionData(actionData);
                         UIManager.Instance.Push(new TransferSuccContext(_amount, _paywayStr, receiverStr, _context.remarksStr));
                     }

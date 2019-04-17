@@ -86,6 +86,6 @@ public class TransactionSaveData
     public string detailStr;
     public string remarkStr;
     public double money;
-    public string bankName;
+    public string cardId;
     public int accountId;
 }

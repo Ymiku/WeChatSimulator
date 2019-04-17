@@ -106,7 +106,7 @@ namespace UIFrameWork
                     bankCard.money += amount;
                     TransactionSaveData actionData = new TransactionSaveData();
                     actionData.iconType = TransactionIconType.BankCard;
-                    actionData.bankName = bankCard.bankName;
+                    actionData.cardId = bankCard.cardId;
                     actionData.moneyType = TransactionMoneyType.NoChange;
                     actionData.remarkStr = ContentHelper.Read(ContentHelper.FinanceText);
                     actionData.timeStr = DateTime.Now.ToString();

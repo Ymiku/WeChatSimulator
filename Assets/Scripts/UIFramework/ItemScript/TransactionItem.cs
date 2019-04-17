@@ -73,8 +73,8 @@ public class TransactionItem : ItemBase
         switch (_data.iconType)
         {
             case TransactionIconType.BankCard:
-                if (!string.IsNullOrEmpty(_data.bankName))
-                    _icon.sprite = AssetsManager.Instance.GetBankSprite(_data.bankName);
+                if (!string.IsNullOrEmpty(_data.cardId))
+                    _icon.sprite = AssetsManager.Instance.GetBankSprite(XMLSaver.saveData.GetBankCardData(_data.cardId).bankName);
                 break;
             case TransactionIconType.YuEBao:
                 _icon.sprite = Utils.GetYuEBaoSprite();
