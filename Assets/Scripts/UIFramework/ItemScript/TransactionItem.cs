@@ -37,11 +37,13 @@ public class TransactionItem : ItemBase
         DateTime dealTime = DateTime.Parse(_data.timeStr);
         DateTime nowTime = DateTime.Now;
         TimeSpan timeSpan = nowTime - dealTime;
+        double totalSeconds = timeSpan.TotalSeconds + dealTime.Hour * 3600 + dealTime.Minute * 60 + dealTime.Second;
         string hourTimeStr = " " + dealTime.Hour.ToString("00") + ":" + dealTime.Minute.ToString("00");
-        if (timeSpan.Days == 0)
+        if (dealTime.ToLongDateString() == nowTime.ToLongDateString())
         {
-            _timeText.text = ContentHelper.Read(ContentHelper.TodayText) + hourTimeStr;        }
-        else if (timeSpan.Days == 1)
+            _timeText.text = ContentHelper.Read(ContentHelper.TodayText) + hourTimeStr;
+        }
+        else if (totalSeconds >= 86400 && totalSeconds < 172800)
         {
             _timeText.text = ContentHelper.Read(ContentHelper.YesterdayText) + hourTimeStr;
         }

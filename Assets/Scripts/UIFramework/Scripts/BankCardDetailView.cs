@@ -49,7 +49,7 @@ namespace UIFrameWork
             _titleText.text = _context.data.bankName;
             _bankText.text = _context.data.bankName.Replace(ContentHelper.Read(ContentHelper.SavingCardText), "");
             _lastNumText.text = _context.data.cardId.Substring(_context.data.cardId.Length - 4, 4);
-            _moneyText.text = _context.data.money.ToString();
+            _moneyText.text = _context.data.money.ToString("0.00");
         }
 
         public void OnClickTransfer()

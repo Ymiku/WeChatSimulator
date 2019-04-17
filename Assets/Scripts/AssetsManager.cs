@@ -142,7 +142,7 @@ public class AssetsManager : Singleton<AssetsManager>
             actionData.timeStr = DateTime.Now.ToString();
             actionData.moneyType = TransactionMoneyType.Income;
             actionData.iconType = TransactionIconType.YuEBao;
-            actionData.remarkStr = ContentHelper.Read(ContentHelper.Finance);
+            actionData.remarkStr = ContentHelper.Read(ContentHelper.FinanceText);
             actionData.detailStr = string.Format(ContentHelper.Read(ContentHelper.YuEBaoProfitAdd), DateTime.Now.ToString("MM.dd"));
             actionData.money = assetsData.yuEBaoYesterday;
             AddTransactionData(actionData);

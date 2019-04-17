@@ -87,6 +87,7 @@ namespace UIFrameWork
                     actionData.remarkStr = ContentHelper.Read(ContentHelper.OtherText);
                     actionData.money = money;
                     actionData.detailStr = ContentHelper.Read(ContentHelper.YuECash);
+                    actionData.iconType = TransactionIconType.BankCard;
                     actionData.bankName = data.bankName;
                     AssetsManager.Instance.AddTransactionData(actionData);
                     UIManager.Instance.Pop();

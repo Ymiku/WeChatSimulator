@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
+
 namespace UIFrameWork
 {
 	public class YuEBaoOutToCardView : EnabledView
@@ -102,6 +104,14 @@ namespace UIFrameWork
                 {
                     data.yuEBao -= amount;
                     bankCard.money += amount;
+                    TransactionSaveData actionData = new TransactionSaveData();
+                    actionData.iconType = TransactionIconType.BankCard;
+                    actionData.bankName = bankCard.bankName;
+                    actionData.moneyType = TransactionMoneyType.NoChange;
+                    actionData.remarkStr = ContentHelper.Read(ContentHelper.FinanceText);
+                    actionData.timeStr = DateTime.Now.ToString();
+                    actionData.detailStr = ContentHelper.Read(ContentHelper.YuEBaoText) + "-" + ContentHelper.Read(ContentHelper.OutToCard);
+                    AssetsManager.Instance.AddTransactionData(actionData);
                     UIManager.Instance.Pop();
                     string str = string.Format(ContentHelper.Read(ContentHelper.YuEBaoToCardSucc), amount.ToString("0.00"),
                         Utils.FormatPaywayStr(PaywayType.BankCard, bankCard.cardId));
