@@ -80,6 +80,13 @@ namespace UIFrameWork
                     {
                         assetsData.balance -= amount;
                         assetsData.yuEBao += amount;
+                        TransactionSaveData actionData = new TransactionSaveData();
+                        actionData.iconType = TransactionIconType.YuEBao;
+                        actionData.moneyType = TransactionMoneyType.NoChange;
+                        actionData.remarkStr = ContentHelper.Read(ContentHelper.FinanceText);
+                        actionData.timeStr = DateTime.Now.ToString();
+                        actionData.detailStr = ContentHelper.Read(ContentHelper.YuEBaoText) + "-" +  ContentHelper.Read(ContentHelper.SingleTrunIn);
+                        AssetsManager.Instance.AddTransactionData(actionData);
                         UIManager.Instance.Pop();
                         string payStr = Utils.FormatPaywayStr(PaywayType.Balance);
                         UIManager.Instance.Push(new YuEBaoInSuccContext(amount, payStr));

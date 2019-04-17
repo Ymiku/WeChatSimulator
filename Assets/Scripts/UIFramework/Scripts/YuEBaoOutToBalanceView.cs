@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
+
 namespace UIFrameWork
 {
 	public class YuEBaoOutToBalanceView : EnabledView
@@ -89,6 +91,14 @@ namespace UIFrameWork
                 {
                     data.yuEBao -= amount;
                     data.balance += amount;
+                    TransactionSaveData actionData = new TransactionSaveData();
+                    actionData.iconType = TransactionIconType.UserHead;
+                    actionData.accountId = GameManager.Instance.curUserId;
+                    actionData.moneyType = TransactionMoneyType.NoChange;
+                    actionData.remarkStr = ContentHelper.Read(ContentHelper.FinanceText);
+                    actionData.timeStr = DateTime.Now.ToString();
+                    actionData.detailStr = ContentHelper.Read(ContentHelper.YuEBaoText) + "-" + ContentHelper.Read(ContentHelper.OutToBalance);
+                    AssetsManager.Instance.AddTransactionData(actionData);
                     UIManager.Instance.Pop();
                     string detailStr = string.Format(ContentHelper.Read(ContentHelper.YuEBaoToBalanceSucc), amount.ToString("0.00"));
                     UIManager.Instance.Push(new YuEBaoOutSuccContext(detailStr));

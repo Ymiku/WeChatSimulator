@@ -66,7 +66,7 @@ public class ContentHelper
     public const int YuERecharge = 58; //余额充值
     public const int YuECash = 59; //余额提现
     public const int YuEBaoProfitAdd = 60; //余额宝-{0}-收益发放
-    public const int Finance = 61; //理财
+    public const int FinanceText = 61; //理财
     public const int NextStepText = 62; //下一步
     public const int Sunday = 63; //星期日
     public const int Monday = 64; //星期一
@@ -76,4 +76,7 @@ public class ContentHelper
     public const int Friday = 68; //星期五
     public const int Saturday = 69; //星期六
     public const int ConfirmOut = 70; //确认转出
+    public const int SingleTrunIn = 71; //单次转入
+    public const int OutToBalance = 72; //转出到余额
+    public const int OutToCard = 73; //转出到银行卡
 }
