@@ -206,28 +206,35 @@ public class AssetsManager : Singleton<AssetsManager>
         return result;
     }
 
-    public List<TransactionSaveData> GetRecentTransList()
-    {
+    /// <summary>
+    /// 获取最近转账记录
+    /// </summary>
+   public List<TransactionSaveData> GetRecentTransList()
+   {
         List<TransactionSaveData> dataList = assetsData.transactionList;
         List<TransactionSaveData> result = new List<TransactionSaveData>();
         for (int i = 0; i < dataList.Count; i++)
         {
-            if (dataList[i].moneyType == TransactionMoneyType.Expend && (dataList[i].iconType == TransactionIconType.UserHead
-                || dataList[i].iconType == TransactionIconType.BankCard))
+            if ((dataList[i].moneyType == TransactionMoneyType.Expend && dataList[i].iconType == TransactionIconType.UserHead)
+                || dataList[i].iconType == TransactionIconType.BankCard)
             {
                 bool addFlag = true;
                 for (int j = 0; j < result.Count; j++)
                 {
-                   if(result[j].accountId == dataList[i].accountId || result[j].cardId == dataList[j].cardId)
+                    if (result[j].accountId == dataList[i].accountId || result[j].cardId == dataList[i].cardId)
                     {
                         addFlag = false;
                         break;
                     }
                 }
-                if (addFlag)
-                    result.Add(dataList[i]);
+                if (!addFlag)
+                    continue;
+                result.Add(dataList[i]);
+                if (result.Count == 10)
+                    break;
             }
         }
+        result.Reverse();
         return result;
     }
 }
