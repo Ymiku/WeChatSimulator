@@ -126,6 +126,8 @@ namespace UIFrameWork
                         myActionData.detailStr = ContentHelper.Read(ContentHelper.TransferText) + "-" + accountData.realName;
                         myActionData.remarkStr = ContentHelper.Read(ContentHelper.OtherText);
                         myActionData.moneyType = TransactionMoneyType.Expend;
+                        myActionData.iconType = TransactionIconType.UserHead;
+                        myActionData.accountId = accountData.accountId;
                         AssetsManager.Instance.AddTransactionData(myActionData);
                         TransactionSaveData otherActionData = new TransactionSaveData();
                         otherActionData.timeStr = myActionData.timeStr;
@@ -133,6 +135,8 @@ namespace UIFrameWork
                         otherActionData.detailStr = ContentHelper.Read(ContentHelper.TransferText) + "+" + GameManager.Instance.accountData.realName;
                         otherActionData.remarkStr = myActionData.remarkStr;
                         otherActionData.moneyType = TransactionMoneyType.Income;
+                        otherActionData.iconType = TransactionIconType.UserHead;
+                        otherActionData.accountId = GameManager.Instance.curUserId;
                         XMLSaver.saveData.AddTransactionData(accountData.accountId, otherActionData);
                         UIManager.Instance.Push(new TransferSuccContext(_amount, _paywayStr, receiverStr, _context.remarksStr));
                     }
