@@ -40,5 +40,6 @@ public static class StaticDataLoader
         StaticDataContent.Init();
         StaticDataAccount.Init();
         StaticDataBankCard.Init();
+		StaticDataAlbum.Init ();
     }
 }
