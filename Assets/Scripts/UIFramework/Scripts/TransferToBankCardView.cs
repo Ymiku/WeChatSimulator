@@ -67,6 +67,11 @@ namespace UIFrameWork
                 ShowNotice(ContentHelper.Read(ContentHelper.CardNotSupport));
         }
 
+        public void OnClickFriend()
+        {
+            UIManager.Instance.Push(new BankCardRecentContext());
+        }
+
         public void OnNameValueChanged(string str)
         {
             RefreshBtnStatus();

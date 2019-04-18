@@ -16,7 +16,7 @@ public class RecentCardItem : ItemBase
         data = o as BankCardSaveData;
         _bankIcon.sprite = AssetsManager.Instance.GetBankSprite(data.bankName);
         _realName.text = data.realName;
-        _bankName.text = Utils.FormatStringForSecrecy(data.cardId, FInputType.CardNumber) + " " +
+        _bankName.text = data.cardId.Substring(0, 6) + "***" + data.cardId.Substring(data.cardId.Length - 4, 4) +
             data.bankName.Replace(ContentHelper.Read(ContentHelper.SavingCardText), "");
     }
 
@@ -24,15 +24,5 @@ public class RecentCardItem : ItemBase
     {
         UIManager.Instance.Pop();
         UIManager.Instance.Push(new TransferToBankCardContext(data));
-    }
-}
-
-public class RecentCardTitleItem : ItemBase
-{
-    public TextProxy _titleText;
-
-    public void SetData(string o)
-    {
-        _titleText.text = o.ToString();
     }
 }

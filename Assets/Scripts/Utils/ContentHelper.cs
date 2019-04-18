@@ -79,4 +79,6 @@ public class ContentHelper
     public const int SingleTrunIn = 71; //单次转入
     public const int OutToBalance = 72; //转出到余额
     public const int OutToCard = 73; //转出到银行卡
+    public const int HistoryCard = 74;  //历史收款人
+    public const int SelfText = 75; //本人
 }
