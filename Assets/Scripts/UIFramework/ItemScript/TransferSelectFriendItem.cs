@@ -51,7 +51,10 @@ public class TransferSelectFriendItem : ItemBase
     }
     private void OnClickBtn()
     {
-        UIManager.Instance.Pop();
-        UIManager.Instance.Push(new TransferToAccountContext(data.phoneNumber));
+		if (UIManager.Instance.GetLastContextType() == UIType.TransferToAccount) {
+			UIManager.Instance.Pop ();
+			UIManager.Instance.Pop ();
+			UIManager.Instance.Push (new TransferToAccountContext (data.phoneNumber));
+		}
     }
 }

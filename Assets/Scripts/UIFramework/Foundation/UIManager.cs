@@ -137,5 +137,9 @@ namespace UIFrameWork
 			if (noticeFunc != null)
 				noticeFunc (notice);
 		}
+		public UIType GetLastContextType()
+		{
+			return activeContext.GetLastContextType ();
+		}
 	}
 }

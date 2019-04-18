@@ -8,6 +8,7 @@ namespace UIFrameWork
     public class UIContext
     {
         private Stack<BaseContext> _contextStack = new Stack<BaseContext>();
+		private List<UIType> _typeLst = new List<UIType> ();
         BaseContext _curContext;
 		public void LineStart()
 		{
@@ -47,6 +48,7 @@ namespace UIFrameWork
                 //Pool(curContext.ViewType);
             }
             _contextStack.Push(nextContext);
+			_typeLst.Add (nextContext.ViewType);
             _curContext = nextContext;
             BaseView nextView = UIManager.Instance.GetSingleUI(nextContext.ViewType).GetComponent<BaseView>();
 			nextView.transform.SetAsLastSibling ();
@@ -61,7 +63,7 @@ namespace UIFrameWork
             {
                 BaseContext curContext = _contextStack.Peek();
                 _contextStack.Pop();
-
+				_typeLst.RemoveAt (_typeLst.Count-1);
                 BaseView curView = UIManager.Instance.GetSingleUI(curContext.ViewType).GetComponent<BaseView>();
                 curView.OnExit(curContext);
                 //Pool(curContext.ViewType);
@@ -77,6 +79,12 @@ namespace UIFrameWork
                 Pool(lastContext.ViewType);
             }
         }
+		public UIType GetLastContextType()
+		{
+			if (_typeLst.Count <= 2)
+				return UIType.Home;
+			return _typeLst[_typeLst.Count-2];
+		}
         void Pool(UIType type)
         {
             List<UIType> UIPool = UIManager.Instance._UIPool;
