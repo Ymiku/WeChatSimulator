@@ -17,7 +17,7 @@ public class ChatImageNode : Node
 	public override string GetID { get { return ID; } }
 
 	public override string Title { get { return "图片对话框"; } }
-	public override Vector2 DefaultSize { get { return new Vector2 (200, 180); } }
+	public override Vector2 DefaultSize { get { return new Vector2 (200, 200); } }
 
 	private Vector2 scroll;
 	[FormerlySerializedAs("SayingCharacterPotrait")]

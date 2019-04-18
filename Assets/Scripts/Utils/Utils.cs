@@ -254,6 +254,18 @@ public static class Utils
             return 0;
         return Math.Round(money * GameDefine.ServicePower > 0.1 ? money * GameDefine.ServicePower : 0.1, 2);
     }
+    public static Vector2 CalSpriteDisplaySize(Sprite s, Vector2 maxSize)
+    {
+        if (s.bounds.size.x * 100.0f < maxSize.x && s.bounds.size.y * 100.0f < maxSize.y)
+            return s.bounds.size * 100.0f;
+        float a = s.bounds.size.x / s.bounds.size.y;
+        float b = maxSize.x / maxSize.y;
+        if (a >= b)
+        {
+            return new Vector2(maxSize.x, maxSize.x / a);
+        }
+        return new Vector2(maxSize.y * a, maxSize.y);
+    }
 }
 public enum FInputType
 {

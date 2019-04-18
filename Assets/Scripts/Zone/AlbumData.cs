@@ -12,7 +12,7 @@ public class AlbumPic{
 			Sprite s = picRef as object as Sprite;
 			if (s != null)
 				return s;
-			s = Resources.Load <Sprite>("");
+			s = Resources.Load <Sprite>("Album/"+picPath);
 			picRef = new WeakReference (s,false);
 			return s;
 		}
@@ -23,6 +23,7 @@ public class AlbumPic{
 }
 public class AlbumData
 {
+    public bool isSecret;
 	public string albumName = "";
 	public List<AlbumPic> pics = new List<AlbumPic> ();
 }

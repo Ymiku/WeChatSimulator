@@ -39,6 +39,7 @@ public static class StaticDataAlbum
 			if(datas==null)
 			{
 				datas = new AlbumData();
+                datas.isSecret = a.is_secret;
 				albums.Add(datas);
 			}
 			datas.pics.Add(pic);

@@ -87,9 +87,10 @@ public class NodeItemProxy : MonoBehaviour {
         }
 		if (node is ChatImageNode) {
 			image.sprite = (node as ChatImageNode).CharacterPotrait;
+            image.rectTransform.sizeDelta = Utils.CalSpriteDisplaySize(image.sprite,new Vector2(650.0f,500.0f));
 			text.enabled = false;
 			image.enabled = true;
-			backGround.sizeDelta = new Vector2 (Mathf.Max(40.0f, image.rectTransform.sizeDelta.x+40.0f), Mathf.Max(avatar.rectTransform.sizeDelta.y, image.rectTransform.sizeDelta.y+20.0f));
+			backGround.sizeDelta = new Vector2 (Mathf.Max(40.0f, image.rectTransform.sizeDelta.x+20.0f), Mathf.Max(avatar.rectTransform.sizeDelta.y, image.rectTransform.sizeDelta.y+20.0f));
 		}
         if (node is ChatOptionNode)
         {
