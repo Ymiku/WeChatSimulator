@@ -94,7 +94,7 @@ namespace UIFrameWork
                     TransactionSaveData actionData = new TransactionSaveData();
                     actionData.iconType = TransactionIconType.UserHead;
                     actionData.accountId = GameManager.Instance.curUserId;
-                    actionData.moneyType = TransactionMoneyType.NoChange;
+                    actionData.streamType = TransactionStreamType.NoChange;
                     actionData.remarkStr = ContentHelper.Read(ContentHelper.FinanceText);
                     actionData.timeStr = DateTime.Now.ToString();
                     actionData.detailStr = ContentHelper.Read(ContentHelper.YuEBaoText) + "-" + ContentHelper.Read(ContentHelper.OutToBalance);

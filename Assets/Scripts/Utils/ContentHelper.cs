@@ -83,4 +83,5 @@ public class ContentHelper
     public const int SelfText = 75; //本人
     public const int AntText = 76; //花呗
     public const int CanUseText = 77; //可用
+    public const int AvailableCredit = 78; //可用额度
 }

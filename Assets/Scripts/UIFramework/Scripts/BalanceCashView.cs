@@ -83,7 +83,7 @@ namespace UIFrameWork
                     data.money += money;
                     TransactionSaveData actionData = new TransactionSaveData();
                     actionData.timeStr = DateTime.Now.ToString();
-                    actionData.moneyType = TransactionMoneyType.NoChange;
+                    actionData.streamType = TransactionStreamType.NoChange;
                     actionData.remarkStr = ContentHelper.Read(ContentHelper.OtherText);
                     actionData.money = money;
                     actionData.detailStr = ContentHelper.Read(ContentHelper.YuECash);

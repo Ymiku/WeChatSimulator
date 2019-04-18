@@ -55,11 +55,11 @@ public class TransactionItem : ItemBase
     private void RefreshMoney()
     {
         string money = _data.money.ToString("0.00");
-        if (_data.moneyType == TransactionMoneyType.Expend)
+        if (_data.streamType == TransactionStreamType.Expend)
         {
             _moneyText.text = "<color=#000000>-" + money + "</color>";
         }
-        else if (_data.moneyType == TransactionMoneyType.Income)
+        else if (_data.streamType == TransactionStreamType.Income)
         {
             _moneyText.text = "<color=#F90000>+" + money + "</color>";
         }

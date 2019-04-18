@@ -5,6 +5,8 @@ namespace UIFrameWork
 	public class AntCreditView : AnimateView
 	{
 		private AntCreditContext _context;
+        public TextProxy _canUseValue;
+        public TextProxy _canUseValue2;
 
 		public override void Init ()
 		{
@@ -14,6 +16,7 @@ namespace UIFrameWork
 		{
 			base.OnEnter(context);
 			_context = context as AntCreditContext;
+            Refresh();
 		}
 
 		public override void OnExit(BaseContext context)
@@ -29,14 +32,17 @@ namespace UIFrameWork
 		public override void OnResume(BaseContext context)
 		{
 			base.OnResume(context);
+            Refresh();
 		}
 		public override void Excute ()
 		{
 			base.Excute ();
 		}
 
-        public void OnScrollValueChanged(Vector2 deltaPos) {
-
+        private void Refresh()
+        {
+            _canUseValue.text = AssetsManager.Instance.assetsData.antPay.ToString("0.00");
+            _canUseValue2.text = ContentHelper.Read(ContentHelper.AvailableCredit) + " " + AssetsManager.Instance.assetsData.antPay.ToString("0.00");
         }
 	}
 	public class AntCreditContext : BaseContext

@@ -120,7 +120,7 @@ namespace UIFrameWork
                         myActionData.money = _amount;
                         myActionData.detailStr = ContentHelper.Read(ContentHelper.TransferText) + "-" + accountData.realName;
                         myActionData.remarkStr = ContentHelper.Read(ContentHelper.OtherText);
-                        myActionData.moneyType = TransactionMoneyType.Expend;
+                        myActionData.streamType = TransactionStreamType.Expend;
                         myActionData.iconType = TransactionIconType.UserHead;
                         myActionData.accountId = accountData.accountId;
                         AssetsManager.Instance.AddTransactionData(myActionData);
@@ -129,7 +129,7 @@ namespace UIFrameWork
                         otherActionData.money = myActionData.money;
                         otherActionData.detailStr = ContentHelper.Read(ContentHelper.TransferText) + "+" + GameManager.Instance.accountData.realName;
                         otherActionData.remarkStr = myActionData.remarkStr;
-                        otherActionData.moneyType = TransactionMoneyType.Income;
+                        otherActionData.streamType = TransactionStreamType.Income;
                         otherActionData.iconType = TransactionIconType.UserHead;
                         otherActionData.accountId = GameManager.Instance.curUserId;
                         XMLSaver.saveData.AddTransactionData(accountData.accountId, otherActionData);
@@ -168,9 +168,9 @@ namespace UIFrameWork
                         receiverStr = data.realName + receiverStr;
                         TransactionSaveData actionData = new TransactionSaveData();
                         if (data.realName == GameManager.Instance.accountData.realName)
-                            actionData.moneyType = TransactionMoneyType.NoChange;
+                            actionData.streamType = TransactionStreamType.NoChange;
                         else
-                            actionData.moneyType = TransactionMoneyType.Expend;
+                            actionData.streamType = TransactionStreamType.Expend;
                         actionData.timeStr = DateTime.Now.ToString();
                         actionData.money = _amount;
                         actionData.remarkStr = ContentHelper.Read(ContentHelper.OtherText);
@@ -209,7 +209,7 @@ namespace UIFrameWork
                         string payStr = Utils.FormatPaywayStr(PaywayType.BankCard, _context.cardId);
                         TransactionSaveData actionData = new TransactionSaveData();
                         actionData.timeStr = DateTime.Now.ToString();
-                        actionData.moneyType = TransactionMoneyType.NoChange;
+                        actionData.streamType = TransactionStreamType.NoChange;
                         actionData.remarkStr = ContentHelper.Read(ContentHelper.OtherText);
                         actionData.money = _amount;
                         actionData.detailStr = ContentHelper.Read(ContentHelper.YuERecharge);

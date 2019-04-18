@@ -79,7 +79,7 @@ public class AssetsSaveData
 [Serializable]
 public class TransactionSaveData
 {
-    public TransactionMoneyType moneyType;
+    public TransactionStreamType streamType;
     public TransactionIconType iconType;
     public string timeStr;
     public string detailStr;

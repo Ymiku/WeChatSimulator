@@ -143,7 +143,7 @@ public class AssetsManager : Singleton<AssetsManager>
         {
             TransactionSaveData actionData = new TransactionSaveData();
             actionData.timeStr = DateTime.Now.ToString();
-            actionData.moneyType = TransactionMoneyType.Income;
+            actionData.streamType = TransactionStreamType.Income;
             actionData.iconType = TransactionIconType.YuEBao;
             actionData.remarkStr = ContentHelper.Read(ContentHelper.FinanceText);
             actionData.detailStr = string.Format(ContentHelper.Read(ContentHelper.YuEBaoProfitAdd), DateTime.Now.ToString("MM.dd"));
@@ -189,7 +189,7 @@ public class AssetsManager : Singleton<AssetsManager>
         double result = 0;
         for(int i = 0; i < assetsData.transactionList.Count; i++)
         {
-            if (assetsData.transactionList[i].moneyType == TransactionMoneyType.Expend)
+            if (assetsData.transactionList[i].streamType == TransactionStreamType.Expend)
                 result += assetsData.transactionList[i].money;
         }
         return result;
@@ -203,7 +203,7 @@ public class AssetsManager : Singleton<AssetsManager>
         double result = 0;
         for (int i = 0; i < assetsData.transactionList.Count; i++)
         {
-            if (assetsData.transactionList[i].moneyType == TransactionMoneyType.Income)
+            if (assetsData.transactionList[i].streamType == TransactionStreamType.Income)
                 result += assetsData.transactionList[i].money;
         }
         return result;
@@ -218,7 +218,7 @@ public class AssetsManager : Singleton<AssetsManager>
         List<TransactionSaveData> result = new List<TransactionSaveData>();
         for (int i = dataList.Count - 1; i >= 0; i--)
         {
-            if ((dataList[i].moneyType == TransactionMoneyType.Expend && dataList[i].iconType == TransactionIconType.UserHead)
+            if ((dataList[i].streamType == TransactionStreamType.Expend && dataList[i].iconType == TransactionIconType.UserHead)
                 || dataList[i].iconType == TransactionIconType.BankCard)
             {
                 bool addFlag = true;
@@ -297,7 +297,7 @@ public enum RechargeType
     YuEBao,
 }
 
-public enum TransactionMoneyType
+public enum TransactionStreamType
 {
     NoChange,
     Expend,
