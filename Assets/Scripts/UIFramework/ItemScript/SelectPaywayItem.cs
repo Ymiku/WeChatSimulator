@@ -97,6 +97,12 @@ public class SelectPaywayItem : ItemBase
                 ":" + AssetsManager.Instance.assetsData.yuEBao.ToString("0.00") + ")";
             _icon.sprite = Utils.GetYuEBaoSprite();
         }
+        else if(_data.payway == PaywayType.Ant)
+        {
+            _payWayText.text = Utils.FormatPaywayStr(_data.payway) + "(" + ContentHelper.Read(ContentHelper.CanUseText) +
+                ":" + AssetsManager.Instance.assetsData.antPay.ToString("0.00") + ")";
+            _icon.sprite = Utils.GetAntSprite();
+        }
         if (!_data.isCanUse)
         {
             _notEnoughTitleText.text = _payWayText.text;

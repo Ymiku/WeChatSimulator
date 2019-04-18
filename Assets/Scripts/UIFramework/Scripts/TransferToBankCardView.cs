@@ -102,7 +102,7 @@ namespace UIFrameWork
             if (!string.IsNullOrEmpty(_cardField.text))
             {
                 string cardId = _cardField.text.Replace(" ", "");
-                cardForbid = cardId.Length > GameDefine.cardIdMinLength && cardId.Length < GameDefine.cardIdMaxLength;
+                cardForbid = cardId.Length > GameDefine.CardIdMinLength && cardId.Length < GameDefine.CardIdMaxLength;
             }
             bool moneyForbid = true;
             if (!string.IsNullOrEmpty(_moneyField.text))

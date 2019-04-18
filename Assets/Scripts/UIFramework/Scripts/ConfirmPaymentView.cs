@@ -78,12 +78,7 @@ namespace UIFrameWork
 
         public void OnClickUseItem()
         {
-            if (_context.spendType == SpendType.TransferToBalance)
-                UIManager.Instance.Push(new SelectPayWayContext(_amount, SpendType.TransferToBalance));
-            else if (_context.spendType == SpendType.TransferToBankCard)
-                UIManager.Instance.Push(new SelectPayWayContext(_amount, SpendType.TransferToBankCard));
-            else if (_context.spendType == SpendType.ToSelfAssets)
-                UIManager.Instance.Push(new SelectPayWayContext(_amount, SpendType.ToSelfAssets));
+            UIManager.Instance.Push(new SelectPayWayContext(_amount, _context.spendType));
         }
 
         public void OnClickOk()
@@ -110,7 +105,7 @@ namespace UIFrameWork
                 }
                 UIManager.Instance.Push(new InputAndCheckPaywordContext(() =>
                 {
-                    ResultType result = Utils.TryPay(_amount, AssetsManager.Instance.curPayway);
+                    ResultType result = Utils.TryPay(_amount, _payway);
                     if (result == ResultType.Success)
                     {
                         data.balance += _amount;
@@ -165,7 +160,7 @@ namespace UIFrameWork
                 }
                 UIManager.Instance.Push(new InputAndCheckPaywordContext(() =>
                 {
-                    ResultType result = Utils.TryPay(_amount, AssetsManager.Instance.curPayway);
+                    ResultType result = Utils.TryPay(_amount, _payway);
                     if (result == ResultType.Success)
                     {
                         data.money += _amount;
@@ -241,8 +236,10 @@ namespace UIFrameWork
         {
             _spendType = _context.spendType;
             _amount = _spendType == SpendType.TransferToBankCard ? _context.realAmount + _context.serviceAmount : _context.amount;
-            if(_spendType == SpendType.ToSelfAssets)
-                _payway = AssetsManager.Instance.curUseBankCard != null ? PaywayType.BankCard : PaywayType.None; 
+            if (_spendType == SpendType.ToSelfAssets)
+                _payway = AssetsManager.Instance.curUseBankCard != null ? PaywayType.BankCard : PaywayType.None;
+            else if (_spendType == SpendType.CanUseAnt && AssetsManager.Instance.curPayway == PaywayType.Ant && AssetsManager.Instance.assetsData.antPay > _amount)
+                _payway = PaywayType.Ant;
             else
                 _payway = AssetsManager.Instance.SetCurPaywayByMoney(_amount);
             _serviceItem.SetActive(_spendType == SpendType.TransferToBankCard);

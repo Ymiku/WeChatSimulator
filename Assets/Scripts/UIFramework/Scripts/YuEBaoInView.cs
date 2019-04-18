@@ -129,11 +129,11 @@ namespace UIFrameWork
 
         private void Refresh()
         {
-            _payWay = AssetsManager.Instance.curPayway;
             _timeText.text = DateTime.Now.AddDays(1).ToString("MM-dd");
             AssetsSaveData assetsData = AssetsManager.Instance.assetsData;
             BankCardSaveData bankData = AssetsManager.Instance.curUseBankCard;
-            if (_payWay == PaywayType.YuEBao || _payWay == PaywayType.None)
+            _payWay = AssetsManager.Instance.curPayway;
+            if (_payWay == PaywayType.YuEBao || _payWay == PaywayType.None || _payWay == PaywayType.Ant)
                 _payWay = PaywayType.Balance;
             if (_payWay == PaywayType.Balance && assetsData.balance <= 0 && bankData != null)
                 _payWay = PaywayType.BankCard;

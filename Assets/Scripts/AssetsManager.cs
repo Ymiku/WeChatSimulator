@@ -28,19 +28,22 @@ public class AssetsManager : Singleton<AssetsManager>
     }
 
     /// <summary>
-    /// 更新当前默认使用的支付方式
+    /// 更新当前使用的支付方式
     /// </summary>
     public PaywayType SetCurPaywayByMoney(double money)
     {
         switch (curPayway)
         {
             case PaywayType.None:
+            case PaywayType.Ant:
                 if (assetsData.balance >= money)
                     curPayway = PaywayType.Balance;
                 else if (assetsData.yuEBao >= money)
                     curPayway = PaywayType.YuEBao;
                 else if (curUseBankCard != null)
                     curPayway = PaywayType.BankCard;
+                else
+                    curPayway = PaywayType.None;
                 break;
             case PaywayType.Balance:
                 if (assetsData.balance < money)

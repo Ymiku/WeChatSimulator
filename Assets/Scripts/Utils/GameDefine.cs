@@ -10,8 +10,9 @@ public class GameDefine
     public const string NormalTextColor = "<color=#F5F8F8>{0}</color>";             //正常白
     public const float ServicePower = 0.001f;                                       //服务费
     public const float TenThousandProfit = 0.6532f;                                 //余额宝万份收益
-    public const int cardIdMaxLength = 19;                                          // 银行卡卡号长度         
-    public const int cardIdMinLength = 16;                                          // 银行卡卡号长度最低
+    public const int CardIdMaxLength = 19;                                          //银行卡卡号长度         
+    public const int CardIdMinLength = 16;                                          //银行卡卡号长度最低
+    public const double AntLimit = 100000.0;                                        //蚂蚁花呗额度 
 
     public static readonly string[] Weekdays = {
         ContentHelper.Read(ContentHelper.Sunday),

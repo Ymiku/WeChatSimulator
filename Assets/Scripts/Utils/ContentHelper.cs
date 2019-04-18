@@ -81,4 +81,6 @@ public class ContentHelper
     public const int OutToCard = 73; //转出到银行卡
     public const int HistoryCard = 74;  //历史收款人
     public const int SelfText = 75; //本人
+    public const int AntText = 76; //花呗
+    public const int CanUseText = 77; //可用
 }

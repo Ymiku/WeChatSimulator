@@ -89,7 +89,6 @@ namespace UIFrameWork
 
         public void OnClickConfirm()
         {
-            // todo µΩ’À ±º‰
             AssetsSaveData data = AssetsManager.Instance.assetsData;
             BankCardSaveData bankCard = AssetsManager.Instance.curUseBankCard;
             double amount = 0;

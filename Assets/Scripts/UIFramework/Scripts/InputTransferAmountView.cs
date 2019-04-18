@@ -15,6 +15,7 @@ namespace UIFrameWork
         private FInputField _remarksInputField;
         private Button _okBtn;
         private Button _clearBtn;
+        private Button _recordBtn;
         private Image _headImg;
 
         private AccountSaveData _account;
@@ -31,6 +32,8 @@ namespace UIFrameWork
             _headImg = FindInChild<Image>("Middle/HeadSprite/Mask/Image");
             _okBtn = FindInChild<Button>("Middle/OkBtn");
             _clearBtn = FindInChild<Button>("Middle/AmountInput/Clear");
+            _recordBtn = FindInChild<Button>("Top/Record");
+            _recordBtn.onClick.AddListener(OnClickRecord);
             _clearBtn.onClick.AddListener(OnClickClear);
             _okBtn.onClick.AddListener(OnClickOk);
             _amountInputField.onValueChanged.AddListener(OnInputValueChanged);
@@ -92,6 +95,11 @@ namespace UIFrameWork
         public void OnClickClear()
         {
             _amountInputField.text = "";
+        }
+
+        public void OnClickRecord()
+        {
+            UIManager.Instance.Push(new TransactionsContext());
         }
 	}
 	public class InputTransferAmountContext : BaseContext

@@ -182,6 +182,13 @@ public static class Utils
                     }
                 }
                 break;
+            case PaywayType.Ant:
+                if (data.antPay >= money)
+                {
+                    data.antPay -= money;
+                    result = ResultType.Success;
+                }
+                break;
             default:
                 Debug.LogError(string.Format("try use pay way {0}, but not handle this way", way));
                 break;
@@ -211,6 +218,9 @@ public static class Utils
                     result = data.bankName + "(" + cardStr + ")";
                 }
                 break;
+            case PaywayType.Ant:
+                result = ContentHelper.Read(ContentHelper.AntText);
+                break;
         }
         return result;
     }
@@ -229,6 +239,14 @@ public static class Utils
             return _yuEBaoSprite;
         _yuEBaoSprite = Resources.Load<Sprite>("CommonSprites/yu_e_bao");
         return _yuEBaoSprite;
+    }
+    private static Sprite _antSprite;
+    public static Sprite GetAntSprite()
+    {
+        if (_antSprite != null)
+            return _antSprite;
+        _antSprite = Resources.Load<Sprite>("CommonSprites/hua_bei");
+        return _antSprite;
     }
     public static double GetBankServiceAmount(double money)
     {

@@ -51,6 +51,7 @@ namespace UIFrameWork
             data.enname = "i";
             data.realName = "猪脚";
             assetsData.balance = 100000; // todo 金钱
+            assetsData.antPay = GameDefine.AntLimit;
 			GameManager.Instance.SetUser (0);
 			UIManager.Instance.Push(new LoginContext());
         }
