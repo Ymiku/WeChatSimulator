@@ -213,7 +213,7 @@ public class AssetsManager : Singleton<AssetsManager>
    {
         List<TransactionSaveData> dataList = assetsData.transactionList;
         List<TransactionSaveData> result = new List<TransactionSaveData>();
-        for (int i = 0; i < dataList.Count; i++)
+        for (int i = dataList.Count - 1; i >= 0; i--)
         {
             if ((dataList[i].moneyType == TransactionMoneyType.Expend && dataList[i].iconType == TransactionIconType.UserHead)
                 || dataList[i].iconType == TransactionIconType.BankCard)
@@ -234,7 +234,37 @@ public class AssetsManager : Singleton<AssetsManager>
                     break;
             }
         }
-        result.Reverse();
+        return result;
+    }
+
+    /// <summary>
+    /// 获取最近转账银行卡
+    /// </summary>
+    public List<BankCardSaveData> GetRecentTransCardList()
+    {
+        List<TransactionSaveData> dataList = assetsData.transactionList;
+        List<BankCardSaveData> result = new List<BankCardSaveData>();
+        for (int i = dataList.Count - 1; i >= 0; i--)
+        {
+            if(dataList[i].iconType == TransactionIconType.BankCard)
+            {
+                bool addFlag = true;
+                for (int j = 0; j < result.Count; j++)
+                {
+                    if (result[j].cardId == dataList[i].cardId)
+                    {
+                        addFlag = false;
+                        break;
+                    }
+                }
+                if (!addFlag)
+                    continue;
+                BankCardSaveData cardData = XMLSaver.saveData.GetBankCardData(dataList[i].cardId);
+                result.Add(cardData);
+                if (result.Count == 3)
+                    break;
+            }
+        }
         return result;
     }
 }
