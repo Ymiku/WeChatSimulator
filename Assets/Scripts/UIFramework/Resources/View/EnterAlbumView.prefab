@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 222047685280264692}
   - component: {fileID: 225062753507758674}
   - component: {fileID: 114932259575411116}
+  - component: {fileID: 114694930415356436}
   m_Layer: 5
   m_Name: EnterAlbumView
   m_TagString: Untagged
@@ -29,6 +30,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114694930415356436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1751291286977516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef393c89a66bf541b70b33e70a45187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeWhenPause: 0
+  alphaSpeed: 20
 --- !u!114 &114932259575411116
 MonoBehaviour:
   m_ObjectHideFlags: 1

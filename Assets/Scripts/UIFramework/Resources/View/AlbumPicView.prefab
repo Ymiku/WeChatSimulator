@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 222377319446462216}
   - component: {fileID: 225332541594872642}
   - component: {fileID: 114324444156673186}
+  - component: {fileID: 114634744812731516}
   m_Layer: 5
   m_Name: AlbumPicView
   m_TagString: Untagged
@@ -56,6 +57,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114634744812731516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1381990914391682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ac2720111a4a8479aaaac43a104ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeWhenPause: 0
+  alphaSpeed: 20
 --- !u!222 &222377319446462216
 CanvasRenderer:
   m_ObjectHideFlags: 1

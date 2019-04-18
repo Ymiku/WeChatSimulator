@@ -7,6 +7,8 @@ public class AlbumItem : ItemBase {
     public TextProxy albumName;
     public TextProxy note;
     AlbumData album;
+    [HideInInspector]
+    public int userId;
     public override void SetData (object o)
 	{
 		base.SetData (o);
@@ -20,5 +22,6 @@ public class AlbumItem : ItemBase {
 	}
 	public void OnClick()
 	{
+        UIManager.Instance.Push(new EnterAlbumContext() { userId = this.userId,albumName = album.albumName});
 	}
 }

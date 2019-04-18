@@ -38,6 +38,8 @@ namespace UIFrameWork
 	}
 	public class EnterAlbumContext : BaseContext
 	{
+        public int userId;
+        public string albumName;
 		public EnterAlbumContext() : base(UIType.EnterAlbum)
 		{
 		}
