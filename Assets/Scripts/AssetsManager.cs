@@ -275,6 +275,7 @@ public enum PaywayType
     Balance,
     YuEBao,
     BankCard,
+    Ant,
 }
 
 public enum SpendType
@@ -284,6 +285,7 @@ public enum SpendType
     ToSelfYuEBao,       //转到自己余额宝
     ToSelfBankCard,     //转到自己银行卡
     ToSelfAssets,       //转到自己余额、余额宝
+    CanUseAnt,          //可使用花呗 rtodo
 }
 
 public enum RechargeType

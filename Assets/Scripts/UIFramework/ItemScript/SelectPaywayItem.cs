@@ -44,7 +44,7 @@ public class SelectPaywayItem : ItemBase
     {
         if (_data == null)
             return;
-        if (_data.isEnough)
+        if (_data.isCanUse)
         {
             AssetsManager.Instance.curPayway = _data.payway;
             if (_data.payway == PaywayType.BankCard)
@@ -62,9 +62,9 @@ public class SelectPaywayItem : ItemBase
     public void Refresh()
     {
         _selectBtn = GetComponent<Button>();
-        _selectBtn.interactable = _data.isEnough || _data.isAddCard;
+        _selectBtn.interactable = _data.isCanUse || _data.isAddCard;
         bool selectFlag = false;
-        if (!_data.isAddCard && _data.isEnough)
+        if (!_data.isAddCard && _data.isCanUse)
         {
             if (_data.payway == AssetsManager.Instance.curPayway)
             {
@@ -75,8 +75,8 @@ public class SelectPaywayItem : ItemBase
         }
         _selectedObj.SetActive(selectFlag);
         _addCardRoot.SetActive(_data.isAddCard);
-        _canUseRoot.SetActive(!_data.isAddCard && _data.isEnough);
-        _notEnoughRoot.SetActive(!_data.isAddCard && !_data.isEnough);
+        _canUseRoot.SetActive(!_data.isAddCard && _data.isCanUse);
+        _notEnoughRoot.SetActive(!_data.isAddCard && !_data.isCanUse);
         _icon.gameObject.SetActive(!_data.isAddCard);
 
         if (_data.payway == PaywayType.BankCard)
@@ -97,7 +97,7 @@ public class SelectPaywayItem : ItemBase
                 ":" + AssetsManager.Instance.assetsData.yuEBao.ToString("0.00") + ")";
             _icon.sprite = Utils.GetYuEBaoSprite();
         }
-        if (!_data.isEnough)
+        if (!_data.isCanUse)
         {
             _notEnoughTitleText.text = _payWayText.text;
             _notEnoughText.text = ContentHelper.Read(ContentHelper.MoneyNotEnough);
@@ -114,7 +114,7 @@ public class SelectPaywayItemData: object
     public bool isAddCard;
     public PaywayType payway;
     public SpendType spendType;
-    public bool isEnough;
+    public bool isCanUse;
     public string cardId;
 
     public SelectPaywayItemData() { }

@@ -44,47 +44,97 @@ namespace UIFrameWork
         private void Refresh()
         {
             List<SelectPaywayItemData> dataList = new List<SelectPaywayItemData>();
+            GetBankCardData(ref dataList);
+            SelectPaywayItemData balanceData = GetBalanceData();
+            SelectPaywayItemData yuEBaoData = GetYuEBaoData();
+            SelectPaywayItemData antData = GetAntData();
+            SelectPaywayItemData addCardData = GetAddCardData();
+            switch (_context.spendType)
+            {
+                case SpendType.ToSelfBankCard:
+                    dataList.Add(addCardData);
+                    break;
+                case SpendType.CanUseAnt:
+                    if (balanceData.isCanUse)
+                        dataList.Add(balanceData);
+                    if (yuEBaoData.isCanUse)
+                        dataList.Add(yuEBaoData);
+                    if (antData.isCanUse)
+                        dataList.Add(antData);
+                    dataList.Add(addCardData);
+                    if (!balanceData.isCanUse)
+                        dataList.Add(balanceData);
+                    if (!yuEBaoData.isCanUse)
+                        dataList.Add(yuEBaoData);
+                    if (!antData.isCanUse)
+                        dataList.Add(antData);
+                    break;
+                default:
+                    if (balanceData.isCanUse)
+                        dataList.Add(balanceData);
+                    if (yuEBaoData.isCanUse)
+                        dataList.Add(yuEBaoData);
+                    dataList.Add(addCardData);
+                    if (!balanceData.isCanUse)
+                        dataList.Add(balanceData);
+                    if (!yuEBaoData.isCanUse)
+                        dataList.Add(yuEBaoData);
+                    break;
+            }
+            _scrollView.SetDatas(dataList);
+        }
+
+
+        private void GetBankCardData(ref List<SelectPaywayItemData> waysData)
+        {
             List<BankCardSaveData> cardList = AssetsManager.Instance.bankCardsData;
             for (int i = 0; i < cardList.Count; i++)
             {
                 SelectPaywayItemData data = new SelectPaywayItemData();
                 data.isAddCard = false;
-                data.isEnough = true;
+                data.isCanUse = true;
                 data.cardId = cardList[i].cardId;
                 data.payway = PaywayType.BankCard;
                 data.spendType = _context.spendType;
-                dataList.Add(data);
+                waysData.Add(data);
             }
-            bool balanceCan = AssetsManager.Instance.assetsData.balance >= _context.amount && _context.spendType != SpendType.ToSelfAssets;
-            SelectPaywayItemData balanceData = new SelectPaywayItemData();
-            balanceData.isAddCard = false;
-            balanceData.isEnough = balanceCan;
-            balanceData.payway = PaywayType.Balance;
-            balanceData.spendType = _context.spendType;
-            bool yuEBaoCan = AssetsManager.Instance.assetsData.yuEBao >= _context.amount &&
+        }
+        private SelectPaywayItemData GetBalanceData()
+        {
+            SelectPaywayItemData data = new SelectPaywayItemData();
+            bool canUse = AssetsManager.Instance.assetsData.balance >= _context.amount && _context.spendType != SpendType.ToSelfAssets;
+            data.isAddCard = false;
+            data.isCanUse = canUse;
+            data.payway = PaywayType.Balance;
+            data.spendType = _context.spendType;
+            return data;
+        }
+        private SelectPaywayItemData GetYuEBaoData()
+        {
+            SelectPaywayItemData data = new SelectPaywayItemData();
+            bool canUse = AssetsManager.Instance.assetsData.yuEBao >= _context.amount &&
                 _context.spendType != SpendType.ToSelfYuEBao && _context.spendType != SpendType.ToSelfAssets;
-            SelectPaywayItemData yuEBaoData = new SelectPaywayItemData();
-            yuEBaoData.isAddCard = false;
-            yuEBaoData.isEnough = yuEBaoCan;
-            yuEBaoData.payway = PaywayType.YuEBao;
-            yuEBaoData.spendType = _context.spendType;
-            SelectPaywayItemData addCardData = new SelectPaywayItemData();
-            addCardData.isAddCard = true;
-            if (_context.spendType != SpendType.ToSelfBankCard)
-            {
-                if (balanceCan)
-                    dataList.Add(balanceData);
-                if (yuEBaoCan)
-                    dataList.Add(yuEBaoData);
-                dataList.Add(addCardData);
-                if (!balanceCan)
-                    dataList.Add(balanceData);
-                if (!yuEBaoCan)
-                    dataList.Add(yuEBaoData);
-            }
-            else
-                dataList.Add(addCardData);
-            _scrollView.SetDatas(dataList);
+            data.isAddCard = false;
+            data.isCanUse = canUse;
+            data.payway = PaywayType.YuEBao;
+            data.spendType = _context.spendType;
+            return data;
+        }
+        private SelectPaywayItemData GetAntData()
+        {
+            SelectPaywayItemData data = new SelectPaywayItemData();
+            bool canUse = AssetsManager.Instance.assetsData.antPay >= _context.amount && _context.spendType == SpendType.CanUseAnt;
+            data.isAddCard = false;
+            data.isCanUse = canUse;
+            data.payway = PaywayType.Ant;
+            data.spendType = _context.spendType;
+            return data;
+        }
+        private SelectPaywayItemData GetAddCardData()
+        {
+            SelectPaywayItemData data = new SelectPaywayItemData();
+            data.isAddCard = true;
+            return data;
         }
 	}
 	public class SelectPayWayContext : BaseContext
