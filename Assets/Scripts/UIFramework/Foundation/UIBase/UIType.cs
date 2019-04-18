@@ -21,9 +21,9 @@ namespace UIFrameWork
         {
             return string.Format("path : {0} name : {1}", Path, Name);
         }
-	
-		//public static readonly UIType LogIn = new UIType("View/LogInView");
-		public static readonly UIType Home = new UIType("View/HomeView");
+
+        public static readonly UIType None = new UIType("");
+        public static readonly UIType Home = new UIType("View/HomeView");
 		public static readonly UIType Fortune = new UIType("View/FortuneView");
 		public static readonly UIType Koubei = new UIType("View/KoubeiView");
 		public static readonly UIType Friends = new UIType("View/FriendsView");
@@ -95,5 +95,7 @@ namespace UIFrameWork
 		public static readonly UIType Album = new UIType("View/AlbumView"); //相册
 		public static readonly UIType TransferSelectFriend = new UIType("View/TransferSelectFriendView"); //选择朋友转账
 		public static readonly UIType BankCardRecent = new UIType("View/BankCardRecentView"); //银行卡最近界面
+		public static readonly UIType EnterAlbum = new UIType("View/EnterAlbumView"); //进入相册
+		public static readonly UIType AlbumPic = new UIType("View/AlbumPicView"); //相册图片
     }
 }
