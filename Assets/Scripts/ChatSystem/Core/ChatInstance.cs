@@ -110,6 +110,7 @@ public class ChatInstance{
 	}
 	public void OnExit()
 	{
+        ChatManager.Instance.curInstance = null;
         ChatManager.Instance.curExecuteInstance = null;
         _activeNodes.Clear ();
 	}

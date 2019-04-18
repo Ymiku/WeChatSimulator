@@ -40,11 +40,11 @@ namespace NodeEditorFramework
 		[FormerlySerializedAs("Name")]
 		public string enname;
 		[FormerlySerializedAs("Comd")]
-		public Cond cond;
+		public Cond cond = Cond.WaitSeconds;
 		[FormerlySerializedAs("ConaName")]
 		public string condName;
 		[FormerlySerializedAs("CondParam")]
-		public int condParam;
+		public int condParam = 2;
 		public NodePos nodePos = NodePos.Mid;
 		[NonSerialized]
 		protected int startTime = -1;

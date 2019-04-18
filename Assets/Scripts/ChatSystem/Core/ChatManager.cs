@@ -66,7 +66,7 @@ public class ChatManager : Singleton<ChatManager> {
 
 	public ChatOptionNode TryGetOptionNode()//get every tick
 	{
-		if (curInstance.curRunningNode is ChatOptionNode) {
+		if (curInstance!=null&&curInstance.curRunningNode is ChatOptionNode) {
 			return (curInstance.curRunningNode as ChatOptionNode);
 		}
 		return null;
