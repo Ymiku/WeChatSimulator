@@ -266,6 +266,18 @@ public static class Utils
         }
         return new Vector2(maxSize.y * a, maxSize.y);
     }
+    public static Vector2 CalSpriteDisplaySize(Vector2 spriteSize, Vector2 maxSize)
+    {
+        if (spriteSize.x * 100.0f < maxSize.x && spriteSize.y * 100.0f < maxSize.y)
+            return spriteSize * 100.0f;
+        float a = spriteSize.x / spriteSize.y;
+        float b = maxSize.x / maxSize.y;
+        if (a >= b)
+        {
+            return new Vector2(maxSize.x, maxSize.x / a);
+        }
+        return new Vector2(maxSize.y * a, maxSize.y);
+    }
 }
 public enum FInputType
 {
