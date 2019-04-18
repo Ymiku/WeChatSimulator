@@ -113,12 +113,12 @@ namespace UIFrameWork
             if (!string.IsNullOrEmpty(_nameField.text) && !cardForbid && !moneyForbid)
             {
                 _nextBtn.interactable = true;
-                _nextText.text = string.Format(GameDefine.NormalTextColor, _nextText.text);
+                _nextText.text = string.Format(GameDefine.NormalTextColor, ContentHelper.Read(ContentHelper.NextStepText));
             }
             else
             {
                 _nextBtn.interactable = false;
-                _nextText.text = string.Format(GameDefine.ForbidTextColor, _nextText.text);
+                _nextText.text = string.Format(GameDefine.ForbidTextColor, ContentHelper.Read(ContentHelper.NextStepText));
             }
         }
 

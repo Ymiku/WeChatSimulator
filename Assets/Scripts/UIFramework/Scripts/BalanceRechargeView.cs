@@ -82,10 +82,10 @@ namespace UIFrameWork
 
         public void OnValueChanged(string str)
         {
+            double amount = 0;
             if (!string.IsNullOrEmpty(_moneyInput.text))
-                _nextBtn.interactable = true;
-            else
-                _nextBtn.interactable = false;
+                double.TryParse(_moneyInput.text, out amount);
+            _nextBtn.interactable = amount > 0;
         }
 	}
 	public class BalanceRechargeContext : BaseContext

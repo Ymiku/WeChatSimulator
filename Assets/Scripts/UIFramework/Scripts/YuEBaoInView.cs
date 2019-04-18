@@ -121,7 +121,10 @@ namespace UIFrameWork
 
         public void OnValueChanged(string str)
         {
-            _confirmBtn.interactable = !string.IsNullOrEmpty(_moneyInput.text);
+            double amount = 0;
+            if (!string.IsNullOrEmpty(_moneyInput.text))
+                double.TryParse(_moneyInput.text, out amount);
+            _confirmBtn.interactable = amount > 0;
         }
 
         private void Refresh()

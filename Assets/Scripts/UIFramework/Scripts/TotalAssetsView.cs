@@ -24,7 +24,7 @@ namespace UIFrameWork
             _nameText = FindInChild<Text>("Panel/Top/NameText");
             _yesterdayText1 = FindInChild<Text>("Panel/Middle/TotalText/Yesterday/Value");
             _yesterdayText2 = FindInChild<Text>("Panel/Middle/YuEBaoText/AddValue");
-            _headImage = FindInChild<Image>("Panel/Top/HeadImage");
+            _headImage = FindInChild<Image>("Panel/Top/HeadImage/img");
 		}
 		public override void OnEnter(BaseContext context)
 		{

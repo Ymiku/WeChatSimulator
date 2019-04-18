@@ -55,31 +55,31 @@ namespace UIFrameWork
                 data.spendType = _context.spendType;
                 dataList.Add(data);
             }
-            bool balanceEnough = AssetsManager.Instance.assetsData.balance >= _context.amount && _context.spendType != SpendType.ToSelfAssets;
+            bool balanceCan = AssetsManager.Instance.assetsData.balance >= _context.amount && _context.spendType != SpendType.ToSelfAssets;
             SelectPaywayItemData balanceData = new SelectPaywayItemData();
             balanceData.isAddCard = false;
-            balanceData.isEnough = balanceEnough;
+            balanceData.isEnough = balanceCan;
             balanceData.payway = PaywayType.Balance;
             balanceData.spendType = _context.spendType;
-            bool yuEBaoEnough = AssetsManager.Instance.assetsData.yuEBao >= _context.amount &&
+            bool yuEBaoCan = AssetsManager.Instance.assetsData.yuEBao >= _context.amount &&
                 _context.spendType != SpendType.ToSelfYuEBao && _context.spendType != SpendType.ToSelfAssets;
             SelectPaywayItemData yuEBaoData = new SelectPaywayItemData();
             yuEBaoData.isAddCard = false;
-            yuEBaoData.isEnough = yuEBaoEnough;
+            yuEBaoData.isEnough = yuEBaoCan;
             yuEBaoData.payway = PaywayType.YuEBao;
             yuEBaoData.spendType = _context.spendType;
             SelectPaywayItemData addCardData = new SelectPaywayItemData();
             addCardData.isAddCard = true;
             if (_context.spendType != SpendType.ToSelfBankCard)
             {
-                if (balanceEnough)
+                if (balanceCan)
                     dataList.Add(balanceData);
-                if (yuEBaoEnough)
+                if (yuEBaoCan)
                     dataList.Add(yuEBaoData);
                 dataList.Add(addCardData);
-                if (!balanceEnough)
+                if (!balanceCan)
                     dataList.Add(balanceData);
-                if (!yuEBaoEnough)
+                if (!yuEBaoCan)
                     dataList.Add(yuEBaoData);
             }
             else
