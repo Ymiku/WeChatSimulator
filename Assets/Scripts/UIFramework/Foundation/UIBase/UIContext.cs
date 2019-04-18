@@ -82,7 +82,7 @@ namespace UIFrameWork
 		public UIType GetLastContextType()
 		{
 			if (_typeLst.Count <= 2)
-				return UIType.Home;
+				return UIType.None;
 			return _typeLst[_typeLst.Count-2];
 		}
         void Pool(UIType type)

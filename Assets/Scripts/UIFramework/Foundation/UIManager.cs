@@ -139,6 +139,8 @@ namespace UIFrameWork
 		}
 		public UIType GetLastContextType()
 		{
+            if (activeContext == null)
+                return UIType.None;
 			return activeContext.GetLastContextType ();
 		}
 	}
