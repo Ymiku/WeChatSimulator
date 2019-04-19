@@ -13,3 +13,4 @@ PaymentAppSimulator.Plugins.csproj
 .vs/PaymentAppSimulator/v14/.suo
 *.csproj
 *.sln
+ProjectSettings/ProjectVersion.txt
