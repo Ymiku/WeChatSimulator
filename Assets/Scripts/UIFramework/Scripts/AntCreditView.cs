@@ -44,6 +44,11 @@ namespace UIFrameWork
             _canUseValue.text = AssetsManager.Instance.assetsData.antPay.ToString("0.00");
             _canUseValue2.text = ContentHelper.Read(ContentHelper.AvailableCredit) + " " + AssetsManager.Instance.assetsData.antPay.ToString("0.00");
         }
+
+        public void OnClickDetail()
+        {
+            UIManager.Instance.Push(new MyQuotaContext());
+        }
 	}
 	public class AntCreditContext : BaseContext
 	{
