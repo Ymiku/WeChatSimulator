@@ -62,6 +62,7 @@ Shader "UI/Procedural UI Image"
 				float4 vertex   : POSITION;
 				float4 color    : COLOR;
 				float2 texcoord : TEXCOORD0;
+				
 			};
 
 			struct v2f
@@ -70,6 +71,7 @@ Shader "UI/Procedural UI Image"
 				fixed4 color    : COLOR;
 				half2 texcoord  : TEXCOORD0;
 				float4 worldPosition : TEXCOORD1;
+				float2 uv : TEXCOORD2;
 			};
 			
 			fixed4 _TextureSampleAdd;
@@ -91,6 +93,7 @@ Shader "UI/Procedural UI Image"
 				OUT.worldPosition = IN.vertex;
 				OUT.vertex = UnityObjectToClipPos(OUT.worldPosition);
 				OUT.texcoord = IN.texcoord*float2(_Width,_Height);
+				OUT.uv = IN.texcoord;
 				#ifdef UNITY_HALF_TEXEL_OFFSET
 				OUT.vertex.xy += (_ScreenParams.zw-1.0)*float2(-1,1);
 				#endif
@@ -132,8 +135,8 @@ Shader "UI/Procedural UI Image"
 
 			fixed4 frag (v2f IN) : SV_Target
 			{
-				half4 color = IN.color;
-
+				//half4 color = IN.color;
+				half4 color = tex2D(_MainTex, IN.uv)*IN.color;
 				if (_UseClipRect)
 					color *= UnityGet2DClipping(IN.worldPosition.xy, _ClipRect);
 				

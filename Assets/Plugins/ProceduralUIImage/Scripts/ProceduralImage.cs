@@ -11,6 +11,7 @@ namespace UnityEngine.UI.ProceduralImage {
 	[ExecuteInEditMode]
 	[AddComponentMenu("UI/Procedural Image")]
 	public class ProceduralImage : Image {
+        public Sprite m_sprite;
 		[SerializeField]private float borderWidth;
 		private ProceduralImageModifier modifier;
 		private Material materialInstance;
@@ -81,7 +82,10 @@ namespace UnityEngine.UI.ProceduralImage {
 		/// Initializes this instance.
 		/// </summary>
 		void Init (){
-			this.sprite = EmptySprite.Get();
+            if (m_sprite != null)
+                this.sprite = m_sprite;
+            else
+			    this.sprite = EmptySprite.Get();
 			if (materialInstance == null) {
 				materialInstance = new Material (Shader.Find("UI/Procedural UI Image"));
 			}

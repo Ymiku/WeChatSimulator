@@ -9,16 +9,16 @@ namespace UnityEditor.UI
 	[CanEditMultipleObjects]
 	public class ProceduralImageEditor : ImageEditor {
 		static List<ModifierID> attrList;
-
-		SerializedProperty m_borderWidth;
+        SerializedProperty m_spritePro;
+        SerializedProperty m_borderWidth;
 		SerializedProperty m_falloffDist;
 		int selectedId;
 
 		protected override void OnEnable () {
 			base.OnEnable ();
 			attrList = ModifierUtility.GetAttributeList ();
-
-			m_borderWidth = serializedObject.FindProperty("borderWidth");
+            m_spritePro = serializedObject.FindProperty("m_sprite");
+            m_borderWidth = serializedObject.FindProperty("borderWidth");
 			m_falloffDist = serializedObject.FindProperty("falloffDistance");
 
 			if((target as ProceduralImage).GetComponent<ProceduralImageModifier> ()!=null){
@@ -42,8 +42,8 @@ namespace UnityEditor.UI
 
 		public override void OnInspectorGUI(){
 			serializedObject.Update();
-
-			EditorGUILayout.PropertyField (m_Color);
+            EditorGUILayout.PropertyField(m_spritePro);
+            EditorGUILayout.PropertyField (m_Color);
 			RaycastControlsGUI();
 			TypeGUI();
 			EditorGUILayout.Space ();
