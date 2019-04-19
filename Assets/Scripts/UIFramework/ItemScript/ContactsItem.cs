@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UIFrameWork;
 public class ContactsItem : ItemBase
 {
     public ImageProxy head;
@@ -41,4 +41,8 @@ public class ContactsItem : ItemBase
             singleName.gameObject.SetActive(false);
         }
     }
+	public void OnClickBtn()
+	{
+		UIManager.Instance.Push (new PersonalHomePageContext());
+	}
 }
