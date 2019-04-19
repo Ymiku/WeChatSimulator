@@ -14,3 +14,5 @@ PaymentAppSimulator.Plugins.csproj
 *.csproj
 *.sln
 ProjectSettings/ProjectVersion.txt
+Assets/save.xml
+Assets/save.xml.meta
