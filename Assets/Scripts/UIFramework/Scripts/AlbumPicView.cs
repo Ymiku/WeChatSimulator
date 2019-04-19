@@ -38,6 +38,8 @@ namespace UIFrameWork
 	}
 	public class AlbumPicContext : BaseContext
 	{
+		public AlbumPic pic;
+
 		public AlbumPicContext() : base(UIType.AlbumPic)
 		{
 		}

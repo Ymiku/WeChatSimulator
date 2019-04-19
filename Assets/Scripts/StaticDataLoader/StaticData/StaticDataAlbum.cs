@@ -40,6 +40,7 @@ public static class StaticDataAlbum
 			{
 				datas = new AlbumData();
                 datas.isSecret = a.is_secret;
+				datas.albumName = a.album_name;
 				albums.Add(datas);
 			}
 			datas.pics.Add(pic);

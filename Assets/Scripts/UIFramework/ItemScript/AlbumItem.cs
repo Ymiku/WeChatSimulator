@@ -22,6 +22,6 @@ public class AlbumItem : ItemBase {
 	}
 	public void OnClick()
 	{
-        UIManager.Instance.Push(new EnterAlbumContext() { userId = this.userId,albumName = album.albumName});
+		UIManager.Instance.Push(new EnterAlbumContext() { album = this.album});
 	}
 }

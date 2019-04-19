@@ -329,9 +329,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  pic: {fileID: 0}
-  albumName: {fileID: 0}
-  note: {fileID: 0}
+  pic: {fileID: 114696753161414978}
+  albumName: {fileID: 114110525831592568}
+  note: {fileID: 114856760142249740}
+  userId: 0
 --- !u!114 &114126372917806854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -457,7 +458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeWhenPause: 0
   alphaSpeed: 20
-  prefab: {fileID: 0}
+  prefab: {fileID: 114112183157954378}
 --- !u!114 &114568821222804140
 MonoBehaviour:
   m_ObjectHideFlags: 1
