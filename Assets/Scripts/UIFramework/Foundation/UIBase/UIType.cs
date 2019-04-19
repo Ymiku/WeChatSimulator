@@ -97,5 +97,6 @@ namespace UIFrameWork
 		public static readonly UIType BankCardRecent = new UIType("View/BankCardRecentView"); //银行卡最近界面
 		public static readonly UIType EnterAlbum = new UIType("View/EnterAlbumView"); //进入相册
 		public static readonly UIType AlbumPic = new UIType("View/AlbumPicView"); //相册图片
+		public static readonly UIType MyQuota = new UIType("View/MyQuotaView"); //我的额度
     }
 }
