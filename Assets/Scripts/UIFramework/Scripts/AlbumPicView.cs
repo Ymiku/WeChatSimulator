@@ -5,6 +5,7 @@ namespace UIFrameWork
 {
 	public class AlbumPicView : AlphaView
 	{
+		public ImageProxy disPlay;
 		private AlbumPicContext _context;
 
 		public override void Init ()
@@ -15,6 +16,7 @@ namespace UIFrameWork
 		{
 			base.OnEnter(context);
 			_context = context as AlbumPicContext;
+			Refresh ();
 		}
 
 		public override void OnExit(BaseContext context)
@@ -30,10 +32,16 @@ namespace UIFrameWork
 		public override void OnResume(BaseContext context)
 		{
 			base.OnResume(context);
+			Refresh ();
 		}
 		public override void Excute ()
 		{
 			base.Excute ();
+		}
+		void Refresh()
+		{
+			disPlay.sprite = _context.pic.pic;
+			disPlay.rectTransform.sizeDelta = Utils.CalSpriteDisplaySize (disPlay.sprite,new Vector2(1080.0f,1920.0f));
 		}
 	}
 	public class AlbumPicContext : BaseContext
