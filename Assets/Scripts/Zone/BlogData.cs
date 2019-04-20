@@ -14,7 +14,7 @@ public class BlogData {
 			TextAsset s = txtRef as object as TextAsset;
 			if (s != null)
 				return s;
-			s = Resources.Load <TextAsset>("blog/"+path);
+			s = Resources.Load <TextAsset>("Blog/"+path);
 			txtRef = new WeakReference (s,false);
 			return s;
 		}
