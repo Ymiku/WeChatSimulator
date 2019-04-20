@@ -43,6 +43,7 @@ namespace UIFrameWork
             base.OnResume(context);
             Refresh();
         }
+
         public override void Excute()
         {
             base.Excute();
@@ -50,7 +51,7 @@ namespace UIFrameWork
 
         private void OnClickPersonalMain()
         {
-            UIManager.Instance.Push(new PersonalHomePageContext());
+            UIManager.Instance.Push(new PersonalHomePageContext(GameManager.Instance.curUserId));
         }
 
         private void Refresh()

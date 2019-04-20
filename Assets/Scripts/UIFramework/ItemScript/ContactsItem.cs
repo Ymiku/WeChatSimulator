@@ -43,6 +43,6 @@ public class ContactsItem : ItemBase
     }
 	public void OnClickBtn()
 	{
-		UIManager.Instance.Push (new PersonalHomePageContext());
+		UIManager.Instance.Push (new PersonalHomePageContext(data.accountId));
 	}
 }

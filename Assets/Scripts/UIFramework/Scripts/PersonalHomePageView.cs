@@ -60,7 +60,8 @@ namespace UIFrameWork
 
         private void OnClickUpload()
         {
-            UIManager.Instance.Push(new SetHeadContext());
+            if (_context.accountId == GameManager.Instance.curUserId)
+                UIManager.Instance.Push(new SetHeadContext());
         }
 
         private void OnClickChangeName()
@@ -72,7 +73,7 @@ namespace UIFrameWork
         {
             HeadSpriteUtils.Instance.SetHead(_bigHead);
             HeadSpriteUtils.Instance.SetHead(_head);
-            AccountSaveData data = GameManager.Instance.accountData;
+            AccountSaveData data = XMLSaver.saveData.GetAccountData(_context.accountId);
             if (string.IsNullOrEmpty(data.nickname))
                 _nickName.text = ContentHelper.Read(ContentHelper.NotSetNickName);
             else
@@ -87,8 +88,10 @@ namespace UIFrameWork
 	}
 	public class PersonalHomePageContext : BaseContext
 	{
-		public PersonalHomePageContext() : base(UIType.PersonalHomePage)
+		public PersonalHomePageContext(int accountId) : base(UIType.PersonalHomePage)
 		{
+            this.accountId = accountId;
 		}
+        public int accountId;
 	}
 }
