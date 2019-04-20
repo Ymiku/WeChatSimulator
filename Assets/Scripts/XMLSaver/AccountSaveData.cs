@@ -100,6 +100,7 @@ public class AccountSaveData
     public string password;             // 账户登陆密码
     public string payword;              // 账户支付密码
     public string headSprite;           // 头像
+    public string backSprite;
     public string GetAnyName()
     {
         if (!string.IsNullOrEmpty(nickname))

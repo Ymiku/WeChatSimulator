@@ -35,9 +35,14 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
+        void Refresh()
+        {
+           
+        }
 	}
 	public class TweetContext : BaseContext
 	{
+        public int userId;
 		public TweetContext() : base(UIType.Tweet)
 		{
 		}
