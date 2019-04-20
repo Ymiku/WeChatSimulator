@@ -112,7 +112,7 @@ namespace UIFrameWork
         ContactsItem GetContacts()
         {
             ContactsItem item = null;
-            if (spellLst.Count > spellCount)
+            if (contactsLst.Count > contactsCount)
             {
                 item = contactsLst[contactsCount];
             }

@@ -17,23 +17,24 @@ public static class StaticDataTweet
 		for (int i = 0; i < Info.items.Count; i++)
 		{
 			TWEET a = Info.items [i];
-			TweetData Tweet = new TweetData ();
-			Tweet.id = a.tweet_id;
-			Tweet.userId = a.user_id;
-			Tweet.order = a.order;
-			Tweet.isSecret = a.is_secret;
-			Tweet.pics = new int[a.pic_array.Count];
-			for (int m = 0; m < Tweet.pics.Length;m++) {
-				Tweet.pics[m] = a.pic_array[m];
+			TweetData tweet = new TweetData ();
+			tweet.id = a.tweet_id;
+			tweet.userId = a.user_id;
+            tweet.info = a.tweet_info;
+			tweet.order = a.order;
+			tweet.isSecret = a.is_secret;
+			tweet.pics = new int[a.pic_array.Count];
+			for (int m = 0; m < tweet.pics.Length;m++) {
+				tweet.pics[m] = a.pic_array[m];
 			}
-			List<TweetData> Tweets;
-			if (ZoneManager.Instance.id2Tweet.TryGetValue (a.user_id,out Tweets)) {
+			List<TweetData> tweets;
+			if (ZoneManager.Instance.id2Tweet.TryGetValue (a.user_id,out tweets)) {
 
 			} else {
-				Tweets = new List<TweetData> ();
-				ZoneManager.Instance.id2Tweet.Add (a.user_id,Tweets);
+				tweets = new List<TweetData> ();
+				ZoneManager.Instance.id2Tweet.Add (a.user_id,tweets);
 			}
-			Tweets.Add(Tweet);
+			tweets.Add(tweet);
 		}
 	}
 }
