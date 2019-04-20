@@ -98,5 +98,6 @@ namespace UIFrameWork
 		public static readonly UIType EnterAlbum = new UIType("View/EnterAlbumView"); //进入相册
 		public static readonly UIType AlbumPic = new UIType("View/AlbumPicView"); //相册图片
 		public static readonly UIType MyQuota = new UIType("View/MyQuotaView"); //我的额度
+		public static readonly UIType ChatPic = new UIType("View/ChatPicView"); //对话图片
     }
 }
