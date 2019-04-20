@@ -122,6 +122,7 @@ namespace UIFrameWork
                         myActionData.remarkStr = ContentHelper.Read(ContentHelper.OtherText);
                         myActionData.streamType = TransactionStreamType.Expend;
                         myActionData.iconType = TransactionIconType.UserHead;
+                        myActionData.payway = _payway;
                         myActionData.accountId = accountData.accountId;
                         AssetsManager.Instance.AddTransactionData(myActionData);
                         TransactionSaveData otherActionData = new TransactionSaveData();
@@ -132,6 +133,7 @@ namespace UIFrameWork
                         otherActionData.streamType = TransactionStreamType.Income;
                         otherActionData.iconType = TransactionIconType.UserHead;
                         otherActionData.accountId = GameManager.Instance.curUserId;
+                        otherActionData.payway = PaywayType.None;
                         XMLSaver.saveData.AddTransactionData(accountData.accountId, otherActionData);
                         UIManager.Instance.Push(new TransferSuccContext(_amount, _paywayStr, receiverStr, _context.remarksStr));
                     }
@@ -176,6 +178,7 @@ namespace UIFrameWork
                         actionData.remarkStr = ContentHelper.Read(ContentHelper.OtherText);
                         actionData.detailStr = ContentHelper.Read(ContentHelper.TransToCardText) + data.realName;
                         actionData.iconType = TransactionIconType.BankCard;
+                        actionData.payway = PaywayType.BankCard;
                         actionData.cardId = data.cardId;
                         AssetsManager.Instance.AddTransactionData(actionData);
                         UIManager.Instance.Push(new TransferSuccContext(_amount, _paywayStr, receiverStr, _context.remarksStr));

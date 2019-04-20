@@ -81,6 +81,7 @@ public class TransactionSaveData
 {
     public TransactionStreamType streamType;
     public TransactionIconType iconType;
+    public PaywayType payway;
     public string timeStr;
     public string detailStr;
     public string remarkStr;

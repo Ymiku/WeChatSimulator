@@ -93,6 +93,7 @@ namespace UIFrameWork
                     data.balance += amount;
                     TransactionSaveData actionData = new TransactionSaveData();
                     actionData.iconType = TransactionIconType.UserHead;
+                    actionData.payway = PaywayType.YuEBao;
                     actionData.accountId = GameManager.Instance.curUserId;
                     actionData.streamType = TransactionStreamType.NoChange;
                     actionData.remarkStr = ContentHelper.Read(ContentHelper.FinanceText);

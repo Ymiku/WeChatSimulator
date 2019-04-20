@@ -145,6 +145,7 @@ public class AssetsManager : Singleton<AssetsManager>
             actionData.timeStr = DateTime.Now.ToString();
             actionData.streamType = TransactionStreamType.Income;
             actionData.iconType = TransactionIconType.YuEBao;
+            actionData.payway = PaywayType.None;
             actionData.remarkStr = ContentHelper.Read(ContentHelper.FinanceText);
             actionData.detailStr = string.Format(ContentHelper.Read(ContentHelper.YuEBaoProfitAdd), DateTime.Now.ToString("MM.dd"));
             actionData.money = assetsData.yuEBaoYesterday;
@@ -270,6 +271,77 @@ public class AssetsManager : Singleton<AssetsManager>
         }
         return result;
     }
+
+    /// <summary>
+    /// 获取花呗本月应还账单
+    /// </summary>
+    public List<TransactionSaveData> GetThisMonthAntActionData()
+    {
+        List<TransactionSaveData> dataList = assetsData.transactionList;
+        List<TransactionSaveData> result = new List<TransactionSaveData>();
+        DateTime nowDate = DateTime.Now;
+        DateTime date;
+        for (int i = dataList.Count - 1; i >= 0; i--)
+        {
+            if (dataList[i].payway == PaywayType.Ant)
+            {
+                date = DateTime.Parse(dataList[i].timeStr);
+                if (nowDate.Month == 1)
+                {
+                    if (date.Year == nowDate.Year - 1 && date.Month == 12)
+                        result.Add(dataList[i]);
+                }
+                else
+                {
+                    if (date.Year == nowDate.Year && date.Month == nowDate.Month - 1)
+                        result.Add(dataList[i]);
+                }
+            }
+        }
+        return result;
+    }
+
+    /// <summary>
+    /// 获取花呗下月待还账单
+    /// </summary>
+    public List<TransactionSaveData> GetNextMonthAntActionData()
+    {
+        List<TransactionSaveData> dataList = assetsData.transactionList;
+        List<TransactionSaveData> result = new List<TransactionSaveData>();
+        DateTime nowDate = DateTime.Now;
+        DateTime date;
+        for (int i = dataList.Count - 1; i >= 0; i--)
+        {
+            if (dataList[i].payway == PaywayType.Ant)
+            {
+                date = DateTime.Parse(dataList[i].timeStr);
+                if (date.Year == nowDate.Year && date.Month == nowDate.Month)
+                    result.Add(dataList[i]);
+            }
+        }
+        return result;
+    }
+
+    /// <summary>
+    /// 花呗自动还款
+    /// </summary>
+    public void AutoRepayAntCredit()
+    {
+        double needRepay = GameDefine.AntLimit - assetsData.antPay;
+        if (needRepay <= 0)
+            return;
+        TransactionSaveData actionData = new TransactionSaveData();
+        if(assetsData.balance >= needRepay)
+        {
+            //actionData
+            assetsData.balance -= needRepay;
+        }
+        else if (assetsData.yuEBao <= needRepay)
+        {
+
+            assetsData.yuEBao -= needRepay;
+        }
+    }
 }
 
 public enum PaywayType
@@ -288,7 +360,7 @@ public enum SpendType
     ToSelfYuEBao,       //转到自己余额宝
     ToSelfBankCard,     //转到自己银行卡
     ToSelfAssets,       //转到自己余额、余额宝
-    CanUseAnt,          //可使用花呗 rtodo
+    CanUseAnt,          //使用花呗 rtodo
 }
 
 public enum RechargeType
@@ -310,4 +382,5 @@ public enum TransactionIconType
     YuEBao,
     BankCard,
     UserHead,
+    Ant,
 }

@@ -82,6 +82,9 @@ public class TransactionItem : ItemBase
             case TransactionIconType.UserHead:
                 HeadSpriteUtils.Instance.SetHead(_icon, _data.accountId);
                 break;
+            case TransactionIconType.Ant:
+                _icon.sprite = Utils.GetAntSprite();
+                break;
         }
     }
     private void RefreshOther()

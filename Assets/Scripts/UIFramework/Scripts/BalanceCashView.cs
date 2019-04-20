@@ -88,6 +88,7 @@ namespace UIFrameWork
                     actionData.money = money;
                     actionData.detailStr = ContentHelper.Read(ContentHelper.YuECash);
                     actionData.iconType = TransactionIconType.BankCard;
+                    actionData.payway = PaywayType.BankCard;
                     actionData.cardId = data.cardId;
                     AssetsManager.Instance.AddTransactionData(actionData);
                     UIManager.Instance.Pop();

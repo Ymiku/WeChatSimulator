@@ -82,6 +82,7 @@ namespace UIFrameWork
                         assetsData.yuEBao += amount;
                         TransactionSaveData actionData = new TransactionSaveData();
                         actionData.iconType = TransactionIconType.YuEBao;
+                        actionData.payway = PaywayType.Balance;
                         actionData.streamType = TransactionStreamType.NoChange;
                         actionData.remarkStr = ContentHelper.Read(ContentHelper.FinanceText);
                         actionData.timeStr = DateTime.Now.ToString();
