@@ -59,12 +59,12 @@ namespace UIFrameWork
 
 			if (_context.album.pics.Count <= 1)
 				return;
-			if (contextTrans.anchoredPosition.x >= ((contextTrans.sizeDelta.x-1080.0f)*0.5f+200.0f)) {
+			if ((Input.touchCount>=1||Input.GetMouseButton(0))&&contextTrans.anchoredPosition.x >= ((contextTrans.sizeDelta.x-1080.0f)*0.5f+200.0f)) {
 				left.color = new Color (1.0f,1.0f,1.0f,Mathf.Lerp(left.color.a,1.0f,4.0f*Time.deltaTime));
 			} else {
 				left.color = new Color (1.0f,1.0f,1.0f,Mathf.Lerp(left.color.a,0.0f,4.0f*Time.deltaTime));
 			}
-			if (contextTrans.anchoredPosition.x <= -((contextTrans.sizeDelta.x-1080.0f)*0.5f+200.0f)) {
+			if ((Input.touchCount>=1||Input.GetMouseButton(0))&&contextTrans.anchoredPosition.x <= -((contextTrans.sizeDelta.x-1080.0f)*0.5f+200.0f)) {
 				right.color = new Color (1.0f,1.0f,1.0f,Mathf.Lerp(right.color.a,1.0f,4.0f*Time.deltaTime));
 			} else {
 				right.color = new Color (1.0f,1.0f,1.0f,Mathf.Lerp(right.color.a,0.0f,4.0f*Time.deltaTime));
