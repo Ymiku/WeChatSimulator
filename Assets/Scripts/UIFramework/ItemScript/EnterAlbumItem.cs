@@ -5,6 +5,7 @@ using UIFrameWork;
 public class EnterAlbumItem : ItemBase {
     public ImageProxy pic;
 	AlbumPic apic;
+	public AlbumData album;
     public override void SetData (object o)
 	{
 		base.SetData (o);
@@ -14,6 +15,6 @@ public class EnterAlbumItem : ItemBase {
 	}
 	public void OnClick()
 	{
-		UIManager.Instance.Push(new AlbumPicContext(){pic = this.apic});
+		UIManager.Instance.Push(new AlbumPicContext(){index = album.pics.IndexOf(this.apic),album = this.album});
 	}
 }

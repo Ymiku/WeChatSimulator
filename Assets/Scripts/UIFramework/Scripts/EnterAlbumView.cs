@@ -58,6 +58,7 @@ namespace UIFrameWork
 					items[i].cachedRectTransform.localScale = Vector3.one;
 					items[i].id = i;
 				}
+				items [i].album = _context.album;
 				items[i].SetData(_context.album.pics[i]);
 				items[i].gameObject.SetActive(true);
 			}
