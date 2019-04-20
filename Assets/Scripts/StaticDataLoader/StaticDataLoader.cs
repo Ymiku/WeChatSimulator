@@ -43,5 +43,6 @@ public static class StaticDataLoader
 		StaticDataAlbum.Init ();
 		StaticDataBlog.Init ();
         StaticDataTweet.Init();
+        StaticDataComment.Init();
     }
 }

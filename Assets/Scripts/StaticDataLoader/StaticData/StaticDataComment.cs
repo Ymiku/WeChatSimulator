@@ -4,41 +4,33 @@ using UnityEngine;
 
 public static class StaticDataComment
 {
-    public static TWEET_ARRAY Info;
+    public static COMMENT_ARRAY Info;
 
     public static void Init()
     {
-        Info = StaticDataLoader.ReadOneDataConfig<TWEET_ARRAY>("Tweet");
-        TransToTweetData();
+        Info = StaticDataLoader.ReadOneDataConfig<COMMENT_ARRAY>("Comment");
+        TransToCommentData();
     }
 
-    public static void TransToTweetData()
+    public static void TransToCommentData()
     {
         for (int i = 0; i < Info.items.Count; i++)
         {
-            TWEET a = Info.items[i];
-            TweetData tweet = new TweetData();
-            tweet.id = a.tweet_id;
-            tweet.userId = a.user_id;
-            tweet.info = a.tweet_info;
-            tweet.order = a.order;
-            tweet.isSecret = a.is_secret;
-            tweet.pics = new int[a.pic_array.Count];
-            for (int m = 0; m < tweet.pics.Length; m++)
-            {
-                tweet.pics[m] = a.pic_array[m];
-            }
-            List<TweetData> tweets;
-            if (ZoneManager.Instance.id2Tweet.TryGetValue(a.user_id, out tweets))
-            {
+            COMMENT a = Info.items[i];
+            CommentData comment = new CommentData();
+            comment.id = a.comment_id;
+            comment.userId = a.user_id;
+            comment.info = a.comment_info;
+            comment.order = a.order;
+            comment.commentType = (CommentType)a.target_type;
 
-            }
-            else
+            List<CommentData> comments;
+            if (!ZoneManager.Instance.id2Comment.TryGetValue(a.user_id, out comments))
             {
-                tweets = new List<TweetData>();
-                ZoneManager.Instance.id2Tweet.Add(a.user_id, tweets);
+                comments = new List<CommentData>();
+                ZoneManager.Instance.id2Comment.Add(a.user_id, comments);
             }
-            tweets.Add(tweet);
+            comments.Add(comment);
         }
     }
 }

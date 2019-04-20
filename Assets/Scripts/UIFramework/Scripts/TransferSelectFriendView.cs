@@ -12,7 +12,7 @@ namespace UIFrameWork
         public TransferSelectFriendItem selectPrefab;
         public Transform content;
         int spellCount = 0;
-        int selectCount = 0;
+        int contactsCount = 0;
         List<SpellItem> spellLst = new List<SpellItem>();
         List<TransferSelectFriendItem> selectLst = new List<TransferSelectFriendItem>();
 
@@ -51,7 +51,7 @@ namespace UIFrameWork
         void Refresh()
         {
             spellCount = 0;
-            selectCount = 0;
+            contactsCount = 0;
             for (int i = 0; i < spellLst.Count; i++)
             {
                 spellLst[i].gameObject.SetActive(false);
@@ -112,9 +112,9 @@ namespace UIFrameWork
         TransferSelectFriendItem GetContacts()
         {
             TransferSelectFriendItem item = null;
-            if (selectLst.Count > selectCount)
+            if (selectLst.Count > contactsCount)
             {
-                item = selectLst[selectCount];
+                item = selectLst[contactsCount];
             }
             else
             {
@@ -124,7 +124,7 @@ namespace UIFrameWork
                 item.cachedRectTransform.anchoredPosition = Vector2.zero;
                 selectLst.Add(item);
             }
-            selectCount++;
+            contactsCount++;
             return item;
         }
     }

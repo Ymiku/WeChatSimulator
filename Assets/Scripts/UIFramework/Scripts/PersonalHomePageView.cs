@@ -59,6 +59,11 @@ namespace UIFrameWork
 		public override void Excute ()
 		{
 			base.Excute ();
+            if (_lastBack != _backImg.sprite)
+            {
+                _backImg.rectTransform.sizeDelta = Utils.CalSpriteFillSize(_backImg.sprite.bounds.size,new Vector2(1080.0f,757.37f));
+                _lastBack = _backImg.sprite;
+            }
 		}
 
         private void OnClickUploadHead()
@@ -77,9 +82,10 @@ namespace UIFrameWork
         {
 
         }
-
+        Sprite _lastBack = null;
         private void Refresh()
         {
+            _lastBack = null;
             HeadSpriteUtils.Instance.SetBack(_backImg);
             HeadSpriteUtils.Instance.SetHead(_head);
             AccountSaveData data = XMLSaver.saveData.GetAccountData(_context.accountId);

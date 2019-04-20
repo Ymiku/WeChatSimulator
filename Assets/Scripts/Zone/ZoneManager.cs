@@ -7,7 +7,8 @@ public class ZoneManager : Singleton<ZoneManager> {
 	public AlbumPic[] picArray;
 	public Dictionary<int,List<BlogData>> id2Blog = new Dictionary<int, List<BlogData>>();
 	public Dictionary<int,List<TweetData>> id2Tweet = new Dictionary<int, List<TweetData>>();
-	public AlbumData albumData;
+    public Dictionary<int, List<CommentData>> id2Comment = new Dictionary<int, List<CommentData>>();
+    public AlbumData albumData;
 	public void LoadData()
 	{
 		
