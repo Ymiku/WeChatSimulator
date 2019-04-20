@@ -22,6 +22,7 @@ public static class StaticDataAlbum
 			pic.id = a.pic_id;
 			pic.userId = a.user_id;
 			pic.picPath = a.pic_path;
+			pic.order = a.order;
 			List<AlbumData> albums;
 			if (ZoneManager.Instance.id2Album.TryGetValue (a.user_id,out albums)) {
 			

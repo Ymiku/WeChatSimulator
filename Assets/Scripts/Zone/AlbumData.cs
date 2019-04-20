@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 public class AlbumPic{
 	public int id;
+	public int order;
 	public int userId;
 	public string picPath;
 	public WeakReference picRef;
