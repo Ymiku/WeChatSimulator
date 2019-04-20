@@ -42,5 +42,6 @@ public static class StaticDataLoader
         StaticDataBankCard.Init();
 		StaticDataAlbum.Init ();
 		StaticDataBlog.Init ();
+        StaticDataTweet.Init();
     }
 }
