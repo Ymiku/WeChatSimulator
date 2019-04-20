@@ -43,6 +43,13 @@ namespace static_data
       get { return _comment_info; }
       set { _comment_info = value; }
     }
+    private int _order;
+    [global::ProtoBuf.ProtoMember(5, IsRequired = true, Name=@"order", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int order
+    {
+      get { return _order; }
+      set { _order = value; }
+    }
     private global::ProtoBuf.IExtension extensionObject;
     global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
