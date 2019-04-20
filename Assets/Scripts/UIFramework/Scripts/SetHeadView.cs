@@ -8,11 +8,13 @@ namespace UIFrameWork
         private SetHeadContext _context;
         private Button _uploadBtn;
         private ImageProxy _head;
+        private TextProxy _title;
 
         public override void Init()
         {
             base.Init();
             _head = FindInChild<ImageProxy>("BigHead");
+            _title = FindInChild<TextProxy>("Top/Back/text");
             _uploadBtn = FindInChild<Button>("Top/SelectBtn");
             _uploadBtn.onClick.AddListener(OnClickUpload);
         }
@@ -44,24 +46,40 @@ namespace UIFrameWork
 
         public override void PopCallBack()
         {
-            HeadSpriteUtils.Instance.SaveTexture();
+            if (_context.isHead)
+                HeadSpriteUtils.Instance.SaveHeadTexture();
+            else
+                HeadSpriteUtils.Instance.SaveBackTexture();
+            HeadSpriteUtils.Instance.Clear();
             base.PopCallBack();
         }
 
         private void OnClickUpload()
         {
+            HeadSpriteUtils.Instance.Clear();
             HeadSpriteUtils.Instance.UploadTexture(_head);
         }
 
         private void Refresh()
         {
-            HeadSpriteUtils.Instance.SetHead(_head);
+            if (_context.isHead)
+            {
+                HeadSpriteUtils.Instance.SetHead(_head);
+                _title.text = ContentHelper.Read(ContentHelper.SetUserHead);
+            }
+            else
+            {
+                HeadSpriteUtils.Instance.SetBack(_head);
+                _title.text = ContentHelper.Read(ContentHelper.SetUseBack);
+            }   
         }
     }
 	public class SetHeadContext : BaseContext
 	{
-		public SetHeadContext() : base(UIType.SetHead)
+		public SetHeadContext(bool isHead) : base(UIType.SetHead)
 		{
+            this.isHead = isHead;
 		}
+        public bool isHead;
 	}
 }

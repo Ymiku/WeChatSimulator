@@ -14,17 +14,23 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
     private bool _loading = false;
     private Shader _outputShader;
     private Dictionary<int, Sprite> _headSpriteDict = new Dictionary<int, Sprite>();
+    private Dictionary<int, Sprite> _backSpriteDict = new Dictionary<int, Sprite>();
     private Sprite _defaultSprite;
     private string _customIdent = "Textures/";
     private string _systemIdent = "HeadSprites/";
+    private string _headPath;
+    private string _backPath;
 
     public override void SingletonInit()
     {
         base.SingletonInit();
+        _headPath = Application.persistentDataPath + "/UserHead/";
+        _backPath = Application.persistentDataPath + "/UserBack/";
         _outputShader = Shader.Find("UI/Default");
         _defaultSprite = Resources.Load<Sprite>(GameDefine.DefaultHeadSprite);
     }
 
+    #region 头像
     public void SetHead(Image desImage, int userId)
     {
         if (_headSpriteDict.ContainsKey(userId))
@@ -49,38 +55,50 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
             return;
         }
         desImage.sprite = _defaultSprite;
-        StartCoroutine(GetTexture(userId, desImage, Application.persistentDataPath + "/" + data.headSprite + ".png"));
+        StartCoroutine(GetTexture(userId, desImage, _headPath + data.headSprite + ".png"));
     }
 	public void SetHead(Image desImage, string userName)
 	{
 		AccountSaveData data = XMLSaver.saveData.GetAccountData(userName);
-		if (_headSpriteDict.ContainsKey(data.accountId))
-		{
-			desImage.sprite = _headSpriteDict[data.accountId];
-			return;
-		}
-		if (string.IsNullOrEmpty(data.headSprite))
-		{
-			desImage.sprite = _defaultSprite;
-			_headSpriteDict.Add(data.accountId, _defaultSprite);
-			return;
-		}
-		if (data.headSprite.IndexOf(_systemIdent) == 0)
-		{
-			Sprite sprite = Resources.Load<Sprite>(data.headSprite);
-			if (sprite == null)
-				sprite = _defaultSprite;
-			desImage.sprite = sprite;
-			_headSpriteDict.Add(data.accountId, sprite);
-			return;
-		}
-		desImage.sprite = _defaultSprite;
-		StartCoroutine(GetTexture(data.accountId, desImage, Application.persistentDataPath + "/" + data.headSprite + ".png"));
+        SetHead(desImage, data.accountId);
 	}
     public void SetHead(Image desImage)
     {
         SetHead(desImage, GameManager.Instance.curUserId);
     }
+    #endregion
+
+    #region 背景
+    public void SetBack(Image desImage, int userId)
+    {
+        if (_backSpriteDict.ContainsKey(userId))
+        {
+            desImage.sprite = _backSpriteDict[userId];
+            return;
+        }
+        AccountSaveData data = XMLSaver.saveData.GetAccountData(userId);
+        if (string.IsNullOrEmpty(data.backSprite))
+        {
+            SetHead(desImage, userId);
+            return;
+        }
+        if (data.backSprite.IndexOf(_systemIdent) == 0)
+        {
+            SetHead(desImage, userId);
+            return;
+        }
+        StartCoroutine(GetTexture(userId, desImage, _backPath + data.backSprite + ".png"));
+    }
+    public void SetBack(Image desImage, string userName)
+    {
+        AccountSaveData data = XMLSaver.saveData.GetAccountData(userName);
+        SetBack(desImage, data.accountId);
+    }
+    public void SetBack(Image desImage)
+    {
+        SetBack(desImage, GameManager.Instance.curUserId);
+    }
+    #endregion
 
     private IEnumerator GetTexture(int userId, Image image, string url)
     {
@@ -102,6 +120,12 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
     }
 
     #region 选择图片上传
+    public void Clear()
+    {
+        _uploadTexture = null;
+        _uploadSprite = null;
+    }
+
     public void UploadTexture(Image image)
     {
         OpenFileName ofn = new OpenFileName();
@@ -162,15 +186,28 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
     #endregion
 
     #region 保存到本地
-    public void SaveTexture()
+    public void SaveHeadTexture()
     {
         if (!_loading && _uploadTexture != null && _uploadSprite != null)
         {
             string pngName = GameManager.Instance.curEnName + "_head";
-            if (SaveRenderTextureToPNG(_uploadTexture, _outputShader, Application.persistentDataPath + "/" + _customIdent, pngName))
+            if (SaveRenderTextureToPNG(_uploadTexture, _outputShader, _headPath + _customIdent, pngName))
             {
                 GameManager.Instance.accountData.headSprite = _customIdent + pngName;
                 _headSpriteDict[GameManager.Instance.curUserId] = _uploadSprite;
+            }
+        }
+    }
+
+    public void SaveBackTexture()
+    {
+        if (!_loading && _uploadTexture != null && _uploadSprite != null)
+        {
+            string pngName = GameManager.Instance.curEnName + "_back";
+            if (SaveRenderTextureToPNG(_uploadTexture, _outputShader, _backPath + _customIdent, pngName))
+            {
+                GameManager.Instance.accountData.backSprite = _customIdent + pngName;
+                _backSpriteDict[GameManager.Instance.curUserId] = _uploadSprite;
             }
         }
     }

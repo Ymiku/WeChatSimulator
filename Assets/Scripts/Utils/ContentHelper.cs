@@ -84,4 +84,6 @@ public class ContentHelper
     public const int AntText = 76; //花呗
     public const int CanUseText = 77; //可用
     public const int AvailableCredit = 78; //可用额度
+    public const int SetUserHead = 79; //设置个人头像
+    public const int SetUseBack = 80; //设置背景
 }
