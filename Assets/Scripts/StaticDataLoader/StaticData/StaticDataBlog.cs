@@ -2,34 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class StaticDataBlog
+public static class StaticDataTweet
 {
-	public static BLOG_ARRAY Info;
+	public static TWEET_ARRAY Info;
 
 	public static void Init()
 	{
-		Info = StaticDataLoader.ReadOneDataConfig<BLOG_ARRAY>("blog");
-		TransToBlogData ();
+		Info = StaticDataLoader.ReadOneDataConfig<TWEET_ARRAY>("Tweet");
+		TransToTweetData ();
 	}
 
-	public static void TransToBlogData()
+	public static void TransToTweetData()
 	{
 		for (int i = 0; i < Info.items.Count; i++)
 		{
-			BLOG a = Info.items [i];
-			BlogData blog = new BlogData ();
-			blog.id = a.blog_id;
-			blog.userId = a.user_id;
-			blog.path = a.blog_path;
-			blog.order = a.order;
-			List<BlogData> blogs;
-			if (ZoneManager.Instance.id2Blog.TryGetValue (a.user_id,out blogs)) {
+			TWEET a = Info.items [i];
+			TweetData Tweet = new TweetData ();
+			Tweet.id = a.tweet_id;
+			Tweet.userId = a.user_id;
+			Tweet.order = a.order;
+			Tweet.isSecret = a.is_secret;
+			Tweet.pics = new int[a.pic_array.Count];
+			for (int m = 0; m < Tweet.pics.Length;m++) {
+				Tweet.pics[m] = a.pic_array[m];
+			}
+			List<TweetData> Tweets;
+			if (ZoneManager.Instance.id2Tweet.TryGetValue (a.user_id,out Tweets)) {
 
 			} else {
-				blogs = new List<BlogData> ();
-				ZoneManager.Instance.id2Blog.Add (a.user_id,blogs);
+				Tweets = new List<TweetData> ();
+				ZoneManager.Instance.id2Tweet.Add (a.user_id,Tweets);
 			}
-			blogs.Add(blog);
+			Tweets.Add(Tweet);
 		}
 	}
 }
