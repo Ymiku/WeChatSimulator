@@ -9,6 +9,8 @@ namespace UIFrameWork
         private Button _uploadBtn;
         private ImageProxy _head;
         private TextProxy _title;
+        private float _clickTime = 0.0f;
+        private bool _canClick = true;
 
         public override void Init()
         {
@@ -42,6 +44,16 @@ namespace UIFrameWork
         public override void Excute()
         {
             base.Excute();
+            if (!_canClick)
+            {
+                _clickTime += Time.deltaTime;
+                if(_clickTime >= 1.0f)
+                {
+                    _clickTime = 0.0f;
+                    _canClick = true;
+                    _uploadBtn.interactable = true;
+                }
+            }
         }
 
         public override void PopCallBack()
@@ -56,6 +68,10 @@ namespace UIFrameWork
 
         private void OnClickUpload()
         {
+            if (!_canClick)
+                return;
+            _canClick = false;
+            _uploadBtn.interactable = false;
             HeadSpriteUtils.Instance.Clear();
             HeadSpriteUtils.Instance.UploadTexture(_head);
         }

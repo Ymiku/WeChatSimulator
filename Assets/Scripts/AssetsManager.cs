@@ -323,23 +323,37 @@ public class AssetsManager : Singleton<AssetsManager>
     }
 
     /// <summary>
-    /// 花呗自动还款
+    /// 花呗还款
     /// </summary>
-    public void AutoRepayAntCredit()
+    public void RepayAntCredit()
     {
         double needRepay = GameDefine.AntLimit - assetsData.antPay;
         if (needRepay <= 0)
             return;
+        bool repaySuc = false;
         TransactionSaveData actionData = new TransactionSaveData();
-        if(assetsData.balance >= needRepay)
+        if (assetsData.balance >= needRepay)
         {
-            //actionData
             assetsData.balance -= needRepay;
+            repaySuc = true;
+            actionData.payway = PaywayType.Balance;
         }
         else if (assetsData.yuEBao <= needRepay)
         {
-
             assetsData.yuEBao -= needRepay;
+            repaySuc = true;
+            actionData.payway = PaywayType.YuEBao;
+        }
+        if (repaySuc)
+        {
+            actionData.streamType = TransactionStreamType.NoChange;
+            actionData.iconType = TransactionIconType.Ant;
+            actionData.money = needRepay;
+            actionData.timeStr = DateTime.Now.ToString();
+            actionData.detailStr = "";
+            actionData.remarkStr = ContentHelper.Read(ContentHelper.AntRemarkStr);
+            actionData.detailStr = string.Format(ContentHelper.Read(ContentHelper.AntDetailStr), DateTime.Now.Year, DateTime.Now.Month);
+            AddTransactionData(actionData);
         }
     }
 }

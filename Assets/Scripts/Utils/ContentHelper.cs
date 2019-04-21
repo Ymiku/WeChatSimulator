@@ -86,4 +86,6 @@ public class ContentHelper
     public const int AvailableCredit = 78; //可用额度
     public const int SetUserHead = 79; //设置个人头像
     public const int SetUseBack = 80; //设置背景
+    public const int AntRemarkStr = 81; //借还款
+    public const int AntDetailStr = 82; //花呗还款-{0}年{1}月账单
 }
