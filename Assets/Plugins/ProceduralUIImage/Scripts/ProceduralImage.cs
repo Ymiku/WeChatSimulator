@@ -170,7 +170,6 @@ namespace UnityEngine.UI.ProceduralImage {
 			float aa = falloffDistance/2f;
 			var color32 = this.color;
 			vh.Clear();
-            UIVertex v;
 			vh.AddVert(new Vector3(v.x-aa, v.y-aa), color32, new Vector2(uv.x, uv.y));
 			vh.AddVert(new Vector3(v.x-aa, v.w+aa), color32, new Vector2(uv.x, uv.w));
 			vh.AddVert(new Vector3(v.z+aa, v.w+aa), color32, new Vector2(uv.z, uv.w));
