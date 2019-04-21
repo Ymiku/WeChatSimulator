@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 namespace UIFrameWork
 {
 	public class SetLoginPasswordView : AnimateView
 	{
+        public InputField input;
 		private SetLoginPasswordContext _context;
 
 		public override void Init ()
@@ -34,6 +36,12 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
+        public void OnClickChangePassword()
+        {
+            GameManager.Instance.accountData.password = input.text;
+            ShowNotice("ÐÞ¸ÄÃÜÂë³É¹¦£¡");
+            UIManager.Instance.Pop();
+        }
 	}
 	public class SetLoginPasswordContext : BaseContext
 	{
