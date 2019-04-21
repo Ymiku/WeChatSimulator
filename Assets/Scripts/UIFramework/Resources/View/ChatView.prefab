@@ -1074,7 +1074,7 @@ MonoBehaviour:
   activeWhenPause: 0
   alphaSpeed: 20
   scrollView: {fileID: 114546027804036376}
-  selfName: {fileID: 114953889401576676}
+  friendName: {fileID: 114953889401576676}
 --- !u!114 &114478726467587068
 MonoBehaviour:
   m_ObjectHideFlags: 1

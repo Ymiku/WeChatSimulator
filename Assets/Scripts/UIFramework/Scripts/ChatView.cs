@@ -5,7 +5,7 @@ namespace UIFrameWork
 	public class ChatView : AlphaView
 	{
         public PoolableFScrollView scrollView;
-        public TextProxy selfName;
+        public TextProxy friendName;
 		private ChatContext _context;
 
 		public override void Init ()
@@ -19,7 +19,7 @@ namespace UIFrameWork
 			_context = context as ChatContext;
             ChatManager.Instance.EnterChat(_context.friendId);
             scrollView.OnEnter();
-            selfName.text = GameManager.Instance.accountData.GetAnyName();
+            friendName.text = ChatManager.Instance.curInstance.friendData.GetAnyName();
 		}
 
 		public override void OnExit(BaseContext context)

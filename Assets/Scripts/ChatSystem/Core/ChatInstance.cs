@@ -17,15 +17,18 @@ public class ChatInstance{
 	List<Node> _activeNodes = new List<Node> ();
     public int friendId;
 	public string friendName;
+    public AccountSaveData friendData;
 	public string lastSentence = "";
 	public ChatInstanceData saveData;
 	public void OnInit(int friendId)
 	{
         ChatManager.Instance.curExecuteInstance = this;
         int pairId = ChatManager.Instance.GetPairID(curUserId,friendId);
-		this.friendName = XMLSaver.saveData.GetAccountData(friendId).enname;
+		
         this.friendId = friendId;
-		curPairID = pairId;
+        this.friendData = XMLSaver.saveData.GetAccountData(friendId);
+        this.friendName = friendData.enname;
+        curPairID = pairId;
 		saveData = XMLSaver.saveData.GetInstanceData (curPairID);
 		lastChatTimeStamp = saveData.lastChatTimeStamp;
 		curSection = ChatManager.Instance.LoadSectionByID(curPairID,saveData.curSectionId);
