@@ -86,8 +86,8 @@ namespace UIFrameWork
         private void Refresh()
         {
             _lastBack = null;
-            HeadSpriteUtils.Instance.SetBack(_backImg);
-            HeadSpriteUtils.Instance.SetHead(_head);
+            HeadSpriteUtils.Instance.SetBack(_backImg,_context.accountId);
+            HeadSpriteUtils.Instance.SetHead(_head,_context.accountId);
             AccountSaveData data = XMLSaver.saveData.GetAccountData(_context.accountId);
             if (string.IsNullOrEmpty(data.nickname))
                 _nickName.text = ContentHelper.Read(ContentHelper.NotSetNickName);

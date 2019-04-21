@@ -4,6 +4,7 @@ using UnityEngine;
 using NodeEditorFramework;
 using NodeEditorFramework.Standard;
 using UnityEngine.UI;
+using UIFrameWork;
 public class NodeItemProxy : MonoBehaviour {
 	public CanvasGroup group;
 	public int padding = 20;
@@ -65,7 +66,18 @@ public class NodeItemProxy : MonoBehaviour {
 			cachedRectTransform.anchoredPosition = new Vector2 (Mathf.Lerp(1080.0f, 0.0f,count),cachedRectTransform.anchoredPosition.y);
 		group.alpha = count*6.0f-5.0f;
 	}
-
+    public void OnClickHeadSprite()
+    {
+        if (prefabId == 0)
+        {
+            UIManager.Instance.Push(new PersonalHomePageContext(ChatManager.Instance.curInstance.friendId));
+        }
+        else
+        {
+            UIManager.Instance.Push(new PersonalHomePageContext(ChatManager.Instance.curUserId));
+        }
+        
+    }
 	public float SetData(Node node)
 	{
 		text.rectTransform.sizeDelta = new Vector2 (660.0f,800.0f);
