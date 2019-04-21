@@ -20,7 +20,7 @@ namespace UIFrameWork
 		public override void Init ()
 		{
 			base.Init ();
-            _backImg = FindInChild<ImageProxy>("ScrollView/Viewport/Content/bigHead");
+            _backImg = FindInChild<ImageProxy>("ScrollView/Viewport/Content/bigHead/bigHeadChild");
             _head = FindInChild<ImageProxy>("ScrollView/Viewport/Content/head/head");
             _nickName = FindInChild<TextProxy>("ScrollView/Viewport/Content/nickName");
             _signatureText = FindInChild<TextProxy>("ScrollView/Viewport/Content/signature");
