@@ -17,7 +17,8 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
     private Dictionary<int, Sprite> _backSpriteDict = new Dictionary<int, Sprite>();
     private Sprite _defaultSprite;
     private string _customIdent = "Textures/";
-    private string _systemIdent = "HeadSprites/";
+    private string _systemHeadIdent = "HeadSprites/";
+    private string _systemBackIdent = "BackSprites";
     private string _headPath;
     private string _backPath;
 
@@ -45,7 +46,7 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
             _headSpriteDict.Add(userId, _defaultSprite);
             return;
         }
-        if (data.headSprite.IndexOf(_systemIdent) == 0)
+        if (data.headSprite.IndexOf(_systemHeadIdent) == 0)
         {
             Sprite sprite = Resources.Load<Sprite>(data.headSprite);
             if (sprite == null)
@@ -55,7 +56,7 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
             return;
         }
         desImage.sprite = _defaultSprite;
-        StartCoroutine(GetTexture(userId, desImage, _headPath + data.headSprite + ".png"));
+        StartCoroutine(GetHeadTexture(userId, desImage, _headPath + data.headSprite + ".png"));
     }
 	public void SetHead(Image desImage, string userName)
 	{
@@ -82,12 +83,19 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
             SetHead(desImage, userId);
             return;
         }
-        if (data.backSprite.IndexOf(_systemIdent) == 0)
+        if (data.backSprite.IndexOf(_systemBackIdent) == 0)
         {
-            SetHead(desImage, userId);
+            Sprite sprite = Resources.Load<Sprite>(data.backSprite);
+            if (sprite == null)
+                SetHead(desImage, userId);
+            else
+            {
+                desImage.sprite = sprite;
+                _backSpriteDict.Add(data.accountId, sprite);
+            }
             return;
         }
-        StartCoroutine(GetTexture(userId, desImage, _backPath + data.backSprite + ".png"));
+        StartCoroutine(GetBackTexture(userId, desImage, _backPath + data.backSprite + ".png"));
     }
     public void SetBack(Image desImage, string userName)
     {
@@ -100,7 +108,7 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
     }
     #endregion
 
-    private IEnumerator GetTexture(int userId, Image image, string url)
+    private IEnumerator GetHeadTexture(int userId, Image image, string url)
     {
         WWW wwwTexture = new WWW("file://" + url);
         yield return wwwTexture;
@@ -119,11 +127,34 @@ public class HeadSpriteUtils : UnitySingleton<HeadSpriteUtils>
         }
     }
 
+    private IEnumerator GetBackTexture(int userId, Image image, string url)
+    {
+        WWW wwwTexture = new WWW("file://" + url);
+        yield return wwwTexture;
+        if (wwwTexture.isDone && wwwTexture.texture != null)
+        {
+            Sprite sprite = Sprite.Create(wwwTexture.texture, new Rect(0, 0, wwwTexture.texture.width, wwwTexture.texture.height), Vector2.zero);
+            if (sprite == null)
+            {
+                SetHead(image, userId);
+            }
+            else
+            {
+                if (_backSpriteDict.ContainsKey(userId))
+                    _backSpriteDict[userId] = sprite;
+                else
+                    _backSpriteDict.Add(userId, sprite);
+                image.sprite = sprite;
+            }
+        }
+    }
+
     #region 选择图片上传
     public void Clear()
     {
         _uploadTexture = null;
         _uploadSprite = null;
+        _loading = false;
     }
 
     public void UploadTexture(Image image)

@@ -32,9 +32,12 @@ public partial class SaveData {
                 data.realName = staticData.real_name;
                 data.nickname = staticData.nick_name;
                 data.phoneNumber = staticData.phone_number;
-				string headPath = "HeadSprites/"+data.enname;
-				if(Resources.Load<Sprite>(headPath)!=null)
-					data.headSprite = headPath;
+				string path = "HeadSprites/"+data.enname;
+				if(Resources.Load<Sprite>(path)!=null)
+					data.headSprite = path;
+                path = "BackSprites/" + data.enname;
+                if (Resources.Load<Sprite>(path) != null)
+                    data.backSprite = path;
             }
             data.accountId = accountId;
             if (accountId == 0)
