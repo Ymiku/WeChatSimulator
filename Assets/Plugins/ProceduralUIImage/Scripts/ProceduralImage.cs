@@ -8,8 +8,8 @@ using UnityEngine.UI;
 
 namespace UnityEngine.UI.ProceduralImage {
 
-	[ExecuteInEditMode]
-	[AddComponentMenu("UI/Procedural Image")]
+    [ExecuteInEditMode]
+    [AddComponentMenu("UI/Procedural Image")]
 	public class ProceduralImage : Image {
         public Sprite procedualSprite
         {
@@ -21,8 +21,8 @@ namespace UnityEngine.UI.ProceduralImage {
 		private ProceduralImageModifier modifier;
 		private Material materialInstance;
 		[SerializeField]private float falloffDistance = 1;
-
-		public float BorderWidth {
+        public bool needClipping = false;
+        public float BorderWidth {
 			get {
 				return borderWidth;
 			}
@@ -151,9 +151,26 @@ namespace UnityEngine.UI.ProceduralImage {
 			var r = GetPixelAdjustedRect();
 			var v = new Vector4(r.x, r.y, r.x + r.width, r.y + r.height);
 			var uv = new Vector4 (0,0,1,1);
+            if (needClipping)
+            {
+                float a = r.x / r.y;
+                float b = sprite.bounds.size.x / sprite.bounds.size.y;
+                float c = 0.0f;
+                if (a < b)
+                {
+                    c = (r.y * b - r.x) / (r.y * b * 2.0f);
+                    uv = new Vector4(c, 0, 1.0f - c, 1.0f);
+                }
+                else
+                {
+                    c = (r.x / b - r.y) / (r.x * 2.0f / b);
+                    uv = new Vector4(0, c, 1.0f, 1.0f - c);
+                }
+            }
 			float aa = falloffDistance/2f;
 			var color32 = this.color;
 			vh.Clear();
+            UIVertex v;
 			vh.AddVert(new Vector3(v.x-aa, v.y-aa), color32, new Vector2(uv.x, uv.y));
 			vh.AddVert(new Vector3(v.x-aa, v.w+aa), color32, new Vector2(uv.x, uv.w));
 			vh.AddVert(new Vector3(v.z+aa, v.w+aa), color32, new Vector2(uv.z, uv.w));
