@@ -25,6 +25,7 @@ public class AssetsManager : Singleton<AssetsManager>
         if (curUseBankCard != null)
             curUseCardId = curUseBankCard.cardId;
         RecalculationOfflineProfit();
+        CheckAutoRepayAntOffline();
     }
 
     /// <summary>
@@ -355,6 +356,35 @@ public class AssetsManager : Singleton<AssetsManager>
             actionData.detailStr = string.Format(ContentHelper.Read(ContentHelper.AntDetailStr), DateTime.Now.Year, DateTime.Now.Month);
             AddTransactionData(actionData);
         }
+    }
+
+    /// <summary>
+    /// 花呗自动还款，在线跨天
+    /// </summary>
+    public void CheckAutoRepayAntOnLine()
+    {
+        DateTime now = DateTime.Now;
+        if (now.Day == 9)
+        {
+            RepayAntCredit();
+        }
+    }
+
+    /// <summary>
+    /// 花呗自动还款，离线期间
+    /// </summary
+    public void CheckAutoRepayAntOffline()
+    {
+        if (string.IsNullOrEmpty(assetsData.lastOfflineTime))
+            return;
+        DateTime now = DateTime.Now;
+        DateTime lastTime = DateTime.Parse(assetsData.lastOfflineTime);
+        DateTime repayTime = DateTime.Parse(lastTime.ToShortDateString());
+        if (lastTime.Day >= 9)
+            repayTime.AddMonths(1);
+        repayTime.AddDays(9 - lastTime.Day);
+        if (now >= repayTime)
+            RepayAntCredit();
     }
 }
 

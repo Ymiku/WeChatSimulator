@@ -72,6 +72,7 @@ public class GameManager : UnitySingleton<GameManager>
         if(_lastSecond && _curTime.Hour == 0)
         {
             AssetsManager.Instance.RecalculationOneDayProfit();
+            AssetsManager.Instance.CheckAutoRepayAntOnLine();
             _lastSecond = false;
         }
         if (_curTime.Hour == 23 && _curTime.Minute == 59 && _curTime.Second == 59)
