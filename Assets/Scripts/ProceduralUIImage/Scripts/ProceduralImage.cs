@@ -10,7 +10,7 @@ namespace UnityEngine.UI.ProceduralImage {
 
     [ExecuteInEditMode]
     [AddComponentMenu("UI/Procedural Image")]
-	public class ProceduralImage : Image {
+	public class ProceduralImage : ImageProxy {
         public Sprite procedualSprite
         {
             get { return m_sprite; }

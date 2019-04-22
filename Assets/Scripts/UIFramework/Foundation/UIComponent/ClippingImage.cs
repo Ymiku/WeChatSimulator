@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 [AddComponentMenu("UI/Clipping Image")]
-public class ClippingImage : Image
+public class ClippingImage : ImageProxy
 {
 
     protected override void OnPopulateMesh(VertexHelper vh)
@@ -16,24 +16,12 @@ public class ClippingImage : Image
         float c = 0.0f;
         if (a < b)
         {
-            /*
-            float rWidth = r.y * b;
-            float d = rWidth - r.x;
-            d *= 0.5f;
-            c = d / rWidth;
-            */
-            c = (r.y * b - r.x) / (r.y*b*2.0f);
+			c = ( b - a ) / b * 0.5f;
             uv = new Vector4(c,0,1.0f-c,1.0f);
         }
         else
         {
-            /*
-            float rHeight = r.x / b;
-            float d2 = rHeight - r.y;
-            d2 *= 0.5f;
-            c = d2 / rHeight;
-            */
-            c = (r.x / b - r.y) / (r.x*2.0f/b);
+			c = (a - b) / a * 0.5f;
             uv = new Vector4(0, c, 1.0f, 1.0f-c);
         }
         var color32 = this.color;

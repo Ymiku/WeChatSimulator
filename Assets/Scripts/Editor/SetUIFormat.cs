@@ -103,4 +103,15 @@ public static class SetUIFormat
 		go.transform.localScale = Vector3.one;
 		Selection.activeObject = go;
 	}
+	[MenuItem("GameObject/UI/ClippingImage", false, 2000)]
+	static public void AddCImage(MenuCommand menuCommand)
+	{
+		GameObject go = new GameObject("ClippingImage");
+		ClippingImage txt = go.AddComponent<ClippingImage>();
+		go.transform.SetParent (Selection.activeGameObject.transform);
+		txt.raycastTarget = false;
+		go.transform.localPosition = Vector3.zero;
+		go.transform.localScale = Vector3.one;
+		Selection.activeObject = go;
+	}
 }
