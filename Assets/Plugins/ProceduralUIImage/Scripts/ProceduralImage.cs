@@ -20,6 +20,7 @@ namespace UnityEngine.UI.ProceduralImage {
 		[SerializeField]private float borderWidth;
 		private ProceduralImageModifier modifier;
 		private Material materialInstance;
+		private Material materialInstanceClip;
 		[SerializeField]private float falloffDistance = 1;
         public bool needClipping = false;
         public float BorderWidth {
@@ -94,9 +95,17 @@ namespace UnityEngine.UI.ProceduralImage {
 			if (materialInstance == null) {
 				materialInstance = new Material (Shader.Find("UI/Procedural UI Image"));
 			}
+			if (materialInstanceClip == null) {
+				materialInstanceClip = new Material (Shader.Find("UI/Procedural UI Image Clip"));
+			}
 			this.material = materialInstance;
 		}
 		public void Update(){
+			if (needClipping) {
+				this.material = materialInstanceClip;
+			} else {
+				this.material = materialInstance;
+			}
 			this.UpdateMaterial ();
 		}
 		/// <summary>
@@ -153,18 +162,19 @@ namespace UnityEngine.UI.ProceduralImage {
 			var uv = new Vector4 (0,0,1,1);
             if (needClipping)
             {
+				uv *= 10000;
                 float a = r.x / r.y;
                 float b = sprite.bounds.size.x / sprite.bounds.size.y;
                 float c = 0.0f;
                 if (a < b)
                 {
                     c = (r.y * b - r.x) / (r.y * b * 2.0f);
-                    uv = new Vector4(c, 0, 1.0f - c, 1.0f);
+                    uv += new Vector4(c, 0, 1.0f - c, 1.0f);
                 }
                 else
                 {
                     c = (r.x / b - r.y) / (r.x * 2.0f / b);
-                    uv = new Vector4(0, c, 1.0f, 1.0f - c);
+                    uv += new Vector4(0, c, 1.0f, 1.0f - c);
                 }
             }
 			float aa = falloffDistance/2f;
