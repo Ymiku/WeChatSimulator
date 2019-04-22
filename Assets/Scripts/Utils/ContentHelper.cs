@@ -88,4 +88,7 @@ public class ContentHelper
     public const int SetUseBack = 80; //设置背景
     public const int AntRemarkStr = 81; //借还款
     public const int AntDetailStr = 82; //花呗还款-{0}年{1}月账单
+    public const int AntShouldRepay = 83; //{0}月应还
+    public const int AntWaitRepay = 84; //{0}月待还
+    public const int AntDeadline = 85; //最后还款日
 }

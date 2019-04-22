@@ -6,8 +6,17 @@ namespace UIFrameWork
 	public class MyAntBillView : AnimateView
 	{
 		private MyAntBillContext _context;
+        public TextProxy _thisMonth;
+        public TextProxy _nextMonth;
+        public TextProxy _remainText;
+        public TextProxy _deadlineText;
+        public TextProxy _totalText;
+        public GameObject _payOffRoot;
+        public GameObject _remainRoot;
+        public GameObject _thisMonthSelect;
+        public GameObject _nextMonthSelect;
 
-		public override void Init ()
+        public override void Init ()
 		{
 			base.Init ();
 		}
@@ -35,6 +44,21 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
+
+        public void OnClickThisMonth()
+        {
+
+        }
+
+        public void OnClickNextMonth()
+        {
+
+        }
+
+        private void Refresh()
+        {
+
+        }
 	}
 	public class MyAntBillContext : BaseContext
 	{
