@@ -276,26 +276,33 @@ public class AssetsManager : Singleton<AssetsManager>
     /// <summary>
     /// 获取花呗本月应还账单
     /// </summary>
-    public List<TransactionSaveData> GetThisMonthAntActionData()
+    public Dictionary<string, List<TransactionSaveData>> GetThisMonthAntActionData()
     {
         List<TransactionSaveData> dataList = assetsData.transactionList;
-        List<TransactionSaveData> result = new List<TransactionSaveData>();
+        Dictionary<string, List<TransactionSaveData>> result = new Dictionary<string, List<TransactionSaveData>>();
         DateTime nowDate = DateTime.Now;
         DateTime date;
-        for (int i = dataList.Count - 1; i >= 0; i--)
+        for (int i = 0; i < dataList.Count; i++)
         {
             if (dataList[i].payway == PaywayType.Ant)
             {
+                bool addFlag = false;
                 date = DateTime.Parse(dataList[i].timeStr);
                 if (nowDate.Month == 1)
                 {
                     if (date.Year == nowDate.Year - 1 && date.Month == 12)
-                        result.Add(dataList[i]);
+                        addFlag = true;
                 }
                 else
                 {
                     if (date.Year == nowDate.Year && date.Month == nowDate.Month - 1)
-                        result.Add(dataList[i]);
+                        addFlag = true;
+                }
+                if (addFlag)
+                {
+                    if (!result.ContainsKey(date.ToShortDateString()))
+                        result.Add(date.ToShortDateString(), new List<TransactionSaveData>());
+                    result[date.ToShortDateString()].Add(dataList[i]);
                 }
             }
         }
@@ -305,19 +312,23 @@ public class AssetsManager : Singleton<AssetsManager>
     /// <summary>
     /// 获取花呗下月待还账单
     /// </summary>
-    public List<TransactionSaveData> GetNextMonthAntActionData()
+    public Dictionary<string, List<TransactionSaveData>> GetNextMonthAntActionData()
     {
         List<TransactionSaveData> dataList = assetsData.transactionList;
-        List<TransactionSaveData> result = new List<TransactionSaveData>();
+        Dictionary<string, List<TransactionSaveData>> result = new Dictionary<string, List<TransactionSaveData>>();
         DateTime nowDate = DateTime.Now;
         DateTime date;
-        for (int i = dataList.Count - 1; i >= 0; i--)
+        for (int i = 0; i < dataList.Count; i++)
         {
             if (dataList[i].payway == PaywayType.Ant)
             {
                 date = DateTime.Parse(dataList[i].timeStr);
                 if (date.Year == nowDate.Year && date.Month == nowDate.Month)
-                    result.Add(dataList[i]);
+                {
+                    if (result.ContainsKey(date.ToShortDateString()))
+                        result.Add(date.ToShortDateString(), new List<TransactionSaveData>());
+                    result[date.ToShortDateString()].Add(dataList[i]);
+                }
             }
         }
         return result;

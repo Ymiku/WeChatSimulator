@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
+
 namespace UIFrameWork
 {
 	public class MyAntBillView : AnimateView
@@ -15,6 +17,14 @@ namespace UIFrameWork
         public GameObject _remainRoot;
         public GameObject _thisMonthSelect;
         public GameObject _nextMonthSelect;
+        public AntBillDateItem _datePrefab;
+        public AntBillDetailItem _detailPrefab;
+
+        private int _dateCount = 0;
+        private int _detailCount = 0;
+        private List<AntBillDateItem> _dateList = new List<AntBillDateItem>();
+        private List<AntBillDetailItem> _detailList = new List<AntBillDetailItem>();
+        private Dictionary<string, List<TransactionSaveData>> _actionsList = new Dictionary<string, List<TransactionSaveData>>();
 
         public override void Init ()
 		{
@@ -47,12 +57,14 @@ namespace UIFrameWork
 
         public void OnClickThisMonth()
         {
-
+            _actionsList = AssetsManager.Instance.GetThisMonthAntActionData();
+            Refresh();
         }
 
         public void OnClickNextMonth()
         {
-
+            _actionsList = AssetsManager.Instance.GetNextMonthAntActionData();
+            Refresh();
         }
 
         private void Refresh()
