@@ -168,12 +168,12 @@ namespace UnityEngine.UI.ProceduralImage {
                 float c = 0.0f;
                 if (a < b)
                 {
-                    c = (r.y * b - r.x) / (r.y * b * 2.0f);
+					c = ( b - a ) / b * 0.5f;//(r.y * b - r.x) / (r.y * b * 2.0f);
                     uv += new Vector4(c, 0, 1.0f - c, 1.0f);
                 }
                 else
                 {
-                    c = (r.x / b - r.y) / (r.x * 2.0f / b);
+					c = (a - b) / a * 0.5f;//(r.x / b - r.y) / (r.x * 2.0f / b);
                     uv += new Vector4(0, c, 1.0f, 1.0f - c);
                 }
             }
