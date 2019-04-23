@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UIFrameWork;
+using UnityEngine.UI;
 public class AlbumItem : ItemBase {
-    public ImageProxy pic;
+    public ProceduralImage pic;
     public TextProxy albumName;
     public TextProxy note;
     AlbumData album;
@@ -13,7 +14,7 @@ public class AlbumItem : ItemBase {
 	{
 		base.SetData (o);
 		album = o as AlbumData;
-        pic.sprite = album.pics[0].pic;
+		pic.sprite = album.pics[0].pic;
         albumName.text = album.albumName;
         note.text = album.pics.Count.ToString() + "张 ";
         if (album.isSecret)

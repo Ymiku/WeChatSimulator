@@ -42,7 +42,7 @@ public static class SetUIFormat
         Image[] images = Selection.activeGameObject.GetComponentsInChildren<Image>();
         for (int i = 0; i < images.Length; i++)
         {
-			if (images [i] is ImageProxy || images [i] is UnityEngine.UI.ProceduralImage.ProceduralImage)
+			if (images [i] is ImageProxy || images [i] is UnityEngine.UI.ProceduralImage)
 				continue;
             Sprite s = images[i].sprite;
             Color c = images[i].color;

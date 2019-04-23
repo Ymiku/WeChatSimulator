@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UIFrameWork;
 public class EnterAlbumItem : ItemBase {
-    public ImageProxy pic;
+    public ProceduralImage pic;
 	AlbumPic apic;
 	public AlbumData album;
     public override void SetData (object o)
