@@ -20,7 +20,7 @@ namespace UIFrameWork
 		public override void Init ()
 		{
 			base.Init ();
-            _backImg = FindInChild<ImageProxy>("ScrollView/Viewport/Content/bigHead/bigHeadChild");
+            _backImg = FindInChild<ImageProxy>("ScrollView/Viewport/Content/bigHead");
             _head = FindInChild<ImageProxy>("ScrollView/Viewport/Content/head/head");
             _nickName = FindInChild<TextProxy>("ScrollView/Viewport/Content/nickName");
             _signatureText = FindInChild<TextProxy>("ScrollView/Viewport/Content/signature");
@@ -59,11 +59,6 @@ namespace UIFrameWork
 		public override void Excute ()
 		{
 			base.Excute ();
-            if (_lastBack != _backImg.sprite)
-            {
-                _backImg.rectTransform.sizeDelta = Utils.CalSpriteFillSize(_backImg.sprite.bounds.size,new Vector2(1080.0f,757.37f));
-                _lastBack = _backImg.sprite;
-            }
 		}
 
         private void OnClickUploadHead()
@@ -82,10 +77,8 @@ namespace UIFrameWork
         {
 
         }
-        Sprite _lastBack = null;
         private void Refresh()
         {
-            _lastBack = null;
             HeadSpriteUtils.Instance.SetBack(_backImg,_context.accountId);
             HeadSpriteUtils.Instance.SetHead(_head,_context.accountId);
             AccountSaveData data = XMLSaver.saveData.GetAccountData(_context.accountId);
