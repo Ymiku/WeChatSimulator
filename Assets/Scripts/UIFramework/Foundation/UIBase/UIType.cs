@@ -100,5 +100,7 @@ namespace UIFrameWork
 		public static readonly UIType MyQuota = new UIType("View/MyQuotaView"); //我的额度
 		public static readonly UIType ChatPic = new UIType("View/ChatPicView"); //对话图片
 		public static readonly UIType MyAntBill = new UIType("View/MyAntBillView"); //我的花呗账单
+		public static readonly UIType GoldDeal = new UIType("View/GoldDealView"); //黄金
+		public static readonly UIType AntRepay = new UIType("View/AntRepayView"); //花呗还钱
     }
 }
