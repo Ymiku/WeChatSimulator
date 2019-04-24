@@ -16,7 +16,7 @@ namespace UnityEngine.UI {
             get { return m_sprite; }
             set { m_sprite = value;Init(); }
         }
-        Sprite m_sprite;
+        public Sprite m_sprite;
 		[SerializeField]private float borderWidth;
 		private ProceduralImageModifier modifier;
 		private Material materialInstance;

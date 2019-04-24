@@ -1,10 +1,12 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 namespace UIFrameWork
 {
 	public class TweetView : AlphaView
 	{
+		public ProceduralImage head;
 		private TweetContext _context;
 
 		public override void Init ()
@@ -15,6 +17,7 @@ namespace UIFrameWork
 		{
 			base.OnEnter(context);
 			_context = context as TweetContext;
+			Refresh ();
 		}
 
 		public override void OnExit(BaseContext context)
@@ -30,6 +33,7 @@ namespace UIFrameWork
 		public override void OnResume(BaseContext context)
 		{
 			base.OnResume(context);
+			Refresh ();
 		}
 		public override void Excute ()
 		{
@@ -37,7 +41,9 @@ namespace UIFrameWork
 		}
         void Refresh()
         {
-           
+			AccountSaveData data = XMLSaver.saveData.GetAccountData (_context.userId);
+			HeadSpriteUtils.Instance.SetHead (head,_context.userId);
+			List<int> friends = XMLSaver.saveData.GetFriendsLst (_context.userId);
         }
 	}
 	public class TweetContext : BaseContext
