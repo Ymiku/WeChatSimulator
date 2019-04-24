@@ -43,15 +43,22 @@ namespace static_data
       get { return _pic_array; }
     }
   
+    private string _location;
+    [global::ProtoBuf.ProtoMember(5, IsRequired = true, Name=@"location", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public string location
+    {
+      get { return _location; }
+      set { _location = value; }
+    }
     private bool _is_secret;
-    [global::ProtoBuf.ProtoMember(5, IsRequired = true, Name=@"is_secret", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    [global::ProtoBuf.ProtoMember(6, IsRequired = true, Name=@"is_secret", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public bool is_secret
     {
       get { return _is_secret; }
       set { _is_secret = value; }
     }
     private int _order;
-    [global::ProtoBuf.ProtoMember(6, IsRequired = true, Name=@"order", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    [global::ProtoBuf.ProtoMember(7, IsRequired = true, Name=@"order", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int order
     {
       get { return _order; }

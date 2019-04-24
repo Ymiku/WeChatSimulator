@@ -36,22 +36,36 @@ namespace static_data
       get { return _album_name; }
       set { _album_name = value; }
     }
+    private string _pic_name;
+    [global::ProtoBuf.ProtoMember(4, IsRequired = true, Name=@"pic_name", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public string pic_name
+    {
+      get { return _pic_name; }
+      set { _pic_name = value; }
+    }
+    private string _location;
+    [global::ProtoBuf.ProtoMember(5, IsRequired = true, Name=@"location", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public string location
+    {
+      get { return _location; }
+      set { _location = value; }
+    }
     private string _pic_path;
-    [global::ProtoBuf.ProtoMember(4, IsRequired = true, Name=@"pic_path", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    [global::ProtoBuf.ProtoMember(6, IsRequired = true, Name=@"pic_path", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public string pic_path
     {
       get { return _pic_path; }
       set { _pic_path = value; }
     }
     private bool _is_secret;
-    [global::ProtoBuf.ProtoMember(5, IsRequired = true, Name=@"is_secret", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    [global::ProtoBuf.ProtoMember(7, IsRequired = true, Name=@"is_secret", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public bool is_secret
     {
       get { return _is_secret; }
       set { _is_secret = value; }
     }
     private int _order;
-    [global::ProtoBuf.ProtoMember(6, IsRequired = true, Name=@"order", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    [global::ProtoBuf.ProtoMember(8, IsRequired = true, Name=@"order", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int order
     {
       get { return _order; }
