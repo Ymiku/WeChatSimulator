@@ -22,7 +22,7 @@ namespace UIFrameWork
         public TextProxy _totalText;
         public GameObject _payOffRoot;
         public GameObject _remainRoot;
-        public GameObject _anrecordRoot;
+        public GameObject _noRecordRoot;
         public AntBillDateItem _datePrefab;
         public AntBillDetailItem _detailPrefab;
         public Transform _content;
@@ -37,6 +37,7 @@ namespace UIFrameWork
         public override void Init ()
 		{
 			base.Init ();
+            _curTab = selectTab.thisMonth;
             _toggleGroup.onChangedIndex = OnChangedIndex;
 		}
 		public override void OnEnter(BaseContext context)
@@ -85,7 +86,7 @@ namespace UIFrameWork
 
         private void Refresh()
         {
-
+            _noRecordRoot.SetActive(_curTab == selectTab.noRecord);
         }
 	}
 	public class MyAntBillContext : BaseContext
