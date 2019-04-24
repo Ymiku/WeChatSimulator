@@ -7,6 +7,13 @@ namespace UIFrameWork
 {
 	public class MyAntBillView : AnimateView
 	{
+        private enum selectTab
+        {
+            thisMonth,
+            nextMonth,
+            noRecord,
+        }
+        private selectTab _curTab;
 		private MyAntBillContext _context;
         public TextProxy _thisMonth;
         public TextProxy _nextMonth;
@@ -15,10 +22,11 @@ namespace UIFrameWork
         public TextProxy _totalText;
         public GameObject _payOffRoot;
         public GameObject _remainRoot;
-        public GameObject _thisMonthSelect;
-        public GameObject _nextMonthSelect;
+        public GameObject _anrecordRoot;
         public AntBillDateItem _datePrefab;
         public AntBillDetailItem _detailPrefab;
+        public Transform _content;
+        public FToggleGroup _toggleGroup;
 
         private int _dateCount = 0;
         private int _detailCount = 0;
@@ -29,6 +37,7 @@ namespace UIFrameWork
         public override void Init ()
 		{
 			base.Init ();
+            _toggleGroup.onChangedIndex = OnChangedIndex;
 		}
 		public override void OnEnter(BaseContext context)
 		{
@@ -55,15 +64,22 @@ namespace UIFrameWork
 			base.Excute ();
 		}
 
-        public void OnClickThisMonth()
+        public void OnChangedIndex(int index)
         {
-            _actionsList = AssetsManager.Instance.GetThisMonthAntActionData();
-            Refresh();
-        }
-
-        public void OnClickNextMonth()
-        {
-            _actionsList = AssetsManager.Instance.GetNextMonthAntActionData();
+            if (index == (int)selectTab.thisMonth)
+            {
+                _curTab = selectTab.thisMonth;
+                _actionsList = AssetsManager.Instance.GetThisMonthAntActionData();
+            }
+            else if (index == (int)selectTab.nextMonth)
+            {
+                _curTab = selectTab.nextMonth;
+                _actionsList = AssetsManager.Instance.GetNextMonthAntActionData();
+            }
+            else
+            {
+                _curTab = selectTab.noRecord;
+            }
             Refresh();
         }
 
