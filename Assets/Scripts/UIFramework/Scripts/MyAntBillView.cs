@@ -123,6 +123,43 @@ namespace UIFrameWork
                         result += list[i].money;
             return result;
         }
+
+        AntBillDateItem GetBillDate()
+        {
+            AntBillDateItem item = null;
+            if (_dateList.Count > _dateCount)
+            {
+                item = _dateList[_dateCount];
+            }
+            else
+            {
+                item = Instantiate(_datePrefab);
+                item.cachedRectTransform.SetParent(_content);
+                item.cachedRectTransform.localScale = Vector3.one;
+                item.cachedRectTransform.anchoredPosition = Vector2.zero;  // rtodo
+                _dateList.Add(item);
+            }
+            _dateCount++;
+            return item;
+        }
+        AntBillDetailItem GetBillDetail()
+        {
+            AntBillDetailItem item = null;
+            if (_detailList.Count > _detailCount)
+            {
+                item = _detailList[_detailCount];
+            }
+            else
+            {
+                item = Instantiate(_detailPrefab);
+                item.cachedRectTransform.SetParent(_content);
+                item.cachedRectTransform.localScale = Vector3.one;
+                item.cachedRectTransform.anchoredPosition = Vector2.zero;  // rtodo
+                _detailList.Add(item);
+            }
+            _dateCount++;
+            return item;
+        }
     }
 	public class MyAntBillContext : BaseContext
 	{
