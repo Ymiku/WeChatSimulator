@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System;
 
 namespace UIFrameWork
 {
@@ -25,14 +26,15 @@ namespace UIFrameWork
         public GameObject _noRecordRoot;
         public AntBillDateItem _datePrefab;
         public AntBillDetailItem _detailPrefab;
-        public Transform _content;
+        public RectTransform _content;
         public FToggleGroup _toggleGroup;
 
         private int _dateCount = 0;
         private int _detailCount = 0;
         private List<AntBillDateItem> _dateList = new List<AntBillDateItem>();
         private List<AntBillDetailItem> _detailList = new List<AntBillDetailItem>();
-        private Dictionary<string, List<TransactionSaveData>> _actionsList = new Dictionary<string, List<TransactionSaveData>>();
+        private Dictionary<string, List<TransactionSaveData>> _actionsDict = new Dictionary<string, List<TransactionSaveData>>();
+        private Vector2 _normalSize = new Vector2(1080, 704);
 
         public override void Init ()
 		{
@@ -70,12 +72,12 @@ namespace UIFrameWork
             if (index == (int)selectTab.thisMonth)
             {
                 _curTab = selectTab.thisMonth;
-                _actionsList = AssetsManager.Instance.GetThisMonthAntActionData();
+                _actionsDict = AssetsManager.Instance.GetThisMonthAntBill();
             }
             else if (index == (int)selectTab.nextMonth)
             {
                 _curTab = selectTab.nextMonth;
-                _actionsList = AssetsManager.Instance.GetNextMonthAntActionData();
+                _actionsDict = AssetsManager.Instance.GetNextMonthAntBill();
             }
             else
             {
@@ -86,9 +88,42 @@ namespace UIFrameWork
 
         private void Refresh()
         {
+            double amount = GetBillCount();
             _noRecordRoot.SetActive(_curTab == selectTab.noRecord);
+            _remainRoot.SetActive(amount > 0);
+            _payOffRoot.SetActive(amount == 0);
+            _totalText.gameObject.SetActive(_curTab != selectTab.noRecord);
+            _remainText.text = amount.ToString("0.00");
+            _totalText.text = string.Format(ContentHelper.Read(ContentHelper.AntMonthCount), GetBillCount());
+            int month = DateTime.Now.Month == 12 ? 1 : DateTime.Now.Month + 1;
+            _deadlineText.text = string.Format(ContentHelper.Read(ContentHelper.AntDeadline), month, 9);
+            _content.anchoredPosition = Vector3.zero;
+            _content.sizeDelta = _normalSize;
+            if (_curTab != selectTab.noRecord)
+            {
+               
+            }
         }
-	}
+
+        int GetBillCount()
+        {
+            int result = 0;
+            if (_actionsDict != null)
+                foreach (var list in _actionsDict.Values)
+                    for (int i = 0; i < list.Count; i++)
+                        result++;
+            return result;
+        }
+        double GetAmount()
+        {
+            double result = 0;
+            if(_actionsDict != null)
+                foreach (var list in _actionsDict.Values)
+                    for (int i = 0; i < list.Count; i++)
+                        result += list[i].money;
+            return result;
+        }
+    }
 	public class MyAntBillContext : BaseContext
 	{
 		public MyAntBillContext() : base(UIType.MyAntBill)

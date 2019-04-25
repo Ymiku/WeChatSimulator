@@ -276,7 +276,7 @@ public class AssetsManager : Singleton<AssetsManager>
     /// <summary>
     /// 获取花呗本月应还账单
     /// </summary>
-    public Dictionary<string, List<TransactionSaveData>> GetThisMonthAntActionData()
+    public Dictionary<string, List<TransactionSaveData>> GetThisMonthAntBill()
     {
         List<TransactionSaveData> dataList = assetsData.transactionList;
         Dictionary<string, List<TransactionSaveData>> result = new Dictionary<string, List<TransactionSaveData>>();
@@ -312,7 +312,7 @@ public class AssetsManager : Singleton<AssetsManager>
     /// <summary>
     /// 获取花呗下月待还账单
     /// </summary>
-    public Dictionary<string, List<TransactionSaveData>> GetNextMonthAntActionData()
+    public Dictionary<string, List<TransactionSaveData>> GetNextMonthAntBill()
     {
         List<TransactionSaveData> dataList = assetsData.transactionList;
         Dictionary<string, List<TransactionSaveData>> result = new Dictionary<string, List<TransactionSaveData>>();
@@ -397,6 +397,7 @@ public class AssetsManager : Singleton<AssetsManager>
         if (now >= repayTime)
             RepayAntCredit();
     }
+
 }
 
 public enum PaywayType
