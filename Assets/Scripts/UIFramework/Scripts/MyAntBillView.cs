@@ -34,7 +34,7 @@ namespace UIFrameWork
         private List<AntBillDateItem> _dateList = new List<AntBillDateItem>();
         private List<AntBillDetailItem> _detailList = new List<AntBillDetailItem>();
         private Dictionary<string, List<TransactionSaveData>> _actionsDict = new Dictionary<string, List<TransactionSaveData>>();
-        private Vector2 _normalSize = new Vector2(1080, 704);
+        private Vector2 _normalSize = new Vector2(1080, 836);
 
         public override void Init ()
 		{
@@ -99,10 +99,8 @@ namespace UIFrameWork
             _deadlineText.text = string.Format(ContentHelper.Read(ContentHelper.AntDeadline), month, 9);
             _content.anchoredPosition = Vector3.zero;
             _content.sizeDelta = _normalSize;
-            if (_curTab != selectTab.noRecord)
-            {
-               
-            }
+            ClearGrid();
+            ShowGrid();
         }
 
         int GetBillCount()
@@ -159,6 +157,42 @@ namespace UIFrameWork
             }
             _dateCount++;
             return item;
+        }
+
+        private void ClearGrid()
+        {
+            _detailCount = 0;
+            _dateCount = 0;
+            for (int i = 0; i < _detailList.Count; i++)
+            {
+                _detailList[i].gameObject.SetActive(false);
+            }
+            for (int i = 0; i < _detailList.Count; i++)
+            {
+                _detailList[i].gameObject.SetActive(false);
+            }
+        }
+        private void ShowGrid()
+        {
+            if (_curTab == selectTab.noRecord)
+                return;
+            int dateCount = 0;
+            float y = -836;
+            foreach (string date in _actionsDict.Keys)
+            {
+                AntBillDateItem dateItem = GetBillDate();
+                dateItem.SetData(date);
+                y = y - dateCount * 145;
+                dateItem.cachedRectTransform.anchoredPosition = new Vector2(0, y);
+                for (int i = 0; i< _actionsDict[date].Count; i ++)
+                {
+                    AntBillDetailItem detailItem = GetBillDetail();
+                    y = y - i * 210;
+                    detailItem.cachedRectTransform.anchoredPosition = new Vector2(0, y);
+                }
+                // rtodo
+            }
+            _content.sizeDelta = new Vector2(1080, -y);
         }
     }
 	public class MyAntBillContext : BaseContext
