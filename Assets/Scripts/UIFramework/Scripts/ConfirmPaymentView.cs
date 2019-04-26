@@ -251,7 +251,8 @@ namespace UIFrameWork
                         actionData.streamType = TransactionStreamType.NoChange;
                         actionData.remarkStr = ContentHelper.Read(ContentHelper.AntRemarkStr);
                         actionData.money = _amount;
-                        actionData.detailStr = string.Format(ContentHelper.Read(ContentHelper.AntDetailStr)); //rtodo
+
+                        actionData.detailStr = string.Format(ContentHelper.Read(ContentHelper.AntDetailStr),_context.antYear, _context.antMonth);
                         AssetsManager.Instance.AddTransactionData(actionData);
                         UIManager.Instance.Pop();
                         UIManager.Instance.Pop();
@@ -342,9 +343,11 @@ namespace UIFrameWork
         /// <summary>
         /// 还花呗
         /// </summary>
-        public ConfirmPaymentContext(double amount) : base(UIType.ConfirmPayment)
+        public ConfirmPaymentContext(double amount, int antYear, int antMonth) : base(UIType.ConfirmPayment)
         {
             this.amount = amount;
+            this.antYear = antYear;
+            this.antMonth = antMonth;
             spendType = SpendType.AntRepay;
         }
 
@@ -363,5 +366,9 @@ namespace UIFrameWork
 
         //充值使用
         public RechargeType rechargeType;
+
+        //花呗使用
+        public int antYear;
+        public int antMonth;
     }
 }

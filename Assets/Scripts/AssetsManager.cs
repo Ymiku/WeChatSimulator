@@ -337,7 +337,7 @@ public class AssetsManager : Singleton<AssetsManager>
     /// <summary>
     /// 花呗还款
     /// </summary>
-    public void RepayAntCredit()
+    private void AutoRepayAntCredit()
     {
         double needRepay = GameDefine.AntLimit - assetsData.antPay;
         if (needRepay <= 0)
@@ -376,9 +376,7 @@ public class AssetsManager : Singleton<AssetsManager>
     {
         DateTime now = DateTime.Now;
         if (now.Day == 9)
-        {
-            RepayAntCredit();
-        }
+            AutoRepayAntCredit();
     }
 
     /// <summary>
@@ -395,7 +393,7 @@ public class AssetsManager : Singleton<AssetsManager>
             repayTime.AddMonths(1);
         repayTime.AddDays(9 - lastTime.Day);
         if (now >= repayTime)
-            RepayAntCredit();
+            AutoRepayAntCredit();
     }
 
 }
