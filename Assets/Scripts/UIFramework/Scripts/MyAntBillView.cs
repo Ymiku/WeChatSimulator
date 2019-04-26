@@ -134,7 +134,7 @@ namespace UIFrameWork
                 item = Instantiate(_datePrefab);
                 item.cachedRectTransform.SetParent(_content);
                 item.cachedRectTransform.localScale = Vector3.one;
-                item.cachedRectTransform.anchoredPosition = Vector2.zero;  // rtodo
+                item.cachedRectTransform.anchoredPosition = Vector2.zero;
                 _dateList.Add(item);
             }
             _dateCount++;
@@ -174,6 +174,7 @@ namespace UIFrameWork
         }
         private void ShowGrid()
         {
+            Vector2 tempVec = new Vector2(0, 0);
             if (_curTab == selectTab.noRecord)
                 return;
             int dateCount = 0;
@@ -183,14 +184,20 @@ namespace UIFrameWork
                 AntBillDateItem dateItem = GetBillDate();
                 dateItem.SetData(date);
                 y = y - dateCount * 145;
-                dateItem.cachedRectTransform.anchoredPosition = new Vector2(0, y);
+                tempVec.y = y;
+                dateItem.cachedRectTransform.anchoredPosition = tempVec;
                 for (int i = 0; i< _actionsDict[date].Count; i ++)
                 {
                     AntBillDetailItem detailItem = GetBillDetail();
+                    detailItem.SetData(_actionsDict[date][i]);
                     y = y - i * 210;
-                    detailItem.cachedRectTransform.anchoredPosition = new Vector2(0, y);
+                    tempVec.y = y;
+                    detailItem.cachedRectTransform.anchoredPosition = tempVec;
+                    tempVec.x = 993.2f;
+                    tempVec.y = 145 + (i + 1) * 210;
+                    dateItem.cachedRectTransform.sizeDelta = tempVec;
                 }
-                // rtodo
+                y += 40;
             }
             _content.sizeDelta = new Vector2(1080, -y);
         }
