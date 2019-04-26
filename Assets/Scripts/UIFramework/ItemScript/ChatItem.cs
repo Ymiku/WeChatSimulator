@@ -13,7 +13,7 @@ public class ChatItem : ItemBase {
 	{
 		base.SetData (o);
         instance = o as ChatInstance;
-        AccountSaveData data = XMLSaver.saveData.GetAccountData(instance.friendName);
+        AccountSaveData data = XMLSaver.saveData.GetAccountData(instance.friendId);
         HeadSpriteUtils.Instance.SetHead(head,data.accountId);
         if (!string.IsNullOrEmpty(data.nickname))
             userName.text = data.nickname;

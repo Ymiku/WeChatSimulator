@@ -5,6 +5,7 @@ using UIFrameWork;
 
 public class TweetItem : ItemBaseInconsist {
 	public ImageProxy head;
+	public TextProxy name;
 	public TextProxy mainBody;
 	public RectTransform root;
 	public ImageProxy[] pic;
@@ -14,6 +15,7 @@ public class TweetItem : ItemBaseInconsist {
 		base.SetData(o);
 		data = o as TweetData;
 		HeadSpriteUtils.Instance.SetHead (head,data.userId);
+		name.text = XMLSaver.saveData.GetAccountData (data.userId).GetAnyName();
 		float height = 0.0f;
 		height -= root.anchoredPosition.y;
 		height -= mainBody.rectTransform.anchoredPosition.y;
