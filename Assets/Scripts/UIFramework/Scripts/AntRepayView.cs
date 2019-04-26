@@ -7,6 +7,7 @@ namespace UIFrameWork
 	{
 		private AntRepayContext _context;
         public TextProxy _money;
+        public TextProxy _canRepay;
 
 		public override void Init ()
 		{
@@ -17,6 +18,7 @@ namespace UIFrameWork
 			base.OnEnter(context);
 			_context = context as AntRepayContext;
             _money.text = _context.money.ToString("0.00");
+            _canRepay.text = string.Format(ContentHelper.Read(ContentHelper.AntCanRepay), _context.money.ToString("0.00"));
 		}
 
 		public override void OnExit(BaseContext context)
@@ -33,6 +35,7 @@ namespace UIFrameWork
 		{
 			base.OnResume(context);
             _money.text = _context.money.ToString("0.00");
+            _canRepay.text = string.Format(ContentHelper.Read(ContentHelper.AntCanRepay), _context.money.ToString("0.00"));
         }
 		public override void Excute ()
 		{

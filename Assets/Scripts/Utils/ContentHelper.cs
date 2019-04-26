@@ -92,4 +92,5 @@ public class ContentHelper
     public const int AntWaitRepay = 84; //{0}月待还
     public const int AntDeadline = 85; //最后还款日{0}月{1}日
     public const int AntMonthCount = 86; //本月账单明细共{0}笔
+    public const int AntCanRepay = 87; //可还{0}元
 }
