@@ -57,8 +57,9 @@ public partial class SaveData {
     /// </summary>
 	AccountSaveData cacheData = new AccountSaveData(){accountId = -1};
 	public AccountSaveData GetAccountData(int id) {
-		if (id==0&&accountList[0].accountId==0)
-			return accountList[0];
+		if (GameManager.Instance.accountData!=null&&GameManager.Instance.accountData.accountId == id) {
+			return GameManager.Instance.accountData;
+		}
 		if (cacheData.accountId == id)
 			return cacheData;
         for (int i = 0; i < accountList.Count; i++)

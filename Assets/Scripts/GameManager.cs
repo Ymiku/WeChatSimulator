@@ -28,9 +28,9 @@ public class GameManager : UnitySingleton<GameManager>
 	public void SetUser(int userId)
 	{
 		curUserId = userId;
-		curEnName = XMLSaver.saveData.GetAccountData (userId).enname;
+		accountData = XMLSaver.saveData.GetAccountData(userId);
+		curEnName = accountData.enname;
 		XMLSaver.saveData.lastUser = userId;
-        accountData = XMLSaver.saveData.GetAccountData(userId);
         if (!XMLSaver.saveData.canLoginUserIds.Contains (userId))
 			XMLSaver.saveData.canLoginUserIds.Add (userId);
         ChatManager.Instance.OnFriendsLstChange();

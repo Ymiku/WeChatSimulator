@@ -32,7 +32,10 @@ public class TweetItem : ItemBaseInconsist {
 			pic [i].gameObject.SetActive (false);
 		}
 		if (data.pics.Length == 1) {
+			pic [0].sprite = ZoneManager.Instance.picArray[data.pics [0]].pic;
+			pic [0].sizeDelta = Utils.CalSpriteDisplaySize (pic[0].sprite.bounds.size,new Vector2(750.0f,535.0f));
 			pic [0].gameObject.SetActive (false);
+
 		} else if (data.pics.Length <= 3) {
 			
 		} else {
