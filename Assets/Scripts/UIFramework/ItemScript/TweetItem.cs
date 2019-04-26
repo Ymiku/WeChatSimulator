@@ -9,6 +9,7 @@ public class TweetItem : ItemBaseInconsist {
 	public TextProxy mainBody;
 	public RectTransform root;
 	public ImageProxy[] pic;
+	public TextProxy location;
 	public TextProxy likeNames;
 	public TextProxy comment;
 	TweetData data;
@@ -22,11 +23,23 @@ public class TweetItem : ItemBaseInconsist {
 		float height = 0.0f;
 		height -= root.anchoredPosition.y;
 		height -= mainBody.rectTransform.anchoredPosition.y;
+		mainBody.text = data.info;
 		mainBody.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,2000.0f);
 		mainBody.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,mainBody.preferredHeight);
 		height += mainBody.rectTransform.sizeDelta.y;
 		float picHeight = 0.0f;
+		for (int i = 0; i < pic.Length; i++) {
+			pic [i].gameObject.SetActive (false);
+		}
+		if (data.pics.Length == 1) {
+			pic [0].gameObject.SetActive (false);
+		} else if (data.pics.Length <= 3) {
+			
+		} else {
+		
+		}
 		height += picHeight;
+		location.text = data.location;
 		likeNames.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,2000.0f);
 		likeNames.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,likeNames.preferredHeight);
 		height += likeNames.rectTransform.sizeDelta.y;

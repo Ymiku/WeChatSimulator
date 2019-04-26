@@ -97,9 +97,9 @@ public class PoolableScrollView : MonoBehaviour
             TryOpen();
             return false;
         }
-        if (_activeItems[0].pos.y + _contextTrans.anchoredPosition.y < 0 && TryAddUp())
+        if (_activeItems[0].anchoredPosition.y + _contextTrans.anchoredPosition.y < 0 && TryAddUp())
             return true;
-        if (_activeItems[_activeItems.Count - 1].pos.y - _activeItems[_activeItems.Count - 1].height + _contextTrans.anchoredPosition.y >
+        if (_activeItems[_activeItems.Count - 1].anchoredPosition.y - _activeItems[_activeItems.Count - 1].height + _contextTrans.anchoredPosition.y >
             -cachedRectTransform.sizeDelta.y && TryAddDown())
             return true;
         if (_activeItems.Count <= 1)
@@ -175,9 +175,9 @@ public class PoolableScrollView : MonoBehaviour
     {
         float buffer = 100.0f;
         if (_activeItems.IndexOf(node) == 0)
-            if (node.pos.y - node.height + _contextTrans.anchoredPosition.y > 0 + buffer)
+            if (node.anchoredPosition.y - node.height + _contextTrans.anchoredPosition.y > 0 + buffer)
                 return true;
-        if (node.pos.y + _contextTrans.anchoredPosition.y < -cachedRectTransform.sizeDelta.y - buffer)
+        if (node.anchoredPosition.y + _contextTrans.anchoredPosition.y < -cachedRectTransform.sizeDelta.y - buffer)
             return true;
         return false;
     }

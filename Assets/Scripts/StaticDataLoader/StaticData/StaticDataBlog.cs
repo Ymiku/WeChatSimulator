@@ -27,6 +27,7 @@ public static class StaticDataTweet
 			for (int m = 0; m < tweet.pics.Length;m++) {
 				tweet.pics[m] = a.pic_array[m];
 			}
+			tweet.location = a.location;
 			List<TweetData> tweets;
 			if (ZoneManager.Instance.id2Tweet.TryGetValue (a.user_id,out tweets)) {
 

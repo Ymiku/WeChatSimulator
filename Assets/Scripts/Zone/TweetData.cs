@@ -9,5 +9,6 @@ public class TweetData {
 	public int userId;
 	public string info;
 	public int[] pics;
+	public string location;
 	public bool isSecret;
 }
