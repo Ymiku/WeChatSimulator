@@ -55,11 +55,18 @@ public partial class SaveData {
     /// <summary>
     /// 通过唯一id获取账户信息
     /// </summary>
-    public AccountSaveData GetAccountData(int id) {
+	AccountSaveData cacheData = new AccountSaveData(){accountId = -1};
+	public AccountSaveData GetAccountData(int id) {
+		if (id==0&&accountList[0].accountId==0)
+			return accountList[0];
+		if (cacheData.accountId == id)
+			return cacheData;
         for (int i = 0; i < accountList.Count; i++)
         {
-            if (accountList[i].accountId == id)
-                return accountList[i];
+			if (accountList [i].accountId == id) {
+				cacheData = accountList [i];
+				return accountList [i];
+			}
         }
         return null;
     }

@@ -54,6 +54,7 @@ namespace UIFrameWork
 			nextView.transform.SetAsLastSibling ();
             nextView.OnEnter(nextContext);
             Pool(nextContext.ViewType);
+			DisableInstant ();
         }
 
         public void Pop()
@@ -78,10 +79,21 @@ namespace UIFrameWork
                 curView.OnResume(lastContext);
                 Pool(lastContext.ViewType);
             }
+			DisableInstant ();
         }
+		void DisableInstant()
+		{
+			List<UIType> UIPool = UIManager.Instance._UIPool;
+			if (UIPool.Count <= 2)
+				return;
+			if (UIPool [UIPool.Count - 3] != UIPool [UIPool.Count - 2] && UIPool [UIPool.Count - 3] != UIPool [UIPool.Count - 1]) {
+				BaseView endView = UIManager.Instance.GetSingleUI(UIPool[UIPool.Count-3]).GetComponent<BaseView>();
+				endView.ForceDisable ();
+			}
+		}
 		public UIType GetLastContextType()
 		{
-			if (_typeLst.Count <= 2)
+			if (_typeLst.Count <= 1)
 				return UIType.None;
 			return _typeLst[_typeLst.Count-2];
 		}
