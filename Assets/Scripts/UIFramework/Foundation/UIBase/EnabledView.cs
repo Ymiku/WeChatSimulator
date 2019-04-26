@@ -7,7 +7,7 @@ namespace UIFrameWork
 {
 	public abstract class EnabledView : BaseView 
 	{
-		float disappearTime = 4.0f;
+		float disappearTime = 2.0f;
 		RXIndex rxId = new RXIndex();
 		public override void OnEnter(BaseContext context)
 		{
