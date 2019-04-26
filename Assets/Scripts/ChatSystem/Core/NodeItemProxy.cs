@@ -94,7 +94,7 @@ public class NodeItemProxy : MonoBehaviour {
 			image.enabled = false;
 			text.text = (node as ChatNode).DialogLine;
 			//text.rectTransform.sizeDelta = new Vector2 (text.preferredWidth, Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight + 20.0f));
-			backGround.sizeDelta = new Vector2 (Mathf.Max(80.0f,text.preferredWidth+60.0f),Mathf.Max(avatar.rectTransform.sizeDelta.y,text.preferredHeight+60.0f));
+			backGround.sizeDelta = new Vector2 (Mathf.Clamp(text.preferredWidth+60.0f,80.0f,660.0f),Mathf.Max(avatar.rectTransform.sizeDelta.y,text.preferredHeight+60.0f));
             text.rectTransform.sizeDelta = new Vector2(backGround.sizeDelta.x-60.0f,backGround.sizeDelta.y);
         }
 		if (node is ChatImageNode) {
@@ -110,7 +110,7 @@ public class NodeItemProxy : MonoBehaviour {
             image.enabled = false;
 			text.text = (node as ChatOptionNode).labels[(node as ChatOptionNode).option];
             //text.rectTransform.sizeDelta = new Vector2 (text.preferredWidth, Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight + 20.0f));
-            backGround.sizeDelta = new Vector2(Mathf.Max(80.0f, text.preferredWidth + 60.0f), Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight + 60.0f));
+            backGround.sizeDelta = new Vector2(Mathf.Clamp(text.preferredWidth + 60.0f,80.0f,660.0f), Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight + 60.0f));
             text.rectTransform.sizeDelta = new Vector2(backGround.sizeDelta.x - 60.0f, backGround.sizeDelta.y);
         }
         if (node is RootGraphNode)
@@ -119,7 +119,7 @@ public class NodeItemProxy : MonoBehaviour {
             image.enabled = false;
             text.text = "我们已经是好友啦，一起来聊天吧！";
             //text.rectTransform.sizeDelta = new Vector2 (text.preferredWidth, Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight + 20.0f));
-            backGround.sizeDelta = new Vector2(Mathf.Max(80.0f, text.preferredWidth + 40.0f), Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight + 40.0f));
+            backGround.sizeDelta = new Vector2(text.preferredWidth + 40.0f, Mathf.Max(avatar.rectTransform.sizeDelta.y, text.preferredHeight + 40.0f));
             text.rectTransform.sizeDelta = new Vector2(backGround.sizeDelta.x - 20.0f, backGround.sizeDelta.y);
         }
 		cachedRectTransform.sizeDelta = backGround.sizeDelta + new Vector2 (0.0f,padding*2.0f);

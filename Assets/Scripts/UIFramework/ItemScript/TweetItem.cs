@@ -1,16 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UIFrameWork;
 
-public class TweetItem : MonoBehaviour {
+public class TweetItem : ItemBaseInconsist {
+	public ImageProxy head;
+	public TextProxy mainBody;
+	public RectTransform root;
+	public ImageProxy[] pic;
+	TweetData data;
+	public override float SetData(object o)
+	{
+		base.SetData(o);
+		data = o as TweetData;
+		HeadSpriteUtils.Instance.SetHead (head,data.userId);
+		float height = 0.0f;
+		height -= root.anchoredPosition.y;
+		height -= mainBody.rectTransform.anchoredPosition.y;
+		mainBody.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,2000.0f);
+		mainBody.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,mainBody.preferredHeight);
+		height += mainBody.rectTransform.sizeDelta.y;
 
-	// Use this for initialization
-	void Start () {
-		
+
+		return height;
 	}
-	
-	// Update is called once per frame
-	void Update () {
+	public void OnClickHead()
+	{
+		UIManager.Instance.Push (new PersonalHomePageContext(data.userId));
+	}
+	public void OnClickDots()
+	{
 		
 	}
 }
