@@ -152,7 +152,7 @@ namespace UIFrameWork
                 item = Instantiate(_detailPrefab);
                 item.cachedRectTransform.SetParent(_content);
                 item.cachedRectTransform.localScale = Vector3.one;
-                item.cachedRectTransform.anchoredPosition = Vector2.zero;  // rtodo
+                item.cachedRectTransform.anchoredPosition = Vector2.zero;
                 _detailList.Add(item);
             }
             _dateCount++;
