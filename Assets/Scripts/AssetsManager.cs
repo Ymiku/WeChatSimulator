@@ -417,6 +417,7 @@ public enum SpendType
     ToSelfBankCard,     //转到自己银行卡
     ToSelfAssets,       //转到自己余额、余额宝
     CanUseAnt,          //使用花呗 rtodo
+    AntRepay,           //花呗还款
 }
 
 public enum RechargeType

@@ -89,10 +89,12 @@ namespace UIFrameWork
                 TransToBankCard();
             else if (_spendType == SpendType.ToSelfAssets)
                 RechargeToSelf();
+            else if (_spendType == SpendType.AntRepay)
+                RepayAnt();
         }
 
         #region 付款事件
-        private void TransToBalance()
+        private void TransToBalance() //转到支付宝账户
         {
             if (_canPayFlag)
             {
@@ -135,7 +137,7 @@ namespace UIFrameWork
                         otherActionData.accountId = GameManager.Instance.curUserId;
                         otherActionData.payway = PaywayType.None;
                         XMLSaver.saveData.AddTransactionData(accountData.accountId, otherActionData);
-                        UIManager.Instance.Push(new TransferSuccContext(_amount, _paywayStr, receiverStr, _context.remarksStr));
+                        UIManager.Instance.Push(new TransferSuccContext(_amount, _paywayStr, receiverStr, _context.transRemark));
                     }
                     else
                     {
@@ -150,7 +152,7 @@ namespace UIFrameWork
             }
         }
 
-        private void TransToBankCard()
+        private void TransToBankCard() //转到银行卡
         {
             if (_canPayFlag)
             {
@@ -181,7 +183,7 @@ namespace UIFrameWork
                         actionData.payway = PaywayType.BankCard;
                         actionData.cardId = data.cardId;
                         AssetsManager.Instance.AddTransactionData(actionData);
-                        UIManager.Instance.Push(new TransferSuccContext(_amount, _paywayStr, receiverStr, _context.remarksStr));
+                        UIManager.Instance.Push(new TransferSuccContext(_amount, _paywayStr, receiverStr, _context.transRemark));
                     }
                     else
                     {
@@ -196,7 +198,7 @@ namespace UIFrameWork
             }
         }
 
-        private void RechargeToSelf()
+        private void RechargeToSelf() //余额充值
         {
             if (_canPayFlag)
             {
@@ -231,6 +233,40 @@ namespace UIFrameWork
             else
             {
                 UIManager.Instance.Push(new SelectPayWayContext(_amount, SpendType.ToSelfAssets));
+            }
+        }
+
+        private void RepayAnt() //花呗还款
+        {
+            if (_canPayFlag)
+            {
+                UIManager.Instance.Push(new InputAndCheckPaywordContext(() =>
+                {
+                    ResultType result = Utils.TryPay(_amount, _payway, AssetsManager.Instance.curUseBankCard.cardId);
+                    if (result == ResultType.Success)
+                    {
+                        string payStr = Utils.FormatPaywayStr(PaywayType.BankCard, _context.cardId);
+                        TransactionSaveData actionData = new TransactionSaveData();
+                        actionData.timeStr = DateTime.Now.ToString();
+                        actionData.streamType = TransactionStreamType.NoChange;
+                        actionData.remarkStr = ContentHelper.Read(ContentHelper.AntRemarkStr);
+                        actionData.money = _amount;
+                        actionData.detailStr = string.Format(ContentHelper.Read(ContentHelper.AntDetailStr)); //rtodo
+                        AssetsManager.Instance.AddTransactionData(actionData);
+                        UIManager.Instance.Pop();
+                        UIManager.Instance.Pop();
+                        //rtodo 还款成功
+                    }
+                    else
+                    {
+                        ShowNotice(ContentHelper.Read(ContentHelper.AssetsNotEnough));
+                        UIManager.Instance.Push(new SelectPayWayContext(_amount, SpendType.TransferToBalance));
+                    }
+                }));
+            }
+            else
+            {
+                UIManager.Instance.Push(new SelectPayWayContext(_amount, SpendType.AntRepay));
             }
         }
         #endregion
@@ -277,7 +313,7 @@ namespace UIFrameWork
         {
             this.accountId = accountId;
             this.amount = amount;
-            this.remarksStr = remarksStr;
+            this.transRemark = remarksStr;
             spendType = SpendType.TransferToBalance;
         }
 
@@ -289,12 +325,12 @@ namespace UIFrameWork
             this.cardId = cardId;
             this.realAmount = realAmount;
             this.serviceAmount = serviceAmount;
-            this.remarksStr = remarksStr;
+            this.transRemark = remarksStr;
             spendType = SpendType.TransferToBankCard;
         }
 
         /// <summary>
-        /// 充值使用
+        /// 充值
         /// </summary>
         public ConfirmPaymentContext(RechargeType rechargeType, double amount) : base(UIType.ConfirmPayment)
         {
@@ -303,15 +339,22 @@ namespace UIFrameWork
             spendType = SpendType.ToSelfAssets;
         }
 
-        //转账类型
-        public SpendType spendType;
+        /// <summary>
+        /// 还花呗
+        /// </summary>
+        public ConfirmPaymentContext(double amount) : base(UIType.ConfirmPayment)
+        {
+            this.amount = amount;
+            spendType = SpendType.AntRepay;
+        }
 
         //通用
-        public string remarksStr;
+        public string transRemark; //转账备注
+        public SpendType spendType;
+        public double amount;
 
         //转到支付宝账户使用
         public int accountId;
-        public double amount;
 
         //转到银行使用
         public string cardId;
