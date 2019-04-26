@@ -72,6 +72,17 @@ namespace UIFrameWork
 			base.Excute ();
 		}
 
+        public void OnClickRepay()
+        {
+            int year = DateTime.Now.Year;
+            if (_curTab == selectTab.nextMonth && DateTime.Now.Month == 12)
+                year += 1;
+            int month = DateTime.Now.Month;
+            if (_curTab == selectTab.nextMonth)
+                month = month == 12 ? 1 : month + 1;
+            UIManager.Instance.Push(new AntRepayContext(GetBillCount(), year, month));
+        }
+
         public void OnChangedIndex(int index)
         {
             if (index == (int)selectTab.thisMonth)

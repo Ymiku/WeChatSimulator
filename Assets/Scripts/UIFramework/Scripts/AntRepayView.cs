@@ -44,7 +44,7 @@ namespace UIFrameWork
 
         public void OnClickPay()
         {
-            UIManager.Instance.Push(new ConfirmPaymentContext(_context.money));
+            UIManager.Instance.Push(new ConfirmPaymentContext(_context.money, _context.year, _context.month));
         }
 	}
 	public class AntRepayContext : BaseContext
@@ -53,10 +53,14 @@ namespace UIFrameWork
 		{
 		}
 
-        public AntRepayContext(double money) : base(UIType.AntRepay)
+        public AntRepayContext(double money, int year, int month) : base(UIType.AntRepay)
         {
             this.money = money;
+            this.year = year;
+            this.month = month;
         }
         public double money;
+        public int year;
+        public int month;
     }
 }
