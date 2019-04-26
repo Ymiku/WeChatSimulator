@@ -39,13 +39,16 @@ namespace UIFrameWork
         public override void Init ()
 		{
 			base.Init ();
-            _curTab = selectTab.thisMonth;
+            _datePrefab.gameObject.SetActive(false);
+            _detailPrefab.gameObject.SetActive(false);
             _toggleGroup.onChangedIndex = OnChangedIndex;
 		}
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter(context);
 			_context = context as MyAntBillContext;
+            _curTab = selectTab.thisMonth;
+            Refresh();
 		}
 
 		public override void OnExit(BaseContext context)
@@ -61,7 +64,9 @@ namespace UIFrameWork
 		public override void OnResume(BaseContext context)
 		{
 			base.OnResume(context);
-		}
+            _curTab = selectTab.thisMonth;
+            Refresh();
+        }
 		public override void Excute ()
 		{
 			base.Excute ();
@@ -90,8 +95,8 @@ namespace UIFrameWork
         {
             double amount = GetBillCount();
             _noRecordRoot.SetActive(_curTab == selectTab.noRecord);
-            _remainRoot.SetActive(amount > 0);
-            _payOffRoot.SetActive(amount == 0);
+            _remainRoot.SetActive(_curTab != selectTab.noRecord && amount > 0);
+            _payOffRoot.SetActive(_curTab != selectTab.noRecord && amount == 0);
             _totalText.gameObject.SetActive(_curTab != selectTab.noRecord);
             _remainText.text = amount.ToString("0.00");
             _totalText.text = string.Format(ContentHelper.Read(ContentHelper.AntMonthCount), GetBillCount());

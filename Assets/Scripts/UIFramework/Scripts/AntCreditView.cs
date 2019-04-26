@@ -49,6 +49,10 @@ namespace UIFrameWork
         {
             UIManager.Instance.Push(new MyQuotaContext());
         }
+        public void OnClickBill()
+        {
+            UIManager.Instance.Push(new MyAntBillContext());
+        }
 	}
 	public class AntCreditContext : BaseContext
 	{
