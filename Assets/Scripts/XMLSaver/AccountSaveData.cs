@@ -58,7 +58,7 @@ public partial class SaveData {
 	AccountSaveData cacheData = new AccountSaveData(){accountId = -1};
 	public AccountSaveData GetAccountData(int id) {
 		if (GameManager.Instance.accountData!=null&&GameManager.Instance.accountData.accountId == id) {
-			return GameManager.Instance.accountData;
+			//return GameManager.Instance.accountData;
 		}
 		if (cacheData.accountId == id)
 			return cacheData;
