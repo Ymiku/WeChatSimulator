@@ -14,6 +14,8 @@ public class TweetItem : ItemBaseInconsist {
 	public TextProxy likeNames;
 	public TextProxy comment;
     public RectTransform commentLine;
+    public RectTransform downPanel;
+    public RectTransform picGroup;
 	TweetData data;
 	public CanvasGroup dotsCanvas;
 	public override float SetData(object o)
@@ -22,14 +24,16 @@ public class TweetItem : ItemBaseInconsist {
 		data = o as TweetData;
 		HeadSpriteUtils.Instance.SetHead (head,data.userId);
 		userName.text = XMLSaver.saveData.GetAccountData (data.userId).GetAnyName();
-		float height = 0.0f;
-		height -= root.anchoredPosition.y;
-		height -= mainBody.rectTransform.anchoredPosition.y;
+		float itemHeight = 0.0f;
+		itemHeight -= root.anchoredPosition.y;
+		itemHeight -= mainBody.rectTransform.anchoredPosition.y;
 		mainBody.text = data.info;
 		mainBody.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,2000.0f);
 		mainBody.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,mainBody.preferredHeight);
-		height += mainBody.rectTransform.sizeDelta.y;
-        height += 26.0f;
+		itemHeight += mainBody.rectTransform.sizeDelta.y;
+        itemHeight += 26.0f;
+
+        picGroup.anchoredPosition = new Vector2(picGroup.anchoredPosition.x,-itemHeight+20.0f);
 		for (int i = 0; i < pic.Length; i++) {
 			pic [i].gameObject.SetActive (false);
 		}
@@ -38,6 +42,8 @@ public class TweetItem : ItemBaseInconsist {
         {
             mainPic.sprite = ZoneManager.Instance.picArray[data.pics[0]].pic;
             mainPic.sizeDelta = Utils.CalSpriteDisplaySize(pic[0].sprite.bounds.size, new Vector2(750.0f, 535.0f));
+            itemHeight += mainPic.sizeDelta.y;
+            itemHeight += 30.0f;
             mainPic.gameObject.SetActive(true);
         }
         else if(data.pics.Length>=2)
@@ -52,31 +58,35 @@ public class TweetItem : ItemBaseInconsist {
             mainPic.gameObject.SetActive(true);
             if (data.pics.Length <= 3)
             {
-                height += 260.0f;
+                itemHeight += 260.0f;
             }
             else
             {
-                height += 530.0f;
+                itemHeight += 530.0f;
             }
-            height += 30.0f;
+            itemHeight += 30.0f;
         }
-		location.text = data.location;
-        height += 70.0f;
 
-        height += 230.0f;
+        location.anchoredPosition = new Vector2(location.anchoredPosition.x, -itemHeight + 20.0f);
+		location.text = data.location;
+        itemHeight += 70.0f;
+
+        downPanel.anchoredPosition = new Vector2(downPanel.anchoredPosition.x, -itemHeight + 20.0f);
+        itemHeight += 230.0f;
 		likeNames.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,2000.0f);
 		likeNames.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,likeNames.preferredHeight);
         float addHeight = (likeNames.rectTransform.sizeDelta.y - 39.1111f);
-        height += addHeight;
+        itemHeight += addHeight;
 
         commentLine.anchoredPosition = new Vector2(commentLine.anchoredPosition.x, -113.62f-addHeight);
         comment.anchoredPosition = new Vector2(comment.anchoredPosition.x, -135.5f-addHeight);
 		comment.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,2000.0f);
 		comment.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,comment.preferredHeight);
-		height += (comment.rectTransform.sizeDelta.y - 39.1111f);
+		itemHeight += (comment.rectTransform.sizeDelta.y - 39.1111f);
 
-        height += 10.0f;
-		return height;
+        itemHeight += 10.0f;
+        height = itemHeight;
+		return itemHeight;
 	}
 	public void OnClickHead()
 	{

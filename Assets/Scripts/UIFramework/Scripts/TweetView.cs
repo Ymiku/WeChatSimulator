@@ -7,6 +7,7 @@ namespace UIFrameWork
 	public class TweetView : AlphaView
 	{
 		public ProceduralImage head;
+        public PoolableScrollViewInconsist scroll;
 		private TweetContext _context;
 
 		public override void Init ()
@@ -39,13 +40,33 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
+        List<TweetData> tweets = new List<TweetData>();
         void Refresh()
         {
 			AccountSaveData data = XMLSaver.saveData.GetAccountData (_context.userId);
 			HeadSpriteUtils.Instance.SetHead (head,_context.userId);
 			List<int> friends = XMLSaver.saveData.GetFriendsLst (_context.userId);
+            tweets.Clear();
+            for (int i = 0; i < friends.Count; i++)
+            {
+                List<TweetData> tweets = null;
+                ZoneManager.Instance.id2Tweet.TryGetValue(i,out tweets);
+                if (tweets == null)
+                    continue;
+                for (int m = 0; m < tweets.Count; m++)
+                {
+                    AddTweet(tweets[m]);
+                }
+            }
+            scroll.SetDatas<TweetData>(tweets);
+            tweets.Clear();
         }
-	}
+        void AddTweet(TweetData data)
+        {
+            tweets.Add(data);
+        }
+    }
+    
 	public class TweetContext : BaseContext
 	{
         public int userId;

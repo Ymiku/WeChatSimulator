@@ -20,7 +20,7 @@ public class PoolableScrollViewInconsist : MonoBehaviour
             return _cachedRectTransform;
         }
     }
-    public ItemBase prefab;
+    public ItemBaseInconsist prefab;
     float prefabHeight;
     Stack<ItemBaseInconsist> _pools = new Stack<ItemBaseInconsist>();
     public List<ItemBaseInconsist> _activeItems = new List<ItemBaseInconsist>();
@@ -104,9 +104,9 @@ public class PoolableScrollViewInconsist : MonoBehaviour
             TryOpen();
             return false;
         }
-        if (_activeItems[0].pos.y + _contextTrans.anchoredPosition.y < 0 && TryAddUp())
+        if (_activeItems[0].anchoredPosition.y + _contextTrans.anchoredPosition.y < 0 && TryAddUp())
             return true;
-        if (_activeItems[_activeItems.Count - 1].pos.y - _activeItems[_activeItems.Count - 1].height + _contextTrans.anchoredPosition.y >
+        if (_activeItems[_activeItems.Count - 1].anchoredPosition.y - _activeItems[_activeItems.Count - 1].height + _contextTrans.anchoredPosition.y >
             -cachedRectTransform.sizeDelta.y && TryAddDown())
             return true;
         if (_activeItems.Count <= 1)
@@ -132,8 +132,8 @@ public class PoolableScrollViewInconsist : MonoBehaviour
         ItemBaseInconsist item = GetItem();
         item.id = downId + 1;
         float h = item.SetData(_datas[downId + 1]);
-        item.cachedRectTransform.anchoredPosition = new Vector2(0.0f, _activeItems[downId].pos.y - _activeItems[downId].height);
-        if (_contextTrans.sizeDelta.y <= -item.pos.y + h * 0.5f)
+        item.cachedRectTransform.anchoredPosition = new Vector2(0.0f, _activeItems[downId].anchoredPosition.y - _activeItems[downId].height);
+        if (_contextTrans.sizeDelta.y <= -item.anchoredPosition.y + h * 0.5f)
         {
             _contextTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, _contextTrans.sizeDelta.y + h);
         }
@@ -149,7 +149,7 @@ public class PoolableScrollViewInconsist : MonoBehaviour
         ItemBaseInconsist item = GetItem();
         item.id = upId - 1;
         float h = item.SetData(_datas[upId - 1]);
-        item.cachedRectTransform.anchoredPosition = new Vector2(0.0f, _activeItems[0].pos.y+h);
+        item.cachedRectTransform.anchoredPosition = new Vector2(0.0f, _activeItems[0].anchoredPosition.y+h);
         _activeItems.Insert(0, item);
         item.gameObject.SetActive(true);
         return true;
@@ -186,9 +186,9 @@ public class PoolableScrollViewInconsist : MonoBehaviour
     {
         float buffer = 100.0f;
         if (_activeItems.IndexOf(node) == 0)
-            if (node.pos.y - node.height + _contextTrans.anchoredPosition.y > 0 + buffer)
+            if (node.anchoredPosition.y - node.height + _contextTrans.anchoredPosition.y > 0 + buffer)
                 return true;
-        if (node.pos.y + _contextTrans.anchoredPosition.y < -cachedRectTransform.sizeDelta.y - buffer)
+        if (node.anchoredPosition.y + _contextTrans.anchoredPosition.y < -cachedRectTransform.sizeDelta.y - buffer)
             return true;
         return false;
     }

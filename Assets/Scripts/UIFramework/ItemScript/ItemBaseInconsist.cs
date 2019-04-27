@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class ItemBaseInconsist : MonoBehaviour
 {
-    public Vector2 pos
+    public Vector2 anchoredPosition
     {
         get
         {
             return cachedRectTransform.anchoredPosition;
+        }
+        set
+        {
+            cachedRectTransform.anchoredPosition = value;
         }
     }
     public float width
@@ -17,6 +21,10 @@ public class ItemBaseInconsist : MonoBehaviour
         {
             return cachedRectTransform.sizeDelta.x;
         }
+        set
+        {
+            cachedRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, value);
+        }
     }
     public float height
     {
@@ -24,6 +32,15 @@ public class ItemBaseInconsist : MonoBehaviour
         {
             return cachedRectTransform.sizeDelta.y;
         }
+        set
+        {
+            cachedRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, value);
+        }
+    }
+    public Vector2 sizeDelta
+    {
+        get { return cachedRectTransform.sizeDelta; }
+        set { cachedRectTransform.sizeDelta = value; }
     }
     RectTransform _cachedRectTransform;
     public RectTransform cachedRectTransform
