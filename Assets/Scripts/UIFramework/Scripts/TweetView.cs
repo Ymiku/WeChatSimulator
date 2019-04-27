@@ -40,7 +40,7 @@ namespace UIFrameWork
 		{
 			base.Excute ();
 		}
-        List<TweetData> tweets = new List<TweetData>();
+        BinaryList<TweetData> tweets = new BinaryList<TweetData>();
         void Refresh()
         {
 			AccountSaveData data = XMLSaver.saveData.GetAccountData (_context.userId);
@@ -58,7 +58,7 @@ namespace UIFrameWork
                     AddTweet(tweets[m]);
                 }
             }
-            scroll.SetDatas<TweetData>(tweets);
+            scroll.SetDatas<TweetData>(tweets.orderedList);
             tweets.Clear();
         }
         void AddTweet(TweetData data)
@@ -72,6 +72,7 @@ namespace UIFrameWork
         public int userId;
 		public TweetContext() : base(UIType.Tweet)
 		{
+
 		}
 	}
 }
