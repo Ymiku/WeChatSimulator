@@ -18,7 +18,8 @@ public class GameManager : UnitySingleton<GameManager>
     {
         get { return (int)_localTime; }
     }
-    public AccountSaveData accountData;
+    [NonSerialized]
+    public AccountSaveData accountData = null;
     public override void Awake()
     {
         base.Awake();
