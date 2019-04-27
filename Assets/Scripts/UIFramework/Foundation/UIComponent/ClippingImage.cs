@@ -8,6 +8,12 @@ public class ClippingImage : ImageProxy
 
     protected override void OnPopulateMesh(VertexHelper vh)
     {
+#if UNITY_EDITOR
+        if (rectTransform.pivot != new Vector2(0.5f, 0.5f))
+        {
+            Debug.LogError("pivot must be 0.5,0.5");
+        }
+#endif
         var r = GetPixelAdjustedRect();
         var v = new Vector4(r.x, r.y, r.x + r.width, r.y + r.height);
         var uv = new Vector4(0, 0, 1, 1);
