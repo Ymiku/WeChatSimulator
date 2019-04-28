@@ -48,15 +48,6 @@ public partial class SaveData
     }
 
     /// <summary>
-    /// 通过唯一名字获取银行卡数据
-    /// </summary>
-    public List<BankCardSaveData> GetBankCardDataList(string name)
-    {
-        int id = 0;  // todo 名字转id
-        return GetBankCardDataList(id);
-    }
-
-    /// <summary>
     /// 通过id获取一张卡的数据
     /// </summary>
     public BankCardSaveData GetBankCardData(string cardId) {
@@ -66,15 +57,6 @@ public partial class SaveData
                 return bankCardList[i];
         }
         return null;
-    }
-
-    /// <summary>
-    /// 通过名字获取一张卡的数据
-    /// </summary>
-    public BankCardSaveData GetBankCardData(string name, string cardId)
-    {
-        int accountId = 0; // todo 名字转id
-        return GetBankCardData(cardId);
     }
 
     /// <summary>

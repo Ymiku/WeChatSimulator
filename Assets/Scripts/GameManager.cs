@@ -37,6 +37,7 @@ public class GameManager : UnitySingleton<GameManager>
         ChatManager.Instance.OnFriendsLstChange();
         AssetsManager.Instance.SaveOfflineTime();
         AssetsManager.Instance.Set(userId);
+        FortuneManager.Instance.Set(userId);
 	}
     void OnEnterGame()
     {

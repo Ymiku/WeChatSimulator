@@ -39,11 +39,6 @@ public partial class SaveData
         return _data;
     }
 
-    public AssetsSaveData GetAssetsData(string name) {
-        int id = 0;  // todo 名字转id
-        return GetAssetsData(id);
-    }
-
     public void AddTransactionData(int id, TransactionSaveData data)
     {
         for (int i = 0; i < assetsDataList.Count; i++)

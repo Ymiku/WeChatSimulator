@@ -64,6 +64,13 @@ namespace static_data
       get { return _money; }
       set { _money = value; }
     }
+    private double _gold;
+    [global::ProtoBuf.ProtoMember(8, IsRequired = true, Name=@"gold", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public double gold
+    {
+      get { return _gold; }
+      set { _gold = value; }
+    }
     private global::ProtoBuf.IExtension extensionObject;
     global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
