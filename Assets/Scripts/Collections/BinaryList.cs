@@ -6,6 +6,9 @@ public class BinaryList<T>
     where T:IComparable<T>
 {
     public bool isDescend = true;//降序
+	public int Count{
+		get{ return list.Count;}
+	}
     public List<T> orderedList{
         get { return list; }
     }
