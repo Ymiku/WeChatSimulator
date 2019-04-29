@@ -1,13 +1,14 @@
-﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
+﻿// 两个需求
+// 一 每个序列帧播放不一样
+// 二 填充另一个原sprite uv
 Shader "UI/SequenceAni"{
 	Properties	{		
 		_MainTex ("Sequence Frame Image", 2D) = "white" {}
 		_Color("Color Tint", Color) = (1, 1, 1, 1) 
-
 		_HorizontalAmount("Horizontal Amount", float) = 4 		
 		_VerticalAmount("Vertical Amount", float) = 4 		
 		_Speed("Speed", Range(1, 100)) = 30	
+		_ImgTex ("Sequence Frame Image", 2D) = "white" {}
 	}
 
 
@@ -36,6 +37,7 @@ Shader "UI/SequenceAni"{
 			{
 				float4 vertex : POSITION;
 				float2 uv : TEXCOORD0;
+
 			};
 
 			struct v2f
@@ -44,10 +46,10 @@ Shader "UI/SequenceAni"{
 				float2 uv_1 : TEXCOORD0;
 				float4 vertex : SV_POSITION;
 				float4 worldPosition : TEXCOORD1;
-
 			};
 
 			sampler2D _MainTex;
+			sampler2D _ImgTex;
 			float4 _MainTex_ST;
 			fixed4 _Color;
 			float _HorizontalAmount;
@@ -67,7 +69,7 @@ Shader "UI/SequenceAni"{
 
 			fixed4 frag (v2f i) : SV_Target
 			{
-				float time = floor(_Time.y * _Speed);
+				float time = floor((_Time.y) * _Speed);
 				float row = floor(time / _HorizontalAmount);
 				float column = time - row * _HorizontalAmount;
 				half2 uv = float2(i.uv.x /_HorizontalAmount, i.uv.y / _VerticalAmount);
@@ -75,8 +77,11 @@ Shader "UI/SequenceAni"{
 				uv.y -= row / _VerticalAmount; 
 				fixed4 col = tex2D(_MainTex, uv);
 				col.rgb *= _Color.rgb;
-				col *= UnityGet2DClipping(i.worldPosition.xy, _ClipRect);
-				return col;
+				fixed4 col_1 = tex2D(_ImgTex, i.uv);
+				col_1.rgb *= _Color.rgb;
+				float step_1 = step(col.a, col_1.a);
+				float step_0 = 1 - step_1;
+				return fixed4(col.r * step_0 + col_1.r * step_1, col.g * step_0 + col_1.g * step_1, col.b * step_0 + col_1.b * step_1, step_0 * col.a + step_1 * col_1.a);
 			}
 			ENDCG
 		}
