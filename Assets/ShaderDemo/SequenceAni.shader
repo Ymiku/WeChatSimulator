@@ -69,6 +69,7 @@ Shader "UI/SequenceAni"{
 
 			fixed4 frag (v2f i) : SV_Target
 			{
+				float weiget = i.worldPosition.x + 0.1 * i.worldPosition.y;  // todo
 				float time = floor((_Time.y) * _Speed);
 				float row = floor(time / _HorizontalAmount);
 				float column = time - row * _HorizontalAmount;
