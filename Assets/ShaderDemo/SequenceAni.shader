@@ -43,7 +43,6 @@ Shader "UI/SequenceAni"{
 			struct v2f
 			{
 				float2 uv : TEXCOORD0;
-				float2 uv_1 : TEXCOORD0;
 				float4 vertex : SV_POSITION;
 				float4 worldPosition : TEXCOORD1;
 			};
@@ -63,7 +62,6 @@ Shader "UI/SequenceAni"{
 				o.worldPosition = v.vertex;
 				o.vertex = UnityObjectToClipPos(v.vertex);
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-				o.uv_1 = v.uv % 1000;
 				return o;
 			}
 
