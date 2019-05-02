@@ -8,11 +8,17 @@ public enum CommentType
     Album = 1,
     Blog = 2,
 }
-public class CommentData
+public class CommentData : IComparable<CommentData>
 {
     public int id;
+    public int targetId;
     public int order;
     public int userId;
     public string info;
     public CommentType commentType;
+
+    public int CompareTo(CommentData t)
+    {
+        return order.CompareTo(t.order);
+    }
 }

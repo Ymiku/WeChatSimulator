@@ -19,16 +19,18 @@ public static class StaticDataComment
             COMMENT a = Info.items[i];
             CommentData comment = new CommentData();
             comment.id = a.comment_id;
+            comment.targetId = 0;
             comment.userId = a.user_id;
             comment.info = a.comment_info;
             comment.order = a.order;
             comment.commentType = (CommentType)a.target_type;
 
             List<CommentData> comments;
-            if (!ZoneManager.Instance.id2Comment.TryGetValue(a.user_id, out comments))
+            int targetUserId = ZoneManager.Instance.GetCommentTargetId(comment);
+            if (!ZoneManager.Instance.id2Comment.TryGetValue(targetUserId, out comments))
             {
                 comments = new List<CommentData>();
-                ZoneManager.Instance.id2Comment.Add(a.user_id, comments);
+                ZoneManager.Instance.id2Comment.Add(targetUserId, comments);
             }
             comments.Add(comment);
         }

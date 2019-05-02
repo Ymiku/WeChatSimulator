@@ -18,7 +18,11 @@ public class TweetItem : ItemBaseInconsist {
     public RectTransform picGroup;
 	TweetData data;
 	public CanvasGroup dotsCanvas;
-	public override float SetData(object o)
+
+    BinaryList<CommentData> comments = new BinaryList<CommentData>();
+    BinaryList<CommentData> likes = new BinaryList<CommentData>();
+    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+    public override float SetData(object o)
 	{
 		base.SetData(o);
 		data = o as TweetData;
@@ -71,13 +75,48 @@ public class TweetItem : ItemBaseInconsist {
 		location.text = data.location;
         itemHeight += 70.0f;
 
+        comments.Clear();
+        likes.Clear();
+        if(ZoneManager.Instance.id2Comment.ContainsKey(data.userId))
+        for (int i = 0; i < ZoneManager.Instance.id2Comment[data.userId].Count; i++)
+        {
+            CommentData commentData = ZoneManager.Instance.id2Comment[data.userId][i];
+            if (commentData.commentType != CommentType.Tweet || commentData.id != data.id)
+                continue;
+            if (string.IsNullOrEmpty(commentData.info))
+            {
+                likes.Add(commentData);
+            }
+            else
+            {
+                comments.Add(commentData);
+            }
+        }
+
         downPanel.anchoredPosition = new Vector2(downPanel.anchoredPosition.x, -itemHeight + 20.0f);
         itemHeight += 230.0f;
+        sb.Length = 0;
+        if (likes.Count != 0)
+            sb.Append(XMLSaver.saveData.GetAccountData(likes[0].userId).GetAnyName());
+        for (int i = 1; i < likes.Count; i++)
+        {
+            sb.Append("，"+XMLSaver.saveData.GetAccountData(likes[0].userId).GetAnyName());
+        }
+        likeNames.text = sb.ToString();
 		likeNames.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,2000.0f);
 		likeNames.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,likeNames.preferredHeight);
         float addHeight = (likeNames.rectTransform.sizeDelta.y - 39.1111f);
         itemHeight += addHeight;
 
+        sb.Length = 0;
+        if (comments.Count != 0)
+            sb.Append(XMLSaver.saveData.GetAccountData(comments[0].userId).GetAnyName()+ "：<color=black>"+comments[0].info+ "</color>");
+        for (int i = 1; i < likes.Count; i++)
+        {
+            sb.Append("\n");
+            sb.Append(XMLSaver.saveData.GetAccountData(comments[i].userId).GetAnyName() + "：<color=black>" + comments[i].info + "</color>");
+        }
+        comment.text = sb.ToString();
         commentLine.anchoredPosition = new Vector2(commentLine.anchoredPosition.x, -113.62f-addHeight);
         comment.anchoredPosition = new Vector2(comment.anchoredPosition.x, -135.5f-addHeight);
 		comment.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,2000.0f);
@@ -86,6 +125,11 @@ public class TweetItem : ItemBaseInconsist {
 
         itemHeight += 10.0f;
         height = itemHeight;
+        dotsCanvas.alpha = 0.0f;
+        dotsCanvas.blocksRaycasts = false;
+        comments.Clear();
+        likes.Clear();
+        sb.Length = 0;
 		return itemHeight;
 	}
 	public void OnClickHead()
@@ -115,4 +159,9 @@ public class TweetItem : ItemBaseInconsist {
 		FrostRX.End (dotsRX);
 		FrostRX.Start(this).Execute(()=>{dotsCanvas.blocksRaycasts=false;}).ExecuteUntil(()=>{dotsCanvas.alpha = Mathf.Lerp(dotsCanvas.alpha,-0.01f,8.0f*Time.deltaTime);},()=>{return dotsCanvas.alpha<=0.0f;}).GetId(dotsRX);
 	}
+    public void OnClickLike()
+    {
+        XMLSaver.saveData.AddComment(CommentType.Tweet,data.id,null);
+        SetData(data);
+    }
 }

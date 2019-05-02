@@ -9,6 +9,10 @@ public class BinaryList<T>
 	public int Count{
 		get{ return list.Count;}
 	}
+    public T this [int i]
+    {
+        get{ return orderedList[i]; }
+    }
     public List<T> orderedList{
         get { return list; }
     }
