@@ -44,6 +44,7 @@ public class GameManager : UnitySingleton<GameManager>
         //load
         XMLSaver.Load();
         StaticDataLoader.Load();
+        ZoneManager.Instance.LoadData();
 		gameObject.AddComponent<HeadSpriteUtils> ();
         _timeStamp = GetTimeStamp();
         _localTime = 0.0f;

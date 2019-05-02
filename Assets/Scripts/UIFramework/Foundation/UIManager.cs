@@ -88,7 +88,14 @@ namespace UIFrameWork
             }
             return _UIDict[uiType];
         }
-
+        public GameObject TryGetSingleUI(UIType uiType)
+        {
+            if (_UIDict.ContainsKey(uiType) == false || _UIDict[uiType] == null)
+            {
+                return null;
+            }
+            return _UIDict[uiType];
+        }
         public void DestroySingleUI(UIType uiType)
         {
             if (!_UIDict.ContainsKey(uiType))

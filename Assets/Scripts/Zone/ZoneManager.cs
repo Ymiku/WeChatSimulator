@@ -11,6 +11,16 @@ public class ZoneManager : Singleton<ZoneManager> {
     public AlbumData albumData;
 	public void LoadData()
 	{
-		
+        for (int i = 0; i < XMLSaver.saveData.comments.Count; i++)
+        {
+            CommentData comment = XMLSaver.saveData.comments[i];
+            List<CommentData> comments;
+            if (!id2Comment.TryGetValue(comment.userId, out comments))
+            {
+                comments = new List<CommentData>();
+                id2Comment.Add(comment.userId, comments);
+            }
+            comments.Insert(0,comment);
+        }
 	}
 }

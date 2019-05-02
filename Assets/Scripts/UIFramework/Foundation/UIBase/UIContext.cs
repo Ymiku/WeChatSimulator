@@ -87,8 +87,9 @@ namespace UIFrameWork
 			if (UIPool.Count <= 2)
 				return;
 			if (UIPool [UIPool.Count - 3] != UIPool [UIPool.Count - 2] && UIPool [UIPool.Count - 3] != UIPool [UIPool.Count - 1]) {
-				BaseView endView = UIManager.Instance.GetSingleUI(UIPool[UIPool.Count-3]).GetComponent<BaseView>();
-				endView.ForceDisable ();
+				BaseView endView = UIManager.Instance.TryGetSingleUI(UIPool[UIPool.Count-3]).GetComponent<BaseView>();
+                if(endView!=null)
+				    endView.ForceDisable ();
 			}
 		}
 		public UIType GetLastContextType()
