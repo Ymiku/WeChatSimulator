@@ -8,6 +8,8 @@ namespace UIFrameWork
 	{
 		public ProceduralImage head;
         public PoolableScrollViewInconsist scroll;
+		public CanvasGroup backCanvas;
+		public RectTransform content;
 		private TweetContext _context;
 
 		public override void Init ()
@@ -39,6 +41,8 @@ namespace UIFrameWork
 		public override void Excute ()
 		{
 			base.Excute ();
+			backCanvas.alpha = (content.anchoredPosition.y - 720.0f) / 120.0f;
+			backCanvas.blocksRaycasts = (backCanvas.alpha >= 0.0f);
 		}
         BinaryList<TweetData> tweets = new BinaryList<TweetData>();
         void Refresh()
