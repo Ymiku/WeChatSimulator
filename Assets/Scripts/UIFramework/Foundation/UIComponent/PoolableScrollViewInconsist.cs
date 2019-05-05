@@ -73,15 +73,12 @@ public class PoolableScrollViewInconsist : MonoBehaviour
     private void Refresh(List<object> datas)
     {
         _datas = datas;
-        _contextTrans.sizeDelta = new Vector2(_contextTrans.sizeDelta.x, constHeight);
 		int count = Mathf.Min (_activeItems.Count, _datas.Count);
 		for (int i = 0; i < count; i++)
 		{
 			_activeItems [i].SetData (_datas[_activeItems[i].id]);
 		}
-		if (count <= 0)
-			count = 1;
-		for (int i = count-1; i < _activeItems.Count; i++) {
+		for (int i = count; i < _activeItems.Count; i++) {
 			Pool (_activeItems[i]);
 		}
     }
