@@ -10,10 +10,11 @@ public class TweetItem : ItemBaseInconsist {
 	public RectTransform root;
     public ImageProxy mainPic;
 	public ImageProxy[] pic;
-	public TextProxy location;
-	public TextProxy likeNames;
-	public TextProxy comment;
-    public RectTransform commentLine;
+	public TextProxy locationText;
+	public TextProxy likesText;
+	public TextProxy commentText;
+	public RectTransform heartIcon;
+    public RectTransform downPanelLine;
     public RectTransform downPanel;
     public RectTransform picGroup;
 	TweetData data;
@@ -71,8 +72,8 @@ public class TweetItem : ItemBaseInconsist {
             itemHeight += 30.0f;
         }
 
-        location.anchoredPosition = new Vector2(location.anchoredPosition.x, -itemHeight + 20.0f);
-		location.text = data.location;
+        locationText.anchoredPosition = new Vector2(locationText.anchoredPosition.x, -itemHeight + 20.0f);
+		locationText.text = data.location;
         itemHeight += 70.0f;
 
         comments.Clear();
@@ -93,21 +94,41 @@ public class TweetItem : ItemBaseInconsist {
             }
         }
 
+		if (likes.Count == 0 && comments.Count == 0) {
+			downPanel.gameObject.SetActive (false);
+			itemHeight += 10.0f;
+			height = itemHeight;
+			dotsCanvas.alpha = 0.0f;
+			dotsCanvas.blocksRaycasts = false;
+			comments.Clear();
+			likes.Clear();
+			sb.Length = 0;
+			return itemHeight;
+		}
+		downPanel.gameObject.SetActive (true);
         downPanel.anchoredPosition = new Vector2(downPanel.anchoredPosition.x, -itemHeight + 20.0f);
-        itemHeight += 230.0f;
         sb.Length = 0;
+
+		float addHeight = 0.0f;
+		addHeight += 25.0f;
         if (likes.Count != 0)
             sb.Append(XMLSaver.saveData.GetAccountData(likes[0].userId).GetAnyName());
         for (int i = 1; i < likes.Count; i++)
         {
             sb.Append("，"+XMLSaver.saveData.GetAccountData(likes[0].userId).GetAnyName());
         }
-        likeNames.text = sb.ToString();
-		likeNames.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,2000.0f);
-		likeNames.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,likeNames.preferredHeight);
-        float addHeight = (likeNames.rectTransform.sizeDelta.y - 39.1111f);
-        itemHeight += addHeight;
-
+		if (likes.Count == 0) {
+			likesText.gameObject.SetActive (false);
+			heartIcon.gameObject.SetActive (false);
+		} else {
+			likesText.text = sb.ToString();
+			//likeNames.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,2000.0f);
+			likesText.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,likesText.preferredHeight);
+			likesText.gameObject.SetActive (true);
+			heartIcon.gameObject.SetActive (true);
+			addHeight += (90.0f-40.0f+likesText.height);
+		}
+        
         sb.Length = 0;
         if (comments.Count != 0)
             sb.Append(XMLSaver.saveData.GetAccountData(comments[0].userId).GetAnyName()+ "：<color=black>"+comments[0].info+ "</color>");
@@ -116,12 +137,19 @@ public class TweetItem : ItemBaseInconsist {
             sb.Append("\n");
             sb.Append(XMLSaver.saveData.GetAccountData(comments[i].userId).GetAnyName() + "：<color=black>" + comments[i].info + "</color>");
         }
-        comment.text = sb.ToString();
-        commentLine.anchoredPosition = new Vector2(commentLine.anchoredPosition.x, -113.62f-addHeight);
-        comment.anchoredPosition = new Vector2(comment.anchoredPosition.x, -135.5f-addHeight);
-		comment.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,2000.0f);
-		comment.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,comment.preferredHeight);
-		itemHeight += (comment.rectTransform.sizeDelta.y - 39.1111f);
+		if (comments.Count == 0) {
+			commentText.gameObject.SetActive (false);
+		} else {
+			commentText.text = sb.ToString();
+			commentText.anchoredPosition = new Vector2(commentText.anchoredPosition.x, - addHeight -20.0f);
+			//comment.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,2000.0f);
+			commentText.rectTransform.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,commentText.preferredHeight);
+			commentText.gameObject.SetActive (true);
+			addHeight+=(40.0f+commentText.height);
+		}
+        
+		downPanel.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,addHeight);
+		itemHeight += addHeight;
 
         itemHeight += 10.0f;
         height = itemHeight;
@@ -152,12 +180,12 @@ public class TweetItem : ItemBaseInconsist {
 	public void OnOpenDots()
 	{
 		FrostRX.End (dotsRX);
-		FrostRX.Start(this).Execute(()=>{dotsCanvas.blocksRaycasts=true;}).ExecuteUntil(()=>{dotsCanvas.alpha = Mathf.Lerp(dotsCanvas.alpha,1.01f,8.0f*Time.deltaTime);},()=>{return dotsCanvas.alpha>=1.0f;}).GetId(dotsRX);
+		FrostRX.Start(this).Execute(()=>{dotsCanvas.blocksRaycasts=true;}).ExecuteUntil(()=>{dotsCanvas.alpha = Mathf.Lerp(dotsCanvas.alpha,1.01f,16.0f*Time.deltaTime);},()=>{return dotsCanvas.alpha>=1.0f;}).GetId(dotsRX);
 	}
 	public void OnCloseDots()
 	{
 		FrostRX.End (dotsRX);
-		FrostRX.Start(this).Execute(()=>{dotsCanvas.blocksRaycasts=false;}).ExecuteUntil(()=>{dotsCanvas.alpha = Mathf.Lerp(dotsCanvas.alpha,-0.01f,8.0f*Time.deltaTime);},()=>{return dotsCanvas.alpha<=0.0f;}).GetId(dotsRX);
+		FrostRX.Start(this).Execute(()=>{dotsCanvas.blocksRaycasts=false;}).ExecuteUntil(()=>{dotsCanvas.alpha = Mathf.Lerp(dotsCanvas.alpha,-0.01f,16.0f*Time.deltaTime);},()=>{return dotsCanvas.alpha<=0.0f;}).GetId(dotsRX);
 	}
     public void OnClickLike()
     {
