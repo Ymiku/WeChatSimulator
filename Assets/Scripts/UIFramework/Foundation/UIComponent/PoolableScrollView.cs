@@ -40,6 +40,8 @@ public class PoolableScrollView : MonoBehaviour
 	}
 	public void Reset()
 	{
+		if (!hasInit)
+			return;
 		while (_activeItems.Count!=0) {
 			Pool (_activeItems[0]);
 		}
@@ -66,9 +68,15 @@ public class PoolableScrollView : MonoBehaviour
 	{
 		_datas = datas;
 		_contextTrans.sizeDelta = new Vector2(_contextTrans.sizeDelta.x, prefabHeight * datas.Count+constHeight);
-		for (int i = 0; i < _activeItems.Count; i++)
+		int count = Mathf.Min (_activeItems.Count, _datas.Count);
+		for (int i = 0; i < count; i++)
 		{
 			_activeItems [i].SetData (_datas[_activeItems[i].id]);
+		}
+		if (count <= 0)
+			count = 1;
+		for (int i = count-1; i < _activeItems.Count; i++) {
+			Pool (_activeItems[i]);
 		}
 	}
     void TryOpen()
