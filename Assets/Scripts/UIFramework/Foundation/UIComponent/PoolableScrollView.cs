@@ -64,7 +64,15 @@ public class PoolableScrollView : MonoBehaviour
         _contextTrans.anchoredPosition = Vector2.zero;
         _contextTrans.sizeDelta = new Vector2(_contextTrans.sizeDelta.x, prefabHeight * datas.Count+constHeight);
     }
-	private void Refresh(List<object> datas)
+    public void Refresh()
+    {
+        int count = _activeItems.Count;
+        for (int i = 0; i < count; i++)
+        {
+            _activeItems[i].Refresh();
+        }
+    }
+    private void Refresh(List<object> datas)
 	{
 		_datas = datas;
 		int count = Mathf.Min (_activeItems.Count, _datas.Count);

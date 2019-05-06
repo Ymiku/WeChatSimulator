@@ -14,16 +14,43 @@ public class ZoneManager : Singleton<ZoneManager> {
         for (int i = 0; i < XMLSaver.saveData.comments.Count; i++)
         {
             CommentData comment = XMLSaver.saveData.comments[i];
-            int targetId = GetCommentTargetId(comment);
+            int targetUserId = GetCommentTargetId(comment);
             List<CommentData> comments;
-            if (!id2Comment.TryGetValue(targetId, out comments))
+            if (!id2Comment.TryGetValue(targetUserId, out comments))
             {
                 comments = new List<CommentData>();
-                id2Comment.Add(targetId, comments);
+                id2Comment.Add(targetUserId, comments);
             }
             comments.Insert(0,comment);
         }
 	}
+    public void AddComment(CommentType type, int targetId, string context)
+    {
+        List<CommentData> comments = XMLSaver.saveData.comments;
+        if (context == null)
+        {
+            for (int i = 0; i < comments.Count; i++)
+            {
+                if (comments[i].targetId == targetId && comments[i].commentType == type && comments[i].userId == GameManager.Instance.curUserId && comments[i].info == null)
+                    return;
+            }
+        }
+        CommentData data = new CommentData();
+        data.userId = GameManager.Instance.curUserId;
+        data.targetId = targetId;
+        data.commentType = type;
+        data.info = context;
+        data.order = int.MaxValue;
+        comments.Add(data);
+        List<CommentData> datas = null;
+        int targetUserId = GetCommentTargetId(data);
+        if (!ZoneManager.Instance.id2Comment.TryGetValue(targetUserId, out datas))
+        {
+            datas = new List<CommentData>();
+            ZoneManager.Instance.id2Comment.Add(targetUserId, datas);
+        }
+        datas.Add(data);
+    }
     public int GetCommentTargetId(CommentData comment)
     {
         switch (comment.commentType)

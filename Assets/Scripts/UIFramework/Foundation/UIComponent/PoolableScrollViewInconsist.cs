@@ -70,6 +70,21 @@ public class PoolableScrollViewInconsist : MonoBehaviour
         _contextTrans.anchoredPosition = Vector2.zero;
         _contextTrans.sizeDelta = new Vector2(_contextTrans.sizeDelta.x, constHeight);
     }
+    public void Refresh()
+    {
+        int count = _activeItems.Count;
+        for (int i = 0; i < count; i++)
+        {
+            float lastHeight = _activeItems[i].height;
+            float height = _activeItems[i].Refresh();
+            height -= lastHeight;
+            for (int m = i+1; m < count; m++)
+            {
+                _activeItems[m].anchoredPosition = new Vector2(_activeItems[m].anchoredPosition.x,_activeItems[m].anchoredPosition.y-height);
+            }
+            _contextTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,_contextTrans.sizeDelta.y+height);
+        }
+    }
     private void Refresh(List<object> datas)
     {
         _datas = datas;

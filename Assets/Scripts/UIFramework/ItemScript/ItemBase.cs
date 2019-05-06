@@ -57,13 +57,19 @@ public class ItemBase : MonoBehaviour
 
     public int id;
     private bool _initFlag;
+    object dataCache;
     public virtual void SetData(object o)
     {
+        dataCache = o;
         if (!_initFlag)
         {
             Init();
             _initFlag = true;
         }
+    }
+    public virtual void Refresh()
+    {
+        SetData(dataCache);
     }
     public virtual void Init()
     {

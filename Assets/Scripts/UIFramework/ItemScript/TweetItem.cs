@@ -82,9 +82,9 @@ public class TweetItem : ItemBaseInconsist {
         for (int i = 0; i < ZoneManager.Instance.id2Comment[data.userId].Count; i++)
         {
             CommentData commentData = ZoneManager.Instance.id2Comment[data.userId][i];
-            if (commentData.commentType != CommentType.Tweet || commentData.id != data.id)
+            if (commentData.commentType != CommentType.Tweet || commentData.targetId!= data.id)
                 continue;
-            if (string.IsNullOrEmpty(commentData.info))
+            if (commentData.info==null)
             {
                 likes.Add(commentData);
             }
@@ -105,6 +105,7 @@ public class TweetItem : ItemBaseInconsist {
 			sb.Length = 0;
 			return itemHeight;
 		}
+        downPanelLine.gameObject.SetActive(likes.Count != 0 && comments.Count != 0);
 		downPanel.gameObject.SetActive (true);
         downPanel.anchoredPosition = new Vector2(downPanel.anchoredPosition.x, -itemHeight + 20.0f);
         sb.Length = 0;
@@ -132,7 +133,7 @@ public class TweetItem : ItemBaseInconsist {
         sb.Length = 0;
         if (comments.Count != 0)
             sb.Append(XMLSaver.saveData.GetAccountData(comments[0].userId).GetAnyName()+ "：<color=black>"+comments[0].info+ "</color>");
-        for (int i = 1; i < likes.Count; i++)
+        for (int i = 1; i < comments.Count; i++)
         {
             sb.Append("\n");
             sb.Append(XMLSaver.saveData.GetAccountData(comments[i].userId).GetAnyName() + "：<color=black>" + comments[i].info + "</color>");
@@ -147,7 +148,7 @@ public class TweetItem : ItemBaseInconsist {
 			commentText.gameObject.SetActive (true);
 			addHeight+=(40.0f+commentText.height);
 		}
-        
+        addHeight += 25.0f;
 		downPanel.SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical,addHeight);
 		itemHeight += addHeight;
 
@@ -189,7 +190,12 @@ public class TweetItem : ItemBaseInconsist {
 	}
     public void OnClickLike()
     {
-        XMLSaver.saveData.AddComment(CommentType.Tweet,data.id,null);
-        SetData(data);
+        ZoneManager.Instance.AddComment(CommentType.Tweet,data.id,null);
+        GetComponentInParent<PoolableScrollViewInconsist>().Refresh();
+    }
+    public void OnClickComment()
+    {
+        ZoneManager.Instance.AddComment(CommentType.Tweet, data.id, "我要评论");
+        GetComponentInParent<PoolableScrollViewInconsist>().Refresh();
     }
 }

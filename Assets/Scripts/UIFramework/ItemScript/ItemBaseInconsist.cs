@@ -57,14 +57,20 @@ public class ItemBaseInconsist : MonoBehaviour
 
     public int id;
     private bool _initFlag;
+    object dataCache;
     public virtual float SetData(object o)
     {
+        dataCache = o;
         if (!_initFlag)
         {
             Init();
             _initFlag = true;
         }
         return 0.0f;
+    }
+    public virtual float Refresh()
+    {
+        return SetData(dataCache);
     }
     public virtual void Init()
     {
