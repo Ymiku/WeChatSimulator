@@ -13,6 +13,7 @@ public interface IRXModel
     IRXModel Execute(FrostRX.RXFunc f);
     IRXModel ExecuteContinuous(FrostRX.RXFunc f, float t);
     IRXModel GoToBegin();
+	IRXModel AlphaFade (Object graphics,float targetAlpha,float speed);
     void GetId(RXIndex id);
 }
 public class RXModelBase:IRXModel
@@ -94,6 +95,12 @@ public class RXModelBase:IRXModel
         model.SetRxId(rxId);
         return model;
     }
+	public IRXModel AlphaFade (Object graphics,float targetAlpha,float speed)
+	{
+		model = new RXAlphaFadeModel(graphics,targetAlpha,speed);
+		model.SetRxId(rxId);
+		return model;
+	}
 }
 public class RXRoot : RXModelBase
 {
@@ -257,6 +264,46 @@ public class RXWaitModel : RXModelBase
 		{
 			TryNext();
 			time = waitTime;
+		}
+	}
+}
+public class RXAlphaFadeModel : RXModelBase
+{
+	UnityEngine.UI.Image image;
+	CanvasGroup canvasGroup;
+	float targetAlpha;
+	float targetAlpha2;
+	float speed;
+	public RXAlphaFadeModel(Object graphics,float targetAlpha,float speed)
+	{
+		image = null;
+		canvasGroup = null;
+		if (graphics is UnityEngine.UI.Image)
+			image = graphics as UnityEngine.UI.Image;
+		else if (graphics is CanvasGroup)
+			canvasGroup = graphics as CanvasGroup;
+		this.targetAlpha = targetAlpha;
+		if (image != null) {
+			targetAlpha2 = targetAlpha + (targetAlpha >= image.color.a ? 0.02f : -0.02f);
+		} else if (canvasGroup != null) {
+			targetAlpha2 = targetAlpha + (targetAlpha >= canvasGroup.alpha ? 0.02f : -0.02f);
+		}
+		this.speed = speed;
+	}
+	public sealed override void Execute()
+	{
+		if (image != null) {
+			image.color = new Color (image.color.r,image.color.g,image.color.b,Mathf.Lerp(image.color.a,targetAlpha2,speed*Time.deltaTime));
+			if (targetAlpha2>=targetAlpha?image.color.a>=targetAlpha:image.color.a<=targetAlpha) {
+				image.color = new Color (image.color.r, image.color.g, image.color.b, targetAlpha);
+				TryNext ();
+			}
+		} else if (canvasGroup != null) {
+			canvasGroup.alpha = Mathf.Lerp(canvasGroup.alpha,targetAlpha2,speed*Time.deltaTime);
+			if (targetAlpha2>=targetAlpha?canvasGroup.alpha>=targetAlpha:canvasGroup.alpha<=targetAlpha) {
+				canvasGroup.alpha = targetAlpha;
+				TryNext ();
+			}
 		}
 	}
 }

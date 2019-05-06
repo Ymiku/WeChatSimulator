@@ -53,13 +53,13 @@ namespace UIFrameWork
             tweets.Clear();
             for (int i = 0; i < friends.Count; i++)
             {
-                List<TweetData> tweets = null;
-                ZoneManager.Instance.id2Tweet.TryGetValue(i,out tweets);
-                if (tweets == null)
+                List<TweetData> ftweets = null;
+                ZoneManager.Instance.id2Tweet.TryGetValue(i,out ftweets);
+                if (ftweets == null)
                     continue;
-                for (int m = 0; m < tweets.Count; m++)
+                for (int m = 0; m < ftweets.Count; m++)
                 {
-                    AddTweet(tweets[m]);
+                    AddTweet(ftweets[m]);
                 }
             }
             scroll.SetDatas<TweetData>(tweets.orderedList);

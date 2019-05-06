@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 public class GameManager : UnitySingleton<GameManager>
 {
     long _timeStamp;
@@ -10,6 +11,7 @@ public class GameManager : UnitySingleton<GameManager>
     DateTime _curTime;
 	public int curUserId;
 	public string curEnName;
+	Image loading;
     public long time
     {
         get { return _timeStamp + (long)_localTime; }
@@ -24,6 +26,7 @@ public class GameManager : UnitySingleton<GameManager>
     {
         base.Awake();
         curUserId = -1;
+		loading = transform.Find ("AlwaysFront/Loading").GetComponent<Image>();
         OnEnterGame();
     }
 	public void SetUser(int userId)
@@ -50,16 +53,24 @@ public class GameManager : UnitySingleton<GameManager>
         _localTime = 0.0f;
         _lastSecond = false;
         _curTime = DateTime.Now;
+		FrostRX.Start (this).
+		Execute(()=>{loading.gameObject.SetActive(false);}).
+		Wait(4.0f).
+		Execute(()=>{loading.gameObject.SetActive(true);loading.SetAlpha(0.0f);}).
+		AlphaFade(loading,1.0f,8.0f).
+		ExecuteAfterTime (() => {OnSaveData ();}, 2.0f).
+		Wait(2.0f).
+		AlphaFade(loading,0.0f,8.0f).
+		GoToBegin ();
     }
 	void OnDestroy()
 	{
-		OnExitGame ();
+		
 	}
-    void OnExitGame()
+    void OnSaveData()
     {
         AssetsManager.Instance.SaveOfflineTime();
         XMLSaver.Save();
-		XMLSaver.saveData = null;
     }
     void Update()
     {
