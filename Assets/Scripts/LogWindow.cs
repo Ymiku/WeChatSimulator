@@ -8,7 +8,7 @@ public class LogWindow : MonoBehaviour {
 	StringBuilder sb = new StringBuilder();
 	public GameObject logWin;
 	public Text log;
-	public Text button;
+	public ImageProxy button;
 	public class FLog
 	{
 		public string fcondition; 
@@ -32,7 +32,7 @@ public class LogWindow : MonoBehaviour {
 	public void OnClick()
 	{
 		logWin.SetActive (!logWin.activeSelf);
-		button.text = "LOG";
+		button.color = Color.white;
 	}
 	void Update()
 	{
@@ -42,7 +42,7 @@ public class LogWindow : MonoBehaviour {
 			if (logs[i].ftype != LogType.Error) {
 				sb.Append (logs[i].fcondition + logs[i].fstackTrace + "\n");
 			} else {
-				button.text = "<color=red>ERROR</color>";
+				button.color = Color.red;
 				sb.Append ("<color=red>"+logs[i].fcondition+"</color>" + logs[i].fstackTrace + "\n");
 			}
 
