@@ -24,12 +24,16 @@ namespace Compiler
 		{
 			Grammar grammar = statement.GetGrammar ();
 			IDEItem item;
+            int paramIndex = 0;
 			for (int i = 0; i < grammar.Count; i++) {
 				if (grammar [i].StartsWith ("*Param:")) {
 					item = GetPrefab (paramGo);
-					item.SetText (grammar[i]);
+                    item.id = paramIndex;
+                    item.SetData(statement.GetParam(paramIndex));
+                    paramIndex++;
 				} else {
 					item = GetPrefab (statementGo);
+                    item.SetData(null);
 					item.SetText (grammar[i]);
 				}
 				item.gameObject.SetActive (true);

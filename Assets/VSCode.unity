@@ -1041,9 +1041,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 0.6000004}
+  m_AnchoredPosition: {x: 10, y: 0.5999756}
   m_SizeDelta: {x: 180, y: 45}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1114025880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1214,6 +1214,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -1592,7 +1593,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1788531566}
   - component: {fileID: 1788531568}
-  - component: {fileID: 1788531571}
   - component: {fileID: 1788531570}
   - component: {fileID: 1788531569}
   m_Layer: 5
@@ -1663,19 +1663,6 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
---- !u!114 &1788531571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1788531565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cce528d153c64854cb1c118fc5408d4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statementGo: {fileID: 1760947883}
-  paramGo: {fileID: 365648799}
 --- !u!1 &1948054609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,6 +1673,7 @@ GameObject:
   - component: {fileID: 1948054610}
   - component: {fileID: 1948054612}
   - component: {fileID: 1948054611}
+  - component: {fileID: 1948054613}
   m_Layer: 5
   m_Name: Panel (1)
   m_TagString: Untagged
@@ -1746,6 +1734,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1948054609}
+--- !u!114 &1948054613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1948054609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cce528d153c64854cb1c118fc5408d4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statementGo: {fileID: 1760947883}
+  paramGo: {fileID: 365648799}
 --- !u!1 &2097478033
 GameObject:
   m_ObjectHideFlags: 0
