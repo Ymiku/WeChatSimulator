@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 namespace Compiler
 {
-	public enum Attribute
+	public enum VarType
 	{
 		Void,
 		Int,

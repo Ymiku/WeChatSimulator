@@ -7,9 +7,9 @@ namespace Compiler
 		protected override void GenerateGrammar ()
 		{
 			grammar.Push ("if(");
-			grammar.Push(Attribute.Bool);
+			grammar.Push(VarType.Bool);
 			grammar.Push("){");
-			grammar.Push (Attribute.Void);
+			grammar.Push (VarType.Void);
 			grammar.Push("}");
 		}
 		public override Parameter Execute ()

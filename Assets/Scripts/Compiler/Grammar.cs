@@ -10,7 +10,7 @@ namespace Compiler
 		{
 			grammars.Add (s);
 		}
-		public void Push(Attribute attr)
+		public void Push(VarType attr)
 		{
 			grammars.Add ("Attr:"+(int)attr);
 		}
