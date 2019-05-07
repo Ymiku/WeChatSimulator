@@ -13,6 +13,10 @@ namespace Compiler
 		protected List<Parameter> _params = new List<Parameter>();
 		protected Grammar grammar = new Grammar();
 		protected System.Text.StringBuilder sb = new System.Text.StringBuilder();
+		public StatementBase()
+		{
+			GenerateGrammar ();
+		}
 		protected virtual void GenerateGrammar()
 		{
 		}
