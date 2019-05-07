@@ -11,6 +11,8 @@ namespace Compiler
 			grammar.Push("){");
 			grammar.Push (VarType.Void);
 			grammar.Push("}");
+			SetParam (0,new Parameter().Set(true));
+			SetParam (0,new Parameter().Set(null));
 		}
 		public override Parameter Execute ()
 		{

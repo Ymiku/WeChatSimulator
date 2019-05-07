@@ -12,6 +12,7 @@ namespace Compiler
 	public class StatementBase {
 		protected List<Parameter> _params = new List<Parameter>();
 		protected Grammar grammar = new Grammar();
+		protected System.Text.StringBuilder sb = new System.Text.StringBuilder();
 		protected virtual void GenerateGrammar()
 		{
 		}
@@ -33,6 +34,20 @@ namespace Compiler
 		public Parameter GetParam(int i)
 		{
 			return _params [i];			
+		}
+		public override string ToString ()
+		{
+			int paramIndex = 0;
+			sb.Length = 0;
+			for (int i = 0; i < grammar.Count; i++) {
+				if (grammar [i].StartsWith ("*Param:")) {
+					sb.Append(_params[paramIndex].ToString());
+					paramIndex++;
+				} else {
+					sb.Append (grammar[i]);
+				}
+			}
+			return sb.ToString ();
 		}
 	}
 }

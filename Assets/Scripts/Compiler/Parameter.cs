@@ -9,25 +9,29 @@ namespace Compiler
 		private bool _bool;
 		private int _int;
 		private float _float;
-		public void Set (StatementBase statement)
+		public Parameter Set (StatementBase statement)
 		{
 			paramType = VarType.Void;
 			_statement = statement;
+			return this;
 		}
-		public void Set (bool b)
+		public Parameter Set (bool b)
 		{
 			paramType = VarType.Bool;
 			_bool = b;
+			return this;
 		}
-		public void Set (int i)
+		public Parameter Set (int i)
 		{
 			paramType = VarType.Int;
 			_int = i;
+			return this;
 		}
-		public void Set (float f)
+		public Parameter Set (float f)
 		{
 			paramType = VarType.Float;
 			_float = f;
+			return this;
 		}
 		public static implicit operator StatementBase(Parameter p)
 		{
@@ -50,6 +54,21 @@ namespace Compiler
 			if (p.paramType == VarType.Void)
 				return p._statement.Execute ();
 			return p._float;
+		}
+		public override string ToString ()
+		{
+			if (_statement != null)
+				return _statement.ToString ();
+			switch (paramType) {
+			case VarType.Bool:
+				return _bool.ToString ();
+			case VarType.Float:
+				return _float.ToString ();
+			case VarType.Int:
+				return _int.ToString ();
+			default:
+				return "";
+			}
 		}
 	}
 }
