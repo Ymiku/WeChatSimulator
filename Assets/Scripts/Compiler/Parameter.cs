@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Compiler
 {
-	public class Parameter {
-		private VarType paramType;
+	public struct Parameter:IExecuteable {
+		public static Parameter Empty = new Parameter();
+		public VarType paramType;
 		private StatementBase _statement;
 		private bool _bool;
 		private int _int;
 		private float _float;
+		public Parameter Execute()
+		{
+			if (_statement != null)
+				return _statement.Execute ();
+			return this;
+		}
 		public Parameter Set (StatementBase statement)
 		{
 			paramType = VarType.Void;

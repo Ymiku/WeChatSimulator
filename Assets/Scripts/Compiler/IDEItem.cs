@@ -6,6 +6,7 @@ namespace Compiler
 {
     public class IDEItem : ItemBase
     {
+		public Dropdown dropDown;
         public TextProxy text;
         Parameter param;
         void Awake()
@@ -13,18 +14,20 @@ namespace Compiler
             if (GetComponent<Dropdown>() != null)
                 GetComponent<Dropdown>().onValueChanged.AddListener(OnValueChange);
         }
-        public override void SetData(object o)
+        public void SetData(Parameter o)
         {
-            base.SetData(o);
-            if (o == null)
-            {
-                param = null;
-                return;
-            }
-            param = o as Parameter;
+            param = o;
             text.text = param.ToString();
             text.width = text.preferredWidth;
             width = text.width + 40.0f;
+			//dropDown.ClearOptions ();
+			List<System.Type> options = HackCode.Instance.GetTypesByReturnValue (param.paramType);
+			for (int i = 0; i < options.Count; i++) {
+				Dropdown.OptionData d = new Dropdown.OptionData ();
+				d.text = options [i].ToString ();
+				//dropDown.AddOptions (options[i].ToString());
+			}
+
         }
         public void SetText(string s)
         {
@@ -35,5 +38,9 @@ namespace Compiler
         {
             Debug.Log(i);
         }
+		public void StepIn()
+		{
+			GetComponentInParent<HackCode> ().StepIn (id);
+		}
     }
 }

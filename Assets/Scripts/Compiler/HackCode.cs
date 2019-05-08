@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Linq;
+using System.Reflection;
 namespace Compiler
 {
 	public class HackCode : UnitySingleton<HackCode> {
@@ -10,15 +13,20 @@ namespace Compiler
 		public GameObject statementGo;
 		public GameObject paramGo;
 		public List<StatementBase> program = new List<StatementBase>();
+		Stack<StatementBase> stateStack = new Stack<StatementBase> ();
 		int curLine;
 		public override void SingletonInit ()
 		{
 			base.SingletonInit ();
+			statementsTypeArray = typeof(StatementBase).Assembly.GetTypes ().Where (type => type.IsSubclassOf (typeof(StatementBase)) && !type.IsAbstract).ToArray<Type> ();
 			statementGo.SetActive (false);
 			paramGo.SetActive (false);
 			program.Add (new StatementEntry());
-			program.Add (new StatementIf());
-			Show (program[1]);
+			program.Add (new StatementFor());
+			stateStack.Clear ();
+			stateStack.Push (program[1]);
+			Show (stateStack.Peek());
+			GetTypesByReturnValue (VarType.Void);
 		}
 		public void Show(StatementBase statement)
 		{
@@ -47,6 +55,17 @@ namespace Compiler
 		{
 			
 		}
+		public List<Type> GetTypesByReturnValue(VarType t)
+		{
+			List<Type> types = new List<Type> ();
+			for (int i = 0; i < statementsTypeArray.Length; i++) {
+				MethodInfo method = statementsTypeArray [i].GetMethod ("GetReturnValueType");
+				VarType t2 = (VarType)(method.Invoke(null,null));
+				if(t2==t)
+					types.Add (statementsTypeArray[i]);
+			}
+			return types;
+		}
 		IDEItem GetPrefab(GameObject go)
 		{
 			GameObject g = GameObject.Instantiate (go);
@@ -54,6 +73,16 @@ namespace Compiler
 			g.transform.localScale = Vector3.one;
 			g.transform.SetAsLastSibling ();
 			return g.GetComponent<IDEItem> ();
+		}
+		public void StepIn(int index)
+		{
+			StatementBase state = stateStack.Peek ();
+			stateStack.Push (state.GetParam(index));
+			Show (stateStack.Peek());
+		}
+		public void SetParam(int i,Parameter p)
+		{
+			stateStack.Peek ().SetParam (i,p);
 		}
 	}
 }

@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 namespace Compiler
 {
+	public interface IExecuteable
+	{
+		Parameter Execute ();
+	}
 	public enum VarType
 	{
 		Void,
@@ -9,10 +13,11 @@ namespace Compiler
 		Float,
 		Bool
 	}
-	public class StatementBase {
+	public class StatementBase :IExecuteable{
 		protected List<Parameter> _params = new List<Parameter>();
 		protected Grammar grammar = new Grammar();
 		protected System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
 		public StatementBase()
 		{
 			GenerateGrammar ();
@@ -31,7 +36,7 @@ namespace Compiler
 		public void SetParam(int attrId,Parameter param)
 		{
 			while (_params.Count<=attrId) {
-				_params.Add (null);
+				_params.Add (new Parameter());
 			}
 			_params [attrId] = param;
 		}

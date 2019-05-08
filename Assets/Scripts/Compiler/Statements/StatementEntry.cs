@@ -4,6 +4,10 @@ using UnityEngine;
 namespace Compiler
 {
 	public class StatementEntry :  StatementBase{
+		public static VarType GetReturnValueType()
+		{
+			return VarType.Void;
+		}
 		protected override void GenerateGrammar ()
 		{
 			grammar.Push(VarType.Void);

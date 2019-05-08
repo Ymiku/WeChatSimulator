@@ -4,6 +4,10 @@ using UnityEngine;
 namespace Compiler
 {
 	public class StatementIf :  StatementBase{
+		public static VarType GetReturnValueType()
+		{
+			return VarType.Void;
+		}
 		protected override void GenerateGrammar ()
 		{
 			grammar.Push ("if(");
