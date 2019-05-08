@@ -18,7 +18,9 @@ namespace Compiler
         public void SetIDEData(Parameter o)
         {
             param = o;
-            text.text = param.ToString();
+			width = 1000.0f;
+			//text.sizeDelta = new Vector2 (1000.0f,400.0f);
+			text.text = param.GenerateCode();
             text.width = text.preferredWidth;
             width = text.width + 40.0f;
 			dropDown.ClearOptions ();
@@ -41,6 +43,8 @@ namespace Compiler
         public void OnValueChange(int i)
         {
 			StatementBase s = (StatementBase)Activator.CreateInstance (HackStudioCode.Instance.GetTypesByReturnValue (param.paramType) [i], true);
+			param.Set (s);
+			HackStudioCode.Instance.SetParam (id,param);
 			SetIDEData (param);
         }
 		public void StepIn()

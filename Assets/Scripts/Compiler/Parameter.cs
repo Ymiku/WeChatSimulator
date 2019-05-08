@@ -62,10 +62,10 @@ namespace Compiler
 				return p._statement.Execute ();
 			return p._float;
 		}
-		public override string ToString ()
+		public string GenerateCode ()
 		{
 			if (_statement != null)
-				return _statement.ToString ();
+				return _statement.GenerateCode ();
 			switch (paramType) {
 			case VarType.Bool:
 				return _bool.ToString ();

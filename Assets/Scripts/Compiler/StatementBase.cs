@@ -44,13 +44,13 @@ namespace Compiler
 		{
 			return _params [i];			
 		}
-		public override string ToString ()
+		public virtual string GenerateCode ()
 		{
 			int paramIndex = 0;
 			sb.Length = 0;
 			for (int i = 0; i < grammar.Count; i++) {
 				if (grammar [i].StartsWith ("*Param:")) {
-					sb.Append(_params[paramIndex].ToString());
+					sb.Append(_params[paramIndex].GenerateCode());
 					paramIndex++;
 				} else {
 					sb.Append (grammar[i]);
