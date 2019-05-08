@@ -12,7 +12,9 @@ namespace Compiler
 		public GameObject paramGo;
 		public List<StatementBase> program = new List<StatementBase>();
 		Stack<StatementBase> stateStack = new Stack<StatementBase> ();
-		int curLine;
+        List<IDEItem> statementGoPool = new List<IDEItem>();
+        List<IDEItem> paramGoPool = new List<IDEItem>();
+        int curLine;
 		public override void SingletonInit ()
 		{
 			base.SingletonInit ();
@@ -28,7 +30,15 @@ namespace Compiler
 		}
 		public void Show(StatementBase statement)
 		{
-			Grammar grammar = statement.GetGrammar ();
+            for (int i = 0; i < paramGoPool.Count; i++)
+            {
+                paramGoPool[i].gameObject.SetActive(false);
+            }
+            for (int i = 0; i < statementGoPool.Count; i++)
+            {
+                statementGoPool[i].gameObject.SetActive(false);
+            }
+            Grammar grammar = statement.GetGrammar ();
 			IDEItem item;
             int paramIndex = 0;
 			for (int i = 0; i < grammar.Count; i++) {
@@ -36,10 +46,12 @@ namespace Compiler
 					item = GetPrefab (paramGo);
                     item.id = paramIndex;
                     item.SetIDEData(statement.GetParam(paramIndex));
+                    paramGoPool.Add(item);
                     paramIndex++;
 				} else {
 					item = GetPrefab (statementGo);
 					item.SetIDEData (grammar[i]);
+                    statementGoPool.Add(item);
 				}
 				item.gameObject.SetActive (true);
 			}
@@ -81,5 +93,10 @@ namespace Compiler
 		{
 			stateStack.Peek ().SetParam (i,p);
 		}
+        public void TracingBack()
+        {
+            stateStack.Pop();
+            Show(stateStack.Peek());
+        }
 	}
 }

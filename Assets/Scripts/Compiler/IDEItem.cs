@@ -7,14 +7,11 @@ namespace Compiler
 {
     public class IDEItem : ItemBase
     {
-		public Dropdown dropDown;
+        public Button button;
+		public FDropdown dropDown;
         public TextProxy text;
         Parameter param;
-        void Awake()
-        {
-            if (GetComponent<Dropdown>() != null)
-                GetComponent<Dropdown>().onValueChanged.AddListener(OnValueChange);
-        }
+       
         public void SetIDEData(Parameter o)
         {
             param = o;
@@ -23,16 +20,16 @@ namespace Compiler
 			text.text = param.GenerateCode();
             text.width = text.preferredWidth;
             width = text.width + 40.0f;
-			dropDown.ClearOptions ();
-			List<System.Type> options = HackStudioCode.Instance.GetTypesByReturnValue (param.paramType);
-			List<Dropdown.OptionData> optionData = new List<Dropdown.OptionData>();
-			for (int i = 0; i < options.Count; i++) {
-				Dropdown.OptionData d = new Dropdown.OptionData ();
-				d.text = options [i].ToString ();
-				//dropDown.AddOptions (options[i].ToString());
-				optionData.Add(d);
-			}
-			dropDown.AddOptions (optionData);
+            RefreshDropdown();
+        }
+        public void RefreshDropdown()
+        {
+            dropDown.Clear();
+            List<System.Type> options = HackStudioCode.Instance.GetTypesByReturnValue(param.paramType);
+            for (int i = 0; i < options.Count; i++)
+            {
+                dropDown.AddOption(options[i].Name.Substring(options[i].Name.IndexOf("Statement")));
+            }
         }
 		public void SetIDEData(string s)
 		{
