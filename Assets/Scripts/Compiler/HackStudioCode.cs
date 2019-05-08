@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 namespace Compiler
 {
-	public class HackCode : UnitySingleton<HackCode> {
+	public class HackStudioCode : UnitySingleton<HackStudioCode> {
 		System.Type[] statementsTypeArray = new System.Type[] {
 			typeof(StatementIf),
 		};

@@ -21,7 +21,7 @@ namespace Compiler
             text.width = text.preferredWidth;
             width = text.width + 40.0f;
 			//dropDown.ClearOptions ();
-			List<System.Type> options = HackCode.Instance.GetTypesByReturnValue (param.paramType);
+			List<System.Type> options = HackStudioCode.Instance.GetTypesByReturnValue (param.paramType);
 			for (int i = 0; i < options.Count; i++) {
 				Dropdown.OptionData d = new Dropdown.OptionData ();
 				d.text = options [i].ToString ();
@@ -40,7 +40,7 @@ namespace Compiler
         }
 		public void StepIn()
 		{
-			GetComponentInParent<HackCode> ().StepIn (id);
+			GetComponentInParent<HackStudioCode> ().StepIn (id);
 		}
     }
 }
