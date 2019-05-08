@@ -7,9 +7,7 @@ using System.Reflection;
 namespace Compiler
 {
 	public class HackStudioCode : UnitySingleton<HackStudioCode> {
-		System.Type[] statementsTypeArray = new System.Type[] {
-			typeof(StatementIf),
-		};
+		System.Type[] statementsTypeArray;
 		public GameObject statementGo;
 		public GameObject paramGo;
 		public List<StatementBase> program = new List<StatementBase>();
@@ -37,12 +35,11 @@ namespace Compiler
 				if (grammar [i].StartsWith ("*Param:")) {
 					item = GetPrefab (paramGo);
                     item.id = paramIndex;
-                    item.SetData(statement.GetParam(paramIndex));
+                    item.SetIDEData(statement.GetParam(paramIndex));
                     paramIndex++;
 				} else {
 					item = GetPrefab (statementGo);
-                    item.SetData(null);
-					item.SetText (grammar[i]);
+					item.SetIDEData (grammar[i]);
 				}
 				item.gameObject.SetActive (true);
 			}

@@ -716,7 +716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  dropDown: {fileID: 0}
+  dropDown: {fileID: 365648801}
   text: {fileID: 1114025880}
 --- !u!1 &532139786
 GameObject:
@@ -1754,12 +1754,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1948054609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cce528d153c64854cb1c118fc5408d4b, type: 3}
+  m_Script: {fileID: 11500000, guid: 89d780aa764c0ea47997aa382bbabe39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   statementGo: {fileID: 1760947883}
   paramGo: {fileID: 365648799}
-  curLine: 0
 --- !u!1 &2097478033
 GameObject:
   m_ObjectHideFlags: 0
