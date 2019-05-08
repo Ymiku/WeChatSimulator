@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.78039217, g: 0.78039217, b: 0.78039217, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1759,6 +1759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statementGo: {fileID: 1760947883}
   paramGo: {fileID: 365648799}
+  curLine: 0
 --- !u!1 &2097478033
 GameObject:
   m_ObjectHideFlags: 0
