@@ -28,7 +28,7 @@ namespace Compiler
             List<System.Type> options = HackStudioCode.Instance.GetTypesByReturnValue(param.paramType);
             for (int i = 0; i < options.Count; i++)
             {
-                dropDown.AddOption(options[i].Name.Substring(options[i].Name.IndexOf("Statement")));
+                dropDown.AddOption(options[i].Name.Substring(options[i].Name.IndexOf("Statement")+9));
             }
         }
 		public void SetIDEData(string s)
