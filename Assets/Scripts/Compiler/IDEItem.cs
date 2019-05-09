@@ -10,8 +10,39 @@ namespace Compiler
         public Button button;
 		public FDropdown dropDown;
         public TextProxy text;
+		public InputField input;
         Parameter param;
-       
+		void OnEnable()
+		{
+			if(input!=null)
+			input.onValueChanged.AddListener (OnSetValue);
+		}
+		void OnDisable()
+		{
+			if(input!=null)
+			input.onValueChanged.RemoveListener (OnSetValue);
+		}
+		void OnSetValue(string s)
+		{
+			switch (param.paramType) {
+			case VarType.Bool:
+				if (s.StartsWith ("false"))
+					param.Set (false);
+				else
+					param.Set (true);
+				break;
+			case VarType.Float:
+				param.Set (Convert.ToSingle (s));
+				break;
+			case VarType.Int:
+				param.Set (Convert.ToInt32 (s));
+				break;
+			default:
+				param.Set (s);
+				break;
+			}		
+			SetIDEData (param);
+		}
         public void SetIDEData(Parameter o)
         {
             param = o;
@@ -31,11 +62,12 @@ namespace Compiler
 			} else {
 				options = HackStudioCode.Instance.GetTypesByReturnValue(param.paramType);
 			}
-			Debug.Log (options.Count);
             for (int i = 0; i < options.Count; i++)
             {
                 dropDown.AddOption(options[i].Name.Substring(options[i].Name.IndexOf("Statement")+9));
             }
+			if (!param.isVoid)
+				dropDown.AddOption ("Value");
         }
 		public void SetIDEData(string s)
 		{
@@ -45,6 +77,11 @@ namespace Compiler
 		}
         public void OnValueChange(int i)
         {
+			input.gameObject.SetActive (i==-1);
+			text.gameObject.SetActive (i!=-1);
+			if (i == -1) {
+				return;
+			}
 			StatementBase s = null;
 			if (param.isVoid) {
 				s = (StatementBase)Activator.CreateInstance (HackStudioCode.Instance.GetTypesByReturnValue (VarType.Void) [i], true);

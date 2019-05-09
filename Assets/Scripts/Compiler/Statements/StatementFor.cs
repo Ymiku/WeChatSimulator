@@ -20,7 +20,7 @@ namespace Compiler
 			grammar.Push (VarType.Void);
 			grammar.Push("}");
 			AddParam (new Parameter().SetVoid(true).Set((StatementBase)null));
-			AddParam (new Parameter().SetVoid(true).Set(true));
+			AddParam (new Parameter().SetVoid(false).Set(true));
 			AddParam (new Parameter().SetVoid(true).Set((StatementBase)null));
 			AddParam (new Parameter().SetVoid(true).Set((StatementBase)null));
 		}

@@ -18,6 +18,8 @@ namespace Compiler
 		{
 			StatementBase statement = GetParam (0);
 			statement.Execute ();
+
+
 			return new Parameter ();
 		}
 	}
