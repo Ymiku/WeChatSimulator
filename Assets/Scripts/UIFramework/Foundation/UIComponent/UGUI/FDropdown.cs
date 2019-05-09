@@ -58,20 +58,20 @@ public class FDropdown : MonoBehaviour {
     public void Show()
     {
         isShow = true;
-        Vector2 oriPos =  new Vector2(0.0f,60.0f);
+        Vector2 oriPos =  new Vector2(0.0f,120.0f);
         if (oriPos.x < 0.0f)
             oriPos = new Vector2(0.0f,oriPos.y);
         if (oriPos.x + width >= Screen.width)
             oriPos = new Vector2(Screen.width-width,oriPos.y);
         this.ori = Vector2.zero;
-        float heightCount = ori.y;
-        float widthCount = ori.x;
+        float heightCount = oriPos.y;
+        float widthCount = oriPos.x;
         pos.Clear();
         for (int i = 0; i < index; i++)
         {
             if (buttons[i].width + widthCount > width)
             {
-                widthCount = ori.x;
+                widthCount = oriPos.x;
                 heightCount += buttons[i].height;
                 heightCount += outsidePadding.y;
             }
