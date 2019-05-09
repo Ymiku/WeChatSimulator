@@ -7,6 +7,7 @@ using System.Reflection;
 namespace Compiler
 {
 	public class HackStudioCode : UnitySingleton<HackStudioCode> {
+		
 		System.Type[] statementsTypeArray;
 		public GameObject statementGo;
 		public GameObject paramGo;
@@ -21,12 +22,10 @@ namespace Compiler
 			statementsTypeArray = typeof(StatementBase).Assembly.GetTypes ().Where (type => type.IsSubclassOf (typeof(StatementBase)) && !type.IsAbstract).ToArray<Type> ();
 			statementGo.SetActive (false);
 			paramGo.SetActive (false);
-			program.Add (new StatementEntry());
-			program.Add (new StatementFor());
-			stateStack.Clear ();
-			stateStack.Push (program[1]);
-			Show (stateStack.Peek());
-			GetTypesByReturnValue (VarType.Void);
+			StatementBase b = new StatementEmpty ();
+			b.GetParam (0).Set (">>  ");
+			program.Add(b);
+			OnFocusChange (0);
 		}
 		public void Show(StatementBase statement)
 		{
@@ -56,22 +55,41 @@ namespace Compiler
 				item.gameObject.SetActive (true);
 			}
 		}
+		public void Execute()
+		{
+			program[program.Count-1].Execute();
+			program.Add(new StatementEmpty().SetParam(0,new Parameter().Set(">>  ")));
+			OnFocusChange (program.Count-1);
+		}
 		public void Log(string log)
 		{
 			
 		}
-		public void OnFocusChange(int last,int now)
+		public void OnFocusChange(int now)
 		{
-			
+			curLine = now;
+			stateStack.Clear ();
+			stateStack.Push (program[now]);
+			Show (stateStack.Peek());
 		}
 		public List<Type> GetTypesByReturnValue(VarType t)
 		{
 			List<Type> types = new List<Type> ();
-			for (int i = 0; i < statementsTypeArray.Length; i++) {
-				MethodInfo method = statementsTypeArray [i].GetMethod ("GetReturnValueType");
-				VarType t2 = (VarType)(method.Invoke(null,null));
-				if(t2==t)
-					types.Add (statementsTypeArray[i]);
+			if (t != VarType.Void) {
+				for (int i = 0; i < statementsTypeArray.Length; i++) {
+					MethodInfo method = statementsTypeArray [i].GetMethod ("GetReturnValueType");
+					VarType t2 = (VarType)(method.Invoke (null, null));
+					if (t2 == t)
+						types.Add (statementsTypeArray [i]);
+				}
+			} else {
+				for (int i = 0; i < statementsTypeArray.Length; i++) {
+					types.Add (statementsTypeArray [i]);
+				}
+			}
+			Debug.Log (t);
+			if (stateStack.Count >= 2) {
+				types.Remove (typeof(StatementDefine));
 			}
 			return types;
 		}
@@ -98,5 +116,15 @@ namespace Compiler
             stateStack.Pop();
             Show(stateStack.Peek());
         }
+		Dictionary<string,Parameter> name2p = new Dictionary<string, Parameter>();
+		public void AddVar(string name,Parameter p)
+		{
+			if(!name2p.ContainsKey(name))
+				name2p.Add (name,p);
+		}
+		public Parameter GetVar(string name)
+		{
+			return name2p [name];
+		}
 	}
 }

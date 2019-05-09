@@ -25,7 +25,13 @@ namespace Compiler
         public void RefreshDropdown()
         {
             dropDown.Clear();
-            List<System.Type> options = HackStudioCode.Instance.GetTypesByReturnValue(param.paramType);
+			List<System.Type> options = null;
+			if (param.isVoid) {
+				options = HackStudioCode.Instance.GetTypesByReturnValue(VarType.Void);
+			} else {
+				options = HackStudioCode.Instance.GetTypesByReturnValue(param.paramType);
+			}
+			Debug.Log (options.Count);
             for (int i = 0; i < options.Count; i++)
             {
                 dropDown.AddOption(options[i].Name.Substring(options[i].Name.IndexOf("Statement")+9));
@@ -39,7 +45,13 @@ namespace Compiler
 		}
         public void OnValueChange(int i)
         {
-			StatementBase s = (StatementBase)Activator.CreateInstance (HackStudioCode.Instance.GetTypesByReturnValue (param.paramType) [i], true);
+			StatementBase s = null;
+			if (param.isVoid) {
+				s = (StatementBase)Activator.CreateInstance (HackStudioCode.Instance.GetTypesByReturnValue (VarType.Void) [i], true);
+			} else
+			{
+				s = (StatementBase)Activator.CreateInstance (HackStudioCode.Instance.GetTypesByReturnValue (param.paramType) [i], true);
+			}
 			param.Set (s);
 			HackStudioCode.Instance.SetParam (id,param);
 			SetIDEData (param);

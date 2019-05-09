@@ -3,27 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Compiler
 {
-	public class StatementIf :  StatementBase{
+	public class StatementEmpty :  StatementBase{
 		public static VarType GetReturnValueType()
 		{
 			return VarType.Void;
 		}
 		protected override void GenerateGrammar ()
 		{
-			grammar.Push ("if(");
-			grammar.Push(VarType.Bool);
-			grammar.Push("){");
-			grammar.Push (VarType.Void);
-			grammar.Push("}");
-			AddParam (new Parameter().Set(true));
+			grammar.Push(VarType.Void);
 			AddParam (new Parameter().SetVoid(true).Set((StatementBase)null));
+			Debug.Log (GetParam(0).isVoid);
 		}
 		public override Parameter Execute ()
 		{
-			if (GetParam (0)) {
-				StatementBase statement = GetParam (1);
-				statement.Execute ();
-			}
+			StatementBase statement = GetParam (0);
+			statement.Execute ();
 			return new Parameter ();
 		}
 	}

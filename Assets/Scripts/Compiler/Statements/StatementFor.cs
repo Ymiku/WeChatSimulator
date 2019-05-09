@@ -19,10 +19,10 @@ namespace Compiler
 			grammar.Push("){");
 			grammar.Push (VarType.Void);
 			grammar.Push("}");
-			SetParam (0,new Parameter().Set(null));
-			SetParam (1,new Parameter().Set(true));
-			SetParam (2,new Parameter().Set(null));
-			SetParam (3,new Parameter().Set(null));
+			AddParam (new Parameter().SetVoid(true).Set((StatementBase)null));
+			AddParam (new Parameter().SetVoid(true).Set(true));
+			AddParam (new Parameter().SetVoid(true).Set((StatementBase)null));
+			AddParam (new Parameter().SetVoid(true).Set((StatementBase)null));
 		}
 		public override Parameter Execute ()
 		{

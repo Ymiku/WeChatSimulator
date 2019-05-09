@@ -11,7 +11,8 @@ namespace Compiler
 		Void,
 		Int,
 		Float,
-		Bool
+		Bool,
+		String,
 	}
 	public class StatementBase :IExecuteable{
 		protected List<Parameter> _params = new List<Parameter>();
@@ -33,12 +34,16 @@ namespace Compiler
 		{
 			return new Parameter ();
 		}
-		public void SetParam(int attrId,Parameter param)
+		public StatementBase AddParam(Parameter param)
 		{
-			while (_params.Count<=attrId) {
-				_params.Add (new Parameter());
-			}
+			_params.Add (param);
+			return this;
+		}
+		public StatementBase SetParam(int attrId,Parameter param)
+		{
+			param.isVoid = GetParam (attrId).isVoid;
 			_params [attrId] = param;
+			return this;
 		}
 		public Parameter GetParam(int i)
 		{

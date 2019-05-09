@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Compiler
 {
-	public class StatementEntry :  StatementBase{
+	public class StatementDefine :  StatementBase{
 		public static VarType GetReturnValueType()
 		{
 			return VarType.Void;
 		}
 		protected override void GenerateGrammar ()
 		{
-			grammar.Push(VarType.Void);
-			SetParam (0,new Parameter().Set(null));
+			grammar.Push("Define");
+			AddParam (new Parameter().SetVoid(true).Set(0));
+			grammar.Push("=");
+			AddParam (new Parameter().SetVoid(true).Set(0));
 		}
 		public override Parameter Execute ()
 		{

@@ -3,17 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Compiler
 {
-	public struct Parameter:IExecuteable {
+	public class Parameter:IExecuteable {
 		public static Parameter Empty = new Parameter();
+		public bool isVoid;
 		public VarType paramType;
 		private StatementBase _statement;
 		private bool _bool;
 		private int _int;
 		private float _float;
+		private string _string;
 		public Parameter Execute()
 		{
 			if (_statement != null)
 				return _statement.Execute ();
+			return this;
+		}
+		public Parameter SetVoid(bool b)
+		{
+			isVoid = b;
 			return this;
 		}
 		public Parameter Set (StatementBase statement)
@@ -40,6 +47,12 @@ namespace Compiler
 			_float = f;
 			return this;
 		}
+		public Parameter Set (string s)
+		{
+			paramType = VarType.String;
+			_string = s;
+			return this;
+		}
 		public static implicit operator StatementBase(Parameter p)
 		{
 			return p._statement;
@@ -62,6 +75,12 @@ namespace Compiler
 				return p._statement.Execute ();
 			return p._float;
 		}
+		public static implicit operator string(Parameter p)
+		{
+			if (p.paramType == VarType.Void)
+				return p._statement.Execute ();
+			return p._string;
+		}
 		public string GenerateCode ()
 		{
 			if (_statement != null)
@@ -73,6 +92,8 @@ namespace Compiler
 				return _float.ToString ();
 			case VarType.Int:
 				return _int.ToString ();
+			case VarType.String:
+				return _string;
 			default:
 				return "";
 			}
