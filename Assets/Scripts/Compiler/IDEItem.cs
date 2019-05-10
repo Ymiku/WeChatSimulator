@@ -14,15 +14,23 @@ namespace Compiler
         Parameter param;
 		void OnEnable()
 		{
-			if(input!=null)
-			input.onValueChanged.AddListener (OnSetValue);
+			if (input != null) {
+				input.onEndEdit.AddListener (OnInputEndEdit);
+				input.onValueChanged.AddListener (OnInputValueChange);
+			}
 		}
 		void OnDisable()
 		{
-			if(input!=null)
-			input.onValueChanged.RemoveListener (OnSetValue);
+			if (input != null) {
+				input.onEndEdit.RemoveListener (OnInputEndEdit);
+				input.onValueChanged.RemoveListener (OnInputValueChange);
+			}
 		}
-		void OnSetValue(string s)
+		void OnInputValueChange(string s)
+		{
+			width = input.textComponent.preferredWidth + 40.0f;
+		}
+		void OnInputEndEdit(string s)
 		{
 			switch (param.paramType) {
 			case VarType.Bool:
@@ -40,8 +48,9 @@ namespace Compiler
 			default:
 				param.Set (s);
 				break;
-			}		
-			SetIDEData (param);
+			}
+			width = input.textComponent.preferredWidth + 40.0f;
+			//SetIDEData (param);
 		}
         public void SetIDEData(Parameter o)
         {
