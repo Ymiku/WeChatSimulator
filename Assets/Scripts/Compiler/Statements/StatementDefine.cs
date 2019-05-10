@@ -13,14 +13,14 @@ namespace Compiler
 			grammar.Push("Define ");
 			grammar.Push(VarType.String);
 			grammar.Push(" = ");
-			grammar.Push(VarType.Float);
+			grammar.Push(VarType.Void);
 			AddParam (new Parameter().SetVoid(false).Set("var"));
-			AddParam (new Parameter().SetVoid(false).Set(0));
+			AddParam (new Parameter().SetVoid(true).Set(0));
 		}
 		public override Parameter Execute ()
 		{
-			StatementBase statement = GetParam (0);
-			statement.Execute ();
+			string var = GetParam (0);
+			
 			return new Parameter ();
 		}
 	}

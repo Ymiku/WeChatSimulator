@@ -10,9 +10,9 @@ namespace Compiler
 	{
 		Void,
 		Int,
-		Float,
 		Bool,
 		String,
+        Var
 	}
 	public class StatementBase :IExecuteable{
 		protected List<Parameter> _params = new List<Parameter>();
@@ -45,6 +45,10 @@ namespace Compiler
 			_params [attrId] = param;
 			return this;
 		}
+        public bool HasParam()
+        {
+            return _params.Count > 0;
+        }
 		public Parameter GetParam(int i)
 		{
 			return _params [i];			

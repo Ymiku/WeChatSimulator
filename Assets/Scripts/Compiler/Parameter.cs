@@ -12,6 +12,7 @@ namespace Compiler
 		private int _int;
 		private float _float;
 		private string _string;
+        public string varName = null;
 		public Parameter Execute()
 		{
 			if (_statement != null)
@@ -39,12 +40,6 @@ namespace Compiler
 		{
 			paramType = VarType.Int;
 			_int = i;
-			return this;
-		}
-		public Parameter Set (float f)
-		{
-			paramType = VarType.Float;
-			_float = f;
 			return this;
 		}
 		public Parameter Set (string s)
@@ -88,8 +83,6 @@ namespace Compiler
 			switch (paramType) {
 			case VarType.Bool:
 				return _bool.ToString ();
-			case VarType.Float:
-				return _float.ToString ();
 			case VarType.Int:
 				return _int.ToString ();
 			case VarType.String:

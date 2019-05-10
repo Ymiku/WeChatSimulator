@@ -22,6 +22,7 @@ namespace Compiler
 		{
 			if (GetParam (0)) {
 				StatementBase statement = GetParam (1);
+                if(statement!=null)
 				statement.Execute ();
 			}
 			return new Parameter ();

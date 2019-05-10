@@ -11,7 +11,9 @@ namespace Compiler
 		System.Type[] statementsTypeArray;
 		public GameObject statementGo;
 		public GameObject paramGo;
+        public TextProxy programCacheText;
 		public List<StatementBase> program = new List<StatementBase>();
+        List<string> programCache = new List<string>();
 		Stack<StatementBase> stateStack = new Stack<StatementBase> ();
         List<IDEItem> statementGoPool = new List<IDEItem>();
         List<IDEItem> paramGoPool = new List<IDEItem>();
@@ -58,8 +60,17 @@ namespace Compiler
 		public void Execute()
 		{
 			program[program.Count-1].Execute();
-			program.Add(new StatementEmpty().SetParam(0,new Parameter().Set(">>  ")));
-			OnFocusChange (program.Count-1);
+            programCache.Add(program[program.Count - 1].GenerateCode());
+            program.Add(new StatementEmpty());
+            programCacheText.text = "";
+            for (int i = 0; i < programCache.Count; i++)
+            {
+                programCacheText.text += programCache[i];
+                programCacheText.text += "\n";
+            }
+            programCacheText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal,programCacheText.preferredWidth);
+            programCacheText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, programCacheText.preferredHeight);
+            OnFocusChange (program.Count-1);
 		}
 		public void Log(string log)
 		{
@@ -104,7 +115,11 @@ namespace Compiler
 		public void StepIn(int index)
 		{
 			StatementBase state = stateStack.Peek ();
-			stateStack.Push (state.GetParam(index));
+            if ((StatementBase)state.GetParam(index) == null)
+                return;
+            if (!((StatementBase)state.GetParam(index)).HasParam())
+                return;
+            stateStack.Push (state.GetParam(index));
 			Show (stateStack.Peek());
 		}
 		public void SetParam(int i,Parameter p)
@@ -113,8 +128,14 @@ namespace Compiler
 		}
         public void TracingBack()
         {
+            if (stateStack.Count <= 1)
+                return;
             stateStack.Pop();
             Show(stateStack.Peek());
+        }
+        void Refresh()
+        {
+            
         }
 		Dictionary<string,Parameter> name2p = new Dictionary<string, Parameter>();
 		public void AddVar(string name,Parameter p)

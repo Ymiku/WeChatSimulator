@@ -39,9 +39,6 @@ namespace Compiler
 				else
 					param.Set (true);
 				break;
-			case VarType.Float:
-				param.Set (Convert.ToSingle (s));
-				break;
 			case VarType.Int:
 				param.Set (Convert.ToInt32 (s));
 				break;
@@ -101,10 +98,11 @@ namespace Compiler
 			param.Set (s);
 			HackStudioCode.Instance.SetParam (id,param);
 			SetIDEData (param);
+            //HackStudioCode.Instance.StepIn(id);
         }
 		public void StepIn()
 		{
-			GetComponentInParent<HackStudioCode> ().StepIn (id);
+			HackStudioCode.Instance.StepIn (id);
 		}
     }
 }

@@ -41,9 +41,8 @@ public class FDropdown : MonoBehaviour {
             buttons[index].transform.localScale = Vector3.one;
         }
         buttons[index].info = s;
-        buttons[index].text.sizeDelta = Vector2.one * 800.0f;
-        buttons[index].text.sizeDelta = new Vector2(buttons[index].text.preferredWidth, buttons[index].text.preferredHeight);
-        buttons[index].sizeDelta = buttons[index].text.sizeDelta + insidePadding;
+        buttons[index].sizeDelta = Vector2.one * 800.0f;
+        buttons[index].sizeDelta = new Vector2(buttons[index].text.preferredWidth, buttons[index].text.preferredHeight) + insidePadding;
         buttons[index].gameObject.SetActive(false);
         int i = index;
 		if (s.StartsWith ("Value"))
