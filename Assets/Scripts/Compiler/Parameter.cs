@@ -24,9 +24,8 @@ namespace Compiler
 			isVoid = b;
 			return this;
 		}
-		public Parameter SetVar(VarType t,string name)
+		public Parameter SetVar(string name)
 		{
-			paramType = t;
 			varName = name;
 			return this;
 		}
@@ -91,6 +90,8 @@ namespace Compiler
 		{
 			if (_statement != null)
 				return _statement.GenerateCode ();
+			if (varName != null)
+				return varName;
 			switch (paramType) {
 			case VarType.Bool:
 				return _bool.ToString ();
@@ -104,6 +105,8 @@ namespace Compiler
 		}
 		public override string ToString ()
 		{
+			if (varName != null)
+				return HackStudioCode.Instance.GetVar(varName).ToString();
 			switch (paramType) {
 			case VarType.Bool:
 				return _bool.ToString ();

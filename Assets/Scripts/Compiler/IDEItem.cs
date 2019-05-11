@@ -108,13 +108,12 @@ namespace Compiler
 			}
 			if (optionCache[i].StartsWith("Var:")) {
 				//param.SetVar (,);
-				HackStudioCode.Instance.SetParam (id,param);
+				param.SetVar(optionCache[i].Substring(4));
+				//HackStudioCode.Instance.SetParam (id,param);
 				SetIDEData (param);
 				return;
 			}
 			Type t = Type.GetType(optionCache[i]);
-			Debug.Log (t);
-			Debug.Log (optionCache[i]);
 			StatementBase s = (StatementBase)Activator.CreateInstance (Type.GetType(optionCache[i]));
 			param.Set (s);
 			HackStudioCode.Instance.SetParam (id,param);

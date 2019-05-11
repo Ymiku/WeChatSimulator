@@ -20,7 +20,7 @@ namespace Compiler
         public override Parameter Execute()
         {
             int statement1 = GetParam(0);
-            int statement2 = GetParam(0);
+            int statement2 = GetParam(1);
 			int result = statement1 + statement2;
             return new Parameter().Set(result);
         }

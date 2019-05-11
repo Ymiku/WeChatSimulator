@@ -76,9 +76,10 @@ namespace Compiler
             programCacheText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, programCacheText.preferredHeight);
             OnFocusChange (program.Count-1);
 		}
+		public TextProxy logText;
 		public void Log(string log)
 		{
-			
+			logText.text = "LOG:" + log;
 		}
 		public void OnFocusChange(int now)
 		{
@@ -184,9 +185,9 @@ namespace Compiler
 		public List<string> GetAllVarByType(VarType t)
 		{
 			List<string> strs = new List<string> ();
-			foreach (var item in name2p.Values) {
-				if (item.paramType == t)
-					strs.Add (item.varName);
+			foreach (var item in name2p.Keys) {
+				if (name2p[item].paramType == t)
+					strs.Add (item);
 			}
 			return strs;
 		}
