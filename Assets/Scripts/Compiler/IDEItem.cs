@@ -67,31 +67,36 @@ namespace Compiler
             dropDown.Clear();
 			optionCache.Clear ();
 			List<string> options = null;
-
-			if (param.isVoid) {
-				if (HackStudioCode.Instance.isDefine())
-					options = HackStudioCode.Instance.GetValueTypes ();
-				else
-					options = HackStudioCode.Instance.GetTypesByReturnValue(VarType.Void);
+			if (HackStudioCode.Instance.GetCurSatement () is StatementAssign && id == 0) {
+				List<string> vars = HackStudioCode.Instance.GetAllVarByType (VarType.Void);
+				for (int i = 0; i < vars.Count; i++) {
+					dropDown.AddOption ("Var:"+vars[i]);
+					optionCache.Add ("Var:"+vars[i]);
+				}
 			} else {
-				options = HackStudioCode.Instance.GetTypesByReturnValue(param.paramType);
-			}
-            for (int i = 0; i < options.Count; i++)
-            {
-                dropDown.AddOption(options[i].Substring(options[i].IndexOf("Statement")+9));
-				optionCache.Add (options[i]);
-            }
-			if (param.paramType != VarType.Void) {
+				if (param.isVoid) {
+					if (HackStudioCode.Instance.isDefine ())
+						options = HackStudioCode.Instance.GetValueTypes ();
+					else
+						options = HackStudioCode.Instance.GetTypesByReturnValue (VarType.Void);
+				} else {
+					options = HackStudioCode.Instance.GetTypesByReturnValue (param.paramType);
+				}
+				for (int i = 0; i < options.Count; i++) {
+					dropDown.AddOption (options [i].Substring (options [i].IndexOf ("Statement") + 9));
+					optionCache.Add (options [i]);
+				}
 				List<string> vars = HackStudioCode.Instance.GetAllVarByType (param.paramType);
 				for (int i = 0; i < vars.Count; i++) {
 					dropDown.AddOption ("Var:"+vars[i]);
 					optionCache.Add ("Var:"+vars[i]);
 				}
+				if (!param.isVoid || HackStudioCode.Instance.isDefine ()) {
+					dropDown.AddOption ("Value");
+					optionCache.Add ("Value");
+				}
 			}
-			if (!param.isVoid || HackStudioCode.Instance.isDefine ()) {
-				dropDown.AddOption ("Value");
-				optionCache.Add ("Value");
-			}
+
         }
 		public void SetIDEData(string s)
 		{
@@ -118,7 +123,7 @@ namespace Compiler
 			param.Set (s);
 			HackStudioCode.Instance.SetParam (id,param);
 			SetIDEData (param);
-            //HackStudioCode.Instance.StepIn(id);
+            HackStudioCode.Instance.StepIn(id);
         }
 		public void StepIn()
 		{

@@ -11,15 +11,15 @@ namespace Compiler
         }
         protected override void GenerateGrammar()
         {
-            grammar.Push(VarType.String);
+            grammar.Push(VarType.Void);
             grammar.Push(" = ");
-            grammar.Push(VarType.Int);
+            grammar.Push(VarType.Void);
             AddParam(new Parameter().SetVoid(false).Set("var"));
             AddParam(new Parameter().SetVoid(false).Set(0));
         }
         public override Parameter Execute()
         {
-            
+			HackStudioCode.Instance.AddVar (GetParam(0).varName,GetParam(1));
             return Parameter.Empty;
         }
     }

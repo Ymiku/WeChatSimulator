@@ -32,8 +32,10 @@ namespace Compiler
 			int i = 0;
 			for (statement.Execute(); (bool)GetParam (1); statement2.Execute()) {
 				i++;
-				if (i >= 1000)
+				if (i >= 1000) {
+					HackStudioCode.Instance.Log ("Stack over flow");
 					break;
+				}
 				statement3.Execute ();
 			}
 			return Parameter.Empty;

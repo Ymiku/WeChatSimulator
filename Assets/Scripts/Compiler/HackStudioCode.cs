@@ -33,6 +33,10 @@ namespace Compiler
 		{
 			return stateStack.Peek () is StatementDefine;
 		}
+		public StatementBase GetCurSatement()
+		{
+			return stateStack.Peek ();
+		}
 		public void Show(StatementBase statement)
 		{
             for (int i = 0; i < paramGoPool.Count; i++)
@@ -158,7 +162,7 @@ namespace Compiler
 			if (!name2p.ContainsKey (name))
 				name2p.Add (name, p);
 			else
-				name2p[name] = p;
+				name2p[name].Set(p);
 		}
 		public Parameter GetVar(string name)
 		{
@@ -186,7 +190,7 @@ namespace Compiler
 		{
 			List<string> strs = new List<string> ();
 			foreach (var item in name2p.Keys) {
-				if (name2p[item].paramType == t)
+				if (name2p[item].paramType == t||t==VarType.Void)
 					strs.Add (item);
 			}
 			return strs;

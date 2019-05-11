@@ -16,9 +16,8 @@ namespace Compiler
 		}
 		public override Parameter Execute ()
 		{
-			StatementBase statement = GetParam (0);
-			if(statement!=null)
-				HackStudioCode.Instance.Log(statement.Execute ().ToString());
+			HackStudioCode.Instance.Log(GetParam (0).ToString());
+			
 			return Parameter.Empty;
 		}
 	}

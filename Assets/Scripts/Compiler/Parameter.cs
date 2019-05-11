@@ -36,6 +36,23 @@ namespace Compiler
 			varName = null;
 			return this;
 		}
+		public Parameter Set (Parameter p)
+		{
+			switch (paramType) {
+			case VarType.Bool:
+				_bool = p;
+				break;
+			case VarType.Int:
+				_int = p;
+				break;
+			case VarType.String:
+				_string = p;
+				break;
+			default:
+				break;
+			}
+			return this;
+		}
 		public Parameter Set (bool b)
 		{
 			paramType = VarType.Bool;
@@ -107,6 +124,8 @@ namespace Compiler
 		{
 			if (varName != null)
 				return HackStudioCode.Instance.GetVar(varName).ToString();
+			if (_statement != null)
+				return _statement.Execute().ToString();
 			switch (paramType) {
 			case VarType.Bool:
 				return _bool.ToString ();
