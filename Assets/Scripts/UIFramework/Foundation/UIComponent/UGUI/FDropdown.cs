@@ -45,8 +45,6 @@ public class FDropdown : MonoBehaviour {
         buttons[index].sizeDelta = new Vector2(buttons[index].text.preferredWidth, buttons[index].text.preferredHeight) + insidePadding;
         buttons[index].gameObject.SetActive(false);
         int i = index;
-		if (s.StartsWith ("Value"))
-			i = -1;
         buttons[index].onClick.AddListener(() => { OnClick(i); });
         index++;
     }

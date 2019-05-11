@@ -87,34 +87,34 @@ namespace Compiler
 			stateStack.Push (program[now]);
 			Show (stateStack.Peek());
 		}
-		public List<Type> GetTypesByReturnValue(VarType t)
+		public List<string> GetTypesByReturnValue(VarType t)
 		{
-			List<Type> types = new List<Type> ();
+			List<string> types = new List<string> ();
 			if (t != VarType.Void) {
 				for (int i = 0; i < statementsTypeArray.Length; i++) {
 					MethodInfo method = statementsTypeArray [i].GetMethod ("GetReturnValueType");
 					VarType t2 = (VarType)(method.Invoke (null, null));
 					if (t2 == t)
-						types.Add (statementsTypeArray [i]);
+						types.Add (statementsTypeArray [i].FullName);
 				}
 			} else {
 				for (int i = 0; i < statementsTypeArray.Length; i++) {
-					types.Add (statementsTypeArray [i]);
+					types.Add (statementsTypeArray [i].FullName);
 				}
 			}
 			if (stateStack.Count >= 2) {
-				types.Remove (typeof(StatementDefine));
+				types.Remove (typeof(StatementDefine).FullName);
 			}
 			return types;
 		}
-		public List<Type> GetValueTypes()
+		public List<string> GetValueTypes()
 		{
-			List<Type> types = new List<Type> ();
+			List<string> types = new List<string> ();
 			for (int i = 0; i < statementsTypeArray.Length; i++) {
 				MethodInfo method = statementsTypeArray [i].GetMethod ("GetReturnValueType");
 				VarType t2 = (VarType)(method.Invoke (null, null));
 				if (t2 != VarType.Void)
-					types.Add (statementsTypeArray [i]);
+					types.Add (statementsTypeArray [i].FullName);
 			}
 			return types;
 		}
@@ -154,44 +154,41 @@ namespace Compiler
 		Dictionary<string,Parameter> name2p = new Dictionary<string, Parameter>();
 		public void AddVar(string name,Parameter p)
 		{
-			if(!name2p.ContainsKey(name))
-				name2p.Add (name,p);
+			if (!name2p.ContainsKey (name))
+				name2p.Add (name, p);
+			else
+				name2p[name] = p;
 		}
 		public Parameter GetVar(string name)
 		{
 			return name2p [name];
 		}
-		Dictionary<string,int> v2Int = new Dictionary<string, int> ();
-		Dictionary<string,bool> v2Bool = new Dictionary<string, bool> ();
-		Dictionary<string,string> v2Str = new Dictionary<string, string> ();
+
 		public void AddVar(string varName,string value)
 		{
 			if (value.ToLower().Equals ("true")) {
-				if (v2Bool.ContainsKey (varName))
-					v2Bool [varName] = true;
-				else
-					v2Bool.Add (varName,true);
+				AddVar (varName,new Parameter().Set(true));
 				return;
 			}
 			if (value.ToLower().Equals ("false")) {
-				if (v2Bool.ContainsKey (varName))
-					v2Bool [varName] = false;
-				else
-					v2Bool.Add (varName,false);
+				AddVar (varName,new Parameter().Set(false));
 				return;
 			}
 			try {
 				int i = Convert.ToInt32(value);
-				if(v2Int.ContainsKey(varName))
-					v2Int[varName] = i;
-				else
-					v2Int.Add(varName,i);
+				AddVar (varName,new Parameter().Set(i));
 			} catch (Exception ex) {
-				if (v2Str.ContainsKey (varName))
-					v2Str [varName] = value;
-				else
-					v2Str.Add (varName,value);
+				AddVar (varName,new Parameter().Set(value));
 			}
+		}
+		public List<string> GetAllVarByType(VarType t)
+		{
+			List<string> strs = new List<string> ();
+			foreach (var item in name2p.Values) {
+				if (item.paramType == t)
+					strs.Add (item.varName);
+			}
+			return strs;
 		}
 	}
 }

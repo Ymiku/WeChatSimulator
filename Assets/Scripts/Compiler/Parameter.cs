@@ -24,28 +24,38 @@ namespace Compiler
 			isVoid = b;
 			return this;
 		}
+		public Parameter SetVar(VarType t,string name)
+		{
+			paramType = t;
+			varName = name;
+			return this;
+		}
 		public Parameter Set (StatementBase statement)
 		{
 			paramType = VarType.Void;
 			_statement = statement;
+			varName = null;
 			return this;
 		}
 		public Parameter Set (bool b)
 		{
 			paramType = VarType.Bool;
 			_bool = b;
+			varName = null;
 			return this;
 		}
 		public Parameter Set (int i)
 		{
 			paramType = VarType.Int;
 			_int = i;
+			varName = null;
 			return this;
 		}
 		public Parameter Set (string s)
 		{
 			paramType = VarType.String;
 			_string = s;
+			varName = null;
 			return this;
 		}
 		public static implicit operator StatementBase(Parameter p)
@@ -54,25 +64,26 @@ namespace Compiler
 		}
 		public static implicit operator bool(Parameter p)
 		{
-			if (p.paramType == VarType.Void)
+			if (p.varName != null)
+				return (bool)HackStudioCode.Instance.GetVar (p.varName);
+			if (p._statement != null)
 				return p._statement.Execute ();
 			return p._bool;
 		}
 		public static implicit operator int(Parameter p)
 		{
-			if (p.paramType == VarType.Void)
+			if (p.varName != null)
+				return (int)HackStudioCode.Instance.GetVar (p.varName);
+			if (p._statement != null)
 				return p._statement.Execute ();
 			return p._int;
 		}
-		public static implicit operator float(Parameter p)
-		{
-			if (p.paramType == VarType.Void)
-				return p._statement.Execute ();
-			return p._float;
-		}
+
 		public static implicit operator string(Parameter p)
 		{
-			if (p.paramType == VarType.Void)
+			if (p.varName != null)
+				return (string)HackStudioCode.Instance.GetVar (p.varName);
+			if (p._statement != null)
 				return p._statement.Execute ();
 			return p._string;
 		}

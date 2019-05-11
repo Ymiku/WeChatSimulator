@@ -61,10 +61,12 @@ namespace Compiler
 			width = Mathf.Max(text.preferredWidth + 40.0f,80.0f);
             RefreshDropdown();
         }
+		List<string> optionCache = new List<string>();
         public void RefreshDropdown()
         {
             dropDown.Clear();
-			List<System.Type> options = null;
+			optionCache.Clear ();
+			List<string> options = null;
 
 			if (param.isVoid) {
 				if (HackStudioCode.Instance.isDefine())
@@ -76,10 +78,20 @@ namespace Compiler
 			}
             for (int i = 0; i < options.Count; i++)
             {
-                dropDown.AddOption(options[i].Name.Substring(options[i].Name.IndexOf("Statement")+9));
+                dropDown.AddOption(options[i].Substring(options[i].IndexOf("Statement")+9));
+				optionCache.Add (options[i]);
             }
-			if (!param.isVoid)
+			if (param.paramType != VarType.Void) {
+				List<string> vars = HackStudioCode.Instance.GetAllVarByType (param.paramType);
+				for (int i = 0; i < vars.Count; i++) {
+					dropDown.AddOption ("Var:"+vars[i]);
+					optionCache.Add ("Var:"+vars[i]);
+				}
+			}
+			if (!param.isVoid || HackStudioCode.Instance.isDefine ()) {
 				dropDown.AddOption ("Value");
+				optionCache.Add ("Value");
+			}
         }
 		public void SetIDEData(string s)
 		{
@@ -89,18 +101,21 @@ namespace Compiler
 		}
         public void OnValueChange(int i)
         {
-			input.gameObject.SetActive (i==-1);
-			text.gameObject.SetActive (i!=-1);
-			if (i == -1) {
+			input.gameObject.SetActive (optionCache[i].Equals("Value"));
+			text.gameObject.SetActive (!input.gameObject.activeSelf);
+			if (input.gameObject.activeSelf) {
 				return;
 			}
-			StatementBase s = null;
-			if (param.isVoid) {
-				s = (StatementBase)Activator.CreateInstance (HackStudioCode.Instance.GetTypesByReturnValue (VarType.Void) [i], true);
-			} else
-			{
-				s = (StatementBase)Activator.CreateInstance (HackStudioCode.Instance.GetTypesByReturnValue (param.paramType) [i], true);
+			if (optionCache[i].StartsWith("Var:")) {
+				//param.SetVar (,);
+				HackStudioCode.Instance.SetParam (id,param);
+				SetIDEData (param);
+				return;
 			}
+			Type t = Type.GetType(optionCache[i]);
+			Debug.Log (t);
+			Debug.Log (optionCache[i]);
+			StatementBase s = (StatementBase)Activator.CreateInstance (Type.GetType(optionCache[i]));
 			param.Set (s);
 			HackStudioCode.Instance.SetParam (id,param);
 			SetIDEData (param);

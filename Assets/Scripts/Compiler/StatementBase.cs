@@ -12,7 +12,6 @@ namespace Compiler
 		Int,
 		Bool,
 		String,
-        Var
 	}
 	public class StatementBase :IExecuteable{
 		public static StatementEmpty Empty = new StatementEmpty();
