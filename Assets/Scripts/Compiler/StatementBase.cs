@@ -15,6 +15,7 @@ namespace Compiler
         Var
 	}
 	public class StatementBase :IExecuteable{
+		public static StatementEmpty Empty = new StatementEmpty();
 		protected List<Parameter> _params = new List<Parameter>();
 		protected Grammar grammar = new Grammar();
 		protected System.Text.StringBuilder sb = new System.Text.StringBuilder();

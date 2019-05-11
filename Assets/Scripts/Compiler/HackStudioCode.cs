@@ -29,6 +29,10 @@ namespace Compiler
 			program.Add(b);
 			OnFocusChange (0);
 		}
+		public bool isDefine()
+		{
+			return stateStack.Peek () is StatementDefine;
+		}
 		public void Show(StatementBase statement)
 		{
             for (int i = 0; i < paramGoPool.Count; i++)
@@ -98,9 +102,19 @@ namespace Compiler
 					types.Add (statementsTypeArray [i]);
 				}
 			}
-			Debug.Log (t);
 			if (stateStack.Count >= 2) {
 				types.Remove (typeof(StatementDefine));
+			}
+			return types;
+		}
+		public List<Type> GetValueTypes()
+		{
+			List<Type> types = new List<Type> ();
+			for (int i = 0; i < statementsTypeArray.Length; i++) {
+				MethodInfo method = statementsTypeArray [i].GetMethod ("GetReturnValueType");
+				VarType t2 = (VarType)(method.Invoke (null, null));
+				if (t2 != VarType.Void)
+					types.Add (statementsTypeArray [i]);
 			}
 			return types;
 		}
@@ -146,6 +160,38 @@ namespace Compiler
 		public Parameter GetVar(string name)
 		{
 			return name2p [name];
+		}
+		Dictionary<string,int> v2Int = new Dictionary<string, int> ();
+		Dictionary<string,bool> v2Bool = new Dictionary<string, bool> ();
+		Dictionary<string,string> v2Str = new Dictionary<string, string> ();
+		public void AddVar(string varName,string value)
+		{
+			if (value.ToLower().Equals ("true")) {
+				if (v2Bool.ContainsKey (varName))
+					v2Bool [varName] = true;
+				else
+					v2Bool.Add (varName,true);
+				return;
+			}
+			if (value.ToLower().Equals ("false")) {
+				if (v2Bool.ContainsKey (varName))
+					v2Bool [varName] = false;
+				else
+					v2Bool.Add (varName,false);
+				return;
+			}
+			try {
+				int i = Convert.ToInt32(value);
+				if(v2Int.ContainsKey(varName))
+					v2Int[varName] = i;
+				else
+					v2Int.Add(varName,i);
+			} catch (Exception ex) {
+				if (v2Str.ContainsKey (varName))
+					v2Str [varName] = value;
+				else
+					v2Str.Add (varName,value);
+			}
 		}
 	}
 }

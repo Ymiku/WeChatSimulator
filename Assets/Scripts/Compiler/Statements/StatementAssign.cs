@@ -11,10 +11,10 @@ namespace Compiler
         }
         protected override void GenerateGrammar()
         {
-            grammar.Push(VarType.Int);
+            grammar.Push(VarType.String);
             grammar.Push(" = ");
             grammar.Push(VarType.Int);
-            AddParam(new Parameter().SetVoid(false).Set(0));
+            AddParam(new Parameter().SetVoid(false).Set("var"));
             AddParam(new Parameter().SetVoid(false).Set(0));
         }
         public override Parameter Execute()

@@ -19,9 +19,9 @@ namespace Compiler
         }
         public override Parameter Execute()
         {
-            StatementBase statement1 = GetParam(0);
-            StatementBase statement2 = GetParam(0);
-            int result = (int)statement1.Execute() + (int)statement2.Execute();
+            int statement1 = GetParam(0);
+            int statement2 = GetParam(0);
+			int result = statement1 + statement2;
             return new Parameter().Set(result);
         }
     }

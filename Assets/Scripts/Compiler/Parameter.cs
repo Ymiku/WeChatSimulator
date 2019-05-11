@@ -91,5 +91,18 @@ namespace Compiler
 				return "";
 			}
 		}
+		public override string ToString ()
+		{
+			switch (paramType) {
+			case VarType.Bool:
+				return _bool.ToString ();
+			case VarType.Int:
+				return _int.ToString ();
+			case VarType.String:
+				return _string;
+			default:
+				return "";
+			}
+		}
 	}
 }

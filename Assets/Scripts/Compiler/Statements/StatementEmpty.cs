@@ -10,19 +10,15 @@ namespace Compiler
 		}
 		protected override void GenerateGrammar ()
 		{
-            grammar.Push(" ");
 			grammar.Push(VarType.Void);
 
 			AddParam (new Parameter().SetVoid(true).Set((StatementBase)null));
-			Debug.Log (GetParam(0).isVoid);
 		}
 		public override Parameter Execute ()
 		{
 			StatementBase statement = GetParam (0);
             if(statement!=null)
 			statement.Execute ();
-
-
 			return new Parameter ();
 		}
 	}

@@ -28,6 +28,7 @@ namespace Compiler
 		}
 		void OnInputValueChange(string s)
 		{
+			width = 2000.0f;
 			width = input.textComponent.preferredWidth + 40.0f;
 		}
 		void OnInputEndEdit(string s)
@@ -46,25 +47,30 @@ namespace Compiler
 				param.Set (s);
 				break;
 			}
-			width = input.textComponent.preferredWidth + 40.0f;
+			width = 2000.0f;
+			width = Mathf.Max(input.textComponent.preferredWidth + 40.0f,120.0f);
 			//SetIDEData (param);
 		}
         public void SetIDEData(Parameter o)
         {
             param = o;
-			width = 1000.0f;
+			width = 8000.0f;
 			//text.sizeDelta = new Vector2 (1000.0f,400.0f);
 			text.text = param.GenerateCode();
-            text.width = text.preferredWidth;
-            width = text.width + 40.0f;
+
+			width = Mathf.Max(text.preferredWidth + 40.0f,80.0f);
             RefreshDropdown();
         }
         public void RefreshDropdown()
         {
             dropDown.Clear();
 			List<System.Type> options = null;
+
 			if (param.isVoid) {
-				options = HackStudioCode.Instance.GetTypesByReturnValue(VarType.Void);
+				if (HackStudioCode.Instance.isDefine())
+					options = HackStudioCode.Instance.GetValueTypes ();
+				else
+					options = HackStudioCode.Instance.GetTypesByReturnValue(VarType.Void);
 			} else {
 				options = HackStudioCode.Instance.GetTypesByReturnValue(param.paramType);
 			}
