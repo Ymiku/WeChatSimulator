@@ -81,6 +81,10 @@ namespace UIFrameWork
         public void OnClickFixedTerm() {
             UIManager.Instance.Push(new FixedTermContext());
         }
+        public void OnClickGold()
+        {
+            UIManager.Instance.Push(new GoldDealContext());
+        }
         #endregion
     }
     public class FortuneContext : BaseContext

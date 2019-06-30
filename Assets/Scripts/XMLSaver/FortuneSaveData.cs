@@ -40,4 +40,7 @@ public class FortuneSaveData
 {
     public int accountId;
     public double gold;
+    public double yesterdayGoldProfit;
+    public double totalGoldProfit;
+    public double nowHaveGoldProfit;
 }

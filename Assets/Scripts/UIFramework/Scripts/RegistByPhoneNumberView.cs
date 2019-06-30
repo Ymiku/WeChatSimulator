@@ -47,6 +47,7 @@ namespace UIFrameWork
                 XMLSaver.saveData.accountList.RemoveAt(0);
             AccountSaveData data = XMLSaver.saveData.AddAccountData(0);
             AssetsSaveData assetsData = XMLSaver.saveData.AddAssetsData(0);
+            FortuneSaveData fortuneData = XMLSaver.saveData.AddFortuneData(0);
 			data.phoneNumber = num;
             data.enname = "i";
             data.realName = "猪脚";
