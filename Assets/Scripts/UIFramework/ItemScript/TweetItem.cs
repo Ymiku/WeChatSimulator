@@ -20,8 +20,8 @@ public class TweetItem : ItemBaseInconsist {
 	TweetData data;
 	public CanvasGroup dotsCanvas;
 
-    BinaryList<CommentData> comments = new BinaryList<CommentData>();
-    BinaryList<CommentData> likes = new BinaryList<CommentData>();
+    List<CommentData> comments = new List<CommentData>();
+    List<CommentData> likes = new List<CommentData>();
     System.Text.StringBuilder sb = new System.Text.StringBuilder();
     public override float SetData(object o)
 	{
@@ -195,7 +195,7 @@ public class TweetItem : ItemBaseInconsist {
     }
     public void OnClickComment()
     {
-        ZoneManager.Instance.AddComment(CommentType.Tweet, data.id, "我要评论");
+        ZoneManager.Instance.AddComment(CommentType.Tweet, data.id, "我要评论"+Time.timeSinceLevelLoad.ToString());
         GetComponentInParent<PoolableScrollViewInconsist>().Refresh();
     }
 }

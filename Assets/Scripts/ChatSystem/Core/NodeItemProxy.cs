@@ -78,6 +78,10 @@ public class NodeItemProxy : MonoBehaviour {
         }
         
     }
+    public void OnClickImage()
+    {
+        UIManager.Instance.Push(new ChatPicContext() { chatImage = image.sprite});
+    }
 	public float SetData(Node node)
 	{
 		text.rectTransform.sizeDelta = new Vector2 (660.0f,800.0f);

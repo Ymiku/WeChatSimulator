@@ -32,7 +32,10 @@ public class ZoneManager : Singleton<ZoneManager> {
             for (int i = 0; i < comments.Count; i++)
             {
                 if (comments[i].targetId == targetId && comments[i].commentType == type && comments[i].userId == GameManager.Instance.curUserId && comments[i].info == null)
+                {
+                    comments.RemoveAt(i);
                     return;
+                }
             }
         }
         CommentData data = new CommentData();
