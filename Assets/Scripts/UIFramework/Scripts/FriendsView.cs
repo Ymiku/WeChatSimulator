@@ -11,6 +11,7 @@ namespace UIFrameWork
 		public override void Init ()
 		{
 			base.Init ();
+            RegistCommonView(UIType.CommonHomeBar);
 		}
         public override void OnEnter(BaseContext context)
 		{

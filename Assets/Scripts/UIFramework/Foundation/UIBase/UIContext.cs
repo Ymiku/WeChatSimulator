@@ -37,14 +37,16 @@ namespace UIFrameWork
 		}
         public void Push(BaseContext nextContext,bool needs2Show = true)
         {
+            UIType curType = nextContext.ViewType;
+            UIType nextType = UIType.None;
             if (_contextStack.Count != 0)
             {
                 BaseContext curContext = _contextStack.Peek();
+                nextType = curContext.ViewType;
                 BaseView curView = UIManager.Instance.GetSingleUI(curContext.ViewType).GetComponent<BaseView>();
                 curView.OnPause(curContext);
                 if (!needs2Show && !curView.activeWhenPause)
                     curView.ForceDisable();
-                //Pool(curContext.ViewType);
             }
             _contextStack.Push(nextContext);
             _curContext = nextContext;
@@ -52,11 +54,13 @@ namespace UIFrameWork
 			nextView.transform.SetAsLastSibling ();
             nextView.OnEnter(nextContext);
 			DisableInstant ();
+            UIManager.Instance.commonUIManager.Refresh(curType,nextType);
         }
 
         public void Pop()
         {
-			
+            UIType curType = UIType.None;
+            UIType nextType = UIType.None;
             if (_contextStack.Count != 0)
             {
                 BaseContext curContext = _contextStack.Peek();
@@ -68,6 +72,7 @@ namespace UIFrameWork
             if (_contextStack.Count != 0)
             {
                 BaseContext lastContext = _contextStack.Peek();
+                curType = lastContext.ViewType;
                 _curContext = lastContext;
                 BaseView curView = UIManager.Instance.GetSingleUI(lastContext.ViewType).GetComponent<BaseView>();
 				curView.transform.SetAsLastSibling ();
@@ -79,6 +84,7 @@ namespace UIFrameWork
                 curView.OnResume(lastContext);
             }
 			DisableInstant ();
+            UIManager.Instance.commonUIManager.Refresh(curType,nextType);
         }
         //同一时间最多显示两个UI
 		void DisableInstant()

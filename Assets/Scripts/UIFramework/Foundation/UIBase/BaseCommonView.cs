@@ -18,11 +18,12 @@ namespace UIFrameWork
         public override void OnEnter(BaseContext context)
         {
             base.OnEnter(context);
-
+            gameObject.SetActive(true);
         }
         public override void OnExit(BaseContext context)
         {
             base.OnExit(context);
+            gameObject.SetActive(false);
         }
         public override void OnResume(BaseContext context)
         {

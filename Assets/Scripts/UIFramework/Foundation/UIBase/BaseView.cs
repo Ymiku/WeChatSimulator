@@ -21,6 +21,7 @@ namespace UIFrameWork
             UIManager.Instance.ShowNotice(notice);
         }
         protected CanvasGroup _canvasGroup;
+        [HideInInspector]
         public bool hasEnter = false;
         void Awake()
         {

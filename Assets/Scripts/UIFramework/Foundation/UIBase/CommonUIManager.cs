@@ -12,7 +12,10 @@ namespace UIFrameWork
         public void Refresh(UIType curType,UIType nextType)
         {
             BaseView curView = UIManager.Instance.TryGetSingleUI(curType).GetComponent<BaseView>();
-            BaseView nextView = UIManager.Instance.TryGetSingleUI(nextType).GetComponent<BaseView>();
+            BaseView nextView = null;
+            GameObject next = UIManager.Instance.TryGetSingleUI(nextType);
+            if(next!=null)
+                nextView = next.GetComponent<BaseView>();
             foreach (var k in type2Context.Keys)
             {
                 if(!curView.commonUI2Show.Contains(k)&&(nextView==null||!nextView.commonUI2Show.Contains(k)))
@@ -20,6 +23,7 @@ namespace UIFrameWork
                     GameObject go = UIManager.Instance.TryGetSingleUI(k);
                     if (go != null) {
                         go.GetComponent<BaseCommonView>().OnExit(type2Context[k]);
+                        go.GetComponent<BaseCommonView>().linkedView = null;
                     }
                 }
             }
@@ -43,6 +47,7 @@ namespace UIFrameWork
         {
             BaseCommonView commonView = UIManager.Instance.GetSingleUI(commonType).GetComponent<BaseCommonView>();
             commonView.transform.SetSiblingIndex(parent.transform.GetSiblingIndex()+1);
+            commonView.linkedView = parent;
             commonView.OnEnter(type2Context[commonType]);
         }
     }
