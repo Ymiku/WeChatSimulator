@@ -15,9 +15,7 @@ namespace UIFrameWork
             }
         }
         public bool closeOtherUI = true;
-        [SerializeField]
         protected bool _isActive = false;//逻辑层，是否为顶层UI
-        [SerializeField]
         protected bool _isViewHide = true;//视图层是否隐藏
 
         public void ShowNotice(string notice)
