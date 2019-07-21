@@ -103,5 +103,6 @@ namespace UIFrameWork
 		public static readonly UIType GoldDeal = new UIType("View/GoldDealView"); //黄金
 		public static readonly UIType AntRepay = new UIType("View/AntRepayView"); //花呗还钱
 		public static readonly UIType CommonHomeBar = new UIType("View/CommonHomeBarView"); //主界面工具条
+		public static readonly UIType CommonMobileStatusBar = new UIType("View/CommonMobileStatusBarView"); //状态栏
     }
 }

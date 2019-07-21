@@ -8,6 +8,7 @@ namespace UIFrameWork
         Dictionary<UIType, BaseContext> type2Context = new Dictionary<UIType, BaseContext>()
         {
             { UIType.CommonHomeBar,new CommonHomeBarContext() }, //主界面工具条
+            { UIType.CommonMobileStatusBar,new CommonMobileStatusBarContext() }, //状态栏
         };
         public void Refresh(UIType curType,UIType nextType)
         {
