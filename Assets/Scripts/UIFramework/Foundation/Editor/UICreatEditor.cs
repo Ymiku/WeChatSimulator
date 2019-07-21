@@ -20,7 +20,13 @@ public class UICreatWindow : EditorWindow
         AlphaFade,
         AnimationFade
     }
+    enum UICreatType
+    {
+        NoramlUI,
+        CommonUI,
+    }
     FadeType _fadeType = FadeType.None;
+    UICreatType _UIType = UICreatType.NoramlUI;
     string _uiName = "";
     string _notesStr = "";
     private void OnGUI()
@@ -30,8 +36,10 @@ public class UICreatWindow : EditorWindow
         _uiName = EditorGUILayout.TextField(_uiName);
         EditorGUILayout.LabelField("UI注释(非必须):");
         _notesStr = EditorGUILayout.TextField(_notesStr);
-        EditorGUILayout.LabelField("FadeType");
+        EditorGUILayout.LabelField("UI渐变方式");
         _fadeType = (FadeType)EditorGUILayout.EnumPopup(_fadeType);
+        EditorGUILayout.LabelField("UI类型");
+        _UIType = (UICreatType)EditorGUILayout.EnumPopup(_UIType);
         if (GUILayout.Button("CreatUI"))
         {
             Creat();
@@ -42,6 +50,8 @@ public class UICreatWindow : EditorWindow
     {
         if (_uiName == "")
             return;
+        if (_UIType == UICreatType.CommonUI&&!_uiName.StartsWith("Common"))
+            _uiName = "Common" + _uiName;
         CreatViewScript();
         AddUIType();
         CreatPrefab();
@@ -64,10 +74,26 @@ public class UICreatWindow : EditorWindow
         }
         File.Delete(typePath);
         File.AppendAllText(typePath, sb.ToString());
+
+        string commonPath = Application.dataPath + "/Scripts/UIFramework/Foundation/UIBase/CommonUIManager.cs";
+        file = File.ReadAllLines(commonPath);
+        sb.Length = 0;
+        for (int i = 0; i < file.Length; i++)
+        {
+            sb.Append(file[i] + "\n");
+            if (i == 10)
+                if (_notesStr == "")
+                    sb.Append("            { UIType."+_uiName+",new "+_uiName+"Context() }," + "\n");
+                else
+                    sb.Append("            { UIType." + _uiName + ",new " + _uiName + "Context() }," + " //" + _notesStr + "\n");
+        }
+        File.Delete(commonPath);
+        File.AppendAllText(commonPath, sb.ToString());
     }
     void CreatViewScript()
     {
         string viewName = _uiName + "View";
+        
         string scriptPath = Application.dataPath + "/Scripts/UIFramework/Scripts/";
         string prefabPath = Application.dataPath + "/Scripts/UIFramework/Resources/View/";
 
@@ -85,6 +111,7 @@ public class UICreatWindow : EditorWindow
             classStr.Append(templetClass[i] + "\n");
         }
         string finalClassStr = classStr.ToString().Replace("Templet", _uiName);
+        if(_UIType==UICreatType.NoramlUI)
         switch (_fadeType)
         {
             case FadeType.None:
@@ -97,6 +124,8 @@ public class UICreatWindow : EditorWindow
                 finalClassStr = finalClassStr.Replace("ParentView", "AnimateView");
                 break;
         }
+        if(_UIType == UICreatType.CommonUI)
+            finalClassStr = finalClassStr.Replace("ParentView", "BaseCommonView");
         File.AppendAllText(scriptFilePath, finalClassStr);
     }
     void CreatPrefab()

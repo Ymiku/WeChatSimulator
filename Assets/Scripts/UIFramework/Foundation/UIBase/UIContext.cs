@@ -8,7 +8,6 @@ namespace UIFrameWork
     public class UIContext
     {
         private Stack<BaseContext> _contextStack = new Stack<BaseContext>();
-		private List<UIType> _typeLst = new List<UIType> ();
         BaseContext _curContext;
 		public void LineStart()
 		{
@@ -48,12 +47,10 @@ namespace UIFrameWork
                 //Pool(curContext.ViewType);
             }
             _contextStack.Push(nextContext);
-			_typeLst.Add (nextContext.ViewType);
             _curContext = nextContext;
             BaseView nextView = UIManager.Instance.GetSingleUI(nextContext.ViewType).GetComponent<BaseView>();
 			nextView.transform.SetAsLastSibling ();
             nextView.OnEnter(nextContext);
-            Pool(nextContext.ViewType);
 			DisableInstant ();
         }
 
@@ -64,10 +61,8 @@ namespace UIFrameWork
             {
                 BaseContext curContext = _contextStack.Peek();
                 _contextStack.Pop();
-				_typeLst.RemoveAt (_typeLst.Count-1);
                 BaseView curView = UIManager.Instance.GetSingleUI(curContext.ViewType).GetComponent<BaseView>();
                 curView.OnExit(curContext);
-                //Pool(curContext.ViewType);
             }
 
             if (_contextStack.Count != 0)
@@ -76,11 +71,16 @@ namespace UIFrameWork
                 _curContext = lastContext;
                 BaseView curView = UIManager.Instance.GetSingleUI(lastContext.ViewType).GetComponent<BaseView>();
 				curView.transform.SetAsLastSibling ();
+                if(!curView.hasEnter)
+                {
+                    curView.OnEnter(lastContext);
+                    curView.OnPause(lastContext);
+                }
                 curView.OnResume(lastContext);
-                Pool(lastContext.ViewType);
             }
 			DisableInstant ();
         }
+        //同一时间最多显示两个UI
 		void DisableInstant()
 		{
 			List<UIType> UIPool = UIManager.Instance._UIPool;
@@ -94,19 +94,14 @@ namespace UIFrameWork
 		}
 		public UIType GetLastContextType()
 		{
-			if (_typeLst.Count <= 1)
+            
+			if (_contextStack.Count <= 1)
 				return UIType.None;
-			return _typeLst[_typeLst.Count-2];
+            BaseContext curContext = _contextStack.Pop();
+            UIType lastType = _contextStack.Peek().ViewType;
+            _contextStack.Push(curContext);
+            return lastType;
 		}
-        void Pool(UIType type)
-        {
-            List<UIType> UIPool = UIManager.Instance._UIPool;
-            if (UIPool.Contains(type))
-            {
-                UIPool.Remove(type);
-            }
-            UIPool.Add(type);
-        }
         public BaseContext PeekOrNull()
         {
             if (_contextStack.Count != 0)

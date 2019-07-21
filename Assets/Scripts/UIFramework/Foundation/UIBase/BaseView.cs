@@ -7,6 +7,13 @@ namespace UIFrameWork
 {
     public abstract class BaseView : MonoBehaviour
     {
+        public bool IsCommonView
+        {
+            get
+            {
+                return this is BaseCommonView;
+            }
+        }
 		public bool activeWhenPause = false;
         protected bool _isPause = false;
         public void ShowNotice(string notice)
@@ -14,9 +21,15 @@ namespace UIFrameWork
             UIManager.Instance.ShowNotice(notice);
         }
         protected CanvasGroup _canvasGroup;
+        public bool hasEnter = false;
         void Awake()
         {
             //Init();
+        }
+        public List<UIType> commonUI2Show = new List<UIType>();
+        protected void RegistCommonView(UIType uiType)
+        {
+            commonUI2Show.Add(uiType);
         }
         public virtual void Init()
         {
@@ -26,6 +39,7 @@ namespace UIFrameWork
         {
             _isPause = false;
             _canvasGroup.blocksRaycasts = true;
+            hasEnter = true;
         }
 
         public virtual void OnExit(BaseContext context)
@@ -75,6 +89,7 @@ namespace UIFrameWork
             }
             return false;
         }
+        //立即结束动画
         public virtual void ForceDisable()
         {
         }

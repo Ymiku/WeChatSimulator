@@ -18,7 +18,8 @@ namespace UIFrameWork
         public Transform alwaysFrontTrans;
 		public UIContext activeContext;
 		public Dictionary<UILine,UIContext> _UILineDic = new Dictionary<UILine, UIContext>();
-
+        public CommonUIManager commonUIManager = new CommonUIManager();
+        
         public Dictionary<UIType, GameObject> _UIDict = new Dictionary<UIType,GameObject>();
         public List<UIType> _UIPool = new List<UIType>();
         int maxPoolSize = 10;
@@ -77,6 +78,7 @@ namespace UIFrameWork
 
         public GameObject GetSingleUI(UIType uiType)
         {
+            Pool(uiType);
             if (_UIDict.ContainsKey(uiType) == false || _UIDict[uiType] == null)
             {
                 GameObject go = GameObject.Instantiate(Resources.Load<GameObject>(uiType.Path)) as GameObject;
@@ -87,6 +89,14 @@ namespace UIFrameWork
                 return go;
             }
             return _UIDict[uiType];
+        }
+        void Pool(UIType type)
+        {
+            if (_UIPool.Contains(type))
+            {
+                _UIPool.Remove(type);
+            }
+            _UIPool.Add(type);
         }
         public GameObject TryGetSingleUI(UIType uiType)
         {
@@ -150,5 +160,9 @@ namespace UIFrameWork
                 return UIType.None;
 			return activeContext.GetLastContextType ();
 		}
+        public void RefreshCommonUI(BaseView curView,BaseView lastView)
+        {
+
+        }
 	}
 }
