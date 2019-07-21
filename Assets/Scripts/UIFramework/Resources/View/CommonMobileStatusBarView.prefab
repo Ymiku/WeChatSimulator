@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224712800142655484}
   - component: {fileID: 222078147985199160}
   - component: {fileID: 225249496464303682}
-  - component: {fileID: 114096160526112704}
+  - component: {fileID: 114575772605887088}
   m_Layer: 5
   m_Name: CommonMobileStatusBarView
   m_TagString: Untagged
@@ -29,7 +29,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114096160526112704
+--- !u!114 &114575772605887088
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -37,25 +37,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1512311799753498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c514db7433701ca4cb0c769631e58a01, type: 3}
+  m_Script: {fileID: 11500000, guid: a4c3f1b89e5e9bc4d99a2db9c23e2a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  activeWhenPause: 0
+  hasEnter: 0
+  linkedView: {fileID: 0}
 --- !u!222 &222078147985199160
 CanvasRenderer:
   m_ObjectHideFlags: 1

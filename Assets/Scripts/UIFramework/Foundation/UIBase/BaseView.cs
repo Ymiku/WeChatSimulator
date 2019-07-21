@@ -35,6 +35,7 @@ namespace UIFrameWork
         public virtual void Init()
         {
             _canvasGroup = GetComponent<CanvasGroup>();
+            RegistCommonView(UIType.CommonMobileStatusBar);
         }
         public virtual void OnEnter(BaseContext context)
         {
