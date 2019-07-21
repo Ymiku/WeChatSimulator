@@ -18,6 +18,7 @@ namespace UIFrameWork
         public Transform alwaysFrontTrans;
 		public UIContext activeContext;
 		public Dictionary<UILine,UIContext> _UILineDic = new Dictionary<UILine, UIContext>();
+        public List<BaseView> activeView = new List<BaseView>();
         public CommonUIManager commonUIManager = new CommonUIManager();
         
         public Dictionary<UIType, GameObject> _UIDict = new Dictionary<UIType,GameObject>();
@@ -52,6 +53,16 @@ namespace UIFrameWork
 			if (alwaysFrontTrans != null)
 				alwaysFrontTrans.SetAsLastSibling();
 		}
+        public void CloseAllUI()
+        {
+            for (int i = 0; i < activeView.Count; i++)
+            {
+                if (activeView[i] == null)
+                    continue;
+                activeView[i].HideUI();
+            }
+            activeView.Clear();
+        }
         public UILine curUILine = UILine.Main;
 		public void StartUILine(UILine line)
 		{

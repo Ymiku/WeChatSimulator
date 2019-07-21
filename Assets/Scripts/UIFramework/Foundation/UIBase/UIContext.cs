@@ -35,25 +35,28 @@ namespace UIFrameWork
                     view.ForceDisable();
             }
 		}
-        public void Push(BaseContext nextContext,bool needs2Show = true)
+        public void Push(BaseContext nextContext)
         {
             UIType curType = nextContext.ViewType;
             UIType nextType = UIType.None;
+            
             if (_contextStack.Count != 0)
             {
                 BaseContext curContext = _contextStack.Peek();
                 nextType = curContext.ViewType;
                 BaseView curView = UIManager.Instance.GetSingleUI(curContext.ViewType).GetComponent<BaseView>();
                 curView.OnPause(curContext);
-                if (!needs2Show && !curView.activeWhenPause)
-                    curView.ForceDisable();
             }
+            BaseView nextView = UIManager.Instance.GetSingleUI(nextContext.ViewType).GetComponent<BaseView>();
+            if (nextView.closeOtherUI)
+                UIManager.Instance.CloseAllUI();
             _contextStack.Push(nextContext);
             _curContext = nextContext;
-            BaseView nextView = UIManager.Instance.GetSingleUI(nextContext.ViewType).GetComponent<BaseView>();
 			nextView.transform.SetAsLastSibling ();
             nextView.OnEnter(nextContext);
 			DisableInstant ();
+            if(!UIManager.Instance.activeView.Contains(nextView))
+                UIManager.Instance.activeView.Add(nextView);
             UIManager.Instance.commonUIManager.Refresh(curType,nextType);
         }
 
@@ -82,6 +85,10 @@ namespace UIFrameWork
                     curView.OnPause(lastContext);
                 }
                 curView.OnResume(lastContext);
+                if (curView.closeOtherUI)
+                    UIManager.Instance.CloseAllUI();
+                if (!UIManager.Instance.activeView.Contains(curView))
+                    UIManager.Instance.activeView.Add(curView);
             }
 			DisableInstant ();
             UIManager.Instance.commonUIManager.Refresh(curType,nextType);
@@ -93,7 +100,10 @@ namespace UIFrameWork
 			if (UIPool.Count <= 2)
 				return;
 			if (UIPool [UIPool.Count - 3] != UIPool [UIPool.Count - 2] && UIPool [UIPool.Count - 3] != UIPool [UIPool.Count - 1]) {
-				BaseView endView = UIManager.Instance.TryGetSingleUI(UIPool[UIPool.Count-3]).GetComponent<BaseView>();
+                GameObject endObj = UIManager.Instance.TryGetSingleUI(UIPool[UIPool.Count - 3]);
+                if (endObj == null)
+                    return;
+                BaseView endView = UIManager.Instance.TryGetSingleUI(UIPool[UIPool.Count-3]).GetComponent<BaseView>();
                 if(endView!=null)
 				    endView.ForceDisable ();
 			}

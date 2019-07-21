@@ -8,40 +8,42 @@ namespace UIFrameWork
 	{
 		public float alphaSpeed = 20f;
 		private bool _show = false;
-		private bool _isEnter = false;
 		public override void OnEnter(BaseContext context)
 		{
 			base.OnEnter (context);
 			_canvasGroup.alpha = 0f;
-			_show = true;
-			_isEnter = true;
-			gameObject.SetActive (true);
 		}
 
 		public override void OnExit(BaseContext context)
 		{
 			base.OnExit (context);
-			_show = false;
-			_isEnter = false;
 		}
 
 		public override void OnPause(BaseContext context)
 		{
 			base.OnPause (context);
-			if (!activeWhenPause) {
-				_show = false;
-			}
 		}
 
 		public override void OnResume(BaseContext context)
 		{
 			base.OnResume (context);
-			gameObject.SetActive (true);
-			if (!activeWhenPause) {
-				_show = true;
-			}
 		}
-		public override void Excute ()
+        public override bool ShowUI()
+        {
+            if (!base.ShowUI())
+                return false;
+            _show = true;
+            gameObject.SetActive(true);
+            return true;
+        }
+        public override bool HideUI()
+        {
+            if (!base.HideUI())
+                return false;
+            _show = false;
+            return true;
+        }
+        public override void Excute ()
 		{
 			base.Excute ();
 			if (_show && _canvasGroup.alpha < 1f) {
@@ -57,8 +59,6 @@ namespace UIFrameWork
         public sealed override void ForceDisable()
         {
             base.ForceDisable();
-            if (activeWhenPause)
-                return;
             _show = false;
             _canvasGroup.alpha = 0.0f;
             gameObject.SetActive(false);

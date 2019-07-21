@@ -23,7 +23,6 @@ namespace UIFrameWork
 		public override void Init ()
 		{
 			base.Init ();
-            activeWhenPause = true;
             _amountText = FindInChild<Text>("Middle/AmountInput/Text");
             _nameText = FindInChild<Text>("Middle/Name");
             _accountText = FindInChild<Text>("Middle/Account");
