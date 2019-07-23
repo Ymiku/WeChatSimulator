@@ -1,0 +1,601 @@
+﻿# Exported by Aegisub 3.2.2
+NTP: 人人影视\NYYeTs.com
+NTP: 原创翻译  双语字幕
+NTP: ■
+NTP: 仅供学习 禁止用于任何商业盈利行为\N更多影视更新\N请登陆www.YYeTs.com
+NTP:  翻译：爱卿遛小鸟   Asianika   觉棂   不靠谱加森
+NTP:  翻译：glorydai   肉松   猫妖柒   蓬蓬裙
+NTP:  时间轴：仓鼠sama   超级不靠谱加森
+NTP:  校对：Ethan-泽生   不要叫我马维斯   教主吕黎
+NTP: 后期：冰河     监制：我是大鸟爷才不是胖鸟
+NTP: 美国恐怖故事
+NTP: 第二季 第六集
+NTP: 我昨晚去看了《野百合》\NI went to see Lilies of the Field last night.
+说话人: 我正在看原著呢\NI'm reading the book right now.
+说话人: 西德尼·波蒂埃的演技真是太棒了\NSidney Poitier's performance was fabulous.
+说话人: 我正看到他要兴建小教堂那章节呢\NI'm right at the part where he's starting to build the chapel.
+说话人: 那我就不剧透扫你的性了\NI won't ruin it for you then.
+说话人: 早上好\NGood morning.
+说话人: 早上好  修女\NGood morning, Sister.
+说话人: 她在发烧\NShe's burning up.
+说话人: 天哪\NGod!
+说话人: 格蕾丝  格蕾丝\NGrace? Grace?
+说话人: 要去叫奥尔顿医生来吗\NShould I call Dr. Arden?
+说话人: 那个侩子手  这就是他干的好事\NThat butcher? He's the one who did this to her.
+说话人: 那要叫救护车吗\NShould I call an ambulance?
+说话人: 等救护车过来她早就死了\NShe'll be dead before it gets here.
+说话人: 血止不住\NI can't stop the bleeding.
+说话人: 她浑身都发青了\NShe's turning blue.
+说话人: 我准备好了\NI'm ready.
+说话人: 她停止呼吸了\NShe's not breathing.
+说话人: 你差点就没命了  格蕾丝\NWe almost lost you, Grace.
+说话人: 你们该让我就这么死了\NYou should have let me go.
+说话人: 悠闲的午后种种花草呢  医生\NDoing a little afternoon gardening, doctor?
+说话人: 只是移栽这盆鼠尾草\NJust repotting this salvia divinorum.
+说话人: 它本该茁壮成长的  却始终萎靡不振\NIt's not thriving as it should,
+说话人: 我一定要救活它\Nand I'm determined to revive it.
+说话人: 我很有信心\NAnd I have every confidence...
+说话人: 你行的\Nyou will.
+说话人: 比起这些花花草草  我更担心你的病人\NI worry less for your plants than I do for your patients.
+说话人: 不过...\NBut... I mean,
+说话人: 你看起来笨手笨脚的\Nsince you appear to be all thumbs,
+说话人: 搞砸一件也正常\Nsurely one of them is green.
+说话人: -你再说一遍  -那个法国女孩  格蕾丝\N- I beg your pardon? - The french girl, Grace,
+说话人: 就因为你  她今早差点没命了\Nshe nearly died this morning because of you.
+说话人: 你在说什么\NWhat... are you talking about?
+说话人: 裘德修女让你给她做绝育手术\NThe sterilization that Sister Jude ordered--
+说话人: 而你搞砸了  亚瑟\Nyou botched it, Arthur.
+说话人: 她大出血了\NShe's been hemorrhaging.
+说话人: 绝育手术\NSterilization?
+说话人: 护士们已经稳定住她的情况了\NThe nurses have stabilized her for now,
+说话人: 若情况又急转直下\Nbut if she takes another turn,
+说话人: 我也许要送她去一家真正的医院了\NI might have to send her to a real hospital.
+说话人: 抑或让她失血而死\NOr let her bleed out.
+说话人: 后者才是明智之选\NWhich I suppose is the real... alternative.
+说话人: 我们可不能让外界\NWe can't really afford to let the outside world
+说话人: 看到你的杰作  是吧\Nget a look at your handiwork, now, can we?
+说话人: 我没做过绝育手术  修女\NI performed no sterilization, Sister.
+说话人: 亚瑟  你又故技重施了\NOh, Arthur, you're back to your old tricks.
+说话人: 她的女性器官都被人摘除了\NAll of her girl parts have been scooped out.
+说话人: 不得不说  我不太喜欢\NI must say I don't care much
+说话人: 你话中的暗讽和说话的口气\Nfor your insinuations, or your tone.
+说话人: 我是这家精神病院的负责人\NAs the head of this institution,
+说话人: 你说话给我放尊重点\NI demand to be spoken to with at least a modicum of respect!
+说话人: 太好笑了  亚瑟\NThat's rich... Arthur.
+说话人: 你真觉得这里你管事吗\NYou really think you're in charge?
+说话人: 你再碰我一下\NYou touch me again...
+说话人: 就死定了\NYou will die.
+说话人: 希望这能让你明白这里谁说了算  亚瑟\NI hope this clarifies the chain of command, Arthur.
+说话人: 你知道自己要做什么\NYou know what you need to do.
+说话人: 你心里明白\NYou know it in your heart.
+说话人: 勇敢一点  做正确的事吧\NTime to be brave and do the right thing
+说话人: 别毁了你仅有的机会\Nand don't blow your one chance.
+说话人: 总有人要成为英雄  为何不是你呢\NSomebody's got to be the hero, so why not you,
+说话人: 在你悲惨的人生中成就一次伟业\Nfor once in your miserable life?!
+说话人: 你不过是个肮脏的酒鬼\NYou know you're nothing but a filthy drunk!
+说话人: 你从没为别人做过什么\NYou never did nothing for nobody!
+说话人: 现在机会来了\NHere's your chance to do something!
+说话人: 闭嘴  快闭嘴\NShut up! Shut the hell up!
+说话人: 我警告过你不要乱说脏话\NI warned you about your dirty mouth.
+说话人: 我不是说你  修女\NThat wasn't to you, Sister.
+说话人: 我在跟脑子里的声音说\NI was talking to the voices in my head.
+说话人: 他们有时真的很吵\NThey get real loud sometimes.
+说话人: 咒骂可没法让它静下来\NCursing won't help silence anything.
+说话人: 你说得对  修女\NYou're right, Sister.
+说话人: 你会怎样选呢\NSo what's it gonna be,
+说话人: 屎样的人生\Na life of pure shit
+说话人: 还是勇敢的传奇呢  英勇的战士\Nor a legacy of a brave, heroic soldier?
+说话人: 修女  知道吗\NYou know, Sister...
+说话人: 这些切得不是很平\NThese slices look a little uneven.
+说话人: 你说什么呢迈尔斯  看起来很好啊\NWhat are you talking about, Miles-- they look fine.
+说话人: 可能是切片机出了问题\NI think there's something wrong with the slicer.
+说话人: 让我来看看\NLet me take a look at it.
+说话人: 我对机器很在行\NI'm real good with machines.
+说话人: 你知道你需要做什么\NYou know what you need to do!
+说话人: 窝囊了一辈子  争气一回吧\NFor once in your miserable life...
+说话人: 你从没为别人做过什么\NYou never did nothing for nobody!
+说话人: 这是你做出点贡献的机会\NHere's your chance to do something!
+说话人: 血止住了  但还得缝针\NWe got the bleeding stopped, but he's gonna need stitches--
+说话人: 得不少针啊\NA lot of 'em.
+说话人: 玛丽·尤妮斯修女  对不起\NOh, Sister Mary Eunice, I'm so sorry!
+说话人: 裘德修女会对我大发雷霆的\NSister Jude's gonna be very angry with me!
+说话人: 那玩意是什么意思\NWhat the hell's that supposed to mean?
+说话人: 是个名字\NIt's a name.
+说话人: -看着不像英语啊  -不是英语\N- Don't look like English. - It's not.
+说话人: 是古阿拉米语\NIt's ancient Aramaic.
+说话人: 圣经旧约后期的书写语言
+说话人: 迈尔斯  墙上的名字\NMiles...that name on the wall,
+说话人: 你是怎么知道的\NHow do you know it?
+说话人: 名字\NName?
+说话人: 那是个名字吗\NIs that what it is?
+说话人: 我不知道\NI don't know.
+说话人: 我都不认识\NI can't even read it.
+说话人: 怎么会写出来呢\NWhy would I write it?
+说话人: 是你召唤了她吗\NDid you summon her?
+说话人: 召唤谁\NSummon who?
+说话人: 我们得给他缝针了  修女\NWe should get him stitched, Sister.
+说话人: 好吧\NFine.
+说话人: 处理完毕之后  把他关禁闭\NOnce that's accomplished, put him in isolation.
+说话人: 这种行为必须惩戒\NWe don't reward this kind of behavior.
+说话人: 马上把这面墙擦洗干净\NHave this wall scrubbed at once!
+说话人: 小心别把缝针挣开\NCareful not to open them stitches.
+说话人: 你还好吗  迈尔斯\NYou all right, Miles?
+说话人: 我不想再待在这里了\NI don't want to be here no more.
+说话人: 只待一个晚上而已  迈尔斯\NIt's just for one night, Miles.
+说话人: 我不是说这件屋子  弗兰克\NI don't mean this room, Frank.
+说话人: 我是说这个世界\NI mean this world.
+说话人: 你是谁\NWho are you?
+说话人: 你知道我是谁  迈尔斯  你召唤了我\NYou know who I am, Miles. You summoned me.
+说话人: 是吗\NI did?
+说话人: 我是来帮你的  如果你需要帮助的话\NI'm here to help you, if that's what you want.
+说话人: 帮帮我\NHelp me.
+说话人: 需要我亲吻你吗  迈尔斯\NShall I kiss you, Miles?
+说话人: 需不需要我亲吻你\NShall I kiss you...
+说话人: 带走你一切痛苦\Nand make this all go away?
+说话人: 好的\NYes.
+说话人: 谁在那里\NWho's there?
+说话人: 煞卡  希伯来语  意为"地狱之深坑"  "坟墓"
+说话人: 是谁胆敢目视煞卡\NWho dares look upon Shachath?
+说话人: 快快现身\NShow yourself.
+说话人: 你已做了你要做的  请回吧\NYou did what you had to do, now leave.
+说话人: 你是什么身份  竟敢目视煞卡\NWhat are you that you can look upon me?
+说话人: 我只是个普通的修女\NI'm just a simple nun.
+说话人: 是修女没错\NA nun, perhaps...
+说话人: 但绝不普通\Nbut not so simple.
+说话人: 你体内有别的东西\NSomething else resides in you.
+说话人: 像我一样  但却是堕落的\NOne like me, but fallen.
+说话人: 表亲\NCousin.
+说话人: 我不是你的表亲\NI'm no cousin of yours.
+说话人: 赶紧离开这里  你在这不受欢迎\NNow leave this place, you're not wanted here.
+说话人: 我是受邀而来  而你却不是\NI was invited, unlike you.
+说话人: 你知道为什么你一直在找寻我吗  表亲\NDo you know why you seek me out, cousin?
+说话人: 我才没有找寻你\NI don't seek you out.
+说话人: 你有  或者说你心中某一部分在找我\NBut you do, or some part of you.
+说话人: 那曾经纯洁的部分\NThe part that used to be pure.
+说话人: 那个被你挟持的人类女孩在向我哭诉\NThe human girl you've taken hostage sings to me.
+说话人: 天上的主啊\NOh, heavenly host,
+说话人: 您可否释放我\NWill you release me?
+说话人: 您能否释放我\NCan you release me?
+说话人: 闭嘴  你个傻婊子\NOh, shut up, you stupid sow!
+说话人: 她喜欢待在这里\NShe likes it here.
+说话人: 我们都喜欢\NWe like it.
+说话人: 我们还有事情要做\NWe have work left to do.
+说话人: 我也有\NSo do I.
+说话人: 我们会再相见的\NWe'll meet again.
+说话人: 你病得很严重  格蕾丝\NYou're grievously ill, Grace.
+说话人: 你身体内部都被感染了\NThere's an infection coursing through your body,
+说话人: 很可能是失败的子宫切除手术造成的\Nprobably caused by a botched hysterectomy.
+说话人: 有人说是我让你变成这样的\NI've been accused of having committed this savagery.
+说话人: 你们都知道不是那样的\NBoth you and I know it's not the truth.
+说话人: 现在这种情况\NAt this stage,
+说话人: 让你死是最简单的办法\Nit would be easier just to let you die,
+说话人: 但我可不想背这个黑锅\Nbut I will not be the one to take the fall for this.
+说话人: 你要严格遵循医嘱服药\NYou will require a strict regimen of medicines
+说话人: 接受全天候的呵护\Nand round-the-clock care.
+说话人: 但你会活下去  格蕾丝\NBut you will live, Grace.
+说话人: 只要可以澄清误会就好\NIf only to set the record straight.
+说话人: 好的\NIt's all right.
+说话人: 所有记述都和你...记忆里的一样吧\NEverything accurate as, uh, far as you can remember?
+说话人: 对  我说了这些话  可我并没认罪\NYeah, I-I said these things, but I didn't confess.
+说话人: 是一个精神科医生搞的鬼\NIt was a headshrinker trick.
+说话人: 基特  他们会给陪审团放这盘磁带\NKit, they're going to play the tape for the jury,
+说话人: 如果是我听到这里面你的说法\Nand if I hear what this says you said...
+说话人: 我会觉得你有罪\N...I convict.
+说话人: 我说过你该去找格蕾丝谈谈  你去了吗\NDid you talk to Grace, like I told you?
+说话人: 我是说  她说她见到艾尔玛了\NI mean, she can testify that she saw Alma.
+说话人: 我妻子没死  这就证明我没杀她\NMy wife is not dead, and it proves I didn't do it.
+说话人: 首先  她是一个精神病人\NFirst of all, she's a patient in a mental institution,
+说话人: 因此她的所见不太可能说服很多人\Nso what she saw is not likely to convince a lot of people.
+说话人: 其次  据说她病得很厉害\NSecond, they tell me she's real sick.
+说话人: 她可能都活不到听证会那天\NShe might not even make it to the hearing.
+说话人: 我认为你可以避免死刑的唯一方法\NThe one way I saw for you to avoid the electric chair--
+说话人: 被史莱森医生剥夺了\NDr. Thredson took away.
+说话人: 不过你也许能让他改变主意\NNow, that doesn't mean that you can't change his mind.
+说话人: 我不是让你撒谎\NNow, I'm not telling you to lie,
+说话人: 但是  如果你假装...\Nbut, uh, if you started to act...
+说话人: 也许我们可以阻止那12个陪审员\Nmaybe we could build a defense to get 12 people to, uh,
+说话人: 相信...你没有...\Nbe convinced that, uh... that you can't
+说话人: 明辨是非的能力\Ntell the difference between, uh, right and wrong.
+说话人: 你听到我的呼唤了\NYou heard me calling?
+说话人: 我觉得我坚持不下去了\NI don't think I can do this anymore.
+说话人: 死掉会更好\NDeath would be better.
+说话人: 我以前惧怕死亡\NI used to be scared of it.
+说话人: 但现在不怕了\NBut I'm not afraid anymore.
+说话人: 放下一切吧\NJust let go.
+说话人: 我在这里陪你\NI'm right here with you.
+说话人: 不\NNo.
+说话人: 还不行\NNot yet.
+说话人: 拉娜\NLana?
+说话人: 你穿好衣服了吗\NAre you decent?
+说话人: 我觉得我们有必要谈谈  你觉得呢\NI think we need to have a little talk, don't you?
+说话人: 如果你想的话\NIf that's what you want.
+说话人: 我想\NIt is.
+说话人: 首先我想让你知道  我不生气\NFirst of all, I want you to know that I'm not angry.
+说话人: 之前发生的事是不对的\NWhat happened before was wrong.
+说话人: 非常不对  我不怪你\NIt was very wrong, and I don't blame you.
+说话人: 那是我的错  事实上\NIt was my fault. Truth is, I probably
+说话人: 可能我本来就不该把你带来\Nshouldn't have brought you here in the first place.
+说话人: 什么意思\NWhat do you mean?
+说话人: 拉娜  我这人最大的特点\NIf there's one thing you should know about me, Lana,
+说话人: 就是坚毅  我不喜欢放弃\Nit's that I'm tenacious. I don't like to give up.
+说话人: 那种坚持到底的品质\NThat kind of stick-to-itiveness has
+说话人: 对我和我的患者们都有很大益处\Nserved me and my patients very well,
+说话人: 但有时  它也会阻碍我\Nbut sometimes it also prevents me
+说话人: 在我陷入僵局之时  及时感知的能力\Nfrom acknowledging when I have reached an impasse like the one
+说话人: 就像我们现在的状况\NI think we've reached here.
+说话人: 僵局\NAn impasse?
+说话人: 别这么害怕好吗\NDon't look so frightened, okay?
+说话人: 我不想伤害你\NI don't want to hurt you.
+说话人: 我希望尽量减少你的痛苦\NI want this to be as painless for you as possible,
+说话人: 所以我会让你自己选\Nso I will let you a choice.
+说话人: 我可以割断你的喉咙\NI can either cut your throat,
+说话人: 或是掐死你\Nor I can strangle you.
+说话人: 我不太喜欢用枪\NI don't believe in guns.
+说话人: 天呐\NOh, God.
+说话人: 天呐  我胡说八道什么呢\NChrist, what am I saying?
+说话人: 过程并不重要\NIt doesn't matter how we do it.
+说话人: 我会先让你昏迷\NWe'll put you out.
+说话人: 求求你不要\NPlease, no.
+说话人: 你感觉不到任何痛苦\NYou won't feel a thing.
+说话人: 求求你不要啊\NPlease, no. no, no.
+说话人: 求求你啊  不要不要\NPlease, please. No, no, no. no!
+说话人: -求求你了  -安静  不要\N- Please! - Stop it! Stop...
+说话人: 反抗了\Nfighting.
+说话人: 不要挣扎了\NStop fighting!
+说话人: 不要\NNo!
+说话人: 你马上就会和温迪团聚了\NYou'll be reunited with Wendy.
+说话人: 你还记得温迪吧\NYou remember Wendy?
+说话人: 还记得吗\NDon't you?
+说话人: 开车  快走  快\NDrive. Go, please.
+说话人: 请开走  快\NPlease, drive away. Please!
+说话人: 谢谢\NThank you.
+说话人: 你救了我\NYou saved my life.
+说话人: 我也没有多余的选项不是\NYou didn't give me much of a choice.
+说话人: 你就这么直接跳进了我的车\NYou jumped in the car.
+说话人: 抱歉\NI'm sorry.
+说话人: 我必须远离他\NI had to get away from him.
+说话人: 跟你男朋友起冲突了\NDid you have a fight with your boyfriend?
+说话人: 你做了什么对不起他的事\NWhat did you do to him?
+说话人: 什么都没有\NNothing.
+说话人: 为什么你会认为是我的错\NWhat makes you think it was my fault?
+说话人: 他差点杀了我\NHe almost killed me.
+说话人: -还有他不是我男朋友  -是吗\N- And he's not my boyfriend. - Yeah?
+说话人: 当然不是你的错\NOf course it wasn't your fault.
+说话人: 女人总是受害者\NWomen are always the victims.
+说话人: 你能把我送到警察局吗\NCould you please just take me to the police?
+说话人: 是不是都这么个套路\NOh, is that how it works?
+说话人: 你上了我的车  还要我照你说的做\NYou get into my car, and then you tell me what to do?
+说话人: -请停车让我出去  -是呀\N- Please stop the car and let me get out. - That's right.
+说话人: 婊子都做一样的事  分手\NThat's what you bitches do. You get out.
+说话人: 离开  刚有一点\NYou leave, you abandon ship
+说话人: 暴风雨的迹象  就弃船\Nat the smallest sign of a storm.
+说话人: 你要干什么\NWhat... What are you going to do?
+说话人: 你想从一辆时速80公里的车上下去吗\NYou gonna get out of a car going 50 miles an hour?
+说话人: 别客气  走啊\NBe my guest! Go!
+说话人: -你为什么要这么对我  -为什么她对\N- Why are you doing this to me? - Why did she take
+说话人: 我们十年的婚姻毫不留恋  说断就\Nten years of marriage and flush it down the toilet?
+说话人: 为什么我看到\NWhy did I catch another man
+说话人: 别的男人在我的床上操我老婆\Nscrewing my wife in my own bed?
+说话人: 我没对你做什么\NI didn't do anything to you.
+说话人: 你自己要上来的\NYou brought this on yourself.
+说话人: 不要\NNo.
+说话人: 怎么又是你\NNot you.
+说话人: 我好不容易才逃出来\NNot after everything.
+说话人: 我再也受不了了\NI can't take it anymore.
+说话人: 谎言  背叛  欺骗\NThe lies, the betrayal, the cheating.
+说话人: 都要结束了\NIt's all going to end.
+说话人: 不要动\NTry not to move.
+说话人: 会很痛的\NYou'll be in terrible pain.
+说话人: 你可真是经历了不少啊\NYou've had quite the adventure.
+说话人: 警察说车祸非常触目惊心\NThe police said the car accident was horrific.
+说话人: 恐怕对司机来说就是致命了\NI'm afraid it was fatal for the driver.
+说话人: 但你现在安全了\NBut you're safe now.
+说话人: 回到荆棘崖这个你该待的地方\NBack to Briarcliff, where you belong.
+说话人: 天啊\NOh, god.
+说话人: 不要\NOh, no.
+说话人: 我的天啊\NOh, my...!
+说话人: 天啊\NOh, god.
+说话人: 我去叫救护车\NI'll call an ambulance.
+说话人: 听着  听着\NListen, listen.
+说话人: -什么  -听着\N- What? - Listen, listen.
+说话人: 奥尔顿干了这些\NArden did this.
+说话人: 不  不  修女  修女\NNo, no, nun, nun.
+说话人: 什么  什么\NWhat, what?
+说话人: -什么  -一名修女\N- What did...? - A nun...
+说话人: 一名修女\NA nun. A nun...
+说话人: 一名修女吗\NA nun?!
+说话人: 你手下的一个修女们\NOne of... Yours.
+说话人: 你的修女们\NYours...
+说话人: 我们需要帮助\NWe have to get you help!
+说话人: 话务员  给我接警察局\NOperator, get me the police.
+说话人: 弗雷明汉女孩失踪六天:搜寻继续
+说话人: 天啊  不要\NOh, god, no!
+说话人: 朱迪\NJudy!
+说话人: 朱迪  你还活着吗\NJudy, you alive in there?
+说话人: 稍等\NHold on.
+说话人: 年
+说话人: 特里\NHey... Terry.
+说话人: 上帝啊  朱迪  我敲了十分钟了\NJesus, Judy, I've been out here knocking for ten minutes.
+说话人: 稍等\NHang on.
+说话人: 快请进\NHey, come on in.
+说话人: 抱歉有点乱\NExcuse the clutter.
+说话人: 你昨晚干什么去了\NWhere were you last night?
+说话人: -昨晚吗  -我们在白玫瑰餐厅有演出\N- Last night? - We had a gig at The White Rose.
+说话人: 你没来\NYou didn't show up.
+说话人: -害的我们缺了个歌手  -该死\N- We had to go on without a singer. - Oh, shit.
+说话人: 我身体有点不太舒服\NI-I've, I've been a little under the weather.
+说话人: 能看出来\NI can see that.
+说话人: 开窗透透气吧\NMight want to open a window.
+说话人: 这里乌烟瘴气的\NIt's pretty ripe in here.
+说话人: 演出怎么样\NHow'd it go?
+说话人: 挺好的\NUh, went great.
+说话人: 巴里叫来了他的表妹\NBarry called his cousin,
+说话人: 她在第三场的时候来了\NAnd she got there by the third set.
+说话人: 这是什么\NWhat's this?
+说话人: 一点帮你渡过难关的慰问金\NJust a little something to tide you over.
+说话人: 你被开除了  朱迪\NYou're out of the band, Judy.
+说话人: 什么  就因为缺席了一次演出吗\NWhat, because of one gig?
+说话人: 不是这一次的问题\NIt's not just the one gig.
+说话人: 你不在状态也有段时间了\NYou've been slipping for a long time.
+说话人: 我们都注意到了\NWe all noticed it,
+说话人: 昨晚巴里的表妹救完场\Nand it got real clear last night
+说话人: 大家就都对此心照不宣了\Nafter Barry's cousin filled in.
+说话人: 巴里的表妹\NBarry's cousin?
+说话人: 她昨晚变身黛娜·萧尔了吗\NWhat, she's Dinah Shore all of a sudden?
+说话人: 黛娜·萧尔  著名影星及主持人
+说话人: 她不需要这样\NShe don't have to be.
+说话人: 她跟大家很合拍\NShe was on key.
+说话人: 他想要让他的胖表妹上位很久了\NHe's been trying to get his fat cousin in there for months now.
+说话人: 这是个阴谋\NNo, this is a conspiracy.
+说话人: 针对我的阴谋\NThis is a conspiracy against me!
+说话人: 很抱歉\NI'm sorry.
+说话人: 等等  我现在应该怎么办\NWait, hey, what do I have to do?
+说话人: 求你了  特里\NCome on, Terry.
+说话人: 过来  告诉我该怎么办\NCome on, man, tell me, just tell me what I've got to do.
+说话人: -停手  -快过来\N- Stop it. - Come on.
+说话人: 我会让你爽翻天的\NI can make you feel real good.
+说话人: -你知道的  我一直好奇...  -朱迪\N- You know, I've always wondered... - Judy,
+说话人: 不要自取其辱了\NYou are embarrassing yourself.
+说话人: 和黑人做是什么感觉\Nwhat it felt like with a colored man.
+说话人: 停手  你让人恶心\NStop it! You smell of vomit.
+说话人: 里面有张卡片  上面有号码\NThere's a card in there, with a number.
+说话人: 一个警探让你找他\NA detective, uh, wants you to call him.
+说话人: 什么\NWhat?
+说话人: 上周四晚  距离俱乐部几条街的地方\NYeah, uh, there was a hit-and-run
+说话人: 发生了一起肇事逃逸事件\Ncouple blocks from the club last Thursday night.
+说话人: 一个小女孩被撞倒\NA little girl got run down,
+说话人: 警察想寻找目击证人\Nand cops want to know if anybody saw anything.
+说话人: 保重  朱迪\NTake care, Judy.
+说话人: 回头见\NWe'll see you around.
+说话人: 对肇事逃逸司机的搜寻今晚仍在进行\NThe search continues tonight for the hit-and-run driver responsible...
+说话人: 打扰了  小姐  你没事吧\NExcuse me, miss, is everything all right?
+说话人: 你受伤了吗\NAre you hurt?
+说话人: 没有\NNo.
+说话人: 我很好\NI'm fine.
+说话人: 一切都好\NEverything's fine.
+说话人: 喂\NHello.
+说话人: 朱迪·马汀\NJudy Martin?
+说话人: 你是谁\NWho is this?
+说话人: 是你良知的呼唤\NIt's your conscience calling.
+说话人: 玛丽·尤妮斯  你做了什么\NMary Eunice, what have you done?
+说话人: 我做了什么\NWhat have I done?
+说话人: 不不不\NNo, no, no.
+说话人: 应该问  你做了什么\NThe question is: What have you done?
+说话人: 地板上躺着的死人\NThat dead man lying on the floor--
+说话人: 他在调查你\NHe was investigating you,
+说话人: 他的报告应该都写着呢\NOr so his papers all show.
+说话人: 15年前的肇事逃逸案\NA 15-year-old unsolved hit-and-run case.
+说话人: 你怎么知道的\NHow did you know about that?
+说话人: 我无所不知\NI know everything.
+说话人: 我想什么我都知道  记得吗\NI was in your head, remember?
+说话人: 不知所措了吗  老东西\NLose your place, old man?
+说话人: 别妄想能回到这了  朱迪\NDon't even think about coming back here, Judy.
+说话人: 你现在应该更想收拾收拾东西跑路吧\NYou might want to start running now,
+说话人: 但事实是  你以为你能跑多远\Nthough the truth is, how far do you think you can get?
+说话人: 我留下了一瓶肯塔基酒  少儿不宜哦\NI left a bottle of, um, Kentucky's, something adults for you.
+说话人: 还留下点别的东西\NI left something else there for you, too.
+说话人: 你又操之过急了\NYou jumped the gun again.
+说话人: 这只是个瞬间的想法\NIt was a passing thought.
+说话人: 只是一闪而过\NNothing but a passing thought.
+说话人: 你的歌这次有些不同\NYour song was different this time.
+说话人: 更哀怨悲恸  更打动人心\NMuch more plaintive and piercing.
+说话人: 永远别信一个酒鬼\NNever trust a drunk.
+说话人: 我只是个喊"狼来了"的小女孩\NI'm just the little girl who cried wolf.
+说话人: 你还没受够我吗\NAren't you sick of me yet?
+说话人: 有人召唤我就出现  这是我的职责  裘德\NI come when I'm called, it's what I do, Jude.
+说话人: 我从不对人品头论足\NI don't judge, I never judge.
+说话人: 这次有什么不同\NWhat was so different this time?
+说话人: 我之前的歌跟这次的很不一样吗\NWas my song... so different...
+说话人: 就是凯西离开我的那晚\Nthe night Casey left me,
+说话人: 我们结婚的前夜\Nthe night before our wedding,
+说话人: 当我告诉他  他把梅毒传染给了我\Nwhen I told him he'd given me syphilis
+说话人: 我再也不能生孩子的时候\Nand I'd never be able to have children,
+说话人: 我释怀了\NI forgave him.
+说话人: 他只是盯着我  好像我从没存在过\NHe just stared at me like I didn't even exist,
+说话人: 骂我是骗子  是婊子\Ncalled me a liar and a whore.
+说话人: 我想要的不过是有一个自己的家庭\NAll I ever wanted was my own family,
+说话人: 一个可以让我爱让我教的孩子\Nmy own children to teach and love.
+说话人: 那晚我怎么没死\NWhy didn't I die that night?
+说话人: 你那时还年轻  还有希望\NYou were young, you still had hope.
+说话人: 那我杀了个小孩的那晚呢\NAnd the night I killed a child,
+说话人: 我撞死了那个穿蓝衣服的小女孩\Nthe night I ran over that little girl in blue,
+说话人: 为什么不是那晚\Nwhy not that night?
+说话人: 那是上帝在告诉你他对你另有安排\NThat was when god revealed he had a plan for you.
+说话人: 那是上帝的感召\NHe gave you a calling.
+说话人: 但现在都被他拿走了\NAnd now he's taken it away.
+说话人: 我一直都在苟且偷生不是吗\NI've been living on borrowed time, haven't I?
+说话人: 他迟早会发现\NSooner or later, he was bound to figure out
+说话人: 我根本应付不了他的挑战\NI never really rose to his challenge.
+说话人: 我仍旧只是个\NI'm still just a...
+说话人: 想要用可悲黑衣来掩饰自身阴暗的\Ndrunken whore...
+说话人: 酒鬼婊子\Nand a murderer,
+说话人: 杀人犯\Ntrying to disguise my darkness under that miserable black cloth.
+说话人: 你理应免受世俗纷扰  裘德\NYou deserve some peace, Jude.
+说话人: 在你为了寻找人生的意义\NYou deserve a peace
+说话人: 付出异常持久的努力之后\Nbefitting your extraordinary tireless efforts
+说话人: 一方安宁是你应得的\Nto find meaning in this life.
+说话人: 你能靠着免费的咖啡饼干活多久  裘德\NHow long can you live on free coffee and crackers, Jude?
+说话人: 这里的冬天漫长而寒冷\NThe winters here are long, and they're very cold.
+说话人: 威士忌可不能帮你抗寒\NAnd the whiskey won't keep you warm.
+说话人: 它只会腐蚀你的内脏\NIt just rots your insides.
+说话人: 安宁触手可及  我的姐妹\NPeace is so close, sister.
+说话人: 我准备好了\NI'm ready.
+说话人: 但我还有最后一件事要做\NBut I need to do one last thing.
+说话人: 真可怜\NPoor thing.
+说话人: 也许我们应该叫荆棘崖的人来\NMaybe we should call Briarcliff.
+说话人: 至少他们还能给她张床过夜\NAt least they could give her a bed for the night.
+说话人: 抱歉  这孩子比较闹腾\NSorry, she's a fussy baby, this one.
+说话人: 你说你是蜜西以前的老师\NSo you were saying you were Missy's teacher?
+说话人: 汉克  把那杯咖啡端来\NHank, you bringing that coffee?
+说话人: 端来了  亲爱的\NI got it, dear.
+说话人: -给你  -谢谢\N- Here you go. - So kind.
+说话人: 我知道你们要去上班\NI know you have to get to work,
+说话人: 我只耽误你们几分钟  我\Nso I'll only take a minute of your time. I...
+说话人: 所以  你是她以前的老师  是吗\NSo... you were her teacher, you say?
+说话人: 不是 其实  我是个修女\NNo, actually... I'm a nun.
+说话人: 你看起来可不像个修女\NYou don't look like a nun.
+说话人: 亲爱的  她们不会总穿着修女服的\NHoney, they're not always in their habits.
+说话人: 他有点老古板\NHe's a little old-fashioned.
+说话人: 所以  你是她的...\NSo, you were her...
+说话人: 主日学校老师\NSunday school teacher?
+说话人: 我...\NI, uh...
+说话人: 记得她的蓝色小外套\Nremember her little blue coat.
+说话人: 是啊\NOh, yeah.
+说话人: 我买下那衣服是因为在飞琳地下商场\NI bought that for her 'cause she pitched
+说话人: 她试穿时  非常合身\Na full-on fit in the middle of Filene's basement.
+说话人: 小女孩完全拒绝不了\NThat girl could not take no for an answer.
+说话人: 是吧  汉克\NRight, Hank?
+说话人: 事实上\NThe truth is,
+说话人: 斯通先生和太太\NMr. and Mrs. Stone...
+说话人: 我来这里\NI came here
+说话人: 是来告诉你们关于蜜西的事的\Nto tell you a story about your daughter, Missy.
+说话人: 我想...\NAnd I want...
+说话人: 多可怕的一晚啊\NWhat a night.
+说话人: 大型巴士事故  三人死亡\NBig bus accident-- three people dead,
+说话人: 大家都忙得不可开交\Neveryone else a bloody mess.
+说话人: -亲爱的  -她晚上睡得好吗\N- Oh, sweetheart. - She sleep through the night?
+说话人: 好啊  只在早上一点时醒了一次\NYeah, only woke up once around 1:00 A.M.
+说话人: 给妈妈抱抱\NHere's mommy.
+说话人: 蜜西上夜班的时候  我们照看她\NWe keep her when Missy does the night shift.
+说话人: 蜜西  这是修女...\NOh, Missy, this is Sister...
+说话人: 你刚才说你的名字是...\NWhat'd you say your name was?
+说话人: 你是蜜西\NYou're Missy?
+说话人: 小蜜西\NLittle Missy?
+说话人: 穿着蓝色外套的小蜜西\NWith the blue coat?
+说话人: 你是谁\NWho are you?
+说话人: 我不明白\NI'm so confused.
+说话人: 我以为你被撞死了\NI thought someone ran over you.
+说话人: 我以为你被撞死在那条街上了\NI thought you died out there, on the street.
+说话人: 你是说我还小的时候吗\NYou mean back then, when I was a girl?
+说话人: 原谅我  我...\NOh, forgive me. I, uh...
+说话人: 这些年来  我一直\NAll these years, I've been...
+说话人: 为你的灵魂和你的父母\Nlighting candles for your soul
+说话人: 焚香点烛\Nand your parents.
+说话人: 你瞧  我...\NYou see, I, um...
+说话人: 就在这起事故发生以后\NThe accident happened right about the time
+说话人: 我决定加入教会\NI was thinking of joining the church.
+说话人: 事实上\NIn fact, it was...
+说话人: 这也是我发愿当修女的原因之一\None of the reasons that led me to take the vows.
+说话人: 而最近  我的信仰动摇了\NAnd recently, I've been struggling with my faith,
+说话人: 我很怀疑教会是否我的归属\Nwondering if I really belong in the church,
+说话人: 这让我想起了你和你的惨剧\Nand it made me think of you and your tragedy.
+说话人: 我想如果我来这里...\NI thought if I came...
+说话人: 而你就在这里\Nand here you are.
+说话人: 汉克也挣扎过\NHank struggled, too. Um...
+说话人: 在很长一段时间里\NFor a long time, he...
+说话人: 他想对那个撞飞她的混蛋进行报复\Nhe wanted to get revenge on the bastard who ran her over,
+说话人: 但我告诉他\Nbut I told him,
+说话人: 汉克  我们的蜜西回到我们身边了\N"Hank, our Missy came home to us
+说话人: 很庆幸只断了几根骨头\Nwith a few broken bones. "
+说话人: 我们将和女儿一起生活下去\NWe get to live with our daughter.
+说话人: 而那个撞了她逃逸的混蛋\NThe monster who left her there
+说话人: 得孤苦一世\Nhas to live with himself.
+说话人: 不  我不要  我要保持清醒\NNo. I won't. I have to stay awake.
+说话人: 裘德修女呢  我有话要和裘德修女说\NWhere is Sister Jude? I need to speak to Sister Jude.
+说话人: 好了\NIt's all right!
+说话人: 让我来吧\NI'll see to her.
+说话人: 裘德修女呢  我有话要和她说\NWhere's Sister Jude? I need to speak to Sister Jude.
+说话人: 裘德修女不在这里了\NSister Jude is no longer with us.
+说话人: 现在这里由我负责\NI'm in charge now.
+说话人: -你?  -对\N- You? - That's right.
+说话人: -现在  你只要...  -不\N- Now, you simply must take... - No.
+说话人: 你不懂\NYou don't understand.
+说话人: 史莱森医生...\NDr. Thredson...
+说话人: 史莱森医生也不在这里\NDr. Thredson isn't here either.
+说话人: 他是杀人凶手\NHe's a murderer.
+说话人: 什么\NWhat?
+说话人: 他杀了温迪\NHe killed Wendy.
+说话人: 温迪\NWendy?
+说话人: 我的温迪\NMy Wendy.
+说话人: 还有其他的受害者\NAnd all the others.
+说话人: 是他\NIt was him.
+说话人: 凶手是史莱森\NIt was Thredson.
+说话人: 从一开始就是他干的  是他\NRight from the start, it was him.
+说话人: 你必须马上报警\NYou have to send for the police.
+说话人: 你得阻止他\NYou have to stop him.
+说话人: 冷静点\NCalm down.
+说话人: 回床上去\NGet back in bed, please,
+说话人: 不然我只能让弗兰克把你锁起来了\NOr I'll be forced to get Frank to restrain you.
+说话人: 不要  别这样...\NNo, no, no, no, no, no, no...
+说话人: 我不想再被锁住了\NI can't be chained down again.
+说话人: 你不知道发生了什么\NYou don't know what happened.
+说话人: 据我所知  你遭遇了一场\NI know you've been in a very,
+说话人: 极其严重的车祸\Nvery serious automobile accident,
+说话人: 所以你现在有些神志不清\Nand you're confused.
+说话人: 我脑子清楚得很\NI'm not confused!
+说话人: 我都告诉你了  基特·沃克是无辜的\NI am telling you, Kit Walker is innocent!
+说话人: 奥利弗·史莱森才是血脸杀手\NOliver Thredson is Bloody Face.
+说话人: 我喜欢你干的那些事  血脸杀手\NI love your work, Bloody Face.
+说话人: 他把一切都告诉我了\NHe admitted everything to me.
+说话人: 他所有的罪行\NWhat he does to them.
+说话人: 我相信你\NI believe you.
+说话人: 真的吗\NYou do?
+说话人: 是的\NYes.
+说话人: 求求你  修女\NPlease, sister,
+说话人: 千万不能让他知道我在这里\NHe cannot know that I am here.
+说话人: 没人知道\NNo one knows.
+说话人: 也不会有人知道你在这儿的\NNo one knows that you're here.
+说话人: 现在  先把药吃了吧\NNow, please, just... just take these.
+说话人: 你得马上报警\NYou have to go to the police.
+说话人: 证据全部藏在他的地下室里\NAll of the evidence is in his basement.
+说话人: 我知道了\NI understand.
+说话人: 真的\NI do.
+说话人: 那儿是他行凶的地方\NIt's where he kills them.
+说话人: 也是他折磨我的地方\NIt's where he violated me.
+说话人: 现在  你安全了\NYou're safe now.
+说话人: 她怎么样了\NHow is she?
+说话人: 恐怕还是不太清醒\NShe's still very confused, I'm afraid.
+说话人: 她居然声称史莱森医生虐待了她\NShe claims that Dr. Thredson attacked her.
+说话人: 她还说...\NShe claims... well...
+说话人: 她坚持认为基特·沃克无罪是清白的\NShe insists that Kit Walker is innocent.
+说话人: 州警察局可不这么认为\NWell, state police got a different opinion.
+说话人: 基特·沃克潜逃了\NKit Walker escaped custody.
+说话人: 他如今是个逃犯\NHe's a fugitive.
+说话人: 上头已经下令  此人格杀勿论\NOrder on him is shoot on sight.
+说话人: 天啊\NMy gracious.
+说话人: 孩子  你在这儿干什么\NMy child, what are you doing down here?
+说话人: 一天前  你还命悬一线呢\NOnly a day ago you were at the brink of death.
+说话人: 你还得再养养身子\NYou should be convalescing.
+说话人: 你没听说吗\NDidn't you hear?
+说话人: 我是奥尔顿医生创造的奇迹\NI'm Ar. Arden's little miracle.
+说话人: 可我一睁开眼  发现自己依然身处荆棘崖\NYet, I open my eyes, and I'm still at Briarcliff.
+说话人: 这可算不上什么改善\NCan't say that's much of an improvement.
+说话人: 生活就是这样  你只能随遇而安\NYou make the best of what life gives you.
+说话人: 起来  格蕾丝  回你的...\NCome, Grace, go to your...
+说话人: 不要  求你了  修女\NNo, please, sister.
+说话人: 哪怕在床上多躺一分钟\NI'm gonna crawl out of my skin
+说话人: 我都会觉得生不如死的\Nif I have to lay on that bed again.
+说话人: 等我收拾完  你就必须离开\NWhen I'm done cleaning up, you'll have to go.
+说话人: 事实上  你现在就得离开了\NActually, you have to go now.
+说话人: 你来干什么\NWhat are you doing here?
+说话人: 我不能让你在这儿等死  格蕾丝\NI couldn't let you die here, Grace.
+说话人: 来吧\NNow come on.
+说话人: -来人啊  -我不会伤害你的\N- Help! - I'm not gonna hurt you.
+说话人: 救命\NHelp!
+说话人: -放下武器  -不要\N- Drop it. - No!
+说话人: -格蕾丝  -离她远点\N- Grace? - Stay away from her!
+说话人: 退后  否则我开枪了\NBack up or I'll shoot!
+说话人: 沃克  我要开枪了\NWalker, I'll shoot you!
+说话人: 准备好跟我走了吗\NAre you ready for me?
+说话人: 准备好了\NYes.
+说话人: 我终于自由了\NI'm free.

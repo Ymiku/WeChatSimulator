@@ -1,0 +1,626 @@
+﻿# Exported by Aegisub 3.2.2
+NTP:  本字幕由YYeTs人人影视翻译制作\N更多美剧字幕 请登陆 www.YYeTs.net
+说话人:  翻译：Asianika   觉棂   基佬加森   小英熊吓尿了
+说话人:  翻译：蓬蓬裙   猫妖柒   Liv
+说话人:  时间轴：加森   高富帅小仓鼠
+说话人:  校对：吕黎教主   爱卿遛小鸟   小樱
+说话人: 后期：冰河     监制：美恐好给力鸟儿好欣慰
+说话人: 美国恐怖故事
+说话人: 第二季 第三集
+说话人: 救救我\NHelp me.
+说话人: 我们得离开这里\NWe gotta get out of here.
+说话人: 回到车上\NWe gotta get to the car.
+说话人: 加油  亲爱的  站起来\NCome on, baby, get up.
+说话人: 准备好了吗\NReady?
+说话人: 加把劲儿\NCome on. Come on.
+说话人: 好了  我们走\NLet's go...let's go.
+说话人: 这里是911  有什么紧急情况\N911, what's your emergency?
+说话人: 怎么回事  天啊  不\NWhat? Oh my God, no!
+说话人: 这里是911  你还在吗\N911 on, are you in there?
+说话人: 那是枪声吗\NAre those gunshots?
+说话人: 女士  你在哪里  能听到吗\NMa'am, what is your location? Can you hear me?
+说话人: 你把他们打死了\NYou shot 'em, man.
+说话人: 请回答我  女士\NPlease answer me, Ma'am...
+说话人: 真是太美妙了\NThat was so sick.
+说话人: 操\NShit.
+说话人: 你看到他们倒地的样子了吗\NDid you see how they dropped?
+说话人: 就像一麻袋土豆那样\NIt was like a sack of potatoes.
+NTP: 梆的一声就玩完啦\NIt was like bang! Lights out!
+NTP: 你被捅那几下都值了  乔\NThat's what you get for stabbing, Joe.
+NTP: -这不好笑  我们闯祸了  -别这样  哥们儿\N- This ain't funny, man. This shit went way too far. - Come on, man.
+NTP: 一点都不过分\NIt went as far as it could go.
+NTP: 别叽歪了  库珀\NNow don't puss out on me, Cooper!
+NTP: 你来看看\NCheck it out.
+NTP: 这人胳膊被扯掉了\NHis arm's been ripped off.
+NTP: 什么东西能这么凶狠啊\NI mean, what the hell could have done that?
+说话人: 我拿来了今天的邮件\NI have today's mail.
+说话人: 今天会有暴风雨来袭  裘德修女\NThere's a storm coming, Sister Jude.
+说话人: 非常猛烈的暴风雨\NBig fat storm.
+说话人: 弗雷明汉警方有望找到失踪少女
+说话人: 这是哪儿来的\NOh...Where did this come from?
+说话人: 信箱啊\NThe mailbox.
+说话人: 不是说这个  你个笨蛋  你从谁那儿拿来的\NNo, you ninny, I mean who brought it here?
+说话人: 邮差啊\NThe mailman.
+说话人: 弗雷明汉少女已失踪六日\Nframingham girl missing six days
+说话人: 1949年6月28日
+说话人: 我们打断福莱的《安魂曲》\NWe interrupt "The Faure Requiem"
+说话人: 插播一条重要的气象预警\Nto bring you a severe weather warning.
+说话人: 东北方向有暴风雨正向整个东海岸逼近\NThere's a nor'easter storm approaching the entire Eastern seaboard.
+说话人: 风暴中心将于周五晚上登陆\NThe eye of the storm is expected to hit Friday night.
+说话人: 多处地区居民已被转移  但如果您仍在家中\NMany areas have been evacuated, but if you're still at home,
+说话人: 请备好干净的饮用水  不要出门\Nfill empty containers with clean drinking water and stay put.
+说话人: 一小时后为您带来最新报道\NWe'll bring you another update within the hour.
+说话人: 一切都好吗  修女\NEverything all right, Sister?
+说话人: 恶劣天气总让病人们惶恐不安\NInclement weather always upsets the natives.
+说话人: 这些脆弱的灵魂\NThey're fragile souls.
+说话人: 所以你更应该停止体罚\NThat's why you should stop using corporal punishment.
+说话人: 我们昨天见面时\NI mean, at our meeting yesterday,
+说话人: 沃克先生都没法坐下了\NMr. Walker couldn't even sit down.
+说话人: 你也许对B.F. 斯金纳的研究成果没什么了解\NI realize you're likely unfamiliar with the work of B.F. Skinner,
+说话人: 20世纪中期美国心理学家  创立操作性条件反射疗法
+说话人: 但积极性强化疗法已被证实更为有效\Nbut positive reinforcement has proven to be far more effective.
+说话人: 简单点说  修女  一点同情心会有巨大收效\NIn lay terms, Sister, a little compassion would go a long way.
+说话人: 你说我吗\NMe?
+说话人: 我简直是同情心的代言人\NI'm a beacon of compassion.
+说话人: 我今早一直在跟圣安琪拉教区通电话\NIn fact, I spent all morning on the phone with St. Angela Parish,
+说话人: 就为把他们的电影放映机借来\Nto borrow their movie projector.
+说话人: 我觉得看看电影能分散对风暴来袭的恐惧\NI thought a movie could distract our charges when the storm hits.
+说话人: 我从没想过您是位电影迷\NI wouldn't have figured you for a movie buff.
+说话人: 我也得承认好莱坞的恶俗产物里\NEven I can concede that there are a few
+说话人: 有时也能例外地产生佳作\Nexceptions to the usual Hollywood dreck.
+说话人: 教区借给我们一部\NThe Archdiocese is loaning us a copy
+说话人: -《罗宫春色》的带子  -真令人吃惊\N- of The Sign of the Cross. - I'm impressed.
+说话人: 《罗宫春色》  1932年美国基督教电影
+说话人: 如果有我能帮忙的地方  千万别客气\NAnd if I can help in any way, please don't hesitate to ask.
+说话人: 对了\NOh... yes.
+说话人: 作为杰德·波特的主治医生\NAs attending physician of Jed Potter,
+说话人: 我需要他的验尸报告来归档\NI'll need his autopsy report for my files.
+说话人: 我很忙  医生\NI'm very busy, Doctor.
+说话人: 不过我会尽量帮你找\NBut I'll try to locate it.
+说话人: 我打赌死因一定是自然死亡\NI'll bet it says he died of natural causes.
+说话人: 17岁少年死于心脏病\NIf it's natural for a 17-year-old boy
+说话人: 你觉得自然吗\Nto die of a heart attack.
+说话人: 你很多疑啊  修女\NYou have quite a suspicious mind, Sister.
+说话人: 都到近乎妄想的地步了\NBordering on delusional.
+说话人: 或者这是一种心理投影\NOr maybe it's just a form of projection.
+说话人: 为了掩饰你自己内心的罪恶感\NA defense to protect your own guilty conscience.
+说话人: 是你干的  对吗\NIt was you, wasn't it?
+说话人: 那份报纸  你从哪儿弄来的\NThe newspaper, where did you get it?
+说话人: 什么报纸\NWhat newspaper?
+说话人: 我们分给你的办公室\NThat office we gave you--
+说话人: 我要把它收回\NI need it back.
+说话人: 向法庭陈述意见\NYou've had more than enough time
+说话人: 根本用不了这么长时间\Nto advise the courts.
+说话人: 你有两周时间\NYou've got two weeks,
+说话人: 两周后赶紧走人\Nand you're out.
+说话人: 裘德修女让我来宣布一件事情\NSister Jude has asked me to make an announcement.
+说话人: 一场暴风雨正向这里袭来\NThere's a big storm heading our way.
+说话人: 当它来临时\NAnd when it hits,
+说话人: 你们半数人会被吓得动弹不得\Nhalf of you are going to be too afraid to move.
+说话人: 而另一半则会四下乱窜\NAnd other half won't be able to stop moving.
+说话人: 场面会很混乱  这样不行\NIt would be chaos. And that won't do.
+说话人: 因此  裘德修女安排了娱乐活动\NSo, Sister Jude has arranged for a distraction.
+说话人: 周五晚上风暴最猛烈之时  将会播放电影\NA movie, on Friday night, when storm will be at its worst.
+说话人: 在黑暗中  我们将相互陪伴\NWe're all going to be together in the dark,
+说话人: 一起观赏《罗宫春色》\Nwatching The Sign of the Cross,
+说话人: 一部充满激情  性爱\Na movie full of fire, sex,
+说话人: 以及基督教徒之死的电影\Nand the death of Christians.
+说话人: 多有趣\NWhat fun.
+说话人: 走开
+说话人: 魔鬼
+说话人: 周五晚上我们都要去看电影\NThere won't be a lockdown this Friday night
+说话人: 他们不会把我们关在独间里\Nif we're all supposed to be watching a movie.
+说话人: 我们才被抓到企图逃跑\NWe were just caught trying to escape.
+说话人: 也就是说他们想不到\NWhich means they won't be expecting it
+说话人: 我们这么快会再次出逃\Nto happen again so soon.
+说话人: 你毁掉了我们逃出这里的机会\NYou ruined our chance of getting out of this place.
+说话人: 如果可以阻止他再次杀人\NI'd do it again, if it means
+说话人: 我还会这么做的\NI can stop him from killing any more.
+说话人: 我不怪你\NCan't say I blame you.
+说话人: 如果我和你相信着同样的事\NI'd have done the same thing
+说话人: 我也会这么做\Nif I believed what you believe.
+说话人: -但我是无辜的  -沃克\N- But I'm innocent. - Walker.
+说话人: 奥尔顿医生要见你\NDr. Arden wants to see you.
+说话人: 他在自己的办公室吃了午餐\NHe had lunch in his office--
+说话人: 吃的是金枪鱼三明治和燕麦饼干\Ntuna fish sandwich, by the way, some oatmeal cookies.
+说话人: 然后他给医生办公室\NUh, then he made a phone call
+说话人: 打了个电话讨论祛黑痣的事\Nto the doctor's office about, uh, removing a mole.
+说话人: 有什么可疑的吗  弗兰克\NWas anything suspicious, Frank?
+说话人: 没有  修女\NNothing, Sister.
+说话人: 史莱森医生看起来光明磊落\NDr. Thredson seems like he's on the up-and-up.
+说话人: 这由我来决定\NWell, I'll determine that.
+说话人: -真难以置信...  -等一下  修女\N- You won't believe... - Hold your water, Sister.
+说话人: 我这快完事了\NI'm finishing up something here.
+说话人: 继续盯着他  弗兰克  凡事往坏了想\NKeep watching, Frank. Assume the worst.
+说话人: 明白  修女\NRoger that, Sister.
+说话人: 你干什么\NWhat are you doing?
+说话人: 有人一直在偷喝圣餐酒\NSomeone's been drinking the communion wine.
+说话人: 我觉得可能是斯皮维\NI think it might be Spivey.
+说话人: 我见过他偷溜出小教堂\NI saw him sneaking out of the chapel.
+说话人: 尝尝吧  修女  酒里肯定掺水了\NTaste it, Sister. I'm sure it's been watered down.
+说话人: 你知道我不喝酒的\NYou know I don't imbibe.
+说话人: 当然  我怎么会忘呢\NOh, of course. How could I forget?
+说话人: 自从1949年  你听到了\NSince 1949, when you had a calling
+说话人: 我们的主耶稣基督\Nfrom Jesus Christ our Lord,
+说话人: 鼓励你戒酒\Nwhich inspired you to renounce alcohol,
+说话人: 并且远离一切世俗享乐\Nand turn your back on all worldly pleasures.
+说话人: 我来尝尝\NI'll taste it.
+说话人: 你脸上那是什么  说具体点  你嘴上\NWhat's that on your face? On your mouth, to be exact?
+说话人: 我可能弄错了  酒挺浓的\NI might have been mistaken. It tastes rich.
+说话人: 把酒放下  你看起来就像个娼妓\NPut that wine down. You look like a streetwalker.
+说话人: 你是不是抹口红了\NAre you wearing lipstick?
+说话人: 这叫"媚惑红"\NIt's called "Ravish Me Red".
+说话人: 很配我瓷白的肤色  你不觉得吗\NIt suits my porcelain complexion, don't you think?
+说话人: -交出来  -其实就是给你的\N- Hand it over. - Oh, it's for you, actually.
+说话人: 希望你不介意我先试一下\NI hope you don't mind that I tried it first.
+说话人: 我们不化妆\NWe don't wear makeup.
+说话人: 我跟他说了\NAnd I told him that.
+说话人: 但奥尔顿医生很坚持  他说\NBut Dr. Arden insisted. He said,
+说话人: "裘德修女最喜欢红色了\N"Red is Sister Jude's favorite color,
+说话人: 她明白我为什么要送她这个"\Nand she'll understand just why I want her to have it."
+说话人: 你认得这个吗  沃克先生\NDo you recognize this, Mr. Walker?
+说话人: 很明显  它认得你\NIt certainly seems to recognize you.
+说话人: 这是上次你来这里时  从你身上弄出来的\NIt's what came out of you during your last visit.
+说话人: 而且它很渴望回到你身体里\NAnd so desperately wants to get back in.
+说话人: 你要干什么\NWhat are you doing?
+说话人: 它应该遵循某种磁性原理\NI assume it works on some sort of magnetic principle.
+说话人: 你还注意到其他肿块或突出吗\NHave you noticed any other lumps or protrusions?
+说话人: 没有\NNo.
+说话人: -你为谁做事  -什么\N- Who are you working for? - What?
+说话人: 好了  沃克先生  别闹了\NCome, come, Mr. Walker. Let us not play games.
+说话人: 这可不是第一次有人要混入我的实验室\NThis is not the first attempt to infiltrate my labs.
+说话人: 我不知道你在说什么\NI don't know what you're talking about!
+说话人: 有人接近你身边\NYou were approached by someone.
+说话人: 那个人知道你会被送来这里\NSomeone who knew you were being sent here.
+说话人: 他们在你体内植入了这东西\NThey implanted this technology in you,
+说话人: 就为了侦查我\Nin order to spy on me.
+说话人: -不  你错了  -是史塔西吗[前东德国安部]\N- No, you're wrong. - Was it the Stasi?
+说话人: 东德在监视方面天赋异禀\NThe East Germans have a particular talent for surveillance.
+说话人: 还是克格勃[苏联国安委]\NKGB?
+说话人: 我知道即使在美国政府内部\NI understand there are even some elements
+说话人: 也有他们的人\Nwithin the U.S government.
+说话人: 哦对  还有那帮犹太人\NOh, yes. Jews, and fellow travelers.
+说话人: 是谁\NWho was it?
+说话人: 没有谁  我发誓\NIt was no one. I swear.
+说话人: 你怎么发誓都行  沃克先生\NYou can swear all you like, Mr. Walker,
+说话人: 但我会知道真相的\Nbut I will get to the truth.
+说话人: 在这儿  我们有的是时间\NIn here, we have all the time in the world.
+说话人: 我们在天上的父
+说话人: 愿人都尊你的名为圣
+说话人: 愿你的国降临
+说话人: 愿你的旨意行在地上  如同行在天上
+说话人: 你为什么这么害怕  我的孩子\NWhy are you so fearful, my child?
+说话人: 走开  撒旦
+说话人: 走开
+说话人: 我想不出你为何如此恐惧\NI can't imagine what you're so afraid of.
+说话人: 跪下来我们为一切祈祷\NGet on your knees and we'll pray it all away.
+说话人: 不...不要\NNo...no.
+说话人: 给我跪下
+说话人: 魔鬼
+说话人: 宽恕我吧
+说话人: 让我走吧  求求你让我走吧
+说话人: 跟着我说
+说话人: 天父在天堂永生
+说话人: 一切之源皆善
+说话人: 使我们
+说话人: 忠实地
+说话人: 侍奉您
+说话人: 谁啊\NWho is it?
+说话人: 您找我吗\NYou wanted to see me?
+说话人: 小修女\NLittle Sister.
+说话人: 我的一缕阳光\NMy ray of sunshine.
+说话人: 进来吧\NCome in.
+说话人: 请坐\NPlease.
+说话人: 告诉我...\NSo, tell me...
+说话人: 近况如何\Nhow are you doing?
+说话人: 昨晚我去喂了食物\NI did a feeding last night.
+说话人: 那些东西更加饥饿了\NThe creatures are getting hungrier.
+说话人: 我很担心  医生\NI'm worried, Doctor.
+说话人: 到了严冬该怎么办\NWhat will happen when it's freezing?
+说话人: 还有这场暴风雨\NAnd now this storm?
+说话人: 我们只需要帮它们度过寒冬\NWe only have to get them through the winter.
+说话人: 你不知道你对它们的慈悲\NI can't tell you how much your compassion
+说话人: 对我有多重要\Nfor these creatures means to me.
+说话人: 拜托\NOh, please.
+说话人: 你叫我来不就是为了\NYou know you got me in here
+说话人: 用你的眼神把我扒光\Njust so you can undress me with your eyes.
+说话人: 想象着吸吮我那玫瑰色粉嫩的乳头\NImagine sucking on my rosebud tits.
+说话人: 不许这样说话\NDon't talk like that.
+说话人: 来吧  大哥哥\NCome on, big boy.
+说话人: 让我看看你的鸡巴\NShow me what you got.
+说话人: 年轻的基督姑娘已然觉醒\NA little bride of Christ has had an awakening.
+说话人: 不是为了上帝\NNot to the Lord...
+说话人: 而是为了性的魔力\Nbut to the power of sex.
+说话人: 淫欲\Nlust...
+说话人: 性欲\Ndesire.
+说话人: 够了\NStop it.
+说话人: 你想亲哪儿就亲哪儿\NPut your mouth where you want to.
+说话人: 不要浪费时间了  医生\NDon't let it go to waste, Doc.
+说话人: 我的淫汁都流出来了\NI'm all juicy.
+说话人: 闭上你的脏嘴\NShut your filthy mouth.
+说话人: 我真不知道原来你是这么没用的东西\NI didn't know you were such a sad little pantywaist.
+说话人: 给我滚出去\NGet out of my office!
+说话人: 右边有点低\NA little lower on the right there.
+说话人: 很好  谢谢  先生们\NPerfect. Thank you, gentlemen.
+说话人: 史莱森医生\NDr. Thredson?
+说话人: 我叫拉娜·温特斯\NMy name is Lana Winters.
+说话人: 能跟你聊几句吗\NCan I have a word with you?
+说话人: 私下里\NIn private?
+说话人: 抱歉  打扰了\NWould you excuse us for a minute, please?
+说话人: 谢谢\NThank you.
+说话人: 温斯特小姐  你的事情我知道一点\NMiss Winters, I know a little about your case,
+说话人: 但是我无权讨论你的治疗\Nbut I'm not authorized to discuss your treatment.
+说话人: 很抱歉  我只是\NUnfortunately, I'm only
+说话人: 被派来为另一名病人做精神鉴定的\Nofficially here to evaluate one patient.
+说话人: 不  不是我\NNo, it's not about me.
+说话人: 我打算在这儿冒风险\NI'm going to go out on a limb here.
+说话人: 但我一直在观察你\NBut I've been watching you,
+说话人: 我知道...\Nand I know...
+说话人: 你跟他们不一样\Nyou're not one of them.
+说话人: 我很绝望\NI'm desperate.
+说话人: 我需要给外面一个朋友\NI need to get a message to my friend
+说话人: 递个口信  她叫温迪·佩泽\Non the outside-- Wendy Peyser
+说话人: 你的朋友  她就是你被关进来的原因吗\NYour friend-- she's the reason why you're in here?
+说话人: 她没给我写过信打过电话\NShe hasn't written or called.
+说话人: 我知道裘德修女不许她联系我\NI know Sister Jude is keeping her away from me.
+说话人: 如果我能见她一面\NIf I could just see her,
+说话人: 我就能把这搞清楚了\NI could straighten this out.
+说话人: 史莱森医生\NDr. Thredson...
+说话人: 你是我最后的希望\Nyou are my last hope.
+说话人: 你能帮我交给她吗\NWill you help me give her this message?
+说话人: 你这是让我跟裘德修女作对\NYou're asking me to betray Sister Jude...
+说话人: 这个疯人院的头儿啊\Nwho is the administrator of this sanitarium.
+说话人: 我看到你们几个在楼下密谋了\NI saw you guys conspiring upstairs.
+说话人: 你们在商量再次逃跑的计划\NYou're plotting your next escape.
+说话人: 我听不懂你的话\NI don't know what you're talking about.
+说话人: 跟你说话了吗\NAre we talking to you?
+说话人: 我能帮上忙  我很聪明\NI can help. I'm smart.
+说话人: 比那个自命不凡的贱记者聪明多了\NSmarter than that stuck-up bitch reporter.
+说话人: 拜托了  格蕾丝\NCome on, Grace.
+说话人: 我必须离开这里\NI got to get out of here.
+说话人: 为什么  去搞更多的男人吗\NWhy? So you can screw more guys?
+说话人: 难道你觉得我小时候\NYou think, as a little girl,
+说话人: 会憧憬着长大后在疯人院里浪费光阴吗\NI dreamed I'd waste my life away in the bughouse?
+说话人: 我梦想着去法国巴黎\NI want to go to Paris, France.
+说话人: 他们的观念比我们超前20年\NThey're 20 years ahead of us.
+说话人: 在这里  我被当成变态\NHere, I'm a freak.
+说话人: 在那里  我则会成为明星\NThere I'd be celebrated.
+说话人: 你读过《维纳斯三角地》吗\NHaven't you read Delta of Venus?
+说话人: [法国情色小说]
+说话人: 阿娜伊丝·宁毫不掩饰地抒发自己的性欲\NAnais Nin embraced her sexuality without apology.
+说话人: [二十世纪女性性文学的开山鼻祖]
+说话人: 你是从法国来的  肯定明白我的意思\NYou're from there, you must know what I'm talking about.
+说话人: 我九岁就离开法国了\NWe left when I was nine.
+说话人: 但我妈妈会在家里跟我们姐妹俩说法语\NBut my mother and sister, we speak French at home.
+说话人: 不管你跟不跟我一起  我是走定了\NI'm gonna get out of here with or without you.
+说话人: 一起走吧  还有个照应\NWe could help each other.
+说话人: 求你了\NPlease?
+说话人: 在搭你的温暖小窝呢\NFeathering your love nest?
+说话人: 我听广播说  大桥可能会\NThe radio said there was a danger of the bridge
+说话人: 被暴风雨击垮\Nbeing washed out by the storm.
+说话人: 在这里过夜才是明智之举\NI thought it prudent to spend the night.
+说话人: 裘德修女  今天真是漫长\NSister Jude, I've had a very long,
+说话人: 而诡异的一天\Nparticularly strange day.
+说话人: 无论你有什么事  明天再说也不迟\NWhatever it is you wanted, I'm sure can wait till tomorrow.
+说话人: "媚惑红"\N"Ravish Me Red"?
+说话人: 玛丽·尤妮斯修女全都向我坦白了\NSister Mary Eunice told me everything.
+说话人: 我很欣赏她的纯洁无暇\NI admired her purity.
+说话人: 她的天真无邪\NHer innocence.
+说话人: 那都是我从未有过的\NI never had any.
+说话人: 从小就没有\NEven as a boy.
+说话人: 现如今她的纯真消失了\NNow it's gone.
+说话人: 被生生地夺去了\NIt's been taken from her.
+说话人: 你在哭吗\NAre those tears?
+说话人: 玛丽·尤妮斯修女堕落了\NSister Mary Eunice has been corrupted.
+说话人: 都怪这个鬼地方  那些病人\NIt's this place. Those patients.
+说话人: 特别是那个令人作呕的谢莉\NThat loathsome Shelley.
+说话人: 她能带来极坏的影响\NShe's a wretched influence.
+说话人: 若玛丽修女真的堕落了  罪魁祸首也是你\NIf she's been corrupted, it's because of you.
+说话人: 你总是不加掩饰地挑逗她\NYour leers are quite transparent.
+说话人: 她是个敏感的孩子\NShe's a sensitive child.
+说话人: 你那些变态行径唤醒了她内心深处\NYour perversion has awakened something in her
+说话人: 某些她自己都无法理解的情愫\Nthat she can't begin to understand.
+说话人: 我对她绝无非分之想\NMy feelings for her are nothing if not entirely pure.
+说话人: 是她来我办公室  向我求欢\NShe came in here and propositioned me!
+说话人: 她赤裸裸地勾引我  简直像个荡妇\NExposed herself to me, like a whore.
+说话人: 我已经看透你的把戏了\NI see through your game.
+说话人: 你想把我赶下台\NYou're trying to drive me from my position,
+说话人: 而你就能执掌大权了\Nso you can take over.
+说话人: 先是给我送来那份报纸\NFirst the newspaper...
+说话人: 现在又送来这支口红\Nand now, the lipstick?
+说话人: 你是不会得逞的\NBut it's not gonna work
+说话人: 你以为熟识的一切  其实你并不了解\Nbecause you don't know what you think you know.
+说话人: 你快要失控了  修女\NYou're coming apart at the seams, Sister.
+说话人: 也许你最好去休休假\NPerhaps it would be best if you took a leave of absence.
+说话人: 我不会放过你的\NI'm on to you.
+说话人: 主保佑你  受恩宠于千万妇女中...\NBlessed are thee, blessed are thou among women...
+说话人: 这里是荆棘崖庄园\NBriarcliff Manor.
+说话人: 你好\NHello?
+说话人: 你好  哪位\NHello? Who is this?
+说话人: 你就把我丢在那里\NYou left me there.
+说话人: 你...\NWho...
+说话人: 你到底是谁\Nwho is this?
+说话人: 你甚至没想过下车看看\NYou never even bothered to get out of the car.
+说话人: 对不起\NI'm sorry.
+说话人: 实在太抱歉了\NI'm so sorry.
+说话人: 不\NNo...
+说话人: 弗里蒙特和布伦特里郡的旅游警告尚未解除\NTravel warnings continue for Fremont and Braintree Counties.
+说话人: 米兰达州和科德角部分地区可能将遭受洪灾\NFlooding expected in Miranda and parts of Cape Cod.
+说话人: 请勿外出\NStay indoors.
+说话人: 在瓦萨基郡部分地区\NWe have more on those strange lights sighted
+说话人: 又有更多人目击了奇怪的光线\Nover parts of Wasagee County.
+说话人: 当地居民始终坚称他们看到的并非闪电\NResidents continue to insist these are not lightning strikes.
+说话人: 由于担心是因飞机坠落而产生的光线\NFears of a possible downed aircraft
+说话人: 当地的紧急营救队时刻准备着投入营救\Nhave put local emergency rescue workers on the alert.
+说话人: 到目前为止  神秘现象发生的原因尚不明朗\NSo far, the cause of the strange activity remains a mystery.
+说话人: 去座位上坐好\NTake your seats!
+说话人: 去座位上坐好  别磨磨蹭蹭的\NTake your seats! No more dillydallying!
+说话人: 快坐下\NSit down!
+说话人: 快坐下\NSit down!
+说话人: 所有人都到齐了吗\NIs everyone accounted for?
+说话人: 那个墨西哥人不在她的房间里\NThe Mexican wasn't in her room,
+说话人: 我正要去找她\Nso I was gonna go look for her.
+说话人: 不  你待在这里\NNo, I want you to stay here.
+说话人: 等我介绍完电影  就去找她\NI'll go, after I introduce the picture.
+说话人: 没问题\NOkey-doke.
+说话人: 欢迎各位参加\NWelcome, one and all,
+说话人: 荆棘崖庄园的首个电影之夜\Nto Briarcliff Manor's inaugural movie night.
+说话人: 今夜要么会成为受人喜爱的传...\NWhether this evening marks the start of a, of a beloved trend,
+说话人: 传统的先河  要么只是又一个沮丧之夜\Ntradition, or just another bitter disappointment,
+说话人: 这完全取决于你们的表现\Nis entirely up to you.
+说话人: 现在\NNow...
+说话人: 坐坐好  放轻松  跟我一起\Nsettle in, relax, and return with me now
+说话人: 重回古罗马  今天播放的是\Nto ancient Rome as we present
+说话人: 1932年塞西尔·B·戴米尔的经典之作\Nthe 1932 Cecil B. DeMille classic,
+说话人: 《罗宫春色》\NThe Sign of the Cross,
+说话人: 由克劳黛·考尔白饰演波培娅...\Nstarring Miss Claudette Colbert as the Empress Poppea...
+说话人: 还是"波皮亚"皇后\Nor "Po-ppea,"
+说话人: 暴君尼禄的饰演者\Nand as the Emperor Nero,
+说话人: 则是无与伦比的查尔斯·劳顿\Nthe incomparable Mr. Charles Laughton...
+说话人: 在我看来  他绝对是个同性恋\Nwho I understand is an enormous whoopsie.
+说话人: 不不  别害怕  不用这样\NNo, no, no. None of that! None of that! None of that.
+说话人: 抬起头  抬起头来\NChin up! Chin up high!
+说话人: 出自英超利物浦队歌《你永远不会独行》
+说话人: 不要畏惧黑暗\NDon't be afraid of the dark.
+说话人: 风暴终将过去\NAt the end of a storm...
+说话人: 天空终会放晴\Nis a golden sky...
+说话人: 云雀一展歌喉\Nthe bright silver song...
+说话人: 曲调明亮悦耳\Nof a lark.
+说话人: 抵御风霜前行\NWalk on through the wind.
+说话人: 阻挡雨雪阔步\NWalk on through the rain.
+说话人: 纵使梦想破灭\NThough your dreams may be tossed and blown...
+说话人: 毅然地走下去\Nwalk on, walk on...
+说话人: 希望永存心间\Nwith hope in your heart.
+说话人: 你绝不会独行\NAnd you'll never walk alone.
+说话人: 你绝不会...\NYou'll never walk a...
+说话人: 但她孤身一人\NBut she was alone.
+说话人: 渺小脆弱  在夜色中\NA tiny, little fragile thing out, out in the world,
+说话人: 行走于世\Nin the gloaming.
+说话人: 风暴降临\NAnd the storm that came...
+说话人: 却不是风雨\Nwas not rain and was not wind.
+说话人: 而是除此之外\NIt was something...
+说话人: 别的东西\Naltogether else.
+说话人: 关灯\NLights.
+说话人: 我去找那个墨西哥人\NI'm off to find the Mexican.
+说话人: 这又是怎么回事\NWhat the hell was that all about?
+说话人: 她今天不正常  你也发现了吧\NShe's bats, and you noticed.
+说话人: 燃烧吧  罗马\NBurn, Rome, burn!
+说话人: 你找温迪谈过了吗  怎么了\NDid you speak to Wendy? What?
+说话人: 我打了你家电话  但没人接\NI tried to phone you, but there was no answer.
+说话人: 所以我就上门去找她\NSo I went to check on her.
+说话人: 有人吗\NHello?
+说话人: 我按了门铃  但发现门没锁\NI rang the bell, but the door was unlocked,
+说话人: 于是就进去了\Nso I let myself in.
+说话人: 有人吗  有人在家吗\NHello? Is anyone here?
+说话人: 佩泽小姐\NMiss Peyser?
+说话人: 温迪\NWendy?
+说话人: 温特斯小姐  我知道这很令人担心\NMiss Winters, I know how alarming this is, but I'm afraid
+说话人: 但恐怕你朋友可能出事了\Nsomething might have happened to your friend.
+说话人: 什么意思\NWhat do you mean?
+说话人: 佩泽小姐的失踪\NThere were certain similarities
+说话人: 和其他受害者的案件十分相似\Nbetween Miss Peyser's disappearance and some of the other victims.
+说话人: 别的受害者\NOther victims?
+说话人: 你在说什么\NWhat are you saying?
+说话人: 是的  尊敬的凯撒\NYes, Divine Caesar, these rumors
+说话人: 关于我纵火烧城的谣言...\Nabout my setting fire to the city...
+说话人: 我有一些\NThat I have some...
+说话人: 我们难道不能把责任推卸给\NCouldn't we shift the blame to...?
+说话人: 基督徒吗\NThe Christian?
+说话人: 如果民众们觉得自己是受害者\NIf the populace could learn that they are victims,
+说话人: 他们就会消灭基督徒\Nthey might destroy them.
+说话人: 我有一些疑虑\NThat I have some concerns,
+说话人: 想和警方汇报\Nconcerns which I try to relate to the police.
+说话人: 可惜他们太固执了\NBut unfortunately, they're so invested in the idea
+说话人: 认为自己已经抓住了那个杀人魔\Nthat they've already caught their maniac
+说话人: 所以压根想都没想\Nthat they won't even entertain the idea.
+说话人: 但也许他们没抓到凶手\NBut maybe they haven't.
+说话人: 他们确实抓到了凶手   不是吗\NBut they have caught him, haven't they?
+说话人: 我能去下洗手间吗  很快的\NDo you think I could use the bathroom really quickly?
+说话人: 你们这些人怎么回事\NWhat is it with you people?
+说话人: 不是吗\NHaven't they?
+说话人: 说实话  我已经不敢肯定了\NTo be honest, I'm not so sure anymore.
+说话人: 我来例假了\NI'm having my period.
+说话人: 别给我出幺蛾子\NDon't make me come with you, okay?
+说话人: 好  谢谢\NYeah. Thank you.
+说话人: 您喜欢哪种香水  皇后\NWhich perfume, Empress?
+说话人: 茉莉混金合欢\NThe jasmine and the acacia.
+说话人: 罗马真是美女如云\NThere are so many beautiful women in Rome.
+说话人: 鉴于我的情况  我真的不适合\NIt's really not appropriate for me to be seeing this...
+说话人: 看这部电影  裘德修女会理解的\Nconsidering my condition. Sister Jude will understand.
+说话人: 我要去洗手间\NI'm going to the ladies'.
+说话人: 卡西亚  你就像只被黄蜂蜇伤的蝴蝶\NDacia, you're a butterfly with the sting of a wasp.
+说话人: 把你的衣服脱了\NTake off your clothes.
+说话人: 到这里来  告诉我一切\NGet in here and tell me all about it.
+说话人: 有人吗\NHello?
+说话人: 该死的墨西哥人上哪儿去了\NWhere's that goddamn Mexican?
+说话人: 谁在那里\NWho's there?
+说话人: 谁在那里\NWho's there?
+说话人: 我们选了一个很糟糕的夜晚逃走\NWe picked a hell of a night for it.
+说话人: 没错  其实是很完美\NYeah, it's good. Perfect, in fact.
+说话人: 暴风雨会掩盖我们的行踪\NThe storm will cover our tracks.
+说话人: 我们只用穿过这些门\NAll we have to do is go through those doors,
+说话人: 通过休息室到锅炉房\Nthrough the staff lounge and into the boiler room.
+说话人: 那会通往哪里  纳尼亚吗\NAnd that'll take us where, Narnia?
+说话人: 那里有条旧隧道\NThere's an old tunnel
+说话人: 直通树林  假设它真存在的话\Nthat leads into the woods-- assuming it's really there.
+说话人: 确实存在  那个疯癫的修女带我走过\NIt's there. That touched nun brought me through it.
+说话人: 带我一起走  我给你们带路\NI'll show you, just take me with you.
+说话人: 去死  我们给过你机会\NScrew you. You had your chance.
+说话人: 我之前误解你了  对不起\NI was wrong about you. I'm sorry.
+说话人: 但我的爱人可能有危险\NBut someone I love may be in danger.
+说话人: 我知道你能理解\NI know you can understand that.
+说话人: 我们得搞定她\NWe have to take her down.
+说话人: 不然她会告诉警卫的\NShe'll raise the alarm.
+说话人: 不  她不会的  她和我们一起走\NNo, she won't. She's coming with us.
+说话人: 什么\NWhat?!
+说话人: 没时间争论了  快走\NWe don't have time to argue. Come on.
+说话人: 该死\NShit.
+说话人: -卡尔在外面  -我们该怎么办\N- Carl's out there. - What are we gonna do?
+说话人: 无论如何都得走\NWhatever we have to.
+说话人: 我们可能不会再有机会了\NWe may not get another chance.
+说话人: 必须穿过那扇门\NWe're going through that door.
+说话人: 你没法放倒卡尔的\NYou're not taking down Carl.
+说话人: 他曾是海军陆战队员  在朝鲜打过仗\NHe was a Marine. He fought in Korea.
+说话人: 我能确保你们通过那扇门\NI'll make sure you get through the door.
+说话人: -只是试试  等着我  -等你\N- Just, just try and wait for me. - Wait for you?
+说话人: 如果你们等不了  我没逃出去\NIf you can't, if I don't make it out,
+说话人: 你一定要写个能摧毁这地方的报道\Nmake sure you write the story that blows the doors off this place.
+说话人: 别忘了我\NDon't forget about me.
+说话人: 谢莉  你在这里干什么\NShelley, what are you doing out here?
+说话人: -我空虚了  -你一直都很空虚\N- I got bored. - Yeah, you're always bored.
+说话人: 你应该和别人在一起看电影  快去\NYou need to be in that movie with the others. Go on.
+说话人: 我早看过了\NI've already seen it.
+说话人: 基督徒被吃了\NThe Christians get eaten.
+说话人: 我宁愿吃点别的东西\NI'd rather be eating something else.
+说话人: 谢莉  我没时间\NShelley, I don't have time.
+说话人: 墨西哥人不见了\NThe Mexican's missing.
+说话人: 裘德修女也在找她\NJude's out here looking, too.
+说话人: -你查过水疗室了吗  -什么\N- Did you check the hydrotherapy room? - What?
+说话人: 来吧 卡尔  我帮你找\NCome on, Carl... I'll help you look.
+说话人: 你怎么知道她不会藏在那里呢\NYou never know where she might be hiding.
+说话人: 妈的  谢莉\NShit, Shelley.
+说话人: 快来\NCome on.
+说话人: 站住\NStop!
+说话人: 该死的  我说了站住\NDamn it, I said stop!
+说话人: 瞧瞧你\NThere you are...
+说话人: 婊子\Nwhore.
+说话人: -我没看见门  -在这里\N- I don't see a door. - It's here.
+说话人: 快来\NCome on.
+说话人: 婊子\NWhore.
+说话人: 婊子\NWhore...
+说话人: 婊子\NWhore!
+说话人: 为什么停下了\NHey, why'd you stop?
+说话人: 卡尔  对不起\NI'm sorry, Carl.
+说话人: 我得离开这里\NI gotta get out of here.
+说话人: 你想去哪里\NWhere do you think you're going...
+说话人: 婊子\Nwhore?
+说话人: 我们等很久了\NWe waited as long as we can.
+说话人: 她肯定出事了\NSomething must have happened to her.
+说话人: 任何时候  他们都会发现我们不见了\NAny minute now, they're gonna notice we're missing from that movie,
+说话人: 如果现在还没发现的话\Nif they haven't already.
+说话人: 我们会救出她的  她和所有人\NWe'll get her out. Her and everybody else.
+说话人: 我会揭发这里所有毛骨悚然的事\NI'll expose every sick thing going on here.
+说话人: 那走吧\NLet's go.
+说话人: 这是我最后一次有这美妙的感觉\NI didn't think I could feel this good ever again,
+说话人: 我讨厌下雨\Nand I hate the rain.
+说话人: 赶紧走  趁他们还没发现\NCome on, we have to get as far away from here,
+说话人: 我们要尽力跑远点\Nwhile we still can.
+说话人: 根据我的记忆\NFrom what I remember,
+说话人: 路在离这里几英里的北方\Nthe road's a couple miles north of here.
+说话人: 那边  穿过树丛\NThat way, through the trees.
+说话人: 我不相信你  一旦到达公路\NI don't trust you. Once we get to the road,
+说话人: 我们就分道扬镳\Nthat's as far as you go with us.
+说话人: 是时候了  是时候了\NIt's our time! It's our time!
+说话人: 我们不惧怕\NWe're not afraid.
+说话人: 站在那里\NStand up there!
+说话人: 昂首去  大声歌\NGo proudly! Singing!
+说话人: 没有死亡  只有圣父身上的十字架\NThere is no death, only a crossing over to the Father.
+说话人: -打扰一下  -怎么\N- Excuse me. - What?
+说话人: 好像有一些病人失踪了\NThere appear to be some patients missing.
+说话人: 你注意到了吗\NHave you been aware of that?
+说话人: 该死\NOh, shit.
+说话人: 小胡椒要尿尿\NPepper pee.
+说话人: 去吧  快去尿\NYeah, go on. Go pee.
+说话人: 打扰了  修女\NExcuse me, sister.
+说话人: 我们大概有麻烦了\NI think we might have a problem.
+说话人: 现在吗\NNow?
+说话人: 但基督徒们马上就要被吃掉了\NBut the Christians are about to be eaten.
+说话人: 我只是要去趟医务室\NI was just going to the infirmary.
+说话人: 我想吐了\NI think I'm going to vomit.
+说话人: 那就吐吧\NGo ahead.
+说话人: 我们可以在这里扮医生\NWe can play doctor right here.
+说话人: 不  我现在没心情\NNo, I'm not in the mood.
+说话人: 你怎么会没心情\NYou're always in the mood.
+说话人: 我一定是这里唯一一个没干过你的人\NI must be the only guy in here who hasn't had you yet.
+说话人: 这话不对\NThat's not true.
+说话人: 而且  得由我来选择想和谁干\NWhat's more, I'm the one who does the choosing.
+说话人: 今晚可不行\NNot tonight.
+说话人: 转过去  把屁股撅起来\NTurn around... and spread your cheeks.
+说话人: -我不是拒绝你了吗  -我饥不择食了\N- I thought I repulsed you. - Any port in a storm.
+说话人: 给我趴下\NNow bend over!
+说话人: 我不想做\NI don't want to.
+说话人: 我想回去看电影\NI want to go back to the movie.
+说话人: 不  不要\NNo...! No!
+说话人: 不要  救命\NNo! Help!
+说话人: 强奸\NRape!
+说话人: -就是要强奸  -救命\N- Rape. - Help!
+说话人: 你的水可真多\NThat's rich, coming from you.
+说话人: 继续喊  大声地喊\NGo ahead, scream your head off.
+说话人: 没人会听见的\NNo one's going to hear you in here.
+说话人: 救命\NHelp!
+说话人: 你竟敢嘲笑我\NDon't you dare laugh at me.
+说话人: 你的老二怎么了\NWhat happened?
+说话人: -闭嘴  -以前受过伤吗\N- Shut up! - Were you in an accident?
+说话人: 两米多的高个子  我以为老二会垂得像\NOh, you're seven feet all, I thought you'd be hung like...
+说话人: 闭嘴\NShut up!
+说话人: 我们可能找到那个墨西哥人了\NI think we found the Mexican!
+说话人: 我操\NOh, shit shit!
+说话人: 快跑\NRun!
+说话人: 他们是什么  是什么在追我们\NWhat are they? What's chasing us!
+说话人: 别回头  快跑\NDon't look back! Just run!
+说话人: 别停下\NKeep going!
+说话人: 基特  小心后面\NKit, behind you!
+说话人: 快跑  快  进隧道\NGo! Go! Go! Into the tunnel!
+说话人: 裘德修女  裘德修女\NSister Jude? Sister Jude?
+说话人: 修女\NSister...
+说话人: 快醒醒\Nyou need to wake up.
+说话人: -出什么事了  -弗兰克要我来找你\N- What's going on? - Frank said I had to fetch you.
+说话人: 出大事了  他们很不安\NThere's a big problem. They're very worried.
+说话人: 上帝啊\NOh, my God in Heaven.
+说话人: 他们也看见了吗\NThey've seen it, too.
+说话人: 看见什么  修女\NSeen what, sister?
+说话人: 什么...\NWhat...?
+说话人: 给我解释一下  三个病人是如何\NPlease explain to me how three patients
+说话人: 从你们的眼皮子底下跑掉的\Ncould just get up and walk out of here right under your nose.
+说话人: -可能是我电影看得太投入了  -是啊\N- I guess I was just watching the movie. - Yeah.
+说话人: 电影之夜结束了\NMovie night is at an end.
+说话人: 可是电影还没放完呢\NBut the picture's not over.
+说话人: 他们都死了  满意了吗\NYeah, well, they all die. Satisfied?
+说话人: 现在听好了\NNow, listen up.
+说话人: 从今往后\NThere will not be another movie night
+说话人: 再也没有电影之夜\Nnor any other special privileges
+说话人: 或者其它特殊待遇了\Nin the foreseeable future.
+说话人: 关于这点  你们得感谢那三个\NAnd for that, you can thank the three scofflaws
+说话人: 不知好歹的逃犯\Nwho abused my good will.
+说话人: 一个纵欲变态  一个墨西哥人\NA sex-crazed deviant, a Mexican,
+说话人: 和一个小头白痴  他们在暴风雨里跑不远\Nand a pinhead won't get far in this storm.
+说话人: 真希望他们都淹死在外面\NI hope they all drown out there.
+说话人: 十分钟后熄灯\NLights out in ten minutes.
+说话人: 好了  都回屋去\NAll right, let's go.
+说话人: 求你了\NPlease...
+说话人: 放我走吧\Nlet me go.
+说话人: 裘德修女会找我的\NSister Jude will look for me.
+说话人: 他们是在找你\NOh, they are looking for you.
+说话人: 在树林里找\NIn the woods.
+说话人: 他们都以为你昨晚\NYou see, they all think you ran away last night,
+说话人: 和其他几个人逃跑了\Nalong with several of the others.
+说话人: 事实上  裘德修女认为你是主谋\NIn fact, Sister Jude thinks you're the ringleader.
+说话人: 求你了\NPlease...
+说话人: 如果你让我离开这里\Nif you let me walk out of here,
+说话人: 我不会对任何人提起的\NI won't tell them anything.
+说话人: 我保证\NI promise!
+说话人: 恐怕这是不可能的\NI'm afraid that's quite impossible.
+说话人: 你昨晚太淘气了\NYou were a very naughty girl last night.
+说话人: 你想远走高飞  所以我得扼杀你的野心\NYou tried to fly away, so I had to clip your wings.
+说话人: 不要担心\NBut not to worry.
+说话人: 我的外科手术无懈可击\NMy surgical training was impeccable.

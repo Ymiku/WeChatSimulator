@@ -1,0 +1,632 @@
+﻿# Exported by Aegisub 3.2.2
+NTP: 人人影视\NYYeTs.com
+NTP: 原创翻译  双语字幕
+NTP: ■
+NTP: 仅供学习 禁止用于任何商业盈利行为\N更多影视更新\N请登陆www.YYeTs.com
+NTP:  翻译：Asianika   祝哈尼们考研顺利的森   glorydai
+NTP:  翻译：大淫魔威廉   碧海青涛   蓬蓬裙
+NTP:  时间轴：加森   仓鼠sama   萌
+NTP:  校对：教主吕黎   lemony   鸟为亲爱的们考研加油
+NTP: 后期：冰河     监制：鸟儿祝zzz生日快乐
+NTP: 美国恐怖故事
+NTP: 第二季 第十集
+NTP: 能听见我说话吗\NCan you hear me?
+说话人: 发生了什么\NWhat happened?
+说话人: 你差点死掉\NYou nearly died.
+说话人: 你大脑中的氧气几乎被耗尽\NYour brain was almost out of oxygen.
+说话人: 这两天你的视线会出现很多盲点\NYou'll be seeing black spots for the next few days.
+说话人: 但你身体的其他感官会自然恢复\NThe rest of your senses will recover naturally.
+说话人: 成功了吗\NDid it work?
+说话人: 他们来了吗\NDid they come?
+说话人: 没有  沃克先生\NNo, Mr. Walker.
+说话人: 没有访客的痕迹\NThere was no visitation.
+说话人: 我一直等到最后一秒\NI waited as long as I could,
+说话人: 直到最终我不得不把你唤醒\Nbut finally, I had to revive you.
+说话人: 他们似乎治愈了枪伤\NThey seem to have repaired the damage done by the bullet.
+说话人: 你是怎么进来的\NHow did you get in here?
+说话人: 格蕾丝在哪儿我就在哪儿\NI go where Grace goes.
+说话人: 我被委派前来保护她\NI've been charged to protect her.
+说话人: 是吗\NHave you?
+说话人: 你连自己都保护不了\NYou can't even protect yourself.
+说话人: 他们也许教会了你说话  小胡椒\NThey may have given you speech, Pepper,
+说话人: 但鹦鹉学舌人人都会\Neven a parrot can be taught to mimic.
+说话人: 思考的能力他们能给你吗\NBut did they give you the capacity to think?
+说话人: 我看不可能\NI sincerely doubt it.
+说话人: 告诉我  波莉  他们往她肚子里塞了什么\NTell me, Polly, what did they put inside her?
+说话人: 我什么都不会告诉你\NI won't tell you anything.
+说话人: 如果你不告诉我\NIf you're not going to tell me,
+说话人: 那我只好自己找出答案了  对吧\Nthen I'll just have to find out for myself, won't I?
+说话人: X光会对她体内的生命造成伤害\NX rays will harm the life growing inside of her.
+说话人: 我愿意冒这个险\NThat's a chance I'm willing to take.
+说话人: 愚昧无知\NStupid man.
+说话人: 你认为他们会允许\NYou think they'd allow you
+说话人: 让你继续那野蛮的实验吗\Nto continue your barbaric practice?
+说话人: 她是受保护的\NShe's protected.
+说话人: 你的X光不可能透视她的身体\NYour X rays won't penetrate her body.
+说话人: 你什么也看不到\NYou'll see nothing,
+说话人: 但他们却一直在盯着你\Nbut they've been watching you.
+说话人: 你以为凭你业余的实验\NYou think you're like them,
+说话人: 就能与他们平起平坐吗\Nwith your clumsy experiments.
+说话人: 人家都快笑掉大牙了  奥尔顿医生\NBut they laugh at you, Dr. Arden.
+说话人: 他们给你编了顺口溜\NThey make jokes.
+说话人: 这首就不错\NHere's a good one.
+说话人: 叮咚叮咚  那是谁\NKnock, knock. Who's there?
+说话人: 那是奥尔顿  谁是奥尔顿\NArden. Arden who?
+说话人: 奥尔炖鸭叫呱呱\NArden you the quack who'd make a better duck?
+说话人: 如果X光射线不管用\NWell, if taking X rays won't work,
+说话人: 那么也许解剖观察很可行\Nperhaps more invasive observation will.
+说话人: 我看她的情况\NI think her condition calls
+说话人: 急需剖腹产  你觉得呢\Nfor an emergency C-section, don't you?
+说话人: 你不能那么做\NYou can't do that.
+说话人: 等着瞧\NWatch me.
+说话人: 奥尔顿医生  你还是把我当成个小头症患者啊\NDr. Arden, you still see me as microcephalic.
+说话人: 没人把小头畸形人看在眼里\NNo one takes a pinhead seriously.
+说话人: 当我姐夫把姐姐的孩子淹死\NWhen my sister's husband drowned her baby
+说话人: 又自割双耳后  他告诉大家是我干的\Nand sliced his ears off, he told everyone I did it.
+说话人: 他们把我绑起来  带我来到法官前\NThey tied me up and paraded me in front of a judge.
+说话人: 法官就看了一眼我的头\NHe took one look at the shape of my head,
+说话人: 我就一辈子被关了起来\Nand I was locked up for good.
+说话人: 这就是我们怪胎的下场\NThat's how it works for us freaks.
+说话人: 一切黑锅都是我们背\NWe get blamed for everything.
+说话人: 但如果格蕾丝在这里有任何差池\NBut if something happens to Grace in here
+说话人: 如果她有个三长两短\Nand she's harmed in any way,
+说话人: 不会有任何人来背这个黑锅\Nthere won't be anyone else to blame.
+说话人: 他们会拿你是问\NThey'll take you,
+说话人: 掀开你的脑壳  把你的脑浆搅得七荤八素\Nopen up your head, and stir your brain with a fork.
+说话人: 等你再回来时\NAnd when you're returned,
+说话人: 你会马上体会到我们怪胎的境遇\Nyou'll experience firsthand how people treat us freaks.
+说话人: 我会照顾格蕾丝\NI'll take care of Grace.
+说话人: 你不如去找你那修女婊子\NWhy don't you go to your whore nun
+说话人: 让她抚慰你早泄的自尊吧\Nand have her soothe your deflated ego?
+说话人: 我总担心利·艾默生还在逍遥法外\NI'm haunted by the idea that Leigh Emerson is still at large.
+说话人: 相信我  主教  找到利·艾默生\NBelieve me, Monsignor, finding Leigh Emerson
+说话人: 是头等大事\Nis a top priority.
+说话人: 搜索的范围遍及周边五个州\NThey're searching for him in five different states.
+说话人: 这次的搜捕异常庞大\NIt's a huge manhunt.
+说话人: 我对他的盲目令我心存懊恼\NI'm filled with remorse at my blindness about him.
+说话人: 这不是你的错\NYou are not to blame.
+说话人: 我就睡在那边\NI'll be sleeping right there,
+说话人: 如果你夜里有什么需要叫我就好\Nif you need something during the night.
+说话人: 你是为我而来吗\NHave you come for me?
+说话人: 那你为何来这儿\NWhy are you here?
+说话人: 你还有未竟的事业\NYou have more work to do.
+说话人: 你钟爱的荆棘崖年轻修女\NThe Devil lives at Briarcliff
+说话人: 她体内住着一个魔鬼\Nin your favorite young nun.
+说话人: 你必须将她驱逐出来\NYou must cast her out.
+说话人: 我太虚弱了\NI'm too weak.
+说话人: 上帝会帮助你的\NGod will help you.
+说话人: 她会觉察到的\NShe'll know.
+说话人: 你的意志要坚定\NGuard your thoughts.
+说话人: 用你的念珠\NUse your rosary,
+说话人: 每一颗都是主之圣名\Neach bead is his name.
+说话人: 这是属于你的时刻  蒂莫西\NThis is your moment, Timothy.
+说话人: 感谢你所做的一切  修女\NThank you for everything, Sister.
+说话人: 我一会儿再来\NI'll be back later.
+说话人: 我得去监督收货\NI have to oversee a delivery.
+说话人: 令人激动的新事物正在这里崛起\NExciting new things are happening around here.
+说话人: 她这么做是为了嘲讽我\NShe's doing this to taunt me.
+说话人: 各位\NPeople!
+说话人: 我要宣布一件事\NI have an announcement to make.
+说话人: 各位都知道  最近我们备受珍爱的唱片\NAs most of you know, recently our beloved recording
+说话人: 歌颂"多明我会"创始人的法语歌  保加利亚修女组合原唱
+说话人: 《多明尼克》被人残忍地摔碎了\Nof "Dominique" was smashed to pieces by someone
+说话人: 具体是谁我就不提了\Nwho shall remain nameless.
+说话人: 不如就叫她\NIn fact, I'll just call her
+说话人: G2573号病人吧\Npatient number G2573.
+说话人: 但与其让一个\NBut rather than allow one
+说话人: 痛苦的老女人破坏大家的心情\Nbitter woman's actions ruin things for everyone,
+说话人: 我决定不如利用这次机会\NI've decided to take this opportunity
+说话人: 将荆棘崖带入20世纪新时代\Nto bring Briarcliff into the 20th century.
+说话人: 我查看了下我们的救济金\NI dug into our rainy day fund
+说话人: 然后给大家买了这台漂亮的二手点唱机\Nand bought this beautiful used jukebox.
+说话人: 我相信这里面一定有迎合\NI'm sure there's something in there
+说话人: 我们所有人口味的歌\Nthat can appeal to everyone's taste.
+说话人: 骆驼牌[香烟]吗\NCamels?
+说话人: 要一包骆驼\NPack of Camels?
+说话人: 不  杰拉德\NNo, Gerard.
+说话人: 这不是卷烟贩卖机\NIt's not a cigarette machine.
+说话人: 这是一台伟大的音乐盒\NIt's a great big music box!
+说话人: 至于它的处女秀\NAnd for our maiden number,
+说话人: 我愿意把这一首奉献给\NI would like to dedicate this one
+说话人: 我们的新住客  编号G2573病人\Nto our newest resident, patient number G2573,
+说话人: 朱迪·马汀小姐\NMiss Judy Martin.
+说话人: 享受吧\NEnjoy.
+说话人: 那是你的名字吗\NThat's your name?
+说话人: 朱迪·马汀\NJudy Martin?
+说话人: 再也不是了\NNot anymore.
+说话人: 我们在这里只有编号\NWe're all just numbers here.
+说话人: 我们得谈谈\NWe have to talk.
+说话人: 发生了一些事\NSomething's happened.
+说话人: 史莱森不见了\NThredson's loose.
+说话人: 你怎么知道的\NHow do you know that?
+说话人: 他怎么逃脱的\NHow'd he get out?
+说话人: 混蛋\NSon of a bitch.
+说话人: 瞧瞧  瞧瞧  瞧瞧\NWell, well, well, well, well.
+说话人: 我们三个能像是文明人一样坐在这里\NIsn't this pleasant,
+说话人: 是不是非常愉悦\Nthe three of us sitting around like civilized people?
+说话人: 明智之举\NThat's a wise move.
+说话人: 我正打算给你脸上来一拳\NI was about to bash your face in.
+说话人: 我知道你会的\NI know you were.
+说话人: 我钦佩你的勇气\NI admire your pluck.
+说话人: 我希望这种品质能遗传到我们的孩子身上\NIt's a quality I hope you'll pass on to our child.
+说话人: 她也没有告诉你吗\NOh, she not tell you either?
+说话人: 她尝试自己堕胎结果证明是徒劳的\NHer attempts to self-abort proved fruitless.
+说话人: 我们的孩子很结实  拉娜\NOur baby's strong, Lana.
+说话人: 一名幸存者\NA survivor.
+说话人: 而且他还是唯一一个\NAnd he's the only thing
+说话人: 让你继续活着的理由\Nthat's keeping you alive right now.
+说话人: 只要他在你的子宫里成长  你就是安全的\NAs long as he's growing inside of your womb, you're safe.
+说话人: 然后呢\NThen what happens?
+说话人: 你要杀了我吗\NYou murder me?
+说话人: 不  孩子出生后的第一年\NOh, no. I'll have to keep you around
+说话人: 我还会留着你的命给他喂奶\Nto breast-feed that baby for at least the first year.
+说话人: 医保福利金可观着呢\NThe health benefits are myriad.
+说话人: 你真是个病态扭曲的人\NYou are one sick twist.
+说话人: 而你是个被通缉的人\NAnd you're a wanted man.
+说话人: 我想知道他们是否提供悬赏\NI wonder if they're offering a reward.
+说话人: 去查查  把我抓进去\NFind out. Turn me in.
+说话人: 你巴不得吧\NHmm. You'd like that, wouldn't you?
+说话人: 带着你非法获得的\NGo to the police, and your illegally obtained
+说话人: 供认磁带去警察局\Ntaped confession goes with you.
+说话人: 明天我们重新开始给你治疗的时候\NWe can discuss that
+说话人: 可以讨论这个  还有其他问题\Nand other issues tomorrow, when we resume your treatment.
+说话人: 就是这样\NThat's right.
+说话人: 玛丽·尤妮斯修女已经给了我\NSister Mary Eunice has offered me
+说话人: 一份在荆棘崖的全职工作\Na full-time position here at Briarcliff.
+说话人: 作为修女  她是一名思想非常超前的管理者\NShe's a remarkably forward- thinking administrator for a nun,
+说话人: 而且出乎意料的擅长\Nand surprisingly adept
+说话人: 如何解开"活结"\Nat untying slipknots.
+说话人: 现在所有人起床  出列\NEverybody up and out now!
+说话人: 出来\NStep out.
+说话人: 打开那些门\NOpen those doors.
+说话人: 到这儿来\NGet out here.
+说话人: 打开你的门\NOpen your door.
+说话人: 房间检查  女士们\NRoom search, ladies.
+说话人: 当场抓获你们就无话可说了\NWe find it keeps our charges honest.
+说话人: 你在嘲笑我吗\NAre you mocking me?
+说话人: 我没时间嘲笑你  朱迪  我有工作要做\NI don't have time to mock you, Judy; I have work to do.
+说话人: 很多工作要替你擦屁股\NA lot of work, given your epic failure here.
+说话人: 你让他在这儿工作?\NYou gave him a job?
+说话人: -你疯了吗  -保安\N- Are you insane? - Guards!
+说话人: 史莱森医生是精神医药学的先锋\NDr. Thredson is on the cutting edge of psychiatric medicine.
+说话人: 我们需要一个像他这样的人\NWe need a guy like him around here
+说话人: 来给这个地方"塑型"\Nto whip this place into shape.
+说话人: 他来这儿是因为我\NYeah, well, he's here for me,
+说话人: 你知道的\Nand you know it.
+说话人: 当他想杀了我的时候  他肯定会的\NAnd when he murders me, which he will,
+说话人: 你也脱不了干系\Nyou will be responsible.
+说话人: 恰恰相反  温特斯小姐\NQuite the contrary, Miss Winters.
+说话人: 史莱森医生是关心你\NDr. Thredson is concerned for you
+说话人: 和你未出世的孩子\Nand for your unborn child.
+说话人: 带她去水疗室\NTake her to hydrotherapy.
+说话人: 脱了衣服蒸个二十分钟\NStrip her down and boil her for 20 minutes.
+说话人: 不要\NNo!
+说话人: 还有人想挑我的刺吗\NAnyone else have a bone to pick with me?
+说话人: 我\NI do.
+说话人: 就知道你会  朱迪\NI bet you do, Judy.
+说话人: 让我看看你的房间\NLet's have a look in your room.
+说话人: 随意  里面没有任何东西\NFine, there's nothing in there.
+说话人: 朱迪  朱迪  朱迪\NJudy, Judy, Judy...
+说话人: 你从厨房偷了这个吗\NDid you steal this from the kitchen?
+说话人: 我打赌你是从谢莉那儿得来的灵感\NI bet you got the idea from Shelley.
+说话人: 真有意思\NVery funny.
+说话人: 你是在想主教大人吗\NDo you think about the monsignor?
+说话人: 肮脏的东西\NVile thing.
+说话人: 这让我有点尴尬\NThis is awkward for me.
+说话人: 考虑到我们之前的关系\NGiven our prior relationship.
+说话人: 但我不能让你漫漫长夜作践自己\NBut I can't have you diddling yourself all night long.
+说话人: 那惩罚我吧\NSo punish me.
+说话人: 不要  该死的  放开我\NNo, goddamn you-- let me go.
+说话人: 这是虐待\NThis is sadism.
+说话人: 正相反  你已经明显表现出\NQuite the contrary-- you've exhibited clear-cut signs
+说话人: 躁郁症的症状\Nof manic depression,
+说话人: -而电击疗法是规定治疗手段  -不要\N- for which electroshock therapy is the prescribed treatment. - No!
+说话人: 看看温斯特小姐\NJust look at Miss Winters.
+说话人: 她的女同癖已完全治愈\NIt completely cured her gynephilia.
+说话人: 修女  修女  我知道你内心深处能听到我\NSister, sister, I know somewhere in there you can hear me.
+说话人: 这么做是错误的  是错的  错的\NThis is wrong, it's wrong, it's wrong.
+说话人: 你知道是错的\NYou know it's wrong!
+说话人: 裘德  我们会把你痛苦的回忆抹掉\NAw, Jude-- we're gonna burn those bad memories right out of you.
+说话人: 不管是肇事逃逸还是酒后失忆\NThat runaway groom, those drunken blackouts,
+说话人: 一切都会随一缕青烟而逝\Nall of it gone in a wisp of smoke.
+说话人: 她说得对\NShe's right, you know.
+说话人: 大多数病人治疗后都会感到精神愉快\NMost patients experience a sense of euphoria after the treatment.
+说话人: 我可以吗  医生\NMay I, Doctor?
+说话人: 你来吧  不要超过50%\NYes, you may-- no higher than 50%.
+说话人: 她意志坚强\NShe's one tough cookie.
+说话人: 也许需要再高一些\NShe may need a little extra.
+说话人: 开始\NOn?
+说话人: 恢复的真不错\NOh, it's healing quite well.
+说话人: 要我说  好的过头了\NToo well if you ask me.
+说话人: 你这话什么意思\NWhat could you mean by that?
+说话人: 你对待像利·艾默生那样的流浪儿如此善良\NAfter showing such kindness to a guttersnipe like Leigh Emerson,
+说话人: 你应被封为圣徒\Nyou deserved to be canonized.
+说话人: 但这些伤痕符合你未来圣人的身份\NBut these marks will fit a future saint like you.
+说话人: 我命令你   袭击上帝子民的污鬼\NI command you, unclean spirit now attacking this servant of God,
+说话人: 严格的按照我的话做\Nto obey me to the letter--
+说话人: 我  上帝的仆人...\NI, who am a minister of God...
+说话人: 说的不错  神父\NGood one, Father.
+说话人: 你想听听我的吗\NYou want to hear mine?
+说话人: 有一个牧师  一个叫亚历山大的下流胚\NThere was a priest, the dirty beast whose name was Alexander.
+说话人: 他雄伟的鸡巴有几英寸粗\NHis mighty dick was inches thick.
+说话人: 他管它叫沙罗曼蛇\NHe called it Salamander.
+说话人: 以上帝之名\NIn Jesus' name
+说话人: 我命令...\NI command...
+说话人: 你的也很粗吗\NIs yours inches thick?
+说话人: 神父\NFather.
+说话人: 求你停下来\NStop it, please.
+说话人: 你的身体可不是这么想的\NYour body disagrees with you.
+说话人: 我...\NI...
+说话人: 我立过誓\NI took a vow.
+说话人: 你的语气可没那么虔诚\NYou don't say that with much conviction.
+说话人: 求你了\NPlease...
+说话人: 别这样\Ndon't do this to me.
+说话人: 教会\NThe Church means...
+说话人: 是我的全部\Neverything to me.
+说话人: 没关系  我们就像亚当和夏娃一样\NIt's okay-- we're like Adam and Eve.
+说话人: 两个无邪的孩子\NTwo innocent children
+说话人: 首次探索彼此间的身体\Ndiscovering each other's bodies for the first time.
+说话人: 这是你的第一次  对吧\NThis is your first time, isn't it?
+说话人: 是的  我...\NYes. I...
+说话人: 把身体奉献给了...\Ngave my body to...
+说话人: 耶稣\NChrist!
+说话人: 他又给过你什么\NWhat has he given to you?
+说话人: 来吧  神父\NOh, come on, father.
+说话人: 你就不想感受一下么\NDon't you want to feel what it's like?
+说话人: 至少在死之前来一次\NAt least once... before you die?
+说话人: 是不是像温暖的\NDoes it feel like a warm,
+说话人: 潮湿的拥抱一样\Nwet... hug?
+说话人: 天啊\NGod...
+说话人: 你...快...\Nyou... have to...
+说话人: 停下来\Nstop.
+说话人: 你确定么\NAre you sure?
+说话人: 确定\NYes...
+说话人: 不要\NNo!
+说话人: 不不\NNo, no.
+说话人: 不  先别射  别射\NNo, don't do it... don't do it yet.
+说话人: 天啊\NHoly shit.
+说话人: 看来他们把电流调得更高了\NLooks like they turned the juice up extra high.
+说话人: 为什么我一点儿都高兴不起来\NWhy doesn't it make me feel any better?
+说话人: 裘德修女\NSister Jude.
+说话人: 是我\NIt's me.
+说话人: 拉娜\NLana.
+说话人: 拉娜·布拉娜\NLana Banana?
+说话人: 你还记得自己的名字吗\NDo you know your name?
+说话人: 名字游戏  舍丽·艾丽丝
+说话人: 名字游戏\NThe name game
+说话人: 裘德\NJudy
+说话人: 裘德裘德小布迪\NJudy, Judy, bo Budy
+说话人: 布拉娜范娜与傅迪\NBanana fanna fo Fudy
+说话人: 滴答嘟穆迪\NFee fi mo Mudy
+说话人: 裘德\NJudy
+说话人: 拉娜  拉娜拉娜与芭娜\NLana... Lana, Lana, bo Bana
+说话人: 布拉娜范娜与法娜\NBanana fanna fo Fana
+说话人: 滴答嘟玛娜\NFee fi mo Mana
+说话人: 拉娜\NLana
+说话人: 大家一起来\NCome on, everybody
+说话人: 我们来玩个游戏\NI say, now let's play a game
+说话人: 我敢打赌我能用你们的名字\NI bet you I can make a rhyme
+说话人: 做首韵律歌\Nout of anybody's name
+说话人: 名字的第一个字母\NThe first letter of the name
+说话人: 我想它不在这里\NI treat it like it wasn't there
+说话人: 但"波"或"弗"\NBut a "B" Or "F"
+说话人: 或"莫"会出现\NOr an "M" Will appear
+说话人: 然后我说"波"  加上"哔"\NAnd then I say bo, add a "B"
+说话人: 然后我说名字  布拉娜范娜与弗\NThen I say the name and banana fanna and a fo
+说话人: 然后我再说"弗"开头的名字  很普通\NAnd then I say the name again with an "F," Very plain
+说话人: 还有弗弗莫\NAnd a fee fi and a mo
+说话人: 这次我说"莫"开头的名字\NAnd then I say the name again with an "M" this time
+说话人: 没有我押不到韵的名字\NAnd there isn't any name that I can't rhyme
+说话人: 胡椒  胡椒胡椒小波椒\NPepper... Pepper, Pepper, bo Bepper
+说话人: 布拉娜范娜与弗椒\NBanana fanna fo Fepper
+说话人: 滴答嘟莫椒\NFee fi mo Mepper
+说话人: 小胡椒\NPepper
+说话人: 如果你名字的前两个字一样\NBut if your first two letters are ever the same
+说话人: 我就去掉这俩再念吧\NI drop them both and say the name
+说话人: 鲍伯·鲍伯  去掉"鲍"  只念"伯"\NLike Bob Bob, drop the Bs-- bo Ob
+说话人: 费德·费德  去掉"费"  只念"德"\NFor Fred Fred, drop the Fs-- fo Red
+说话人: 玛丽·玛丽  去掉"玛"  只念"丽"\NFor Mary Mary, drop the Ms-- mo Ary
+说话人: 这就是唯一相反的规矩\NThat's the only rule that is contrary
+说话人: 好不好\NOkay?
+说话人: -大家一起来 "波" -波\N- Now say bo Bo. - Bo.
+说话人: -托尼  把"托"改成"波"  -波尼\N- Now Tony with a "B" - Bony
+说话人: -布拉娜范娜与弗  -布拉娜范娜与弗\N- Then banana fanna fo. - Banana fanna fo!
+说话人: -再把那名字改姓"弗"  -弗尼\N- Then you say the name again with an "F," Very plain. - Fony!
+说话人: -再说弗弗莫  -弗弗莫\N- Then a fee fi and a mo. - Fee fi mo!
+说话人: -再来改姓"莫"  -莫尼\N- Then say the name again with an "M" this time. - Mony!
+说话人: 然后所有名字都押韵闹\NAnd there isn't any name that you can't rhyme
+说话人: 基  基  逼  逼  把拉拉变成搞基\NKit, Kit, bo Bit, banana fanna fo Fit
+说话人: 弗弗摸咪  基\NFee fi mo Mit, Kit
+说话人: 来玩名字游戏吧\NThe name game.
+说话人: 你知道自己叫什么吗\NDo you know your name?
+说话人: 你叫朱迪·马丁\NYour name is Judy Martin.
+说话人: 奥尔顿医生\NDr. Arden!
+说话人: 奥尔顿医生  你在干嘛\NDr. Arden, what are you doing?
+说话人: 汉斯  你下午去喂食\NAn afternoon feeding, Hans?
+说话人: 这可不寻常哦\NThat's unusual, isn't it?
+说话人: 我说了  别叫我汉斯\NI asked you not to call me that.
+说话人: 唉哟汉斯  这儿就我俩\NOh, Hans, it's just us here after all.
+说话人: 没什么"我俩"\NThere is no "Us."
+说话人: 哟  你不会是吃醋了吧\NOoh, don't tell me you're jealous?
+说话人: 他在我心里什么都不是\NHe didn't mean anything to me.
+说话人: 这话我信\NThat I believe.
+说话人: 你知道我在想什么吗\NYou know what I was thinking?
+说话人: 如果我们\NWouldn't it be fun
+说话人: 把她的额叶切掉\Nand, uh, therapeutically beneficial
+说话人: 岂不很有意思  而且利于治疗\Nif we gave her a transorbital lobotomy?
+说话人: 就像开核桃一样撬开她的脑壳\NCrack that thick skull open like a walnut?
+说话人: 不行\NNo.
+说话人: 为啥\NWhy not?
+说话人: 因为我就是不听你的\NBecause you wish it.
+说话人: 实验结束了\NThe experiment is over.
+说话人: 我的天啊\NMy...
+说话人: 生气了啊  奥尔顿\NQuite a tantrum, Arthur.
+说话人: 这都是胡闹\NIt's a farce.
+说话人: 简直是笑话\NFinita la commedia.
+说话人: 你\NYou...
+说话人: 根本不懂得失去你的滋味\Nhave no idea what it means to have lost you.
+说话人: 上帝啊\NJesus Christ.
+说话人: 你太可怜了  奥尔顿\NYou're being pitiful, Arthur.
+说话人: 那\NThen...
+说话人: 就可怜可怜我吧\Nhave pity on me.
+说话人: 各位  请停下你们手头的事\NEveryone, I'd like you all to stop what you're doing
+说话人: 到公共休息室去\Nand go to the common room.
+说话人: 把围裙挂起来  然后过来排队\NHang up your aprons and line up over here.
+说话人: 大家一起去\NWe'll all go together.
+说话人: 裘德\NJude,
+说话人: 请留下  好吗\Nwill you remain here, please?
+说话人: 我知道\NThe medication
+说话人: 他们给你的药药劲很大\Nthey give you is strong, I know.
+说话人: 影响了你的运动机能\NIt affects your motor skills.
+说话人: 来\NHere.
+说话人: 拿起面团\NTake your loaf
+说话人: 用手腕揉\Nand push it with the heel of your hand.
+说话人: 像这样\NLike that.
+说话人: 我没事\NI'm all right.
+说话人: 我的手没事\NYes, my hands are all right.
+说话人: 我来和你说说话\NI came to talk to you.
+说话人: 我也不知道还能找谁倾诉\NIt seems I don't know who else I can unburden myself to.
+说话人: 你总是我最忠诚和诚实的朋友\NYou've always been a loyal and honest friend.
+说话人: 你总是能明辨黑白是非\NYou've always had the gift of moral clarity.
+说话人: 裘德  我欠你一句道歉\NI owe you an apology, Jude.
+说话人: 不只一句道歉\NMore than an apology.
+说话人: 我无法用言语表达我的悔意\NThere are no words for my regret.
+说话人: 恶魔\NThe Devil...
+说话人: 占据了玛丽·尤妮斯修女的肉体\Nlives inside Sister Mary Eunice.
+说话人: 你是对的\NYou were right.
+说话人: 我尝试把它赶出去  但失败了\NI tried to cast it out, but I failed.
+说话人: 而且是一败涂地\NIn truth, it was an epic failure.
+说话人: 她会毁了一切\NShe'll destroy everything.
+说话人: 为何我当初不听你的\NWhy didn't I listen to you?
+说话人: 为何我那么顽固\NWhy was I so stubborn?
+说话人: 她毁了你\NShe's destroyed you.
+说话人: 现在她毁了我\NAnd now she's destroyed me.
+说话人: 裘德  我的贞操没了\NMy virtue is gone, Jude.
+说话人: 她强暴了我\NShe took it from me,
+说话人: 夺走了我的贞节\Nviolated me.
+说话人: 我想抵抗  但是\NI tried to resist, but...
+说话人: 我不知道怎么办好\NI don't know where else to turn.
+说话人: 我纠结是否该放弃自己的誓约\NI'm struggling with whether I should renounce my vows.
+说话人: 我需要你的指点\NI need your counsel.
+说话人: 我是否该认罪\NShould I confess
+说话人: 然后放弃我热爱的宗教事业\Nand walk away from my beloved Church
+说话人: 放弃我的梦想\Nand my dream?
+说话人: 我该怎么办\NWhat should I do?
+说话人: 杀了她\NKill her.
+说话人: 3点钟把基特·沃克带到我办公室来\NAnd have Kit Walker brought to my office at 3:00 today.
+说话人: 好的  医生\NYes, Doctor.
+说话人: 对了  在治疗过程中\NOh, and I think for this session,
+说话人: 用束缚衣把他捆严实了\Nwe'll want to secure him in a straitjacket.
+说话人: 好的  转角处就是奥尔顿医生的办公室了\NWill do. That's Dr. Arden's office around the corner.
+说话人: 谢谢你  卡尔\NThank you, Carl.
+说话人: 我认得路了\NI can take it from here.
+说话人: 奥尔顿医生\NDr. Arden?
+说话人: 我是奥利弗·史莱森  你在吗\NIt's Oliver Thredson. Are you in?
+说话人: 奥尔顿医生\NDr. Arden?
+说话人: 你在吗\NAre you here?
+说话人: 你会把吐真剂藏在哪儿呢\NNow, where would you keep your sodium pentothal?
+说话人: 奥尔顿医生\NDr. Arden?
+说话人: 她正在分娩\NShe's crowning.
+说话人: "依靠上帝和他伟大的力量\N"Be strong in the Lord
+说话人: "做刚强的人\N"And in the power of his might.
+说话人: "要穿戴神所赐的全副军装\N"Put on the whole armor of God
+说话人: "就能抵挡魔鬼的诡计"\N"That ye may be able to stand against the wiles of the Devil..."
+说话人: "因我们并不是与属血气的争战..."\N"For we wrestle not against flesh and blood..."
+说话人: "乃是与那些执政的\N"But against principalities,
+说话人: "掌权的\N"Against powers,
+说话人: "管辖这幽暗世界的\N"Against rulers of the darkness of this world,
+说话人: "以及天空属灵气的恶魔争战"\N"Against spiritual wickedness in high places."
+说话人: 上次我们还尽兴吗  神父\NAre we having regrets, Father?
+说话人: 我们的幽会有让你担心不已吗\NDid our little tryst turn your stomach into knots?
+说话人: 或者我们再来一次\NOr are we ready for round two?
+说话人: 我必须承认\NI have to admit,
+说话人: 我喜欢你的纯贞\NI found your innocence...
+说话人: 让我沉迷不已\Nquite intoxicating.
+说话人: 别碰我\NDon't touch me.
+说话人: 我们绝不能再行苟且之事\NWe will never repeat our indiscretion again.
+说话人: 不\NNo.
+说话人: 你不是这样想的\NIt's not what you want.
+说话人: 你不想把我推倒在地\NYou don't want to lay me on the ground.
+说话人: 你想让我永坠地狱\NYou want to bury me beneath it.
+说话人: 这就是你祈求上帝神力的原因\NThat's why you're praying for strength.
+说话人: 你想怎么杀了我\NHow will you kill me?
+说话人: 一把开信刀\NA letter opener?
+说话人: 不  我不这么想\NNo, I don't think so.
+说话人: 除非你先发制人  一击致命\NUnless you hit pay dirt on the first strike,
+说话人: 到时会很糟糕\Nit'll be messy.
+说话人: 还有什么\NWhat else?
+说话人: 你可以用圣弗兰西斯的雕像恫吓我\NYou could bludgeon me with the statue of St. Francis.
+说话人: 那会很讽刺\NThat would be ironic,
+说话人: 鉴于他成为圣人前\Nconsidering that he renounced his debauchery
+说话人: 宣布清心寡欲  酒色不沾\Nbefore becoming a saint,
+说话人: 而你  神父  你的生活完全相反\Nand you, Father, living your life in complete reversal.
+说话人: 你能双手掐住我的喉咙\NCould you wrap your fingers around my throat
+说话人: 掐死我吗\Nand squeeze?
+说话人: 或者像结果谢莉一样用念珠勒死我\NOr will you use your rosary like you did with Shelley?
+说话人: 我不知道你在说什么\NI don't know what you're talking about.
+说话人: 在我面前你无秘密可言\NOh, you have no secrets from me.
+说话人: 特别是在我们坦诚相见后  我无所不知\NEspecially not after what we shared. I know it all.
+说话人: 别担心  神父\NDon't worry, Father.
+说话人: 你想杀死我的幻想\NYour little fantasy about killing me--
+说话人: 我毫不介意\Nit hasn't put me off.
+说话人: 恰恰相反\NQuite the opposite.
+说话人: 我会让你所有的美梦成真\NI'm gonna make all of your dreams come true.
+说话人: 我们会一起登上教会的权力顶峰\NWe will rise in the hierarchy of the Church together.
+说话人: 主教\NBishop,
+说话人: 红衣主教\Ncardinal,
+说话人: 甚至能做...\Ndare we even say...
+说话人: 教皇\Npope?
+说话人: 我知道你的愿望  不是吗  主教大人\NI know it's what you want, isn't it, Monsignor?
+说话人: 对肉体的渴望\NThe desires of the flesh,
+说话人: 它们不能和权力与野心\Nthey're nothing compared to the rewards of power
+说话人: 带给你的相提并论\Nand ambition.
+说话人: 你不了解我\NYou don't know me.
+说话人: 我知道你很软弱\NI know you're weak.
+说话人: 但是我一人强大就够了\NBut I'm strong enough for both of us.
+说话人: 你现在属于我\NYou're mine now.
+说话人: 身体和灵魂都是\NBody and soul.
+说话人: 我不属于你\NI'm not yours.
+说话人: 将来也不会\NI never will be.
+说话人: 我宁愿死也不会让你玷污教会\NI'd rather die than allow you to defile the Church.
+说话人: 你在说话吗\NAre you talking?
+说话人: 你突然让我很心烦\NYou've suddenly grown quite tiresome.
+说话人: 你不会得逞的\NYou'll not win.
+说话人: 你甚至连玛丽·尤妮斯修女都打不败\NYou couldn't even defeat Sister Mary Eunice.
+说话人: 她的纯洁依然存在于内心  我知道\NHer purity remains alive inside, I know it.
+说话人: 不要让我重新考虑我的恩典  蒂莫西\NDon't make me reconsider my largess, Timothy.
+说话人: 我会把你驱逐出来让玛丽·尤妮斯修女\NI will cast you out and return Mary Eunice
+说话人: 重新恢复纯洁\Nto her state of grace.
+说话人: 我给过你机会  蒂莫西\NI gave you a chance, Timothy,
+说话人: 但你却弃如敝履\Nbut you've just pissed it away!
+说话人: 我跟你玩完了\NI'm done with you.
+说话人: 还有你甜美的修女\NAnd with your sweet nun,
+说话人: 我会吞噬掉她仅剩的灵魂\NI'm about to devour the last morsel of her soul.
+说话人: 对不起  主教大人\NI'm sorry, Monsignor.
+说话人: 我不想再挣扎了\NI'm tired of fighting.
+说话人: 我想放弃\NI want to let go.
+说话人: 那放开我吧  修女\NThen let go of me, Sister.
+说话人: 带我走\NTake me.
+说话人: 我会把你们都带走\NI'll take both of you.
+说话人: 吾等祈求与你  吾主愿你仁慈\NWe beseech thee, oh, Lord, in thy mercy,
+说话人: 怜悯汝之仆人之灵魂\Nto have pity on the soul of thy handmaid.
+说话人: 耶稣基督  愿你永恒拯救她之灵魂\NRestore to her that portion of everlasting salvation
+说话人: 奉主耶稣基督之名\Nthrough Jesus Christ, our Lord.
+说话人: 她从撒旦的控制中解脱出来\NShe's been released from Satan's grip.
+说话人: 是撒旦还是你\NSatan's or yours?
+说话人: 我得知她从三楼坠落\NI was told she fell from the third floor.
+说话人: 她的死和你脱不了干系\NEvidently it was your grip that failed her.
+说话人: 她永恒的灵魂将会解脱\NHer everlasting soul has been set free.
+说话人: 现在我们必须帮它找到安息\NNow we must help it find rest.
+说话人: 是时候准备她的葬礼了\NIt's time to prepare her for burial.
+说话人: 不\NNo.
+说话人: 需要把她火葬\NShe needs to be cremated.
+说话人: 火葬是异教徒的仪式\NCremation is a pagan practice
+说话人: 而且与重生教义相悖\Nand a denial of the Doctrine of Resurrection.
+说话人: 主教大人\NMonsignor,
+说话人: 她身体的全部细胞\Nthe very cells of her body
+说话人: 都被恶魔腐化\Nwere corrupted by the Devil.
+说话人: 不\NNo.
+说话人: 必须要火化她\NShe has to be cremated.
+说话人: 在荆棘崖的火化场吗\NThe crematorium here at Briarcliff?
+说话人: 它还在正常运转\NIs still fully functional.
+说话人: 好吧\NVery well.
+说话人: 我来帮你\NI will assist.
+说话人: 不用了\NThat won't be necessary.
+说话人: 我自己来\NI want to do it myself.
+说话人: 有时  上帝为昭示圣意\NAs a sign of sanctity,
+说话人: 会使尸体\Nsometimes God permits the dead body
+说话人: 散发幽香\Nto admit an odor of sweet perfume.
+说话人: 据说  圣泰瑞莎修女逝世后\NIt was said than when Santa Theresa de Avila died,
+说话人: 西班牙禁欲派天主教创始人之一
+说话人: 周身散发着玫瑰的清香\Nthe smell of roses lingered
+说话人: 香气弥漫久久不散\Nin the convent for days.
+说话人: 那么主教您现在闻到了什么呢\NWhat do you smell now, Monsignor?
+说话人: 只闻到了腐烂的气息\NNothing but decay.
+说话人: 三点整  真准时\NThree o'clock, right on time.
+说话人: 您要我在边上守着吗\NWant me to stick around?
+说话人: 这小子今天很不老实\NHe's got some attitude today.
+说话人: 没事的  卡尔\NWe'll be just fine, Carl.
+说话人: 谢了\NThank you.
+说话人: 别指望我告诉你\NThere's nothing you can do to me
+说话人: 录音带藏在哪里\Nto make me tell you where that tape's at.
+说话人: 这点我很清楚\NOh, I'm well aware of that.
+说话人: 我早就摸清你了  基特\NI diagnosed you long ago, Kit.
+说话人: 我知道你是那种宁为玉碎不为瓦全的人\NI know you'd rather die than give me what I want.
+说话人: 但你内心深处有一股更强大的冲动\NBut there's an impulse in you that runs even deeper
+说话人: 你更希望成为救世主  而不仅是殉道士\Nthan your martyr complex, and that's your savior complex.
+说话人: 尤其还爱英雄救美\NParticularly when it comes to women.
+说话人: 况且还是一个\NAnd, one would assume...
+说话人: 有孩子的女人\Nchildren.
+说话人: 基特\NKit.
+说话人: 格蕾丝\NGrace?
+说话人: 别动\NNo.
+说话人: 别再靠近了\NThat's close enough.
+说话人: 这不可能\NIt's not possible.
+说话人: -可你已经  -死了\N- You were... - Dead?
+说话人: 至少奥尔顿医生的验尸报告是这么说的\NAt least according to Dr. Arden's postmortem report.
+说话人: 不过  看格蕾丝现在的情况\NNow, given Grace's condition,
+说话人: 要么是奥尔顿医生作出了\None would either have to judge Arden as guilty of
+说话人: 现代医学史上\None of the most egregious misdiagnoses
+说话人: 最荒谬的误诊\Nin the history of modern medicine,
+说话人: 要么就是他在实验室里\Nor conclude that he's been up to something
+说话人: 创造了不可思议的奇迹\Nquite extraordinary in that laboratory of his.
+说话人: 格蕾丝说\NGrace...
+说话人: 那是你儿子\Nsays that's your son.
+说话人: 现在  我们该怎么办呢\NNow, what are we to make of that?
+说话人: 是真的吗\NIs it true?
+说话人: 是真的\NIt's true.
+说话人: 你相信她  对吧  基特\NYou believe her, don't you, Kit?
+说话人: 你要干什么\NWhat are you gonna do?
+说话人: 全看你的表现了\NThat's entirely up to you.
+说话人: 真不想打扰你的雅兴  但是\NI don't want to ruin it for you, but...
+说话人: 东西已经转移了\Nspot jumps.
+说话人: 录音带在哪儿  贱人\NWhere is the tape, you bitch?
+说话人: 奥利弗  你怎么能这么对我说话\NOliver, is that any way to speak to
+说话人: 我肚子里怀的可是你尚未出生的孩子\Nthe mother of your unborn child?
+说话人: 而且现在也只有我知道录音带在哪\NI'm the only one who knows where it is now.
+说话人: 基特也帮不了你\NKit's not going to find out.
+说话人: 如果你敢动他一根汗毛  哪怕只有一根\NAnd if you do anything to him, anything at all,
+说话人: 又或者敢拿其他人威胁我\Nor anyone else for that matter,
+说话人: 我自有方法把录音带交给警察\NI'll find a way to get it to the police.
+说话人: 你知道我有这个能耐的  奥利弗\NYou know I can do it, Oliver.
+说话人: 我胆子特别大  记得吗\NI'm goddamn plucky, remember?
+说话人: 玛格丽特\NMargaret.
+说话人: 凯文\NKevin.
+说话人: 还有\NAnd, uh...
+说话人: 米尔顿\NMilton.
+说话人: 多茜  多...\NDoris... Dor...
+说话人: 多...\NDor...
+说话人: 不对  是多莉\NNo, Dolly. Dolly.
+说话人: 克莱德\NClyde.
+说话人: 院长\NMother?
+说话人: 你好啊  裘德\NHello, Jude.
+说话人: 女修道院的院长\NMother... Superior.
+说话人: 克劳迪娅  克劳迪娅院长\NClaudia. Mother Claudia.
+说话人: 主教说你一直在叫我的名字\NThe Monsignor said you were speaking my name.
+说话人: 我想和你道个别\NWanted to say good-bye.
+说话人: 道别\NGood-bye?
+说话人: 我要去罗马了\NI'm going to Rome.
+说话人: 主教\NThe Monsignor--
+说话人: 就要带我去罗马了\Ntaking me to Rome.
+说话人: 我们要成为教皇了\NWe're going to be Pope.
+说话人: 我们会结婚\NWe're getting married.
+说话人: 他最爱我的厨艺了\NHe likes my cooking.
+说话人: 我是他的稀世珍宝\NI'm a rare bird.
+说话人: 现在罗马暖和吗\NIs it warm in Rome now?
+说话人: 她想把他抢走\NShe tried to steal... him away.
+说话人: 她和他翻云覆雨\NShe rubbed her naked body on him.
+说话人: 媚惑红  媚惑红\NRavish Me Red. Ravish Me Red.
+说话人: 裘德\NJude.
+说话人: 他杀了她\NHe killed her.
+说话人: 他不得已的\NHe had to.
+说话人: 我们将在梵蒂冈举行婚礼\NWe're getting married in the Vatican.
+说话人: 恶魔心生嫉妒\NThe Devil was jealous.
+说话人: 放松心情\NTry and rest your mind.
+说话人: 你有些神志不清了\NYou're a little confused.
+说话人: 看到那个抽烟的女人了吗\NDo you see that woman over there, smoking a cigarette?
+说话人: 看到了\NYes.
+说话人: 她叫拉娜·温特斯\NHer name is Lana Winters.
+说话人: 她不属于这里\NShe doesn't belong here.
+说话人: 是我把她关进来的\NI put her here.
+说话人: 帮她\NHelp her...
+说话人: 逃出去\Nget out.

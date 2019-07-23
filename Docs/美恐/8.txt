@@ -1,0 +1,684 @@
+﻿# Exported by Aegisub 3.2.2
+NTP: 人人影视\NYYeTs.com
+NTP: 原创翻译  双语字幕
+NTP: ■
+NTP: 仅供学习 禁止用于任何商业盈利行为\N更多影视更新\N请登陆www.YYeTs.com
+NTP:  翻译：Eve   觉棂   粗长久加森   glorydai
+NTP:  翻译：肉松   蓬蓬裙   Liv
+NTP:  时间轴：农民工仓鼠   小切糕加森
+NTP:  校对：Ethan-泽生   不要叫我马维斯   教主吕黎
+NTP: 后期：冰河     监制：下周就回归的大鸟爷
+NTP: 美国恐怖故事
+NTP: 第二季 第八集
+NTP: 汤米那顶浣熊帽全是洞\NTommy's is full of holes
+说话人: 尾巴也要掉下来了\Nand the tail is falling off.
+说话人: 我也想要一顶嘛  就像费斯·帕克那样\NI want my own, just like Fiss Parker.
+说话人: 圣诞对你而言就是要礼物吗\NIs that all Christmas is to you? Presents?
+说话人: 把这个放罐子里\NPut this in the can.
+说话人: 圣诞快乐\NMerry Chirstmas!
+说话人: 你听妈妈话做个乖孩子\NNow you be good and listen to your mum
+说话人: 或许你想要的浣熊帽\Nand maybe that coonskin cap
+说话人: 会在圣诞节早上出现在你家圣诞树下哦\Nwill be under your tree Christmas morning.
+说话人: 他们关门了  走吧\NThey're closed, come on,
+说话人: 星星超市可能会营业到九点\NI think the Star Market is open till 9.
+说话人: 他要收不到那顶帽子可是会生你气的\NHe's gonna be pretty steamed at you if he doesn't get that hat.
+说话人: 他要是够乖\NWell, if he's good enough,
+说话人: 她妈妈最后还是会给他买\Nhis mother will end up giving it to him.
+说话人: 他要是淘气  那也只能怪他自己\NIf he's naughty, he'll blame himself.
+说话人: 反正永远不会是你的错吗\NIt's never your fault?
+说话人: 都是名单的错\NIt's all about the list.
+说话人: 传说圣诞老人乖宝宝名单上的孩子会有礼物\N淘气鬼名单上的没礼物
+说话人: 小鬼头们收不到阮酷蛙人玩具\NSome kid doesn't get their Remco Frogman,
+说话人: 但那不是圣诞老人的错\Nbut you can't blame Santa.
+说话人: 你真是给自己设了个精明的双赢策略\NPretty nifty win-win you set up for yourself.
+说话人: 嘿  老兄\NHey, buddy...
+说话人: 我每星期来摇两晚铃铛\NI'm just ringing the bell two nights a week,
+说话人: 就为了出来透口气  直到我老婆入睡\Nto get out of the house till my wife falls asleep.
+说话人: 圣诞老人\NSanta?
+说话人: 嗨  亲爱的\NHi, sweetie.
+说话人: 小模型火车真漂亮\NThis is a fantastic train set.
+说话人: 农场甚至有小小的干草垛呢\NThe farm even has tiny little hay bales.
+说话人: 那是我爸爸的\NIt's my dad's.
+说话人: 你的大胡子哪儿去了\NWhere's your beard?
+说话人: 我刮掉了  太痒痒\NI shaved. It was scratchy.
+说话人: 你怎么会来这儿\NWhy are you here?
+说话人: 得再过6天才是圣诞节呢\NChristmas isn't for six days.
+说话人: 让驯鹿鲁道夫掌管日历就会落得这个结果\NThat's what you get for letting Rudolph organize your calendar.
+说话人: 也正因此  房里才没留下牛奶和饼干吧\NAnd it would explain the lack of milk and cookies.
+说话人: 你为什么不从烟囱进来呢\NWhy didn't you come through the chimney?
+说话人: 你叫什么名字  亲爱的\NWhat's your name, sweetie?
+说话人: 苏西\NSusie.
+说话人: 苏西  真是个好名字\NSusie. That's a lovely name.
+说话人: 苏西  一切传说其实都讲不太通  不是吗\NWell, Susie, none of it makes much sense, does it, huh?
+说话人: 会飞的驯鹿\NFlying reindeers,
+说话人: 从烟囱里滑下来\Nshimmying down chimneys,
+说话人: 一夜飞遍全世界基督徒善良人家\Nevery good Christian house in the world in one night, huh?
+说话人: 他们还说我是疯子呢\NThey call me crazy.
+说话人: 你受伤了吗  圣诞老人\NAre you hurt, Santa?
+说话人: 哦  不不不\NOh, no, no, no, no.
+说话人: 不  这不是圣诞老人的血\NNo, this isn't Santa's blood.
+说话人: 带我去找你爸爸妈妈好不好\NYou want to take me to mom and dad?
+说话人: 圣诞快乐  爸爸\NMerry Christmas, Daddy.
+说话人: 现在还没到圣诞呢  宝贝儿\NIt's not Christmas yet, baby.
+说话人: 你没好好看你的降临节日历吗\NHaven't you been keeping your advent calendar?
+说话人: 日历错了  圣诞老人已经来了\NIt's wrong. Santa's here.
+说话人: 我觉得我们应该一起下楼\NI think we should all go downstairs.
+说话人: 到我们喝牛奶吃饼干的时间了  苏西\NMilk and cookies time for you and me, Susie.
+说话人: 你想要什么  钱吗\NWhat do you want? Money?
+说话人: 我楼上有个保险库  在床下面\NI have a safe upstairs, under the bed,
+说话人: 里面有五千现金\Nwith $5,000 cash in it.
+说话人: 也有珠宝\NJewelry, too.
+说话人: 你知道我为什么选你家吗\NYou want to know why I chose your house?
+说话人: 因为你的圣诞装饰\NYour Christmas decorations.
+说话人: 上帝啊  我是说\NChrist, man, I mean,
+说话人: 你是想证明什么呢\Nwhat are you trying to prove out there, hmm?
+说话人: 有点圣诞精神有什么不好\NWhat's wrong with a little Christmas spirit?
+说话人: 其实  你说得对\NYou know, you're right.
+说话人: 你说得对\NYou're right.
+说话人: 你知道今晚还缺什么吗\NYou know what tonight needs?
+说话人: 缺点铃铛声\NA little more jingle bells.
+说话人: 停下  你想要什么\NStop! What do you want?
+说话人: 我是圣诞老公公\NI'm "Santee" Claus!
+说话人: 我是来赐予你们圣诞精神的\NI'm here to bestow a little Christmas spirit upon you
+说话人: 因为圣诞的精髓\Nbecause what is Christmas about
+说话人: 如果不是家人团聚  还有什么意义呢\Nif it's not about families being together?
+说话人: 你们现在享受团聚吗  不享受吗\NDo you appreciate that right now? Do you?
+说话人: 你们跟家人待在一起不开心吗\NDon't you feel wonderful about being with your family, huh? Huh?
+说话人: 开心\NYes
+说话人: -真开心吗  -开心\N- Yes? - Yes?
+说话人: -开心  很开心  -这才对\N- Yes. Yes. - Yes.
+说话人: 那么\NSo...
+说话人: 让我来告诉你们\NI'm gonna tell you
+说话人: 圣诞老人今晚要在树下放点什么\Nwhat Santa's gonna leave under your tree tonight.
+说话人: 他要放一点恐惧\NHe's gonna leave a little terror.
+说话人: 一点强暴\NA little rape.
+说话人: 你的脏手别碰她\NYou keep your hands off of her.
+说话人: 谁说我要碰的是她\NWho said anything about her?
+说话人: 你知道真正的圣诞老人和我的区别吗\NYou know the difference between that Santa Claus and me?
+说话人: 他一年只来一次\NHe only comes once a year.
+说话人: 求求你  求求你放过我们吧\NPlease, please leave us.
+说话人: 我得完成我的名单  不是吗\NI have to finish my list, huh?
+说话人: 要是收不到圣诞袋里的礼物  算什么圣诞节呢\NIt wouldn't be Christmas without one big ticket item from Santa's sack.
+说话人: 我现在圣诞精神高涨\NAnd I'm feeling so full of the Christmas spirit,
+说话人: 我会让你们选\NI... am gonna let you choose
+说话人: 你们两个当中  我先杀谁\Nwhich one of you I kill first.
+说话人: 不  求你了  停下\NNo, please. Stop.
+说话人: 你没必要这么做的\NY-You don't have to do this.
+说话人: 你知道吗\NYou know what?
+说话人: 我没怎么感受到\NI'm not feeling
+说话人: 圣诞气氛\Nvery Christmassy.
+说话人: 我有个激动人心的消息要宣布  大伙儿\NI have an exciting announcement, people.
+说话人: 圣诞节...又回来了\NChristmas... is back.
+说话人: 经过去年的圣诞大混乱  裘德修女告诉你们\NAfter last year's debacle, Sister Jude told you
+说话人: 我们永远都不会再庆祝圣诞了\Nwe'd never celebrate Christmas here again.
+说话人: 而我说  "呸  骗人"\NWell, I say... "Bah Humbug."
+说话人: 我们需要一点圣诞氛围\NWe need a little Christmas,
+说话人: 很幸运  我们换了新的管理层\Nand luckily, we are under new management.
+说话人: 排队\NLine up.
+说话人: 快点\NNow!
+说话人: 动起来\NLet's go.
+说话人: 那个扫兴的老贱人把我们的装饰品都扔掉了\NThat mean old grinch tossed out all of our ornaments.
+说话人: 所以我们需要即兴准备\NSo, we'll need to improvise.
+说话人: 迪金斯先生\NMr. Deakins.
+说话人: 你戴了假牙  对吧\NYou wear dentures, don't you?
+说话人: 你们看\NYou see?
+说话人: 为了集体的利益  我们都付出了一点点\NWe all make a little sacrifice for the greater good.
+说话人: 那正是圣诞精神\NThat's the spirit of Christmas.
+说话人: 主啊  我祈求你慈悲为怀\NOh, Lord, I beg of you, through your loving-kindness,
+说话人: 怜悯格蕾丝\Nhave mercy on the soul of Grace.
+说话人: 奉主耶稣基督之名\NThrough Christ our Lord.
+说话人: 格蕾丝\NGrace...
+说话人: 我向你发誓  我会伸张正义的\NI swear to you, I'm gonna make things right.
+说话人: 我庄严地向你保证\NYou have my solemn word.
+说话人: 医生  我在想...\NDoctor, I've been thinking...
+说话人: 弗兰克  说话注意点\NYou want to be careful, Frank.
+说话人: 那样很危险的\NThat can be dangerous.
+说话人: 我觉得我们应该报警\NI think we should call the police.
+说话人: 我们应该告诉他们发生了什么\NI think we should tell them what happened,
+说话人: 基特·沃克的事  芙丽西缇修女的事\Nabout Kit Walker, about Sister Felicity,
+说话人: -还有那个怪物  -那你的事呢\N- about that... monster. - And what about you?
+说话人: 你枪杀了一个手无寸铁的女人  弗兰克\NYou shot and killed an unarmed woman, Frank.
+说话人: 你确定你希望\NAre you quite sure you want
+说话人: 当局介入吗\Nto bring the authorities into this?
+说话人: 是  我准备好承担后果了\NYeah, I'm ready to face whatever consequences come from it.
+说话人: 我会尽力帮忙\NI'll see what I can do.
+说话人: 我一直在问自己\NI've been asking myself
+说话人: 恶魔如何在此处的圣像之间自由来去\Nhow is it the Devil can move so freely here among the sacred icons?
+说话人: 一个栖息于人体之内的魔鬼\NHow does a demon wear a crucifix
+说话人: 为何不被所佩戴的十字架灼伤\Nand not burn the flesh it inhabits?
+说话人: 然后我意识到\NAnd then I realized...
+说话人: 是她\Nit's her.
+说话人: 你在利用玛丽·尤妮斯\NYou're using Mary Eunice--
+说话人: 用她的纯洁当做盾牌\Nher purity-- as a shield.
+说话人: 如果我割断这柔软的喉咙\NWhat if I were to slit this soft throat
+说话人: 将她的灵魂释放进天堂\Nand release her soul to Heaven,
+说话人: 你会去哪里  肮脏的东西\Nthen where would you go, foul thing?
+说话人: 也许直接跳进你的身体里吧\NMight just jump into you.
+说话人: 你回来是犯了个大错\NYou made a big mistake coming back here.
+说话人: 不  犯错的是你\NNo, you made a mistake.
+说话人: 我要把你送回你的地狱老家\NAnd I'm about to send you back to the hell that made you.
+说话人: 是吗  你要怎么做\NYeah? What are you gonna do?
+说话人: 用棍杖把恶魔从我身体里打出来吗\NCane the Devil out of me?
+说话人: 那个魔鬼  它欺骗你\NThis demon, it tricks you.
+说话人: 修女  能和你说两句吗\NSister, may I have a word?
+说话人: 奥尔顿医生\NDr. Arden...
+说话人: 叫保安\N...call security.
+说话人: 有人闯进来了\NWe have an intruder.
+说话人: 你在犯一个大错  医生\NYou're making a mistake, Doctor.
+说话人: 你否认上帝的存在\NBecause you deny God,
+说话人: 因此也无法辨认出面前的恶魔\Nyou can't see the Devil right in front of you.
+说话人: 确保她不会再私闯进来\NSee that she doesn't come back on the property.
+说话人: 我们有麻烦了\NWe have a problem.
+说话人: 我能解决裘德\NI can handle Jude.
+说话人: 我不是说裘德\NI didn't mean Jude,
+说话人: 不过如果我是你  就不会低估她\Nalthough I wouldn't underestimate her, if I were you.
+说话人: 我们的前爱尔兰警察想要自首\NOur former Irish cop is feeling the need to confess.
+说话人: 我已经控制住局面了\NI've got it under control.
+说话人: 裘德修女\NOh, Sister Jude.
+说话人: 我还以为你不想再见到我了\NI thought you never wanted to see me again.
+说话人: 裘德走了\NJude is gone.
+说话人: 管理层换人了\NThere's been a change in management.
+说话人: 尽量表现得体面点\NTry to remain presentable.
+说话人: 政府公报派了个摄影师来给我们拍照片\NThere's a photographer coming from the Gazette to take our picture.
+说话人: 我想看到你们笑容洋溢的脸\NI would like to see bright, shining faces
+说话人: 为你们手中的栗子\Ndelighting in your bag of chestnuts
+说话人: -和新的赞美诗集高兴起来吧  -修女\N- and your new hymnal... - Sister?
+说话人: 大主教亲自送给你们的礼物\NGifts from the Monsignor himself.
+说话人: 这这这些手铐\NThe-The-These cuffs, huh?
+说话人: 它们很沉  而且陷进肉里\NThey're heavy, and they dig in.
+说话人: 你的圣诞精神呢  修女\NWhere's your Christmas spirit, Sister?
+说话人: 你以为我傻吗\NWhat do you take me for, an idiot? Huh?
+说话人: 你一晚上杀了5个家庭的18口人\NYou killed 18 people from five families in one night.
+说话人: 你就等着余生都戴着手铐过吧\NYou might expect to remain in irons for the rest of your life.
+说话人: 那我不去拍你的破照片了\NWell, I don't want to be in your shitty picture, then.
+说话人: 我拒绝参与你的任何谎言\NI don't want to be any part of your damn lie.
+说话人: 你指什么谎言\NYeah, what lie is that?
+说话人: 比如什么笑容洋溢的脸的照片\NNothing like a picture of happy, shiny faces
+说话人: 以掩盖用铁链锁住我们的罪恶\Nto take away the guilt of locking us away.
+说话人: 你说反了  艾默生先生\NYou got that backwards, Mr. Emerson.
+说话人: 那照片是为了提醒世人\NThe picture is to remind the public
+说话人: 如果没有荆棘崖\Nthat without Briarcliff,
+说话人: 你们就会逍遥在外  潜伏在正常人当中\Nyou would be out there, living among them.
+说话人: 所以要让你站在前排中间\NAnd that's why you will be front and center,
+说话人: 带上手脚铐\Nshackled...
+说话人: 处于控制之下\Nand under control.
+说话人: 他在干什么\NWhat's he doing?
+说话人: 谁  肖恩吗  他按你的要求分发礼物啊\NWho, Sean? He's handing out the presents like you asked.
+说话人: 他戴着那蠢帽子和滑稽的假胡子\NHe's wearing that silly hat and that ridiculous beard.
+说话人: 我想我已经说得很清楚了\NNow, I thought I very was clear
+说话人: 要怎样庆祝圣诞节\Nabout how I wanted Christmas celebrated.
+说话人: 恕我直言  修女  我真不觉得有什么问题\NAll respect, Sister, I really don't see the problem with it.
+说话人: 病人们喜欢这样\NThe-The patients love it,
+说话人: 肖恩和男孩们也很高兴\Nit makes Sean and the boys happy.
+说话人: 圣尼古拉斯曾当过圣诞老人\NAnd St. Nicholas was a saint.
+说话人: 摄影师到了\NThe photographer's here!
+说话人: 裘德修女  报纸的摄影师到了\NSister Jude, the newspaper photographer is here.
+说话人: 我们不是说好了\NI thought we decided
+说话人: 等我们准备好以后你再带他来嘛\Nthat you would bring him in when we were ready.
+说话人: 抱歉  我们没准备好吗\NI'm sorry. Are we not ready?
+说话人: 把他给我关起来\NTake him to the hole!
+说话人: 你真不应该在一年中的这个时候\NOh, you really don't want me out there
+说话人: 放我出去与其他人接触\Nwith other people this time of year.
+说话人: 比不上你对自己的禁锢\NNot as yourself.
+说话人: 你的胡子跟圣诞礼服非常配\NYour beard goes perfectly with the suit.
+说话人: 上帝  你不知道圣诞节对我意味着什么吗\NJesus, you don't know what Christmas means to me?
+说话人: 我知道  利\NI do, Leigh.
+说话人: 我知道你曾犯了小罪\NI know you were a petty criminal
+说话人: 因为入店行窃一块面包被关进监狱\Nthrown in jail for shoplifting a loaf of bread,
+说话人: 当你被关在监狱的时候\Nand while you were in there,
+说话人: 狱卒在牢房里欢唱起了"颂歌"\Nthe jailers went caroling in the cell block,
+说话人: 5个人把你按倒\Nand five men held you down
+说话人: 夺走你的贞洁\Nand took your virginity.
+说话人: 准确说  是第一个人让你失贞\NWell... the first one did.
+说话人: 其他人夺走了你的尊严\NThe others took your dignity,
+说话人: 还有你的自尊和\Nand your self-esteem and...
+说话人: 很重要的\Nmost importantly...
+说话人: 你的圣诞精神\Nyour Christmas spirit.
+说话人: 然而你出来了\NBut then you got out
+说话人: 你找到了圣诞礼服\Nand you found the suit,
+说话人: 它带给你缺失的所有东西\Nand it gave you everything you were missing.
+说话人: 你瞧  我知道谁应该活\NYou see, I-I knew who deserved to live
+说话人: 谁应该死\Nand who deserved to die.
+说话人: 谁顽皮捣蛋  谁善良可爱\NWho was naughty, who was nice.
+说话人: 你有这个权力  利\NAnd you had the power, Leigh.
+说话人: 你可以再次拥有它\NYou can have it again.
+说话人: 你想成为谁\NWho do you want to be?
+说话人: 被害人\NThe victim...
+说话人: 还是胜利者\N...or the victor?
+说话人: 修女\NSister.
+说话人: 希望没打扰到你\NI hope I'm not interrupting.
+说话人: 进来吧  亚瑟\NCome on in, Arthur.
+说话人: 我刚刚只是在想我的圣诞节\NI was just thinking about my Christmases.
+说话人: 世上有很多像我一样的人\NThere were so many of us
+说话人: 得到的圣诞礼物只是橘子和袜子\Nthat all we got was a tangerine and socks.
+说话人: 你在你的纳粹家里庆祝过圣诞节吗\NDid you celebrate Christmas in your Nazi household?
+说话人: 我还是孩子的时候  曾有过美妙的圣诞节\NWe had wonderful Christmases when I was a boy.
+说话人: 那些是我最难忘的童年记忆\NThey're some of fondest childhood memories.
+说话人: 以圣诞精神为名\NAnd in that spirit,
+说话人: 我给你带了一份圣诞礼物\NI've brought you a Christmas present
+说话人: 因为你现在已经成为我的家人\Nsince you've now become my family.
+说话人: 你开玩笑吧\NYou're joking!
+说话人: 太可爱了\NHow adorable!
+说话人: 是不是禁忌香水\NIs it Tabu perfume?
+说话人: 打开\NOpen it.
+说话人: 我觉得你会喜欢的\NI think you'll be pleased.
+说话人: 我太了解你了  估计是\NWell, knowing you, it's probably
+说话人: 一些廉价的伍尔沃斯牌化妆水\Nsome cheap toilet water from the Woolworth's.
+说话人: 雅德莉的薰衣草香型\NYardley's Lavender.
+说话人: 上帝  为什么还让我满怀希望\NChrist, why even get my hopes up.
+说话人: 哇  有意思\NWell... la-dee-da.
+说话人: 圣母玛利亚  这是真的吗\NMother of God, are they real?
+说话人: 绝对\NVery.
+说话人: 红宝石是最迷人的\NRubies are the most glamorous of all.
+说话人: 你不可能在这个小破地方买到的\NYou couldn't have found them in this dreary town.
+说话人: 这些是传家宝吗\NAre they family heirlooms?
+说话人: 它们曾属于一名集中营里的犹太女人\NThey belonged to a Jewess in the camp.
+说话人: 她总提醒别人她曾是一名\NShe was always reminding people that she was
+说话人: 富足的女人  她的丈夫\Na woman of considerable means, and that her husband was
+说话人: 曾是柏林一名有权势又多金的医生\Nan influential and wealthy doctor in Berlin.
+说话人: 她曾不断的向我抱怨\NShe was constantly complaining to me
+说话人: 她胃部不适\Nabout her stomach problems,
+说话人: 作为一名医生  我觉得我应该做些什么\Nand as a doctor, I thought I ought to do something about it.
+说话人: 于是有一天  我跟着她去了公共厕所\NSo I followed her, one day, to the latrine,
+说话人: 心想我如果拿到她的粪便样本\Nthinking I might diagnose her condition
+说话人: 就可以诊断她的身体状况\Nif I had a stool sample.
+说话人: 她在公厕里\NShe was in there,
+说话人: 手和膝触地\Non her hands and knees,
+说话人: 在她自己的粪便里\Npicking through her own feces
+说话人: 寻找丢失的耳环\Nto retrieve those earrings.
+说话人: 她向我坦白她曾吞了这些耳环\NShe confessed to me that she swallowed them
+说话人: 每一天  日复一日\Nevery day, day after day,
+说话人: 在体内携带着它们\Ncarrying them around inside of her,
+说话人: 仿佛  有一天  她可以重返昔日的奢华生活\Nas if, someday, she might return to her former grandeur.
+说话人: 可怜又可笑的女人\NPoor, ridiculous woman,
+说话人: 因内出血而死\Nshe died from internal bleeding.
+说话人: 耳环对她的肠子伤害很大\NThe earrings were very hard on her intestines.
+说话人: 显然  我重新取回了耳环\NObviously, I retrieved them.
+说话人: 我知道总有一天我会遇到一个人\NI knew someday I'd meet someone
+说话人: 值得拥有这精美绝伦的天物\Nwho was worthy of their exceptional beauty.
+说话人: 你取回这副耳环真是明智  亚瑟\NYou were very clever to retrieve them, Arthur.
+说话人: 看我戴上它们多漂亮啊\NLook how beautiful they are on me.
+说话人: 显得我的脸都红润了不少\NThey bring out the rose in my cheeks.
+说话人: 你可真是个笨蛋\Nyou're such a sap.
+说话人: 原因可能跟你想得不怎么一样\NNot exactly for the reasons you may think,
+说话人: 但无论如何是够笨的\Nbut a sap nonetheless.
+说话人: 我多希望你把耳环扔回我的脸上\NI so dearly hoped you'd throw them back in my face,
+说话人: 说你不敢碰这种\Nthat you couldn't bring yourself to touch
+说话人: 肮脏无比的耳环\Nthose shit-stained earrings.
+说话人: 我甚至希望你会有一丝害怕\NI was hoping there'd be a glimmer of horror,
+说话人: 就像曾经那个\Na glimmer of that precious girl
+说话人: 不可多得的小姑娘\Nwho was too afraid
+说话人: 不敢尝一口苹果糖果一样\Neven to take a bite of my candy apple...
+说话人: 你真可悲\NYou're pathetic.
+说话人: 真是的\NAnd gee whiz,
+说话人: 我真不想扫你的兴\NI just hate to break it to you...
+说话人: 但你也不是什么天使\N...but you're no angel either.
+说话人: 现在  我有任务要做\NNow... I have work to do,
+说话人: 你要么支持我\Nand you're either with me,
+说话人: 要么反对我\Nor you're against me.
+说话人: 如果你跟我对抗\NAnd if you're against me,
+说话人: 上帝都帮不了你\Neven God can't help you.
+说话人: 厨师这不爱洗手的坏习惯总是改不了\NThe cook has a terrible habit of forgetting to wash his hands.
+说话人: 我一直跟他讲...\NI keep telling him...
+说话人: 我什么都没吃\NI haven't eaten anything.
+说话人: 我就是不舒服\NI'm just upset.
+说话人: 我想知道玛丽·尤妮斯修女跟警察谈过了没有\NI need to know if Sister Mary Eunice talked to the police.
+说话人: 如果玛丽·尤妮斯修女说过要做什么\NIf Sister Mary Eunice says she's going to do something,
+说话人: 你要相信她一定会做的\Nthen you have to believe it has been done.
+说话人: 别烦恼了\NYou need to stop fretting.
+说话人: 你死了\NYou died.
+说话人: 谁在后面\NWho is that back there?
+说话人: 另一个不幸的灵魂\NAnother unfortunate soul.
+说话人: 没什么好担心的\NNothing you need to worry yourself about.
+说话人: 我感觉好多了\NI feel much better.
+说话人: 谢谢\NThank you.
+说话人: 我不知道能为你做什么  裘德\NI don't know what to do for you, Jude.
+说话人: 你在荆棘崖已经没有可信度了\NYou've lost your credibility at Briarcliff.
+说话人: 我也想帮你  但不知道怎么帮\NI want to help you, but I don't know how.
+说话人: 你得帮我重回荆棘崖\NYou've got to help me get back into Briarcliff.
+说话人: 我不确定  裘德\NI don't know, Jude.
+说话人: 看看我\NLook at me.
+说话人: 我是不是不一样了\NDon't I look different?
+说话人: 因为我不再逃避了\NI'm not running anymore,
+说话人: 一直以来上帝都对我有所安排\Nand God had a plan for me all along:
+说话人: 让我成为他军队中的一个战士\Nto be a soldier in His army,
+说话人: 但这场战役我们马上要输了\Nbut we're losing that war.
+说话人: 你知道吗\NDid you know
+说话人: 国家广播公司一整周都在放\NThe National Broadcasting Company is showing
+说话人: 红鼻驯鹿鲁道夫\NRudolph the Red-Nosed Reindeer this very week?
+说话人: 没有任何关于上帝的东西\NNothing about Christ,
+说话人: 没有任何圣诞颂\Nnothing about the nativity story.
+说话人: 整个国家开始变得完全亵渎神明了\NThis country's turn towards unadulterated blasphemy
+说话人: 我很惶恐\Nfrightens me.
+说话人: 我非常害怕\NIt worries me deeply,
+说话人: 这就是恶魔的手段\Nbut that's how the Devil works.
+说话人: 一点一点地\NBit by bit,
+说话人: 让我们远离上帝\Nhe turns our eyes away from God,
+说话人: 但他不能占用她的身体\Nbut he can't have her!
+说话人: 不能\NNo.
+说话人: 我会尽力为之\NI will do what I can.
+说话人: 我发誓  裘德\NI promise, Jude.
+说话人: 是我\NYes?
+说话人: 谢谢\NThank you.
+说话人: 你有位访客\NYou have a visitor.
+说话人: 我已经记不得上次来礼拜堂是什么时候了\NI can't remember the last time I was in a house of worship.
+说话人: 你来干嘛\NWhy are you here?
+说话人: 一开始我们俩就不对盘\NYou and I got off on the wrong foot right from the very beginning.
+说话人: 或许跟我们各自的要强个性有关\NPerhaps it's because we're both such strong personalities.
+说话人: 尽管我们的思维方式可能有所不同\NBut although our ideologies may differ,
+说话人: 但我相信我们俩都一心为荆棘崖\NI believe our commitment to Briarcliff is equally matched.
+说话人: 这是怎么回事\NWhat is this?
+说话人: 你肯定清楚在那么多人中我选择来到这里\NI think you must know how hard it was for me to come here,
+说话人: 向你求助对我来说有多难\Nto turn to you, of all people.
+说话人: 我可没工夫听你废话\NI don't have time for the prologue.
+说话人: 直说吧\NJust say it!
+说话人: 你说得没错\NYou were right.
+说话人: 玛丽·尤妮斯修女\NAbout Sister Mary Eunice.
+说话人: 她惹上了大麻烦\NShe's in desperate trouble.
+说话人: 之前我还指望能找到一个医学上的原因\NI had hoped to come up with a medical explanation for it, but...
+说话人: 但失败了\NI can't.
+说话人: 她不知道我来这里\NShe doesn't know I'm here.
+说话人: 你怕她\NYou're afraid of her.
+说话人: 不\NNo.
+说话人: 不是因为这个\NThat's not it.
+说话人: 我有自己的工作\NI have my work to do.
+说话人: 不能像保姆似的整天看着一个精神错乱的修女\NI can't be baby-sitting a deranged nun all day long.
+说话人: 所以你来找我\NThat's what you came for?
+说话人: 保姆\NA baby-sitter?
+说话人: 见鬼去吧\NYeah. Well, go to hell.
+说话人: 你对我的看法也是对的\NYou were right about me, too.
+说话人: 我不信上帝\NI don't believe in God.
+说话人: 但我相信世上有邪恶\NBut I do believe in evil.
+说话人: 我见过\NI've seen it...
+说话人: 亲身近距离接触过\Nup-close and personal.
+说话人: 这我倒一点不怀疑\NI have no doubt.
+说话人: 所以她的纯洁才会对我那么重要\NThat's why her purity meant so much to me.
+说话人: 她身上有着\NShe had this...
+说话人: 这种圣洁的光\Nlight in her.
+说话人: 但那光灭了\NThe light's gone out.
+说话人: 求你了\NPlease--
+说话人: 我很少用这个词\Nand that's not a word I use often--
+说话人: 我求你了\NI'm begging you,
+说话人: 求你帮帮我\Nplease help me.
+说话人: 我这是帮她  不是帮你\NI'm doing this for her, not you.
+说话人: 你得听我的指令\NYou must follow my every instruction.
+说话人: 不准质疑\NNo questions asked.
+说话人: 你发誓吗\NYou swear to me?
+说话人: 我发誓\NI swear.
+说话人: 我想把这颗星送给你们\NI'd like to present you all with this star,
+说话人: 这颗\Nthis...
+说话人: 伯利恒之星\NBeacon of Bethlehem.
+说话人: 又称圣诞之星或耶稣之星\N耶稣诞生后  指引东方"博士"找到耶稣的光体
+说话人: 这是特别为波士顿主教区手工制作的\NIt was hand-crafted for the Archdiocese of Boston.
+说话人: 我决定今年把它挂在你们的圣诞树上\NI've decided that this year, it should hang on your tree.
+说话人: 拜托你了\NYes, please...
+说话人: 真令人欢欣\NWhat a triumph.
+说话人: 这里真是焕然一新  修女\NYou've renewed these halls, Sister.
+说话人: 圣诞树都是用他们的日常用品装饰的\NEven your tree shows imagination and resourcefulness...
+说话人: 这真是太有想象力  太有想法了\Nfilled with the very icons of their lives.
+说话人: 这让我想到马塞尔·杜尚[达达主义代表人物]\NIt reminds me of Marcel Duchamp
+说话人: 摭拾物艺术是继承达达主义的派生艺术形式
+说话人: 和摭拾物艺术流派\Nand the school of found object art.
+说话人: 充满智慧  思想超前\NSo clever and forward-thinking.
+说话人: 正是这里所缺少的\NJust what's been missing.
+说话人: 主教  谢谢你\NThank you, Monsignor.
+说话人: 我想这么做有一阵了\NI've had these ideas for a while.
+说话人: 还有利·艾默生\NOh, and Leigh Emerson.
+说话人: 我得坦白  你在圣诞节这么\NI must confess, I was more than a little concerned
+说话人: 慷慨地把他放出来  让我非常担心\Nwith your instincts to offer him Christmas largesse.
+说话人: 但你看他\NYes. But look at him.
+说话人: 一个新生的灵魂\NA renewed soul.
+说话人: 你说我们离开这鬼地方\NWhat do you say, we blow this pop stand,
+说话人: 找几个孩子折磨折磨  然后互相口交打一炮如何\Ngo savage a few elves and then suck on each other, hmm?
+说话人: 亚瑟\NSo, Arthur?
+说话人: 主教\NMonsignor.
+说话人: 这房间里真是喜气洋洋  欢乐祥和\NThere is a palpable spirit of love and joy in this room.
+说话人: 不如我们放下那些不快\NWhat say we put aside our... difficulties
+说话人: 一起庆祝这成功的转变\Nand celebrate this successful transition?
+说话人: 我们年轻的玛丽·尤妮斯修女\NOur young Sister Mary Eunice
+说话人: 真是一块珍宝  是吧\Nis quite a treasure, isn't she?
+说话人: 是啊  你都难以想象\NThat she is, more than you can possibly imagine.
+说话人: 弗兰克  过来\NFrank, we need you up here, and, uh,
+说话人: 带上梯子\Nbring the ladder.
+说话人: 我想先挂上星星\NI want to hang this star
+说话人: 再进行派对的娱乐环节\Nbefore the entertainment portion of our party.
+说话人: 今晚我们看《红鼻驯鹿鲁道夫》[圣诞电影]\NWe are watching Rudolph the Red-Nosed Reindeer tonight.
+说话人: 真好\NOh, what a treat.
+说话人: *圣诞佳节*\N*Christmas*
+说话人: *雪花飘落*\N*Snow's coming down*
+说话人: 很大吗\NIs it big?
+说话人: 大得我都搬不动了\NBig enough to break my back.
+说话人: *圣诞佳节*\N*Christmas*
+说话人: *落叶满地*\N*Lots of leaves all around*
+说话人: *圣诞佳节*\N*Christmas*
+说话人: *家人团聚*\N*Baby, please come home*
+说话人: 别动  女士\NHands off, woman.
+说话人: 烤炉里有小圆面包\NI got a bun in that oven.
+说话人: 真的吗  我觉得馅饼吃太多了\NReally? I thought I was just eating too much pie.
+说话人: 多吃点\NKeep eating.
+说话人: 我希望你生个快乐的白胖小子\NI want that kid to pop out fat and happy.
+说话人: 如果是个女孩呢\NWhat if it's a girl?
+说话人: 不是\NBut it's not.
+说话人: *圣诞颂歌*\N*They're singing deck the halls*
+说话人: 但如果是个女孩呢\NBut what if it is a girl?
+说话人: 那我会把她宠上天的\NThen I'll love her to the moon and back.
+说话人: 我有预感\NI just have a hunch.
+说话人: 我要教这孩子打棒球\NI want to teach this kid baseball.
+说话人: 踢足球\NAnd football.
+说话人: 还有换轮胎\NAnd how to change a tire.
+说话人: 怎么  我又教不了他\NWhat? I can't teach him.
+说话人: 格蕾丝\NGrace.
+说话人: -怎么了  -我很抱歉  格蕾丝\N- What's this about? - I'm so sorry, Grace.
+说话人: 我不应该回来\NI should have stayed gone.
+说话人: 如果我不回来\NIf I hadn't come back...
+说话人: 别担心\NShh. Who cares about that?
+说话人: 跟我跳舞吧\NDance with me.
+说话人: 基特\NKit...
+说话人: 基特  你能听到我吗\NKit, can you hear me?
+说话人: 他们说你从监禁下逃出来了\NThey're saying you escaped custody.
+说话人: 收音机上说警方在通缉你\NI heard on the radio there's a manhunt.
+说话人: 警察还在找你\NThe police are still looking for you.
+说话人: 天啊\NOh, God.
+说话人: 如果他们不知道你在这儿\NIf they don't know you're here,
+说话人: 那他们也不会知道我的遭遇\Nthey don't know what happened to me, either.
+说话人: 没人会来帮我们\NNo one is coming for either of us.
+说话人: 他还逍遥法外呢\NAnd he's still out there.
+说话人: 格蕾丝\NGrace?
+说话人: 不  基特\NNo, Kit.
+说话人: 我是拉娜  我没看到格蕾丝\NIt's Lana. I haven't seen Grace.
+说话人: 我不知道她在哪儿\NI don't know where she is.
+说话人: 死了\NDead.
+说话人: 什么\NWhat?
+说话人: 格蕾丝死了\NGrace is dead.
+说话人: 我要把你从这儿弄出去\NWe have to get you out of here.
+说话人: 我们都要逃出去\NWe both have to get out of here.
+说话人: 他们给你打了麻醉\NThey've got you doped up.
+说话人: 我得去找部电话\NI just have to get to a telephone.
+说话人: 我必须先报警\NI need to call the police.
+说话人: 警察会把我送上电椅的\NThey're gonna fry me.
+说话人: 不  没人会处决你的  基特\NNo. No one is going to fry you, Kit.
+说话人: 你是无辜的  我能为你证明\NYou're innocent, and I can prove it.
+说话人: 凶手是史莱森\NIt was Thredson.
+说话人: 什么\NWhat?
+说话人: 是他谋杀了那些女人  不是你\NHe murdered those women, not you.
+说话人: 他也抓住了我  基特\NHe took me, Kit.
+说话人: 还把所有的罪行告诉了我\NHe showed me where he did it.
+说话人: 他才是凶手\NIt was him.
+说话人: 所以他才想方设法接手你的案子\NThat's why he got himself appointed to your case--
+说话人: 以便诱导你为他犯下的罪行背黑锅\Nto get you to confess to crimes that he committed.
+说话人: 他有没有伤害你\NDid he hurt you?
+说话人: 我得赶紧报警\NThey need to know.
+说话人: 必须在史莱森再次行凶之前抓住他\NThey have to get there before he does it again.
+说话人: 趁他现在还没销毁证据\NAnd before he destroys the evidence.
+说话人: 我现在得去找电话了\NI have to get to the phone.
+说话人: 拉娜...\NLana...?
+说话人: 你不是我的幻觉吧\NAre you really here?
+说话人: 这是真的\NI'm really here.
+说话人: 我马上就回来\NAnd I'm coming back.
+说话人: 你倒是信守诺言  奥尔顿医生\NYou kept your word, Dr. Arden.
+说话人: 玛丽·尤妮斯修女现在在哪儿\NWhere is Sister Mary Eunice now?
+说话人: 她在公共休息室主持圣诞晚宴呢\NIn the common room, hosting a Christmas party.
+说话人: 光凭这一条就得阻止她\NShe should be stopped, for that reason alone.
+说话人: 你真的不需要帮手吗\NYou sure you don't need any help?
+说话人: 不用  只有我能接近她\NNo. Only I can reach her.
+说话人: 我只是需要时间\NI just need time.
+说话人: 把她引到我的办公室去\NBring her to my office.
+说话人: 锁上门\NLock the door.
+说话人: 不得让任何人妨碍我们\NAnd don't let anyone interrupt us.
+说话人: 包在我身上\NConsider it done.
+说话人: 我从没想到会有这么一天\NI never thought I would see it.
+说话人: 什么\NWhat's that?
+说话人: 我们俩居然能并肩合作\NThe day you and I would work together.
+说话人: 拿来了\NComing through.
+说话人: 玛丽·尤妮斯修女\NSister Mary Eunice,
+说话人: 你已经完全从裘德修女的阴影中解放出来了\Nyou really have stepped out from the shadow of Sister Jude,
+说话人: 而且全身散发出令人赞叹的夺目光彩\Nshining brighter than anyone could imagine.
+说话人: 谢谢您的夸奖  主教\NThank you, Monsignor.
+说话人: 请您再多待一会儿吧\NOh, if you could stay just a little bit longer,
+说话人: 弗兰克就要把您送的星星挂到树顶了\NFrank is about to put your star on the tree.
+说话人: 不了  我就和那些神话里的圣诞精灵一样\NOh, no, Sister, like the mythical jolly old elf,
+说话人: 如此良宵  我还要拜访好几处地方呢\NI, too, have more than one visit on this festive night,
+说话人: 不过还好有你这么一个得力助手\Nbut I am happy and grateful
+说话人: 我也可以安心愉悦地离开荆棘崖了\Nto leave Briarcliff in your capable hands.
+说话人: 好了  把星星递给我吧\NOkay, hand me the star.
+说话人: 欲速则不达啊\NTwo steps forward, one step back.
+说话人: 弗兰克  你没事吧\NFrank, you all right?
+说话人: 没事\NYeah. I'm fine.
+说话人: 能把他关到禁闭室去吗\NCan you take him to solitary?
+说话人: 好的\NI'd be glad to.
+说话人: 让他起来\NGet him up.
+说话人: 转过身去\NTurn him around.
+说话人: 好了\NAll right.
+说话人: 玛丽·尤妮斯修女  有件急事\NSister Mary Eunice, there's a pressing matter
+说话人: 你得去办公室看看\Nin your office that needs your attention.
+说话人: 但愿你打的不是要收费的长途电话\NHope you're not planning on making a toll call.
+说话人: 弗兰克  你觉得我的圣诞装怎么样\NHey, Frankie, what about the outfit?
+说话人: 修女的命令是把你关回牢房\NSister's instructions were just to throw you back in your hole.
+说话人: 你这辈子都别想出来过圣诞节了\NDo not open until the next Christmas after never.
+说话人: 你就烂在这里吧  混蛋\NGo rot in there, you bastard.
+说话人: 他给你惹什么麻烦了吗\NHe give you any trouble?
+说话人: 没有  修女\NNo, Sister.
+说话人: 我觉得他惹了\NI think he did.
+说话人: 现在\NNow...
+说话人: 这把刀是怎么来的呢\Nhow did this get in the building?
+说话人: 希望不是什么疯子带进来的\NI pray we're not looking at a rampage.
+说话人: 你在这儿干什么\NWhat are you doing here?
+说话人: 我来拆我的礼物啊\NI'm here to open my present.
+说话人: 相信现在不会有人再怀疑我的忠诚了吧\NI trust now my loyalty is no longer in question.
+说话人: 奥尔顿医生  快开门\NDr. Arden, open this door!
+说话人: 我觉得那位性感的小修女\NI'd put the lion's share of blame
+说话人: 才是幕后主使\Non that sexy little sister.
+说话人: 她真的很讨厌你\NShe really doesn't like you.
+说话人: 究竟是怎么回事\NWhat's this all about?
+说话人: 你将我丢在那个鬼地方自生自灭\NYou left me in that hole to rot.
+说话人: 可你现在出来了\NBut you're out now.
+说话人: 奇迹总会出现的\NAnything is possible.
+说话人: 让我们一起祈祷吧\NLet me pray with you.
+说话人: 我更愿意和你分享一下我想做的事\NI think I'd rather tell you about my fantasies,
+说话人: 譬如用我的大"十字架"狠狠地插你\Nlike the one where I jam this gigantic crucifix up your ass,
+说话人: 又或者  我张开一口烂牙\Nor the other one where I take my rotting teeth
+说话人: 呼着臭气\Nand my foul-breathed mouth
+说话人: 撕碎你那\Nand chomp down
+说话人: 干瘪的...\Non your dried-up...
+说话人: 来人啊  求你了\NHelp me! Please!
+说话人: 修女  你的圣诞精神哪去了\NOh, Sister, where's your sense of Christmas spirit?
+说话人: 我才刚刚感受到一点舒适和快乐呢\NI'm just beginning to feel the comfort and joy!
+说话人: 来人啊\NHelp me!
+说话人: 主啊  救救我\NDear God, someone help me!
+说话人: 来人啊  帮帮我\NAnyone, help me!
+说话人: 你那敏感的神经是不是受不了了\NDoes this offend your delicate sensibilities?
+说话人: 其实我只是觉得很无聊\NActually, I find it rather tedious.
+说话人: 现在请原谅我先走一步\NNow, if you'll excuse me,
+说话人: 我还有更紧急的事要处理呢\NI have more pressing matters to take care of.
+说话人: 你怎么找到我的\NHow did you find me?
+说话人: 拉娜  你出了车祸\NWell, you were in a car accident, Lana.
+说话人: 这些事报纸上全都报道了\NThe details were in all the papers.
+说话人: "出逃精神病人重返病院"\N"Escaped mental patient returned to ward."
+说话人: 只要我还有一口气在\NYou'll never get away with it,
+说话人: 就不会让你得逞的\Nnot as long as I have a voice.
+说话人: 你刚才就是在做这个吗\NIs that what you were doing on the phone?
+说话人: 想打电话报警吗\NYou were going to call the police?
+说话人: 知不知道你离开之后我都在干什么\NYou know what I've been doing since you left me?
+说话人: 我一直在哀悼\NI've been mourning.
+说话人: 你让我杀了血脸杀手\NYou made me kill Bloody Face.
+说话人: 我拿着牙刷一点一点地\NI've been through every inch of my house
+说话人: 清理我的房子\Nwith a toothbrush cleaning up-- no...
+说话人: 没有人骨...\Nbone, no...
+说话人: 没有人皮  连一滴血都不能逃过我的法眼\Nskin, no... drop of blood escaped my scrutiny,
+说话人: 火炉烧得滚烫  相信我\Nand the furnace has been burning red-hot, believe me.
+说话人: 可是我还在\NYou haven't made me disappear.
+说话人: 我是目击者\NI'm a witness.
+说话人: 去告我吗\NTo the courts?
+说话人: 谁会相信一个精神病人的话\NAn unreliable one at best.
+说话人: 其实  就算让你跟他们说又怎么样\NIn fact, I was just gonna let you talk.
+说话人: 没有切实的证据  你觉得他们会信谁\NWith no hard evidence, who do you think they'll believe,
+说话人: 医生  还是病人\Nthe doctor or the patient?
+说话人: 但是我想起了你是怎么背叛我的\NBut then I thought about how you betrayed me.
+说话人: 我对你敞开心扉\NI opened my heart to you,
+说话人: 告诉你我的遭遇\NI told you my story,
+说话人: 你却用它来迷惑我\Nand you used it to confuse me.
+说话人: 你让我跟你亲近\NYou made me give you my intimacy,
+说话人: 这是个错误\Nand that is a wrong
+说话人: 我必须拨乱反正\Nthat I need to make right.
+说话人: 你这个疯子\NYou're insane.
+说话人: 所有人都会看到的\NEveryone is gonna be able to see that.
+说话人: 我最近失去了太多\NI've lost so much recently,
+说话人: 我觉得自己在大海上漫无目的地漂泊\NI feel like I've been set adrift in the open sea-- but now...
+说话人: 但是现在  你在这里...\Nthat you're here...
+说话人: 又离我这么近了...\Nso close to me again, well...
+说话人: 我觉得又找回了迷失的自己\NI feel like I've been found.
+说话人: 你相信命运吗  拉娜\NDo you believe in fate, Lana?
+说话人: 我们就像磁铁一样互相吸引  我必须承认\NWe've been drawn together like magnets, and I must admit
+说话人: 直到现在我才明白\NI didn't fully understand why until now.
+说话人: 但是就如凤凰涅槃一样\NBut like the Phoenix, who had to turn to ashes...
+说话人: 血脸杀手必须被焚毁  这样他才能重生\NBloody Face had to burn so he could be born again.
+说话人: 而你的皮...\NAnd your skin...
+说话人: 将是新血脸杀手的第一个目标\Nwill be the start of a whole new Bloody Face.
+说话人: 这里只有我和你  修女\NIt's just you and me, Sister.
+说话人: 上帝和圣诞老人去喝小酒了\NGod's off having schnapps with the nice Santa.
+说话人: 我不是你的敌人\NI'm not the enemy.
+说话人: 我的敌人不止你一个\NYou're not the only enemy,
+说话人: 你碰巧是我最近关注的那一个\Nyou just happen to be the one I'm focusing on right now.
+说话人: 刚才那句话我收回\NI take that back.
+说话人: 也许上帝真的在这儿\NMaybe God is here,
+说话人: 而且...\Nand...
+说话人: 他在给我启示\Nhe's giving me a sign.
+说话人: 就它了\NOh, yeah.
+说话人: 不要\NNo.
+说话人: 我的鞭伤一直都没好\NMy welts never healed.
+说话人: 没有阳光\NNo sunlight,
+说话人: 没有药物  没法洗澡\Nno medicine, no bathing,
+说话人: 而你从来\Nand you never,
+说话人: 也没有看过我\Never checked on me!
+说话人: 一次都没有\NNot once!
+说话人: 那伤现在都溃烂了\NThey're putrid now.
+说话人: 正往外流着脓\NThey're seeping pus.
+说话人: 也许完事之后应该让你给我舔一舔\NMaybe I'll have you lick them after I'm done, huh?
+说话人: 还记得你说的话吗\NRemember what you said? Huh?
+说话人: 我们要让你变得温驯\NWe're going to soften you up
+说话人: 这样上帝就不会那么辛苦的\Nso God doesn't have to work so hard
+说话人: 帮你走进圣光里了\Nto enter you with His light.
+说话人: 你猜怎么着\NGuess what?
+说话人: 这里没有上帝\NThere is no God.
+说话人: 这里只有圣诞老人\NBut there is a Santa Claus.
+说话人: 我们必须杀了他\NWe have to kill him.
+说话人: 等等  等一下\NWait, wait, wait a second...
+说话人: 等一下  住手\NWait a second... stop it...
+说话人: -住手  -你别拦着我\N- Stop! - You have to let me do this.
+说话人: 我们需要他\NWe need him.
+说话人: 他是我可以逃离极刑的\NHe's the only thing standing between me
+说话人: 唯一办法\Nand the electric chair.
+说话人: 为什么还在搜捕\NWhy is there still a manhunt?
+说话人: 他们为什么没把你交上去\NWhy haven't they turned you in?
+说话人: 玩儿得开不开心呀\NAre we having fun yet?
+说话人: 你现在够不够温驯了呢\NHave you softened up enough to receive the light?
+说话人: 只是  不会是上帝\NExcept it won't be God...
+说话人: 而且  也不是圣光\Nand, actually, it won't be light.
+说话人: 好玩儿吗\NHaving fun yet?
+说话人: 这方法长远不了\NThis isn't going to work forever.
+说话人: 看这些灰尘  这房间已经废弃了\NLook at the dust-- it's a junk room.
+说话人: 他们大概永远都不会来这里\NThey practically never come in here.
+说话人: 但是你说得对  我们还得想点别的法子\NBut you're right-- we'll have to think of something.
+说话人: 剩下的我来做\NI'll finish.
+说话人: 在他们发现你离开之前赶紧回医务室\NGet back to the infirmary before they realize you're gone.
+说话人: 总有一天  我会亲手把你埋葬\NOne day, I'll bury you.
