@@ -1,0 +1,138 @@
+
+<!-- saved from url=(0044)http://paulbourke.net/miscellaneous/360x180/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="StyleSheet" href="./Noise, Perlin, 1_f Noise, Modelling planets_files/pdbstyle.css" type="text/css" media="all">
+<title>Two dimensional representations of 360x180 degree images or video</title>
+</head>
+<body>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script language="JavaScript">
+<!--
+   if (self.location.href != top.location.href) {
+      top.location.href = self.location.href;
+   }
+-->
+</script>
+
+
+<center><table width="800"><tbody><tr><td>
+
+<center>
+<h1>Two dimensional representations of 360x180 degree images or video</h1>
+Written by <a href="http://paulbourke.net/miscellaneous/">Paul Bourke</a><br>
+19 October 2018
+</center>
+<p><br>
+
+</p><p align="justify">
+The question often arises as to what is the best way to represent a 360x180 image or video capture
+on a 2D screen. Historically this has been the domain of cartographers attempting to produce
+representations of the Earths surface, the key being the definition of "best".
+Fundamental topology dictates that such a 3D surface cannot be flattened onto a 2D
+plane without stretching (what is generally called warping or distortion) and cuts.
+The standard approach is known as an equirectangular projection, or sometimes spherical projection,
+it is presented below in what will be the example 360x180 image used in the rest of this document. 
+It has one cut, the left edge connects with the right edge. It also has
+two discontinuities, one at each pole where a single point is spread out along the top and bottom edge.
+It is this stretching that gives rise to the apparent distortion towards the top and bottom edges.
+Note the word "apparent" is used, there is no actual distortion since the image projection has a
+precise mathematical definition, the distortion only occurs because we expect a single type of
+apparent distortion, namely that which occurs with perspective projections.
+</p>
+<center>
+	<a href="http://paulbourke.net/miscellaneous/360x180/equirectangular.jpg"><img src="http://paulbourke.net/miscellaneous/360x180/equirectangular_s.jpg" width="800" height="400" border="1"></a>
+</center><p>
+
+</p><p align="justify">
+One solution to the issue at the poles is to ignore them, for example to crop the equirectangular.
+Alternatively one may create a cylindrical panorama (Mercator Projection)
+as shown below. A cylindrical panorama preserves
+the 360 degrees lines of longitude horizontally but the vertical axis adopts a standard perspective
+relationship, the projection onto a cylinder. 
+This however means that the vertical field of view of the cylindrical panorama is
+limited, above 130 degrees it becomes an increasingly inefficient representation and the upper
+and lower portions becomes increasingly stretched. The example below has 100 degrees of vertical FOV,
+so 80 degrees are missing.
+</p>
+<center>
+   <a href="http://paulbourke.net/miscellaneous/360x180/cylpano.jpg"><img src="http://paulbourke.net/miscellaneous/360x180/cylpano_s.jpg" width="800" height="303" border="1"></a>
+</center><p>
+
+</p><p align="justify">
+Another partial representation is a stereographic projection, also known as 
+"<a href="http://paulbourke.net/miscellaneous/littleplanet/">little planet</a>" projections
+and is one of a number of possible azimuthal projections, in this case a stereographic azimuthal projection.
+Like the cylindrical panorama it cannot represent the whole 360 degrees of longitude and 180 degrees
+of latitude. A gnomonic azimuthal projection is even more limiting and can represent
+only half the full sphere.
+</p>
+<center>
+   <a href="http://paulbourke.net/miscellaneous/360x180/stereographic.jpg"><img src="http://paulbourke.net/miscellaneous/360x180/stereographic_s.jpg" width="800" height="800" border="1"></a>
+</center><p>
+
+</p><p align="justify">
+A fisheye projection, mathematically, is not limited to the field of view of physical fisheye lenses.
+The following is a 360 degree fisheye, the first example here after the equirectangular where
+the entire 360x180 degrees are represented on a plane. It has one singularity, the point immediately
+behind the center of the image which is spread out around the circumference of the fisheye circle.
+As with the north and south pole of the equirectangular one expects the images to appear increasingly
+stretched as one approaches these singularities.
+</p>
+<center>
+   <a href="http://paulbourke.net/miscellaneous/360x180/360fisheye.jpg"><img src="http://paulbourke.net/miscellaneous/360x180/360fisheye_s.jpg" width="800" height="800" border="1"></a>
+</center><p>
+
+</p><p align="justify">
+A common representation goes by the name of <a href="http://paulbourke.net/miscellaneous/cubemaps/">cube maps</a>, 
+these comprise of six 90 degree by 90 degree
+perspective projections arranged as the faces of a cube. The cube is then "unfolded" to be laid flat
+on a 2D plane, example shown below.
+While each face of the cube is a standard pinhole style perspective projection, the resulting unfolded
+cube has 6 discontinuities and 7 cuts.
+While a well established means of storing 360x180 images, it is problematic to watch video
+due mainly to the cuts, moving objects appear to jump from one location to distant locations.
+</p>
+<center>
+   <a href="http://paulbourke.net/miscellaneous/360x180/cubemap.jpg"><img src="http://paulbourke.net/miscellaneous/360x180/cubemap_s.jpg" width="800" height="600" border="1"></a>
+</center><p>
+
+</p><p align="justify">
+The full 360x180 degree field of view can be represented by two fisheye images laid side by side
+as shown below. While there are no discontinuities, and we are somewhat familiar with the apparent
+distortion in a fisheye image, the result does have a cut that extends all the way around the
+circumference of the fisheye circle. Objects that move along the -90 and 90 degree seam split apart.
+</p>
+<center>
+   <a href="http://paulbourke.net/miscellaneous/360x180/dualfisheye.jpg"><img src="http://paulbourke.net/miscellaneous/360x180/dualfisheye_s.jpg" width="800" height="400" border="1"></a>
+</center><p>
+</p><p align="justify">
+Another azimuthal projection is an orthographic one where, unlike the stereographic where rays are
+sourced from a point, rays are from infinity. So similar to the two fisheye halves above, an
+orthographic projection of the two hemispheres is just a parallel projection. As such towards the
+rim the representation becomes increasingly compressed and inefficient.
+</p>
+
+<p align="justify">
+From cartography there are a whole slew of possible map projections. For example the Hammer projection
+shown next encapsulates the entire visible field of view. It was designed to provide an equal area
+representation of the Earths surface.
+There is a wrapping type cut around the entire
+circumference of the ellipse into which the projection lies, with apparent distortion towards that
+circumference.
+</p>
+<center>
+   <a href="http://paulbourke.net/miscellaneous/360x180/hammer.jpg"><img src="http://paulbourke.net/miscellaneous/360x180/hammer_s.jpg" width="800" height="400" border="1"></a>
+</center><p>
+</p><p align="justify">
+The Mollweide projection is another equal angular projection, often just known as the elliptical projection.
+</p>
+<center>
+   <a href="http://paulbourke.net/miscellaneous/360x180/mollweide.jpg"><img src="http://paulbourke.net/miscellaneous/360x180/mollweide_s.jpg" width="800" height="400" border="1"></a>
+</center><p>
+
+</p></td></tr></tbody></table></center>
+
+
+
+</body></html>
