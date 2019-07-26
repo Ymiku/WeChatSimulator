@@ -1,0 +1,839 @@
+
+<!-- saved from url=(0042)http://paulbourke.net/geometry/supershape/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="StyleSheet" href="./Supershapes _ SuperFormula_files/pdbstyle.css" type="text/css" media="all">
+<title>Supershapes / SuperFormula</title>
+</head>
+<body>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script language="JavaScript">
+<!--
+   if (self.location.href != top.location.href) {
+      top.location.href = self.location.href;
+   }
+-->
+</script>
+
+
+<center><table width="800"><tbody><tr><td>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tbody><tr><td>
+<center>
+<h1>Supershapes (Superformula)</h1>
+Written by <a href="http://paulbourke.net/geometry/">Paul Bourke</a><br>
+March 2002
+<p>
+Based upon equations by Johan Gielis<br>
+Intended as a modelling framework for natural forms.</p><p>
+</p><p>
+See also <a href="http://paulbourke.net/geometry/spherical/">Superellipse</a>
+</p></center>
+</td><td>
+&nbsp;
+</td><td valign="center">
+<center><img src="./Supershapes _ SuperFormula_files/supershape2.gif"></center>
+</td></tr></tbody></table>
+<p>
+
+</p><p align="justify">
+The supershape equation is an extension of the both the
+equation of the sphere and ellipse
+</p>
+
+<center>
+(x / a)<sup>2</sup> + (y / b)<sup>2</sup> = r<sup>2</sup>
+</center>
+
+<p align="justify">
+and even the <a href="http://paulbourke.net/geometry/spherical/">
+superellipse given here</a>. The general formula for the supershape
+is given below.
+</p>
+
+<center><img src="./Supershapes _ SuperFormula_files/supershape1.gif"></center><p>
+
+</p><p align="justify">
+Where r and phi are polar coordinates (radius,angle).
+n<sub>1</sub>, n<sub>2</sub>, n<sub>3</sub>, and m are real numbers.
+a and b are real numbers excluding zero.
+</p>
+
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+
+<tbody><tr><td valign="top" width="50%">
+m = 0<br>
+This results in circles, namely r = 1
+</td><td align="right" nowrap="" width="50%">
+<img src="./Supershapes _ SuperFormula_files/0_1_1_1.gif" width="100" height="100">
+</td></tr>
+
+<tr><td valign="top">
+n<sub>1</sub> = n<sub>2</sub> = n<sub>3</sub> = 1<br>
+Increasing m adds rotational symmetry to the shape. This is
+generally the case for other values of the n parameters.
+The curves are repeated in sections of the circle of
+angle 2π/m, this is apparent in most of the following
+examples for integer values of m.
+</td><td align="right" nowrap="">
+m=1<img src="./Supershapes _ SuperFormula_files/1_1_1_1.gif" width="100" height="100">
+m=2<img src="./Supershapes _ SuperFormula_files/2_1_1_1.gif" width="100" height="100"><br>
+m=3<img src="./Supershapes _ SuperFormula_files/3_1_1_1.gif" width="100" height="100">
+m=4<img src="./Supershapes _ SuperFormula_files/4_1_1_1.gif" width="100" height="100"><br>
+m=5<img src="./Supershapes _ SuperFormula_files/5_1_1_1.gif" width="100" height="100">
+m=6<img src="./Supershapes _ SuperFormula_files/6_1_1_1.gif" width="100" height="100"><br>
+</td></tr>
+
+<tr><td valign="top">
+n<sub>1</sub> = n<sub>2</sub> = n<sub>3</sub> = 0.3<br>
+As the n's are kept equal but reduced the form becomes
+increasingly pinched.
+</td><td align="right" nowrap="">
+m=1<img src="./Supershapes _ SuperFormula_files/1_03_03_03.gif" width="100" height="100">
+m=2<img src="./Supershapes _ SuperFormula_files/2_03_03_03.gif" width="100" height="100"><br>
+m=3<img src="./Supershapes _ SuperFormula_files/3_03_03_03.gif" width="100" height="100">
+m=4<img src="./Supershapes _ SuperFormula_files/4_03_03_03.gif" width="100" height="100"><br>
+m=5<img src="./Supershapes _ SuperFormula_files/5_03_03_03.gif" width="100" height="100">
+m=6<img src="./Supershapes _ SuperFormula_files/6_03_03_03.gif" width="100" height="100"><br>
+</td></tr>
+
+<tr><td valign="top">
+If n<sub>1</sub> is slightly larger than n<sub>2</sub>
+and n<sub>3</sub> then bloated forms result. The 
+examples on the right have n<sub>1</sub> = 40 and
+n<sub>2</sub> = n<sub>3</sub> = 10.
+</td><td align="right" nowrap="">
+m=1<img src="./Supershapes _ SuperFormula_files/1_40_10_10.gif" width="100" height="100">
+m=2<img src="./Supershapes _ SuperFormula_files/2_40_10_10.gif" width="100" height="100"><br>
+m=3<img src="./Supershapes _ SuperFormula_files/3_40_10_10.gif" width="100" height="100">
+m=4<img src="./Supershapes _ SuperFormula_files/4_40_10_10.gif" width="100" height="100"><br>
+m=5<img src="./Supershapes _ SuperFormula_files/5_40_10_10.gif" width="100" height="100">
+m=6<img src="./Supershapes _ SuperFormula_files/6_40_10_10.gif" width="100" height="100"><br>
+</td></tr>
+
+<tr><td valign="top">
+Polygonal shapes are achieved with very large values
+of n<sub>1</sub> and large but equal values for
+n<sub>2</sub> and n<sub>3</sub>.
+</td><td align="right" nowrap="">
+m=3<img src="./Supershapes _ SuperFormula_files/3_1000_1980_1980.gif" width="100" height="100">
+m=4<img src="./Supershapes _ SuperFormula_files/4_1000_1000_1000.gif" width="100" height="100"><br>
+m=5<img src="./Supershapes _ SuperFormula_files/5_1000_620_620.gif" width="100" height="100">
+m=6<img src="./Supershapes _ SuperFormula_files/6_1000_390_390.gif" width="100" height="100"><br>
+</td></tr>
+
+<tr><td valign="top">
+Asymmetric forms can be created by using different values for
+the n's. The following example have n<sub>1</sub> = 60,
+n<sub>2</sub> = 55 and n<sub>3</sub> = 30.
+</td><td align="right" nowrap="">
+m=3<img src="./Supershapes _ SuperFormula_files/3_60_55_30.gif" width="100" height="100">
+m=4<img src="./Supershapes _ SuperFormula_files/4_60_55_30.gif" width="100" height="100"><br>
+m=5<img src="./Supershapes _ SuperFormula_files/5_60_55_30.gif" width="100" height="100">
+m=6<img src="./Supershapes _ SuperFormula_files/6_60_55_30.gif" width="100" height="100"><br>
+</td></tr>
+
+<tr><td valign="top">
+For non integral values of m the form is still closed for 
+rational values. The following are example with n<sub>1</sub> =
+n<sub>2</sub> = n<sub>3</sub> = 0.3. The angle phi needs to
+extend from 0 to 12π.
+</td><td align="right" nowrap="">
+m=1/6<img src="./Supershapes _ SuperFormula_files/016666_03_03_03.gif" width="100" height="100">
+m=7/6<img src="./Supershapes _ SuperFormula_files/116666_03_03_03.gif" width="100" height="100"><br>
+m=13/6<img src="./Supershapes _ SuperFormula_files/216666_03_03_03.gif" width="100" height="100">
+m=19/6<img src="./Supershapes _ SuperFormula_files/316666_03_03_03.gif" width="100" height="100"><br>
+</td></tr>
+
+<tr><td valign="top">
+Smooth starfish shapes result from smaller values of n<sub>1</sub>
+than the n<sub>2</sub> and n<sub>3</sub>. The following examples
+have m=5 and n<sub>2</sub> = n<sub>3</sub> = 1.7.
+</td><td align="right" nowrap="">
+n<sub>1</sub>=0.50<img src="./Supershapes _ SuperFormula_files/3_05_17_17.gif" width="100" height="100">
+n<sub>1</sub>=0.20<img src="./Supershapes _ SuperFormula_files/3_02_17_17.gif" width="100" height="100"><br>
+n<sub>1</sub>=0.10<img src="./Supershapes _ SuperFormula_files/3_01_17_17.gif" width="100" height="100">
+n<sub>1</sub>=0.02<img src="./Supershapes _ SuperFormula_files/3_002_17_17.gif" width="100" height="100"><br>
+</td></tr>
+
+</tbody></table>
+<p>
+
+<b>Other examples</b>
+
+</p><center>
+<img src="./Supershapes _ SuperFormula_files/13_4_08_08.gif" width="100" height="100">
+<img src="./Supershapes _ SuperFormula_files/13_05_10_10.gif" width="100" height="100">
+<img src="./Supershapes _ SuperFormula_files/13_05_08_08.gif" width="100" height="100">
+<img src="./Supershapes _ SuperFormula_files/13_05_4_2.gif" width="100" height="100">
+</center>
+<p>
+</p><center>
+<img src="./Supershapes _ SuperFormula_files/5_05_2_1.gif" width="100" height="100">
+<img src="./Supershapes _ SuperFormula_files/5_05_3_3.gif" width="100" height="100">
+<img src="./Supershapes _ SuperFormula_files/5_05_20_1.gif" width="100" height="100">
+<img src="./Supershapes _ SuperFormula_files/5_05_1_1.gif" width="100" height="100">
+</center>
+<p>
+</p><center>
+<img src="./Supershapes _ SuperFormula_files/pi_91_91_91.gif" width="100" height="100">
+<img src="./Supershapes _ SuperFormula_files/15_91_91_91.gif" width="100" height="100">
+<img src="./Supershapes _ SuperFormula_files/1625_1_1_1.gif" width="100" height="100">
+<img src="./Supershapes _ SuperFormula_files/1625_1_01_01.gif" width="100" height="100">
+</center>
+
+<b>Source code</b>
+<p align="justify">
+Given a value of phi the following function evaluates the supershape
+function and calculates (x,y). 
+</p>
+<pre><font color="#ff0000"> 
+void Eval(double m,double n1,double n2,double n3,double phi,double *x,double *y)
+{
+   double r;
+   double t1,t2;
+   double a=1,b=1;
+
+   t1 = cos(m * phi / 4) / a;
+   t1 = ABS(t1);
+   t1 = pow(t1,n2);
+
+   t2 = sin(m * phi / 4) / b;
+   t2 = ABS(t2);
+   t2 = pow(t2,n3);
+
+   r = pow(t1+t2,1/n1);
+   if (ABS(r) == 0) {
+      *x = 0;
+      *y = 0;
+   } else {
+      r = 1 / r;
+      *x = r * cos(phi);
+      *y = r * sin(phi);
+   }
+}
+</font></pre><font color="#ff0000">
+</font>
+<p>
+
+So it might be called as follows 
+</p><p>
+<font color="#ff0000">
+</font></p><pre><font color="#ff0000">   for (i=0;i&lt;=NP;i++) {
+      phi = i * TWOPI / NP;
+      Eval(m,n1,n2,n3,phi,&amp;x,&amp;y);
+      --- do something with the point x,y ---
+   }
+</font></pre><font color="#ff0000">
+</font>
+
+<br><br><br>
+
+
+<table width="100%"><tbody><tr><td valign="top">
+<center>
+<h1>Supershape in 3D</h1>
+<h3>(Also known as the Superformula)</h3>
+Written by <a href="http://paulbourke.net/geometry/">Paul Bourke</a><br>
+July 2003<p>
+Based upon equations by Johan Gielis<br>
+Intended as a modelling framework for natural forms.</p><p>
+Contribution of MSWindows version by Vincent Berthoux: 
+	<a href="http://paulbourke.net/geometry/supershape/supershape_win.zip">supershape_win.zip</a></p><p>
+</p></center>
+</td><td valign="top">
+<b>Table of contents</b><p>
+<a href="http://paulbourke.net/geometry/supershape/#software">Software</a><br>
+<a href="http://paulbourke.net/geometry/supershape/#examples">Examples</a><br>
+<a href="http://paulbourke.net/geometry/supershape/#noninteger">Non integer m</a><br>
+<a href="http://paulbourke.net/geometry/supershape/#2d">2D</a><br>
+<a href="http://paulbourke.net/geometry/supershape/#extrusion">Extrusion</a><br>
+<a href="http://paulbourke.net/geometry/supershape/#stability">Stability</a><br>
+<a href="http://paulbourke.net/geometry/supershape/#classical">Classical forms</a><br>
+<a href="http://paulbourke.net/geometry/supershape/#shells">Shells</a><br>
+<a href="http://paulbourke.net/geometry/supershape/#torus">Toroidal mapping</a><br>
+<a href="http://paulbourke.net/geometry/supershape/#rendering">Renderings</a><br>
+<a href="http://paulbourke.net/geometry/supershape/#stl">Physical model</a><br>
+</p></td></tr></tbody></table>
+<p>
+
+Definition of supershape in 2 dimensions.<br>
+</p><center><img src="./Supershapes _ SuperFormula_files/equation1.gif" width="465" height="64"></center><p>
+
+Extension to 3D using the spherical product.<br>
+</p><center><img src="./Supershapes _ SuperFormula_files/equation2.gif" width="230" height="118"></center><p>
+
+<a name="software"><b>Software</b></a><br>
+</p><p align="justify">
+The following shows the interactive interface developed to explore 3D supershapes. It is
+based upon X-Windows and OpenGL.
+It is currently available for Mac OS-X (as a UNIX application)
+upon payment of a US$30 shareware fee. Use of the program is
+straightforward, edit fields and hit return. The left mouse button rotates
+the model in two axes, the middle mouse button rotates about the third
+axis. A right mouse button brings up a menu. 
+<installation notes<p="">
+</installation></p><ul>
+<li>Being based upon X11 it is necessary to download and install
+<a href="https://www.xquartz.org/">XQuartz</a>.
+While not supposedly necessary, the author suggests rebooting after installing XQuartz.
+<p>
+</p></li><li>You will need to get around the Apple security restrictions for any
+application not from the app store.
+After trying to run the program and being warned about security, go to
+System Preferences and Security &amp; Privacy, in the General tab allow
+supershape to be opened.
+<p>
+</p></li><li>Please note that a right mouse button is required to access the menus by
+right clicking on the window. You can get a right mouse by either
+getting a 3 button USB mouse, or using the control-click on the
+touchpad.
+</li></ul>
+<p></p>
+
+<center>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="paul.bourke@gmail.com">
+<input type="hidden" name="lc" value="AU">
+<input type="hidden" name="item_name" value="supershape">
+<input type="hidden" name="item_number" value="1">
+<input type="hidden" name="amount" value="30.00">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="button_subtype" value="services">
+<input type="hidden" name="no_note" value="0">
+<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+<input type="image" src="./Supershapes _ SuperFormula_files/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal — The safer, easier way to pay online.">
+<img alt="" border="0" src="./Supershapes _ SuperFormula_files/pixel.gif" width="1" height="1">
+</form>
+</center><p>
+
+</p><center>
+<a href="http://paulbourke.net/geometry/supershape/interface.png">
+<center><img src="./Supershapes _ SuperFormula_files/interface_s.png" width="800" height="552" border="1"><br>
+<font size="-1">Click for full size image</font></center></a><p>
+</p></center>
+
+<b>Command line interface</b>
+<p align="justify">
+Many settings can be initialised from the command line, others control
+is given by single key strokes. To see a complete list type the program
+name at the command prompt with a "-h" option. At the time of writing
+these are given below.
+</p>
+<pre>&gt;supershape -h
+Usage: supershape [command line options]
+Command line options
+            -h   this text
+            -f   full screen
+            -s   active stereo
+           -ss   dual screen stereo
+            -a   auto rotate
+           -rw   wireframe
+           -rs   flat shaded
+           -rp   specular shaded
+Mouse buttons
+          left   camera rotate
+    shift left   camera pan
+        middle   camera roll
+  shift middle   camera forward, reverse
+
+Key Strokes
+    arrow keys   camera rotate
+           &lt;,&gt;   camera forward, reverse
+           +,-   camera zoom in, out
+           [,]   camera roll
+             r   toggle window recording
+             w   capture window to TGA file
+             a   toggle auto rotation of camera
+         1,2,3   different rendering mode
+             h   camera to home position
+      f1 to f6   axis aligned camera positions
+         ESC,q   quit
+</pre>
+
+<b>Features</b><p>
+</p><ul>
+<li>Exports geometry as DXF, POVRay, and LightWave (the later includes texture
+    coordinates).<p>
+</p></li><li>Rendering modes include wireframe, flat shaded, and specular shading.
+    Rendering is based upon OpenGL.<p>
+</p></li><li>Colour ramps can be applied to both longitude and latitude.<p>
+</p></li><li>Parameter space exploration by either single parameter ranges or
+    simply choosing a random parameter set.<p>
+</p></li><li>A supershape can be morphed into another.<p>
+</p></li><li>Images can be saved to a single TGA file or repeated saving can
+    be turned on for animations. TGA files and the naming convention
+    used are supported by QuickTime Pro.<p>
+</p></li></ul>
+
+<a name="examples"><b>Examples</b></a><p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0000.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0000s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0038.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0038s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0004.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0004s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0005.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0005s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0006.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0006s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0007.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0007s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0026.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0026s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0009.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0009s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0010.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0010s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0011.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0011s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0012.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0012s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0013.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0013s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0014.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0014s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0015.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0015s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0016.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0016s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0017.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0017s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0018.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0018s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0019.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0019s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0020.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0020s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0021.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0021s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0022.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0022s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0023.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0023s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0024.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0024s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0025.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0025s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+
+<a name="noninteger"><b>Non integer values of m</b></a></p><p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0027.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0027s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0028.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0028s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0029.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0029s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0030.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0030s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+
+<a name="2d"><b>2D</b></a><br>
+</p><p align="justify">
+The 2D supershapes (but with added small thickness) can be created using
+this software by setting the second supershape parameters as m=0, 
+n1=n2=n3=1, a=b=1 and using a small z axis scale factor. Indeed this can often
+be the preferred approach for using a 2D form within a 3D model, after all,
+real world objects do have some thickness. The example on the left
+has a thickness of 0.02 units (x and y axis dimensions of 1).
+Or even set the depth to 0 and vary latitude from 0 to 90 degrees
+as in the example on the right.
+</p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0031.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0031s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0032.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0032s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table><p>
+
+<a name="extrusion"><b>Extrusion</b></a></p><p>
+</p><p align="justify">
+Extrusions of 2D supershapes can be created by setting the second supershape
+parameters as m=4, a=1, b=1, and high equal values for each of n1,n2,n3.
+For example n1=n2=n3=200 gives relatively sharp edges. 
+</p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0033.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0033s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0034.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0034s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table><p>
+
+<a name="stability"><b>Stability</b></a></p><p>
+</p><p align="justify">
+A significant portion of the parameter space results in surfaces with various
+types of numerical problems (powers of negative numbers, divide by 0, underflow,
+overflow, etc) as well as issues related to the representation of 3D graphics.
+The software that has been developed and created the images shown above, can
+display the edges where numerical problems have arisen. These regions are
+shown in pick as shown in the following two images.
+</p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0035.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0035s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0036.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0036s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table><p>
+
+<a name="classical"><b>Classical shapes</b></a></p><p>
+<table width="100%"><tbody><tr><td>
+Cube<br>
+<a href="http://paulbourke.net/geometry/supershape/C_0001.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0001s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+Cone<br>
+<a href="http://paulbourke.net/geometry/supershape/C_0002.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0002s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+<table width="100%"><tbody><tr><td>
+Diamond<br>
+<a href="http://paulbourke.net/geometry/supershape/C_0003.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0003s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+Sphere<br>
+<a href="http://paulbourke.net/geometry/supershape/C_0037.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0037s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+<table width="100%"><tbody><tr><td>
+Prism<br>
+<a href="http://paulbourke.net/geometry/supershape/C_0039.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0039s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+Cylinder<br>
+<a href="http://paulbourke.net/geometry/supershape/C_0033.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0033s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+<table width="100%"><tbody><tr><td>
+Hexagon<br>
+<a href="http://paulbourke.net/geometry/supershape/C_0008.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0008s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+Pentagon<br>
+<a href="http://paulbourke.net/geometry/supershape/C_0040.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0040s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+
+<a name="shells"><b>Shells</b></a></p><p>
+</p><p align="justify">
+The supershape function can obviously be modulated by another function. For
+example to create the shell like structures below, the radius (r1) of the superformula
+that varies the longitude is scaled by either a logarithmic or Archimedes
+spiral. In some cases the z coordinate is additionally made a linear function
+of longitude.
+</p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0041.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0041s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0042.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0042s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table><p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0043.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0043s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0044.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0044s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+
+<a name="torus"><b>Toroidal mapping</b></a></p><p>
+</p><p align="justify">
+In the above the two supershapes were mapped onto a topological sphere.
+One could map supershapes onto other forms as well, for example, a torus.
+In the following images the mapping is as follows:
+</p>
+<center><img src="./Supershapes _ SuperFormula_files/equation3.gif" width="300" height="74"></center><p>
+
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0045.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0045s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0046.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0046s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0050.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0050s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0047.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0047s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+<table width="100%"><tbody><tr><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0048.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0048s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td><td>
+<a href="http://paulbourke.net/geometry/supershape/C_0049.jpg">
+<center><img src="./Supershapes _ SuperFormula_files/C_0049s.jpg" width="300" height="300" border="1"></center></a><p>
+</p></td></tr></tbody></table></p><p>
+
+<a name="rendering"><b>Renderings</b></a></p><p>
+<table width="100%"><tbody><tr><td width="50%">
+<a href="http://paulbourke.net/geometry/supershape/supershape_compo5.jpg">
+</a><center><a href="http://paulbourke.net/geometry/supershape/supershape_compo5.jpg"><img src="./Supershapes _ SuperFormula_files/supershape_compo5s.jpg" width="300" height="300" border="1"><br>
+Contribution by Luc Benard</a></center>
+</td><td width="50%">
+<a href="http://paulbourke.net/geometry/supershape/future_transport.jpg">
+</a><center><a href="http://paulbourke.net/geometry/supershape/future_transport.jpg"><img src="./Supershapes _ SuperFormula_files/future_transport_s.jpg" width="300" height="150" border="1"><br>
+</a><a href="http://paulbourke.net/geometry/supershape/transluce.jpg">
+</a><center><a href="http://paulbourke.net/geometry/supershape/transluce.jpg"><img src="./Supershapes _ SuperFormula_files/transluce_s.jpg" width="300" height="150" border="1"><br>
+Contributions by Albert Kiefer</a></center>
+</center></td></tr></tbody></table></p><p>
+
+<a name="stl"><b>Physical models</b></a></p><p>
+</p><center>
+<img src="./Supershapes _ SuperFormula_files/stlmodel.jpg" width="800" height="600">
+</center><p>
+
+</p><p><br><br><br></p><p>
+
+
+</p><center>
+<h1>Generating the 3D Supershape in Povray</h1>
+Written by <a href="http://paulbourke.net/geometry/">Paul Bourke</a><br>
+July 2003<p>
+Based upon equations by Johan Gielis<br>
+Intended as a modelling framework for natural forms.</p><p>
+</p></center>
+<p>
+
+</p><p align="justify">
+There are two (at least) ways of representing supershapes using PovRay.
+One is to use the built-in parametric primitive, doing it this way would
+result in the highest resolution/quality results unfortunately the 
+rendering times proved to be prohibitive. The approach illustrated
+below is to write a macro in the PovRay scene language. The macro and
+an example of it's use is given in this PovRay (version 3.5) file:
+<a href="http://paulbourke.net/geometry/supershape/supershape.pov">supershape.pov</a>.
+</p>
+
+<center><table cellpadding="10" cellspacing="10">
+<tbody><tr><td align="left" valign="top" width="400">
+<img src="./Supershapes _ SuperFormula_files/pov1.jpg" width="300" height="300"><br>
+<font size="-1">
+SuperShape(9,1,1,92,0.3,-45,4,1,1,-0.8,88,-0.35,202)
+</font>
+</td><td align="left" valign="top" width="400">
+<img src="./Supershapes _ SuperFormula_files/pov2.jpg" width="300" height="300"><br>
+<font size="-1">
+SuperShape(1,1,1,77,0.81,71.7,8,1,1,0.63,2.92,0.24,200)
+</font>
+</td></tr>
+<tr><td align="left" valign="top" width="400">
+<img src="./Supershapes _ SuperFormula_files/pov3.jpg" width="300" height="300"><br>
+<font size="-1">
+SuperShape(9,1,1,-70,-0.14,77,2,1,1,0.38,4.12,-0.7,200)
+</font>
+</td><td align="left" valign="top" width="400">
+<img src="./Supershapes _ SuperFormula_files/pov4.jpg" width="300" height="300"><br>
+<font size="-1">
+SuperShape(7,1,1,20.45,-0.33,-3.54,6,1,1,-0.96,4.46,0.52,200)
+</font>
+</td></tr></tbody></table></center><p>
+
+Further POVRay scene examples are given below
+<table>
+<tbody><tr>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td><a href="http://paulbourke.net/geometry/supershape/resources/ss_macro1.inc">ss_macro1.inc</a></td>
+<td><a href="http://paulbourke.net/geometry/supershape/resources/example1.pov">example1.pov</a></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td><a href="http://paulbourke.net/geometry/supershape/resources/ss_macro2.inc">ss_macro2.inc</a></td>
+<td><a href="http://paulbourke.net/geometry/supershape/resources/example2.pov">example2.pov</a></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td><a href="http://paulbourke.net/geometry/supershape/resources/ss_macro3.inc">ss_macro3.inc</a></td>
+<td><a href="http://paulbourke.net/geometry/supershape/resources/example3.pov">example3.pov</a></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;</td>
+<td><a href="http://paulbourke.net/geometry/supershape/resources/example4.pov">example4.pov</a></td>
+</tr>
+</tbody></table></p><p>
+
+<b>Contributions from the POVRay competition</b></p><p>
+
+</p><center><table cellpadding="10" cellspacing="10">
+
+<!-- ============================= 0001 ================================= -->
+
+<tbody><tr>
+<td align="left" valign="top" width="400">
+   Author: SpB<br>
+   Title: Flying wing<br>
+   Source: <a href="http://paulbourke.net/geometry/supershape/0001.pov">0001.pov</a><br>
+   <a href="http://paulbourke.net/geometry/supershape/0001.html">
+   <img src="./Supershapes _ SuperFormula_files/0001s.jpg" width="300" height="300" border="1">
+   </a>
+</td>
+
+<!-- ============================= 0002 ================================= -->
+
+<td align="left" valign="top" width="400">
+   Author: Dalius Dobravolskas<br>
+   Title: Lost in the sea<br>
+   Source: <a href="http://paulbourke.net/geometry/supershape/0002.pov">0002.pov</a><br>
+   <a href="http://paulbourke.net/geometry/supershape/0002.html">
+   <img src="./Supershapes _ SuperFormula_files/0002s.jpg" width="300" height="300" border="1">
+   </a>
+</td>
+</tr>
+
+<!-- ============================= 0003 ================================= -->
+
+<tr>
+<td align="left" valign="top" width="400">
+   Author: Paul Bourke<br>
+   Title: Supershape fractal<br>
+   Source: <a href="http://paulbourke.net/geometry/supershape/0003.pov">0003.pov</a><br>
+   <a href="http://paulbourke.net/geometry/supershape/0003.html">
+   <img src="./Supershapes _ SuperFormula_files/0003s.jpg" width="300" height="300" border="1">
+   </a>
+</td>
+
+<!-- ============================= 0004 ================================= -->
+
+<td align="left" valign="top" width="400">
+   Author: Stefano Tessarin<br>
+   Title: Flowers<br>
+   Source: <a href="http://paulbourke.net/geometry/supershape/0004.pov">0004.pov</a><br>
+   <a href="http://paulbourke.net/geometry/supershape/0004.html">
+   <img src="./Supershapes _ SuperFormula_files/0004s.jpg" width="300" height="300" border="1">
+   </a>
+</td>
+</tr>
+
+<!-- ============================= 0005 ================================= -->
+
+<tr>
+<td align="left" valign="top" width="400">
+   Author: Emanuele Munarini<br>
+   Source: <a href="http://paulbourke.net/geometry/supershape/0005.pov">0005.pov</a><br>
+   <a href="http://paulbourke.net/geometry/supershape/0005.html">
+   <img src="./Supershapes _ SuperFormula_files/0005s.jpg" width="300" height="300" border="1">
+   </a>
+</td>
+
+<!-- ============================= 0006 ================================= -->
+
+<td align="left" valign="top" width="400">
+   Author: Emanuele Munarini<br>
+   Source: <a href="http://paulbourke.net/geometry/supershape/0006.pov">0006.pov</a><br>
+   <a href="http://paulbourke.net/geometry/supershape/0006.html">
+   <img src="./Supershapes _ SuperFormula_files/0006s.jpg" width="300" height="300" border="1">
+   </a>
+</td>
+</tr>
+
+<!-- ============================= 0007 ================================= -->
+
+<tr>
+<td align="left" valign="top" width="400">
+   Author: Emanuele Munarini<br>
+   Source: <a href="http://paulbourke.net/geometry/supershape/0007.pov">0007.pov</a><br>
+   <a href="http://paulbourke.net/geometry/supershape/0007.html">
+   <img src="./Supershapes _ SuperFormula_files/0007s.jpg" width="300" height="300" border="1">
+   </a>
+</td>
+
+<!-- ============================= 0008 ================================= -->
+
+<td align="left" valign="top" width="400">
+   Author: Emanuele Munarini<br>
+   Source: <a href="http://paulbourke.net/geometry/supershape/0008.pov">0008.pov</a><br>
+   <a href="http://paulbourke.net/geometry/supershape/0008.html">
+   <img src="./Supershapes _ SuperFormula_files/0008s.jpg" width="300" height="300" border="1">
+   </a>
+</td>
+</tr>
+
+<!-- ============================= 0009 ================================= -->
+
+<tr>
+<td align="left" valign="top" width="400">
+   Author: Ben Scheele<br>
+   Title: Butterflies find cactus flowers in a desert<br>
+   Source: <a href="http://paulbourke.net/geometry/supershape/0009.pov">0009.pov</a><br>
+   <a href="http://paulbourke.net/geometry/supershape/0009.html">
+   <img src="./Supershapes _ SuperFormula_files/0009s.jpg" width="300" height="300" border="1">
+   </a>
+</td>
+
+<td align="left" valign="top" width="400">
+</td>
+</tr>
+</tbody></table></center><br><br><br>
+
+<b>Correspondence</b><p>
+
+</p><p align="justify">
+Question: <i>How can Superformula or Supershapes aid in data visualization? Do they help a person to gain a perspective of various data points? Are they better than pie-charts, graphs, histograms, scatter plots etc.,
+</i>
+</p>
+<p align="justify">
+Hmmm, they are kind of different things ... pie chart, graphs etc and supershapes.
+</p>
+<p align="justify">
+In the former one takes data and uses it to control some geometry, quite simple geometry like portions of a pie, height of bars, points on a plane, lines and so on. The resulting structure is intended to provide some insight into the underlying data. At the end of the day the purpose of visualisation is to provide insight and the success of a visualisation should be judged as such.
+</p>
+<p align="justify">
+Supershapes are (complex) 3D surfaces, they came about because Johan thought they could be used to describe a large range of biological shapes, namely leaves, flowers. The big problem with supershapes is the relationship between the variables and the final form is not always clear. So, if you gave someone a geometric form and asked what the variables are to represent that as a supershape, it is difficult, most people just play/fiddle and hope for the best.
+</p>
+<p align="justify">
+Perhaps you are imagining mapping data to the variables and using the resulting supershape as a visualisation of the data. There may be some datasets for which this might work, but I doubt it. For the same reason, the relationship between the variables and the shape is unclear. And, if you have two very similar datasets the supershape could look very different ... not a good property for a visualisation.
+</p>
+
+</td></tr></tbody></table></center><p>
+
+
+
+</p></body></html>
