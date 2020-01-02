@@ -1,4 +1,4 @@
-# PaymentAppSimulator
+# WeChatSimulator
 
 这是一个用于对话小说游戏的unity框架
 
